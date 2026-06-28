@@ -1,0 +1,52 @@
+{
+  "name": "a1ps-landscape-redesign",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:images": "node scripts/optimize-images.mjs",
+    "upscale-gallery": "node scripts/upscale-gallery-sources.mjs",
+    "build:images:gallery": "npm run upscale-gallery && npm run build:images",
+    "build:feed": "node scripts/generate-feed.mjs",
+    "build:all": "npm run build:images && npm run build && npm run build:feed && npm run postbuild:validate && npm run link:health",
+    "start": "npx serve out",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "compress-images": "node scripts/compress-images.mjs",
+    "postbuild:validate": "node scripts/postbuild-validate.mjs",
+    "link:health": "node scripts/link-health-check.mjs",
+    "analyze": "ANALYZE=true next build",
+    "deploy": "npm run build:all && npx wrangler pages deploy out --project-name=a1-property-services --branch main",
+    "deploy:preview": "npm run build:all && npx wrangler pages deploy out --project-name=a1-property-services --branch preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.383.0",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-hook-form": "^7.51.0",
+    "resend": "^3.2.0",
+    "sharp": "^0.33.3",
+    "tailwind-merge": "^2.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.19",
+    "critters": "^0.0.23",
+    "eslint": "^8",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5"
+  }
+}
