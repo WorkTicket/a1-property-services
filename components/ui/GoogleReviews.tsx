@@ -5,6 +5,7 @@ import { ExternalLink, Star } from 'lucide-react'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import FadeIn from '@/components/motion/FadeIn'
 import Button from '@/components/ui/Button'
+import { siteConfig } from '@/lib/metadata'
 import type { GoogleReviewData } from '@/lib/types'
 
 export default function GoogleReviews() {
@@ -63,7 +64,7 @@ export default function GoogleReviews() {
 
         <FadeIn className="mt-8 text-center">
           <Button
-            href="https://search.google.com/local/writereview?placeid=0x87e5554fba885cc7:0x81603f3efb1da432"
+            href={siteConfig.googleReviewUrl}
             variant="outline"
             target="_blank"
             rel="noopener noreferrer"

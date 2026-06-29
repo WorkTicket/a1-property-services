@@ -32,18 +32,24 @@ export function StaggerContainer({
       return
     }
 
+    const fallback = setTimeout(() => setVisible(true), 2500)
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
           observer.disconnect()
+          clearTimeout(fallback)
         }
       },
       { rootMargin: '-60px', threshold: 0.2 },
     )
 
     observer.observe(el)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      clearTimeout(fallback)
+    }
   }, [])
 
   indexCounter.current = 0
