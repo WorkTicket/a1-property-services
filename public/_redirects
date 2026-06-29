@@ -1,0 +1,9 @@
+/our-landscaping-company-cedar-falls /about 301
+/landscaping-services-in-cedar-falls /services 301
+/landscaping-services-in-cedar-falls:* /services 301
+/contact-landscaping-property-maintenance-cedar-falls /contact 301
+/retaining-wall-in-cedar-falls /services/retaining-walls 301
+/paver-patio-installation /services/paver-patio 301
+/cedar-falls-water-features /services/ponds-water-features 301
+/cedar-valley-landscaping-blog /blog 301
+/cedar-valley-landscaping-blog/* /blog/:splat 301
