@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { siteImages } from '@/lib/images'
 
@@ -23,13 +24,12 @@ export default function LogoMark({ size = 'md', className }: LogoMarkProps) {
         className,
       )}
     >
-      <img
+      <Image
         src={siteImages.icon}
         alt=""
         width={img}
         height={img}
         className="rounded-full object-cover"
-        decoding="async"
       />
     </div>
   )

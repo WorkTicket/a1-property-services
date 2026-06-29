@@ -33,26 +33,13 @@ export default function FadeIn({
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setVisible(true)
       return
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '-60px', threshold: 0.2 },
-    )
-
-    observer.observe(el)
-    return () => observer.disconnect()
+    const frame = requestAnimationFrame(() => setVisible(true))
+    return () => cancelAnimationFrame(frame)
   }, [])
 
   const Tag = as

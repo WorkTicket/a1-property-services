@@ -54,9 +54,10 @@ function extractStructuredData(content) {
 }
 
 function pathToUrl(filePath) {
-  let relative = path.relative(OUT_DIR, filePath)
+  let relative = path.relative(OUT_DIR, filePath).replace(/\\/g, '/')
   if (relative === 'index.html') return '/'
   if (relative.endsWith('/index.html')) return '/' + relative.slice(0, -10)
+  if (relative.endsWith('.html')) return '/' + relative.slice(0, -5)
   return '/' + relative
 }
 
@@ -176,7 +177,7 @@ async function main() {
   let brokenLinks = 0
   for (const [source, links] of Object.entries(allInternalLinks)) {
     for (const link of links) {
-      let normalized = link.replace(/\/$/, '')
+      let normalized = link.split('#')[0].replace(/\/$/, '')
       if (normalized === '') normalized = '/'
       if (normalized.startsWith('/') && !allPagePaths.has(normalized) && !normalized.startsWith('/images/') && !normalized.startsWith('/_next/')) {
         error(`Broken link on ${source}: ${link}`)
