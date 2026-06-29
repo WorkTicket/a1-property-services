@@ -122,7 +122,9 @@ export default function RootLayout({
         <GoogleAnalytics />
         <MicrosoftClarity />
         <Navbar />
-        <main id="main-content" role="main">{children}</main>
+        <main id="main-content" role="main" className="min-w-0 overflow-x-clip">
+          {children}
+        </main>
         <Footer />
         <StickyCtaBar />
       </body>

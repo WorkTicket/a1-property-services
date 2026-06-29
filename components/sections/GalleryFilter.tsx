@@ -51,7 +51,7 @@ export default function GalleryFilter() {
           <p className="mt-2 text-brand-body/70 max-w-xl mx-auto">
             {isWaterOnly
               ? 'Custom ponds, waterfalls, and water gardens built across the Cedar Valley.'
-              : 'Swipe or drag the slider to see the before and after.'}
+              : 'Drag the slider on each project to compare before and after.'}
           </p>
         </FadeIn>
 

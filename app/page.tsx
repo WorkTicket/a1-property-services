@@ -220,7 +220,7 @@ export default function HomePage() {
               <p className="section-eyebrow">Our Work</p>
               <h2 className="section-heading mt-3">Before &amp; After</h2>
               <p className="mt-2 text-brand-body/70 max-w-xl">
-                Swipe or drag the slider to see the before and after.
+                Drag the slider on each project to compare before and after.
               </p>
             </div>
             <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
@@ -228,19 +228,7 @@ export default function HomePage() {
             </Button>
           </FadeIn>
 
-          <div className="scroll-snap-x mt-10 md:hidden">
-            {homepageGalleryPreview.map((project) => (
-              <div key={project.id} className="scroll-snap-item">
-                <BeforeAfterSlider
-                  title={project.title}
-                  before={project.before}
-                  after={project.after}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 hidden gap-8 md:grid md:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
             {homepageGalleryPreview.map((project) => (
               <BeforeAfterSlider
                 key={project.id}

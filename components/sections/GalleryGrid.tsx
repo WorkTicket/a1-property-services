@@ -42,20 +42,10 @@ function GalleryItem({ project }: { project: GalleryProject }) {
 
 export default function GalleryGrid({ projects }: GalleryGridProps) {
   return (
-    <>
-      <div className="scroll-snap-x md:hidden">
-        {projects.map((project) => (
-          <div key={project.id} className="scroll-snap-item">
-            <GalleryItem project={project} />
-          </div>
-        ))}
-      </div>
-
-      <div className="hidden gap-8 md:grid md:grid-cols-2">
-        {projects.map((project) => (
-          <GalleryItem key={project.id} project={project} />
-        ))}
-      </div>
-    </>
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      {projects.map((project) => (
+        <GalleryItem key={project.id} project={project} />
+      ))}
+    </div>
   )
 }
