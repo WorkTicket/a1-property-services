@@ -24,32 +24,13 @@ export function StaggerContainer({
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setVisible(true)
       return
     }
 
-    const fallback = setTimeout(() => setVisible(true), 2500)
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
-          clearTimeout(fallback)
-        }
-      },
-      { rootMargin: '-60px', threshold: 0.2 },
-    )
-
-    observer.observe(el)
-    return () => {
-      observer.disconnect()
-      clearTimeout(fallback)
-    }
+    const frame = requestAnimationFrame(() => setVisible(true))
+    return () => cancelAnimationFrame(frame)
   }, [])
 
   indexCounter.current = 0
