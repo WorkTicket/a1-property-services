@@ -7,7 +7,7 @@ import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, sit
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages } from '@/lib/images'
 import { allServices } from '@/lib/services'
-import { getBlogsForCity } from '@/lib/internal-linking'
+import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
@@ -273,12 +273,7 @@ export default function CityPage({ params }: Props) {
         </div>
       </section>
 
-      <RelatedContent groups={[
-        ...(getBlogsForCity(params.city).length > 0 ? [{
-          heading: `Articles About ${city.name}`,
-          items: getBlogsForCity(params.city),
-        }] : []),
-      ]} />
+      <RelatedContent groups={getAllRelatedGroups('city', params.city)} />
 
       <CtaBanner
         eyebrow="Get Started"

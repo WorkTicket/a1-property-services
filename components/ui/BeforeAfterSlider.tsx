@@ -21,6 +21,7 @@ type BeforeAfterSliderProps = {
 }
 
 const SLIDER_SIZES = '(max-width: 768px) 92vw, (max-width: 1280px) 50vw, 640px'
+const DRAG_THRESHOLD = 10
 
 function preloadSliderImages(beforeSrc: string, afterSrc: string) {
   const urls = [
@@ -86,6 +87,8 @@ export default function BeforeAfterSlider({
   const isDragging = useRef(false)
   const positionRef = useRef(50)
   const rafRef = useRef<number | null>(null)
+  const pointerStart = useRef<{ x: number; y: number; id: number } | null>(null)
+  const dragIntent = useRef<'none' | 'horizontal' | 'vertical'>('none')
 
   const applyPosition = useCallback((pct: number) => {
     positionRef.current = pct
@@ -141,19 +144,60 @@ export default function BeforeAfterSlider({
     }
   }, [before.src, after.src, applyPosition])
 
+  const beginDrag = useCallback(
+    (e: React.PointerEvent) => {
+      isDragging.current = true
+      containerRef.current?.setPointerCapture(e.pointerId)
+      containerRef.current?.classList.add('ba-slider-active')
+      updatePosition(e.clientX)
+    },
+    [updatePosition],
+  )
+
+  const resetPointerState = useCallback(() => {
+    pointerStart.current = null
+    dragIntent.current = 'none'
+  }, [])
+
   const handlePointerDown = (e: React.PointerEvent) => {
-    isDragging.current = true
-    containerRef.current?.setPointerCapture(e.pointerId)
-    containerRef.current?.classList.add('ba-slider-active')
-    updatePosition(e.clientX)
+    if (e.pointerType === 'mouse') {
+      beginDrag(e)
+      return
+    }
+
+    pointerStart.current = { x: e.clientX, y: e.clientY, id: e.pointerId }
+    dragIntent.current = 'none'
   }
 
   const handlePointerMove = (e: React.PointerEvent) => {
-    if (!isDragging.current) return
-    updatePosition(e.clientX)
+    if (isDragging.current) {
+      updatePosition(e.clientX)
+      return
+    }
+
+    const start = pointerStart.current
+    if (!start || start.id !== e.pointerId) return
+
+    const dx = e.clientX - start.x
+    const dy = e.clientY - start.y
+
+    if (dragIntent.current === 'none') {
+      if (Math.abs(dx) < DRAG_THRESHOLD && Math.abs(dy) < DRAG_THRESHOLD) return
+
+      if (Math.abs(dy) > Math.abs(dx)) {
+        dragIntent.current = 'vertical'
+        resetPointerState()
+        return
+      }
+
+      dragIntent.current = 'horizontal'
+      beginDrag(e)
+    }
   }
 
   const endDrag = (e: React.PointerEvent) => {
+    resetPointerState()
+
     if (!isDragging.current) return
     isDragging.current = false
     containerRef.current?.releasePointerCapture(e.pointerId)
@@ -168,7 +212,7 @@ export default function BeforeAfterSlider({
       <div
         ref={containerRef}
         className={cn(
-          'ba-slider relative cursor-ew-resize touch-none select-none overflow-hidden rounded-xl [contain:layout_paint]',
+          'ba-slider relative cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-xl [contain:layout_paint]',
           aspectClassName,
         )}
         onPointerDown={handlePointerDown}

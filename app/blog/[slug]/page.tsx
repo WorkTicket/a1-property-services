@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { blogPosts, getPostBySlug } from '@/lib/blog'
 import { generatePageMetadata, blogPostingJsonLd, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { getAllRelatedGroups } from '@/lib/internal-linking'
+import { getAllRelatedGroups, getContentSegments } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import FadeIn from '@/components/motion/FadeIn'
@@ -40,6 +40,14 @@ export default function BlogPostPage({ params }: Props) {
   if (!post) notFound()
 
   const relatedGroups = getAllRelatedGroups('blog', params.slug)
+
+  function contentLinks(text: string, max = 3) {
+    return getContentSegments(text, max).map((seg, i) =>
+      seg.type === 'link'
+        ? <Link key={i} href={seg.url} className="text-brand-green-800 underline underline-offset-2 hover:text-brand-gold transition-colors">{seg.content}</Link>
+        : seg.content
+    )
+  }
 
   const pageSchema = webPageJsonLd({
     name: post.title,
@@ -84,7 +92,7 @@ export default function BlogPostPage({ params }: Props) {
           <div className="mt-10 space-y-6">
             {post.content.map((paragraph, i) => (
               <p key={i} className="text-lg leading-relaxed text-brand-body">
-                {paragraph}
+                {contentLinks(paragraph)}
               </p>
             ))}
           </div>

@@ -295,6 +295,48 @@ async function main() {
   }
 
   // ---------------------------------------------------------------
+  // 8. SITEMAP VALIDATION
+  // ---------------------------------------------------------------
+  console.log('\n── Sitemap Validation ──')
+
+  const sitemapPath = path.resolve(OUT_DIR, 'sitemap.xml')
+  if (existsSync(sitemapPath)) {
+    const sitemapContent = readFileSync(sitemapPath, 'utf-8')
+    const urlMatches = sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g)
+    const sitemapUrls = new Set()
+    for (const match of urlMatches) {
+      const url = match[1].replace(/\/$/, '') || '/'
+      const pathOnly = new URL(url).pathname
+      sitemapUrls.add(pathOnly)
+    }
+
+    ok(`Sitemap contains ${sitemapUrls.size} URLs`)
+
+    // Check for pages in sitemap that are missing from build output
+    let missingFromSitemap = 0
+    for (const page of allPages) {
+      if (!sitemapUrls.has(page) && page !== '/') {
+        warn(`Page missing from sitemap: ${page}`)
+        missingFromSitemap++
+      }
+    }
+
+    // Check for sitemap URLs that don't exist in build output
+    let orphanSitemapUrls = 0
+    for (const url of sitemapUrls) {
+      if (!allPages.has(url) && url !== '/') {
+        warn(`Sitemap URL not found in build output: ${url}`)
+        orphanSitemapUrls++
+      }
+    }
+
+    if (missingFromSitemap === 0) ok('All pages present in sitemap')
+    if (orphanSitemapUrls === 0) ok('No orphan sitemap URLs')
+  } else {
+    warn('sitemap.xml not found in build output')
+  }
+
+  // ---------------------------------------------------------------
   // SUMMARY
   // ---------------------------------------------------------------
   console.log('\n══════════════════════════════════════')

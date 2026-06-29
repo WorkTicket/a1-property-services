@@ -15,7 +15,7 @@ import {
 import { getPostBySlug } from '@/lib/blog'
 import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd } from '@/lib/metadata'
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt } from '@/lib/images'
-import { getRelatedContent, getProjectsForService, getFaqsForService } from '@/lib/internal-linking'
+import { getRelatedContent, getProjectsForService, getFaqsForService, getContentSegments } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
@@ -104,6 +104,14 @@ export default function ServicePage({ params }: Props) {
 
   const serviceName = seo ? seo.h1 : `${service.name} in Cedar Falls`
   const pageUrl = `${siteConfig.url}/services/${service.slug}`
+
+  function contentLinks(text: string, max = 3) {
+    return getContentSegments(text, max).map((seg, i) =>
+      seg.type === 'link'
+        ? <Link key={i} href={seg.url} className="text-brand-green-800 underline underline-offset-2 hover:text-brand-gold transition-colors">{seg.content}</Link>
+        : seg.content
+    )
+  }
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
@@ -195,13 +203,13 @@ export default function ServicePage({ params }: Props) {
             </div>
           </div>
 
-          <p className="mt-6 text-lg leading-relaxed text-brand-body">{service.longDesc}</p>
+          <p className="mt-6 text-lg leading-relaxed text-brand-body">{contentLinks(service.longDesc)}</p>
           {extended && (
             <div className="mt-8 space-y-4">
               <h2 className="text-2xl font-bold text-brand-dark">{extended.heading}</h2>
               {extended.paragraphs.map((p) => (
                 <p key={p.slice(0, 40)} className="leading-relaxed text-brand-body">
-                  {p}
+                  {contentLinks(p)}
                 </p>
               ))}
             </div>

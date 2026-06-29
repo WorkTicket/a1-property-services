@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { generatePageMetadata, webPageJsonLd, jsonLdGraph, siteConfig } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
+import { getAllRelatedGroups } from '@/lib/internal-linking'
+import RelatedContent from '@/components/sections/RelatedContent'
 import PageHero from '@/components/motion/PageHero'
 
 const GalleryFilter = dynamic(() => import('@/components/sections/GalleryFilter'), {
@@ -54,6 +56,7 @@ export default function GalleryPage() {
         subtitle="Real projects across Cedar Falls, Waterloo, and the Cedar Valley. Drag the slider to compare before and after."
       />
       <GalleryFilter />
+      <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />
     </>
   )
 }

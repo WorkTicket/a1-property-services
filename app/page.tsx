@@ -7,6 +7,8 @@ import { CTA_COPY } from '@/lib/cta'
 import { generatePageMetadata, getGoogleMapsEmbedUrl, localBusinessJsonLd, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
+import { blogPosts } from '@/lib/blog'
+import RelatedContent from '@/components/sections/RelatedContent'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -332,6 +334,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Related Content */}
+      <RelatedContent groups={[
+        ...(blogPosts.length > 0 ? [{
+          heading: 'Latest Articles',
+          items: blogPosts.slice(0, 3).map(p => ({
+            type: 'blog' as const,
+            slug: p.slug,
+            title: p.title,
+            excerpt: p.excerpt,
+            url: `/blog/${p.slug}`,
+            relevance: 5,
+          })),
+        }] : []),
+      ]} />
 
       {/* CTA / QUOTE FORM */}
       <section id="estimate" className="section bg-neutral-50">

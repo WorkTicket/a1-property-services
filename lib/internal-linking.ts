@@ -469,11 +469,17 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     }
 
     case 'city': {
-      const services = getServicesForCity(slug)
+      const services = getServicesForCity(slug).slice(0, 6)
       if (services.length > 0) groups.push({ heading: 'Our Services', items: services })
 
       const blogs = getBlogsForCity(slug)
       if (blogs.length > 0) groups.push({ heading: 'Articles for Your Area', items: blogs })
+
+      const projects = galleryProjects.slice(0, 4).map(p => toLinked({
+        type: 'project', slug: p.id, title: p.title, excerpt: `${p.title} project`,
+        url: projectUrl(), relevance: 5,
+      }))
+      if (projects.length > 0) groups.push({ heading: 'Our Projects', items: projects })
       break
     }
 
@@ -507,11 +513,54 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
         url: serviceUrl(s.slug), relevance: 5,
       }))
       if (services.length > 0) groups.push({ heading: 'Services', items: services })
+
+      const blogs = blogPosts.slice(0, 3).map(p => toLinked({
+        type: 'blog', slug: p.slug, title: p.title, excerpt: p.excerpt,
+        url: blogUrl(p.slug), relevance: 4,
+      }))
+      if (blogs.length > 0) groups.push({ heading: 'Related Articles', items: blogs })
       break
     }
   }
 
   return groups
+}
+
+export type ContentSegment =
+  | { type: 'text'; content: string }
+  | { type: 'link'; content: string; url: string; title: string }
+
+export function getContentSegments(content: string, maxLinks = 3): ContentSegment[] {
+  const candidates = getContextualLinks(content, maxLinks)
+  if (candidates.length === 0) return [{ type: 'text', content }]
+
+  const matches: { index: number; text: string; candidate: LinkedContent }[] = []
+
+  for (const candidate of candidates) {
+    const idx = content.indexOf(candidate.title)
+    if (idx !== -1) {
+      matches.push({ index: idx, text: candidate.title, candidate })
+    }
+  }
+
+  matches.sort((a, b) => a.index - b.index)
+
+  const result: ContentSegment[] = []
+  let lastIndex = 0
+
+  for (const match of matches) {
+    if (match.index > lastIndex) {
+      result.push({ type: 'text', content: content.slice(lastIndex, match.index) })
+    }
+    result.push({ type: 'link', content: match.text, url: match.candidate.url, title: match.candidate.title })
+    lastIndex = match.index + match.text.length
+  }
+
+  if (lastIndex < content.length) {
+    result.push({ type: 'text', content: content.slice(lastIndex) })
+  }
+
+  return result
 }
 
 export function getContextualLinks(content: string, maxLinks = 3): LinkedContent[] {

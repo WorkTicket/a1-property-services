@@ -13,6 +13,7 @@
     "build:images:gallery": "npm run upscale-gallery && npm run build:images",
     "build:feed": "node scripts/generate-feed.mjs",
     "build:all": "npm run build:images && npm run build && npm run build:feed && npm run postbuild:validate && npm run link:health",
+    "build:preview": "npm run build:images && npm run build && npm run build:feed && npm run postbuild:validate",
     "start": "npx serve out",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
@@ -21,7 +22,7 @@
     "link:health": "node scripts/link-health-check.mjs",
     "analyze": "ANALYZE=true next build",
     "deploy": "npm run build:all && npx wrangler pages deploy out --project-name=a1-property-services --branch main",
-    "deploy:preview": "npm run build:all && npx wrangler pages deploy out --project-name=a1-property-services --branch preview"
+    "deploy:preview": "npm run build:preview && npx wrangler pages deploy out --project-name=a1-property-services --branch preview --commit-dirty=true"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
