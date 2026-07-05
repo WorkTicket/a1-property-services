@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
-import { buildSrcset, getImageDimensions, getLcpPreloadHref } from '@/lib/responsive-image'
+import { buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
 
 type LcpHeroImageProps = {
   src: string
@@ -17,22 +17,28 @@ export default function LcpHeroImage({
 }: LcpHeroImageProps) {
   const dimensions = getImageDimensions(src)
   const avifSrcset = buildSrcset(src, 'avif')
-  const webpSrcset = buildSrcset(src, 'webp')
 
   return (
-    <picture className="absolute inset-0 block h-full w-full">
-      <source srcSet={avifSrcset} sizes={sizes} type="image/avif" />
-      <source srcSet={webpSrcset} sizes={sizes} type="image/webp" />
-      <img
-        src={getLcpPreloadHref(src)}
-        alt={alt}
-        width={dimensions?.width}
-        height={dimensions?.height}
-        loading="eager"
-        decoding="sync"
-        fetchPriority="high"
-        className={cn('absolute inset-0 h-full w-full object-cover', className)}
-      />
-    </picture>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={getVariantUrl(src, 'avif', 640)}
+      srcSet={avifSrcset}
+      sizes={sizes}
+      alt={alt}
+      width={dimensions?.width ?? 1920}
+      height={dimensions?.height ?? 1440}
+      loading="eager"
+      decoding="sync"
+      fetchPriority="high"
+      className={cn('absolute inset-0 h-full w-full object-cover', className)}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+      }}
+    />
   )
 }

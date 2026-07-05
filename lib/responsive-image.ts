@@ -48,15 +48,8 @@ export function getVariantUrl(src: string, format: ImageFormat, preferredWidth =
   return src
 }
 
-export function getLcpPreloadHref(src: string): string {
-  const entry = manifest[src]
-  const avif = entry?.variants?.avif
-  if (avif) {
-    const widths = Object.keys(avif).map(Number).sort((a, b) => a - b)
-    const desktop = widths.find((w) => w >= 1280) ?? widths[widths.length - 1]
-    return avif[String(desktop)]
-  }
-  return src
+export function getLcpPreloadHref(src: string, preferredWidth = 768): string {
+  return getVariantUrl(src, 'avif', preferredWidth)
 }
 
 export function getLcpPreloadSrcset(src: string): string {
@@ -66,6 +59,16 @@ export function getLcpPreloadSrcset(src: string): string {
     return `${avifSrcset}, ${src} ${entry.width}w`
   }
   return avifSrcset
+}
+
+export function getHeroBackgroundStyle(src: string, preferredWidth = 640) {
+  const url = getVariantUrl(src, 'avif', preferredWidth)
+  return {
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.55)), url(${url})`,
+    backgroundSize: 'cover' as const,
+    backgroundPosition: 'center' as const,
+    backgroundRepeat: 'no-repeat' as const,
+  }
 }
 
 export { FORMATS }

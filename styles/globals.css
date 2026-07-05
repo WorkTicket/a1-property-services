@@ -35,6 +35,22 @@
     @apply outline-2 outline-offset-2 outline-brand-gold;
   }
 
+  @keyframes hero-copy-reveal {
+    to { opacity: 1; }
+  }
+
+  .hero-copy-reveal {
+    opacity: 0;
+    animation: hero-copy-reveal 0.001ms 3s forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-copy-reveal {
+      opacity: 1;
+      animation: none;
+    }
+  }
+
   @keyframes fade-in-scale {
     0% { opacity: 0; transform: scale(0.92); }
     100% { opacity: 1; transform: scale(1); }
@@ -116,6 +132,12 @@
 
   .section {
     @apply py-20 md:py-28;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+
+  .stats-bar {
+    @apply border-y border-black/5 bg-white py-4 md:py-6;
   }
 
   .section-inner {
@@ -168,10 +190,6 @@
   .hero-subtitle {
     @apply text-base sm:text-lg leading-relaxed text-white;
     text-shadow: 0 1px 4px rgba(0,0,0,0.35);
-  }
-
-  .stats-bar {
-    @apply border-y border-black/5 bg-white py-4 md:py-6;
   }
 
   .stats-value {

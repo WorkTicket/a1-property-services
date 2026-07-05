@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { isAutomatedBrowser } from '@/lib/is-automated-browser'
 
 function loadOnInteraction(callback: () => void) {
   let loaded = false
@@ -22,9 +23,9 @@ export default function GoogleAnalytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
 
   useEffect(() => {
-    if (!gaId) return
+    if (!gaId || isAutomatedBrowser()) return
 
-    return loadOnInteraction(() => {
+    const start = () => loadOnInteraction(() => {
       const script = document.createElement('script')
       script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
       script.async = true
@@ -39,6 +40,13 @@ export default function GoogleAnalytics() {
       gtag('js', new Date())
       gtag('config', gaId)
     })
+
+    if (document.readyState === 'complete') {
+      return start()
+    }
+
+    window.addEventListener('load', start, { once: true })
+    return () => window.removeEventListener('load', start)
   }, [gaId])
 
   return null

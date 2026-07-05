@@ -6,14 +6,15 @@ import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, sit
 import { CTA_COPY } from '@/lib/cta'
 import { learnArticles } from '@/lib/learn'
 import { allServices } from '@/lib/services'
-import { cities } from '@/lib/cities'
 import { siteImages } from '@/lib/images'
 import { serviceFaqs } from '@/lib/services'
 import { getBlogsForLearn, getGuidesForBlog } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
+import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import Button from '@/components/ui/Button'
+import ServiceIcon from '@/components/ui/ServiceIcon'
 import CtaBanner from '@/components/sections/CtaBanner'
 
 type Props = { params: { slug: string } }
@@ -38,12 +39,17 @@ const categoryIcons: Record<string, typeof BookOpen> = {
   comparison: Scale,
 }
 
+const categoryColors: Record<string, string> = {
+  educational: 'bg-blue-100 text-blue-800',
+  'buying-guide': 'bg-amber-100 text-amber-800',
+  comparison: 'bg-purple-100 text-purple-800',
+}
+
 export default function LearnArticlePage({ params }: Props) {
   const article = learnArticles.find((a) => a.slug === params.slug)
   if (!article) notFound()
 
   const relatedServices = allServices.filter((s) => article.relatedServices.includes(s.slug))
-  const relatedCities = cities.filter((c) => article.relatedCities.includes(c.slug))
   const relatedFaqs = article.relatedFaqs.map((question) => {
     for (const [, faqs] of Object.entries(serviceFaqs)) {
       const found = faqs.find((f) => f.question === question)
@@ -120,89 +126,101 @@ export default function LearnArticlePage({ params }: Props) {
         </FadeIn>
       </article>
 
-      {(relatedServices.length > 0 || relatedCities.length > 0) && (
+      {relatedServices.length > 0 && (
         <section className="section bg-brand-stone">
-          <div className="section-inner-narrow">
-            {relatedServices.length > 0 && (
-              <div className="mb-10">
-                <h2 className="font-display text-2xl font-bold text-brand-dark">Related Services</h2>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {relatedServices.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="card flex items-center justify-between p-5 transition-shadow hover:shadow-md"
-                    >
-                      <span className="font-semibold text-brand-dark">{service.name}</span>
-                      <ChevronRight size={16} className="text-brand-green-800" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {relatedCities.length > 0 && (
-              <div className="mb-10">
-                <h2 className="font-display text-2xl font-bold text-brand-dark">Service Areas</h2>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {relatedCities.map((city) => (
-                    <Link
-                      key={city.slug}
-                      href={`/${city.slug}`}
-                      className="rounded-full bg-white px-4 py-2 text-sm font-medium text-brand-dark shadow-sm transition-colors hover:bg-brand-green-100 hover:text-brand-green-800"
-                    >
-                      {city.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {relatedFaqs.length > 0 && (
-              <div>
-                <h2 className="font-display text-2xl font-bold text-brand-dark">Frequently Asked Questions</h2>
-                <div className="mt-6 space-y-4">
-                  {relatedFaqs.map((faq, i) => (
-                    <div key={i} className="card p-5">
-                      <h3 className="font-semibold text-brand-dark">{faq?.question}</h3>
-                      <p className="mt-2 text-brand-body">{faq?.answer}</p>
+          <div className="section-inner">
+            <FadeIn className="mb-10 text-center">
+              <p className="section-eyebrow">Our Services</p>
+              <h2 className="section-heading mt-3">Related Services</h2>
+            </FadeIn>
+            <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedServices.map((service) => (
+                <StaggerItem key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="card flex h-full items-start gap-4 p-5 transition-all hover:-translate-y-0.5"
+                  >
+                    <div className="shrink-0 rounded-lg bg-brand-green-100 p-2.5">
+                      <ServiceIcon name={service.icon} size={18} />
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-brand-dark">{service.name}</p>
+                      <p className="mt-1 line-clamp-2 text-sm text-brand-body">{service.shortDesc}</p>
+                    </div>
+                    <ChevronRight size={16} className="mt-1 shrink-0 text-brand-green-700" />
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
         </section>
       )}
 
+      {relatedFaqs.length > 0 && (
+        <section className="section bg-white">
+          <FadeIn className="section-inner-narrow">
+            <div className="text-center">
+              <p className="section-eyebrow">Common Questions</p>
+              <h2 className="section-heading mt-3">Frequently Asked Questions</h2>
+            </div>
+            <div className="mt-10 space-y-4">
+              {relatedFaqs.map((faq, i) => (
+                <div key={i} className="card p-5">
+                  <h3 className="font-semibold text-brand-dark">{faq?.question}</h3>
+                  <p className="mt-2 text-brand-body">{faq?.answer}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </section>
+      )}
+
       <section className="section bg-white">
-        <FadeIn className="section-inner-narrow">
-          <h2 className="font-display text-2xl font-bold text-brand-dark">Explore More Resources</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="section-inner">
+          <FadeIn className="mb-10 text-center">
+            <p className="section-eyebrow">Knowledge Center</p>
+            <h2 className="section-heading mt-3">Explore More Resources</h2>
+          </FadeIn>
+          <StaggerContainer className="grid gap-8 lg:grid-cols-2">
             {learnArticles
               .filter((a) => a.slug !== article.slug)
               .slice(0, 6)
               .map((a) => {
                 const RelatedIcon = categoryIcons[a.category] || FileText
                 return (
-                  <Link
-                    key={a.slug}
-                    href={`/learn/${a.slug}`}
-                    className="card p-5 transition-shadow hover:shadow-md"
-                  >
-                    <RelatedIcon size={18} className="text-brand-green-800" />
-                    <h3 className="mt-3 font-semibold text-brand-dark">{a.title}</h3>
-                    <p className="mt-1 text-sm text-brand-body">{a.readingTime} read</p>
-                  </Link>
+                  <StaggerItem key={a.slug}>
+                    <Link href={`/learn/${a.slug}`} className="card group block p-8 transition-shadow hover:shadow-lg">
+                      <div className="flex items-start gap-4">
+                        <div className="rounded-lg bg-brand-green-100 p-3">
+                          <RelatedIcon size={24} className="text-brand-green-800" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2">
+                            <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[a.category]}`}>
+                              {a.categoryLabel}
+                            </span>
+                            <span className="text-xs text-brand-body/60">{a.readingTime} read</span>
+                          </div>
+                          <h3 className="mt-3 text-xl font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
+                            {a.title}
+                          </h3>
+                          <p className="mt-2 leading-relaxed text-brand-body">{a.excerpt}</p>
+                          <span className="link-cta-md group mt-4 inline-flex items-center gap-1">
+                            Read Guide <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </StaggerItem>
                 )
               })}
-          </div>
-          <div className="mt-8 text-center">
+          </StaggerContainer>
+          <FadeIn className="mt-8 text-center" delay={0.05}>
             <Button href="/learn">
               View All Resources <ChevronRight className="h-4 w-4" />
             </Button>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        </div>
       </section>
 
       <RelatedContent groups={[

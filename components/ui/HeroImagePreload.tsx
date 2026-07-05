@@ -10,15 +10,30 @@ export default function HeroImagePreload({
   src,
   sizes = IMAGE_SIZES.hero,
 }: HeroImagePreloadProps) {
+  const srcset = getLcpPreloadSrcset(src)
+
   return (
-    <link
-      rel="preload"
-      as="image"
-      href={getLcpPreloadHref(src)}
-      imageSrcSet={getLcpPreloadSrcset(src)}
-      imageSizes={sizes}
-      type="image/avif"
-      fetchPriority="high"
-    />
+    <>
+      <link
+        rel="preload"
+        as="image"
+        href={getLcpPreloadHref(src, 640)}
+        imageSrcSet={srcset}
+        imageSizes={sizes}
+        type="image/avif"
+        fetchPriority="high"
+        media="(max-width: 768px)"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href={getLcpPreloadHref(src, 1280)}
+        imageSrcSet={srcset}
+        imageSizes={sizes}
+        type="image/avif"
+        fetchPriority="high"
+        media="(min-width: 769px)"
+      />
+    </>
   )
 }

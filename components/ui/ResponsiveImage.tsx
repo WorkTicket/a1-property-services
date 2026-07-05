@@ -56,7 +56,7 @@ export default function ResponsiveImage({
         width={fill ? dimensions?.width : width}
         height={fill ? dimensions?.height : height}
         loading={priority ? 'eager' : 'lazy'}
-        decoding={priority ? 'sync' : 'async'}
+        decoding="async"
         fetchPriority={priority ? 'high' : 'auto'}
         className={imgClass}
         style={imgStyle}

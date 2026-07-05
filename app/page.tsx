@@ -12,10 +12,10 @@ import RelatedContent from '@/components/sections/RelatedContent'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
-import HeroTitle from '@/components/ui/HeroTitle'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
-import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
+import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
+import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 
 const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
@@ -114,22 +114,23 @@ export default function HomePage() {
       />
 
       {/* HERO — photo background, left-aligned, trust bar below content */}
-      <section className="relative flex min-h-[100vh] flex-col overflow-hidden md:min-h-[105vh]">
+      <section
+        className="relative flex min-h-[100vh] flex-col md:min-h-[105vh]"
+        style={{ minHeight: '100dvh', height: '100dvh', position: 'relative', display: 'flex', flexDirection: 'column' }}
+      >
         <LcpHeroImage
           src={siteImages.homeHero}
           alt="Professional landscaping project in Cedar Falls, Iowa"
         />
-        <div className="absolute inset-0 bg-hero-overlay" />
+        <div className="absolute inset-0 bg-black/45 pointer-events-none" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-8 pt-28 sm:px-6 lg:px-8">
           <div>
-            <p className="hero-eyebrow">CEDAR FALLS &middot; IOWA &middot; EST. 2009</p>
-            <h1 className="hero-title mt-4 max-w-4xl">
-              <HeroTitle>Outdoor Spaces|Cedar Valley Homeowners Are Proud Of</HeroTitle>
-            </h1>
-            <p className="hero-subtitle mt-5 max-w-[640px]">
-              We design, build, and maintain yards you&rsquo;ll actually use. Paver patios, retaining walls, full installs. Whatever your property needs.
-            </p>
+            <HeroCopyDeferred
+              eyebrow="CEDAR FALLS · IOWA · EST. 2009"
+              title="Outdoor Spaces|Cedar Valley Homeowners Are Proud Of"
+              subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact">
                 {CTA_COPY.quote}

@@ -1,6 +1,6 @@
-import HeroTitle from '@/components/ui/HeroTitle'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
+import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
 
 const heroSizeClasses = {
   default: 'min-h-[50vh] md:min-h-[55vh]',
@@ -32,6 +32,7 @@ export default function PageHero({
   return (
     <section
       className={`relative overflow-hidden flex items-center justify-center pt-24 pb-12 ${heroSizeClasses[size]} text-white ${usePhoto ? '' : 'bg-hero-gradient'}`}
+      style={usePhoto ? { minHeight: '50vh', position: 'relative' } : undefined}
     >
       {usePhoto && imageSrc && (
         <>
@@ -40,21 +41,30 @@ export default function PageHero({
             src={imageSrc}
             alt={imageAlt}
           />
-          <div className="absolute inset-0 bg-hero-overlay" />
         </>
       )}
 
       <div
         className={`relative z-10 mx-auto w-full max-w-3xl px-4 sm:px-6 ${isLeft ? 'max-w-7xl text-left lg:px-8' : 'text-center'}`}
       >
-        <p className="hero-eyebrow">{eyebrow}</p>
-        <h1 className="hero-title mt-4">
-          <HeroTitle>{title}</HeroTitle>
-        </h1>
-        {subtitle && (
-          <p className={`hero-subtitle mt-4 md:mt-6 ${isLeft ? 'max-w-xl' : 'mx-auto max-w-xl'}`}>
-            {subtitle}
-          </p>
+        {usePhoto ? (
+          <HeroCopyDeferred
+            eyebrow={eyebrow}
+            title={title}
+            subtitle={subtitle}
+            align={isLeft ? 'left' : 'center'}
+            subtitleMaxWidth="36rem"
+          />
+        ) : (
+          <>
+            <p className="hero-eyebrow">{eyebrow}</p>
+            <h1 className="hero-title mt-4">{title}</h1>
+            {subtitle && (
+              <p className={`hero-subtitle mt-4 md:mt-6 ${isLeft ? 'max-w-xl' : 'mx-auto max-w-xl'}`}>
+                {subtitle}
+              </p>
+            )}
+          </>
         )}
       </div>
     </section>

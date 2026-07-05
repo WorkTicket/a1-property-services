@@ -96,7 +96,9 @@ export default function ServicePage({ params }: Props) {
   const problems = serviceProblemSolutions[service.slug] ?? []
   const faqs = serviceFaqs[service.slug] ?? []
   const processSteps = serviceProcessSteps[service.slug] ?? defaultProcessSteps
-  const materialsArray = serviceMaterials[service.slug] ?? []
+  const materialsArray = [...(serviceMaterials[service.slug] ?? [])].sort(
+    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
+  )
   const comparisonMeta = serviceComparisonMeta[service.slug] ?? defaultComparisonMeta
   const equipmentArray = serviceEquipment[service.slug] ?? []
   const extended = serviceExtendedContent[service.slug]
@@ -358,7 +360,7 @@ export default function ServicePage({ params }: Props) {
                     <h3 className="text-xl font-bold text-brand-dark">{material.name}</h3>
                     {material.recommended ? (
                       <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold">
-                        Recommended · Best for Iowa
+                        Recommended
                       </span>
                     ) : null}
                   </div>
