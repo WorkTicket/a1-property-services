@@ -6,28 +6,28 @@ const ROOT = path.resolve('public/images')
 const OUTPUT_DIR = path.join(ROOT, 'generated')
 const MANIFEST_PATH = path.join(ROOT, 'image-manifest.json')
 
-const BREAKPOINTS = [480, 640, 768, 1024, 1280, 1536, 1920]
+const BREAKPOINTS = [480, 640, 768, 1024, 1280, 1536, 1920, 2560]
 const BLUR_SIZE = 20
 
 const FORMAT_CONFIG = {
-  avif: { quality: 58, effort: 5, lossless: false },
+  avif: { quality: 62, effort: 5, lossless: false },
   webp: { quality: 85, effort: 6 },
   jpeg: { quality: 85, mozjpeg: true },
 }
 
 const HERO_FORMAT_CONFIG = {
-  avif: { quality: 32, effort: 8, lossless: false },
-  webp: { quality: 75, effort: 6 },
-  jpeg: { quality: 75, mozjpeg: true },
+  avif: { quality: 50, effort: 8, lossless: false },
+  webp: { quality: 85, effort: 6 },
+  jpeg: { quality: 85, mozjpeg: true },
 }
 
 const GALLERY_FORMAT_CONFIG = {
-  avif: { quality: 55, effort: 7, lossless: false },
-  webp: { quality: 82, effort: 6 },
-  jpeg: { quality: 82, mozjpeg: true },
+  avif: { quality: 60, effort: 7, lossless: false },
+  webp: { quality: 85, effort: 6 },
+  jpeg: { quality: 85, mozjpeg: true },
 }
 
-const HERO_MAX_WIDTH = 1920
+const HERO_MAX_WIDTH = 2560
 
 const HERO_NAMES = new Set([
   'hero-background-image', 'contact-page-hero', 'paver-patio-hero',

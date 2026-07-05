@@ -21,7 +21,7 @@ export default function LcpHeroImage({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={getVariantUrl(src, 'avif', 640)}
+      src={getVariantUrl(src, 'avif', 1536)}
       srcSet={avifSrcset}
       sizes={sizes}
       alt={alt}

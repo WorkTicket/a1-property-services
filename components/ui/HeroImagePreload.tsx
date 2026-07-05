@@ -27,7 +27,7 @@ export default function HeroImagePreload({
       <link
         rel="preload"
         as="image"
-        href={getLcpPreloadHref(src, 1280)}
+        href={getLcpPreloadHref(src, 1920)}
         imageSrcSet={srcset}
         imageSizes={sizes}
         type="image/avif"
