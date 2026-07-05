@@ -179,7 +179,7 @@ export default function HomePage() {
             <p className="section-eyebrow">What We Do</p>
             <h2 className="section-heading mt-3">Our Services</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Weekly mowing, a new patio, a full yard redo. We handle it for Cedar Valley homeowners.
+              Weekly mowing, retaining walls, a new patio, a full yard redo. We handle it for Cedar Valley homeowners.
             </p>
           </FadeIn>
 

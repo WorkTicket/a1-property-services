@@ -29,7 +29,7 @@ export const cities: City[] = [
     population: '40,000+',
     description:
       'Professional landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, IA.',
-    heroEyebrow: 'Cedar Falls · Iowa',
+    heroEyebrow: 'Cedar Falls \u00b7 Iowa',
     heroTitle: 'Cedar Falls Landscaping|Professionals',
     heroSubtitle:
       'Full-service landscaping, hardscaping, and lawn care trusted by Cedar Falls homeowners since 2009.',
@@ -50,13 +50,13 @@ export const cities: City[] = [
       'Cedar Falls homeowners hire A1 Property Services for work that holds up through Iowa winters and still looks good every season. Retaining walls on sloped lots, paver patios for the backyard, and everything in between.',
     ],
     introBody2: [
-      'We\'re based here in Cedar Falls, so we know the soil, the drainage, and what grows in Black Hawk County. Weekly mowing, a full yard install, or emergency snow removal. We\'re your local crew.',
+      'We\u2019re based here in Cedar Falls, so we know the soil, the drainage, and what grows in Black Hawk County. Weekly mowing, a full yard install, or emergency snow removal. We\u2019re your local crew.',
     ],
     servicesIntro:
       'We offer a full range of landscaping, hardscaping, and property services for Cedar Falls homeowners and businesses.',
     uniqueContent: {
       heading: 'Why Cedar Falls Homeowners Choose A1',
-      body: 'Cedar Falls has its own character, from the historic neighborhoods near the college to the newer builds on the north end. We\'ve worked in all of them. Our crews show up on time, talk straight, and don\'t leave until the job is done right. That\'s kept us busy here for over 15 years.',
+      body: 'Cedar Falls has its own character, from the historic neighborhoods near the college to the newer builds on the north end. We\u2019ve worked in all of them. Our crews show up on time, talk straight, and don\u2019t leave until the job is done right. That\u2019s kept us busy here for over 15 years.',
     },
     faqs: [
       {
@@ -138,47 +138,47 @@ export const cities: City[] = [
     county: 'Black Hawk',
     population: '2,200+',
     description:
-      'Landscaping, retaining walls, and lawn care in Hudson, IA. Small-town service with professional results.',
+      'Landscaping and lawn care in Hudson, IA. We keep Hudson properties looking sharp year-round.',
     heroEyebrow: 'Hudson \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Hudson, Iowa',
+    heroTitle: 'Hudson Lawn Care|and Landscaping',
     heroSubtitle:
-      'Hudson homeowners trust us for quality landscaping, hardscaping, and lawn care that fits their property.',
+      'Hudson is growing fast, and we are right there with you. New construction landscaping, lawn establishment, and ongoing maintenance from a crew that is minutes away.',
     metaTitle: 'Landscaping in Hudson, IA | A1 Property Services',
     metaDescription:
-      'Hudson IA landscaping. Retaining walls, paver patios, lawn care, tree service and more. Small town service, solid results. Free estimates.',
+      'Looking for landscaping in Hudson, IA? A1 Property Services handles retaining walls, paver patios, lawn care, tree service, and more. Free estimates.',
     metaKeywords: [
-      'landscaping hudson ia',
-      'hudson iowa landscaping',
-      'landscaper hudson ia',
-      'retaining wall hudson',
-      'lawn care hudson iowa',
-      'hardscaping hudson',
+      'hudson ia landscaping',
+      'hudson iowa lawn care',
+      'landscaper hudson',
+      'hudson retaining walls',
+      'hudson tree service',
+      'new construction landscaping hudson',
     ],
-    introHeading: 'Hudson Landscaping Done Right',
+    introHeading: 'Hudson Landscapers That Show Up',
     introBody: [
-      'Hudson is a close-knit town, and we treat every job there like it\'s our own yard. Retaining wall for a slope, paver patio for the backyard, or regular mowing. Same crew, same standards.',
+      'Hudson has seen a lot of new construction over the last several years, and we have been there for a lot of it. Fresh lots need grading, seeding, and planting. Established homes need seasonal cleanups and tree work. We do both, and we do them a few minutes up the road.',
     ],
     introBody2: [
-      'We\'re just up the road from Hudson, so travel time is short and we can get there fast when you need us. Spring cleanups, mulching, full yard installs, snow removal.',
+      'Our trucks roll from Cedar Falls through Hudson every week. Regular mowing, spring and fall cleanups, paver patios, retaining walls. If your yard needs attention, we can get eyes on it fast.',
     ],
     servicesIntro:
-      'Professional landscaping and hardscaping services for Hudson homeowners.',
+      'Landscaping and hardscaping services for Hudson homes, from new builds to longtime properties.',
     uniqueContent: {
-      heading: 'Small Town Service, Professional Results',
-      body: 'Hudson folks value reliability, and that\'s what we bring. We show up when we say we will, talk straight, and don\'t cut corners. Word gets around in a small town, and we\'re proud of our name here.',
+      heading: 'The Hudson Crew',
+      body: 'What sets us apart in Hudson is proximity. We are close enough that a quote visit or last-minute service call is never a big deal. Hudson homeowners also tend to be particular about their properties, which suits us fine\u2014we are picky too.',
     },
     faqs: [
       {
-        q: 'Do you serve Hudson, IA?',
-        a: 'Yes. A1 Property Services provides landscaping, hardscaping, and lawn care services to Hudson and the surrounding Black Hawk County area.',
+        q: 'Do you work on new construction homes in Hudson?',
+        a: 'Yes. We do a lot of new construction landscaping in Hudson. Grading, seeding, hydroseeding, sod, and bed installation. Call us before the builder hands off the lot so we can get the yard established right away.',
       },
       {
-        q: 'What landscaping services do you offer in Hudson?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation, maintenance, hydroseeding, and snow removal in Hudson.',
+        q: 'How far in advance do I need to book spring cleanups in Hudson?',
+        a: 'March and April fill up quick. Reach out in late winter to secure your spot. Existing maintenance customers get priority scheduling.',
       },
       {
-        q: 'How do I get a quote for my Hudson property?',
-        a: 'Call us at (319) 464-1889 or fill out our online form. We provide free estimates for Hudson properties and typically respond within 24 hours.',
+        q: 'My Hudson yard is mostly clay. Can you work with that?',
+        a: 'We deal with Black Hawk County clay on every job. Proper grading, amended topsoil, and the right plant selection make all the difference. We will walk you through what works for your specific lot.',
       },
     ],
   },
@@ -188,46 +188,244 @@ export const cities: City[] = [
     county: 'Black Hawk',
     population: '4,500+',
     description:
-      'Landscaping, retaining walls, and lawn care in Evansdale, IA. Professional service for your property.',
+      'Landscaping and property services for Evansdale, IA. Residential and commercial.',
     heroEyebrow: 'Evansdale \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Evansdale, Iowa',
+    heroTitle: 'Evansdale Property|Maintenance',
     heroSubtitle:
-      'Reliable landscaping and hardscaping services for Evansdale homeowners and businesses.',
+      'Lawn mowing, tree trimming, retaining walls, and snow removal for Evansdale homes and businesses. Free quotes.',
     metaTitle: 'Landscaping in Evansdale, IA | A1 Property Services',
     metaDescription:
-      'Evansdale IA landscaping. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for Evansdale properties.',
+      'Evansdale landscaping company. Lawn care, retaining walls, paver patios, tree service, and snow removal for Evansdale, Gilbertville, and Black Hawk County.',
     metaKeywords: [
+      'evansdale landscaping',
+      'evansdale lawn care',
+      'evansdale retaining walls',
       'landscaping evansdale ia',
-      'evansdale iowa landscaping',
-      'landscaper evansdale',
-      'retaining wall evansdale',
-      'lawn care evansdale',
+      'evansdale snow removal',
     ],
-    introHeading: 'Evansdale Landscaping, Local Crew',
+    introHeading: 'Evansdale Landscaping That Fits',
     introBody: [
-      'Evansdale homeowners and businesses count on A1 Property Services for landscaping that makes their properties look good. Same quality work we bring to every job in the Cedar Valley.',
+      'Evansdale sits right in the middle of everything, and we serve it like we serve our closest neighbors. Mowing, trimming, tree work, hardscaping. Whatever your property needs, we bring the same equipment and crew standards that work across the Cedar Valley.',
     ],
     introBody2: [
-      'From lawn maintenance and tree service to retaining walls and paver patios, we handle projects of every size in Evansdale. Our crews are local, experienced, and committed to doing the job right the first time.',
+      'Busy schedule and just need someone to keep the lawn in shape through the summer? We handle weekly mowing for a lot of Evansdale homeowners. Need a full yard redesign? We do that too.',
     ],
     servicesIntro:
-      'Complete landscaping and hardscaping services for Evansdale properties.',
+      'Full landscaping and hardscaping services for Evansdale properties.',
     uniqueContent: {
-      heading: 'Dependable Landscaping in Evansdale',
-      body: 'We\'ve been serving Evansdale for years and know the area well. Ongoing lawn care, a one-time yard install, or snow removal for your driveway and walks. Reliable work at fair prices.',
+      heading: 'No-Nonsense Service in Evansdale',
+      body: 'We have been working in Evansdale long enough to know the area well. The lots here are practical\u2014established trees, moderate slopes, and homeowners who want results without the sales pitch. Straightforward work, fair pricing, done right.',
     },
     faqs: [
       {
-        q: 'Does A1 Property Services work in Evansdale?',
-        a: 'Yes. We provide full landscaping, hardscaping, and lawn care services to Evansdale and the surrounding area.',
+        q: 'Do you offer weekly lawn mowing in Evansdale?',
+        a: 'Yes. Weekly and biweekly mowing schedules are available. We handle trimming, blowing, and weed control as part of our maintenance plans.',
       },
       {
-        q: 'What services do you offer in Evansdale?',
-        a: 'Retaining walls, paver patios, lawn care and mowing, tree service, landscape installation, maintenance, hydroseeding, and snow removal.',
+        q: 'Can you handle commercial properties in Evansdale?',
+        a: 'We maintain several commercial accounts in Evansdale. Mowing, pruning, snow removal, and general property upkeep. Call us for a commercial proposal.',
       },
       {
-        q: 'How do I schedule service in Evansdale?',
-        a: 'Call (319) 464-1889 or fill out our online form. We provide free estimates and typically respond within 24 hours.',
+        q: 'How do I get a quote for hardscaping in Evansdale?',
+        a: 'Call (319) 464-1889 or fill out our online form. We will come out, look at the space, and give you a written estimate within 24 hours.',
+      },
+    ],
+  },
+  {
+    slug: 'waverly',
+    name: 'Waverly',
+    county: 'Bremer',
+    population: '10,400+',
+    description:
+      'Full-service landscaping, retaining walls, and paver patios in Waverly, IA.',
+    heroEyebrow: 'Waverly \u00b7 Iowa',
+    heroTitle: 'Waverly Landscaping|and Hardscaping',
+    heroSubtitle:
+      'Serving Waverly homeowners and businesses with full landscaping, hardscaping, lawn care, and snow removal.',
+    metaTitle: 'Landscaping in Waverly, IA | A1 Property Services',
+    metaDescription:
+      'Waverly IA landscaping company. Retaining walls, paver patios, lawn care, tree service, and more. Licensed and insured. Free estimates for Bremer County properties.',
+    metaKeywords: [
+      'waverly ia landscaping',
+      'waverly retaining walls',
+      'waverly paver patios',
+      'lawn care waverly iowa',
+      'landscaper waverly',
+      'bremer county landscaping',
+    ],
+    introHeading: 'Landscaping across Waverly',
+    introBody: [
+      'Waverly has a mix of older historic homes near downtown and newer developments pushing out toward the edges of town. We work in both. Retaining walls are common on the sloped lots near the river. Paver patios are popular in the newer neighborhoods. Lawn care is something almost every homeowner needs.',
+    ],
+    introBody2: [
+      'We are based in Cedar Falls but run routes to Waverly multiple times a week during the growing season. That means we can get a crew on your property without long lead times.',
+    ],
+    servicesIntro:
+      'Residential and commercial landscaping services for Waverly and Bremer County.',
+    uniqueContent: {
+      heading: 'A1 in Waverly',
+      body: 'Waverly is big enough to have its own character and growing fast enough to keep us busy. We treat every job there the same way: assess the site, give a clear price, do the work, and make sure you are happy before we roll out.',
+    },
+    faqs: [
+      {
+        q: 'Do you install retaining walls on sloped Waverly lots?',
+        a: 'Yes. We build segmental retaining walls using Keystone and Versa-Lok systems. We handle drainage behind the wall so you do not get water issues down the road.',
+      },
+      {
+        q: 'What is the best time to seed a new lawn in Waverly?',
+        a: 'Late summer to early fall is ideal for cool-season grasses in Bremer County. Spring is second best. We also offer hydroseeding for larger areas.',
+      },
+      {
+        q: 'Do you serve all of Waverly?',
+        a: 'Yes. Downtown, the historic district, the developments on the north and south ends, and commercial properties throughout the city.',
+      },
+    ],
+  },
+  {
+    slug: 'denver',
+    name: 'Denver',
+    county: 'Bremer',
+    population: '1,900+',
+    description:
+      'Lawn care, landscaping, and hardscaping for Denver, IA. Small town, solid work.',
+    heroEyebrow: 'Denver \u00b7 Iowa',
+    heroTitle: 'Denver Landscaping|and Maintenance',
+    heroSubtitle:
+      'Denver homeowners trust us for lawn mowing, retaining walls, paver patios, and tree service. Free estimates.',
+    metaTitle: 'Landscaping in Denver, IA | A1 Property Services',
+    metaDescription:
+      'Denver IA landscaping. Retaining walls, paver patios, lawn care, tree service, and property maintenance. Free estimates for Denver and Bremer County.',
+    metaKeywords: [
+      'denver ia landscaping',
+      'denver iowa lawn care',
+      'denver retaining walls',
+      'denver tree service',
+      'landscaper denver ia',
+    ],
+    introHeading: 'Denver Landscaping. No Detours.',
+    introBody: [
+      'Denver is the kind of town where people know each other, and your yard is part of your reputation. We take that seriously. Whether you need a retaining wall replaced, a patio put in, or just want someone reliable to keep the grass cut, we have you covered.',
+    ],
+    introBody2: [
+      'We run through Denver regularly during the season. A quick call gets you on the schedule without a hassle.',
+    ],
+    servicesIntro:
+      'Professional landscaping and hardscaping services for Denver homeowners.',
+    uniqueContent: {
+      heading: 'Bringing Cedar Valley Quality to Denver',
+      body: 'Denver may be small, but the work we do there is held to the same standard as our biggest Cedar Falls projects. Good materials, proper installation, crews that care about the finished look. Word travels fast in a small town, and we want the word to be good.',
+    },
+    faqs: [
+      {
+        q: 'Do you come to Denver for small jobs?',
+        a: 'Yes. If it is yard work, we do it. Mowing, trimming, mulching, seeding, tree trimming. No job is too small if it is in our service area.',
+      },
+      {
+        q: 'My retaining wall in Denver is bowing. Can you replace it?',
+        a: 'We can. We tear out failing walls, prep the base properly, and install a new system that will handle freeze-thaw cycles without shifting.',
+      },
+      {
+        q: 'How do I get on the schedule in Denver?',
+        a: 'Call (319) 464-1889 or fill out our online quote form. We will get back to you within 24 hours.',
+      },
+    ],
+  },
+  {
+    slug: 'jesup',
+    name: 'Jesup',
+    county: 'Buchanan',
+    population: '2,900+',
+    description:
+      'Landscaping, hardscaping, and lawn care in Jesup, IA, and Buchanan County.',
+    heroEyebrow: 'Jesup \u00b7 Iowa',
+    heroTitle: 'Jesup Landscaping|Services',
+    heroSubtitle:
+      'Lawn maintenance, retaining walls, paver patios, and tree service for Jesup homes and businesses.',
+    metaTitle: 'Landscaping in Jesup, IA | A1 Property Services',
+    metaDescription:
+      'Jesup IA landscaping. Retaining walls, paver patios, lawn care, tree service, and snow removal. Free estimates for Jesup and Buchanan County properties.',
+    metaKeywords: [
+      'jesup ia landscaping',
+      'jesup lawn care',
+      'jesup retaining wall',
+      'landscaper jesup',
+      'jesup tree service',
+      'buchanan county landscaping',
+    ],
+    introHeading: 'Jesup Landscaping, Buchanan County',
+    introBody: [
+      'Jesup sits right on the Black Hawk-Buchanan county line, and we serve it the same way we serve the rest of the Cedar Valley. Retaining walls, paver patios, lawn care, and tree service. Jesup homeowners get the same quality, same pricing, and same crew.',
+    ],
+    introBody2: [
+      'We have done everything in Jesup from full yard installations to simple weekly mowing. If your property needs work, we can handle it.',
+    ],
+    servicesIntro:
+      'Complete landscaping and hardscaping services for Jesup homes and businesses.',
+    uniqueContent: {
+      heading: 'Why Jesup?',
+      body: 'Jesup sits at a crossroads, and we have been covering it for years. Homeowners there want reliable work and fair pricing. That is our specialty. We lay out what needs to happen, quote it honestly, and deliver on schedule.',
+    },
+    faqs: [
+      {
+        q: 'How long have you been working in Jesup?',
+        a: 'We have served Jesup for over a decade. Many of our clients there are referrals from neighbors who have used us for years.',
+      },
+      {
+        q: 'Do you do drainage work in Jesup?',
+        a: 'Yes. Jesup properties can have drainage issues after heavy rain. French drains, downspout extensions, and grading corrections are common fixes we handle regularly.',
+      },
+      {
+        q: 'Can you quote a paver patio in Jesup?',
+        a: 'Absolutely. Call us or fill out the form and we will come measure the space, discuss material options, and give you a firm price.',
+      },
+    ],
+  },
+  {
+    slug: 'parkersburg',
+    name: 'Parkersburg',
+    county: 'Butler',
+    population: '2,000+',
+    description:
+      'Landscaping, retaining walls, and lawn care in Parkersburg, IA. Built Butler County tough.',
+    heroEyebrow: 'Parkersburg \u00b7 Iowa',
+    heroTitle: 'Parkersburg Landscaping|Built to Last',
+    heroSubtitle:
+      'Retaining walls, paver patios, lawn care, and property maintenance for Parkersburg and Butler County.',
+    metaTitle: 'Landscaping in Parkersburg, IA | A1 Property Services',
+    metaDescription:
+      'Parkersburg IA landscaping. Retaining walls, paver patios, lawn care, tree service, and more. Serving Parkersburg and Butler County. Free estimates.',
+    metaKeywords: [
+      'parkersburg landscaping',
+      'parkersburg ia lawn care',
+      'parkersburg retaining wall',
+      'butler county landscaping',
+      'landscaper parkersburg',
+    ],
+    introHeading: 'Landscaping for Parkersburg Properties',
+    introBody: [
+      'Parkersburg is a community that knows the value of solid work. After everything this town has rebuilt, homeowners here do not settle for less than what lasts. That is exactly the kind of work we do. Retaining walls with proper drainage, patios on compacted base, and trees planted to thrive in Butler County soil.',
+    ],
+    introBody2: [
+      'We serve Parkersburg year-round. Mowing and maintenance through the summer, leaf cleanup in the fall, snow removal in the winter, and new installations in the spring.',
+    ],
+    servicesIntro:
+      'Full landscaping and hardscaping services for Parkersburg homeowners.',
+    uniqueContent: {
+      heading: 'Work That Holds Up',
+      body: 'Parkersburg residents do not have time for callbacks or shoddy work. Neither do we. We build hardscapes that survive freeze-thaw cycles, install plants suited to the local climate, and keep properties looking clean and professional all year.',
+    },
+    faqs: [
+      {
+        q: 'Do you do snow removal in Parkersburg?',
+        a: 'Yes. We provide commercial and residential snow plowing and shoveling in Parkersburg. Seasonal contracts available.',
+      },
+      {
+        q: 'What kind of retaining walls do you install?',
+        a: 'We install segmental retaining wall blocks that interlock and handle heavy loads. Clean, straight lines with drainage aggregate behind the wall.',
+      },
+      {
+        q: 'How do I start a landscaping project in Parkersburg?',
+        a: 'Call (319) 464-1889 or submit the online form. We will come take a look, talk through your options, and give you a written estimate.',
       },
     ],
   },
@@ -237,38 +435,38 @@ export const cities: City[] = [
     county: 'Black Hawk',
     population: '2,200+',
     description:
-      'Landscaping, retaining walls, and lawn care in La Porte City, IA. Professional service for your property.',
+      'Landscaping, lawn care, and hardscaping in La Porte City, IA. Quality work, fair price.',
     heroEyebrow: 'La Porte City \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in La Porte City, Iowa',
+    heroTitle: 'La Porte City|Landscaping Services',
     heroSubtitle:
-      'Quality landscaping and hardscaping services for La Porte City homeowners.',
+      'Lawn care, retaining walls, paver patios, and tree service for La Porte City homeowners.',
     metaTitle: 'Landscaping in La Porte City, IA | A1 Property Services',
     metaDescription:
-      'La Porte City IA landscaping. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for La Porte City properties.',
+      'La Porte City IA landscaping. Retaining walls, paver patios, lawn care, tree service, and snow removal. Free estimates for La Porte City properties.',
     metaKeywords: [
-      'landscaping la porte city ia',
       'la porte city landscaping',
-      'landscaper la porte city iowa',
-      'retaining wall la porte city',
-      'lawn care la porte city',
+      'la porte city lawn care',
+      'la porte city retaining walls',
+      'landscaper la porte city',
+      'la porte city ia landscaping',
     ],
     introHeading: 'La Porte City Landscaping You Can Count On',
     introBody: [
-      'La Porte City values hard work and follow-through, and that\'s how we run every job there. Retaining walls, paver patios, regular mowing. We treat your property like our own.',
+      'La Porte City has a strong local identity, and we respect that. When we work there, we treat each property like it is in our own neighborhood. Retaining walls, paver patios, lawn care, and tree service. Same equipment, same crew, same standard.',
     ],
     introBody2: [
-      'We serve La Porte City with the same equipment and crews that work our Cedar Falls jobs. Full yard build or seasonal cleanups, we\'ve got you covered.',
+      'We run regular routes through La Porte City during the season. New projects or ongoing maintenance, we can fit you in.',
     ],
     servicesIntro:
       'Full landscaping and hardscaping services for La Porte City homeowners.',
     uniqueContent: {
       heading: 'Bringing Professional Landscaping to La Porte City',
-      body: 'Homeowners in La Porte City want good work without the runaround. That\'s what we give you. Clear estimates, honest communication, and finished projects that look good and last.',
+      body: 'La Porte City homeowners want clear communication and solid execution. We give them both. We walk the property with you, explain what we recommend and why, then deliver it on time and on budget.',
     },
     faqs: [
       {
-        q: 'Do you provide landscaping services in La Porte City?',
-        a: 'Yes. A1 Property Services serves La Porte City with retaining walls, paver patios, lawn care, tree service, and more.',
+        q: 'Do you provide hydroseeding in La Porte City?',
+        a: 'Yes. Hydroseeding is a great option for establishing new lawns on larger lots. We can do it in La Porte City as part of a full yard install or on its own.',
       },
       {
         q: 'How far in advance do I need to book?',
@@ -286,244 +484,46 @@ export const cities: City[] = [
     county: 'Grundy',
     population: '1,300+',
     description:
-      'Landscaping, retaining walls, and lawn care in Dike, IA. Professional service for your property.',
+      'Lawn care, landscaping, and hardscaping for Dike, IA, and Grundy County.',
     heroEyebrow: 'Dike \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Dike, Iowa',
+    heroTitle: 'Dike Landscaping|and Lawn Care',
     heroSubtitle:
-      'Dependable landscaping and hardscaping services for Dike homeowners.',
+      'Retaining walls, paver patios, mowing, and seasonal maintenance for Dike homeowners.',
     metaTitle: 'Landscaping in Dike, IA | A1 Property Services',
     metaDescription:
-      'Dike IA landscaping. Retaining walls, paver patios, lawn care, tree service and more. Serving Grundy County. Free estimates.',
+      'Dike IA landscaping. Retaining walls, paver patios, lawn care, tree service, and more. Serving Grundy County. Free estimates.',
     metaKeywords: [
-      'landscaping dike ia',
-      'dike iowa landscaping',
-      'landscaper dike ia',
-      'retaining wall dike',
-      'lawn care dike iowa',
+      'dike ia landscaping',
+      'dike lawn care',
+      'dike retaining walls',
+      'grundy county landscaping',
+      'landscaper dike',
     ],
     introHeading: 'Dike Landscaping, Trusted Since 2009',
     introBody: [
-      'Dike may be a smaller community, but we bring the same professional landscaping services here that we provide across the entire Cedar Valley. From regular lawn mowing and maintenance to structural retaining walls and custom paver patios, we treat every Dike property with care.',
+      'Dike homeowners want their yards looking good without having to chase contractors. We make it easy. One call gets you on the schedule for mowing, trimming, seasonal cleanups, or a full hardscape project. We handle the details so you do not have to.',
     ],
     introBody2: [
-      'As a locally owned company based in Cedar Falls, we know the landscape challenges that Grundy County properties face. We offer practical solutions that work for your property and your budget.',
+      'Grundy County soil is different from Black Hawk, and we account for that in every job we do there. Proper amendments, the right plants, and base prep that holds up.',
     ],
     servicesIntro:
       'Complete landscaping and hardscaping services for Dike and Grundy County.',
     uniqueContent: {
       heading: 'Professional Landscaping in Dike',
-      body: 'Dike homeowners deserve the same quality work as anywhere else. Hydroseeding a new lawn, building a paver patio, whatever you need. Same reliability that built our name across the Cedar Valley.',
+      body: 'Dike may be one of the smaller communities we serve, but the work we do there gets the same attention as our biggest projects. Good work is good work, no matter the zip code.',
     },
     faqs: [
       {
-        q: 'Does A1 Property Services serve Dike, IA?',
-        a: 'Yes. We provide landscaping, hardscaping, and lawn care services to Dike and the surrounding Grundy County area.',
+        q: 'Do you travel to Dike from Cedar Falls?',
+        a: 'Yes. We cover Grundy County as part of our regular service area. Dike is about 20 minutes from our shop, and we run routes there weekly.',
       },
       {
-        q: 'What services do you offer in Dike?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, and snow removal.',
+        q: 'What is the most common project you do in Dike?',
+        a: 'Lawn maintenance is the most frequent, but we also do a lot of retaining wall and patio work for Dike homeowners looking to upgrade their outdoor space.',
       },
       {
         q: 'How can I get a quote for my Dike property?',
         a: 'Call us at (319) 464-1889 or fill out our online form. We provide free estimates for Dike properties.',
-      },
-    ],
-  },
-  {
-    slug: 'waverly',
-    name: 'Waverly',
-    county: 'Bremer',
-    population: '10,400+',
-    description:
-      'Professional landscaping, retaining walls, paver patios, and lawn care in Waverly, IA.',
-    heroEyebrow: 'Waverly \u00b7 Iowa',
-    heroTitle: 'Waverly Landscaping|Professionals',
-    heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care trusted by Waverly homeowners.',
-    metaTitle: 'Landscaping in Waverly, IA | A1 Property Services',
-    metaDescription:
-      'Waverly IA landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Bremer County properties.',
-    metaKeywords: [
-      'landscaping waverly ia',
-      'waverly iowa landscaping',
-      'landscaper waverly ia',
-      'retaining wall waverly',
-      'paver patio waverly',
-      'lawn care waverly iowa',
-    ],
-    introHeading: 'Waverly Landscaping for Bremer County',
-    introBody: [
-      'Waverly is a growing community with diverse properties, from historic homes near the downtown to newer developments on the edge of town. We bring our full range of landscaping services to Waverly: retaining walls for sloped lots, paver patios for backyard living, lawn care and mowing, tree service, and seasonal cleanups.',
-    ],
-    introBody2: [
-      'Being based just up the road in Cedar Falls means we can get to Waverly quickly and reliably. Our crews know Bremer County soil and growing conditions, and we treat every Waverly property with the same standard of work we bring to every job.',
-    ],
-    servicesIntro:
-      'Complete landscaping and hardscaping services for Waverly homeowners and businesses.',
-    uniqueContent: {
-      heading: 'Reliable Landscaping for Waverly Properties',
-      body: 'Waverly families want landscaping that looks good and holds up. That is what we deliver. From the first consultation to the final walk-through, we communicate clearly and work efficiently so your project stays on track and on budget.',
-    },
-    faqs: [
-      {
-        q: 'Do you serve Waverly, IA?',
-        a: 'Yes. A1 Property Services provides landscaping, hardscaping, and lawn care services to Waverly and all of Bremer County.',
-      },
-      {
-        q: 'What landscaping services do you offer in Waverly?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation, drainage solutions, and snow removal for Waverly properties.',
-      },
-      {
-        q: 'How do I get a quote for my Waverly property?',
-        a: 'Call us at (319) 464-1889 or fill out our online quote form. We provide free estimates for Waverly properties and typically respond within 24 hours.',
-      },
-    ],
-  },
-  {
-    slug: 'denver',
-    name: 'Denver',
-    county: 'Bremer',
-    population: '1,900+',
-    description:
-      'Landscaping, retaining walls, and lawn care in Denver, IA. Professional service for your property.',
-    heroEyebrow: 'Denver \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Denver, Iowa',
-    heroSubtitle:
-      'Quality landscaping and hardscaping services for Denver homeowners and properties.',
-    metaTitle: 'Landscaping in Denver, IA | A1 Property Services',
-    metaDescription:
-      'Denver IA landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for Denver and Bremer County properties.',
-    metaKeywords: [
-      'landscaping denver ia',
-      'denver iowa landscaping',
-      'landscaper denver ia',
-      'retaining wall denver ia',
-      'lawn care denver iowa',
-      'landscaping bremer county',
-    ],
-    introHeading: 'Denver Landscaping, Local Quality',
-    introBody: [
-      'Denver is a tight-knit community, and we treat every landscaping job there with the same care we would our own property. Retaining walls for drainage, paver patios for backyard entertaining, regular mowing and maintenance. Same crew, same standards as our Cedar Falls work.',
-    ],
-    introBody2: [
-      'We are located just minutes from Denver, so travel time is short and we can respond quickly when you need us. Spring cleanups, mulching, full landscape installations, and snow removal. We have the equipment and experience to handle it all.',
-    ],
-    servicesIntro:
-      'Professional landscaping and hardscaping services for Denver homeowners.',
-    uniqueContent: {
-      heading: 'Small Town Service, Professional Results',
-      body: 'Denver residents value dependability, and that is what we provide. We show up when we say we will, communicate clearly, and do the job right. Our reputation across Bremer County is built on quality work and honest communication.',
-    },
-    faqs: [
-      {
-        q: 'Does A1 Property Services serve Denver, IA?',
-        a: 'Yes. We provide full landscaping, hardscaping, and lawn care services to Denver and the surrounding Bremer County area.',
-      },
-      {
-        q: 'What services do you offer in Denver?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation, drainage solutions, and snow removal.',
-      },
-      {
-        q: 'How do I schedule landscaping in Denver?',
-        a: 'Call us at (319) 464-1889 or fill out our online quote form. We provide free estimates for Denver properties.',
-      },
-    ],
-  },
-  {
-    slug: 'jesup',
-    name: 'Jesup',
-    county: 'Buchanan',
-    population: '2,900+',
-    description:
-      'Landscaping, retaining walls, and lawn care in Jesup, IA. Professional service for your property.',
-    heroEyebrow: 'Jesup \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Jesup, Iowa',
-    heroSubtitle:
-      'Reliable landscaping and hardscaping services for Jesup homeowners and businesses.',
-    metaTitle: 'Landscaping in Jesup, IA | A1 Property Services',
-    metaDescription:
-      'Jesup IA landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for Jesup and Buchanan County properties.',
-    metaKeywords: [
-      'landscaping jesup ia',
-      'jesup iowa landscaping',
-      'landscaper jesup ia',
-      'retaining wall jesup',
-      'lawn care jesup iowa',
-    ],
-    introHeading: 'Jesup Landscaping You Can Count On',
-    introBody: [
-      'Jesup is a growing community in Buchanan County, and homeowners here want landscaping that looks good and works for their property. We bring our full range of services to Jesup: retaining walls for sloped lots, paver patios for backyard entertaining, regular lawn mowing and maintenance, tree service, and more.',
-    ],
-    introBody2: [
-      'Whether you need a full landscape installation or just seasonal maintenance, our Jesup clients get the same quality work and reliable service we provide across the Cedar Valley. We pride ourselves on showing up on time and leaving every property looking better than we found it.',
-    ],
-    servicesIntro:
-      'Complete landscaping and hardscaping services for Jesup homes and businesses.',
-    uniqueContent: {
-      heading: 'Quality Landscaping in Jesup',
-      body: 'Jesup deserves the same professional landscaping as larger communities. That is what we deliver. From the initial consultation to project completion, we communicate clearly and work efficiently so your project turns out exactly as planned.',
-    },
-    faqs: [
-      {
-        q: 'Does A1 Property Services serve Jesup, IA?',
-        a: 'Yes. We provide full landscaping, hardscaping, and lawn care services to Jesup and Buchanan County.',
-      },
-      {
-        q: 'What landscaping services do you offer in Jesup?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, drainage solutions, and snow removal.',
-      },
-      {
-        q: 'How do I get a free estimate in Jesup?',
-        a: 'Call us at (319) 464-1889 or fill out our online quote form. We provide free estimates for all Jesup properties.',
-      },
-    ],
-  },
-  {
-    slug: 'parkersburg',
-    name: 'Parkersburg',
-    county: 'Butler',
-    population: '2,000+',
-    description:
-      'Landscaping, retaining walls, and lawn care in Parkersburg, IA. Professional service for your property.',
-    heroEyebrow: 'Parkersburg \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Parkersburg, Iowa',
-    heroSubtitle:
-      'Dependable landscaping and hardscaping services for Parkersburg homeowners.',
-    metaTitle: 'Landscaping in Parkersburg, IA | A1 Property Services',
-    metaDescription:
-      'Parkersburg IA landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for Parkersburg and Butler County properties.',
-    metaKeywords: [
-      'landscaping parkersburg ia',
-      'parkersburg iowa landscaping',
-      'landscaper parkersburg ia',
-      'retaining wall parkersburg',
-      'lawn care parkersburg iowa',
-    ],
-    introHeading: 'Parkersburg Landscaping, Built to Last',
-    introBody: [
-      'Parkersburg is a community that values hard work and reliability, and that is exactly what we bring to every landscaping project there. From retaining walls that handle the sloped Butler County terrain to paver patios designed for family gatherings, every job gets our full attention.',
-    ],
-    introBody2: [
-      'We serve Parkersburg with the same experienced crews and quality equipment that we use across the Cedar Valley. Whether you need a complete landscape overhaul or just regular lawn maintenance, we are ready to help.',
-    ],
-    servicesIntro:
-      'Full landscaping and hardscaping services for Parkersburg homeowners.',
-    uniqueContent: {
-      heading: 'Professional Landscaping in Parkersburg',
-      body: 'Parkersburg homeowners want their properties to look their best, and we help them get there. Clear communication, fair pricing, and quality work. That is how we have built our reputation across Butler County.',
-    },
-    faqs: [
-      {
-        q: 'Does A1 Property Services serve Parkersburg, IA?',
-        a: 'Yes. We provide landscaping, hardscaping, and lawn care services to Parkersburg and all of Butler County.',
-      },
-      {
-        q: 'What services do you offer in Parkersburg?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, drainage, and snow removal.',
-      },
-      {
-        q: 'How do I schedule a consultation in Parkersburg?',
-        a: 'Call us at (319) 464-1889 or fill out our online quote form. We provide free estimates for Parkersburg properties.',
       },
     ],
   },
@@ -533,33 +533,33 @@ export const cities: City[] = [
     county: 'Black Hawk',
     population: '1,200+',
     description:
-      'Landscaping, retaining walls, and lawn care in Elk Run Heights, IA. Professional service for your property.',
+      'Landscaping and property maintenance for Elk Run Heights, IA. Quick, local, reliable.',
     heroEyebrow: 'Elk Run Heights \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Elk Run Heights, Iowa',
+    heroTitle: 'Elk Run Heights|Property Services',
     heroSubtitle:
-      'Reliable landscaping and hardscaping services for Elk Run Heights homeowners and businesses.',
+      'Mowing, tree work, retaining walls, and snow removal for Elk Run Heights. Free estimates.',
     metaTitle: 'Landscaping in Elk Run Heights, IA | A1 Property Services',
     metaDescription:
-      'Elk Run Heights IA landscaping. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for Elk Run Heights properties.',
+      'Elk Run Heights IA landscaping. Lawn care, retaining walls, tree service, and snow removal. Free estimates for Elk Run Heights properties.',
     metaKeywords: [
-      'landscaping elk run heights ia',
       'elk run heights landscaping',
+      'elk run heights lawn care',
+      'elk run heights retaining walls',
       'landscaper elk run heights',
-      'retaining wall elk run heights',
-      'lawn care elk run heights',
+      'elk run heights snow removal',
     ],
     introHeading: 'Elk Run Heights Landscaping, Local Crew',
     introBody: [
-      'Elk Run Heights is a tight-knit Black Hawk County community, and we treat every landscaping job there like it is our own property. Retaining walls, paver patios, lawn care, and tree service. Same quality work we bring to every Cedar Valley job.',
+      'Elk Run Heights is a small community right off the highway, and we pass through it every day. That makes it easy to keep properties looking their best without long waits or scheduling headaches. Mowing, trimming, hardscaping, tree service. Whatever you need.',
     ],
     introBody2: [
-      'We are just minutes from Elk Run Heights, so we can get there quickly when you need us. Regular mowing, spring cleanups, full landscape installations, and snow removal. Reliable service from a crew that knows the area.',
+      'We can get a crew to Elk Run Heights fast for estimates, service calls, or ongoing maintenance. If your property needs attention, let us know.',
     ],
     servicesIntro:
       'Professional landscaping and hardscaping services for Elk Run Heights properties.',
     uniqueContent: {
       heading: 'Quality Landscaping in Elk Run Heights',
-      body: 'Elk Run Heights homeowners want dependable service and solid results. That is what we deliver. Clear estimates, honest communication, and finished work that looks good and holds up. We take pride in our reputation here.',
+      body: 'Elk Run Heights homeowners want dependable service and solid results. That is what we deliver. Clear estimates, honest communication, and finished work that looks good and holds up.',
     },
     faqs: [
       {
@@ -582,33 +582,33 @@ export const cities: City[] = [
     county: 'Black Hawk',
     population: '1,000+',
     description:
-      'Landscaping, retaining walls, and lawn care in Dunkerton, IA. Professional service for your property.',
+      'Landscaping, lawn care, and hardscaping in Dunkerton, IA. Small town, big results.',
     heroEyebrow: 'Dunkerton \u00b7 Iowa',
-    heroTitle: 'Professional Landscaping|in Dunkerton, Iowa',
+    heroTitle: 'Dunkerton Property|Services',
     heroSubtitle:
-      'Dependable landscaping and hardscaping services for Dunkerton homeowners and properties.',
+      'Lawn care, retaining walls, paver patios, and snow removal for Dunkerton homeowners.',
     metaTitle: 'Landscaping in Dunkerton, IA | A1 Property Services',
     metaDescription:
-      'Dunkerton IA landscaping. Retaining walls, paver patios, lawn care, tree service and more. Free estimates for Dunkerton and Black Hawk County properties.',
+      'Dunkerton IA landscaping. Retaining walls, lawn care, tree service, paver patios, and snow removal. Free estimates for Dunkerton and Black Hawk County.',
     metaKeywords: [
-      'landscaping dunkerton ia',
-      'dunkerton iowa landscaping',
-      'landscaper dunkerton ia',
-      'retaining wall dunkerton',
-      'lawn care dunkerton',
+      'dunkerton landscaping',
+      'dunkerton lawn care',
+      'dunkerton retaining walls',
+      'landscaper dunkerton',
+      'dunkerton ia landscaping',
     ],
-    introHeading: 'Dunkerton Landscaping You Can Count On',
+    introHeading: 'Dunkerton Landscaping, No Runaround',
     introBody: [
-      'Dunkerton is a growing community in Black Hawk County, and homeowners here want landscaping that works for their property. We bring our full range of services: retaining walls for sloped lots, paver patios for backyard entertaining, regular lawn maintenance, and more.',
+      'Dunkerton is a quiet Black Hawk County town where people take pride in their properties. We help keep them that way. Mowing, trimming, retaining walls, paver patios, tree work. Same quality, same fair pricing, whether it is a weekly mow or a full yard transformation.',
     ],
     introBody2: [
-      'Whether you need a full landscape installation or just seasonal maintenance, our Dunkerton clients get the same quality work and reliable service we provide across the entire Cedar Valley. We show up on time and leave every property looking better than we found it.',
+      'We cover Dunkerton as part of our regular service area. Ongoing maintenance plans or one-off projects, we are happy to quote your work.',
     ],
     servicesIntro:
       'Complete landscaping and hardscaping services for Dunkerton homes.',
     uniqueContent: {
       heading: 'Professional Landscaping in Dunkerton',
-      body: 'Dunkerton deserves professional landscaping work, and that is exactly what we deliver. From the initial consultation to the final walk-through, we communicate clearly and work efficiently so your project turns out right.',
+      body: 'Dunkerton is a close community, and we treat every job there with care. Clear communication, fair pricing, and work that holds up through Iowa seasons. That is how we have built our reputation across Black Hawk County.',
     },
     faqs: [
       {
@@ -622,6 +622,116 @@ export const cities: City[] = [
       {
         q: 'How do I get a free estimate in Dunkerton?',
         a: 'Call us at (319) 464-1889 or fill out our online quote form. We provide free estimates for all Dunkerton properties.',
+      },
+    ],
+  },
+  {
+    slug: 'cedar-rapids',
+    name: 'Cedar Rapids',
+    county: 'Linn',
+    population: '135,000+',
+    description:
+      'Professional landscaping, retaining walls, paver patios, and lawn care in Cedar Rapids, IA.',
+    heroEyebrow: 'Cedar Rapids \u00b7 Iowa',
+    heroTitle: 'Cedar Rapids Landscaping|Professionals',
+    heroSubtitle:
+      'Full-service landscaping, hardscaping, and lawn care for Cedar Rapids homes and businesses.',
+    metaTitle: 'Landscaping in Cedar Rapids, IA | A1 Property Services',
+    metaDescription:
+      'Cedar Rapids landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Cedar Rapids properties.',
+    metaKeywords: [
+      'landscaping cedar rapids',
+      'cedar rapids landscaping',
+      'landscaper cedar rapids ia',
+      'retaining wall cedar rapids',
+      'paver patio cedar rapids',
+      'lawn care cedar rapids',
+      'hardscaping cedar rapids',
+    ],
+    introHeading: 'Cedar Rapids Landscaping for Your Property',
+    introBody: [
+      'Cedar Rapids is a big city with a wide range of properties\u2014from the established neighborhoods near the river to growing suburbs on the outskirts. We bring our full landscaping and hardscaping services to every part of it. Retaining walls, paver patios, lawn care, and tree service, handled by crews that know Iowa soil.',
+    ],
+    introBody2: [
+      'Residential and commercial. New builds and longtime homes. We treat every Cedar Rapids property with the same standard: proper materials, honest communication, and work that lasts.',
+    ],
+    servicesIntro:
+      'Full landscaping and hardscaping services for Cedar Rapids homeowners and commercial properties.',
+    uniqueContent: {
+      heading: 'Reliable Landscaping Across Cedar Rapids',
+      body: 'Cedar Rapids has real variety in its neighborhoods, from the trees near Mt. Mercy to the newer developments out by the interstate. Every job gets the same attention: proper base prep on hardscape, clean bed edges, and we keep you informed throughout the project.',
+    },
+    faqs: [
+      {
+        q: 'Do you serve all of Cedar Rapids?',
+        a: 'Yes. We serve Cedar Rapids and the surrounding Linn County area including all residential neighborhoods and commercial zones.',
+      },
+      {
+        q: 'Can you handle commercial landscaping in Cedar Rapids?',
+        a: 'Yes. We provide landscape maintenance, snow removal, and hardscaping for commercial properties in Cedar Rapids. Contact us for a commercial quote.',
+      },
+      {
+        q: 'How quickly can you start my landscaping project in Cedar Rapids?',
+        a: 'Spring and fall fill up fast. We recommend contacting us early to get on the schedule. We typically begin projects within 1-2 weeks of signing.',
+      },
+      {
+        q: 'Do you offer free estimates for Cedar Rapids properties?',
+        a: 'Yes. We provide free, no-obligation estimates for all Cedar Rapids properties. Call (319) 464-1889 or fill out our online form to schedule yours.',
+      },
+    ],
+  },
+  {
+    slug: 'des-moines',
+    name: 'Des Moines',
+    county: 'Polk',
+    population: '210,000+',
+    description:
+      'Professional landscaping, retaining walls, paver patios, and lawn care in Des Moines, IA.',
+    heroEyebrow: 'Des Moines \u00b7 Iowa',
+    heroTitle: 'Des Moines Landscaping|Professionals',
+    heroSubtitle:
+      'Full-service landscaping, hardscaping, and lawn care trusted by Des Moines homeowners and businesses.',
+    metaTitle: 'Landscaping in Des Moines, IA | A1 Property Services',
+    metaDescription:
+      'Des Moines landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Des Moines properties.',
+    metaKeywords: [
+      'landscaping des moines',
+      'des moines landscaping',
+      'landscaper des moines ia',
+      'retaining wall des moines',
+      'paver patio des moines',
+      'lawn care des moines',
+      'hardscaping des moines',
+    ],
+    introHeading: 'Des Moines Landscaping for Your Property',
+    introBody: [
+      'Des Moines is the largest city in Iowa with every type of property you can imagine. Established historic districts, new suburban developments, commercial corridors, and everything between. We bring our landscaping services across the metro: retaining walls, paver patios, lawn care, tree service, and seasonal maintenance.',
+    ],
+    introBody2: [
+      'Residential lawns and commercial properties. Full yard installs and ongoing mowing. Our crews are experienced with Polk County conditions and treat every Des Moines job with the same attention to detail.',
+    ],
+    servicesIntro:
+      'Full landscaping and hardscaping services for Des Moines homeowners and commercial properties.',
+    uniqueContent: {
+      heading: 'Trusted Landscaping in Des Moines',
+      body: 'Des Moines properties vary block to block, and we like that. Tight city lots near downtown, sprawling suburban yards, commercial storefronts. Every job gets proper base prep, clean finished edges, and clear communication from start to finish.',
+    },
+    faqs: [
+      {
+        q: 'Do you serve all of Des Moines?',
+        a: 'Yes. We serve Des Moines and the surrounding Polk County area including all neighborhoods and commercial districts.',
+      },
+      {
+        q: 'Can you handle commercial landscaping in Des Moines?',
+        a: 'Yes. We provide landscape maintenance, snow removal, and hardscaping for commercial properties in Des Moines. Contact us for a commercial quote.',
+      },
+      {
+        q: 'How quickly can you start my landscaping project in Des Moines?',
+        a: 'Spring and fall fill up fast. We recommend contacting us early to get on the schedule. We typically begin projects within 1-2 weeks of signing.',
+      },
+      {
+        q: 'Do you offer free estimates for Des Moines properties?',
+        a: 'Yes. We provide free, no-obligation estimates for all Des Moines properties. Call (319) 464-1889 or fill out our online form to schedule yours.',
       },
     ],
   },
