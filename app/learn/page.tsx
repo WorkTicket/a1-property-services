@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, BookOpen, FileText, ShoppingCart, Scale } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig, itemListJsonLd } from '@/lib/metadata'
-import { siteImages } from '@/lib/images'
 import { learnArticles } from '@/lib/learn'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
@@ -62,8 +61,6 @@ export default function LearnPage() {
       />
 
       <PageHero
-        imageSrc={siteImages.servicesHero}
-        imageAlt="Landscaping educational resources in Cedar Falls"
         eyebrow="Educational Resources"
         title="Landscaping|Knowledge Center"
         subtitle="Guides, comparisons, and buying tips for Cedar Valley homeowners planning a landscape project."

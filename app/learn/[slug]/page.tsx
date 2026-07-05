@@ -194,8 +194,6 @@ export default function LearnArticlePage({ params }: Props) {
       </section>
 
       <RelatedContent
-        eyebrow="Explore More"
-        heading="Related Content"
         groups={[
           ...(relatedServices.length > 0 ? [{
             heading: 'Our Services',

@@ -5,7 +5,6 @@ import { getFaqPageServices, serviceFaqs, servicesHubFaqs } from '@/lib/services
 import { getServiceLinksForFaq } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import FaqSectionCta from '@/components/sections/FaqSectionCta'
-import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import FaqAccordion from '@/components/ui/FaqAccordion'
 import FadeIn from '@/components/motion/FadeIn'
@@ -47,8 +46,6 @@ export default function FaqsPage() {
       />
 
       <PageHero
-        imageSrc={siteImages.servicesHero}
-        imageAlt="Landscaping FAQs in Cedar Falls"
         eyebrow="Questions & Answers"
         title="Landscaping|FAQs"
         subtitle="Common questions about our services, processes, and what to expect when you work with A1 Property Services."

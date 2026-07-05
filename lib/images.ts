@@ -120,7 +120,7 @@ const serviceHeroAltMap: Record<string, string> = {
   'commercial-landscaping': 'Commercial landscaping in Cedar Falls, Iowa',
   'residential-landscaping': 'Residential landscaping in Cedar Falls, Iowa',
   'grading': 'Grading and leveling in Cedar Falls, Iowa',
-  'outdoor-living': 'Outdoor living spaces in Cedar Falls, Iowa',
+  'outdoor-living': 'Outdoor kitchen and fireplace patio in Cedar Falls, Iowa',
 }
 
 // Gallery projects
@@ -281,7 +281,6 @@ export function getGalleryProjectsForService(slug: string, limit = 4): GalleryPr
     'retaining-walls': 'hardscape',
     'paver-patio': 'hardscape',
     'ponds-water-features': 'water',
-    'outdoor-living': 'hardscape',
   }
   const category = categoryMap[slug]
   if (!category) return []

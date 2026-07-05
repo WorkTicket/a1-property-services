@@ -32,6 +32,7 @@ const HERO_MAX_WIDTH = 2560
 const HERO_NAMES = new Set([
   'hero-background-image', 'contact-page-hero', 'paver-patio-hero',
   'about-hero', 'services-hero', 'gallery-hero', 'contact-hero-truck',
+  'service-outdoor-living',
 ])
 
 function isGalleryImage(name) {

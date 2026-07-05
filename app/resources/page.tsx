@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FileText, ChevronRight } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig } from '@/lib/metadata'
-import { siteImages } from '@/lib/images'
 import { blogPosts } from '@/lib/blog'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
@@ -101,8 +100,6 @@ export default function ResourcesPage() {
       />
 
       <PageHero
-        imageSrc={siteImages.servicesHero}
-        imageAlt="Landscaping resources in Cedar Falls"
         eyebrow="Helpful Guides"
         title="Landscaping|Resources"
         subtitle="Expert guides, checklists, and articles for Cedar Valley homeowners working on landscape projects."

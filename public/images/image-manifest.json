@@ -1039,32 +1039,41 @@
   "/images/service-outdoor-living.webp": {
     "originalPath": "/images/service-outdoor-living.webp",
     "altBase": "service-outdoor-living",
-    "width": 1200,
-    "height": 1644,
-    "aspectRatio": 0.7299270072992701,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAABQBACdASoUABsAPyWCs1OuKSSit/qoAcAkiUfGidLPjQDuZtXBSCyxvmVAAP7cD/1h4yt4/8Tlujlkf5I39KhpkfbIoNR3X/r1t/dZlydk8d1q/vq5qK1d+h/rRYRUYhnKH7C3++0I8y7TOrl7//RAD5GHYavEb6vL+hrgG8vjE2bz//Jt/+hzYI/0uHZgkS+6/chKHVE57jJmcXcvTZolTZJxOkSmTC21l8w5Rge+8ru1J5adKmhRRVn9dz4r///NT1/CgW/sAVEAAAA=",
+    "width": 2560,
+    "height": 1709,
+    "aspectRatio": 1.4979520187244002,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAgCdASoUAA0APzmIvlOvKScisAgB4CcJZVnyAFKn4ADkDU8heD+rj5xdK6ZKvcxFHL7RXoNSZiQP4Y4PvlqZ0lg98qfIbSNFPb4i8DQPil+YvrNGHxLicH8Fsh4grmUdkBqkAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-outdoor-living-480.avif",
         "640": "/images/generated/service-outdoor-living-640.avif",
         "768": "/images/generated/service-outdoor-living-768.avif",
         "1024": "/images/generated/service-outdoor-living-1024.avif",
-        "1200": "/images/generated/service-outdoor-living-1200.avif"
+        "1280": "/images/generated/service-outdoor-living-1280.avif",
+        "1536": "/images/generated/service-outdoor-living-1536.avif",
+        "1920": "/images/generated/service-outdoor-living-1920.avif",
+        "2560": "/images/generated/service-outdoor-living-2560.avif"
       },
       "webp": {
         "480": "/images/generated/service-outdoor-living-480.webp",
         "640": "/images/generated/service-outdoor-living-640.webp",
         "768": "/images/generated/service-outdoor-living-768.webp",
         "1024": "/images/generated/service-outdoor-living-1024.webp",
-        "1200": "/images/generated/service-outdoor-living-1200.webp"
+        "1280": "/images/generated/service-outdoor-living-1280.webp",
+        "1536": "/images/generated/service-outdoor-living-1536.webp",
+        "1920": "/images/generated/service-outdoor-living-1920.webp",
+        "2560": "/images/generated/service-outdoor-living-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-outdoor-living-480.jpeg",
         "640": "/images/generated/service-outdoor-living-640.jpeg",
         "768": "/images/generated/service-outdoor-living-768.jpeg",
         "1024": "/images/generated/service-outdoor-living-1024.jpeg",
-        "1200": "/images/generated/service-outdoor-living-1200.jpeg"
+        "1280": "/images/generated/service-outdoor-living-1280.jpeg",
+        "1536": "/images/generated/service-outdoor-living-1536.jpeg",
+        "1920": "/images/generated/service-outdoor-living-1920.jpeg",
+        "2560": "/images/generated/service-outdoor-living-2560.jpeg"
       }
     }
   },
