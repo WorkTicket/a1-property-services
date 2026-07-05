@@ -16,7 +16,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Services in Cedar Falls',
   description:
-    'Landscaping services in Cedar Falls, IA by A1 Property Services. Retaining wall installation, paver patio installation, water features, lawn care, tree service, snow removal, and more. Free estimates.',
+    'Landscaping services in Cedar Falls, IA. Retaining walls, paver patios, water features, lawn care, tree service, snow removal, and more. Free estimates.',
   path: '/services',
   keywords: servicesHubKeywords,
   ogImage: '/images/landscaping.webp',

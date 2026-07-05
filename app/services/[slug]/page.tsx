@@ -10,6 +10,7 @@ import {
   serviceFaqs,
   serviceProcessSteps,
   serviceMaterials,
+  serviceEquipment,
   serviceProblemSolutions,
 } from '@/lib/services'
 import { getPostBySlug } from '@/lib/blog'
@@ -62,10 +63,6 @@ const defaultProcessSteps = [
     description: 'We meet with you on-site to discuss your goals, assess your property, and understand your budget. This is where we figure out what will work best for your specific situation.',
   },
   {
-    title: 'Design',
-    description: 'We create a detailed plan with material selections, layout options, and phased implementation. You see exactly what the finished project will look like before we start.',
-  },
-  {
     title: 'Planning',
     description: 'We handle permits, material ordering, scheduling, and utility locating. Every detail is coordinated so installation goes smoothly without delays.',
   },
@@ -96,6 +93,7 @@ export default function ServicePage({ params }: Props) {
   const faqs = serviceFaqs[service.slug] ?? []
   const processSteps = serviceProcessSteps[service.slug] ?? defaultProcessSteps
   const materialsArray = serviceMaterials[service.slug] ?? []
+  const equipmentArray = serviceEquipment[service.slug] ?? []
   const extended = serviceExtendedContent[service.slug]
   const galleryProjects = getGalleryProjectsForService(service.slug)
   const heroImage = getServiceHeroImage(service.slug)
@@ -303,6 +301,32 @@ export default function ServicePage({ params }: Props) {
                 </StaggerItem>
               ))}
             </StaggerContainer>
+          </FadeIn>
+        </section>
+      )}
+
+      {equipmentArray.length > 0 && (
+        <section className="section bg-white">
+          <FadeIn className="section-inner">
+            <h2 className="section-heading text-center">Equipment We Use</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
+              We use quality equipment to get every job done right.
+            </p>
+            <div className="mt-10 space-y-10">
+              {equipmentArray.map((equipment) => (
+                <div key={equipment.name} className="rounded-xl border border-black/5 bg-brand-stone p-6 md:p-8">
+                  <h3 className="text-xl font-bold text-brand-dark">{equipment.name}</h3>
+                  <ul className="mt-4 space-y-3">
+                    {equipment.items.map((item) => (
+                      <li key={item} className="flex gap-2 text-sm text-brand-body">
+                        <Check size={14} className="mt-0.5 shrink-0 text-brand-green-700" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </FadeIn>
         </section>
       )}

@@ -126,7 +126,7 @@ export default function CityPage({ params }: Props) {
         <div className="section-inner">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <FadeIn direction="left">
-              <h1 className="section-heading">{city.introHeading}</h1>
+              <h2 className="section-heading">{city.introHeading}</h2>
               {city.introBody.map((p, i) => (
                 <p key={i} className="mt-4 leading-relaxed text-brand-body">
                   {p}
@@ -251,7 +251,7 @@ export default function CityPage({ params }: Props) {
           <p className="section-eyebrow">See Our Work</p>
           <h2 className="section-heading mt-3">Completed Projects in the Cedar Valley</h2>
           <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-            Browse before and after photos of real projects across Cedar Falls, Waterloo, and surrounding communities.
+            Browse before and after photos of real projects in {city.name} and across the Cedar Valley.
           </p>
           <Button href="/gallery" className="mt-8">
             {CTA_COPY.viewGallery}

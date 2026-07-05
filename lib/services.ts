@@ -46,7 +46,7 @@ export const services: Service[] = [
     slug: 'lawn-care',
     icon: 'home',
     name: 'Lawn Care & Mowing',
-    shortDesc: 'Mowing, aeration, fertilization, and weed control through the growing season.',
+    shortDesc: 'Mowing, aeration, fertilization, and weed control all season.',
     longDesc:
       'A good lawn takes steady care. We mow at the right height, aerate when needed, fertilize on a schedule, and hit weeds before they spread. Your grass stays thick and green when it counts.',
     anchorId: 'lawncare',
@@ -582,6 +582,55 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
       title: 'Landscaping & Final Detail',
       description:
         'Plantings, mulch, and decorative gravel complete the space. We walk through everything with you and make sure it is ready to use.',
+    },
+  ],
+  'landscape-installation': [
+    {
+      title: 'Consultation & Design',
+      description:
+        'We meet with you on-site to discuss your goals and create a detailed landscape plan with plant selections, hardscape placement, and phased implementation.',
+    },
+    {
+      title: 'Planning & Material Ordering',
+      description:
+        'We handle permits, material ordering, scheduling, and utility locating so installation goes smoothly without delays.',
+    },
+    {
+      title: 'Site Preparation & Grading',
+      description:
+        'We grade for drainage, prep the soil, and set the foundation for beds, walkways, and any hardscape features.',
+    },
+    {
+      title: 'Installation',
+      description:
+        'Our crew installs plants, beds, hardscape, and all features following the approved plan with proper techniques for lasting results.',
+    },
+    {
+      title: 'Cleanup & Final Walkthrough',
+      description:
+        'We clean the job site thoroughly and walk through the completed project with you so everything meets your expectations.',
+    },
+  ],
+  'residential-landscaping': [
+    {
+      title: 'Consultation & Design',
+      description:
+        'We walk your property, discuss your goals and budget, and create a landscape plan tailored to your home and how you use the space.',
+    },
+    {
+      title: 'Planning & Preparation',
+      description:
+        'We coordinate materials, scheduling, and site prep so the project runs smoothly from start to finish.',
+    },
+    {
+      title: 'Installation',
+      description:
+        'Our crew handles grading, planting, hardscape, and all details of your landscape transformation with professional precision.',
+    },
+    {
+      title: 'Cleanup & Walkthrough',
+      description:
+        'We clean every inch of the job site and walk through the completed work with you to make sure you are happy with the result.',
     },
   ],
 }
@@ -1364,6 +1413,48 @@ export type Material = {
   durability: string
 }
 
+export type Equipment = {
+  name: string
+  items: string[]
+}
+
+export const serviceEquipment: Record<string, Equipment[]> = {
+  'excavation': [
+    {
+      name: 'Skid Steer Loader',
+      items: [
+        'Compact size fits through standard gates for backyard access',
+        'Multiple attachment options for grading, digging, and material handling',
+        'Ideal for medium-scale residential grading and excavation',
+      ],
+    },
+    {
+      name: 'Mini Excavator',
+      items: [
+        'Excellent for trenching and digging in tight spaces',
+        'Zero-tail-swing models work close to structures',
+        'Interchangeable buckets for different trench widths',
+      ],
+    },
+    {
+      name: 'Compact Track Loader',
+      items: [
+        'Low ground pressure minimizes lawn damage',
+        'High lifting capacity for heavy material handling',
+        'Rubber tracks provide traction on slopes and soft ground',
+      ],
+    },
+    {
+      name: 'Dump Trailer & Hauling Equipment',
+      items: [
+        'Efficient removal of excavated material and debris',
+        'Hauls gravel, soil, and aggregate for base preparation',
+        'Keeps job sites clean and organized throughout the project',
+      ],
+    },
+  ],
+}
+
 export const serviceMaterials: Record<string, Material[]> = {
   'retaining-walls': [
     {
@@ -1739,42 +1830,6 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Apply in early spring before weed seeds germinate. Water in within 7 days. Do not overseed treated areas for 8-12 weeks. Reapply in late spring for extended control.',
       durability: 'Single application provides 8-12 weeks of weed prevention. A second application extends coverage through the growing season.',
-    },
-  ],
-  'excavation': [
-    {
-      name: 'Skid Steer Loader',
-      pros: [
-        'Compact size fits through standard gates',
-        'Versatile with multiple attachment options',
-        'Good maneuverability in tight residential spaces',
-        'Efficient for medium-scale grading and digging',
-      ],
-      cons: [
-        'Limited reach compared to full-size equipment',
-        'Lower lifting capacity than larger machines',
-        'Operator skill significantly affects results',
-        'Not ideal for very large commercial projects',
-      ],
-      maintenance: 'Standard equipment maintenance by our crew. The skid steer is serviced regularly for hydraulic fluid, tracks/tires, and engine. No homeowner maintenance needed.',
-      durability: 'Well-maintained skid steers last 5,000-8,000 hours. We rotate equipment to ensure reliable operation on every job.',
-    },
-    {
-      name: 'Mini Excavator',
-      pros: [
-        'Excellent for trenching in tight spaces',
-        'Zero-tail-swing models work close to structures',
-        'Interchangeable buckets for different trench widths',
-        'Good reach and digging depth for its size',
-      ],
-      cons: [
-        'Slower than full-size excavator for large jobs',
-        'Stability decreases on uneven terrain',
-        'Limited to smaller bucket sizes',
-        'Track width may damage established lawns',
-      ],
-      maintenance: 'Same as skid steer. Our equipment is maintained to manufacturer specifications. Tracks replaced as needed. Hydraulic systems inspected before each project.',
-      durability: '5,000-7,000 hours typical service life. Regular maintenance and proper operation extend equipment life significantly.',
     },
   ],
   'sod-installation': [

@@ -91,7 +91,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
               <p className="section-eyebrow">Who We Are</p>
-              <h1 className="section-heading mt-3">Your Local Landscaping Partner</h1>
+              <h2 className="section-heading mt-3">Your Local Landscaping Partner</h2>
               <p className="mt-6 leading-relaxed text-brand-body">
                 A1 Property Services started in 2009 because Cedar Valley homeowners needed a crew they could count on. We&apos;re still here, still doing the work.
               </p>

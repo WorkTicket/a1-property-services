@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city || !service) return {}
 
   const title = `${service.name} in ${city.name}, IA`
-  const description = `${service.name} in ${city.name}, IA by A1 Property Services. ${service.shortDesc} Free estimates. Licensed and insured.`
+  const description = `${service.name} in ${city.name}, IA. ${service.shortDesc} Free estimates. Licensed and insured.`
 
   return generatePageMetadata({
     title,
@@ -132,7 +132,7 @@ export default function CityServicePage({ params }: Props) {
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
-          <h1 className="section-heading">{pageTitle}</h1>
+          <h2 className="section-heading">{pageTitle}</h2>
           <p className="mt-6 text-lg leading-relaxed text-brand-body">{service.longDesc}</p>
           <p className="mt-4 leading-relaxed text-brand-body">
             {city.name} is located in {city.county} County with a population of {city.population}. 

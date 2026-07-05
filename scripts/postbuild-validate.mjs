@@ -17,8 +17,8 @@ function extractTitle(content) {
 }
 
 function extractH1s(content) {
-  const h1s = content.match(/<h1[^>]*>([^<]+)<\/h1>/gi)
-  return h1s?.map((h) => h.replace(/<[^>]+>/g, '').trim()).filter(Boolean) || []
+  const h1s = content.match(/<h1[^>]*>[\s\S]*?<\/h1>/gi)
+  return h1s?.map((h) => h.replace(/<[^>]+>/g, '').replace(/&#?\w+;/g, ' ').trim()).filter(Boolean) || []
 }
 
 function extractMetaDescription(content) {
