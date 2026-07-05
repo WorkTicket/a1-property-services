@@ -584,6 +584,55 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
         'Plantings, mulch, and decorative gravel complete the space. We walk through everything with you and make sure it is ready to use.',
     },
   ],
+  'landscape-installation': [
+    {
+      title: 'Consultation & Design',
+      description:
+        'We meet with you on-site to discuss your goals and create a detailed landscape plan with plant selections, hardscape placement, and phased implementation.',
+    },
+    {
+      title: 'Planning & Material Ordering',
+      description:
+        'We handle permits, material ordering, scheduling, and utility locating so installation goes smoothly without delays.',
+    },
+    {
+      title: 'Site Preparation & Grading',
+      description:
+        'We grade for drainage, prep the soil, and set the foundation for beds, walkways, and any hardscape features.',
+    },
+    {
+      title: 'Installation',
+      description:
+        'Our crew installs plants, beds, hardscape, and all features following the approved plan with proper techniques for lasting results.',
+    },
+    {
+      title: 'Cleanup & Final Walkthrough',
+      description:
+        'We clean the job site thoroughly and walk through the completed project with you so everything meets your expectations.',
+    },
+  ],
+  'residential-landscaping': [
+    {
+      title: 'Consultation & Design',
+      description:
+        'We walk your property, discuss your goals and budget, and create a landscape plan tailored to your home and how you use the space.',
+    },
+    {
+      title: 'Planning & Preparation',
+      description:
+        'We coordinate materials, scheduling, and site prep so the project runs smoothly from start to finish.',
+    },
+    {
+      title: 'Installation',
+      description:
+        'Our crew handles grading, planting, hardscape, and all details of your landscape transformation with professional precision.',
+    },
+    {
+      title: 'Cleanup & Walkthrough',
+      description:
+        'We clean every inch of the job site and walk through the completed work with you to make sure you are happy with the result.',
+    },
+  ],
 }
 
 export type ServiceExtendedContent = {

@@ -62,10 +62,6 @@ const defaultProcessSteps = [
     description: 'We meet with you on-site to discuss your goals, assess your property, and understand your budget. This is where we figure out what will work best for your specific situation.',
   },
   {
-    title: 'Design',
-    description: 'We create a detailed plan with material selections, layout options, and phased implementation. You see exactly what the finished project will look like before we start.',
-  },
-  {
     title: 'Planning',
     description: 'We handle permits, material ordering, scheduling, and utility locating. Every detail is coordinated so installation goes smoothly without delays.',
   },
