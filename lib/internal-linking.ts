@@ -4,6 +4,7 @@ import { cities } from '@/lib/cities'
 import { learnArticles, type LearnArticle } from '@/lib/learn'
 import { galleryProjects, type GalleryProject } from '@/lib/images'
 import { siteConfig } from '@/lib/metadata'
+import { allGuides } from '@/lib/guides'
 
 export type ContentType = 'service' | 'blog' | 'city' | 'learn' | 'faq' | 'guide' | 'project'
 
@@ -47,21 +48,18 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
 }
 
-const guides = [
-  { slug: 'retaining-wall-planning', title: 'Retaining Wall Planning Guide', description: 'Everything you need to know before building a retaining wall in Iowa.' },
-  { slug: 'paver-patio-planning', title: 'Paver Patio Planning Guide', description: 'How to plan the perfect paver patio for Iowa properties.' },
-  { slug: 'outdoor-living-design', title: 'Outdoor Living Design Guide', description: 'Plan an outdoor living space that fits your yard.' },
-  { slug: 'drainage-solutions', title: 'Drainage Solutions Guide', description: 'Identify and solve common drainage problems.' },
-  { slug: 'landscape-design', title: 'Landscape Design Guide', description: 'A complete guide to designing your Iowa landscape.' },
-  { slug: 'lawn-care', title: 'Lawn Care Guide', description: 'Year-round lawn care for Iowa.' },
-]
+const guides = allGuides.map(g => ({
+  slug: g.slug,
+  title: g.title,
+  description: g.description,
+}))
 
 function serviceUrl(slug: string) { return `/services/${slug}` }
 function blogUrl(slug: string) { return `/blog/${slug}` }
 function cityUrl(slug: string) { return `/${slug}` }
 function cityServiceUrl(city: string, service: string) { return `/${city}/${service}` }
 function learnUrl(slug: string) { return `/learn/${slug}` }
-function guideUrl() { return `/guides` }
+function guideUrl(slug: string) { return `/guides/${slug}` }
 function faqUrl() { return `/faqs` }
 function projectUrl() { return `/gallery` }
 
@@ -406,9 +404,9 @@ export function getBlogsForCity(citySlug: string, limit = 3): LinkedContent[] {
 }
 
 export function getGuidesForBlog(limit = 3): LinkedContent[] {
-  return guides.slice(0, limit).map(g => toLinked({
+  return allGuides.slice(0, limit).map(g => toLinked({
     type: 'guide', slug: g.slug, title: g.title, excerpt: g.description,
-    url: guideUrl(), relevance: 5,
+    url: guideUrl(g.slug), relevance: 5,
   }))
 }
 
@@ -546,10 +544,13 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     }
 
     case 'project': {
-      const services = allServices.slice(0, 4).map(s => toLinked({
-        type: 'service', slug: s.slug, title: s.name, excerpt: s.shortDesc,
-        url: serviceUrl(s.slug), relevance: 5,
-      }))
+      const galleryServices = ['retaining-walls', 'paver-patio', 'ponds-water-features']
+      const services = allServices
+        .filter(s => galleryServices.includes(s.slug))
+        .map(s => toLinked({
+          type: 'service', slug: s.slug, title: s.name, excerpt: s.shortDesc,
+          url: serviceUrl(s.slug), relevance: 5,
+        }))
       if (services.length > 0) groups.push({ heading: 'Services', items: services })
 
       const blogs = blogPosts.slice(0, 3).map(p => toLinked({

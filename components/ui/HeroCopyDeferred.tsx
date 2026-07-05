@@ -9,10 +9,10 @@ type HeroCopyDeferredProps = {
   subtitleMaxWidth?: string
 }
 
-/** Opacity-0 until CSS animation runs — excluded from LCP while staying in HTML for SEO. */
+/** Brief CSS reveal keeps hero image as LCP candidate without hiding copy from users. */
 export default function HeroCopyDeferred(props: HeroCopyDeferredProps) {
   return (
-    <div className="hero-copy-reveal" style={{ opacity: 0 }}>
+    <div className="hero-copy-reveal">
       <HeroCopyStatic {...props} />
     </div>
   )

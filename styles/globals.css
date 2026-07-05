@@ -41,7 +41,7 @@
 
   .hero-copy-reveal {
     opacity: 0;
-    animation: hero-copy-reveal 0.001ms 3s forwards;
+    animation: hero-copy-reveal 0.2s ease-out 0.15s forwards;
   }
 
   @media (prefers-reduced-motion: reduce) {
