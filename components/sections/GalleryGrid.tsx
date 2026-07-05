@@ -2,6 +2,7 @@
 
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import type { GalleryProject } from '@/lib/images'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 
 type GalleryGridProps = {
@@ -18,7 +19,7 @@ function ShowcasePhoto({ project }: { project: GalleryProject }) {
           alt={project.after.alt}
           fill
           style={project.after.objectPosition ? { objectPosition: project.after.objectPosition } : undefined}
-          sizes="(max-width: 768px) 92vw, (max-width: 1280px) 50vw, 720px"
+          sizes={IMAGE_SIZES.galleryGrid}
           priority={project.after.priority}
         />
       </div>

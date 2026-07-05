@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const isBlog = path.startsWith('/blog/') && path !== '/blog'
     const isLearn = path.startsWith('/learn/') && path !== '/learn'
     const isService = path.startsWith('/services/') && path !== '/services'
-    const isCity = !path.startsWith('/') ? false : path.split('/').filter(Boolean).length === 1 && !['about', 'services', 'gallery', 'contact', 'blog', 'faqs', 'resources', 'guides', 'learn'].includes(path.split('/').filter(Boolean)[0])
+    const isCity = !path.startsWith('/') ? false : path.split('/').filter(Boolean).length === 1 && !['about', 'services', 'gallery', 'contact', 'blog', 'faqs', 'resources', 'learn'].includes(path.split('/').filter(Boolean)[0])
     const isProgrammatic = path.split('/').filter(Boolean).length >= 2 && !path.startsWith('/services/') && !path.startsWith('/blog/') && !path.startsWith('/learn/') && !path.startsWith('/api/')
 
     let lastModified: Date = new Date()

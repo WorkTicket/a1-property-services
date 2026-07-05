@@ -6,30 +6,33 @@ const ROOT = path.resolve('public/images')
 const OUTPUT_DIR = path.join(ROOT, 'generated')
 const MANIFEST_PATH = path.join(ROOT, 'image-manifest.json')
 
-const BREAKPOINTS = [480, 640, 768, 1024, 1280, 1536, 1920]
+const BREAKPOINTS = [480, 640, 768, 1024, 1280, 1536, 1920, 2560]
 const BLUR_SIZE = 20
 
 const FORMAT_CONFIG = {
-  avif: { quality: 50, effort: 4, lossless: false },
-  webp: { quality: 80, effort: 6 },
-  jpeg: { quality: 82, mozjpeg: true },
+  avif: { quality: 62, effort: 5, lossless: false },
+  webp: { quality: 85, effort: 6 },
+  jpeg: { quality: 85, mozjpeg: true },
 }
 
 const HERO_FORMAT_CONFIG = {
-  avif: { quality: 38, effort: 4, lossless: false },
-  webp: { quality: 70, effort: 6 },
-  jpeg: { quality: 75, mozjpeg: true },
+  avif: { quality: 50, effort: 8, lossless: false },
+  webp: { quality: 85, effort: 6 },
+  jpeg: { quality: 85, mozjpeg: true },
 }
 
 const GALLERY_FORMAT_CONFIG = {
-  avif: { quality: 68, effort: 6, lossless: false },
-  webp: { quality: 92, effort: 6 },
-  jpeg: { quality: 90, mozjpeg: true },
+  avif: { quality: 60, effort: 7, lossless: false },
+  webp: { quality: 85, effort: 6 },
+  jpeg: { quality: 85, mozjpeg: true },
 }
+
+const HERO_MAX_WIDTH = 2560
 
 const HERO_NAMES = new Set([
   'hero-background-image', 'contact-page-hero', 'paver-patio-hero',
   'about-hero', 'services-hero', 'gallery-hero', 'contact-hero-truck',
+  'service-outdoor-living',
 ])
 
 function isGalleryImage(name) {
@@ -42,8 +45,14 @@ function getFormatConfig(isHero, isGallery, format) {
   return FORMAT_CONFIG[format]
 }
 
-function getBreakpoints(width) {
-  return BREAKPOINTS.filter((bp) => bp <= width).concat(width).filter((v, i, a) => a.indexOf(v) === i)
+function getBreakpoints(width, isHero) {
+  const capped = BREAKPOINTS.filter((bp) => bp <= width)
+  const withOriginal = [...capped, width].filter((v, i, a) => a.indexOf(v) === i)
+
+  if (!isHero) return withOriginal
+
+  const heroBreakpoints = BREAKPOINTS.filter((bp) => bp <= HERO_MAX_WIDTH)
+  return [...new Set([...withOriginal, ...heroBreakpoints])].sort((a, b) => a - b)
 }
 
 async function generateBlurPlaceholder(input, meta) {
@@ -66,7 +75,7 @@ async function processImage(filePath) {
   const originalWidth = meta.width
   const originalHeight = meta.height
   const aspectRatio = originalWidth / originalHeight
-  const breakpoints = getBreakpoints(originalWidth)
+  const breakpoints = getBreakpoints(originalWidth, isHero)
 
   const variants = {}
   const blurPlaceholder = await generateBlurPlaceholder(input, meta)
@@ -79,7 +88,15 @@ async function processImage(filePath) {
       const filename = `${name}-${bp}.${format}`
       const outputPath = path.join(OUTPUT_DIR, filename)
 
-      let pipeline = input.clone().resize(bp, height, { fit: 'outside', withoutEnlargement: true })
+      const upscale = isHero && bp > originalWidth
+      let pipeline = input.clone().resize(bp, height, {
+        fit: 'outside',
+        withoutEnlargement: !upscale,
+        kernel: sharp.kernel.lanczos3,
+      })
+      if (upscale) {
+        pipeline = pipeline.sharpen({ sigma: 0.5, m1: 0.5, m2: 0.3 })
+      }
       switch (format) {
         case 'avif':
           pipeline = pipeline.avif(formatConfig)
@@ -102,8 +119,10 @@ async function processImage(filePath) {
   return {
     originalPath: `/images/${parsed.base}`,
     altBase: name,
-    width: originalWidth,
-    height: originalHeight,
+    width: isHero ? Math.max(originalWidth, ...breakpoints) : originalWidth,
+    height: isHero
+      ? Math.round((Math.max(originalWidth, ...breakpoints) / aspectRatio))
+      : originalHeight,
     aspectRatio,
     isHero,
     blurPlaceholder,

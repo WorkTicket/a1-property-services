@@ -4,6 +4,7 @@ export type City = {
   county: string
   population: string
   description: string
+  isCedarValley: boolean
   heroEyebrow: string
   heroTitle: string
   heroSubtitle: string
@@ -29,10 +30,11 @@ export const cities: City[] = [
     population: '40,000+',
     description:
       'Professional landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, IA.',
+    isCedarValley: true,
     heroEyebrow: 'Cedar Falls \u00b7 Iowa',
-    heroTitle: 'Cedar Falls Landscaping|Professionals',
+    heroTitle: 'Cedar Falls Landscaping|Local Crew',
     heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care trusted by Cedar Falls homeowners since 2009.',
+      'Full-service landscaping, hardscaping, and lawn care for Cedar Falls homeowners since 2009.',
     metaTitle: 'Landscaping in Cedar Falls, IA | A1 Property Services',
     metaDescription:
       'Cedar Falls landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates.',
@@ -84,8 +86,9 @@ export const cities: City[] = [
     population: '67,000+',
     description:
       'Professional landscaping, retaining walls, paver patios, and lawn care in Waterloo, IA.',
+    isCedarValley: true,
     heroEyebrow: 'Waterloo \u00b7 Iowa',
-    heroTitle: 'Waterloo Landscaping|Professionals',
+    heroTitle: 'Waterloo Landscaping|Local Crew',
     heroSubtitle:
       'Full-service landscaping, hardscaping, and lawn care for Waterloo homes and businesses.',
     metaTitle: 'Landscaping in Waterloo, IA | A1 Property Services',
@@ -139,6 +142,7 @@ export const cities: City[] = [
     population: '2,200+',
     description:
       'Landscaping and lawn care in Hudson, IA. We keep Hudson properties looking sharp year-round.',
+    isCedarValley: true,
     heroEyebrow: 'Hudson \u00b7 Iowa',
     heroTitle: 'Hudson Lawn Care|and Landscaping',
     heroSubtitle:
@@ -189,6 +193,7 @@ export const cities: City[] = [
     population: '4,500+',
     description:
       'Landscaping and property services for Evansdale, IA. Residential and commercial.',
+    isCedarValley: true,
     heroEyebrow: 'Evansdale \u00b7 Iowa',
     heroTitle: 'Evansdale Property|Maintenance',
     heroSubtitle:
@@ -238,6 +243,7 @@ export const cities: City[] = [
     population: '10,400+',
     description:
       'Full-service landscaping, retaining walls, and paver patios in Waverly, IA.',
+    isCedarValley: true,
     heroEyebrow: 'Waverly \u00b7 Iowa',
     heroTitle: 'Waverly Landscaping|and Hardscaping',
     heroSubtitle:
@@ -288,6 +294,7 @@ export const cities: City[] = [
     population: '1,900+',
     description:
       'Lawn care, landscaping, and hardscaping for Denver, IA. Small town, solid work.',
+    isCedarValley: true,
     heroEyebrow: 'Denver \u00b7 Iowa',
     heroTitle: 'Denver Landscaping|and Maintenance',
     heroSubtitle:
@@ -304,7 +311,7 @@ export const cities: City[] = [
     ],
     introHeading: 'Denver Landscaping. No Detours.',
     introBody: [
-      'Denver is the kind of town where people know each other, and your yard is part of your reputation. We take that seriously. Whether you need a retaining wall replaced, a patio put in, or just want someone reliable to keep the grass cut, we have you covered.',
+      'Denver is the kind of town where people know each other, and your yard is part of your reputation. We take that seriously. Need a retaining wall replaced, a patio put in, or just someone reliable to keep the grass cut? We can help.',
     ],
     introBody2: [
       'We run through Denver regularly during the season. A quick call gets you on the schedule without a hassle.',
@@ -337,6 +344,7 @@ export const cities: City[] = [
     population: '2,900+',
     description:
       'Landscaping, hardscaping, and lawn care in Jesup, IA, and Buchanan County.',
+    isCedarValley: true,
     heroEyebrow: 'Jesup \u00b7 Iowa',
     heroTitle: 'Jesup Landscaping|Services',
     heroSubtitle:
@@ -387,8 +395,9 @@ export const cities: City[] = [
     population: '2,000+',
     description:
       'Landscaping, retaining walls, and lawn care in Parkersburg, IA. Built Butler County tough.',
+    isCedarValley: true,
     heroEyebrow: 'Parkersburg \u00b7 Iowa',
-    heroTitle: 'Parkersburg Landscaping|Built to Last',
+    heroTitle: 'Parkersburg Landscaping|Done Right',
     heroSubtitle:
       'Retaining walls, paver patios, lawn care, and property maintenance for Parkersburg and Butler County.',
     metaTitle: 'Landscaping in Parkersburg, IA | A1 Property Services',
@@ -436,6 +445,7 @@ export const cities: City[] = [
     population: '2,200+',
     description:
       'Landscaping, lawn care, and hardscaping in La Porte City, IA. Quality work, fair price.',
+    isCedarValley: true,
     heroEyebrow: 'La Porte City \u00b7 Iowa',
     heroTitle: 'La Porte City|Landscaping Services',
     heroSubtitle:
@@ -485,6 +495,7 @@ export const cities: City[] = [
     population: '1,300+',
     description:
       'Lawn care, landscaping, and hardscaping for Dike, IA, and Grundy County.',
+    isCedarValley: true,
     heroEyebrow: 'Dike \u00b7 Iowa',
     heroTitle: 'Dike Landscaping|and Lawn Care',
     heroSubtitle:
@@ -499,7 +510,7 @@ export const cities: City[] = [
       'grundy county landscaping',
       'landscaper dike',
     ],
-    introHeading: 'Dike Landscaping, Trusted Since 2009',
+    introHeading: 'Dike Landscaping Since 2009',
     introBody: [
       'Dike homeowners want their yards looking good without having to chase contractors. We make it easy. One call gets you on the schedule for mowing, trimming, seasonal cleanups, or a full hardscape project. We handle the details so you do not have to.',
     ],
@@ -534,6 +545,7 @@ export const cities: City[] = [
     population: '1,200+',
     description:
       'Landscaping and property maintenance for Elk Run Heights, IA. Quick, local, reliable.',
+    isCedarValley: true,
     heroEyebrow: 'Elk Run Heights \u00b7 Iowa',
     heroTitle: 'Elk Run Heights|Property Services',
     heroSubtitle:
@@ -583,6 +595,7 @@ export const cities: City[] = [
     population: '1,000+',
     description:
       'Landscaping, lawn care, and hardscaping in Dunkerton, IA. Small town, big results.',
+    isCedarValley: true,
     heroEyebrow: 'Dunkerton \u00b7 Iowa',
     heroTitle: 'Dunkerton Property|Services',
     heroSubtitle:
@@ -599,7 +612,7 @@ export const cities: City[] = [
     ],
     introHeading: 'Dunkerton Landscaping, No Runaround',
     introBody: [
-      'Dunkerton is a quiet Black Hawk County town where people take pride in their properties. We help keep them that way. Mowing, trimming, retaining walls, paver patios, tree work. Same quality, same fair pricing, whether it is a weekly mow or a full yard transformation.',
+      'Dunkerton is a quiet Black Hawk County town where people take pride in their properties. We help keep them that way. Mowing, trimming, retaining walls, paver patios, tree work. Same quality, same fair pricing, whether it is a weekly mow or a full yard redo.',
     ],
     introBody2: [
       'We cover Dunkerton as part of our regular service area. Ongoing maintenance plans or one-off projects, we are happy to quote your work.',
@@ -632,8 +645,9 @@ export const cities: City[] = [
     population: '135,000+',
     description:
       'Professional landscaping, retaining walls, paver patios, and lawn care in Cedar Rapids, IA.',
+    isCedarValley: false,
     heroEyebrow: 'Cedar Rapids \u00b7 Iowa',
-    heroTitle: 'Cedar Rapids Landscaping|Professionals',
+    heroTitle: 'Cedar Rapids Landscaping|Local Crew',
     heroSubtitle:
       'Full-service landscaping, hardscaping, and lawn care for Cedar Rapids homes and businesses.',
     metaTitle: 'Landscaping in Cedar Rapids, IA | A1 Property Services',
@@ -687,10 +701,11 @@ export const cities: City[] = [
     population: '210,000+',
     description:
       'Professional landscaping, retaining walls, paver patios, and lawn care in Des Moines, IA.',
+    isCedarValley: false,
     heroEyebrow: 'Des Moines \u00b7 Iowa',
-    heroTitle: 'Des Moines Landscaping|Professionals',
+    heroTitle: 'Des Moines Landscaping|Local Crew',
     heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care trusted by Des Moines homeowners and businesses.',
+      'Full-service landscaping, hardscaping, and lawn care for Des Moines homeowners and businesses.',
     metaTitle: 'Landscaping in Des Moines, IA | A1 Property Services',
     metaDescription:
       'Des Moines landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Des Moines properties.',
@@ -713,7 +728,7 @@ export const cities: City[] = [
     servicesIntro:
       'Full landscaping and hardscaping services for Des Moines homeowners and commercial properties.',
     uniqueContent: {
-      heading: 'Trusted Landscaping in Des Moines',
+      heading: 'Landscaping in Des Moines',
       body: 'Des Moines properties vary block to block, and we like that. Tight city lots near downtown, sprawling suburban yards, commercial storefronts. Every job gets proper base prep, clean finished edges, and clear communication from start to finish.',
     },
     faqs: [

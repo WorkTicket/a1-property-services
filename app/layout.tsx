@@ -9,7 +9,7 @@ import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, localBusinessJsonLd } from '@/lib/metadata'
 
 const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
-const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'))
+const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
@@ -17,16 +17,16 @@ const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-display',
-  display: 'swap',
+  display: 'optional',
   weight: ['400', '700'],
-  preload: false,
+  preload: true,
   adjustFontFallback: true,
 })
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
-  display: 'swap',
+  display: 'optional',
   weight: ['400', '600'],
   preload: true,
   adjustFontFallback: true,

@@ -11,6 +11,7 @@ import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
@@ -148,7 +149,7 @@ export default function CityPage({ params }: Props) {
                   src={siteImages.cityIntro}
                   alt={`Landscaping project in ${city.name}, Iowa`}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes={IMAGE_SIZES.halfCol}
                 />
               </div>
             </FadeIn>
@@ -213,7 +214,7 @@ export default function CityPage({ params }: Props) {
                   src={siteImages.cityWhy}
                   alt={`A1 Property Services landscaping in ${city.name}`}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes={IMAGE_SIZES.halfCol}
                 />
               </div>
             </FadeIn>
@@ -249,9 +250,15 @@ export default function CityPage({ params }: Props) {
       <section className="section bg-white">
         <FadeIn className="section-inner text-center">
           <p className="section-eyebrow">See Our Work</p>
-          <h2 className="section-heading mt-3">Completed Projects in the Cedar Valley</h2>
+          <h2 className="section-heading mt-3">
+            {city.isCedarValley
+              ? 'Completed Projects in the Cedar Valley'
+              : 'View Our Completed Projects'}
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-            Browse before and after photos of real projects in {city.name} and across the Cedar Valley.
+            {city.isCedarValley
+              ? `Browse before and after photos of real projects in ${city.name} and across the Cedar Valley.`
+              : 'Browse before and after photos of our landscaping and hardscaping projects.'}
           </p>
           <Button href="/gallery" className="mt-8">
             {CTA_COPY.viewGallery}

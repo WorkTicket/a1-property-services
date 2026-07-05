@@ -37,7 +37,6 @@ const serviceCategories = [
 
 const serviceResourceLinks = [
   { label: 'Knowledge Center', href: '/learn' },
-  { label: 'Guides', href: '/guides' },
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
 ]
@@ -55,7 +54,6 @@ function getCategoryServices(key: ServiceCategoryKey): Service[] {
 
 const learnLinks = [
   { label: 'Knowledge Center', href: '/learn' },
-  { label: 'Guides', href: '/guides' },
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
   { label: 'Blog', href: '/blog' },
@@ -375,9 +373,10 @@ export default function Navbar() {
           <LogoMark size={isCompact ? 'sm' : 'md'} />
           <span
             className={cn(
-              'truncate font-display font-bold leading-tight tracking-tight text-brand-dark transition-all duration-300',
+              'truncate font-bold leading-tight tracking-tight text-brand-dark transition-all duration-300',
               isCompact ? 'text-sm sm:text-base lg:text-lg' : 'text-base sm:text-lg lg:text-xl',
             )}
+            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           >
             A1 Property Services
           </span>

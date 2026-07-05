@@ -28,7 +28,7 @@ export default function GoogleReviews() {
     <section className="section bg-white">
       <div className="section-inner">
         <FadeIn className="text-center">
-          <p className="section-eyebrow">Trusted by Neighbors</p>
+          <p className="section-eyebrow">From Cedar Valley Homeowners</p>
           <h2 className="section-heading mt-3">What Our Customers Say</h2>
           <p className="mx-auto mt-2 text-sm text-brand-body/50">
             Based on {data?.totalCount} Google Review{data?.totalCount !== 1 ? 's' : ''}

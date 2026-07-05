@@ -6,6 +6,7 @@ import { CTA_COPY } from '@/lib/cta'
 import { siteImages } from '@/lib/images'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
@@ -85,7 +86,7 @@ export default function AboutPage() {
                   alt="A1 Property Services landscape installation project in Cedar Falls"
                   fill
                   className="transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes={IMAGE_SIZES.halfCol}
                 />
               </div>
             </FadeIn>
@@ -99,7 +100,7 @@ export default function AboutPage() {
                 Retaining walls, paver patios, full yard installs, seasonal maintenance. We have the equipment and the experience to get it done right the first time.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We are proud to serve Cedar Falls, Waterloo, and communities throughout the Cedar Valley. When you work with us, you are working with neighbors who take pride in every yard we touch.
+                We have served Cedar Falls, Waterloo, and towns across the Cedar Valley since 2009. When you hire us, you are hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/contact">
@@ -164,8 +165,8 @@ export default function AboutPage() {
       <GoogleReviews />
 
       <CtaBanner
-        title="Let's build something lasting together."
-        description="Call us today or request a free quote online. We would love to hear about your project."
+        title="Ready to talk about your yard?"
+        description="Call us today or request a free quote online. Tell us what you are working on and we will take it from there."
       />
     </>
   )

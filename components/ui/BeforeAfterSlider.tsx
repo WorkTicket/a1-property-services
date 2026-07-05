@@ -2,6 +2,7 @@
 
 import { useRef, useCallback, useEffect } from 'react'
 import { buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { cn } from '@/lib/utils'
 
 type SlideImage = {
@@ -20,15 +21,19 @@ type BeforeAfterSliderProps = {
   aspectClassName?: string
 }
 
-const SLIDER_SIZES = '(max-width: 768px) 92vw, (max-width: 1280px) 50vw, 640px'
+const SLIDER_SIZES = IMAGE_SIZES.galleryGrid
 const DRAG_THRESHOLD = 10
 
+function getSliderPreloadWidth(): number {
+  if (typeof window === 'undefined') return 768
+  return window.innerWidth <= 768 ? 640 : 1280
+}
+
 function preloadSliderImages(beforeSrc: string, afterSrc: string) {
+  const width = getSliderPreloadWidth()
   const urls = [
-    getVariantUrl(beforeSrc, 'webp', 768),
-    getVariantUrl(afterSrc, 'webp', 768),
-    getVariantUrl(beforeSrc, 'avif', 768),
-    getVariantUrl(afterSrc, 'avif', 768),
+    getVariantUrl(beforeSrc, 'avif', width),
+    getVariantUrl(afterSrc, 'avif', width),
   ]
   urls.forEach((url) => {
     const img = new window.Image()
@@ -41,11 +46,13 @@ function SliderPicture({
   alt,
   className,
   objectPosition,
+  priority = false,
 }: {
   src: string
   alt: string
   className?: string
   objectPosition?: string
+  priority?: boolean
 }) {
   const dimensions = getImageDimensions(src)
   const style: React.CSSProperties = {
@@ -58,15 +65,15 @@ function SliderPicture({
       <source srcSet={buildSrcset(src, 'avif')} sizes={SLIDER_SIZES} type="image/avif" />
       <source srcSet={buildSrcset(src, 'webp')} sizes={SLIDER_SIZES} type="image/webp" />
       <img
-        src={getVariantUrl(src, 'webp', 640)}
+        src={getVariantUrl(src, 'avif', 640)}
         srcSet={buildSrcset(src, 'webp')}
         sizes={SLIDER_SIZES}
         alt={alt}
         width={dimensions?.width}
         height={dimensions?.height}
-        loading="eager"
+        loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        fetchPriority="high"
+        fetchPriority={priority ? 'high' : 'auto'}
         className={cn('absolute inset-0 h-full w-full object-cover [transform:translateZ(0)]', className)}
         style={style}
       />
@@ -224,6 +231,7 @@ export default function BeforeAfterSlider({
           src={after.src}
           alt={after.alt}
           objectPosition={after.objectPosition}
+          priority={after.priority}
         />
 
         <div
@@ -236,6 +244,7 @@ export default function BeforeAfterSlider({
             alt={before.alt}
             className="saturate-[0.75]"
             objectPosition={before.objectPosition}
+            priority={before.priority}
           />
         </div>
 

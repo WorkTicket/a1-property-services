@@ -71,7 +71,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'retaining-walls': {
     title: 'Retaining Wall Installation in Cedar Falls',
     description:
-      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates — licensed and insured.',
+      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates. Licensed and insured.',
     h1: 'Retaining Wall Installation in Cedar Falls',
     keywords: [
       'retaining wall installation cedar falls',
@@ -89,7 +89,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'paver-patio': {
     title: 'Paver Patio Installation in Cedar Falls',
     description:
-      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates — licensed and insured.',
+      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates. Licensed and insured.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -172,7 +172,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'ponds-water-features': {
     title: 'Water Features Installation in Cedar Falls',
     description:
-      'Water features installation in Cedar Falls, IA. Custom ponds, waterfalls, koi ponds, and pondless water gardens. Free estimates — licensed and insured.',
+      'Water features installation in Cedar Falls, IA. Custom ponds, waterfalls, koi ponds, and pondless water gardens. Free estimates. Licensed and insured.',
     h1: 'Water Features Installation in Cedar Falls',
     keywords: [
       'water features installation cedar falls',
@@ -216,7 +216,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'landscape-design': {
     title: 'Landscape Design in Cedar Falls',
     description:
-      'Professional landscape design in Cedar Falls, IA. Custom plans tailored to your property and Iowa growing conditions. Free estimates.',
+      'Professional landscape design in Cedar Falls, IA. Custom plans built around your property and Iowa growing conditions. Free estimates.',
     h1: 'Landscape Design in Cedar Falls',
     keywords: [
       'landscape design cedar falls',
@@ -375,7 +375,7 @@ const defaultOgImage = {
   url: '/og-image.jpg',
   width: 1200,
   height: 630,
-  alt: 'A1 Property Services — landscaping and hardscaping in Cedar Falls, Iowa',
+  alt: 'A1 Property Services landscaping and hardscaping in Cedar Falls, Iowa',
 } as const
 
 export const defaultOpenGraph: NonNullable<Metadata['openGraph']> = {

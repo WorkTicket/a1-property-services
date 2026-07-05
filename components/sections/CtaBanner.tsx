@@ -26,7 +26,7 @@ function CtaBannerContent({
 }: Omit<CtaBannerProps, 'animated'>) {
   return (
     <>
-      {eyebrow ? <p className="section-eyebrow">{eyebrow}</p> : null}
+      {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/80">{eyebrow}</p> : null}
       <h2
         className={cn(
           'font-display text-3xl font-bold text-white md:text-4xl',

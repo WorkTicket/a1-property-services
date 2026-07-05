@@ -72,7 +72,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Are you licensed and insured?',
         paragraphs: [
           'This is the most important question you can ask. A licensed contractor has met the basic requirements to operate in your area. Insurance protects you if someone gets hurt on your property or if equipment damages your home. General liability insurance covers property damage, and workers compensation covers injuries to crew members. If a contractor cannot provide proof of both, do not hire them. You could be held financially responsible for an accident on your property.',
-          'In Iowa, licensing requirements vary by city and county. Contractors who carry proper insurance and licensing demonstrate a level of professionalism that carries through to their work quality. Ask for certificates and verify them if you want extra peace of mind.',
+          'In Iowa, licensing requirements vary by city and county. Contractors who carry proper insurance and licensing tend to run tighter jobs. Ask for certificates and verify them if you want to be sure.',
         ],
       },
       {
@@ -317,7 +317,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'landscaping-budget-planning',
     title: 'Landscaping Budget Planning: What to Expect and How to Plan',
-    excerpt: 'Practical guidance on budgeting for landscaping projects, from small refresh to full yard transformation.',
+    excerpt: 'Practical guidance on budgeting for landscaping projects, from a small refresh to a full yard redo.',
     category: 'buying-guide',
     categoryLabel: 'Budget Guide',
     readingTime: '7 min',
@@ -353,7 +353,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Get multiple estimates and compare value',
         paragraphs: [
-          'Always get at least three written estimates for any significant landscaping project. Compare not just the bottom line, but what is included in each proposal. A higher estimate that includes better materials, deeper base preparation, comprehensive drainage, and a longer warranty may be a better value than a lower estimate that cuts corners.',
+          'Always get at least three written estimates for any significant landscaping project. Compare not just the bottom line, but what is included in each proposal. A higher estimate that includes better materials, deeper base preparation, proper drainage, and a longer warranty may be a better value than a lower estimate that cuts corners.',
           'Ask each contractor to explain their estimate in detail. A contractor who takes the time to walk you through the costs and answer your questions is demonstrating the same care they will bring to the project itself.',
         ],
       },
@@ -421,7 +421,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Factors that affect project timelines',
         paragraphs: [
-          'Landscaping project timelines depend on several variables: the size and complexity of the work, site conditions, weather, material availability, and contractor schedule. A simple project like mulching beds can be done in a day. A full yard transformation with grading, hardscape, and planting may take several weeks. Understanding what affects the timeline helps you plan realistically.',
+          'Landscaping project timelines depend on several variables: the size and complexity of the work, site conditions, weather, material availability, and contractor schedule. A simple project like mulching beds can be done in a day. A full yard redo with grading, hardscape, and planting may take several weeks. Understanding what affects the timeline helps you plan realistically.',
           'Weather is the biggest variable in Iowa. Spring rains can delay excavation and planting. Extreme heat can make it unsafe for crews to work. Winter limits what can be done. Most contractors build weather buffers into their schedules, but extended wet periods can push timelines out significantly.',
         ],
       },
