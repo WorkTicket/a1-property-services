@@ -12,7 +12,7 @@ import CtaBanner from '@/components/sections/CtaBanner'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Resources & Guides',
   description:
-    'Educational guides, buying tips, and comparison resources to help Cedar Valley homeowners make informed landscaping decisions.',
+    'Educational guides, buying tips, and comparison resources for Cedar Valley homeowners planning landscape work.',
   path: '/learn',
 })
 
@@ -66,7 +66,7 @@ export default function LearnPage() {
         imageAlt="Landscaping educational resources in Cedar Falls"
         eyebrow="Educational Resources"
         title="Landscaping|Knowledge Center"
-        subtitle="Guides, comparisons, and buying tips to help you make informed decisions about your Cedar Valley landscape."
+        subtitle="Guides, comparisons, and buying tips for Cedar Valley homeowners planning a landscape project."
       />
 
       <section className="section bg-white">

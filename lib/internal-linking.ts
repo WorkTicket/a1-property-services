@@ -1,4 +1,4 @@
-import { allServices, type Service, serviceFaqs } from '@/lib/services'
+import { allServices, getFaqPageServices, type Service, serviceFaqs } from '@/lib/services'
 import { blogPosts, type BlogPost } from '@/lib/blog'
 import { cities } from '@/lib/cities'
 import { learnArticles, type LearnArticle } from '@/lib/learn'
@@ -21,10 +21,36 @@ export type RelatedContentGroup = {
   items: LinkedContent[]
 }
 
+/** Curated services that pair well together — shown as "Other Landscaping Services" on service pages. */
+const complementaryServiceSlugs: Record<string, string[]> = {
+  'landscape-maintenance': ['landscape-installation', 'lawn-care', 'preservation-restoration'],
+  'landscape-installation': ['landscape-design', 'mulching', 'shrub-installation'],
+  'lawn-care': ['landscape-maintenance', 'hydroseeding', 'sod-installation'],
+  'preservation-restoration': ['landscape-installation', 'landscape-maintenance', 'tree-service'],
+  'tree-service': ['tree-planting', 'shrub-installation', 'landscape-maintenance'],
+  'ponds-water-features': ['outdoor-living', 'paver-patio', 'landscape-design'],
+  'hydroseeding': ['sod-installation', 'lawn-care', 'grading'],
+  'snow-removal': ['landscape-maintenance', 'commercial-landscaping', 'lawn-care'],
+  'landscape-design': ['landscape-installation', 'outdoor-living', 'residential-landscaping'],
+  'drainage': ['excavation', 'grading', 'retaining-walls'],
+  'excavation': ['grading', 'drainage', 'sod-installation'],
+  'sod-installation': ['lawn-care', 'hydroseeding', 'landscape-installation'],
+  'mulching': ['landscape-maintenance', 'shrub-installation', 'landscape-installation'],
+  'rock-landscaping': ['landscape-installation', 'drainage', 'retaining-walls'],
+  'tree-planting': ['tree-service', 'shrub-installation', 'landscape-installation'],
+  'shrub-installation': ['landscape-installation', 'mulching', 'landscape-maintenance'],
+  'commercial-landscaping': ['landscape-maintenance', 'snow-removal', 'lawn-care'],
+  'residential-landscaping': ['landscape-design', 'landscape-installation', 'landscape-maintenance'],
+  'grading': ['excavation', 'drainage', 'sod-installation'],
+  'outdoor-living': ['paver-patio', 'ponds-water-features', 'landscape-design'],
+  'retaining-walls': ['drainage', 'excavation', 'paver-patio'],
+  'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
+}
+
 const guides = [
   { slug: 'retaining-wall-planning', title: 'Retaining Wall Planning Guide', description: 'Everything you need to know before building a retaining wall in Iowa.' },
   { slug: 'paver-patio-planning', title: 'Paver Patio Planning Guide', description: 'How to plan the perfect paver patio for Iowa properties.' },
-  { slug: 'outdoor-living-design', title: 'Outdoor Living Design Guide', description: 'Design your dream outdoor living space.' },
+  { slug: 'outdoor-living-design', title: 'Outdoor Living Design Guide', description: 'Plan an outdoor living space that fits your yard.' },
   { slug: 'drainage-solutions', title: 'Drainage Solutions Guide', description: 'Identify and solve common drainage problems.' },
   { slug: 'landscape-design', title: 'Landscape Design Guide', description: 'A complete guide to designing your Iowa landscape.' },
   { slug: 'lawn-care', title: 'Lawn Care Guide', description: 'Year-round lawn care for Iowa.' },
@@ -62,7 +88,16 @@ function textOverlap(a: string, b: string): number {
   return tokensB.filter(t => tokensA.has(t)).length
 }
 
-export function getRelatedServices(serviceSlug: string, limit = 4): LinkedContent[] {
+export function getComplementaryServices(serviceSlug: string, limit = 3): Service[] {
+  const curated = complementaryServiceSlugs[serviceSlug]
+  if (curated) {
+    return curated
+      .filter(slug => slug !== serviceSlug)
+      .slice(0, limit)
+      .map(slug => allServices.find(s => s.slug === slug))
+      .filter((s): s is Service => !!s)
+  }
+
   const service = allServices.find(s => s.slug === serviceSlug)
   if (!service) return []
 
@@ -70,23 +105,24 @@ export function getRelatedServices(serviceSlug: string, limit = 4): LinkedConten
     s => s.slug !== serviceSlug && s.category === service.category
   )
 
-  let related: Service[]
   if (sameCategory.length >= limit) {
-    related = sameCategory.slice(0, limit)
-  } else {
-    const others = allServices.filter(
-      s => s.slug !== serviceSlug && s.category !== service.category
-    )
-    related = [...sameCategory, ...others].slice(0, limit)
+    return sameCategory.slice(0, limit)
   }
 
-  return related.map(s => toLinked({
+  const others = allServices.filter(
+    s => s.slug !== serviceSlug && s.category !== service.category
+  )
+  return [...sameCategory, ...others].slice(0, limit)
+}
+
+export function getRelatedServices(serviceSlug: string, limit = 4): LinkedContent[] {
+  return getComplementaryServices(serviceSlug, limit).map(s => toLinked({
     type: 'service',
     slug: s.slug,
     title: s.name,
     excerpt: s.shortDesc,
     url: serviceUrl(s.slug),
-    relevance: s.category === service.category ? 10 : 5,
+    relevance: 10,
   }))
 }
 
@@ -154,6 +190,32 @@ export function getProjectsForService(serviceSlug: string, limit = 4): LinkedCon
     url: projectUrl(),
     relevance: 8,
   }))
+}
+
+export function getLearnForService(serviceSlug: string, limit = 3): LinkedContent[] {
+  return learnArticles
+    .filter(a => a.relatedServices.includes(serviceSlug))
+    .slice(0, limit)
+    .map(a => toLinked({
+      type: 'learn',
+      slug: a.slug,
+      title: a.title,
+      excerpt: a.excerpt,
+      url: learnUrl(a.slug),
+      relevance: 10,
+    }))
+}
+
+export function getServiceRelatedContentGroups(serviceSlug: string): RelatedContentGroup[] {
+  const groups: RelatedContentGroup[] = []
+
+  const blogs = getBlogsForService(serviceSlug)
+  if (blogs.length > 0) groups.push({ heading: 'Related Articles', items: blogs })
+
+  const learn = getLearnForService(serviceSlug)
+  if (learn.length > 0) groups.push({ heading: 'Knowledge Center', items: learn })
+
+  return groups
 }
 
 export function getFaqsForService(serviceSlug: string, limit = 3): LinkedContent[] {
@@ -358,8 +420,7 @@ export function getBlogsForGuide(limit = 3): LinkedContent[] {
 }
 
 export function getServiceLinksForFaq(limit = 6): LinkedContent[] {
-  return allServices
-    .filter(s => serviceFaqs[s.slug] && serviceFaqs[s.slug].length > 0)
+  return getFaqPageServices()
     .slice(0, limit)
     .map(s => toLinked({
       type: 'service', slug: s.slug, title: s.name, excerpt: s.shortDesc,
@@ -376,14 +437,7 @@ export function getRelatedContent(serviceSlug: string): {
 } {
   const service = allServices.find(s => s.slug === serviceSlug)
 
-  const otherServices = allServices.filter(s => s.slug !== serviceSlug)
-  const categoryRelated = service?.category
-    ? allServices.filter(s => s.slug !== serviceSlug && s.category === service.category)
-    : []
-
-  const relatedServices = categoryRelated.length >= 3
-    ? categoryRelated.slice(0, 3)
-    : [...categoryRelated, ...otherServices.filter(s => !categoryRelated.includes(s)).slice(0, 3 - categoryRelated.length)]
+  const relatedServices = getComplementaryServices(serviceSlug, 3)
 
   const relatedBlogPosts = blogPosts.filter(post => {
     const slug = serviceSlug
@@ -439,17 +493,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
 
   switch (contentType) {
     case 'service': {
-      const services = getRelatedServices(slug)
-      if (services.length > 0) groups.push({ heading: 'Related Services', items: services })
-
-      const blogs = getBlogsForService(slug)
-      if (blogs.length > 0) groups.push({ heading: 'Related Articles', items: blogs })
-
-      const projects = getProjectsForService(slug)
-      if (projects.length > 0) groups.push({ heading: 'Related Projects', items: projects })
-
-      const faqs = getFaqsForService(slug)
-      if (faqs.length > 0) groups.push({ heading: 'Frequently Asked Questions', items: faqs })
+      groups.push(...getServiceRelatedContentGroups(slug))
       break
     }
 
@@ -474,12 +518,6 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
 
       const blogs = getBlogsForCity(slug)
       if (blogs.length > 0) groups.push({ heading: 'Articles for Your Area', items: blogs })
-
-      const projects = galleryProjects.slice(0, 4).map(p => toLinked({
-        type: 'project', slug: p.id, title: p.title, excerpt: `${p.title} project`,
-        url: projectUrl(), relevance: 5,
-      }))
-      if (projects.length > 0) groups.push({ heading: 'Our Projects', items: projects })
       break
     }
 

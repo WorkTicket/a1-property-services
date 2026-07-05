@@ -192,7 +192,7 @@ const galleryProjects: GalleryProject[] = [
   },
   {
     id: 'patio-1',
-    title: 'Paver Patio',
+    title: 'Raised Patio',
     category: 'hardscape',
     before: {
       src: img('patio-before-1.webp'),

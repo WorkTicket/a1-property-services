@@ -7,6 +7,7 @@ import { services, hardscapeFeatures, hardscapeServices, servicesHubFaqs } from 
 import { siteImages } from '@/lib/images'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import PageHero from '@/components/motion/PageHero'
@@ -141,7 +142,7 @@ export default function ServicesPage() {
             </p>
             <p>
               Whether you need a single project or year-round landscape maintenance, our licensed and
-              insured crew builds for Iowa weather — proper drainage, compacted bases, and materials
+              insured crew builds for Iowa weather with proper drainage, compacted bases, and materials
               rated for freeze-thaw cycles across the Cedar Valley.
             </p>
           </div>
@@ -149,16 +150,16 @@ export default function ServicesPage() {
       </section>
 
       <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
-        <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes="100vw" />
+        <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
         <div className="absolute inset-0 bg-brand-green-800/85" />
         <div className="section-inner relative">
           <FadeIn className="mb-6 text-center">
-            <p className="section-eyebrow">Signature Work</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/80">Signature Work</p>
             <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
               Hardscaping in Cedar Falls
             </h2>
           </FadeIn>
-          <StaggerContainer className="grid gap-4 md:grid-cols-3">
+          <StaggerContainer className="grid gap-4 md:grid-cols-4">
             {hardscapeFeatures.map((f) => (
               <StaggerItem key={f.slug}>
                 <Link
@@ -194,7 +195,7 @@ export default function ServicesPage() {
                       src={hardscapeImages[service.slug] ?? siteImages.servicesHero}
                       alt={`${service.name} in Cedar Falls, Iowa`}
                       fill
-                      sizes="(max-width: 640px) 100vw, 33vw"
+                      sizes={IMAGE_SIZES.thirdCol}
                     />
                   </div>
                   <div className="p-6">

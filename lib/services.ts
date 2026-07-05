@@ -88,7 +88,7 @@ export const services: Service[] = [
     name: 'Water Features',
     shortDesc: 'Custom ponds, waterfalls, and water gardens for your property.',
     longDesc:
-      'A pond or waterfall adds sound and a focal point to any yard. We design and install custom ponds, waterfalls, and pondless water gardens, plus seasonal opening and maintenance to keep them running through Iowa winters.',
+      'A pond or waterfall adds sound and gives the yard a clear centerpiece. We design and install custom ponds, waterfalls, and pondless water gardens, plus seasonal opening and maintenance to keep them running through Iowa winters.',
     anchorId: 'ponds',
     featured: true,
     category: 'hardscaping',
@@ -117,7 +117,7 @@ export const services: Service[] = [
     slug: 'landscape-design',
     icon: 'ruler',
     name: 'Landscape Design',
-    shortDesc: 'Custom landscape plans tailored to your property and Iowa growing conditions.',
+    shortDesc: 'Custom landscape plans built around your property and Iowa growing conditions.',
     longDesc:
       'Before the first shovel hits the dirt, a solid plan makes everything easier. We create custom landscape designs for sun exposure, drainage, hardscape layout, and plant selection so your installation goes smoothly from start to finish.',
     anchorId: 'landscapedesign',
@@ -161,7 +161,7 @@ export const services: Service[] = [
     name: 'Mulching',
     shortDesc: 'Fresh mulch installation for beds, trees, and landscape areas.',
     longDesc:
-      'Mulch does more than tidy up your beds — it holds moisture, blocks weeds, and protects roots through Iowa heat and cold. We weed, edge, and apply the right depth without piling against trunks or stems.',
+      'Mulch does more than tidy up your beds. It holds moisture, blocks weeds, and protects roots through Iowa heat and cold. We weed, edge, and apply the right depth without piling against trunks or stems.',
     anchorId: 'mulching',
     category: 'landscaping',
   },
@@ -211,7 +211,7 @@ export const services: Service[] = [
     name: 'Residential Landscaping',
     shortDesc: 'Full-service landscaping for Cedar Valley homes.',
     longDesc:
-      'Your home landscape should be a space you enjoy every day. From full yard transformations to weekly mowing and seasonal cleanups, we handle design, installation, and maintenance tailored to your budget and family.',
+      'Your yard should be a place you actually use. From full yard overhauls to weekly mowing and seasonal cleanups, we handle design, installation, and maintenance that fits your budget and how your family lives.',
     anchorId: 'residential',
     category: 'landscaping',
   },
@@ -231,7 +231,7 @@ export const services: Service[] = [
     name: 'Outdoor Living Spaces',
     shortDesc: 'Fire pits, outdoor kitchens, patios, and custom entertainment areas.',
     longDesc:
-      'Turn your backyard into an extension of your home. We design and build paver patios, fire pits, outdoor kitchens, and seating areas with lighting and landscaping integrated for how you entertain.',
+      'Use your backyard the way you use the rest of your house. We design and build paver patios, fire pits, outdoor kitchens, and seating areas with lighting and plantings worked in around how you cook, eat, and hang out outside.',
     anchorId: 'outdoorliving',
     featured: true,
     category: 'outdoor-living',
@@ -268,13 +268,6 @@ export const hardscapeFeatures = [
     href: '/services/outdoor-living',
     oldHref: '',
   },
-  {
-    slug: 'drainage',
-    name: 'Drainage Solutions',
-    shortDesc: 'French drains, grading, and surface drainage for dry yards.',
-    href: '/services/drainage',
-    oldHref: '',
-  },
 ]
 
 export const hardscapeServices: Service[] = [
@@ -285,9 +278,10 @@ export const hardscapeServices: Service[] = [
     shortDesc:
       'Block and stone walls for slopes, erosion, and curb appeal that lasts.',
     longDesc:
-      'Sloped Cedar Valley lots need retaining walls that handle runoff, stop erosion, and give you flat, usable space. Our retaining wall installation in Cedar Falls starts with a site assessment: we check slope, soil, drainage patterns, and how the wall ties into your yard. That means proper base compaction, gravel backfill, and weep drainage built for Iowa freeze-thaw. We build retaining walls with segmental block and natural stone. Single tier along a driveway or multi-level for a backyard terrace — either way, the wall is built to last and finished to match your property.',
+      'Sloped Cedar Valley lots need retaining walls that handle runoff, stop erosion, and give you flat, usable space. Our retaining wall installation in Cedar Falls starts with a site assessment: we check slope, soil, drainage patterns, and how the wall ties into your yard. That means proper base compaction, gravel backfill, and weep drainage built for Iowa freeze-thaw. We build retaining walls with segmental block and natural stone. Single tier along a driveway or multi-level for a backyard terrace. Either way, the wall is built to last and finished to match your property.',
     anchorId: 'retainingwalls',
     featured: true,
+    category: 'hardscaping',
   },
   {
     slug: 'paver-patio',
@@ -298,6 +292,7 @@ export const hardscapeServices: Service[] = [
       'A well-built paver patio gives you a solid outdoor space that holds up to Iowa weather and heavy use. Our paver patio installation in Cedar Falls covers every step: excavation, compacted aggregate base, edge restraint, pattern layout, and final compaction so your patio stays level and drains right for years. Pick from a range of paver styles, colors, and patterns. Add seat walls, fire pits, or lighting if you want. From small backyard patios to large entertainment areas, we build them the same way every time.',
     anchorId: 'paverpatio',
     featured: true,
+    category: 'hardscaping',
   },
 ]
 
@@ -318,12 +313,12 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
     { problem: 'You want an outdoor space but need it to match your home and budget', solution: 'Pavers come in dozens of colors, shapes, and patterns at various price points. We design a patio that fits your style and budget without compromising quality.' },
   ],
   'ponds-water-features': [
-    { problem: 'Your backyard feels flat and lacks a focal point or visual interest', solution: 'A custom water feature adds movement, sound, and a natural centerpiece. Even a small pondless waterfall transforms the whole feel of the yard.' },
+    { problem: 'Your backyard feels flat and lacks a centerpiece or visual interest', solution: 'A custom water feature adds movement, sound, and something worth building the rest of the yard around. Even a small pondless waterfall changes how the whole space feels.' },
     { problem: 'You want a pond but worry about Iowa winter damage', solution: 'We design every water feature with winterization in mind. Pumps are removable, liners are rated for freeze-thaw, and we offer seasonal opening and closing services.' },
     { problem: 'The sound of traffic and neighbors carries into your outdoor space', solution: 'Running water from a waterfall or stream creates natural white noise that masks unwanted sounds. The louder the water feature, the more privacy you gain.' },
   ],
   'landscape-installation': [
-    { problem: 'Your yard has bare patches, overgrown areas, and no cohesive design', solution: 'We start fresh with a complete plan: grading, soil prep, plant selection, and installation. The result is a cohesive landscape that works with your property.' },
+    { problem: 'Your yard has bare patches, overgrown areas, and no clear plan', solution: 'We start fresh with a complete plan: grading, soil prep, plant selection, and installation. The result is a yard where everything fits together and works with your property.' },
     { problem: 'You bought plants that looked good at the nursery but died in Iowa clay', solution: 'We select plants proven to thrive in Black Hawk County soil and climate. Proper soil preparation and planting technique give them the best start.' },
     { problem: 'DIY landscaping projects never look as polished as professional work', solution: 'Professional installation means proper spacing, clean edges, correct planting depth, and materials that hold up. The finished look is night and day from DIY.' },
   ],
@@ -373,7 +368,7 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
     { problem: 'Your new construction yard is bare dirt and turning into a mud pit', solution: 'Sod stabilizes the soil immediately. No more mud tracked into the house, and the lawn looks established from day one.' },
   ],
   'mulching': [
-    { problem: 'Your landscape beds look tired and weeds are taking over', solution: 'Fresh mulch at 2-3 inches suppresses weeds, holds moisture, and gives beds a clean, uniform appearance. The transformation is immediate.' },
+    { problem: 'Your landscape beds look tired and weeds are taking over', solution: 'Fresh mulch at 2-3 inches suppresses weeds, holds moisture, and gives beds a clean, uniform look. You notice the difference the same day we finish.' },
     { problem: 'You mulched last year but it faded, thinned out, and looks bad', solution: 'Annual mulch refresh restores color and depth. We weed and edge first, then apply fresh mulch for a like-new look every spring.' },
     { problem: 'Mulch is piled against your tree trunks and they are showing rot', solution: 'We apply mulch at the correct depth (2-3 inches) and keep it pulled back from trunks and stems. Proper technique prevents moisture-related damage.' },
   ],
@@ -398,7 +393,7 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
     { problem: 'Coordinating multiple landscaping vendors is eating your time', solution: 'One contract, one point of contact, one monthly bill. We handle maintenance, hardscape, snow removal, and seasonal work.' },
   ],
   'residential-landscaping': [
-    { problem: 'Your yard has never had professional landscaping and shows it', solution: 'From design through installation, we transform your property. Grading, plants, hardscape, and lighting all work together for a cohesive look.' },
+    { problem: 'Your yard has never had professional landscaping and shows it', solution: 'From design through installation, we rebuild the yard from the ground up. Grading, plants, hardscape, and lighting all work together so the finished result looks intentional.' },
     { problem: 'You want to enjoy your yard but maintenance is overwhelming', solution: 'We offer maintenance plans that keep your landscape looking its best. Mowing, pruning, mulching, and seasonal care on autopilot.' },
     { problem: 'Previous DIY projects never look pulled together or finished', solution: 'Professional design and installation means clean edges, proper spacing, correct materials, and a finished look that DIY cannot match.' },
   ],
@@ -413,7 +408,7 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
     { problem: 'Overgrown shrubs and trees have taken over and need to be reset', solution: 'Selective removal, pruning, and replanting restore balance. The landscape gets a fresh start without a complete tear-out.' },
   ],
   'outdoor-living': [
-    { problem: 'Your backyard is unused space when it could be an entertainment hub', solution: 'A paver patio with built-in fire pit, outdoor kitchen, and seating areas transforms your yard into an outdoor room you use constantly.' },
+    { problem: 'Your backyard sits empty when it could be where people gather', solution: 'A paver patio with a built-in fire pit, outdoor kitchen, and seating gives you an outdoor room you will actually use.' },
     { problem: 'You want to entertain but have no defined spaces for cooking and lounging', solution: 'Multi-level patios create distinct zones for dining, cooking around a fire, and lounging. Each zone has its own purpose and flow.' },
     { problem: 'Your current setup is a grill on a concrete slab and nowhere to sit', solution: 'A complete outdoor living design integrates cooking, dining, and seating areas. We add lighting and landscaping so the space works from day to night.' },
   ],
@@ -478,7 +473,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Design Consultation',
       description:
-        'We discuss your vision — koi pond, pondless waterfall, or stream — and design a water feature that fits your Cedar Falls yard and budget.',
+        'We discuss your vision, whether that is a koi pond, pondless waterfall, or stream, and design a water feature that fits your Cedar Falls yard and budget.',
     },
     {
       title: 'Excavation & Basin Setup',
@@ -527,7 +522,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Solution Design',
       description:
-        'We design a drainage solution — French drain, catch basin, regrading, or combination — sized for your property\'s water volume and soil conditions.',
+        'We design a drainage solution, whether that is a French drain, catch basin, regrading, or a combination, sized for your property\'s water volume and soil conditions.',
     },
     {
       title: 'Installation',
@@ -566,7 +561,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Design & Planning',
       description:
-        'We discuss how you want to use the space — dining, cooking, lounging, fire — and design a layout that flows naturally between zones.',
+        'We talk through how you want to use the space: dining, cooking, lounging, fire. Then we lay out a plan where those zones connect without feeling cramped.',
     },
     {
       title: 'Hardscape Installation',
@@ -615,7 +610,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Consultation & Design',
       description:
-        'We walk your property, discuss your goals and budget, and create a landscape plan tailored to your home and how you use the space.',
+        'We walk your property, discuss your goals and budget, and create a landscape plan that fits your home and how you use the space.',
     },
     {
       title: 'Planning & Preparation',
@@ -625,12 +620,313 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Installation',
       description:
-        'Our crew handles grading, planting, hardscape, and all details of your landscape transformation with professional precision.',
+        'Our crew handles grading, planting, hardscape, and the rest of the install with the same care on the details as on the big pieces.',
     },
     {
       title: 'Cleanup & Walkthrough',
       description:
         'We clean every inch of the job site and walk through the completed work with you to make sure you are happy with the result.',
+    },
+  ],
+  'tree-service': [
+    {
+      title: 'On-Site Tree Assessment',
+      description:
+        'We evaluate tree health, size, lean, and proximity to structures, power lines, and landscaping. This determines whether pruning, removal, or treatment is the right call.',
+    },
+    {
+      title: 'Removal Plan & Setup',
+      description:
+        'We choose the safest method, whether that is a crane, bucket truck, or sectional rigging, based on access and hazard level. Utility locating and permits are handled when required.',
+    },
+    {
+      title: 'Controlled Removal',
+      description:
+        'Our crew removes the tree in sections, lowering each piece safely to protect your lawn, roof, fence, and surrounding plantings.',
+    },
+    {
+      title: 'Stump Grinding & Cleanup',
+      description:
+        'We grind the stump below grade, haul off brush and logs, and rake the work area so your property is clean and ready for replanting or sod.',
+    },
+    {
+      title: 'Final Walkthrough',
+      description:
+        'We review the completed work with you, discuss replanting or landscaping options, and answer any questions about the cleared area.',
+    },
+  ],
+  'lawn-care': [
+    {
+      title: 'Initial Lawn Assessment',
+      description:
+        'We walk your property to identify grass type, soil conditions, weed pressure, and problem areas like bare spots or compacted soil.',
+    },
+    {
+      title: 'Customized Care Program',
+      description:
+        'We build a mowing, fertilization, aeration, and weed control schedule matched to your lawn and the Cedar Valley growing season.',
+    },
+    {
+      title: 'Regular Service Visits',
+      description:
+        'Our crew mows at the correct height, edges as needed, and applies treatments on schedule to keep your lawn thick and healthy.',
+    },
+    {
+      title: 'Seasonal Adjustments',
+      description:
+        'Spring startup, summer drought management, fall aeration, and pre-emergent weed control are timed for Iowa conditions.',
+    },
+  ],
+  'landscape-maintenance': [
+    {
+      title: 'Property Walkthrough',
+      description:
+        'We assess beds, shrubs, trees, and lawn areas to understand what your landscape needs and how often each area requires attention.',
+    },
+    {
+      title: 'Maintenance Schedule Setup',
+      description:
+        'We establish a recurring schedule for pruning, mulching, edging, fertilization, and seasonal cleanups that fits your property.',
+    },
+    {
+      title: 'Regular Service Visits',
+      description:
+        'Our crew handles pruning, bed work, mulch refresh, weed control, and general upkeep on each scheduled visit.',
+    },
+    {
+      title: 'Seasonal Cleanups',
+      description:
+        'Spring and fall cleanups remove debris, cut back perennials, and prepare beds and lawns for the next growing season.',
+    },
+  ],
+  'preservation-restoration': [
+    {
+      title: 'Site Assessment & Diagnosis',
+      description:
+        'We evaluate soil health, drainage, plant condition, and erosion damage to identify what is causing the decline.',
+    },
+    {
+      title: 'Restoration Plan',
+      description:
+        'We outline selective removal, soil amendment, erosion control, and replanting steps prioritized by urgency and budget.',
+    },
+    {
+      title: 'Restoration Work',
+      description:
+        'Our crew removes dead or overgrown plant material, amends soil, installs erosion controls, and replants with Iowa-hardy species.',
+    },
+    {
+      title: 'Care Plan Handoff',
+      description:
+        'We walk you through watering, mulching, and ongoing care so the restored landscape stays healthy long-term.',
+    },
+  ],
+  'hydroseeding': [
+    {
+      title: 'Site Prep & Soil Testing',
+      description:
+        'We remove existing vegetation, test soil, and amend as needed so the seedbed is ready for even germination.',
+    },
+    {
+      title: 'Grading & Seedbed Preparation',
+      description:
+        'The area is graded for drainage and raked smooth so hydroseed slurry makes good contact with the soil surface.',
+    },
+    {
+      title: 'Hydroseed Application',
+      description:
+        'Seed, mulch, fertilizer, and tackifier are sprayed in one pass for even coverage across the entire area.',
+    },
+    {
+      title: 'Establishment Care',
+      description:
+        'We provide watering instructions and a timeline for mowing and fertilizing during the critical first 3-4 weeks.',
+    },
+  ],
+  'snow-removal': [
+    {
+      title: 'Property Assessment & Contract Setup',
+      description:
+        'We walk your driveways, walkways, and parking areas to map surfaces, access points, and priority zones before winter.',
+    },
+    {
+      title: 'Pre-Storm Preparation',
+      description:
+        'Before forecasted storms, we pre-treat walkways and steps with de-icer to reduce ice bonding and make clearing faster.',
+    },
+    {
+      title: 'Snow Clearing',
+      description:
+        'Our crew plows, blows, or shovels based on accumulation, surface type, and access, clearing to your contracted depth.',
+    },
+    {
+      title: 'Ice Treatment & Follow-Up',
+      description:
+        'After clearing, we treat remaining ice on steps and walkways. Follow-up visits handle drifting and refreeze events.',
+    },
+  ],
+  'excavation': [
+    {
+      title: 'Site Assessment & Utility Locate',
+      description:
+        'We evaluate access, soil conditions, and scope of work. Utility lines are located before any digging begins.',
+    },
+    {
+      title: 'Equipment Selection & Setup',
+      description:
+        'We choose the right machine, whether that is a skid steer, mini excavator, or track loader, based on access, depth, and material volume.',
+    },
+    {
+      title: 'Excavation & Grading',
+      description:
+        'Our operator clears, digs, trenches, or grades to spec with attention to drainage slope and compaction requirements.',
+    },
+    {
+      title: 'Material Haul-Off or Placement',
+      description:
+        'Excavated soil is removed or repositioned on site. Gravel and base material is placed and compacted when needed.',
+    },
+    {
+      title: 'Site Cleanup',
+      description:
+        'We restore disturbed areas, remove debris, and leave the site ready for the next phase of your project.',
+    },
+  ],
+  'mulching': [
+    {
+      title: 'Bed Assessment',
+      description:
+        'We walk your beds to check mulch depth, weed pressure, and any plants that need trimming before fresh mulch goes down.',
+    },
+    {
+      title: 'Weeding & Edging',
+      description:
+        'Beds are weeded and edges are redefined with a clean line between mulch and lawn or hardscape.',
+    },
+    {
+      title: 'Mulch Application',
+      description:
+        'Fresh mulch is spread to a uniform 2-3 inch depth, kept back from tree trunks and plant stems.',
+    },
+    {
+      title: 'Cleanup & Final Check',
+      description:
+        'We blow or sweep mulch off hardscape surfaces and walk the property to make sure every bed looks clean and finished.',
+    },
+  ],
+  'rock-landscaping': [
+    {
+      title: 'Design & Layout',
+      description:
+        'We mark bed edges, dry creek paths, and boulder placements to match your landscape design and drainage needs.',
+    },
+    {
+      title: 'Base Prep & Weed Barrier',
+      description:
+        'The area is excavated to depth, compacted, and lined with landscape fabric to prevent weeds and stone migration.',
+    },
+    {
+      title: 'Stone Installation',
+      description:
+        'River rock, gravel, boulders, or flagstone steppers are placed and leveled for a natural, finished appearance.',
+    },
+    {
+      title: 'Cleanup & Walkthrough',
+      description:
+        'We remove excess material, clean hardscape surfaces, and walk through the completed work with you.',
+    },
+  ],
+  'tree-planting': [
+    {
+      title: 'Site & Species Selection',
+      description:
+        'We evaluate sun exposure, soil type, mature size, and your goals to recommend the right tree species and planting location.',
+    },
+    {
+      title: 'Planting Hole Preparation',
+      description:
+        'The hole is dug wide and shallow with amended backfill so roots spread outward rather than circling downward.',
+    },
+    {
+      title: 'Tree Installation',
+      description:
+        'The tree is set with the root flare at grade, backfilled, and watered in to eliminate air pockets around the root ball.',
+    },
+    {
+      title: 'Mulching & Staking',
+      description:
+        'A 3-foot mulch ring is applied without piling against the trunk. Staking is added only when wind exposure requires it.',
+    },
+    {
+      title: 'Care Instructions',
+      description:
+        'We walk you through the watering schedule for the first two years and answer questions about long-term tree care.',
+    },
+  ],
+  'shrub-installation': [
+    {
+      title: 'Design & Plant Selection',
+      description:
+        'We select shrub varieties for your goals, whether that is foundation planting, a privacy hedge, or seasonal color, matched to Iowa conditions.',
+    },
+    {
+      title: 'Bed Prep & Soil Amendment',
+      description:
+        'Planting beds are edged, weeded, and amended with compost or planting mix to give shrubs a strong start.',
+    },
+    {
+      title: 'Shrub Installation',
+      description:
+        'Shrubs are spaced for mature size, planted at correct depth, and watered in at the root zone.',
+    },
+    {
+      title: 'Mulching & Cleanup',
+      description:
+        'Fresh mulch is applied at proper depth and the work area is cleaned so beds look finished from day one.',
+    },
+  ],
+  'commercial-landscaping': [
+    {
+      title: 'Property Assessment & Proposal',
+      description:
+        'We walk the site, review current conditions, and build a maintenance or installation proposal that matches your property type.',
+    },
+    {
+      title: 'Service Schedule & Crew Assignment',
+      description:
+        'Mowing, pruning, mulching, and snow removal are scheduled on consistent days with a dedicated crew assigned to your account.',
+    },
+    {
+      title: 'Regular Maintenance Visits',
+      description:
+        'Our crew handles scheduled work, including mowing, bed maintenance, pruning, and seasonal cleanups, on time and to spec.',
+    },
+    {
+      title: 'Seasonal Enhancements & Reporting',
+      description:
+        'Spring mulch refresh, fall cleanup, and seasonal color rotations keep the property looking professional year-round.',
+    },
+  ],
+  'grading': [
+    {
+      title: 'Site Survey & Drainage Assessment',
+      description:
+        'We identify low spots, water flow patterns, and foundation proximity to plan grading that moves water where it should go.',
+    },
+    {
+      title: 'Grading Plan & Equipment Setup',
+      description:
+        'We determine cut-and-fill balance or laser-grade requirements and bring the right equipment for your property size.',
+    },
+    {
+      title: 'Cut, Fill, or Laser Grade',
+      description:
+        'Soil is moved, compacted in lifts, and finished to the correct slope, typically 1 inch per foot away from structures.',
+    },
+    {
+      title: 'Finish Grade & Restoration',
+      description:
+        'The surface is smoothed and ready for sod, seed, or hardscape. Disturbed areas are restored so the yard looks clean.',
     },
   ],
 }
@@ -646,9 +942,9 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     heading: 'Why Cedar Falls Homeowners Choose Our Retaining Walls',
     paragraphs: [
       'Retaining walls are one of the most practical upgrades for sloped Cedar Valley properties. A properly installed retaining wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
-      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install in Cedar Falls includes gravel backfill, drain pipe, and materials rated for local conditions. Whether you need a single-tier block wall along a driveway or a multi-level stone terrace in the backyard, we build it to last.',
+      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install in Cedar Falls includes gravel backfill, drain pipe, and materials rated for local conditions. Need a single-tier block wall along a driveway or a multi-level stone terrace in the backyard? We build it to last.',
       'Concrete retaining walls deliver maximum strength for tall walls and load-bearing applications. Block retaining walls (segmental concrete block) are the most popular choice for residential projects because they install faster, flex through freeze-thaw without cracking, and come in a variety of colors and textures. Decorative retaining walls add architectural interest with stone veneer, cap systems, and layered tiers that double as seating.',
-      'Whichever material you choose, the engineering underneath is what matters most. Proper base compaction, geogrid reinforcement for walls over four feet, and drainage gravel behind every course — that is what keeps your retaining wall standing for decades.',
+      'Whichever material you choose, the engineering underneath is what matters most. Proper base compaction, geogrid reinforcement for walls over four feet, and drainage gravel behind every course. That is what keeps your retaining wall standing for decades.',
     ],
     relatedBlogSlug: 'retaining-wall-benefits-cedar-falls',
   },
@@ -656,7 +952,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     heading: 'Paver Patios Built for Cedar Falls Weather',
     paragraphs: [
       'A paver patio is one of the best investments you can make in outdoor living. Unlike poured concrete, pavers flex slightly through Iowa freeze-thaw without cracking, and individual units can be replaced if needed.',
-      'Our paver patio installation process follows industry best practices: proper excavation depth, compacted aggregate base in lifts, edge restraint, and polymeric joint sand. The result is a level, well-draining patio that looks great and holds up to years of use across the Cedar Valley.',
+      'We excavate to the right depth, compact the aggregate base in lifts, set edge restraint, and finish with polymeric joint sand. The result is a level, well-draining patio that looks good and holds up through years of use across the Cedar Valley.',
       'Natural stone patios offer a premium alternative with unique flagstone, travertine, or bluestone surfaces that no two are alike. We also integrate fire pits and outdoor kitchens into paver patios for complete outdoor living spaces. Fire pit patios become the natural gathering point for cooler evenings, while outdoor kitchen patios extend the cooking and entertaining season well into fall.',
     ],
     relatedBlogSlug: 'paver-patio-planning-guide',
@@ -664,35 +960,35 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'ponds-water-features': {
     heading: 'Custom Water Features for Cedar Falls Properties',
     paragraphs: [
-      'Water features add movement, sound, and a natural focal point to any landscape. From compact pondless waterfalls for smaller yards to full koi ponds with streams and bridges, we design and install water features that complement your existing landscaping.',
-      'Every water features installation in Cedar Falls includes proper pump sizing, filtration, and winterization planning. We work with natural stone and boulders to create features that look like they belong on your property — not a kit dropped in the yard.',
+      'Water features add movement, sound, and a natural centerpiece to any landscape. From compact pondless waterfalls for smaller yards to full koi ponds with streams and bridges, we design and install water features that fit what is already in your yard.',
+      'Every water features installation in Cedar Falls includes proper pump sizing, filtration, and winterization planning. We work with natural stone and boulders to create features that look like they belong on your property, not a kit dropped in the yard.',
     ],
   },
   'landscape-design': {
     heading: 'Thoughtful Landscape Design for Cedar Valley Homes',
     paragraphs: [
-      'Good landscape design starts with understanding how you use your yard. We create scaled site plans that account for sun patterns, existing trees, drainage, views, and traffic flow. Whether you want a formal garden, a native plant landscape, or an entertainment-focused backyard, we design to your priorities.',
+      'Good landscape design starts with how you actually use your yard. We create scaled site plans that account for sun patterns, existing trees, drainage, views, and traffic flow. Formal garden, native plantings, or a backyard built for hosting: we design around what matters to you.',
       'Our design process includes plant selection for Iowa hardiness zones, hardscape placement for practical use, and lighting plans to extend enjoyment into the evening. We provide printed plans, plant lists, and phased implementation timelines so you can build your landscape at your pace.',
     ],
   },
   'drainage': {
     heading: 'Solving Drainage Problems on Cedar Valley Properties',
     paragraphs: [
-      'Standing water, soggy lawns, and basement moisture are signs your yard needs better drainage. We diagnose the root cause — whether it is poor grading, compacted soil, inadequate downspout routing, or high water table — and install targeted solutions.',
+      'Standing water, soggy lawns, and basement moisture are signs your yard needs better drainage. We diagnose the root cause, whether that is poor grading, compacted soil, inadequate downspout routing, or a high water table, and install targeted solutions.',
       'French drains collect and redirect subsurface water through perforated pipe in gravel trenches. Surface drainage systems use catch basins and channel drains to move water from low spots. Grading recontours the yard surface to direct runoff away from your foundation. We combine these approaches when needed for complete drainage solutions on Iowa properties.',
     ],
   },
   'outdoor-living': {
     heading: 'Outdoor Living Spaces Designed for Iowa Evenings',
     paragraphs: [
-      'A well-designed outdoor living space extends your home into the yard. Paver patios provide the foundation, while fire pits create warmth and ambiance for cool evenings. Outdoor kitchens with built-in grills, counter space, and storage make alfresco dining a regular part of your routine.',
-      'Every outdoor living project considers flow between cooking, dining, and lounging areas. We integrate lighting, plantings, and hardscape finishes so the space feels like a natural extension of your home. From intimate fire pit seating areas to full outdoor kitchens with pergolas, we build spaces that get used.',
+      'A good outdoor living space gets you outside more. Paver patios give you a solid base. Fire pits add warmth on cool evenings. Outdoor kitchens with built-in grills, counter space, and storage make cooking outside part of the routine, not a special occasion.',
+      'We think about how cooking, dining, and lounging areas connect. Lighting, plantings, and hardscape finishes are worked in so the space feels like part of the house, not an afterthought. From a small fire pit patio to a full outdoor kitchen with a pergola, we build spaces people use.',
     ],
   },
   'excavation': {
     heading: 'Professional Excavation for Cedar Falls Projects',
     paragraphs: [
-      'Excavation is the first step in most landscape transformations. We handle site clearing, rough and finish grading, trenching for drainage and utilities, and dig-outs for patios, retaining walls, and water features. Our equipment fleet includes skid steers and mini excavators sized for residential access.',
+      'Excavation is the first step in most big landscape jobs. We handle site clearing, rough and finish grading, trenching for drainage and utilities, and dig-outs for patios, retaining walls, and water features. Our equipment fleet includes skid steers and mini excavators sized for residential access.',
       'Proper excavation prevents future problems. Correct base preparation prevents hardscape settling. Proper grading prevents water damage. We take the time to get the foundation right on every job.',
     ],
   },
@@ -1396,7 +1692,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'Can I add lighting to my outdoor living space?',
-      answer: 'Yes. Low-voltage LED lighting is a standard addition to every outdoor living project. Path lights, uplighting, string lights, and step lights create ambiance and improve safety.',
+      answer: 'Yes. Low-voltage LED lighting is a standard addition to every outdoor living project. Path lights, uplighting, string lights, and step lights add light after dark and make steps easier to see.',
     },
     {
       question: 'Do you build pergolas and covered structures?',
@@ -1411,6 +1707,51 @@ export type Material = {
   cons: string[]
   maintenance: string
   durability: string
+}
+
+export type ComparisonSectionMeta = {
+  heading: string
+  intro: string
+}
+
+export const defaultComparisonMeta: ComparisonSectionMeta = {
+  heading: 'Materials We Use',
+  intro: 'We use quality materials rated for Iowa weather. Here is how they compare.',
+}
+
+export const serviceComparisonMeta: Record<string, ComparisonSectionMeta> = {
+  'tree-service': {
+    heading: 'Methods We Use',
+    intro: 'Every tree job is different. We choose the safest and most efficient approach based on tree size, condition, location, and property access.',
+  },
+  'snow-removal': {
+    heading: 'Methods We Use',
+    intro: 'We match snow and ice removal methods to your property layout, surface types, and storm conditions.',
+  },
+  'grading': {
+    heading: 'Methods We Use',
+    intro: 'We select grading techniques based on your site conditions, drainage needs, and what comes next on the property.',
+  },
+  'landscape-design': {
+    heading: 'Design Options We Offer',
+    intro: 'Choose the level of design detail that fits your project scope, budget, and timeline.',
+  },
+  'residential-landscaping': {
+    heading: 'Service Options',
+    intro: 'We can handle the whole job at once or break it into phases, depending on what works for your budget and timeline.',
+  },
+  'commercial-landscaping': {
+    heading: 'Service Options',
+    intro: 'Commercial properties need different combinations of maintenance, hardscape, and seasonal work. Here is how our options compare.',
+  },
+  'tree-planting': {
+    heading: 'Planting Methods We Use',
+    intro: 'The right planting method depends on tree size, species, season, and how quickly you want results.',
+  },
+  'shrub-installation': {
+    heading: 'Plant Types We Use',
+    intro: 'We select shrubs based on your goals and Iowa growing conditions. Here is how common options compare.',
+  },
 }
 
 export type Equipment = {
@@ -1543,6 +1884,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Sweep joints and refill with sand or stone dust as needed. Seal every 3-5 years. Reset individual stones if they settle unevenly.',
       durability: '50+ years. Natural stone is extremely durable and develops an attractive patina with age.',
     },
+    {
+      name: 'Clay Brick Pavers',
+      pros: [
+        'Classic, timeless appearance that complements brick homes',
+        'Fired clay holds color longer than concrete in Iowa sun',
+        'Excellent freeze-thaw resistance when properly installed',
+        'Recycled brick options available for character patios',
+      ],
+      cons: [
+        'Higher cost than standard concrete pavers',
+        'Limited size and pattern options compared to concrete',
+        'Mortar-set installations are harder to repair than sand-set',
+        'Can chip if struck by heavy objects',
+      ],
+      maintenance: 'Sweep joints and refill sand or mortar as needed. Power wash annually. Reset any settled pavers. Seal every 3-5 years if mortar-set.',
+      durability: '50+ years. Fired clay is extremely durable and weathers gracefully in Iowa climates.',
+    },
+    {
+      name: 'Stamped Concrete',
+      pros: [
+        'Lower cost than pavers or natural stone for large areas',
+        'Continuous surface with no joints for weeds to exploit',
+        'Wide range of stamp patterns and integral colors',
+        'Can mimic stone, brick, or slate at a fraction of the cost',
+      ],
+      cons: [
+        'Cracks are difficult to repair invisibly',
+        'Surface can become slippery when wet or icy',
+        'Color hardener can fade unevenly over time',
+        'Entire slab must be replaced if severely damaged',
+      ],
+      maintenance: 'Seal every 2-3 years to protect color and surface. Clean stains promptly. Fill hairline cracks before water freezes in them. Avoid de-icing salts on the surface.',
+      durability: '20-30 years in Iowa. Proper control joints and sealing extend life; cracking is the primary long-term concern.',
+    },
   ],
   'ponds-water-features': [
     {
@@ -1578,6 +1953,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Clean basin surface annually. Check pump and filtration. Drain and winterize before first hard freeze to prevent cracking.',
       durability: '15-25 years. Fiberglass can become brittle with UV exposure and freeze-thaw cycling.',
+    },
+    {
+      name: 'Reinforced Concrete Pond Shell',
+      pros: [
+        'Permanent, rigid structure that will not shift or tear',
+        'Ideal for formal ponds and raised water features',
+        'Can be shaped to any size during construction',
+        'Supports heavy rockwork and waterfall features',
+      ],
+      cons: [
+        'Cracks possible during Iowa freeze-thaw without proper design',
+        'Higher upfront cost and longer installation time',
+        'Repairs require patching and re-sealing',
+        'Less natural appearance without rock veneer',
+      ],
+      maintenance: 'Inspect for cracks each spring. Seal interior surface every 3-5 years. Maintain water level through winter or drain completely. Service pump and filtration on schedule.',
+      durability: '40-60 years with proper reinforcement, drainage, and winterization.',
+    },
+    {
+      name: 'RPE (Reinforced Polyethylene) Liner',
+      pros: [
+        'Stronger and more puncture-resistant than standard EPDM',
+        'Lightweight and easier to handle on site than rubber liner',
+        'Good for larger ponds and commercial water features',
+        'UV-resistant formulations available for exposed edges',
+      ],
+      cons: [
+        'Less flexible than EPDM for tight curves and custom shapes',
+        'Higher material cost than standard rubber liner',
+        'Seams require heat-welding for best results',
+        'Still needs rockwork to conceal edges for natural look',
+      ],
+      maintenance: 'Same as EPDM liner systems. Inspect seams and edges annually. Keep rockwork in place to protect from UV. Check pump intake and skimmer monthly during season.',
+      durability: '25-40 years with proper underlayment, seam welding, and UV protection from rock coverage.',
     },
   ],
   'landscape-installation': [
@@ -1615,6 +2024,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Rake or blow debris off surface annually. Top up thin areas every 3-5 years. Remove any weeds that establish in joints.',
       durability: 'Permanent. Rock does not decompose and retains its appearance indefinitely.',
     },
+    {
+      name: 'Pine Bark Nuggets',
+      pros: [
+        'Lightweight and easy to spread in large beds',
+        'Natural reddish-brown color complements evergreens',
+        'Decomposes slowly, lasting 2-3 years between refreshes',
+        'Good choice for sloped beds where heavier mulch slides',
+      ],
+      cons: [
+        'Floats and washes away more easily than shredded hardwood',
+        'Large nuggets allow more light through for weed germination',
+        'Can blow out of beds in windy conditions',
+        'Less moisture retention than fine shredded mulch',
+      ],
+      maintenance: 'Top up every 2-3 years to maintain 2-3 inch depth. Fluff with rake in spring. Keep pulled back from foundations and plant stems. Replace entirely if nuggets break down to fines.',
+      durability: '2-3 years between full refreshes. Nuggets break down slower than shredded hardwood but still need periodic top-ups.',
+    },
+    {
+      name: 'Premium Planting Mix / Topsoil',
+      pros: [
+        'Improves heavy Iowa clay for new plantings',
+        'Blended with compost for immediate nutrient availability',
+        'Essential base layer under sod, seed, and garden beds',
+        'Supports healthy root development from day one',
+      ],
+      cons: [
+        'Quality varies significantly by supplier',
+        'Can introduce weed seeds if not properly screened',
+        'Needs incorporation into existing soil, not just top-dressing',
+        'Settles over first season, requiring additional fill in low spots',
+      ],
+      maintenance: 'Amend annually with compost in garden beds. Top-dress thin areas after settling. Test soil pH every 2-3 years. Maintain mulch layer over planted areas.',
+      durability: 'Permanent soil improvement when properly incorporated. Annual compost top-dressing maintains fertility long-term.',
+    },
   ],
   'drainage': [
     {
@@ -1650,6 +2093,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Clean grates and remove debris monthly during growing season. Flush basin and outlet pipe annually. Replace damaged grates promptly.',
       durability: '20-30 years. Cast iron or polymer grates may need replacement if damaged by vehicles or heavy equipment.',
+    },
+    {
+      name: 'Corrugated HDPE Drain Pipe',
+      pros: [
+        'Flexible and easier to route around obstacles than rigid PVC',
+        'Lightweight for faster trench installation',
+        'Perforated options available for subsurface collection',
+        'Cost-effective for long drainage runs',
+      ],
+      cons: [
+        'Corrugated interior can trap sediment more than smooth PVC',
+        'Requires careful backfill to prevent crushing',
+        'Less rigid, can sag if not properly bedded in gravel',
+        'Connections need secure couplings to prevent separation',
+      ],
+      maintenance: 'Flush outlet annually to clear sediment. Inspect for root intrusion every 3-5 years. Keep outlet clear of debris and vegetation. Check for bellies or sags after heavy settling.',
+      durability: '50+ years underground when installed with proper gravel bedding and filter fabric.',
+    },
+    {
+      name: 'Decorative Dry Creek Bed Stone',
+      pros: [
+        'Handles surface runoff while adding visual interest',
+        'No underground pipe to clog or maintain',
+        'Natural appearance that fits Iowa landscapes',
+        'Combines drainage function with landscape design',
+      ],
+      cons: [
+        'Not effective for heavy subsurface water problems alone',
+        'Weeds can establish between stones without fabric underlayment',
+        'Requires periodic stone redistribution after heavy rain',
+        'Higher material cost than buried pipe solutions',
+      ],
+      maintenance: 'Rake stones back into channel after storms. Remove leaves and debris seasonally. Pull weeds from joints. Top up displaced stone every 2-3 years.',
+      durability: 'Permanent. Stone does not degrade; occasional top-ups maintain channel depth and appearance.',
     },
   ],
   'outdoor-living': [
@@ -1687,6 +2164,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Seal annually for stain protection near cooking and dining areas. Clean with stone-safe cleaner. Re-level individual stones if settling occurs.',
       durability: '50+ years. Natural stone patios and outdoor kitchens offer the longest service life of any outdoor living material.',
     },
+    {
+      name: 'Stamped Concrete Patio',
+      pros: [
+        'Cost-effective for large entertaining areas and fire pit surrounds',
+        'Continuous surface with no paver joints to weed or wash out',
+        'Stamp patterns mimic stone, slate, or brick',
+        'Good base for outdoor kitchen appliances and seating walls',
+      ],
+      cons: [
+        'Can crack during Iowa freeze-thaw cycles',
+        'Repairs are visible and difficult to match',
+        'Surface gets hot in direct summer sun',
+        'Can be slippery when wet without broom finish',
+      ],
+      maintenance: 'Seal every 2-3 years. Clean grill grease and food stains promptly. Fill hairline cracks before winter. Avoid rock salt on the surface in winter.',
+      durability: '20-30 years with proper control joints, base, and sealing. Cracking is the main long-term concern.',
+    },
+    {
+      name: 'Treated Cedar / Composite Decking',
+      pros: [
+        'Elevated surface for sloped yards and multi-level designs',
+        'Composite options resist rot, splintering, and insect damage',
+        'Cedar weathers naturally and complements Iowa landscapes',
+        'Ideal for pergola platforms and raised outdoor rooms',
+      ],
+      cons: [
+        'Higher cost per square foot than ground-level pavers',
+        'Composite can get hot in direct sun',
+        'Requires structural framing and periodic inspection',
+        'Cedar needs staining or sealing every 2-3 years',
+      ],
+      maintenance: 'Inspect framing and fasteners annually. Clean surface with mild detergent. Stain or seal cedar every 2-3 years. Clear debris from gaps between boards.',
+      durability: '25-40 years for composite; 15-25 years for treated cedar with regular sealing.',
+    },
   ],
   'landscape-design': [
     {
@@ -1722,6 +2233,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Keep the plan on file for future phases. Use it for permit applications. Reference it when adding plantings or structures later.',
       durability: 'The detailed plan serves as the permanent record of your landscape. Keep both digital and printed copies.',
+    },
+    {
+      name: '3D Visualization Package',
+      pros: [
+        'See your landscape before any work begins',
+        'Helps visualize plant maturity, hardscape, and lighting',
+        'Easier to share with family and make design decisions',
+        'Reduces costly changes during installation',
+      ],
+      cons: [
+        'Adds time and cost to the design phase',
+        'Renderings are approximations, not exact photos',
+        'Plant sizes in renders may not match first-year installation',
+        'Not a substitute for detailed construction documents',
+      ],
+      maintenance: 'Save digital files for future reference. Update renders when making major landscape changes. Share with contractors during installation for alignment.',
+      durability: 'Digital files remain useful for years. Update when property conditions or preferences change significantly.',
+    },
+    {
+      name: 'Planting Plan (Softscape Only)',
+      pros: [
+        'Focused on trees, shrubs, and perennials for existing beds',
+        'Specific varieties selected for Iowa hardiness zones',
+        'Includes spacing, quantities, and seasonal interest notes',
+        'Affordable option when hardscape is already in place',
+      ],
+      cons: [
+        'Does not address grading, drainage, or hardscape',
+        'Assumes existing bed layout and soil conditions',
+        'Plant availability may vary by season at nurseries',
+        'Does not include installation specifications',
+      ],
+      maintenance: 'Follow watering and care instructions for new plantings. Reference plan when adding complementary plants later. Update as plants mature and beds evolve.',
+      durability: 'Planting plans guide the first 5-10 years of growth. Adjust spacing and additions as plants reach mature size.',
     },
   ],
   'lawn-care': [
@@ -1759,6 +2304,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Apply on schedule: early spring, late spring, summer, and fall. Water in within 24 hours. Store unused product in a dry, temperature-controlled location.',
       durability: 'Seasonal. A typical lawn fertilization program runs April through October with 4-6 applications per year.',
     },
+    {
+      name: 'Liquid Fertilizer Application',
+      pros: [
+        'Rapid green-up visible within days of application',
+        'Even coverage when applied with professional spray equipment',
+        'Can combine with weed control in a single pass',
+        'Absorbs through both roots and foliage',
+      ],
+      cons: [
+        'Requires professional application equipment',
+        'More frequent applications needed than slow-release granular',
+        'Can burn grass if applied in hot, dry conditions',
+        'Higher per-application cost than granular programs',
+      ],
+      maintenance: 'Follow professional application schedule, typically every 4-6 weeks during growing season. Water lightly after application. Avoid mowing for 24 hours post-treatment.',
+      durability: 'Seasonal program. Liquid applications provide 4-6 weeks of feeding per treatment.',
+    },
+    {
+      name: 'Organic / Slow-Release Fertilizer',
+      pros: [
+        'Feeds soil biology along with the grass',
+        'Lower burn risk than synthetic quick-release products',
+        'Improves long-term soil health in Iowa clay',
+        'Safer around children, pets, and waterways',
+      ],
+      cons: [
+        'Slower visible results than synthetic fertilizers',
+        'Higher cost per application',
+        'Odor during application (compost-based products)',
+        'May not provide enough nitrogen for severely depleted lawns',
+      ],
+      maintenance: 'Apply 2-3 times per growing season. Water in after application. Combine with core aeration for best soil penetration. Monitor results and adjust program as needed.',
+      durability: 'Seasonal with cumulative soil benefits. Organic matter builds soil fertility over multiple seasons.',
+    },
   ],
   'tree-service': [
     {
@@ -1794,6 +2373,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Same as crane removal. Stump grinding, backfill, and site restoration complete the job. Replant if desired.',
       durability: 'Permanent removal. The tree is gone and the stump is ground below grade.',
+    },
+    {
+      name: 'Bucket Truck Removal',
+      pros: [
+        'Crew works from bucket instead of climbing the tree',
+        'Safer for dead, diseased, or structurally compromised trees',
+        'Efficient for trees along driveways and open areas',
+        'Reduces damage to lawn compared to crane setup',
+      ],
+      cons: [
+        'Requires adequate access for truck positioning',
+        'Limited reach compared to crane for very tall trees',
+        'Not suitable for trees surrounded by structures or tight spaces',
+        'May require trimming lower branches for bucket access',
+      ],
+      maintenance: 'Grind stump and backfill after removal. Monitor surrounding trees for new wind exposure. Replant or landscape the area to prevent erosion.',
+      durability: 'Permanent removal. Stump grinding below grade prevents regrowth.',
+    },
+    {
+      name: 'Stump Grinding & Root Removal',
+      pros: [
+        'Eliminates tripping hazards and mowing obstacles',
+        'Prevents stump sprouting and fungal decay spread',
+        'Wood chips can be used as mulch on site',
+        'Prepares area for replanting or sod',
+      ],
+      cons: [
+        'Leaves a mulch-filled hole that settles over time',
+        'Large root systems may require multiple passes',
+        'Underground utilities must be located before grinding',
+        'Wood chips from diseased trees should not be reused as mulch',
+      ],
+      maintenance: 'Backfill hole with topsoil after grinding. Allow to settle, then add more fill. Seed or sod the area. Monitor for any remaining root sprouting.',
+      durability: 'Permanent. Ground stumps do not regrow. Root decay continues underground over 2-5 years.',
     },
   ],
   'landscape-maintenance': [
@@ -1831,6 +2444,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Apply in early spring before weed seeds germinate. Water in within 7 days. Do not overseed treated areas for 8-12 weeks. Reapply in late spring for extended control.',
       durability: 'Single application provides 8-12 weeks of weed prevention. A second application extends coverage through the growing season.',
     },
+    {
+      name: 'Dyed Mulch (Black/Brown/Red)',
+      pros: [
+        'Consistent color that lasts longer than natural hardwood',
+        'Popular for front-yard beds and high-visibility areas',
+        'Same weed suppression and moisture retention as natural mulch',
+        'Carbon-based dyes are safe for plants and soil',
+      ],
+      cons: [
+        'Color fades faster in full sun exposure',
+        'More expensive than undyed hardwood mulch',
+        'Dye does not improve performance, only appearance',
+        'Some homeowners prefer the natural undyed look',
+      ],
+      maintenance: 'Rake in spring to expose fresh color underneath. Top up to 2-3 inch depth annually. Keep pulled back from plant stems and foundations.',
+      durability: '12-18 months. Color retention is the main advantage over natural hardwood mulch.',
+    },
+    {
+      name: 'Selective Post-Emergent Herbicide',
+      pros: [
+        'Targets broadleaf weeds without harming grass',
+        'Effective on dandelions, clover, and creeping Charlie',
+        'Applied as spot treatment or blanket spray on lawns',
+        'Works when pre-emergent timing was missed',
+      ],
+      cons: [
+        'Must be applied when weeds are actively growing',
+        'Temperature and weather restrictions apply',
+        'Multiple applications may be needed for persistent weeds',
+        'Not effective on grassy weeds like crabgrass once established',
+      ],
+      maintenance: 'Apply when weeds are young and actively growing. Avoid mowing 24 hours before and after treatment. Follow label rates for Iowa conditions. Re-treat persistent weeds as needed.',
+      durability: 'Seasonal control. Post-emergent treatments manage existing weeds; combine with pre-emergent for full-season coverage.',
+    },
   ],
   'sod-installation': [
     {
@@ -1866,6 +2513,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Same watering schedule as bluegrass during establishment. Mow at 3-4 inches. Overseed bare spots annually in fall. Fertilize on standard schedule.',
       durability: '10-15 years with proper care. Tall fescue is tough but requires regular overseeding to maintain density.',
+    },
+    {
+      name: 'Bluegrass / Fescue Blend Sod',
+      pros: [
+        'Combines bluegrass beauty with fescue drought tolerance',
+        'Most popular sod choice for Cedar Valley residential lawns',
+        'Balanced performance in Iowa sun and partial shade',
+        'Good traffic tolerance once established',
+      ],
+      cons: [
+        'Blend ratios vary by sod farm and season',
+        'Still needs regular watering during establishment',
+        'May thin in deep shade where fescue dominates',
+        'Mid-range cost between pure bluegrass and pure fescue',
+      ],
+      maintenance: 'Water deeply 2-3 times per week for first 3 weeks. Mow at 3-4 inches once roots establish. Fertilize 6 weeks after installation. Follow standard lawn care program.',
+      durability: '15-20 years with proper care. Periodic overseeding maintains blend balance and density.',
+    },
+    {
+      name: 'Perennial Ryegrass Overseed',
+      pros: [
+        'Fast germination for quick patch repair (5-10 days)',
+        'Adds quick green color to thin or damaged lawns',
+        'Good companion seed mixed with bluegrass or fescue',
+        'Affordable option for large bare areas before sod',
+      ],
+      cons: [
+        'Not a standalone lawn grass for Iowa winters',
+        'Shallow root system, less drought tolerant than fescue',
+        'Can dominate if over-applied, creating a patchy look',
+        'Requires consistent moisture for germination',
+      ],
+      maintenance: 'Keep seedbed moist until germination. Mow when new grass reaches 4 inches. Limit to 10-20% of total seed mix when blending. Overseed thin areas each fall.',
+      durability: 'Perennial ryegrass persists 3-5 years in Iowa lawns. Best used as a blend component or for quick repairs.',
     },
   ],
   'mulching': [
@@ -1942,7 +2623,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     {
       name: 'Landscape Boulders (Limestone/Granite)',
       pros: [
-        'Natural focal point that anchors landscape beds',
+        'Natural centerpiece that anchors landscape beds',
         'Iowa limestone is locally sourced and matches the terrain',
         'Permanent feature that requires zero maintenance',
         'Creates visual weight and structure in the landscape',
@@ -2009,6 +2690,23 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Same watering schedule as B&B. Check for circling roots before planting and correct them. Stake only if necessary for wind protection.',
       durability: 'Container trees often establish faster and catch up to B&B trees within 2-3 years due to less transplant shock.',
     },
+    {
+      name: 'Bare Root Trees (Spring Planting)',
+      pros: [
+        'Most affordable option for larger quantities of trees',
+        'Lightweight and easy to transport and handle',
+        'Wide variety available from specialty nurseries',
+        'Roots spread naturally without container or burlap constraints',
+      ],
+      cons: [
+        'Must be planted during dormant season (early spring)',
+        'No soil ball means roots dry out quickly if not handled carefully',
+        'Smaller caliper sizes than B&B specimens',
+        'Higher mortality if planting or watering is inconsistent',
+      ],
+      maintenance: 'Plant immediately upon delivery. Soak roots in water for 1-2 hours before planting. Water deeply weekly for first 2 years. Mulch 3-foot ring, keep off trunk.',
+      durability: 'Bare root trees that establish well have the same lifespan as any tree of that species. Critical first season determines long-term success.',
+    },
   ],
   'shrub-installation': [
     {
@@ -2044,6 +2742,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Water deeply during dry periods. Prune in early spring before new growth. Protect from winter burn with anti-desiccant if needed. Monitor for pests.',
       durability: '20-50+ years depending on variety. Evergreen shrubs are long-lived and form the permanent structure of the landscape.',
+    },
+    {
+      name: 'Native Iowa Shrubs (Dogwood, Viburnum, Sumac)',
+      pros: [
+        'Adapted to Iowa soil, climate, and rainfall patterns',
+        'Support local pollinators and wildlife',
+        'Lower water needs once established',
+        'Natural appearance that fits Cedar Valley landscapes',
+      ],
+      cons: [
+        'Less formal appearance than cultivated varieties',
+        'Some natives spread by suckering if not managed',
+        'Limited flower color options compared to hybrids',
+        'Availability varies seasonally at local nurseries',
+      ],
+      maintenance: 'Water weekly during first growing season. Minimal pruning needed beyond removing dead wood. Allow natural form or lightly shape in late winter. Mulch annually.',
+      durability: '20-40 years. Native shrubs are well-adapted and often outlive non-native alternatives in Iowa conditions.',
+    },
+    {
+      name: 'Ornamental Grasses & Groundcovers',
+      pros: [
+        'Low-maintenance fill for beds, slopes, and under trees',
+        'Grasses add movement and winter interest',
+        'Groundcovers suppress weeds in difficult areas',
+        'Many varieties handle Iowa heat and cold',
+      ],
+      cons: [
+        'Grasses need cutting back each spring',
+        'Some grasses can self-seed and spread aggressively',
+        'Groundcovers take 1-2 seasons to fill in completely',
+        'Not suitable as standalone foundation plantings',
+      ],
+      maintenance: 'Cut ornamental grasses to 4-6 inches in early spring. Water groundcovers weekly during establishment. Divide overcrowded grasses every 3-4 years. Edge beds to contain spread.',
+      durability: '10-20 years for ornamental grasses with division. Groundcovers persist indefinitely when properly sited.',
     },
   ],
   'commercial-landscaping': [
@@ -2081,6 +2813,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Inspect annually for settling or damage. Power wash and re-seal every 3-5 years. Repair damaged sections promptly. Keep drainage clear.',
       durability: '30-50 years with commercial-grade materials and proper base construction.',
     },
+    {
+      name: 'Seasonal Color / Annual Plantings',
+      pros: [
+        'Fresh, vibrant displays rotated spring, summer, and fall',
+        'High visual impact for business entrances and signage',
+        'Flexible designs that change with seasons and promotions',
+        'Professional installation and removal included',
+      ],
+      cons: [
+        'Recurring cost each planting season',
+        'Requires regular watering during hot Iowa summers',
+        'Annuals must be replaced twice per year minimum',
+        'Not a permanent landscape solution',
+      ],
+      maintenance: 'Water daily or install drip irrigation during establishment. Deadhead spent blooms weekly. Replace with seasonal rotations in spring and fall. Fertilize monthly during display season.',
+      durability: 'One season per planting. Spring displays last May-June; fall displays last September through frost.',
+    },
+    {
+      name: 'Commercial Mulch & Bed Maintenance',
+      pros: [
+        'Consistent, professional appearance across large properties',
+        'Bulk mulch delivery and installation for efficiency',
+        'Weed suppression reduces ongoing maintenance costs',
+        'Scheduled refresh keeps properties looking sharp year-round',
+      ],
+      cons: [
+        'Annual mulch cost adds up on large commercial sites',
+        'Color fades by mid-summer without refresh',
+        'Edging and bed lines need periodic redefinition',
+        'Leaf cleanup in fall adds to maintenance schedule',
+      ],
+      maintenance: 'Refresh mulch to 2-3 inch depth annually in spring. Edge beds twice per year. Remove weeds monthly during growing season. Blow or rake leaves in fall.',
+      durability: 'Annual mulch cycle. Proper depth and edging maintain professional appearance throughout the growing season.',
+    },
   ],
   'residential-landscaping': [
     {
@@ -2116,6 +2882,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Maintain completed phases while planning next ones. Keep mulch fresh. Prune as needed. Store the master plan for reference.',
       durability: 'The phased approach allows for adjustments over time. Each phase is built to the same quality standard regardless of timing.',
+    },
+    {
+      name: 'Hardscape-Focused Package',
+      pros: [
+        'Prioritizes patios, walkways, retaining walls, and drainage',
+        'Immediate usability and curb appeal improvement',
+        'Structures last decades regardless of planting season',
+        'Can be completed in a single season',
+      ],
+      cons: [
+        'Softscape plantings planned separately or added later',
+        'Higher upfront cost concentrated in one phase',
+        'Construction disruption to yard access during install',
+        'Planting beds around new hardscape may need follow-up',
+      ],
+      maintenance: 'Seal pavers and stone surfaces every 3-5 years. Inspect walls and drainage annually. Add plantings when ready. Keep joints clean and weed-free.',
+      durability: 'Hardscape components last 25-50+ years. Plantings added later mature on their own timeline.',
+    },
+    {
+      name: 'Planting & Softscape Package',
+      pros: [
+        'Focuses on trees, shrubs, beds, and lawn establishment',
+        'Lower cost entry point than full landscape renovation',
+        'Best installed in spring or fall for plant health',
+        'Immediate green impact and seasonal color',
+      ],
+      cons: [
+        'Does not address drainage, grading, or hardscape needs',
+        'Plants take 2-3 years to reach mature appearance',
+        'Existing hardscape or drainage issues remain unaddressed',
+        'May need hardscape additions later for full functionality',
+      ],
+      maintenance: 'Water new plantings deeply weekly for first 2 years. Mulch beds annually. Follow pruning schedule for shrubs. Mow and fertilize lawn on standard program.',
+      durability: 'Plantings mature over 5-10 years. Trees and shrubs become permanent landscape features with proper care.',
     },
   ],
   'grading': [
@@ -2153,6 +2953,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Minimal once established. Keep grass cover healthy to prevent erosion. Monitor for settling. Touch up any low spots that develop after heavy rain.',
       durability: 'Permanent. Laser grading achieves an accurate surface that remains stable when properly maintained.',
     },
+    {
+      name: 'Imported Topsoil & Finish Grade',
+      pros: [
+        'Brings quality soil to sites with poor or depleted topsoil',
+        'Essential before sod, seed, or garden bed installation',
+        'Covers rough graded subgrade with plantable material',
+        'Improves drainage on heavy clay when blended properly',
+      ],
+      cons: [
+        'Adds material and delivery cost to grading projects',
+        'Quality varies by supplier; inspection recommended',
+        'Settles 10-20% in first season, requiring touch-up',
+        'Can introduce weed seeds if not properly screened',
+      ],
+      maintenance: 'Allow to settle before final seed or sod. Top-dress low spots after first season. Maintain grass or mulch cover to prevent erosion. Test soil pH before planting.',
+      durability: 'Permanent soil layer. Annual compost top-dressing maintains fertility for plantings.',
+    },
+    {
+      name: 'Class 5 Base Gravel (Compactable Aggregate)',
+      pros: [
+        'Creates stable base for driveways, patios, and walkways',
+        'Compacts to a solid, load-bearing surface',
+        'Drains well, preventing frost heave in Iowa winters',
+        'Standard material for hardscape and paving base prep',
+      ],
+      cons: [
+        'Not a finished surface on its own',
+        'Requires proper compaction equipment for best results',
+        'Dusty during installation and dry weather',
+        'Must be capped with pavers, asphalt, or concrete',
+      ],
+      maintenance: 'Compact and grade before capping with finished surface. Add material to low spots if settling occurs before capping. Keep covered with finished material promptly.',
+      durability: 'Permanent base layer. Properly compacted Class 5 provides decades of stable support under hardscape.',
+    },
   ],
   'preservation-restoration': [
     {
@@ -2188,6 +3022,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Leave in place to biodegrade naturally. Monitor for erosion underneath. Repair any tears or loose edges. Seed any bare spots that appear.',
       durability: 'Temporary. Erosion blankets last 6-18 months depending on material. By then, vegetation should be established.',
+    },
+    {
+      name: 'Native Prairie Seed Mix',
+      pros: [
+        'Restores Iowa-native grasses and wildflowers',
+        'Deep root systems improve soil structure over time',
+        'Low maintenance once established (annual mowing)',
+        'Supports pollinators and local ecosystem health',
+      ],
+      cons: [
+        'Takes 2-3 years to fully establish and bloom',
+        'Weedy appearance during establishment phase',
+        'Not suitable for high-traffic or formal areas',
+        'Requires site prep and weed control during establishment',
+      ],
+      maintenance: 'Mow once annually in late spring after wildflowers set seed. Conduct controlled burn every 3-5 years if appropriate. Monitor for invasive species. Minimal watering after year two.',
+      durability: 'Permanent once established. Native prairie plantings persist indefinitely with annual maintenance mowing.',
+    },
+    {
+      name: 'Straw Mulch (Erosion Control)',
+      pros: [
+        'Inexpensive, readily available erosion control material',
+        'Protects seed and soil on slopes during germination',
+        'Biodegrades naturally, adding organic matter to soil',
+        'Easy to apply by hand or blower on restoration sites',
+      ],
+      cons: [
+        'Can blow away in wind if not crimped or tacked down',
+        'Weed seeds may be present in unprocessed straw',
+        'Less effective on steep slopes than erosion blankets',
+        'Temporary, requires vegetation to establish underneath',
+      ],
+      maintenance: 'Leave in place until grass or native seed establishes. Reapply if wind or rain displaces coverage. Remove excess once vegetation covers 70% of area.',
+      durability: 'Temporary, 3-6 months. Straw biodegrades as vegetation establishes underneath.',
     },
   ],
   'hydroseeding': [
@@ -2225,6 +3093,40 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Same watering and care as standard hydroseed. The tackifier will break down naturally over 4-8 weeks as the grass establishes.',
       durability: 'Same as standard hydroseed. The tackifier provides early protection but does not affect long-term lawn durability.',
     },
+    {
+      name: 'Fast-Germinating Erosion Control Mix',
+      pros: [
+        'Annual ryegrass germinates in 5-7 days for quick cover',
+        'Stabilizes slopes and bare soil during construction',
+        'Buys time while permanent grass mix establishes',
+        'Cost-effective for large disturbed areas',
+      ],
+      cons: [
+        'Annual ryegrass dies off after first season',
+        'Must be overseeded with permanent mix for lasting lawn',
+        'Thin coverage if used alone without permanent seed',
+        'Not suitable as a standalone lawn solution',
+      ],
+      maintenance: 'Keep moist until germination. Overseed with permanent mix in fall after annual ryegrass peaks. Mow when grass reaches 4 inches. Follow standard lawn care after permanent mix establishes.',
+      durability: 'Temporary cover for one season. Permanent grass mix takes over for long-term durability.',
+    },
+    {
+      name: 'Shade-Tolerant Lawn Mix',
+      pros: [
+        'Fine fescue varieties thrive in partial to full shade',
+        'Better performance under trees than Kentucky bluegrass',
+        'Lower water and fertilizer needs than sun-loving mixes',
+        'Ideal for north-facing yards and wooded properties',
+      ],
+      cons: [
+        'Slower to establish than sun-loving mixes',
+        'Less traffic tolerance than bluegrass or tall fescue',
+        'Thin appearance if planted in full sun by mistake',
+        'May still struggle in dense shade under mature trees',
+      ],
+      maintenance: 'Keep consistently moist during establishment. Mow at 3-4 inches. Fertilize lightly in spring and fall. Overseed thin areas annually. Prune tree canopy if possible to increase light.',
+      durability: '10-15 years with proper care. Shade lawns need more frequent overseeding than full-sun lawns.',
+    },
   ],
   'snow-removal': [
     {
@@ -2261,10 +3163,76 @@ export const serviceMaterials: Record<string, Material[]> = {
       maintenance: 'Use plastic shovels on paver surfaces to avoid damage. Apply ice melt after clearing for traction. Re-clear if freezing rain follows snowfall.',
       durability: 'Same service structure. Hand shoveling complements plowing for complete snow removal coverage.',
     },
+    {
+      name: 'Ice Melt & De-Icer Application',
+      pros: [
+        'Prevents ice formation on walkways and steps',
+        'Calcium chloride works in Iowa cold down to -25°F',
+        'Pre-treatment before storms reduces ice bonding',
+        'Safer surfaces for family, customers, and delivery access',
+      ],
+      cons: [
+        'Can damage concrete and pavers with overuse',
+        'Harmful to adjacent lawn and plantings if over-applied',
+        'Pet-safe alternatives cost more than standard rock salt',
+        'Requires reapplication during extended cold periods',
+      ],
+      maintenance: 'Apply before predicted ice events. Use sparingly on paver and concrete surfaces. Shovel first, then treat remaining ice. Flush adjacent plant beds in spring to reduce salt buildup.',
+      durability: 'Seasonal service applied as needed throughout Iowa winters, typically November through March.',
+    },
+    {
+      name: 'Walkway Snow Blowing',
+      pros: [
+        'Faster than hand shoveling for long walkways and paths',
+        'Clean removal without scraping delicate surfaces',
+        'Handles moderate accumulations efficiently',
+        'Good for paver patios and stamped concrete areas',
+      ],
+      cons: [
+        'Not effective for heavy wet snow over 8 inches',
+        'Cannot reach tight corners and steps as precisely as shoveling',
+        'Noise may be a concern for early morning residential service',
+        'Requires access to power outlet or battery equipment',
+      ],
+      maintenance: 'Clear snow promptly before compaction. Follow with ice melt on steps and landings. Inspect paver surfaces for displacement after blowing. Re-clear if drifting occurs.',
+      durability: 'Seasonal service. Snow blowing complements plowing and shoveling for complete property coverage.',
+    },
   ],
 }
 
 export const allServices: Service[] = [...services, ...hardscapeServices]
+
+/** FAQ page order: design and install first, site prep and lawn care next, hardscape and seasonal last. */
+export const faqPageServiceOrder: string[] = [
+  'landscape-design',
+  'landscape-installation',
+  'residential-landscaping',
+  'drainage',
+  'grading',
+  'excavation',
+  'sod-installation',
+  'hydroseeding',
+  'lawn-care',
+  'landscape-maintenance',
+  'mulching',
+  'tree-service',
+  'tree-planting',
+  'shrub-installation',
+  'preservation-restoration',
+  'rock-landscaping',
+  'retaining-walls',
+  'paver-patio',
+  'outdoor-living',
+  'ponds-water-features',
+  'commercial-landscaping',
+  'snow-removal',
+]
+
+export function getFaqPageServices(): Service[] {
+  return faqPageServiceOrder
+    .map((slug) => allServices.find((s) => s.slug === slug))
+    .filter((service): service is Service => Boolean(service && serviceFaqs[service.slug]?.length))
+}
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return allServices.find((s) => s.slug === slug)

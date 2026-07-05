@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { buildSrcset, getImageDimensions, getLcpPreloadHref } from '@/lib/responsive-image'
 
 type LcpHeroImageProps = {
@@ -11,7 +12,7 @@ type LcpHeroImageProps = {
 export default function LcpHeroImage({
   src,
   alt,
-  sizes = '100vw',
+  sizes = IMAGE_SIZES.hero,
   className,
 }: LcpHeroImageProps) {
   const dimensions = getImageDimensions(src)
@@ -20,11 +21,10 @@ export default function LcpHeroImage({
 
   return (
     <picture className="absolute inset-0 block h-full w-full">
+      <source srcSet={avifSrcset} sizes={sizes} type="image/avif" />
       <source srcSet={webpSrcset} sizes={sizes} type="image/webp" />
       <img
         src={getLcpPreloadHref(src)}
-        srcSet={avifSrcset}
-        sizes={sizes}
         alt={alt}
         width={dimensions?.width}
         height={dimensions?.height}

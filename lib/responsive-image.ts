@@ -53,8 +53,8 @@ export function getLcpPreloadHref(src: string): string {
   const avif = entry?.variants?.avif
   if (avif) {
     const widths = Object.keys(avif).map(Number).sort((a, b) => a - b)
-    const mobile = widths.find((w) => w === 480) ?? widths[0]
-    return avif[String(mobile)]
+    const desktop = widths.find((w) => w >= 1280) ?? widths[widths.length - 1]
+    return avif[String(desktop)]
   }
   return src
 }

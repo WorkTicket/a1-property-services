@@ -16,14 +16,13 @@ export default function HomeHero() {
       <LcpHeroImage
         src={siteImages.homeHero}
         alt="Professional landscaping project in Cedar Falls, Iowa"
-        sizes="100vw"
       />
       <div className="absolute inset-0 bg-hero-gradient" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 pb-8 pt-24 text-center text-white sm:px-6">
         <p className="hero-eyebrow mb-4">Cedar Falls, Iowa</p>
         <h1 className="hero-title">
-          <HeroTitle>Cedar Falls Landscaping|Built to Last</HeroTitle>
+          <HeroTitle>Cedar Falls Landscaping|For the Cedar Valley</HeroTitle>
         </h1>
         <p className="hero-subtitle mx-auto mt-6 max-w-xl">
           Retaining walls, paver patios, lawn care, and full outdoor installations for homes and businesses across the Cedar Valley.

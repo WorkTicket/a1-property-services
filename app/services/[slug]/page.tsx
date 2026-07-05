@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Phone, Check, ChevronRight, Shield, MapPin, Clock, Star } from 'lucide-react'
+import { Phone, Check, Shield, MapPin, Clock, Star } from 'lucide-react'
 import {
   allServices,
   getServiceBySlug,
@@ -10,13 +10,15 @@ import {
   serviceFaqs,
   serviceProcessSteps,
   serviceMaterials,
+  serviceComparisonMeta,
+  defaultComparisonMeta,
   serviceEquipment,
   serviceProblemSolutions,
 } from '@/lib/services'
 import { getPostBySlug } from '@/lib/blog'
 import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd } from '@/lib/metadata'
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt } from '@/lib/images'
-import { getRelatedContent, getProjectsForService, getFaqsForService, getContentSegments } from '@/lib/internal-linking'
+import { getComplementaryServices, getServiceRelatedContentGroups, getContentSegments } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
@@ -60,23 +62,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const defaultProcessSteps = [
   {
     title: 'Consultation',
-    description: 'We meet with you on-site to discuss your goals, assess your property, and understand your budget. This is where we figure out what will work best for your specific situation.',
+    description: 'We meet with you on-site to discuss your goals, assess your property, and understand your budget.',
   },
   {
     title: 'Planning',
-    description: 'We handle permits, material ordering, scheduling, and utility locating. Every detail is coordinated so installation goes smoothly without delays.',
+    description: 'We coordinate scheduling, permits, and site prep so the work goes smoothly without delays.',
   },
   {
-    title: 'Construction',
-    description: 'Our crew executes the plan with precision. We follow industry best practices for base prep, drainage, and installation to ensure lasting results.',
+    title: 'Execution',
+    description: 'Our crew does the work the right way: safe setup, solid workmanship, and a finished job that holds up.',
   },
   {
     title: 'Cleanup',
-    description: 'Every job site is thoroughly cleaned. We remove debris, sweep hardscape surfaces, and restore any disturbed areas so your property looks better than when we started.',
+    description: 'Every job site is thoroughly cleaned. We remove debris and restore disturbed areas before we leave.',
   },
   {
     title: 'Final Walkthrough',
-    description: 'We walk the completed project with you, answer any questions, review care instructions, and make sure everything meets your expectations before we consider the job done.',
+    description: 'We review the completed work with you, answer questions, and make sure everything meets your expectations.',
   },
 ]
 
@@ -85,7 +87,8 @@ export default function ServicePage({ params }: Props) {
   if (!service) notFound()
 
   const seo = serviceSeoOverrides[service.slug]
-  const related = getRelatedContent(service.slug)
+  const complementaryServices = getComplementaryServices(service.slug, 3)
+  const relatedContentGroups = getServiceRelatedContentGroups(service.slug)
   const hasContent = service.slug in serviceBenefits || service.slug in serviceFaqs
 
   const benefits = serviceBenefits[service.slug] ?? []
@@ -93,6 +96,7 @@ export default function ServicePage({ params }: Props) {
   const faqs = serviceFaqs[service.slug] ?? []
   const processSteps = serviceProcessSteps[service.slug] ?? defaultProcessSteps
   const materialsArray = serviceMaterials[service.slug] ?? []
+  const comparisonMeta = serviceComparisonMeta[service.slug] ?? defaultComparisonMeta
   const equipmentArray = serviceEquipment[service.slug] ?? []
   const extended = serviceExtendedContent[service.slug]
   const galleryProjects = getGalleryProjectsForService(service.slug)
@@ -334,9 +338,9 @@ export default function ServicePage({ params }: Props) {
       {materialsArray.length > 0 && (
         <section className="section bg-white">
           <FadeIn className="section-inner">
-            <h2 className="section-heading text-center">Materials We Use</h2>
+            <h2 className="section-heading text-center">{comparisonMeta.heading}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              We use quality materials rated for Iowa weather. Here is how they compare.
+              {comparisonMeta.intro}
             </p>
             <div className="mt-10 space-y-10">
               {materialsArray.map((material) => (
@@ -442,42 +446,19 @@ export default function ServicePage({ params }: Props) {
         </section>
       )}
 
-      {related.blogPosts.length > 0 && (
-        <section className="section bg-brand-stone">
-          <FadeIn className="section-inner-narrow">
-            <h2 className="section-heading">Related Articles</h2>
-            <div className="mt-8 space-y-4">
-              {related.blogPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="card flex items-center justify-between p-4 transition-all hover:-translate-y-0.5"
-                >
-                  <div>
-                    <p className="font-semibold text-brand-dark">{post.title}</p>
-                    <p className="mt-1 text-sm text-brand-body">{post.excerpt}</p>
-                  </div>
-                  <ChevronRight size={16} className="shrink-0 text-brand-green-700" />
-                </Link>
-              ))}
-            </div>
-          </FadeIn>
-        </section>
-      )}
-
       <CtaBanner
         title="Ready to get started?"
         description="Call us today or request a free quote online."
       />
 
-      {related.services.length > 0 && (
+      {complementaryServices.length > 0 && (
         <section className="section bg-white">
           <div className="section-inner">
             <FadeIn className="mb-10 text-center">
               <h2 className="section-heading">Other Landscaping Services in Cedar Falls</h2>
             </FadeIn>
             <StaggerContainer className="grid gap-6 sm:grid-cols-3">
-              {related.services.map((s) => (
+              {complementaryServices.map((s) => (
                 <StaggerItem key={s.slug}>
                   <Link href={`/services/${s.slug}`} className="card block h-full p-6">
                     <ServiceIcon name={s.icon} size={22} />
@@ -491,16 +472,7 @@ export default function ServicePage({ params }: Props) {
         </section>
       )}
 
-      <RelatedContent groups={[
-        ...(getProjectsForService(params.slug).length > 0 ? [{
-          heading: 'Related Projects',
-          items: getProjectsForService(params.slug),
-        }] : []),
-        ...(getFaqsForService(params.slug).length > 0 ? [{
-          heading: 'Frequently Asked Questions',
-          items: getFaqsForService(params.slug),
-        }] : []),
-      ]} />
+      <RelatedContent groups={relatedContentGroups} />
     </>
   )
 }

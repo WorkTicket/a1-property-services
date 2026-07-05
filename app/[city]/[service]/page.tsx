@@ -6,7 +6,7 @@ import { cities, getCityBySlug } from '@/lib/cities'
 import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { getBlogsForCity, getProjectsForService, getFaqsForService } from '@/lib/internal-linking'
+import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
@@ -52,7 +52,8 @@ export default function CityServicePage({ params }: Props) {
   const benefits = serviceBenefits[service.slug] ?? []
   const faqs = serviceFaqs[service.slug] ?? []
   const cityFaqs = city.faqs ?? []
-  const relatedServices = allServices.filter((s) => s.slug !== service.slug).slice(0, 4)
+  const complementaryServices = getComplementaryServices(service.slug, 4)
+  const relatedContentGroups = getServiceRelatedContentGroups(service.slug)
   const nearbyCities = cities.filter((c) => c.slug !== city.slug).slice(0, 4)
 
   const pageTitle = `${service.name} in ${city.name}, IA`
@@ -247,7 +248,7 @@ export default function CityServicePage({ params }: Props) {
             <h2 className="section-heading">More Services in {city.name}</h2>
           </FadeIn>
           <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {relatedServices.map((s) => (
+            {complementaryServices.map((s) => (
               <StaggerItem key={s.slug}>
                 <Link
                   href={`/${city.slug}/${s.slug}`}
@@ -268,20 +269,7 @@ export default function CityServicePage({ params }: Props) {
         </div>
       </section>
 
-      <RelatedContent groups={[
-        ...(getBlogsForCity(params.city).length > 0 ? [{
-          heading: 'Articles for Your Area',
-          items: getBlogsForCity(params.city),
-        }] : []),
-        ...(getProjectsForService(params.service).length > 0 ? [{
-          heading: 'Related Projects',
-          items: getProjectsForService(params.service),
-        }] : []),
-        ...(getFaqsForService(params.service).length > 0 ? [{
-          heading: 'Frequently Asked Questions',
-          items: getFaqsForService(params.service),
-        }] : []),
-      ]} />
+      <RelatedContent groups={relatedContentGroups} />
 
       <CtaBanner
         title={`Ready for ${service.name} in ${city.name}?`}

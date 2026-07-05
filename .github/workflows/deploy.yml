@@ -18,15 +18,13 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run compress-images
+      - run: npm run build:deploy
         env:
           NODE_ENV: production
 
-      - run: npm run build
-
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to preview.a1pslandscape.com
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy out --project-name=a1-property-services --branch=${{ github.ref_name }}
+          command: pages deploy out --project-name=a1-property-services --branch=main

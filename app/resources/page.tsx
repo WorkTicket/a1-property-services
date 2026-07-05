@@ -105,13 +105,13 @@ export default function ResourcesPage() {
         imageAlt="Landscaping resources in Cedar Falls"
         eyebrow="Helpful Guides"
         title="Landscaping|Resources"
-        subtitle="Expert guides, checklists, and articles to help Cedar Valley homeowners with their landscape projects."
+        subtitle="Expert guides, checklists, and articles for Cedar Valley homeowners working on landscape projects."
       />
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <p className="text-lg leading-relaxed text-brand-body">
-            Whether you are planning a new hardscape project, troubleshooting a drainage issue, or just trying to keep your lawn healthy, these resources will help you make informed decisions for your Cedar Falls property.
+            Planning a patio, fixing drainage, or keeping the lawn healthy? These articles cover the basics for Cedar Falls homeowners.
           </p>
         </FadeIn>
       </section>

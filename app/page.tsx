@@ -16,6 +16,7 @@ import HeroTitle from '@/components/ui/HeroTitle'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 
 const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
   loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
@@ -28,7 +29,7 @@ const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Contractor in Cedar Falls, IA',
   description:
-    "Cedar Falls' trusted landscaping company. Retaining walls, paver patios, lawn care & more. Licensed & insured. Get your free quote today.",
+    "Cedar Falls landscaping company. Retaining walls, paver patios, lawn care and more. Licensed and insured. Get your free quote today.",
   path: '/',
   keywords: [
     'landscaping cedar falls',
@@ -117,7 +118,6 @@ export default function HomePage() {
         <LcpHeroImage
           src={siteImages.homeHero}
           alt="Professional landscaping project in Cedar Falls, Iowa"
-          sizes="100vw"
         />
         <div className="absolute inset-0 bg-hero-overlay" />
 
@@ -254,13 +254,13 @@ export default function HomePage() {
             <FadeIn direction="left">
               <p className="section-eyebrow">Who We Are</p>
               <h2 className="section-heading mt-3">
-                Cedar Valley&rsquo;s Trusted Landscaping Company
+                A Local Landscaping Crew in the Cedar Valley
               </h2>
               <p className="mt-6 leading-relaxed text-brand-body">
                 A1 Property Services started in 2009 with one goal: do good work and keep showing up. Retaining walls, paver patios, full yard installs, seasonal maintenance. Big jobs and small ones.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We&rsquo;re proud to serve Cedar Falls, Waterloo, and communities throughout the Cedar Valley. When you work with us, you&rsquo;re working with neighbors who take pride in every yard we touch.
+                We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley since 2009. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/about" variant="ghost-dark">
@@ -278,7 +278,7 @@ export default function HomePage() {
                   src={siteImages.aboutSecondary}
                   alt="A1 Property Services landscape project in Cedar Falls"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes={IMAGE_SIZES.halfCol}
                 />
               </div>
             </FadeIn>

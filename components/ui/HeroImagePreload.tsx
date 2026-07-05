@@ -1,4 +1,5 @@
 import { getLcpPreloadHref, getLcpPreloadSrcset } from '@/lib/responsive-image'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 
 type HeroImagePreloadProps = {
   src: string
@@ -7,7 +8,7 @@ type HeroImagePreloadProps = {
 
 export default function HeroImagePreload({
   src,
-  sizes = '100vw',
+  sizes = IMAGE_SIZES.hero,
 }: HeroImagePreloadProps) {
   return (
     <link

@@ -35,7 +35,7 @@ const guides = [
   },
   {
     title: 'Outdoor Living Design Guide',
-    description: 'Design your dream outdoor living space. Fire pits, outdoor kitchens, patios, and everything in between.',
+    description: 'Plan an outdoor living space that fits your yard. Fire pits, outdoor kitchens, patios, and everything in between.',
     icon: 'home' as const,
     href: '/services/outdoor-living',
     steps: ['Vision & Budget', 'Zone Planning', 'Material Selection', 'Utility Rough-In', 'Hardscape Installation', 'Finishing Touches'],
@@ -99,7 +99,7 @@ export default function GuidesPage() {
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <p className="text-lg leading-relaxed text-brand-body">
-            Our comprehensive guides walk you through every step of your landscaping journey. From initial planning to final installation, we cover what you need to know to make informed decisions for your Cedar Valley property.
+            These guides cover the real steps, from early planning through installation, so you know what to expect before you start a Cedar Valley project.
           </p>
         </FadeIn>
       </section>

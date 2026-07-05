@@ -23,7 +23,7 @@ const GalleryFilter = dynamic(() => import('@/components/sections/GalleryFilter'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Project Gallery',
   description:
-    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley — retaining walls, paver patios, and water features.',
+    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, and water features.',
   path: '/gallery',
   ogImage: siteImages.galleryHero,
   ogImageAlt: 'Landscaping project gallery in Cedar Falls',
@@ -32,7 +32,7 @@ export const metadata: Metadata = generatePageMetadata({
 export default function GalleryPage() {
   const pageSchema = webPageJsonLd({
     name: 'Project Gallery | A1 Property Services',
-    description: 'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley — retaining walls, paver patios, and water features.',
+    description: 'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, and water features.',
     path: '/gallery',
     image: siteImages.galleryHero,
     about: 'Project Gallery',

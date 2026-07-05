@@ -2,8 +2,8 @@
   "/images/about-hero.webp": {
     "originalPath": "/images/about-hero.webp",
     "altBase": "about-hero",
-    "width": 1200,
-    "height": 802,
+    "width": 1920,
+    "height": 1283,
     "aspectRatio": 1.4962593516209477,
     "isHero": true,
     "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoUAA0APzmYvlYvLCajsAgB4CcJY12cRggP7MCG6Cm3gAD+eD+jvpQb4fww3AC+BDLOBFmSYyZmu71ZKBus03Pe1YP/5en/Xu8dHf//OC6D93j+DxX/nNtow/5b/8htHS1VpiHjQYqHAsItZqJCZqJCZrP1E1DoDnqgAA==",
@@ -13,21 +13,30 @@
         "640": "/images/generated/about-hero-640.avif",
         "768": "/images/generated/about-hero-768.avif",
         "1024": "/images/generated/about-hero-1024.avif",
-        "1200": "/images/generated/about-hero-1200.avif"
+        "1200": "/images/generated/about-hero-1200.avif",
+        "1280": "/images/generated/about-hero-1280.avif",
+        "1536": "/images/generated/about-hero-1536.avif",
+        "1920": "/images/generated/about-hero-1920.avif"
       },
       "webp": {
         "480": "/images/generated/about-hero-480.webp",
         "640": "/images/generated/about-hero-640.webp",
         "768": "/images/generated/about-hero-768.webp",
         "1024": "/images/generated/about-hero-1024.webp",
-        "1200": "/images/generated/about-hero-1200.webp"
+        "1200": "/images/generated/about-hero-1200.webp",
+        "1280": "/images/generated/about-hero-1280.webp",
+        "1536": "/images/generated/about-hero-1536.webp",
+        "1920": "/images/generated/about-hero-1920.webp"
       },
       "jpeg": {
         "480": "/images/generated/about-hero-480.jpeg",
         "640": "/images/generated/about-hero-640.jpeg",
         "768": "/images/generated/about-hero-768.jpeg",
         "1024": "/images/generated/about-hero-1024.jpeg",
-        "1200": "/images/generated/about-hero-1200.jpeg"
+        "1200": "/images/generated/about-hero-1200.jpeg",
+        "1280": "/images/generated/about-hero-1280.jpeg",
+        "1536": "/images/generated/about-hero-1536.jpeg",
+        "1920": "/images/generated/about-hero-1920.jpeg"
       }
     }
   },
@@ -203,8 +212,8 @@
   "/images/contact-page-hero.webp": {
     "originalPath": "/images/contact-page-hero.webp",
     "altBase": "contact-page-hero",
-    "width": 1600,
-    "height": 738,
+    "width": 1920,
+    "height": 886,
     "aspectRatio": 2.168021680216802,
     "isHero": true,
     "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAwCdASoUAAkAPzmIvlOvKScisAgB4CcJZSzQvYAAAyRiAADkNf2uGT12/nW/oYbXftNmnGeO+e/ICT3Tvrmc/6SF+m23RDVBfPANaYbEEg5dUT9wcWhf7EqIlf7wSIlf7wSDlPYAAA==",
@@ -216,7 +225,8 @@
         "1024": "/images/generated/contact-page-hero-1024.avif",
         "1280": "/images/generated/contact-page-hero-1280.avif",
         "1536": "/images/generated/contact-page-hero-1536.avif",
-        "1600": "/images/generated/contact-page-hero-1600.avif"
+        "1600": "/images/generated/contact-page-hero-1600.avif",
+        "1920": "/images/generated/contact-page-hero-1920.avif"
       },
       "webp": {
         "480": "/images/generated/contact-page-hero-480.webp",
@@ -225,7 +235,8 @@
         "1024": "/images/generated/contact-page-hero-1024.webp",
         "1280": "/images/generated/contact-page-hero-1280.webp",
         "1536": "/images/generated/contact-page-hero-1536.webp",
-        "1600": "/images/generated/contact-page-hero-1600.webp"
+        "1600": "/images/generated/contact-page-hero-1600.webp",
+        "1920": "/images/generated/contact-page-hero-1920.webp"
       },
       "jpeg": {
         "480": "/images/generated/contact-page-hero-480.jpeg",
@@ -234,7 +245,8 @@
         "1024": "/images/generated/contact-page-hero-1024.jpeg",
         "1280": "/images/generated/contact-page-hero-1280.jpeg",
         "1536": "/images/generated/contact-page-hero-1536.jpeg",
-        "1600": "/images/generated/contact-page-hero-1600.jpeg"
+        "1600": "/images/generated/contact-page-hero-1600.jpeg",
+        "1920": "/images/generated/contact-page-hero-1920.jpeg"
       }
     }
   },
@@ -261,8 +273,8 @@
   "/images/gallery-hero.webp": {
     "originalPath": "/images/gallery-hero.webp",
     "altBase": "gallery-hero",
-    "width": 1200,
-    "height": 1800,
+    "width": 1920,
+    "height": 2880,
     "aspectRatio": 0.6666666666666666,
     "isHero": true,
     "blurPlaceholder": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAACwBACdASoUAB4APzmQv1mvKSYjqAgB4CcJZF2byrZIoFWTYATkwjABW+w5LOpAAP7iH4nnzAn+R+PQq1b40C1G2Kw/T1JmjrKLSIlU7dLN+K7zCf3SEVLrgybL+FZBzw94e5VtMoSQRHdtrgRUpAPoVmcbO1s1Fx9xstE/Ir+l4AfbO+31QP47QjoUn/SMyisH9celv36S+nIl5xjmKHmq45/8rxkdXerSaHrjNEKSXsLls4A839v0d5lvv/26R0luQzAoGBm/naaGer01Kpzfqqqx+4bT3vPWPf11Nhg4veAwCRAAUo7AAAA=",
@@ -272,21 +284,30 @@
         "640": "/images/generated/gallery-hero-640.avif",
         "768": "/images/generated/gallery-hero-768.avif",
         "1024": "/images/generated/gallery-hero-1024.avif",
-        "1200": "/images/generated/gallery-hero-1200.avif"
+        "1200": "/images/generated/gallery-hero-1200.avif",
+        "1280": "/images/generated/gallery-hero-1280.avif",
+        "1536": "/images/generated/gallery-hero-1536.avif",
+        "1920": "/images/generated/gallery-hero-1920.avif"
       },
       "webp": {
         "480": "/images/generated/gallery-hero-480.webp",
         "640": "/images/generated/gallery-hero-640.webp",
         "768": "/images/generated/gallery-hero-768.webp",
         "1024": "/images/generated/gallery-hero-1024.webp",
-        "1200": "/images/generated/gallery-hero-1200.webp"
+        "1200": "/images/generated/gallery-hero-1200.webp",
+        "1280": "/images/generated/gallery-hero-1280.webp",
+        "1536": "/images/generated/gallery-hero-1536.webp",
+        "1920": "/images/generated/gallery-hero-1920.webp"
       },
       "jpeg": {
         "480": "/images/generated/gallery-hero-480.jpeg",
         "640": "/images/generated/gallery-hero-640.jpeg",
         "768": "/images/generated/gallery-hero-768.jpeg",
         "1024": "/images/generated/gallery-hero-1024.jpeg",
-        "1200": "/images/generated/gallery-hero-1200.jpeg"
+        "1200": "/images/generated/gallery-hero-1200.jpeg",
+        "1280": "/images/generated/gallery-hero-1280.jpeg",
+        "1536": "/images/generated/gallery-hero-1536.jpeg",
+        "1920": "/images/generated/gallery-hero-1920.jpeg"
       }
     }
   },
@@ -389,8 +410,8 @@
   "/images/hero-background-image.webp": {
     "originalPath": "/images/hero-background-image.webp",
     "altBase": "hero-background-image",
-    "width": 1200,
-    "height": 900,
+    "width": 1920,
+    "height": 1440,
     "aspectRatio": 1.3333333333333333,
     "isHero": true,
     "blurPlaceholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwAwCdASoUAA8APzmEuVOvKKWisAgB4CcJY1e7JXQAadAfeCgA+z2trMMr/4OWA2wz4TreNqgrNUYnVuHNNkIBDasDGyAaJH9+7o7X/4fbJWQ38VNz34NrVh689f5kOND/PHRof546cPJnB5ZcrpUfejL70Zfeeb/xRwozgZrNDFcKZEJ3gAAA",
@@ -400,21 +421,30 @@
         "640": "/images/generated/hero-background-image-640.avif",
         "768": "/images/generated/hero-background-image-768.avif",
         "1024": "/images/generated/hero-background-image-1024.avif",
-        "1200": "/images/generated/hero-background-image-1200.avif"
+        "1200": "/images/generated/hero-background-image-1200.avif",
+        "1280": "/images/generated/hero-background-image-1280.avif",
+        "1536": "/images/generated/hero-background-image-1536.avif",
+        "1920": "/images/generated/hero-background-image-1920.avif"
       },
       "webp": {
         "480": "/images/generated/hero-background-image-480.webp",
         "640": "/images/generated/hero-background-image-640.webp",
         "768": "/images/generated/hero-background-image-768.webp",
         "1024": "/images/generated/hero-background-image-1024.webp",
-        "1200": "/images/generated/hero-background-image-1200.webp"
+        "1200": "/images/generated/hero-background-image-1200.webp",
+        "1280": "/images/generated/hero-background-image-1280.webp",
+        "1536": "/images/generated/hero-background-image-1536.webp",
+        "1920": "/images/generated/hero-background-image-1920.webp"
       },
       "jpeg": {
         "480": "/images/generated/hero-background-image-480.jpeg",
         "640": "/images/generated/hero-background-image-640.jpeg",
         "768": "/images/generated/hero-background-image-768.jpeg",
         "1024": "/images/generated/hero-background-image-1024.jpeg",
-        "1200": "/images/generated/hero-background-image-1200.jpeg"
+        "1200": "/images/generated/hero-background-image-1200.jpeg",
+        "1280": "/images/generated/hero-background-image-1280.jpeg",
+        "1536": "/images/generated/hero-background-image-1536.jpeg",
+        "1920": "/images/generated/hero-background-image-1920.jpeg"
       }
     }
   },
@@ -598,8 +628,8 @@
   "/images/paver-patio-hero.webp": {
     "originalPath": "/images/paver-patio-hero.webp",
     "altBase": "paver-patio-hero",
-    "width": 1600,
-    "height": 1067,
+    "width": 1920,
+    "height": 1280,
     "aspectRatio": 1.499531396438613,
     "isHero": true,
     "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoUAA0APzmGuVOvKSWisAgB4CcJaj11uJ+gHKl4E0n8f6AZyfVgAuGoAP3/3Vxlqv/3oO4TEu2NGBWRw8Ek/yPagW96RcdSFEtfQa2IECcrhGb1lhmPOnbu7Fv/+8M0tEa9sP2BfPcNS2E4AZ1lptnEP1d8LaFW0Ktq+M5CMfdNXMyArmVeZAfq+Ze8j8QULrxrhssKLu18hmWBDoAAAA==",
@@ -611,7 +641,8 @@
         "1024": "/images/generated/paver-patio-hero-1024.avif",
         "1280": "/images/generated/paver-patio-hero-1280.avif",
         "1536": "/images/generated/paver-patio-hero-1536.avif",
-        "1600": "/images/generated/paver-patio-hero-1600.avif"
+        "1600": "/images/generated/paver-patio-hero-1600.avif",
+        "1920": "/images/generated/paver-patio-hero-1920.avif"
       },
       "webp": {
         "480": "/images/generated/paver-patio-hero-480.webp",
@@ -620,7 +651,8 @@
         "1024": "/images/generated/paver-patio-hero-1024.webp",
         "1280": "/images/generated/paver-patio-hero-1280.webp",
         "1536": "/images/generated/paver-patio-hero-1536.webp",
-        "1600": "/images/generated/paver-patio-hero-1600.webp"
+        "1600": "/images/generated/paver-patio-hero-1600.webp",
+        "1920": "/images/generated/paver-patio-hero-1920.webp"
       },
       "jpeg": {
         "480": "/images/generated/paver-patio-hero-480.jpeg",
@@ -629,7 +661,8 @@
         "1024": "/images/generated/paver-patio-hero-1024.jpeg",
         "1280": "/images/generated/paver-patio-hero-1280.jpeg",
         "1536": "/images/generated/paver-patio-hero-1536.jpeg",
-        "1600": "/images/generated/paver-patio-hero-1600.jpeg"
+        "1600": "/images/generated/paver-patio-hero-1600.jpeg",
+        "1920": "/images/generated/paver-patio-hero-1920.jpeg"
       }
     }
   },
@@ -1276,8 +1309,8 @@
   "/images/services-hero.webp": {
     "originalPath": "/images/services-hero.webp",
     "altBase": "services-hero",
-    "width": 1200,
-    "height": 1800,
+    "width": 1920,
+    "height": 2880,
     "aspectRatio": 0.6666666666666666,
     "isHero": true,
     "blurPlaceholder": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAABQBACdASoUAB4APzmOuVcvKaUjqA1R4CcJZF2byrZItVMAFAAL20HMo3IAAP7iH4nnzAn+R+PQq1d/NqWLvaEod8wunNOrSIkvsxm/b5AXgOftOaUuuMOlOG1Q2wkf7To5AmJMZyDO6iqoEOf/VzcB5UJ++UUzPVR7v96H8Nf0ryioZ1+qB/HaEtNjr3jcQ23ey2kBepkf/cR9+10nVpgl+dhiqggtz33QAbz4zlwxPh4D5y5lvv/17cgjN7LPF9V/NmfPSvSKcH66qtKWelRHGZchD/pSlX2wA5MAII9AAA==",
@@ -1287,21 +1320,30 @@
         "640": "/images/generated/services-hero-640.avif",
         "768": "/images/generated/services-hero-768.avif",
         "1024": "/images/generated/services-hero-1024.avif",
-        "1200": "/images/generated/services-hero-1200.avif"
+        "1200": "/images/generated/services-hero-1200.avif",
+        "1280": "/images/generated/services-hero-1280.avif",
+        "1536": "/images/generated/services-hero-1536.avif",
+        "1920": "/images/generated/services-hero-1920.avif"
       },
       "webp": {
         "480": "/images/generated/services-hero-480.webp",
         "640": "/images/generated/services-hero-640.webp",
         "768": "/images/generated/services-hero-768.webp",
         "1024": "/images/generated/services-hero-1024.webp",
-        "1200": "/images/generated/services-hero-1200.webp"
+        "1200": "/images/generated/services-hero-1200.webp",
+        "1280": "/images/generated/services-hero-1280.webp",
+        "1536": "/images/generated/services-hero-1536.webp",
+        "1920": "/images/generated/services-hero-1920.webp"
       },
       "jpeg": {
         "480": "/images/generated/services-hero-480.jpeg",
         "640": "/images/generated/services-hero-640.jpeg",
         "768": "/images/generated/services-hero-768.jpeg",
         "1024": "/images/generated/services-hero-1024.jpeg",
-        "1200": "/images/generated/services-hero-1200.jpeg"
+        "1200": "/images/generated/services-hero-1200.jpeg",
+        "1280": "/images/generated/services-hero-1280.jpeg",
+        "1536": "/images/generated/services-hero-1536.jpeg",
+        "1920": "/images/generated/services-hero-1920.jpeg"
       }
     }
   },

@@ -39,7 +39,6 @@ export default function PageHero({
           <LcpHeroImage
             src={imageSrc}
             alt={imageAlt}
-            sizes="100vw"
           />
           <div className="absolute inset-0 bg-hero-overlay" />
         </>

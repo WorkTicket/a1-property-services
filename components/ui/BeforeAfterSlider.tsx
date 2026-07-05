@@ -2,6 +2,7 @@
 
 import { useRef, useCallback, useEffect } from 'react'
 import { buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { cn } from '@/lib/utils'
 
 type SlideImage = {
@@ -20,15 +21,16 @@ type BeforeAfterSliderProps = {
   aspectClassName?: string
 }
 
-const SLIDER_SIZES = '(max-width: 768px) 92vw, (max-width: 1280px) 50vw, 640px'
+const SLIDER_SIZES = IMAGE_SIZES.galleryGrid
+const DESKTOP_SLIDER_WIDTH = 1280
 const DRAG_THRESHOLD = 10
 
 function preloadSliderImages(beforeSrc: string, afterSrc: string) {
   const urls = [
-    getVariantUrl(beforeSrc, 'webp', 768),
-    getVariantUrl(afterSrc, 'webp', 768),
-    getVariantUrl(beforeSrc, 'avif', 768),
-    getVariantUrl(afterSrc, 'avif', 768),
+    getVariantUrl(beforeSrc, 'webp', DESKTOP_SLIDER_WIDTH),
+    getVariantUrl(afterSrc, 'webp', DESKTOP_SLIDER_WIDTH),
+    getVariantUrl(beforeSrc, 'avif', DESKTOP_SLIDER_WIDTH),
+    getVariantUrl(afterSrc, 'avif', DESKTOP_SLIDER_WIDTH),
   ]
   urls.forEach((url) => {
     const img = new window.Image()
@@ -58,7 +60,7 @@ function SliderPicture({
       <source srcSet={buildSrcset(src, 'avif')} sizes={SLIDER_SIZES} type="image/avif" />
       <source srcSet={buildSrcset(src, 'webp')} sizes={SLIDER_SIZES} type="image/webp" />
       <img
-        src={getVariantUrl(src, 'webp', 640)}
+        src={getVariantUrl(src, 'webp', 1024)}
         srcSet={buildSrcset(src, 'webp')}
         sizes={SLIDER_SIZES}
         alt={alt}

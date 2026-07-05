@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { FORMATS, buildSrcset, getImageDimensions } from '@/lib/responsive-image'
 
 type ResponsiveImageProps = {
@@ -21,7 +22,7 @@ export default function ResponsiveImage({
   width,
   height,
   priority = false,
-  sizes = '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw',
+  sizes = IMAGE_SIZES.halfCol,
   className = '',
   fill = false,
   objectFit = 'cover',
