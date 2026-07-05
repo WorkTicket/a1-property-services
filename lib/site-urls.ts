@@ -3,14 +3,12 @@ import { learnArticles } from '@/lib/learn'
 import { siteConfig } from '@/lib/metadata'
 import { allServices } from '@/lib/services'
 import { cities } from '@/lib/cities'
-import { guideSlugs } from '@/lib/guides'
 
 export function getAllSiteUrls(): string[] {
   const base = siteConfig.url
 
-  const staticPaths = ['', '/about', '/services', '/gallery', '/contact', '/blog', '/faqs', '/resources', '/guides', '/learn']
+  const staticPaths = ['', '/about', '/services', '/gallery', '/contact', '/blog', '/faqs', '/resources', '/learn']
   const staticUrls = staticPaths.map((path) => `${base}${path}`)
-  const guideDetailUrls = guideSlugs.map((slug) => `${base}/guides/${slug}`)
   const serviceUrls = allServices.map((s) => `${base}/services/${s.slug}`)
   const blogUrls = blogPosts.map((p) => `${base}/blog/${p.slug}`)
   const learnUrls = learnArticles.map((a) => `${base}/learn/${a.slug}`)
@@ -22,5 +20,5 @@ export function getAllSiteUrls(): string[] {
     }
   }
 
-  return [...staticUrls, ...guideDetailUrls, ...serviceUrls, ...blogUrls, ...learnUrls, ...cityUrls, ...programmaticUrls]
+  return [...staticUrls, ...serviceUrls, ...blogUrls, ...learnUrls, ...cityUrls, ...programmaticUrls]
 }

@@ -37,7 +37,6 @@ const serviceCategories = [
 
 const serviceResourceLinks = [
   { label: 'Knowledge Center', href: '/learn' },
-  { label: 'Guides', href: '/guides' },
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
 ]
@@ -55,7 +54,6 @@ function getCategoryServices(key: ServiceCategoryKey): Service[] {
 
 const learnLinks = [
   { label: 'Knowledge Center', href: '/learn' },
-  { label: 'Guides', href: '/guides' },
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
   { label: 'Blog', href: '/blog' },

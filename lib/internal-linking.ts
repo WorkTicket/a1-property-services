@@ -4,9 +4,8 @@ import { cities } from '@/lib/cities'
 import { learnArticles, type LearnArticle } from '@/lib/learn'
 import { galleryProjects, type GalleryProject } from '@/lib/images'
 import { siteConfig } from '@/lib/metadata'
-import { allGuides } from '@/lib/guides'
 
-export type ContentType = 'service' | 'blog' | 'city' | 'learn' | 'faq' | 'guide' | 'project'
+export type ContentType = 'service' | 'blog' | 'city' | 'learn' | 'faq' | 'project'
 
 export type LinkedContent = {
   type: ContentType
@@ -48,18 +47,11 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
 }
 
-const guides = allGuides.map(g => ({
-  slug: g.slug,
-  title: g.title,
-  description: g.description,
-}))
-
 function serviceUrl(slug: string) { return `/services/${slug}` }
 function blogUrl(slug: string) { return `/blog/${slug}` }
 function cityUrl(slug: string) { return `/${slug}` }
 function cityServiceUrl(city: string, service: string) { return `/${city}/${service}` }
 function learnUrl(slug: string) { return `/learn/${slug}` }
-function guideUrl(slug: string) { return `/guides/${slug}` }
 function faqUrl() { return `/faqs` }
 function projectUrl() { return `/gallery` }
 
@@ -403,20 +395,6 @@ export function getBlogsForCity(citySlug: string, limit = 3): LinkedContent[] {
     }))
 }
 
-export function getGuidesForBlog(limit = 3): LinkedContent[] {
-  return allGuides.slice(0, limit).map(g => toLinked({
-    type: 'guide', slug: g.slug, title: g.title, excerpt: g.description,
-    url: guideUrl(g.slug), relevance: 5,
-  }))
-}
-
-export function getBlogsForGuide(limit = 3): LinkedContent[] {
-  return blogPosts.slice(0, limit).map(p => toLinked({
-    type: 'blog', slug: p.slug, title: p.title, excerpt: p.excerpt,
-    url: blogUrl(p.slug), relevance: 5,
-  }))
-}
-
 export function getServiceLinksForFaq(limit = 6): LinkedContent[] {
   return getFaqPageServices()
     .slice(0, limit)
@@ -504,9 +482,6 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
 
       const faqs = getFaqsForBlog(slug)
       if (faqs.length > 0) groups.push({ heading: 'Related FAQs', items: faqs })
-
-      const guides = getGuidesForBlog()
-      if (guides.length > 0) groups.push({ heading: 'Planning Guides', items: guides })
       break
     }
 
@@ -534,12 +509,6 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     case 'faq': {
       const services = getServiceLinksForFaq()
       if (services.length > 0) groups.push({ heading: 'Our Services', items: services })
-      break
-    }
-
-    case 'guide': {
-      const blogs = getBlogsForGuide()
-      if (blogs.length > 0) groups.push({ heading: 'Related Articles', items: blogs })
       break
     }
 

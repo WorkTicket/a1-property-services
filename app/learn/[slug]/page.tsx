@@ -8,13 +8,13 @@ import { learnArticles } from '@/lib/learn'
 import { allServices } from '@/lib/services'
 import { siteImages } from '@/lib/images'
 import { serviceFaqs } from '@/lib/services'
-import { getBlogsForLearn, getGuidesForBlog } from '@/lib/internal-linking'
+import { getBlogsForLearn, getServicesForLearn } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import Button from '@/components/ui/Button'
-import ServiceIcon from '@/components/ui/ServiceIcon'
+
 import CtaBanner from '@/components/sections/CtaBanner'
 
 type Props = { params: { slug: string } }
@@ -126,36 +126,6 @@ export default function LearnArticlePage({ params }: Props) {
         </FadeIn>
       </article>
 
-      {relatedServices.length > 0 && (
-        <section className="section bg-brand-stone">
-          <div className="section-inner">
-            <FadeIn className="mb-10 text-center">
-              <p className="section-eyebrow">Our Services</p>
-              <h2 className="section-heading mt-3">Related Services</h2>
-            </FadeIn>
-            <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedServices.map((service) => (
-                <StaggerItem key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="card flex h-full items-start gap-4 p-5 transition-all hover:-translate-y-0.5"
-                  >
-                    <div className="shrink-0 rounded-lg bg-brand-green-100 p-2.5">
-                      <ServiceIcon name={service.icon} size={18} />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="font-semibold text-brand-dark">{service.name}</p>
-                      <p className="mt-1 line-clamp-2 text-sm text-brand-body">{service.shortDesc}</p>
-                    </div>
-                    <ChevronRight size={16} className="mt-1 shrink-0 text-brand-green-700" />
-                  </Link>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </section>
-      )}
-
       {relatedFaqs.length > 0 && (
         <section className="section bg-white">
           <FadeIn className="section-inner-narrow">
@@ -223,16 +193,20 @@ export default function LearnArticlePage({ params }: Props) {
         </div>
       </section>
 
-      <RelatedContent groups={[
-        ...(getBlogsForLearn(params.slug).length > 0 ? [{
-          heading: 'Related Articles',
-          items: getBlogsForLearn(params.slug),
-        }] : []),
-        ...(getGuidesForBlog(3).length > 0 ? [{
-          heading: 'Planning Guides',
-          items: getGuidesForBlog(3),
-        }] : []),
-      ]} />
+      <RelatedContent
+        eyebrow="Explore More"
+        heading="Related Content"
+        groups={[
+          ...(relatedServices.length > 0 ? [{
+            heading: 'Our Services',
+            items: getServicesForLearn(params.slug),
+          }] : []),
+          ...(getBlogsForLearn(params.slug).length > 0 ? [{
+            heading: 'Related Articles',
+            items: getBlogsForLearn(params.slug),
+          }] : []),
+        ]}
+      />
 
       <CtaBanner
         title="Ready to start your project?"
