@@ -1707,6 +1707,7 @@ export type Material = {
   cons: string[]
   maintenance: string
   durability: string
+  recommended?: boolean
 }
 
 export type ComparisonSectionMeta = {
@@ -1800,6 +1801,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'retaining-walls': [
     {
       name: 'Segmental Concrete Block',
+      recommended: true,
       pros: [
         'Engineered for soil retention with interlocking design',
         'Flexible through freeze-thaw without cracking',
@@ -1852,6 +1854,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'paver-patio': [
     {
       name: 'Concrete Pavers',
+      recommended: true,
       pros: [
         'Wide range of colors, shapes, and patterns available',
         'Individual pavers can be replaced if damaged',
@@ -1922,6 +1925,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'ponds-water-features': [
     {
       name: 'EPDM Rubber Liner',
+      recommended: true,
       pros: [
         'Flexible and durable in freeze-thaw conditions',
         'Creates natural-looking pond shapes',
@@ -2043,6 +2047,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     },
     {
       name: 'Premium Planting Mix / Topsoil',
+      recommended: true,
       pros: [
         'Improves heavy Iowa clay for new plantings',
         'Blended with compost for immediate nutrient availability',
@@ -2062,6 +2067,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'drainage': [
     {
       name: 'Perforated PVC Pipe (French Drain)',
+      recommended: true,
       pros: [
         'Proven effective for subsurface water collection',
         'Durable and resists crushing in trenches',
@@ -2132,6 +2138,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'outdoor-living': [
     {
       name: 'Concrete Pavers',
+      recommended: true,
       pros: [
         'Durable surface for high-traffic entertaining areas',
         'Wide range of styles to match any design',
@@ -2219,6 +2226,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     },
     {
       name: 'Detailed Construction Plan',
+      recommended: true,
       pros: [
         'Scaled, measured layout for accurate installation',
         'Specific plant varieties, sizes, and spacing',
@@ -2272,6 +2280,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'lawn-care': [
     {
       name: 'Cool-Season Grass Mix (Kentucky Bluegrass, Fescue)',
+      recommended: true,
       pros: [
         'Thrives in Iowa spring and fall temperatures',
         'Dense, dark green turf ideal for lawns',
@@ -2412,6 +2421,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'landscape-maintenance': [
     {
       name: 'Shredded Hardwood Mulch',
+      recommended: true,
       pros: [
         'Natural dark color complements all landscape styles',
         'Breaks down slowly, adding organic matter to soil',
@@ -2516,6 +2526,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     },
     {
       name: 'Bluegrass / Fescue Blend Sod',
+      recommended: true,
       pros: [
         'Combines bluegrass beauty with fescue drought tolerance',
         'Most popular sod choice for Cedar Valley residential lawns',
@@ -2552,6 +2563,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'mulching': [
     {
       name: 'Shredded Hardwood Mulch',
+      recommended: true,
       pros: [
         'Best overall choice for Iowa landscape beds',
         'Natural dark brown color complements all plants',
@@ -2622,6 +2634,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     },
     {
       name: 'Landscape Boulders (Limestone/Granite)',
+      recommended: true,
       pros: [
         'Natural centerpiece that anchors landscape beds',
         'Iowa limestone is locally sourced and matches the terrain',
@@ -2675,6 +2688,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     },
     {
       name: 'Container-Grown Trees',
+      recommended: true,
       pros: [
         'Root system intact from nursery to planting hole',
         'Lighter and easier to handle than B&B',
@@ -2745,6 +2759,7 @@ export const serviceMaterials: Record<string, Material[]> = {
     },
     {
       name: 'Native Iowa Shrubs (Dogwood, Viburnum, Sumac)',
+      recommended: true,
       pros: [
         'Adapted to Iowa soil, climate, and rainfall patterns',
         'Support local pollinators and wildlife',
@@ -2781,6 +2796,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'commercial-landscaping': [
     {
       name: 'Commercial Turf Management',
+      recommended: true,
       pros: [
         'Professional-grade equipment for large properties',
         'Consistent mowing height and frequency',
@@ -2851,6 +2867,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'residential-landscaping': [
     {
       name: 'Custom Landscape Installation Package',
+      recommended: true,
       pros: [
         'Complete service from design through final walkthrough',
         'All materials and labor included in one contract',
@@ -2921,6 +2938,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'grading': [
     {
       name: 'Cut and Fill Grading',
+      recommended: true,
       pros: [
         'Balances soil on-site without importing or exporting',
         'Cost-effective for properties with varying terrain',
@@ -2991,6 +3009,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'preservation-restoration': [
     {
       name: 'Soil Amendment (Compost/Topsoil Mix)',
+      recommended: true,
       pros: [
         'Improves soil structure in heavy Iowa clay',
         'Adds organic matter and nutrients',
@@ -3061,6 +3080,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'hydroseeding': [
     {
       name: 'Standard Hydroseed Mix',
+      recommended: true,
       pros: [
         'Seed, fertilizer, and mulch applied in one pass',
         'Fast establishment for large areas',
@@ -3131,6 +3151,7 @@ export const serviceMaterials: Record<string, Material[]> = {
   'snow-removal': [
     {
       name: 'Push Plowing (Driveways & Parking Lots)',
+      recommended: true,
       pros: [
         'Fast clearing of large paved areas',
         'Less physical labor than shoveling',

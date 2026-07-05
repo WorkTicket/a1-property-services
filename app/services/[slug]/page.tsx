@@ -28,6 +28,7 @@ import PageHero from '@/components/motion/PageHero'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import FaqAccordion from '@/components/ui/FaqAccordion'
+import { cn } from '@/lib/utils'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 
 type Props = { params: { slug: string } }
@@ -344,8 +345,23 @@ export default function ServicePage({ params }: Props) {
             </p>
             <div className="mt-10 space-y-10">
               {materialsArray.map((material) => (
-                <div key={material.name} className="rounded-xl border border-black/5 bg-brand-stone p-6 md:p-8">
-                  <h3 className="text-xl font-bold text-brand-dark">{material.name}</h3>
+                <div
+                  key={material.name}
+                  className={cn(
+                    'rounded-xl border p-6 md:p-8',
+                    material.recommended
+                      ? 'border-brand-gold/50 bg-white ring-2 ring-brand-gold/25 shadow-[0_4px_24px_rgba(158,27,36,0.08)]'
+                      : 'border-black/5 bg-brand-stone',
+                  )}
+                >
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className="text-xl font-bold text-brand-dark">{material.name}</h3>
+                    {material.recommended ? (
+                      <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold">
+                        Recommended · Best for Iowa
+                      </span>
+                    ) : null}
+                  </div>
                   <div className="mt-6 grid gap-6 md:grid-cols-2">
                     <div>
                       <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-green-700">Pros</p>
