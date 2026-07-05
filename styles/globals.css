@@ -166,7 +166,8 @@
   }
 
   .hero-subtitle {
-    @apply text-base sm:text-lg leading-relaxed text-white/60;
+    @apply text-base sm:text-lg leading-relaxed text-white;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.35);
   }
 
   .stats-bar {
