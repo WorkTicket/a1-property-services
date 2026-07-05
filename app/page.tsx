@@ -26,7 +26,7 @@ const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Landscaping in Cedar Falls, IA',
+  title: 'Landscaping Contractor in Cedar Falls, IA',
   description:
     "Cedar Falls' trusted landscaping company. Retaining walls, paver patios, lawn care & more. Licensed & insured. Get your free quote today.",
   path: '/',

@@ -46,7 +46,7 @@ export const services: Service[] = [
     slug: 'lawn-care',
     icon: 'home',
     name: 'Lawn Care & Mowing',
-    shortDesc: 'Mowing, aeration, fertilization, and weed control through the growing season.',
+    shortDesc: 'Mowing, aeration, fertilization, and weed control all season.',
     longDesc:
       'A good lawn takes steady care. We mow at the right height, aerate when needed, fertilize on a schedule, and hit weeds before they spread. Your grass stays thick and green when it counts.',
     anchorId: 'lawncare',

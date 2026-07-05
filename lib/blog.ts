@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'spring-landscape-maintenance-checklist',
-    title: 'Spring Landscape Maintenance Checklist for Cedar Valley Homeowners',
+    title: 'Spring Landscape Maintenance for Cedar Valley Homeowners',
     excerpt: 'A practical spring cleanup checklist from local landscaping pros in the Cedar Valley.',
     date: '2025-04-01',
     category: 'Maintenance',

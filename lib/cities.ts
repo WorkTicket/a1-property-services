@@ -244,7 +244,7 @@ export const cities: City[] = [
       'Serving Waverly homeowners and businesses with full landscaping, hardscaping, lawn care, and snow removal.',
     metaTitle: 'Landscaping in Waverly, IA | A1 Property Services',
     metaDescription:
-      'Waverly IA landscaping company. Retaining walls, paver patios, lawn care, tree service, and more. Licensed and insured. Free estimates for Bremer County properties.',
+      'Waverly IA landscaping company. Retaining walls, paver patios, lawn care, tree service. Licensed and insured. Free estimates for Bremer County.',
     metaKeywords: [
       'waverly ia landscaping',
       'waverly retaining walls',
@@ -638,7 +638,7 @@ export const cities: City[] = [
       'Full-service landscaping, hardscaping, and lawn care for Cedar Rapids homes and businesses.',
     metaTitle: 'Landscaping in Cedar Rapids, IA | A1 Property Services',
     metaDescription:
-      'Cedar Rapids landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Cedar Rapids properties.',
+      'Cedar Rapids landscaping company. Retaining walls, paver patios, lawn care, tree service. Licensed and insured. Free estimates.',
     metaKeywords: [
       'landscaping cedar rapids',
       'cedar rapids landscaping',

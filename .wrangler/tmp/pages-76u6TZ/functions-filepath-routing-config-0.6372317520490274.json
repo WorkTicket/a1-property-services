@@ -1,0 +1,21 @@
+{
+  "routes": [
+    {
+      "routePath": "/api/reindex",
+      "mountPath": "/api",
+      "method": "",
+      "module": [
+        "api/reindex.js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/api/reviews",
+      "mountPath": "/api",
+      "method": "",
+      "module": [
+        "api/reviews.js:onRequest"
+      ]
+    }
+  ],
+  "baseURL": "/"
+}

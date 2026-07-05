@@ -71,7 +71,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'retaining-walls': {
     title: 'Retaining Wall Installation in Cedar Falls',
     description:
-      'Retaining wall installation in Cedar Falls, IA by A1 Property Services. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates — licensed and insured.',
+      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates — licensed and insured.',
     h1: 'Retaining Wall Installation in Cedar Falls',
     keywords: [
       'retaining wall installation cedar falls',
@@ -89,7 +89,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'paver-patio': {
     title: 'Paver Patio Installation in Cedar Falls',
     description:
-      'Paver patio installation in Cedar Falls, IA by A1 Property Services. Custom patios built for Iowa freeze-thaw cycles, drainage, and daily use. Free estimates — licensed and insured.',
+      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates — licensed and insured.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -172,7 +172,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'ponds-water-features': {
     title: 'Water Features Installation in Cedar Falls',
     description:
-      'Water features installation in Cedar Falls, IA by A1 Property Services. Custom ponds, waterfalls, koi ponds, and pondless water gardens. Free estimates — licensed and insured.',
+      'Water features installation in Cedar Falls, IA. Custom ponds, waterfalls, koi ponds, and pondless water gardens. Free estimates — licensed and insured.',
     h1: 'Water Features Installation in Cedar Falls',
     keywords: [
       'water features installation cedar falls',
@@ -419,7 +419,7 @@ export function generatePageMetadata({
 }: PageMetadataOptions): Metadata {
   const fullTitle = absoluteTitle
     ? title
-    : `${title} | A1 Property Services in Cedar Falls, IA`
+    : `${title} | A1 Property Services`
   const url = `${siteConfig.url}${path}`
   const desc = description ?? siteConfig.description
   const imageUrl = ogImage ?? defaultOgImage.url
