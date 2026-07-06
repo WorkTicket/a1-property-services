@@ -1,6 +1,7 @@
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
+import HeroOverlay from '@/components/ui/HeroOverlay'
 
 const heroSizeClasses = {
   default: 'min-h-[50vh] md:min-h-[55vh]',
@@ -40,6 +41,10 @@ export default function PageHero({
           <LcpHeroImage
             src={imageSrc}
             alt={imageAlt}
+          />
+          <HeroOverlay
+            imageSrc={imageSrc}
+            variant={isLeft ? 'left' : 'center'}
           />
         </>
       )}

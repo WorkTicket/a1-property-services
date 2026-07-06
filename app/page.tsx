@@ -15,6 +15,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
+import HeroOverlay from '@/components/ui/HeroOverlay'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 
@@ -122,7 +123,7 @@ export default function HomePage() {
           src={siteImages.homeHero}
           alt="Professional landscaping project in Cedar Falls, Iowa"
         />
-        <div className="absolute inset-0 bg-black/45 pointer-events-none" aria-hidden="true" />
+        <HeroOverlay imageSrc={siteImages.homeHero} variant="left" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-8 pt-28 sm:px-6 lg:px-8">
           <div>
