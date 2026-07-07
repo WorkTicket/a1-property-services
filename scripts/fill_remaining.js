@@ -10,7 +10,8 @@ const copies = [
   { from: 'about-hero', to: 'contact-page-hero' },
   { from: 'service-lawn-care', to: 'sprinklers' },
   { from: 'service-lawn-care', to: 'service-hydroseeding' },
-  { from: 'service-lawn-care', to: 'service-sod-installation' },
+  // Custom hero asset in public/images
+  // { from: 'service-lawn-care', to: 'service-sod-installation' },
   { from: 'city-intro', to: 'service-drainage' },
   { from: 'about-secondary', to: 'service-preservation-restoration' },
   { from: 'service-grading', to: 'service-snow-removal' },

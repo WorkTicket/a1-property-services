@@ -6,7 +6,8 @@ const imagesDir = path.join(__dirname, '..', 'public', 'images');
 
 const remaining = [
   { id: '4S_IaJ88a8I', name: 'service-snow-removal' },
-  { id: 'fKev7-jg3xw', name: 'service-sod-installation' },
+  // Custom hero asset in public/images (not Unsplash)
+  // { id: 'fKev7-jg3xw', name: 'service-sod-installation' },
   { id: 'TZ3bAK2620E', name: 'water-feature-image-1' },
   { id: 'UlR7PfVCmgs', name: 'sprinklers' },
   { id: 'SCT4qJD_2ew', name: 'service-drainage' },

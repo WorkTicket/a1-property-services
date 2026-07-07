@@ -31,6 +31,8 @@ const siteImages = {
 
   // Page heroes — unique per page
   homeHero: img('hero-background-image.webp'),
+  homeHeroVideoMp4: img('hero-drone-cedar-falls.mp4'),
+  homeHeroVideoWebm: img('hero-drone-cedar-falls.webm'),
   servicesHero: img('services-hero.webp'),
   aboutHero: img('about-hero.webp'),
   contactHero: img('contact-hero-truck.png'),
@@ -131,11 +133,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('wall-before-1.webp'),
-      alt: 'Sloped yard before retaining wall installation in Cedar Falls',
+      alt: 'Excavated hillside before retaining wall construction in Cedar Falls',
     },
     after: {
       src: img('wall-after-1.webp'),
-      alt: 'Completed retaining wall with graded landscaping',
+      alt: 'Retaining wall and patio foundation after installation',
     },
   },
   {
@@ -143,12 +145,12 @@ const galleryProjects: GalleryProject[] = [
     title: 'Retaining Wall',
     category: 'hardscape',
     before: {
-      src: img('wall-before-6-7.webp'),
-      alt: 'Yard before retaining wall installation in Cedar Falls',
+      src: img('wall-before-2.webp'),
+      alt: 'Aged wooden retaining wall before replacement in Cedar Falls',
     },
     after: {
-      src: img('wall-after-6.webp'),
-      alt: 'Completed retaining wall with finished landscaping',
+      src: img('wall-after-2.webp'),
+      alt: 'New block retaining wall with graded backyard landscaping',
     },
   },
   {
@@ -157,11 +159,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('wall-before-3.webp'),
-      alt: 'Sloped property before retaining wall build',
+      alt: 'Failing block retaining wall before replacement',
     },
     after: {
       src: img('wall-after-3.webp'),
-      alt: 'Finished retaining wall with graded yard',
+      alt: 'New retaining wall with pea gravel and clean finish',
     },
   },
   {
@@ -170,11 +172,13 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('wall-before-4.webp'),
-      alt: 'Backyard slope before retaining wall installation',
+      alt: 'Sloped front yard before retaining wall installation',
+      priority: true,
     },
     after: {
       src: img('wall-after-4.webp'),
-      alt: 'Completed retaining wall with clean finish',
+      alt: 'New L-shaped retaining wall with leveled front yard',
+      priority: true,
     },
   },
   {
@@ -183,11 +187,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('wall-before-5.webp'),
-      alt: 'Property before retaining wall construction',
+      alt: 'Damaged retaining wall before garage-side rebuild',
     },
     after: {
       src: img('wall-after-5.webp'),
-      alt: 'Retaining wall after installation with landscaping',
+      alt: 'New retaining wall with decorative gravel cap',
     },
   },
   {
@@ -196,16 +200,13 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('patio-before-1.webp'),
-      alt: 'Backyard before paver patio installation',
-      quality: 80,
-      priority: true,
+      alt: 'Backyard before raised paver patio installation',
+      objectPosition: '50% 100%',
     },
     after: {
       src: img('patio-after-1.webp'),
-      alt: 'Custom paver patio after installation with clean edging',
+      alt: 'Completed raised paver patio with stone steps and retaining wall',
       objectPosition: '50% 100%',
-      quality: 80,
-      priority: true,
     },
   },
   {
@@ -214,21 +215,25 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('patio-before-2.webp'),
-      alt: 'Backyard before paver patio installation',
-      quality: 80,
+      alt: 'Damaged patio before paver patio replacement',
+      priority: true,
     },
     after: {
       src: img('patio-after-2.webp'),
-      alt: 'Custom paver patio after installation',
-      objectPosition: '50% 100%',
-      quality: 80,
+      alt: 'New paver patio after installation with clean edging',
+      priority: true,
     },
   },
   {
     id: 'water-1',
     title: 'Pond & Waterfall',
     category: 'water',
-    showcase: true,
+    before: {
+      src: img('water-before-1.webp'),
+      alt: 'Backyard garden before pond and waterfall installation',
+      quality: 80,
+      priority: true,
+    },
     after: {
       src: img('water-feature-image-2.webp'),
       alt: 'Custom pond and waterfall with colorful garden plantings in Cedar Falls',
@@ -240,7 +245,11 @@ const galleryProjects: GalleryProject[] = [
     id: 'water-2',
     title: 'Backyard Waterfall',
     category: 'water',
-    showcase: true,
+    before: {
+      src: img('water-before-2.webp'),
+      alt: 'Hillside yard before stone waterfall and pond installation',
+      quality: 80,
+    },
     after: {
       src: img('water-feature-image-3.webp'),
       alt: 'Multi-tiered stone waterfall with retaining wall and garden steps',
@@ -251,7 +260,11 @@ const galleryProjects: GalleryProject[] = [
     id: 'water-3',
     title: 'Pond & Stream',
     category: 'water',
-    showcase: true,
+    before: {
+      src: img('water-before-3.webp'),
+      alt: 'Backyard before pond, stream, and stone bridge installation',
+      quality: 80,
+    },
     after: {
       src: img('water-feature-image-4.webp'),
       alt: 'Large backyard pond with stream, stone bridge, and surrounding gardens',
@@ -265,7 +278,7 @@ export { siteImages, galleryProjects }
 
 export const homepageGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.filter(
   (p): p is GalleryBeforeAfterProject =>
-    !p.showcase && Boolean(p.before) && ['wall-1', 'wall-3'].includes(p.id),
+    !p.showcase && Boolean(p.before) && ['patio-2', 'wall-4'].includes(p.id),
 )
 
 export function getServiceHeroImage(slug: string): string | undefined {

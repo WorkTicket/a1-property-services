@@ -63,7 +63,7 @@ export default function HeroCopyStatic({
             <span
               style={{
                 display: 'block',
-                fontSize: line2Long ? 'clamp(0.875rem, 2.6vw, 3.25rem)' : undefined,
+                fontSize: line2Long ? 'clamp(0.875rem, 2.3vw, 2.85rem)' : undefined,
               }}
             >
               {line2}

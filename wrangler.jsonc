@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "a1-property-services",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "out",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    {
+      "pattern": "preview.a1pslandscape.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "a1pslandscape.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.a1pslandscape.com",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

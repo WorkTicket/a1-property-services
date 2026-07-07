@@ -50,15 +50,14 @@ const imageUrls = [
   // Gallery before/after
   '/images/wall-before-1.webp',
   '/images/wall-after-1.webp',
+  '/images/wall-before-2.webp',
+  '/images/wall-after-2.webp',
   '/images/wall-before-3.webp',
   '/images/wall-after-3.webp',
   '/images/wall-before-4.webp',
   '/images/wall-after-4.webp',
   '/images/wall-before-5.webp',
   '/images/wall-after-5.webp',
-  '/images/wall-before-6-7.webp',
-  '/images/wall-after-6.webp',
-  '/images/wall-after-7.webp',
   '/images/patio-before-1.webp',
   '/images/patio-after-1.webp',
   '/images/patio-before-2.webp',
@@ -68,6 +67,9 @@ const imageUrls = [
   '/images/water-feature-image-2.webp',
   '/images/water-feature-image-3.webp',
   '/images/water-feature-image-4.webp',
+  '/images/water-before-1.webp',
+  '/images/water-before-2.webp',
+  '/images/water-before-3.webp',
 ]
 
 export async function GET() {

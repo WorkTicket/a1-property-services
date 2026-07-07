@@ -2,6 +2,7 @@
 
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
+import HeroOverlay from '@/components/ui/HeroOverlay'
 import { Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
@@ -17,7 +18,7 @@ export default function HomeHero() {
         src={siteImages.homeHero}
         alt="Professional landscaping project in Cedar Falls, Iowa"
       />
-      <div className="absolute inset-0 bg-hero-gradient" />
+      <HeroOverlay imageSrc={siteImages.homeHero} variant="center" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 pb-8 pt-24 text-center text-white sm:px-6">
         <p className="hero-eyebrow mb-4">Cedar Falls, Iowa</p>

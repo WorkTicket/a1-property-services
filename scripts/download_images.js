@@ -21,7 +21,8 @@ const downloads = [
   { id: '93TYtgVkGOo', name: 'service-outdoor-living' },
   { id: 'aA1k6WHyeaw', name: 'service-landscape-installation' },
   { id: 'UXKae28WhUk', name: 'service-commercial-landscaping' },
-  { id: '55oQsZ96cas', name: 'service-tree-planting' },
+  // Custom hero asset in public/images (not Unsplash)
+  // { id: '55oQsZ96cas', name: 'service-tree-planting' },
   { id: 'xwgkJI4bShM', name: 'service-mulching' },
   { id: 'r5_7Zc_E5zU', name: 'service-residential-landscaping' },
   { id: '7MXS06qhhDU', name: 'service-shrub-installation' },

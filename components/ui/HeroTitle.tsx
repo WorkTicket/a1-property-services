@@ -17,7 +17,7 @@ export default function HeroTitle({ children, className }: HeroTitleProps) {
           <span
             className={cn(
               'block text-balance text-white',
-              line2Long && 'text-[clamp(0.875rem,2.6vw,3.25rem)]',
+              line2Long && 'text-[clamp(0.875rem,2.3vw,2.85rem)]',
             )}
         >
           {line2}

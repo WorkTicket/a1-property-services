@@ -15,6 +15,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
+import HeroOverlay from '@/components/ui/HeroOverlay'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 
@@ -40,7 +41,7 @@ export const metadata: Metadata = generatePageMetadata({
     'snow removal cedar falls',
   ],
   ogImage: '/images/hero-background-image.webp',
-  ogImageAlt: 'Professional landscaping project in Cedar Falls, Iowa',
+  ogImageAlt: 'Aerial drone view of Cedar Falls, Iowa',
 })
 
 const trustPoints = [
@@ -120,15 +121,15 @@ export default function HomePage() {
       >
         <LcpHeroImage
           src={siteImages.homeHero}
-          alt="Professional landscaping project in Cedar Falls, Iowa"
+          alt="Aerial view of Cedar Falls, Iowa"
         />
-        <div className="absolute inset-0 bg-black/45 pointer-events-none" aria-hidden="true" />
+        <HeroOverlay imageSrc={siteImages.homeHero} variant="left" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-8 pt-28 sm:px-6 lg:px-8">
           <div>
             <HeroCopyDeferred
               eyebrow="CEDAR FALLS · IOWA · EST. 2009"
-              title="Outdoor Spaces|Cedar Valley Homeowners Are Proud Of"
+              title={'Outdoor Spaces|Cedar Valley Homeowners Are Proud\u00a0Of'}
               subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

@@ -4,6 +4,9 @@ import path from 'path'
 const OUT_DIR = path.resolve('out')
 const REPORT_DIR = path.resolve('reports')
 
+/** Utility pages that are intentionally excluded from sitemap.xml */
+const SITEMAP_EXCLUDED_PAGES = new Set(['/404', '/thank-you'])
+
 let errors = 0
 let warnings = 0
 
@@ -30,10 +33,15 @@ function extractCanonical(content) {
 }
 
 function pathToUrl(filePath) {
-  let relative = path.relative(OUT_DIR, filePath)
+  let relative = path.relative(OUT_DIR, filePath).replace(/\\/g, '/')
   if (relative === 'index.html') return '/'
-  if (relative.endsWith('/index.html')) return '/' + relative.slice(0, -10)
+  if (relative.endsWith('/index.html')) return '/' + relative.slice(0, -'/index.html'.length)
+  if (relative.endsWith('.html')) return '/' + relative.slice(0, -'.html'.length)
   return '/' + relative
+}
+
+function normalizePagePath(urlPath) {
+  return urlPath.replace(/\/$/, '') || '/'
 }
 
 function findHtml(dir) {
@@ -92,7 +100,7 @@ async function main() {
 
   for (const [source, links] of Object.entries(allInternalLinks)) {
     for (const link of links) {
-      let normalized = link.replace(/\/$/, '')
+      let normalized = link.split('#')[0].replace(/\/$/, '')
       if (normalized === '') normalized = '/'
       if (normalized.startsWith('/') && !allPagePaths.has(normalized)) {
         error(`Broken link on ${source}: ${link}`)
@@ -239,7 +247,16 @@ async function main() {
   let canonicalsOk = 0
   let canonicalsMissing = 0
   for (const [url, canonical] of Object.entries(canonicalUrls)) {
-    if (canonical.endsWith(url)) {
+    let canonicalPath = null
+    try {
+      canonicalPath = normalizePagePath(new URL(canonical).pathname)
+    } catch {
+      warn(`Invalid canonical URL on ${url}: ${canonical}`)
+      canonicalsMissing++
+      continue
+    }
+
+    if (canonicalPath === normalizePagePath(url)) {
       canonicalsOk++
     } else {
       warn(`Canonical mismatch on ${url}: points to ${canonical}`)
@@ -315,7 +332,7 @@ async function main() {
     // Check for pages in sitemap that are missing from build output
     let missingFromSitemap = 0
     for (const page of allPages) {
-      if (!sitemapUrls.has(page) && page !== '/') {
+      if (!sitemapUrls.has(page) && page !== '/' && !SITEMAP_EXCLUDED_PAGES.has(page)) {
         warn(`Page missing from sitemap: ${page}`)
         missingFromSitemap++
       }

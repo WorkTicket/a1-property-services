@@ -9,6 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:images": "node scripts/optimize-images.mjs",
+    "build:hero-video": "node scripts/generate-hero-video.mjs",
+    "build:hero-video:ai": "py -3.12 scripts/generate-hero-i2v.py",
     "upscale-gallery": "node scripts/upscale-gallery-sources.mjs",
     "build:images:gallery": "npm run upscale-gallery && npm run build:images",
     "build:feed": "node scripts/generate-feed.mjs",
@@ -21,7 +23,9 @@
     "postbuild:validate": "node scripts/postbuild-validate.mjs",
     "link:health": "node scripts/link-health-check.mjs",
     "analyze": "ANALYZE=true next build",
-    "deploy": "npm run build:deploy && npx wrangler pages deploy out --project-name=a1-property-services --branch main"
+    "preview": "npm run build:deploy && wrangler dev",
+    "deploy": "npm run build:deploy && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -37,6 +41,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@fal-ai/client": "^1.10.1",
     "@next/bundle-analyzer": "^16.2.9",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -47,6 +52,7 @@
     "eslint-config-next": "^14.2.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.104.0"
   }
 }

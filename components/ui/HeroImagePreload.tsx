@@ -1,4 +1,4 @@
-import { getLcpPreloadHref, getLcpPreloadSrcset } from '@/lib/responsive-image'
+import { buildSrcset, getVariantUrl } from '@/lib/responsive-image'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 
 type HeroImagePreloadProps = {
@@ -10,27 +10,27 @@ export default function HeroImagePreload({
   src,
   sizes = IMAGE_SIZES.hero,
 }: HeroImagePreloadProps) {
-  const srcset = getLcpPreloadSrcset(src)
+  const srcset = buildSrcset(src, 'webp')
 
   return (
     <>
       <link
         rel="preload"
         as="image"
-        href={getLcpPreloadHref(src, 640)}
+        href={getVariantUrl(src, 'webp', 768)}
         imageSrcSet={srcset}
         imageSizes={sizes}
-        type="image/avif"
+        type="image/webp"
         fetchPriority="high"
         media="(max-width: 768px)"
       />
       <link
         rel="preload"
         as="image"
-        href={getLcpPreloadHref(src, 1920)}
+        href={getVariantUrl(src, 'webp', 2560)}
         imageSrcSet={srcset}
         imageSizes={sizes}
-        type="image/avif"
+        type="image/webp"
         fetchPriority="high"
         media="(min-width: 769px)"
       />

@@ -25,8 +25,8 @@ const SLIDER_SIZES = IMAGE_SIZES.galleryGrid
 const DRAG_THRESHOLD = 10
 
 function getSliderPreloadWidth(): number {
-  if (typeof window === 'undefined') return 768
-  return window.innerWidth <= 768 ? 640 : 1280
+  if (typeof window === 'undefined') return 1920
+  return window.innerWidth <= 768 ? 1024 : 2560
 }
 
 function preloadSliderImages(beforeSrc: string, afterSrc: string) {
@@ -65,7 +65,7 @@ function SliderPicture({
       <source srcSet={buildSrcset(src, 'avif')} sizes={SLIDER_SIZES} type="image/avif" />
       <source srcSet={buildSrcset(src, 'webp')} sizes={SLIDER_SIZES} type="image/webp" />
       <img
-        src={getVariantUrl(src, 'avif', 640)}
+        src={getVariantUrl(src, 'webp', 1920)}
         srcSet={buildSrcset(src, 'webp')}
         sizes={SLIDER_SIZES}
         alt={alt}
