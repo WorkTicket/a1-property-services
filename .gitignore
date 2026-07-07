@@ -26,3 +26,8 @@ lighthouse-*.json
 
 # Duplicate source assets (processed images live in public/images/)
 public/assets/
+
+# Cloudflare Workers
+.wrangler/
+.cloudflare/
+cloudflare-env.d.ts

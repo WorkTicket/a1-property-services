@@ -24,29 +24,29 @@ async function getAllSiteUrls() {
   return slugs.map(s => `${base}/${s}`)
 }
 
-export async function onRequest(context) {
-  if (context.request.method === 'OPTIONS') {
+export async function handleReindex(request, env) {
+  if (request.method === 'OPTIONS') {
     return new Response(null, { headers: CORS_HEADERS })
   }
 
-  const secret = context.env.REINDEX_WEBHOOK_SECRET
+  const secret = env.REINDEX_WEBHOOK_SECRET
   if (!secret) {
     return Response.json({ error: 'Reindex webhook is not configured' }, { status: 503, headers: CORS_HEADERS })
   }
 
-  const auth = context.request.headers.get('authorization')
+  const auth = request.headers.get('authorization')
   if (auth !== `Bearer ${secret}`) {
     return Response.json({ error: 'Unauthorized' }, { status: 401, headers: CORS_HEADERS })
   }
 
-  const key = context.env.INDEXNOW_KEY
+  const key = env.INDEXNOW_KEY
   if (!key) {
     return Response.json({ error: 'INDEXNOW_KEY is not configured' }, { status: 503, headers: CORS_HEADERS })
   }
 
   let urls
   try {
-    const body = await context.request.json().catch(() => null)
+    const body = await request.json().catch(() => null)
     if (body?.urls && Array.isArray(body.urls)) {
       urls = body.urls.filter((u) => typeof u === 'string')
     }

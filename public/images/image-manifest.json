@@ -1240,64 +1240,70 @@
   "/images/service-sod-installation.webp": {
     "originalPath": "/images/service-sod-installation.webp",
     "altBase": "service-sod-installation",
-    "width": 1200,
-    "height": 652,
-    "aspectRatio": 1.8404907975460123,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoUAAsAPzmMu1SvKaYjMAgB4CcJZCzcKPyXQApmngAA/sIn+oOmh/0n/2so5oTpjOEB84eewKQXNmo+SV/5Ff/uTqGP/7vHkoUEjMQEHrlbAk+lwS3PhCek571oPOR9JhPSc9+jeRSCePaygAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACwAwCdASoUAA0APzmIuVOvKSWisAgB4CcJZFetRm8rAlygABE7GAD+2w2/a3Qs3h+nXbNS6Zw8hizvFy/hWMK8hkbcMu6NDe/gmSxvFMWS0j8ND+F35Sg7tgXOBOpDRsC6dHt56tRTo/t2wpSiU4UXHX5CZdSNCt+kEP4AAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-sod-installation-480.avif",
         "640": "/images/generated/service-sod-installation-640.avif",
         "768": "/images/generated/service-sod-installation-768.avif",
         "1024": "/images/generated/service-sod-installation-1024.avif",
-        "1200": "/images/generated/service-sod-installation-1200.avif"
+        "1280": "/images/generated/service-sod-installation-1280.avif",
+        "1536": "/images/generated/service-sod-installation-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-sod-installation-480.webp",
         "640": "/images/generated/service-sod-installation-640.webp",
         "768": "/images/generated/service-sod-installation-768.webp",
         "1024": "/images/generated/service-sod-installation-1024.webp",
-        "1200": "/images/generated/service-sod-installation-1200.webp"
+        "1280": "/images/generated/service-sod-installation-1280.webp",
+        "1536": "/images/generated/service-sod-installation-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-sod-installation-480.jpeg",
         "640": "/images/generated/service-sod-installation-640.jpeg",
         "768": "/images/generated/service-sod-installation-768.jpeg",
         "1024": "/images/generated/service-sod-installation-1024.jpeg",
-        "1200": "/images/generated/service-sod-installation-1200.jpeg"
+        "1280": "/images/generated/service-sod-installation-1280.jpeg",
+        "1536": "/images/generated/service-sod-installation-1536.jpeg"
       }
     }
   },
   "/images/service-tree-planting.webp": {
     "originalPath": "/images/service-tree-planting.webp",
     "altBase": "service-tree-planting",
-    "width": 1200,
-    "height": 1600,
-    "aspectRatio": 0.75,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAADwAwCdASoUABsAPzmWwlovKqckKAgB4CcJYz6fd3169MAouQeVCLPgAOFH9d7+w1xuPi7q+CzmvvZ+rpaNJg860eSLnx83nx3DKtg8XWwMtcqA48P/jF09hVTqBIf8NM5yFGzkKNnIZsmv6PLxXlqd7sRV49gMvn/07/ff/L3aX9T+R23rpevRJMHT2Ls8n39mwS8teTn5z9vftj6h33oIfrDlzMXdzvIHh9jA7fVPxc/1Dzai/2RIt/R4Iy/6uo0OSJE4bGo6uJUSmAAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABQAwCdASoUAA0APzmGulQvKSWjMAgB4CcJai0Afk0AAzhUAAD+2J19//J+V22OUdStwQ3xCwT1uJLeSM7l8jRksKJx81XTlf4/vAzWN52HFvw35ctXKCklNBvL2J1Q28m/0AAA",
     "variants": {
       "avif": {
         "480": "/images/generated/service-tree-planting-480.avif",
         "640": "/images/generated/service-tree-planting-640.avif",
         "768": "/images/generated/service-tree-planting-768.avif",
         "1024": "/images/generated/service-tree-planting-1024.avif",
-        "1200": "/images/generated/service-tree-planting-1200.avif"
+        "1280": "/images/generated/service-tree-planting-1280.avif",
+        "1536": "/images/generated/service-tree-planting-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-tree-planting-480.webp",
         "640": "/images/generated/service-tree-planting-640.webp",
         "768": "/images/generated/service-tree-planting-768.webp",
         "1024": "/images/generated/service-tree-planting-1024.webp",
-        "1200": "/images/generated/service-tree-planting-1200.webp"
+        "1280": "/images/generated/service-tree-planting-1280.webp",
+        "1536": "/images/generated/service-tree-planting-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-tree-planting-480.jpeg",
         "640": "/images/generated/service-tree-planting-640.jpeg",
         "768": "/images/generated/service-tree-planting-768.jpeg",
         "1024": "/images/generated/service-tree-planting-1024.jpeg",
-        "1200": "/images/generated/service-tree-planting-1200.jpeg"
+        "1280": "/images/generated/service-tree-planting-1280.jpeg",
+        "1536": "/images/generated/service-tree-planting-1536.jpeg"
       }
     }
   },

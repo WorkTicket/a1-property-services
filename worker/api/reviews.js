@@ -15,12 +15,12 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 }
 
-export async function onRequest(context) {
-  if (context.request.method === 'OPTIONS') {
+export async function handleReviews(request, env) {
+  if (request.method === 'OPTIONS') {
     return new Response(null, { headers: CORS_HEADERS })
   }
 
-  const apiKey = context.env.GOOGLE_PLACES_API_KEY
+  const apiKey = env.GOOGLE_PLACES_API_KEY
 
   if (!apiKey) {
     return Response.json(staticFallback, { headers: CORS_HEADERS })
