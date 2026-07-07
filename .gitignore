@@ -12,6 +12,7 @@ node_modules/
 .env.development.local
 .env.test.local
 .env.production.local
+.dev.vars
 
 # Misc
 .DS_Store
@@ -24,8 +25,15 @@ tsconfig.tsbuildinfo
 lh-*.json
 lighthouse-*.json
 
-# Duplicate source assets (processed images live in public/images/)
-public/assets/
+# Local AI model weights (multi-GB, regenerate via scripts)
+models/
+
+# Hero editing debug artifacts and local reports
+public/images/.*
+public/images/generated/.*
+reports/
+*.tmp
+
 
 # Cloudflare Workers
 .wrangler/

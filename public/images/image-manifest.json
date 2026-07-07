@@ -1,19 +1,665 @@
 {
+  "/images/.artifact-zone-hero.png": {
+    "originalPath": "/images/.artifact-zone-hero.png",
+    "altBase": ".artifact-zone-hero",
+    "width": 307,
+    "height": 184,
+    "aspectRatio": 1.6684782608695652,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQAwCdASoUAAwAPzmIvlOvKScisAgB4CcJYxwA+MJHyLW9wAD+onlT95+4P7+Yfm+PEvjxFNPD/oOEgf/0baeAZP6P6kVaVwkx/ofzBf4mtWm+Tcl1Ne/L9/tZOW3XSE2t9rRJ9K7SvaP7/4KV+45Jy60jndcCB6Ou1itvG/mqz85bHe3+//7a7c/f5nAOfIJwibSbRyy6/33HOaObb0qJdrew9645WY4AAA==",
+    "variants": {
+      "avif": {
+        "307": "/images/generated/.artifact-zone-hero-307.avif"
+      },
+      "webp": {
+        "307": "/images/generated/.artifact-zone-hero-307.webp"
+      },
+      "jpeg": {
+        "307": "/images/generated/.artifact-zone-hero-307.jpeg"
+      }
+    }
+  },
+  "/images/.artifact-zone-ref.png": {
+    "originalPath": "/images/.artifact-zone-ref.png",
+    "altBase": ".artifact-zone-ref",
+    "width": 205,
+    "height": 84,
+    "aspectRatio": 2.4404761904761907,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAwCdASoUAAgALvmczmclLy8vDwD4SyloM/EtMABveERowAD+x+s/+nZrj6J+KF530v9dcXrWw8wxEXZZdjyt3PLf6hKqrTRm6vKV9YWEdZbYZ97HuqxSYa2exlNIeZ//Pd8nk8AAAA==",
+    "variants": {
+      "avif": {
+        "205": "/images/generated/.artifact-zone-ref-205.avif"
+      },
+      "webp": {
+        "205": "/images/generated/.artifact-zone-ref-205.webp"
+      },
+      "jpeg": {
+        "205": "/images/generated/.artifact-zone-ref-205.jpeg"
+      }
+    }
+  },
+  "/images/.artifact-zone2-hero.png": {
+    "originalPath": "/images/.artifact-zone2-hero.png",
+    "altBase": ".artifact-zone2-hero",
+    "width": 369,
+    "height": 164,
+    "aspectRatio": 2.25,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwAwCdASoUAAkALvmczmclLy8vDwD4SynwFFVq/4fwBbeAAP60/viL/QKFo78l+BWKkt4ueJZRXoz4o6//EeFuy8oIkJmRDN2h+PRTDqIf+In6mIXx9orL+0oCuTZIhv7MEpOkVGJADiuRLPVAAA==",
+    "variants": {
+      "avif": {
+        "369": "/images/generated/.artifact-zone2-hero-369.avif"
+      },
+      "webp": {
+        "369": "/images/generated/.artifact-zone2-hero-369.webp"
+      },
+      "jpeg": {
+        "369": "/images/generated/.artifact-zone2-hero-369.jpeg"
+      }
+    }
+  },
+  "/images/.artifact-zone2-ref.png": {
+    "originalPath": "/images/.artifact-zone2-ref.png",
+    "altBase": ".artifact-zone2-ref",
+    "width": 246,
+    "height": 75,
+    "aspectRatio": 3.28,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAwCdASoUAAYAPzmOvlOvKqcisAgB4CcJZSzgQyQA/bfwAP7N6Ej+9nNjYin5cj2OS4k2Nm80s7EACBRKv5b/7En3/7PeQUFDQhdVasZhUtY1Z9bpQYsitN64knIAAAA=",
+    "variants": {
+      "avif": {
+        "246": "/images/generated/.artifact-zone2-ref-246.avif"
+      },
+      "webp": {
+        "246": "/images/generated/.artifact-zone2-ref-246.webp"
+      },
+      "jpeg": {
+        "246": "/images/generated/.artifact-zone2-ref-246.jpeg"
+      }
+    }
+  },
+  "/images/.bg-forest-hero.png": {
+    "originalPath": "/images/.bg-forest-hero.png",
+    "altBase": ".bg-forest-hero",
+    "width": 1536,
+    "height": 328,
+    "aspectRatio": 4.682926829268292,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAgCdASoUAAQALvmczmclLy8vDwD4SylnMhdoDxNAAP7g//nvXTnbkv+TQpyhyuhPVpXGqQMaAp0MufO2R6WHRTZTOVWULOhyOPBrCws1w4eXtgOvAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.bg-forest-hero-480.avif",
+        "640": "/images/generated/.bg-forest-hero-640.avif",
+        "768": "/images/generated/.bg-forest-hero-768.avif",
+        "1024": "/images/generated/.bg-forest-hero-1024.avif",
+        "1280": "/images/generated/.bg-forest-hero-1280.avif",
+        "1536": "/images/generated/.bg-forest-hero-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.bg-forest-hero-480.webp",
+        "640": "/images/generated/.bg-forest-hero-640.webp",
+        "768": "/images/generated/.bg-forest-hero-768.webp",
+        "1024": "/images/generated/.bg-forest-hero-1024.webp",
+        "1280": "/images/generated/.bg-forest-hero-1280.webp",
+        "1536": "/images/generated/.bg-forest-hero-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.bg-forest-hero-480.jpeg",
+        "640": "/images/generated/.bg-forest-hero-640.jpeg",
+        "768": "/images/generated/.bg-forest-hero-768.jpeg",
+        "1024": "/images/generated/.bg-forest-hero-1024.jpeg",
+        "1280": "/images/generated/.bg-forest-hero-1280.jpeg",
+        "1536": "/images/generated/.bg-forest-hero-1536.jpeg"
+      }
+    }
+  },
+  "/images/.bg-forest-ref.png": {
+    "originalPath": "/images/.bg-forest-ref.png",
+    "altBase": ".bg-forest-ref",
+    "width": 1536,
+    "height": 328,
+    "aspectRatio": 4.682926829268292,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAgCdASoUAAQAPzleyV8vI6qmGAHgJwllZW5Yh5l4yAD+4h1EUXm3dKqvRQAIbzQFmwfAeUG//S/997acS1/vLXAyrtOukjif7IWyBrc9gAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.bg-forest-ref-480.avif",
+        "640": "/images/generated/.bg-forest-ref-640.avif",
+        "768": "/images/generated/.bg-forest-ref-768.avif",
+        "1024": "/images/generated/.bg-forest-ref-1024.avif",
+        "1280": "/images/generated/.bg-forest-ref-1280.avif",
+        "1536": "/images/generated/.bg-forest-ref-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.bg-forest-ref-480.webp",
+        "640": "/images/generated/.bg-forest-ref-640.webp",
+        "768": "/images/generated/.bg-forest-ref-768.webp",
+        "1024": "/images/generated/.bg-forest-ref-1024.webp",
+        "1280": "/images/generated/.bg-forest-ref-1280.webp",
+        "1536": "/images/generated/.bg-forest-ref-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.bg-forest-ref-480.jpeg",
+        "640": "/images/generated/.bg-forest-ref-640.jpeg",
+        "768": "/images/generated/.bg-forest-ref-768.jpeg",
+        "1024": "/images/generated/.bg-forest-ref-1024.jpeg",
+        "1280": "/images/generated/.bg-forest-ref-1280.jpeg",
+        "1536": "/images/generated/.bg-forest-ref-1536.jpeg"
+      }
+    }
+  },
+  "/images/.car-blob-debug.png": {
+    "originalPath": "/images/.car-blob-debug.png",
+    "altBase": ".car-blob-debug",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJYi0bfk2P+ydADGfsAAD+6FS/2L9S7+iqyXW7o1l5zdlQlET9xZpM4eoETrSRkZWRM/6HzTxFyBjSwjVSwjVSyOP1U/TLJqFHJPLBAxGkLBl3EbpzxT/ocmWUTP/ByZTpgAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.car-blob-debug-480.avif",
+        "640": "/images/generated/.car-blob-debug-640.avif",
+        "768": "/images/generated/.car-blob-debug-768.avif",
+        "1024": "/images/generated/.car-blob-debug-1024.avif",
+        "1280": "/images/generated/.car-blob-debug-1280.avif",
+        "1536": "/images/generated/.car-blob-debug-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.car-blob-debug-480.webp",
+        "640": "/images/generated/.car-blob-debug-640.webp",
+        "768": "/images/generated/.car-blob-debug-768.webp",
+        "1024": "/images/generated/.car-blob-debug-1024.webp",
+        "1280": "/images/generated/.car-blob-debug-1280.webp",
+        "1536": "/images/generated/.car-blob-debug-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.car-blob-debug-480.jpeg",
+        "640": "/images/generated/.car-blob-debug-640.jpeg",
+        "768": "/images/generated/.car-blob-debug-768.jpeg",
+        "1024": "/images/generated/.car-blob-debug-1024.jpeg",
+        "1280": "/images/generated/.car-blob-debug-1280.jpeg",
+        "1536": "/images/generated/.car-blob-debug-1536.jpeg"
+      }
+    }
+  },
+  "/images/.edge-bridge.png": {
+    "originalPath": "/images/.edge-bridge.png",
+    "altBase": ".edge-bridge",
+    "width": 336,
+    "height": 324,
+    "aspectRatio": 1.037037037037037,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwAwCdASoUABMAPzmQvlWvKqajMAgB4CcJZwDKADpisB0AAP7sO75bza1pgO5MKYdb02FDKuIdIrvs99BhrIAKZFGN6lAA",
+    "variants": {
+      "avif": {
+        "336": "/images/generated/.edge-bridge-336.avif"
+      },
+      "webp": {
+        "336": "/images/generated/.edge-bridge-336.webp"
+      },
+      "jpeg": {
+        "336": "/images/generated/.edge-bridge-336.jpeg"
+      }
+    }
+  },
+  "/images/.edge-clean.png": {
+    "originalPath": "/images/.edge-clean.png",
+    "altBase": ".edge-clean",
+    "width": 156,
+    "height": 280,
+    "aspectRatio": 0.5571428571428572,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAADQBgCdASoUACQAPzmEvlUvKCajMBVaqeAnCUe8abuR2Zh/ruIP1nqDyY/pv3XKx+z9GkBzc+/x4Fpup2WtlAAA/eA4f/53bv/+M/bS0cYDrnVBwdOwlLcDKTGdRHm7QJMXoET0ciTwpetk58HGIhxgyQD8nPucGwYcwst3/nvHdE+DB77zdeN6//5EFd+/3d/cLy+BregOrI0NExo/vbvDLHv+X8X/3e9vJ3d728nd3vgPC9J9yRmv9eR/fhfpLW0iURhjoPrrpx31EfocJGZCA+vFmw0wyjy+sjUy/dfoDvtyQTm1sGdOxdEbZD1hLg/oL/UKn25ZiqiJ8/xupj3NF4tM9FFqvm3Xzbr5uw5g6sa44hIzys82kwCBlBo//yoaXq28JKvPe/I3Yw1ZpgULn31f4m9CHry3NmLHjW3AXFbMGfVhjk95gbYrF2UiFYDxXd99g8wAAA==",
+    "variants": {
+      "avif": {
+        "156": "/images/generated/.edge-clean-156.avif"
+      },
+      "webp": {
+        "156": "/images/generated/.edge-clean-156.webp"
+      },
+      "jpeg": {
+        "156": "/images/generated/.edge-clean-156.jpeg"
+      }
+    }
+  },
+  "/images/.edge-crop.png": {
+    "originalPath": "/images/.edge-crop.png",
+    "altBase": ".edge-crop",
+    "width": 156,
+    "height": 280,
+    "aspectRatio": 0.5571428571428572,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAABQBQCdASoUACQAPzmWv1kvKqajpWsx4CcJTPL4RqZ+cpjqAx4HNYbyvT3wAB/baPar4YAAzP+6xrmfyWa760RjImohcdMUTxFrbmMKwBUw31WiFP/vL66cD8VrQJv5Zgyc/2hYyHg0chhPxBjJLk6s1818RUCZyfvK/mhj1GAT4ACgicdRX3qTlYR8E/EH/n87jwR8buFZD+HPOXf73MnAyo92OlNxSmSeXTSxKOTF/6S5nAKSoTjk2fmrJsOS6aBIWWrzbSybDXwhmU4XLUCAnA6aybcm5ol4R96Fw3rpuL3x83vgebeLsVo4U/Nghp1Zqyk2huVo7O863+v33hdnZMFRIpWi6QKSYHQQI1AAAA==",
+    "variants": {
+      "avif": {
+        "156": "/images/generated/.edge-crop-156.avif"
+      },
+      "webp": {
+        "156": "/images/generated/.edge-crop-156.webp"
+      },
+      "jpeg": {
+        "156": "/images/generated/.edge-crop-156.jpeg"
+      }
+    }
+  },
+  "/images/.edge-crop2.png": {
+    "originalPath": "/images/.edge-crop2.png",
+    "altBase": ".edge-crop2",
+    "width": 210,
+    "height": 400,
+    "aspectRatio": 0.525,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRjoBAABXRUJQVlA4IC4BAADQBQCdASoUACYAPzmWwVqvKqakJWmZ4CcJS0HVsqKWT9VeQwADqtLKGgiEG0Lm3b/gKSKa+w6QAN939/2gqWX2fma0pLIkbgrUx3hn7IFObGs8nfhHItDtsDxvuH5SLMxWmiVM/9MMBWDusYPv26u0t16dqPjBMx72gBu+gBu+0TBynZzrtKDMHUc+6ejs2R+VbggKKkkU/+e/vx+CuM/s+GTwNmHT+pgBq8txfbHy5Pa0PUoxpmKHe1zRHoWsftA/3phvgJyC5KQoI/bv/ICZoV10Hoze9nlSHtY+sohaoY+lfpLvoyWnP/PhKjrA0fwvSPDXuEe73yhMLhtspEu+V1tmwl3yutszQHHzQd8Gv+zPicZP+MOIOj0g8xBvDb8SYKiC8wI2DxjQ9FAAAA==",
+    "variants": {
+      "avif": {
+        "210": "/images/generated/.edge-crop2-210.avif"
+      },
+      "webp": {
+        "210": "/images/generated/.edge-crop2-210.webp"
+      },
+      "jpeg": {
+        "210": "/images/generated/.edge-crop2-210.jpeg"
+      }
+    }
+  },
+  "/images/.edge-crop3.png": {
+    "originalPath": "/images/.edge-crop3.png",
+    "altBase": ".edge-crop3",
+    "width": 210,
+    "height": 400,
+    "aspectRatio": 0.525,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRkQBAABXRUJQVlA4IDgBAAAQBwCdASoUACYAPzmEuVOvKKWisBVdUeAnCUzhghKUlS/1X8A5TYVeN/Kd6YyQONI9m+tklba2wUB/3gwcha0HAAD+ybf+P//Nx5+q/+cvpha5vvapHI3FGz1ha7yPd9rooh7rh995b6bREAEzzmdJLm819tdGxlt7kLkymOe0wUc7VrD66A1FpmAlXLGy+/tCE//llnsN/OZpxkFnknjOwGjzBUUu9AWqPTSBui3xCDfFeNCz8elMnot8Qa/+oUQLbmQbHOBvfKO+j1j5NDauFd0mgl1+jv1T/hTg2A7X3L0owRXjdtkLvP4ss2/uHU/pRGA/okj1iJXokj1iJXokj1nAqEfnV4WqJeEk74f3mcV+l8NBrfI2yY3dcUWJ1YFn8/6knANdKZPinMm6Q8TGP7EatAckAAA=",
+    "variants": {
+      "avif": {
+        "210": "/images/generated/.edge-crop3-210.avif"
+      },
+      "webp": {
+        "210": "/images/generated/.edge-crop3-210.webp"
+      },
+      "jpeg": {
+        "210": "/images/generated/.edge-crop3-210.jpeg"
+      }
+    }
+  },
+  "/images/.edge-crop4.png": {
+    "originalPath": "/images/.edge-crop4.png",
+    "altBase": ".edge-crop4",
+    "width": 210,
+    "height": 400,
+    "aspectRatio": 0.525,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIBAABXRUJQVlA4IIYBAABQCACdASoUACYAPzmEvFUvKCYjNVQIAeAnCWhdnB00+Kn/pfuA6UObsnsw55Pf8hwJ3CwOn+O/Wg1wCnVw5WVXtmHdoAAdustBFIAA/r8WCjar7ZmCGz9XQMRkNI8PHFsaXZbwW55ZQgGR22lxxM6d/834j8ik7zvcX8Zb1CFrDc3lZ9d8qbjho16+BjyQfGndfxp3X8af9tAxm1anSxx+QuXQst7rlKM84PcdlroiNMgihZKdAbfvDrrP1nS8MSsRmKOvNT0MTd8fGdYETUfF/QkYYCrntzLqE6NLtFCft6t10YALMZql8z5Lzb86fBoSefk//6yZfTIBacJ4Zh5gbmYs8F7yFbMCmIG6XsKGAbWzdcfqz+1JrHsp/j0j3PiZTQ1Kzq5MYA8Sx20W3iVGmz7pbCDD1zZIenGRxj+/wi2M24v/GmdGvS5I3IPVLC1x+r+JFiJe/4l1gcDuX6+MtfPYU9O73bVWsU9RO6n2HtcjXuezGRB23u57AwCY7Rs41Bh5wAA=",
+    "variants": {
+      "avif": {
+        "210": "/images/generated/.edge-crop4-210.avif"
+      },
+      "webp": {
+        "210": "/images/generated/.edge-crop4-210.webp"
+      },
+      "jpeg": {
+        "210": "/images/generated/.edge-crop4-210.jpeg"
+      }
+    }
+  },
+  "/images/.edge-f2.png": {
+    "originalPath": "/images/.edge-f2.png",
+    "altBase": ".edge-f2",
+    "width": 156,
+    "height": 280,
+    "aspectRatio": 0.5571428571428572,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoBAABXRUJQVlA4IF4BAACwBgCdASoUACQAPzmSvVgvKiYjpWzJ4CcJYj3aNm8Wgmv6780AMYDH9bu7N+gFdLZ1x+axjbr/9CNKBmMekAD+XDzP/0cuh//0s5n2vizpPx4mHT8pR1cDDOKTuHX7M9JTYJkP2mvtbxioLzJYdvdwSUMtRboWbQMDJzBNlGf8ig2Kzg2O9o0Mz3PWPHdegrpd//8Mi9nxTvU/LwrqYaQpQyfbqaW/lg1zN7/mARbrTCwBrTCwBrTDd0/gLkucOexguH87o327+GYu/Hdr5vNK83mlebzaAGLW8Qi0QDVuPikQedmqIkFk7tO/dIkhGNOKw5NTExKewrXAb8yaHHV88TzciU0CN4hxLjbmyzWhsNSX5N9Y3C6/6btG9S3W9xm3XOYaspJ+10pyub1qkV0PAHU5i3pO/YTqk1cH4lJ3yNm+wnQ0PM+KbtjmTsZJ62M3WEDdHsDI+Sm8x4AAAA==",
+    "variants": {
+      "avif": {
+        "156": "/images/generated/.edge-f2-156.avif"
+      },
+      "webp": {
+        "156": "/images/generated/.edge-f2-156.webp"
+      },
+      "jpeg": {
+        "156": "/images/generated/.edge-f2-156.jpeg"
+      }
+    }
+  },
+  "/images/.edge-fixed.png": {
+    "originalPath": "/images/.edge-fixed.png",
+    "altBase": ".edge-fixed",
+    "width": 336,
+    "height": 280,
+    "aspectRatio": 1.2,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACQBACdASoUABEAPyWEuVOuKaaisAwBwCSJYz5po+lG4Q1wC4AAxZxswI5JrzgA/s3p+0n3s29j56A9XrPfvs6FWDZ2hYIsZytFUaVEPbFgWKlDCkqNDR9pH4UZH+tQ+p/P2e5ixSCbmn9cBNScEnHIyh/6RNNZftxUqw/Op2zU413spbKiRlgL8Ef6K8JOWVblaX/hZ5UtFuG6vfjK8d5V/ZbR+qPKlotw3V78ZXjwJ2G446ZhMeCbV0cwlIHsHwAAAA==",
+    "variants": {
+      "avif": {
+        "336": "/images/generated/.edge-fixed-336.avif"
+      },
+      "webp": {
+        "336": "/images/generated/.edge-fixed-336.webp"
+      },
+      "jpeg": {
+        "336": "/images/generated/.edge-fixed-336.jpeg"
+      }
+    }
+  },
+  "/images/.edge-original.png": {
+    "originalPath": "/images/.edge-original.png",
+    "altBase": ".edge-original",
+    "width": 156,
+    "height": 280,
+    "aspectRatio": 0.5571428571428572,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAABQBQCdASoUACQAPzmWv1kvKqajpWsx4CcJTPL4RqZ+cpjqAx4HNYbyvT3wAB/baPar4YAAzP+6xrmfyWa760RjImohcdMUTxFrbmMKwBUw31WiFP/vL66cD8VrQJv5Zgyc/2hYyHg0chhPxBjJLk6s1818RUCZyfvK/mhj1GAT4ACgicdRX3qTlYR8E/EH/n87jwR8buFZD+HPOXf73MnAyo92OlNxSmSeXTSxKOTF/6S5nAKSoTjk2fmrJsOS6aBIWWrzbSybDXwhmU4XLUCAnA6aybcm5ol4R96Fw3rpuL3x83vgebeLsVo4U/Nghp1Zqyk2huVo7O863+v33hdnZMFRIpWi6QKSYHQQI1AAAA==",
+    "variants": {
+      "avif": {
+        "156": "/images/generated/.edge-original-156.avif"
+      },
+      "webp": {
+        "156": "/images/generated/.edge-original-156.webp"
+      },
+      "jpeg": {
+        "156": "/images/generated/.edge-original-156.jpeg"
+      }
+    }
+  },
+  "/images/.final-zone.png": {
+    "originalPath": "/images/.final-zone.png",
+    "altBase": ".final-zone",
+    "width": 369,
+    "height": 164,
+    "aspectRatio": 2.25,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABwAQCdASoUAAkABUB8JZQABQfvwAD+ze8fSv6BPsFYnLI9UmFCxgzuYWC1jfEk3yh3/YQGZEfDWE4TDtV6eAbZp58+n/lqTEKPbUklV/mWeB3n9YNQgmhBzyGxUAAA",
+    "variants": {
+      "avif": {
+        "369": "/images/generated/.final-zone-369.avif"
+      },
+      "webp": {
+        "369": "/images/generated/.final-zone-369.webp"
+      },
+      "jpeg": {
+        "369": "/images/generated/.final-zone-369.jpeg"
+      }
+    }
+  },
+  "/images/.hero-full-check.png": {
+    "originalPath": "/images/.hero-full-check.png",
+    "altBase": ".hero-full-check",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAgCdASoUAA0ALvmczmclLy8vDwD4Sxln/hnoDyhgAP7sfb/sW/O/e5+EahuXAd+eLQUH/xBI+q7Iumk3P9UrLsv/8SQ55gp3/9lQPnO0w6OHfn/x3sd7JKdDqoRAiAbTXAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.hero-full-check-480.avif",
+        "640": "/images/generated/.hero-full-check-640.avif",
+        "768": "/images/generated/.hero-full-check-768.avif",
+        "1024": "/images/generated/.hero-full-check-1024.avif",
+        "1280": "/images/generated/.hero-full-check-1280.avif",
+        "1536": "/images/generated/.hero-full-check-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.hero-full-check-480.webp",
+        "640": "/images/generated/.hero-full-check-640.webp",
+        "768": "/images/generated/.hero-full-check-768.webp",
+        "1024": "/images/generated/.hero-full-check-1024.webp",
+        "1280": "/images/generated/.hero-full-check-1280.webp",
+        "1536": "/images/generated/.hero-full-check-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.hero-full-check-480.jpeg",
+        "640": "/images/generated/.hero-full-check-640.jpeg",
+        "768": "/images/generated/.hero-full-check-768.jpeg",
+        "1024": "/images/generated/.hero-full-check-1024.jpeg",
+        "1280": "/images/generated/.hero-full-check-1280.jpeg",
+        "1536": "/images/generated/.hero-full-check-1536.jpeg"
+      }
+    }
+  },
+  "/images/.hero-inspect.png": {
+    "originalPath": "/images/.hero-inspect.png",
+    "altBase": ".hero-inspect",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoUAA0APzleyV8vI6qmGAHgJwljTBRQNH5NksRGRwAA/umAP35/9r7MI1ciXGXlR7ihcYIev0I83w+Ab/uVouPe69b/pu8y62Lhkz7k331/P6+rr3p3vr+m4/+1lYCg4Cg4Bmwvxn86eYGQAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.hero-inspect-480.avif",
+        "640": "/images/generated/.hero-inspect-640.avif",
+        "768": "/images/generated/.hero-inspect-768.avif",
+        "1024": "/images/generated/.hero-inspect-1024.avif",
+        "1280": "/images/generated/.hero-inspect-1280.avif",
+        "1536": "/images/generated/.hero-inspect-1536.avif",
+        "1920": "/images/generated/.hero-inspect-1920.avif",
+        "2560": "/images/generated/.hero-inspect-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.hero-inspect-480.webp",
+        "640": "/images/generated/.hero-inspect-640.webp",
+        "768": "/images/generated/.hero-inspect-768.webp",
+        "1024": "/images/generated/.hero-inspect-1024.webp",
+        "1280": "/images/generated/.hero-inspect-1280.webp",
+        "1536": "/images/generated/.hero-inspect-1536.webp",
+        "1920": "/images/generated/.hero-inspect-1920.webp",
+        "2560": "/images/generated/.hero-inspect-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.hero-inspect-480.jpeg",
+        "640": "/images/generated/.hero-inspect-640.jpeg",
+        "768": "/images/generated/.hero-inspect-768.jpeg",
+        "1024": "/images/generated/.hero-inspect-1024.jpeg",
+        "1280": "/images/generated/.hero-inspect-1280.jpeg",
+        "1536": "/images/generated/.hero-inspect-1536.jpeg",
+        "1920": "/images/generated/.hero-inspect-1920.jpeg",
+        "2560": "/images/generated/.hero-inspect-2560.jpeg"
+      }
+    }
+  },
+  "/images/.left-bank-hero.png": {
+    "originalPath": "/images/.left-bank-hero.png",
+    "altBase": ".left-bank-hero",
+    "width": 430,
+    "height": 287,
+    "aspectRatio": 1.4982578397212543,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAA0APzmMvlUvKaajMAgB4CcJTB1qLGMt+uAA/uhew//nWnzd7DD0lM4MlQnj3hVSItYP83buhf+Rzbe2Xw8T2VHS+OibPjoaVPKbMqX7uEF/VXJggAAA",
+    "variants": {
+      "avif": {
+        "430": "/images/generated/.left-bank-hero-430.avif"
+      },
+      "webp": {
+        "430": "/images/generated/.left-bank-hero-430.webp"
+      },
+      "jpeg": {
+        "430": "/images/generated/.left-bank-hero-430.jpeg"
+      }
+    }
+  },
+  "/images/.left-bank-ref.png": {
+    "originalPath": "/images/.left-bank-ref.png",
+    "altBase": ".left-bank-ref",
+    "width": 430,
+    "height": 287,
+    "aspectRatio": 1.4982578397212543,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAgCdASoUAA0APzmKulOvKaWisAgB4CcJZGM+AEPegAD+5v40O/Izii17uprxkgvuSJtm3D+zf/bi/6wx0H72ZV2YEe+jgbYW9EAZp4CEe06xAAA=",
+    "variants": {
+      "avif": {
+        "430": "/images/generated/.left-bank-ref-430.avif"
+      },
+      "webp": {
+        "430": "/images/generated/.left-bank-ref-430.webp"
+      },
+      "jpeg": {
+        "430": "/images/generated/.left-bank-ref-430.jpeg"
+      }
+    }
+  },
+  "/images/.left-bridge-check.png": {
+    "originalPath": "/images/.left-bridge-check.png",
+    "altBase": ".left-bridge-check",
+    "width": 280,
+    "height": 200,
+    "aspectRatio": 1.4,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAA4APzmKulOvKaWisAgB4CcJYl2AU0A19YAA/vAJL9f/9vdtcOqWCPQ3WlplaveOGJQVtEJ1YSPoWIA9axpd7YsciwsmQzvGN3veNHV66C3g/0voKAAA",
+    "variants": {
+      "avif": {
+        "280": "/images/generated/.left-bridge-check-280.avif"
+      },
+      "webp": {
+        "280": "/images/generated/.left-bridge-check-280.webp"
+      },
+      "jpeg": {
+        "280": "/images/generated/.left-bridge-check-280.jpeg"
+      }
+    }
+  },
+  "/images/.mid-trees-hero.png": {
+    "originalPath": "/images/.mid-trees-hero.png",
+    "altBase": ".mid-trees-hero",
+    "width": 430,
+    "height": 225,
+    "aspectRatio": 1.9111111111111112,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADQAwCdASoUAAoAPzmIulOvKSWisAgB4CcJYkwURAGeuT/bf4GKewAA/uNSjt9zNsgZO3oao8wvKqArf02uyBfqJrxmAc2aY9NRoh+x1B40APwyRR3+GfbWEDGY/qhYzH9ULGY/pKjGCQZlljZY2a+ADg7vQlroYRaJXQJqBPQgmAAA",
+    "variants": {
+      "avif": {
+        "430": "/images/generated/.mid-trees-hero-430.avif"
+      },
+      "webp": {
+        "430": "/images/generated/.mid-trees-hero-430.webp"
+      },
+      "jpeg": {
+        "430": "/images/generated/.mid-trees-hero-430.jpeg"
+      }
+    }
+  },
+  "/images/.mid-trees-ref.png": {
+    "originalPath": "/images/.mid-trees-ref.png",
+    "altBase": ".mid-trees-ref",
+    "width": 430,
+    "height": 225,
+    "aspectRatio": 1.9111111111111112,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwAwCdASoUAAoAPzmEuVOvKKWisAgB4CcJYhFAA9wCxFIAAP7tH5n+Ztn/v9Ez+iE6fk2OCSkYWljrKg79gZ2eHiYlaPWc/5nU6VUJZ1dMbxhV9trKLWNsTn3vGj99gVQyHG4uMkhJ3h++3EkDyaqP/FpPoKsQSjdrmZOkZyjRjXAA",
+    "variants": {
+      "avif": {
+        "430": "/images/generated/.mid-trees-ref-430.avif"
+      },
+      "webp": {
+        "430": "/images/generated/.mid-trees-ref-430.webp"
+      },
+      "jpeg": {
+        "430": "/images/generated/.mid-trees-ref-430.jpeg"
+      }
+    }
+  },
+  "/images/.patched-zone.png": {
+    "originalPath": "/images/.patched-zone.png",
+    "altBase": ".patched-zone",
+    "width": 369,
+    "height": 164,
+    "aspectRatio": 2.25,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQAwCdASoUAAkALvmczmclLy8vDwD4SyloL/FOSIAt+yAA/qJ7PrD6yDo4fDpVJ1fKNduhIeNB0rngE3fhvVk5VG/RdTbWzlgBqzur4QAgDofkWckv/mQ6thUACQR6AXuQSajq/iq/nLsnOXZOctF9KiSPrkMAAAA=",
+    "variants": {
+      "avif": {
+        "369": "/images/generated/.patched-zone-369.avif"
+      },
+      "webp": {
+        "369": "/images/generated/.patched-zone-369.webp"
+      },
+      "jpeg": {
+        "369": "/images/generated/.patched-zone-369.jpeg"
+      }
+    }
+  },
+  "/images/.right-trees-hero.png": {
+    "originalPath": "/images/.right-trees-hero.png",
+    "altBase": ".right-trees-hero",
+    "width": 492,
+    "height": 287,
+    "aspectRatio": 1.7142857142857142,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAwCdASoUAAwALvmczmclLy8vDwD4Sxk4FsAPpAq+xl/rgAD+1cW5i7Prl5+gyE16Uvx1r7pu9/HfHHAuUrOyI7Uq4cLoIEKUXlxnYbi4MM9pIfHQ8j7R8uG2A/hjiA3+Ly/sFXtP2+HOMJpKJWHWxU0L0nfK4u1wAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.right-trees-hero-480.avif",
+        "492": "/images/generated/.right-trees-hero-492.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.right-trees-hero-480.webp",
+        "492": "/images/generated/.right-trees-hero-492.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.right-trees-hero-480.jpeg",
+        "492": "/images/generated/.right-trees-hero-492.jpeg"
+      }
+    }
+  },
+  "/images/.right-trees-ref.png": {
+    "originalPath": "/images/.right-trees-ref.png",
+    "altBase": ".right-trees-ref",
+    "width": 492,
+    "height": 287,
+    "aspectRatio": 1.7142857142857142,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQAwCdASoUAAwAPzleyV8vI6qmGAHgJwlJgoa34lBIcpaZeAD+2roWrSssftQWKDFdsAb5tLYs9QrVwg31+MJuYbssESyXTk73/7Pfv/lrT0wJCxZh597qilLRdDL5FpMBh7F7wajfRa9f3zQL9Q8ZOAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/.right-trees-ref-480.avif",
+        "492": "/images/generated/.right-trees-ref-492.avif"
+      },
+      "webp": {
+        "480": "/images/generated/.right-trees-ref-480.webp",
+        "492": "/images/generated/.right-trees-ref-492.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/.right-trees-ref-480.jpeg",
+        "492": "/images/generated/.right-trees-ref-492.jpeg"
+      }
+    }
+  },
+  "/images/.v3-zone.png": {
+    "originalPath": "/images/.v3-zone.png",
+    "altBase": ".v3-zone",
+    "width": 369,
+    "height": 164,
+    "aspectRatio": 2.25,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAAkALvmczmclLy8vDwD4SynqbaAE/JtEzEAA/tJ/CjmdY3NlH8MCplJmBonR+j7CgdLSecFpG8+qumEfDU/wKZ//mwZO3toTQmbpjDZxaIxxY4zrkMAA",
+    "variants": {
+      "avif": {
+        "369": "/images/generated/.v3-zone-369.avif"
+      },
+      "webp": {
+        "369": "/images/generated/.v3-zone-369.webp"
+      },
+      "jpeg": {
+        "369": "/images/generated/.v3-zone-369.jpeg"
+      }
+    }
+  },
   "/images/about-hero.webp": {
     "originalPath": "/images/about-hero.webp",
     "altBase": "about-hero",
     "width": 2560,
-    "height": 1711,
-    "aspectRatio": 1.4962593516209477,
+    "height": 1707,
+    "aspectRatio": 1.5,
     "isHero": true,
-    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoUAA0APzmYvlYvLCajsAgB4CcJY12cRggP7MCG6Cm3gAD+eD+jvpQb4fww3AC+BDLOBFmSYyZmu71ZKBus03Pe1YP/5en/Xu8dHf//OC6D93j+DxX/nNtow/5b/8htHS1VpiHjQYqHAsItZqJCZqJCZrP1E1DoDnqgAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABQAQCdASoUAA0ABUB8JZAABK8oAP7eVfnKJAmKJO1VH2MW0Duwc2KzqBL+tRNFO+cOA8yYUbIEF3Tcl5UDPmPH+6HbL/h4q3rg9nOpIkGJrKT65bgLQV4OE5sN5GmGcbIlHAAA",
     "variants": {
       "avif": {
         "480": "/images/generated/about-hero-480.avif",
         "640": "/images/generated/about-hero-640.avif",
         "768": "/images/generated/about-hero-768.avif",
         "1024": "/images/generated/about-hero-1024.avif",
-        "1200": "/images/generated/about-hero-1200.avif",
         "1280": "/images/generated/about-hero-1280.avif",
         "1536": "/images/generated/about-hero-1536.avif",
         "1920": "/images/generated/about-hero-1920.avif",
@@ -24,7 +670,6 @@
         "640": "/images/generated/about-hero-640.webp",
         "768": "/images/generated/about-hero-768.webp",
         "1024": "/images/generated/about-hero-1024.webp",
-        "1200": "/images/generated/about-hero-1200.webp",
         "1280": "/images/generated/about-hero-1280.webp",
         "1536": "/images/generated/about-hero-1536.webp",
         "1920": "/images/generated/about-hero-1920.webp",
@@ -35,7 +680,6 @@
         "640": "/images/generated/about-hero-640.jpeg",
         "768": "/images/generated/about-hero-768.jpeg",
         "1024": "/images/generated/about-hero-1024.jpeg",
-        "1200": "/images/generated/about-hero-1200.jpeg",
         "1280": "/images/generated/about-hero-1280.jpeg",
         "1536": "/images/generated/about-hero-1536.jpeg",
         "1920": "/images/generated/about-hero-1920.jpeg",
@@ -283,17 +927,16 @@
     "originalPath": "/images/gallery-hero.webp",
     "altBase": "gallery-hero",
     "width": 2560,
-    "height": 3840,
-    "aspectRatio": 0.6666666666666666,
+    "height": 1707,
+    "aspectRatio": 1.5,
     "isHero": true,
-    "blurPlaceholder": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAACwBACdASoUAB4APzmQv1mvKSYjqAgB4CcJZF2byrZIoFWTYATkwjABW+w5LOpAAP7iH4nnzAn+R+PQq1b40C1G2Kw/T1JmjrKLSIlU7dLN+K7zCf3SEVLrgybL+FZBzw94e5VtMoSQRHdtrgRUpAPoVmcbO1s1Fx9xstE/Ir+l4AfbO+31QP47QjoUn/SMyisH9celv36S+nIl5xjmKHmq45/8rxkdXerSaHrjNEKSXsLls4A839v0d5lvv/26R0luQzAoGBm/naaGer01Kpzfqqqx+4bT3vPWPf11Nhg4veAwCRAAUo7AAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwAwCdASoUAA0APzmYvlYvLCajsAgB4CcJYj11tzes+YJF2C+kBuNoAP7bCsYvTr0alfLCMZKy609VDdNd/pGMGesWYYihjqkBoIyxoFIJK5KoTgNgsEE8Uz9nf/JlKmeb/jsixyDduWT97CcYwfcHW2m2VZ6tHPs7E0bqvqKV+1rwOIAXpo/U1iMkrd2XYXKBDGmDcAAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/gallery-hero-480.avif",
         "640": "/images/generated/gallery-hero-640.avif",
         "768": "/images/generated/gallery-hero-768.avif",
         "1024": "/images/generated/gallery-hero-1024.avif",
-        "1200": "/images/generated/gallery-hero-1200.avif",
         "1280": "/images/generated/gallery-hero-1280.avif",
         "1536": "/images/generated/gallery-hero-1536.avif",
         "1920": "/images/generated/gallery-hero-1920.avif",
@@ -304,7 +947,6 @@
         "640": "/images/generated/gallery-hero-640.webp",
         "768": "/images/generated/gallery-hero-768.webp",
         "1024": "/images/generated/gallery-hero-1024.webp",
-        "1200": "/images/generated/gallery-hero-1200.webp",
         "1280": "/images/generated/gallery-hero-1280.webp",
         "1536": "/images/generated/gallery-hero-1536.webp",
         "1920": "/images/generated/gallery-hero-1920.webp",
@@ -315,7 +957,6 @@
         "640": "/images/generated/gallery-hero-640.jpeg",
         "768": "/images/generated/gallery-hero-768.jpeg",
         "1024": "/images/generated/gallery-hero-1024.jpeg",
-        "1200": "/images/generated/gallery-hero-1200.jpeg",
         "1280": "/images/generated/gallery-hero-1280.jpeg",
         "1536": "/images/generated/gallery-hero-1536.jpeg",
         "1920": "/images/generated/gallery-hero-1920.jpeg",
@@ -423,17 +1064,16 @@
     "originalPath": "/images/hero-background-image.webp",
     "altBase": "hero-background-image",
     "width": 2560,
-    "height": 1920,
-    "aspectRatio": 1.3333333333333333,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
     "isHero": true,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwAwCdASoUAA8APzmEuVOvKKWisAgB4CcJY1e7JXQAadAfeCgA+z2trMMr/4OWA2wz4TreNqgrNUYnVuHNNkIBDasDGyAaJH9+7o7X/4fbJWQ38VNz34NrVh689f5kOND/PHRof546cPJnB5ZcrpUfejL70Zfeeb/xRwozgZrNDFcKZEJ3gAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAgCdASoUAA0ALvmczmclLy8vDwD4SylnqhpwDyhgAP7rRn/+308MX/964noEsLedadP5n/nrD6d4acVzNe+xQSDqdQlw3i4YsAFTT6p7j1rXO7P4i4yRAH9d/cVMgAAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/hero-background-image-480.avif",
         "640": "/images/generated/hero-background-image-640.avif",
         "768": "/images/generated/hero-background-image-768.avif",
         "1024": "/images/generated/hero-background-image-1024.avif",
-        "1200": "/images/generated/hero-background-image-1200.avif",
         "1280": "/images/generated/hero-background-image-1280.avif",
         "1536": "/images/generated/hero-background-image-1536.avif",
         "1920": "/images/generated/hero-background-image-1920.avif",
@@ -444,7 +1084,6 @@
         "640": "/images/generated/hero-background-image-640.webp",
         "768": "/images/generated/hero-background-image-768.webp",
         "1024": "/images/generated/hero-background-image-1024.webp",
-        "1200": "/images/generated/hero-background-image-1200.webp",
         "1280": "/images/generated/hero-background-image-1280.webp",
         "1536": "/images/generated/hero-background-image-1536.webp",
         "1920": "/images/generated/hero-background-image-1920.webp",
@@ -455,7 +1094,6 @@
         "640": "/images/generated/hero-background-image-640.jpeg",
         "768": "/images/generated/hero-background-image-768.jpeg",
         "1024": "/images/generated/hero-background-image-1024.jpeg",
-        "1200": "/images/generated/hero-background-image-1200.jpeg",
         "1280": "/images/generated/hero-background-image-1280.jpeg",
         "1536": "/images/generated/hero-background-image-1536.jpeg",
         "1920": "/images/generated/hero-background-image-1920.jpeg",
@@ -483,160 +1121,243 @@
       }
     }
   },
+  "/images/local-hero-image.webp": {
+    "originalPath": "/images/local-hero-image.webp",
+    "altBase": "local-hero-image",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAwCdASoUAA0APzmMu1SvKaYjMAgB4CcJZEwM0AAE8h4A/uRW0I6Fdz7n87HbUWv9Y4b+HOpujZjaFzulGfT1gL9x/3G49DTAymWPJhARkfgk83JKav73gypz6RbKc+kWynPpFsrNOb5HEaN34HgA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/local-hero-image-480.avif",
+        "640": "/images/generated/local-hero-image-640.avif",
+        "768": "/images/generated/local-hero-image-768.avif",
+        "1024": "/images/generated/local-hero-image-1024.avif",
+        "1280": "/images/generated/local-hero-image-1280.avif",
+        "1536": "/images/generated/local-hero-image-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/local-hero-image-480.webp",
+        "640": "/images/generated/local-hero-image-640.webp",
+        "768": "/images/generated/local-hero-image-768.webp",
+        "1024": "/images/generated/local-hero-image-1024.webp",
+        "1280": "/images/generated/local-hero-image-1280.webp",
+        "1536": "/images/generated/local-hero-image-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/local-hero-image-480.jpeg",
+        "640": "/images/generated/local-hero-image-640.jpeg",
+        "768": "/images/generated/local-hero-image-768.jpeg",
+        "1024": "/images/generated/local-hero-image-1024.jpeg",
+        "1280": "/images/generated/local-hero-image-1280.jpeg",
+        "1536": "/images/generated/local-hero-image-1536.jpeg"
+      }
+    }
+  },
   "/images/patio-after-1.webp": {
     "originalPath": "/images/patio-after-1.webp",
     "altBase": "patio-after-1",
-    "width": 1200,
-    "height": 1200,
-    "aspectRatio": 1,
+    "width": 2560,
+    "height": 1920,
+    "aspectRatio": 1.3333333333333333,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAACwBACdASoUABQAPzmEvlavJ6ajsBgIAeAnCWU96Er8gPhYHI8hx4gdgBTcUcIAAP6iPv3PrlG/v/mgf77y0P8yZbm/E/MRkt375lhEtfbaqHBxscGfe5+4WpisD6tr1H78+7R2BUFh0B7YvVDO77jfKMaZRvfXapvLlJT99c+MDfADylTX+q+vDCd21jhpVkT83JRe4MA8Fk07DDGCg58o3GajN8f9T7PeFa2SukXTsUT2YndshxcWYZZD8te93DjZvoSe8Jg8Z7sS7i8t9QFsD60vTRoAAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQAgCdASoUAA8ALvmczmclLy8vDwD4Syq8+rb90skAAP32ne+T3XPe7/xlJgyFoc20dqtrNcmy+CnmNLaPOUgv20MBd7/FB5dnCQfUxmJwzYZmDPpBGvZI2/WJtbKJ6jB6pMUf2GL91NY62abZkp2voIHG5KaoAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/patio-after-1-480.avif",
         "640": "/images/generated/patio-after-1-640.avif",
         "768": "/images/generated/patio-after-1-768.avif",
         "1024": "/images/generated/patio-after-1-1024.avif",
-        "1200": "/images/generated/patio-after-1-1200.avif"
+        "1280": "/images/generated/patio-after-1-1280.avif",
+        "1536": "/images/generated/patio-after-1-1536.avif",
+        "1920": "/images/generated/patio-after-1-1920.avif",
+        "2560": "/images/generated/patio-after-1-2560.avif"
       },
       "webp": {
         "480": "/images/generated/patio-after-1-480.webp",
         "640": "/images/generated/patio-after-1-640.webp",
         "768": "/images/generated/patio-after-1-768.webp",
         "1024": "/images/generated/patio-after-1-1024.webp",
-        "1200": "/images/generated/patio-after-1-1200.webp"
+        "1280": "/images/generated/patio-after-1-1280.webp",
+        "1536": "/images/generated/patio-after-1-1536.webp",
+        "1920": "/images/generated/patio-after-1-1920.webp",
+        "2560": "/images/generated/patio-after-1-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/patio-after-1-480.jpeg",
         "640": "/images/generated/patio-after-1-640.jpeg",
         "768": "/images/generated/patio-after-1-768.jpeg",
         "1024": "/images/generated/patio-after-1-1024.jpeg",
-        "1200": "/images/generated/patio-after-1-1200.jpeg"
+        "1280": "/images/generated/patio-after-1-1280.jpeg",
+        "1536": "/images/generated/patio-after-1-1536.jpeg",
+        "1920": "/images/generated/patio-after-1-1920.jpeg",
+        "2560": "/images/generated/patio-after-1-2560.jpeg"
       }
     }
   },
   "/images/patio-after-2.webp": {
     "originalPath": "/images/patio-after-2.webp",
     "altBase": "patio-after-2",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoUABQAPzmIu1QvKSYjKA1R4CcJYz4rTdZWKYdIARYFLQDpcGtAAOFH6g7lHyL8xQKguinF+2qqg3HZQkzC09oQovC6MrHwsQhNpkZlbMT73+683JThI3LNFAT6tiwBLRmSw+b8qOMSLt80fEAkJq36Fmser2fxHAP8qzc/UfA0bhH/wKy4F/iU+4U9L6xk0nTuWSsIiHUyhEiAxeDQAAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwAwCdASoUABQAPzmQu1avKiWjqA1R4CcJYz4pvlxOzHPyZ8vDAADhR+oO5SARfzOJZ4LomaP+P05YdVIsnFmhqN9bWXHuMEk2KZvXKOIKwrU/3i1zlNKYQVsI7XvN5hjTpU118M56ZbWkVtecHcUO1hSKB3KRYb/M8cvufMwq9/tiBzkg4+JQZ5rb0oM81t6UGeawDg4bQDrz9RPttd1BY7UAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/patio-after-2-480.avif",
         "640": "/images/generated/patio-after-2-640.avif",
         "768": "/images/generated/patio-after-2-768.avif",
         "1024": "/images/generated/patio-after-2-1024.avif",
-        "1200": "/images/generated/patio-after-2-1200.avif"
+        "1280": "/images/generated/patio-after-2-1280.avif",
+        "1536": "/images/generated/patio-after-2-1536.avif",
+        "1920": "/images/generated/patio-after-2-1920.avif",
+        "2560": "/images/generated/patio-after-2-2560.avif"
       },
       "webp": {
         "480": "/images/generated/patio-after-2-480.webp",
         "640": "/images/generated/patio-after-2-640.webp",
         "768": "/images/generated/patio-after-2-768.webp",
         "1024": "/images/generated/patio-after-2-1024.webp",
-        "1200": "/images/generated/patio-after-2-1200.webp"
+        "1280": "/images/generated/patio-after-2-1280.webp",
+        "1536": "/images/generated/patio-after-2-1536.webp",
+        "1920": "/images/generated/patio-after-2-1920.webp",
+        "2560": "/images/generated/patio-after-2-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/patio-after-2-480.jpeg",
         "640": "/images/generated/patio-after-2-640.jpeg",
         "768": "/images/generated/patio-after-2-768.jpeg",
         "1024": "/images/generated/patio-after-2-1024.jpeg",
-        "1200": "/images/generated/patio-after-2-1200.jpeg"
+        "1280": "/images/generated/patio-after-2-1280.jpeg",
+        "1536": "/images/generated/patio-after-2-1536.jpeg",
+        "1920": "/images/generated/patio-after-2-1920.jpeg",
+        "2560": "/images/generated/patio-after-2-2560.jpeg"
       }
     }
   },
   "/images/patio-before-1.webp": {
     "originalPath": "/images/patio-before-1.webp",
     "altBase": "patio-before-1",
-    "width": 1200,
-    "height": 1200,
-    "aspectRatio": 1,
+    "width": 2560,
+    "height": 1871,
+    "aspectRatio": 1.3682522715125602,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAwBACdASoUABQAPzGCt1OuqKWit/VYAdAmCUfDFG/YCqFRgKmAFwna5AAA/tXQuEMFaHnIeY45fJw1bDfI0UpB0ASVaauQiyHDW7u+tL8bDR9g9gxzOQ7Zyu2z4rymaH5AGDgTGbSKSMBO1wgo0EDzq1t8EG+x9y+c0Mxz+ncTtdAhZYJiIWIeFfgF7F6j9P3cFxQx+jJQrORtSAFuppljeXxw3qEUMaOOgEARXAxWuccfYvQ4RH00BXnUnga5DCOMvAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwAwCdASoUAA8APzmKu1SvKaYjMAgB4CcJaFe6Y5QHejKCAL20AAD+41AxDP8rml+7kuIu6X9UhsszXbFtoVcHJlpfijS4Nq+pNTYtu38+uayA8m/ncH9f/lHdm5j+aeBc8wqXyQV3M2eaarAufazuBhxufsub5d5Ky/8Ex3+SxEQ/swuvswuvuhEshszrK5yQAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/patio-before-1-480.avif",
         "640": "/images/generated/patio-before-1-640.avif",
         "768": "/images/generated/patio-before-1-768.avif",
         "1024": "/images/generated/patio-before-1-1024.avif",
-        "1200": "/images/generated/patio-before-1-1200.avif"
+        "1280": "/images/generated/patio-before-1-1280.avif",
+        "1536": "/images/generated/patio-before-1-1536.avif",
+        "1920": "/images/generated/patio-before-1-1920.avif",
+        "2560": "/images/generated/patio-before-1-2560.avif"
       },
       "webp": {
         "480": "/images/generated/patio-before-1-480.webp",
         "640": "/images/generated/patio-before-1-640.webp",
         "768": "/images/generated/patio-before-1-768.webp",
         "1024": "/images/generated/patio-before-1-1024.webp",
-        "1200": "/images/generated/patio-before-1-1200.webp"
+        "1280": "/images/generated/patio-before-1-1280.webp",
+        "1536": "/images/generated/patio-before-1-1536.webp",
+        "1920": "/images/generated/patio-before-1-1920.webp",
+        "2560": "/images/generated/patio-before-1-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/patio-before-1-480.jpeg",
         "640": "/images/generated/patio-before-1-640.jpeg",
         "768": "/images/generated/patio-before-1-768.jpeg",
         "1024": "/images/generated/patio-before-1-1024.jpeg",
-        "1200": "/images/generated/patio-before-1-1200.jpeg"
+        "1280": "/images/generated/patio-before-1-1280.jpeg",
+        "1536": "/images/generated/patio-before-1-1536.jpeg",
+        "1920": "/images/generated/patio-before-1-1920.jpeg",
+        "2560": "/images/generated/patio-before-1-2560.jpeg"
       }
     }
   },
   "/images/patio-before-2.webp": {
     "originalPath": "/images/patio-before-2.webp",
     "altBase": "patio-before-2",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAABQBQCdASoUABQAPzmYxVqvKigkKAgB4CcJZT7fNm13jZj5k5UvBAJMsA/wAcgSTl9vSAAA4/sD/699MOQG//tpFjD/bQ8i52GE8+SwgyOnrbNU/Qst5ikGsNbf4GdGSOQ43G7OJ8OSYS5Sc5AdiNQ7mLFB8c/4J6vYler2JXz2itjuUxLaHLixrnD8ondY6zO1jrM7WOs4GKUq28s/+k8yUwlIOUBZUU8Edxw1fxi6f8U9oJn+lLF2QwARRpwAAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAAAwBACdASoUABQAPzmSvlevKqYjqAqp4CcJZT7d08b8UAzYANnUJy8vscAA4/sD/699MOQG//rnPYD/ZojhyU8sR3iZ4h/p4sYf6FlB+bvHkJAREHgVOpjh9Nuziffho7qqe9jOcWudlHL5hPTYv3FG2JZ2nUxbHzYLqvzuLGq8oLve/ObKPPfvX9rHUYI1jqMEax1F+qYh7Bx0/iWExb4xUkHxH3/d4j+cVMKQv+q/+vcA9f/17mcyFM9qYOXDJ5YPDgi4AAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/patio-before-2-480.avif",
         "640": "/images/generated/patio-before-2-640.avif",
         "768": "/images/generated/patio-before-2-768.avif",
         "1024": "/images/generated/patio-before-2-1024.avif",
-        "1200": "/images/generated/patio-before-2-1200.avif"
+        "1280": "/images/generated/patio-before-2-1280.avif",
+        "1536": "/images/generated/patio-before-2-1536.avif",
+        "1920": "/images/generated/patio-before-2-1920.avif",
+        "2560": "/images/generated/patio-before-2-2560.avif"
       },
       "webp": {
         "480": "/images/generated/patio-before-2-480.webp",
         "640": "/images/generated/patio-before-2-640.webp",
         "768": "/images/generated/patio-before-2-768.webp",
         "1024": "/images/generated/patio-before-2-1024.webp",
-        "1200": "/images/generated/patio-before-2-1200.webp"
+        "1280": "/images/generated/patio-before-2-1280.webp",
+        "1536": "/images/generated/patio-before-2-1536.webp",
+        "1920": "/images/generated/patio-before-2-1920.webp",
+        "2560": "/images/generated/patio-before-2-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/patio-before-2-480.jpeg",
         "640": "/images/generated/patio-before-2-640.jpeg",
         "768": "/images/generated/patio-before-2-768.jpeg",
         "1024": "/images/generated/patio-before-2-1024.jpeg",
-        "1200": "/images/generated/patio-before-2-1200.jpeg"
+        "1280": "/images/generated/patio-before-2-1280.jpeg",
+        "1536": "/images/generated/patio-before-2-1536.jpeg",
+        "1920": "/images/generated/patio-before-2-1920.jpeg",
+        "2560": "/images/generated/patio-before-2-2560.jpeg"
       }
     }
   },
   "/images/patio-wall.webp": {
     "originalPath": "/images/patio-wall.webp",
     "altBase": "patio-wall",
-    "width": 1000,
-    "height": 1500,
-    "aspectRatio": 0.6666666666666666,
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAQBQCdASoUAB4APzmKulOvKiWisAgB4CcJZFTckLWgo/6x8lj+7O/QcIsHB4ODrBQAAP7dBNsd+Q6uJ4nVm+XmOtbLKQHAa+1JcPLaz0FuD6VyDf63kPm6+/8q/SjBf8GMY6DZ2LVlMQ7IQanMQanMPaHR0hcxHOVoc5WhzlivOHLtV+D0MIIq8WP1whP8yA0O+DbURGPzsBPW/7ZcSltWBTClQMTYXxUsG2qFqNYJi1anIzsrRMPdft1j//69WLssVDuxRRV2lRuaUjwPSE3F/Cve02ccb/zMAsGwAB52WA1OsIAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACQAwCdASoUAA0APzmGulOvKSWisAgB4CcJamR/vBeIAaUAfpmAAP7eqn2NIhH1bK0Yk1SzIWfW8VW3wt0aOoerU4LMHc/6O0/AXpJzlIImv5tiUf3zbEo/vm2JQmdTGc1QsyeAAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/patio-wall-480.avif",
         "640": "/images/generated/patio-wall-640.avif",
         "768": "/images/generated/patio-wall-768.avif",
-        "1000": "/images/generated/patio-wall-1000.avif"
+        "1024": "/images/generated/patio-wall-1024.avif",
+        "1280": "/images/generated/patio-wall-1280.avif",
+        "1536": "/images/generated/patio-wall-1536.avif",
+        "1920": "/images/generated/patio-wall-1920.avif",
+        "2560": "/images/generated/patio-wall-2560.avif"
       },
       "webp": {
         "480": "/images/generated/patio-wall-480.webp",
         "640": "/images/generated/patio-wall-640.webp",
         "768": "/images/generated/patio-wall-768.webp",
-        "1000": "/images/generated/patio-wall-1000.webp"
+        "1024": "/images/generated/patio-wall-1024.webp",
+        "1280": "/images/generated/patio-wall-1280.webp",
+        "1536": "/images/generated/patio-wall-1536.webp",
+        "1920": "/images/generated/patio-wall-1920.webp",
+        "2560": "/images/generated/patio-wall-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/patio-wall-480.jpeg",
         "640": "/images/generated/patio-wall-640.jpeg",
         "768": "/images/generated/patio-wall-768.jpeg",
-        "1000": "/images/generated/patio-wall-1000.jpeg"
+        "1024": "/images/generated/patio-wall-1024.jpeg",
+        "1280": "/images/generated/patio-wall-1280.jpeg",
+        "1536": "/images/generated/patio-wall-1536.jpeg",
+        "1920": "/images/generated/patio-wall-1920.jpeg",
+        "2560": "/images/generated/patio-wall-2560.jpeg"
       }
     }
   },
@@ -645,9 +1366,9 @@
     "altBase": "paver-patio-hero",
     "width": 2560,
     "height": 1707,
-    "aspectRatio": 1.499531396438613,
+    "aspectRatio": 1.5,
     "isHero": true,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoUAA0APzmGuVOvKSWisAgB4CcJaj11uJ+gHKl4E0n8f6AZyfVgAuGoAP3/3Vxlqv/3oO4TEu2NGBWRw8Ek/yPagW96RcdSFEtfQa2IECcrhGb1lhmPOnbu7Fv/+8M0tEa9sP2BfPcNS2E4AZ1lptnEP1d8LaFW0Ktq+M5CMfdNXMyArmVeZAfq+Ze8j8QULrxrhssKLu18hmWBDoAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAQCdASoUAA0ABUB8JZAABMWAAPs2eh+nLWa4Xf/0ufkPJ7e/+HyyvCGOVzga5roo7qgJ3LjRaJfIa81DL66CMTdR8vwALdg+SDHruvfMaik4f/9kegbrFyQfddCdGXlDeOhnU7LrKM69jLuieFU9sUFfnOUCSb4AAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/paver-patio-hero-480.avif",
@@ -656,7 +1377,6 @@
         "1024": "/images/generated/paver-patio-hero-1024.avif",
         "1280": "/images/generated/paver-patio-hero-1280.avif",
         "1536": "/images/generated/paver-patio-hero-1536.avif",
-        "1600": "/images/generated/paver-patio-hero-1600.avif",
         "1920": "/images/generated/paver-patio-hero-1920.avif",
         "2560": "/images/generated/paver-patio-hero-2560.avif"
       },
@@ -667,7 +1387,6 @@
         "1024": "/images/generated/paver-patio-hero-1024.webp",
         "1280": "/images/generated/paver-patio-hero-1280.webp",
         "1536": "/images/generated/paver-patio-hero-1536.webp",
-        "1600": "/images/generated/paver-patio-hero-1600.webp",
         "1920": "/images/generated/paver-patio-hero-1920.webp",
         "2560": "/images/generated/paver-patio-hero-2560.webp"
       },
@@ -678,7 +1397,6 @@
         "1024": "/images/generated/paver-patio-hero-1024.jpeg",
         "1280": "/images/generated/paver-patio-hero-1280.jpeg",
         "1536": "/images/generated/paver-patio-hero-1536.jpeg",
-        "1600": "/images/generated/paver-patio-hero-1600.jpeg",
         "1920": "/images/generated/paver-patio-hero-1920.jpeg",
         "2560": "/images/generated/paver-patio-hero-2560.jpeg"
       }
@@ -687,160 +1405,175 @@
   "/images/retaining-wall.webp": {
     "originalPath": "/images/retaining-wall.webp",
     "altBase": "retaining-wall",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwAwCdASoUAA0APzmIu1QvKSYjMAgB4CcJSvZlmCpAElH8AP7D26CZ5VS/xiIx0DwsJyFc2tUoJWJ2DFmtPTNYAFmhl2q9gQvZ2Y0aQL+yU59+BWFOffgVhTn34FZuL/3Wuz4Bqwu2UDkIjiUzmOyAAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAgCdASoUAA0APzmGulOvKSWisAgB4CcJZAAAllKAAP7SZnm+gvsOD5ai38MqzzXQqdLnlpPdcVwPxY1p4l6ebYZAI+OwbIjxdv9D8IKYu0kgN0x6Y4MXT7Eo9mSvzCgYB4UeyoAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/retaining-wall-480.avif",
         "640": "/images/generated/retaining-wall-640.avif",
         "768": "/images/generated/retaining-wall-768.avif",
         "1024": "/images/generated/retaining-wall-1024.avif",
-        "1200": "/images/generated/retaining-wall-1200.avif"
+        "1280": "/images/generated/retaining-wall-1280.avif",
+        "1536": "/images/generated/retaining-wall-1536.avif"
       },
       "webp": {
         "480": "/images/generated/retaining-wall-480.webp",
         "640": "/images/generated/retaining-wall-640.webp",
         "768": "/images/generated/retaining-wall-768.webp",
         "1024": "/images/generated/retaining-wall-1024.webp",
-        "1200": "/images/generated/retaining-wall-1200.webp"
+        "1280": "/images/generated/retaining-wall-1280.webp",
+        "1536": "/images/generated/retaining-wall-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/retaining-wall-480.jpeg",
         "640": "/images/generated/retaining-wall-640.jpeg",
         "768": "/images/generated/retaining-wall-768.jpeg",
         "1024": "/images/generated/retaining-wall-1024.jpeg",
-        "1200": "/images/generated/retaining-wall-1200.jpeg"
+        "1280": "/images/generated/retaining-wall-1280.jpeg",
+        "1536": "/images/generated/retaining-wall-1536.jpeg"
       }
     }
   },
   "/images/service-commercial-landscaping.webp": {
     "originalPath": "/images/service-commercial-landscaping.webp",
     "altBase": "service-commercial-landscaping",
-    "width": 1200,
-    "height": 1600,
-    "aspectRatio": 0.75,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAAAwBQCdASoUABsAPy18t1Oup6Wit/qoAdAliUuzhr7JHCfSt7AwG05nIASZcoAnrFNkgAD+40D/ZdDfwArD7dp7X3GXQxW9KBsTihFkm19WKhZDGKrOFGirE137IMlSVJ//WM9UawuimgKaApohbh06Fn42bppWZVmVZq0neZpjx7UT6GPc8dZIsIzeP7JwOJDlb4ytPGGmliQ9vFhWaP0KxyXNMmJGFMgSlwfr/38Vi8//Y8ucGOjAb19xevuL2Gq4msUjFIxSKdmRwLRcIqg5MmMMAAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoUAA0APzmIulOvKSWisAgB4CcJYj11vXdAGsAAyCjABfpAAP57jH2X93zpXCE/zcY3/2src5yvPFXFFW2Zo9qAOlP9+S+Ou2z/qN3IbXPre2sV9qbH5//80//x2Tf3pT//X1W6cNM+Am3WdjB3ffFfqg5r7yZH3kyPvLmf3m+L/QiX+hEv9C1jH+Tw7bJW0AA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-commercial-landscaping-480.avif",
         "640": "/images/generated/service-commercial-landscaping-640.avif",
         "768": "/images/generated/service-commercial-landscaping-768.avif",
         "1024": "/images/generated/service-commercial-landscaping-1024.avif",
-        "1200": "/images/generated/service-commercial-landscaping-1200.avif"
+        "1280": "/images/generated/service-commercial-landscaping-1280.avif",
+        "1536": "/images/generated/service-commercial-landscaping-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-commercial-landscaping-480.webp",
         "640": "/images/generated/service-commercial-landscaping-640.webp",
         "768": "/images/generated/service-commercial-landscaping-768.webp",
         "1024": "/images/generated/service-commercial-landscaping-1024.webp",
-        "1200": "/images/generated/service-commercial-landscaping-1200.webp"
+        "1280": "/images/generated/service-commercial-landscaping-1280.webp",
+        "1536": "/images/generated/service-commercial-landscaping-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-commercial-landscaping-480.jpeg",
         "640": "/images/generated/service-commercial-landscaping-640.jpeg",
         "768": "/images/generated/service-commercial-landscaping-768.jpeg",
         "1024": "/images/generated/service-commercial-landscaping-1024.jpeg",
-        "1200": "/images/generated/service-commercial-landscaping-1200.jpeg"
+        "1280": "/images/generated/service-commercial-landscaping-1280.jpeg",
+        "1536": "/images/generated/service-commercial-landscaping-1536.jpeg"
       }
     }
   },
   "/images/service-drainage.webp": {
     "originalPath": "/images/service-drainage.webp",
     "altBase": "service-drainage",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAwCdASoUAA0APzmIvlOvKScisAgB4CcJY0wMdAA05YftoAD+eDWH3zZk8KZRlJwuxlXS0X8qc5OhVzj37UfZv7sB+2PGl7THa2TcfH2nuAutlD49bXdzXrnHQdM4nrrn6tdlf5uwWbfhofhofiDwWdqE15P7PagAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACQAwCdASoUAA0APzmKu1SvKaYjMAgB4CcJS2PHd+AJgzAAXhsAAP7YC/1VAQf/f6EKU6BxtZt7MQS7bt8SLObq52ErsCwTaZs0zunn6GoG2ZaIMfkUAKOia/UbiMly4nEbeKAWZE5ltAUQAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-drainage-480.avif",
         "640": "/images/generated/service-drainage-640.avif",
         "768": "/images/generated/service-drainage-768.avif",
         "1024": "/images/generated/service-drainage-1024.avif",
-        "1200": "/images/generated/service-drainage-1200.avif"
+        "1280": "/images/generated/service-drainage-1280.avif",
+        "1536": "/images/generated/service-drainage-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-drainage-480.webp",
         "640": "/images/generated/service-drainage-640.webp",
         "768": "/images/generated/service-drainage-768.webp",
         "1024": "/images/generated/service-drainage-1024.webp",
-        "1200": "/images/generated/service-drainage-1200.webp"
+        "1280": "/images/generated/service-drainage-1280.webp",
+        "1536": "/images/generated/service-drainage-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-drainage-480.jpeg",
         "640": "/images/generated/service-drainage-640.jpeg",
         "768": "/images/generated/service-drainage-768.jpeg",
         "1024": "/images/generated/service-drainage-1024.jpeg",
-        "1200": "/images/generated/service-drainage-1200.jpeg"
+        "1280": "/images/generated/service-drainage-1280.jpeg",
+        "1536": "/images/generated/service-drainage-1536.jpeg"
       }
     }
   },
   "/images/service-excavation.webp": {
     "originalPath": "/images/service-excavation.webp",
     "altBase": "service-excavation",
-    "width": 1200,
-    "height": 529,
-    "aspectRatio": 2.268431001890359,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwAwCdASoUAAkAPzmIulQvKSWjMAgB4CcJZA5gALEATW0gAP7fDv//KSvUWHaS6cWpbA5AJ5vJTLXhmoJj/+AfVNuK/Y7a6lvZ/21P6Hfwxj6X+RX/Lt5y3pZdt78+PTtPmxNcnf/pykPk/cbX87D/q1tINyJSmLaPhI/1cgA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQAgCdASoUAA0ALvmczmclLy8vDwD4Sj3F7qKeYXsAAP7ntNP6d+TaZl/5aY+Y83LsZ1zRdEei8DnoSXDkpoAfGuqn1Zwh7xcsvzFpDfu4YLJPY7P53E6++dB79pzSlnnhchPgqEBqBfl9DH1dHcELZ7sAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/service-excavation-480.avif",
         "640": "/images/generated/service-excavation-640.avif",
         "768": "/images/generated/service-excavation-768.avif",
         "1024": "/images/generated/service-excavation-1024.avif",
-        "1200": "/images/generated/service-excavation-1200.avif"
+        "1280": "/images/generated/service-excavation-1280.avif",
+        "1536": "/images/generated/service-excavation-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-excavation-480.webp",
         "640": "/images/generated/service-excavation-640.webp",
         "768": "/images/generated/service-excavation-768.webp",
         "1024": "/images/generated/service-excavation-1024.webp",
-        "1200": "/images/generated/service-excavation-1200.webp"
+        "1280": "/images/generated/service-excavation-1280.webp",
+        "1536": "/images/generated/service-excavation-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-excavation-480.jpeg",
         "640": "/images/generated/service-excavation-640.jpeg",
         "768": "/images/generated/service-excavation-768.jpeg",
         "1024": "/images/generated/service-excavation-1024.jpeg",
-        "1200": "/images/generated/service-excavation-1200.jpeg"
+        "1280": "/images/generated/service-excavation-1280.jpeg",
+        "1536": "/images/generated/service-excavation-1536.jpeg"
       }
     }
   },
   "/images/service-grading.webp": {
     "originalPath": "/images/service-grading.webp",
     "altBase": "service-grading",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoUAA0APzmGuVOvKSWisAgB4CcJbEwARhYhZhsAAJIfAAD+3P7ciX45dBvUte1QvcLzZGXoOry27Dgl3e+ePF++stfXQn04sziwRq/nxB8Y0pHkDilh2m1oxvbf30WTcoLZdy/2X4kfxI/mFOxxptJCTBjj6BvXWOdgAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoUAA0APzmOvlOvKqcisAgB4CcJS7KKB0AI1UJkWuIAzhUAAP7dDj+p61QTi0Qxqw3nC6EYDmVhU6YQEylkvEHLqo8AVbaLgu+Qfw0P4X2+Lj+n/5AqLqaV3eNSGnCLSwuIJ9f2fbUWVQIo2JOTKYpEAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-grading-480.avif",
         "640": "/images/generated/service-grading-640.avif",
         "768": "/images/generated/service-grading-768.avif",
         "1024": "/images/generated/service-grading-1024.avif",
-        "1200": "/images/generated/service-grading-1200.avif"
+        "1280": "/images/generated/service-grading-1280.avif",
+        "1536": "/images/generated/service-grading-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-grading-480.webp",
         "640": "/images/generated/service-grading-640.webp",
         "768": "/images/generated/service-grading-768.webp",
         "1024": "/images/generated/service-grading-1024.webp",
-        "1200": "/images/generated/service-grading-1200.webp"
+        "1280": "/images/generated/service-grading-1280.webp",
+        "1536": "/images/generated/service-grading-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-grading-480.jpeg",
         "640": "/images/generated/service-grading-640.jpeg",
         "768": "/images/generated/service-grading-768.jpeg",
         "1024": "/images/generated/service-grading-1024.jpeg",
-        "1200": "/images/generated/service-grading-1200.jpeg"
+        "1280": "/images/generated/service-grading-1280.jpeg",
+        "1536": "/images/generated/service-grading-1536.jpeg"
       }
     }
   },
@@ -879,64 +1612,70 @@
   "/images/service-landscape-design.webp": {
     "originalPath": "/images/service-landscape-design.webp",
     "altBase": "service-landscape-design",
-    "width": 1200,
-    "height": 1800,
-    "aspectRatio": 0.6666666666666666,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAACQBQCdASoUAB4APzmOv1evKaajqAqp4CcJZle7DLbUo36u8ukklZ1rN7Bnjw6AWf4OMLjDAAD+3qj2/5NvjewGf399mfPfzFX97e+WwWk+xkr+Cv1XH/nVM1OfUXbhnaTI+dqMUPPZYLxkzYHVPlXrBq06M9a/V/z/c/dBsVDuVVc3B/WikEPpAWHdWNSAMsaJpqZnP1ez/1F4sXK7qgc0J2ET1VyvtuaCzZ7HF90f9qs69CYAWHUWiqVgf2rAwd4Dv5KYsFqMN4PbKd/aePlgf9c/T50Q+uzVyNNlanB5R7rC0gV1phg7SU5Yln8cpaz7czE8f4Tr8QZvGEPRWgYNRltieHvTzCuMPSzKEjmUjAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABQAwCdASoUAA0APzmKulQvKaWjMAgB4CcJZGH0RkGSAHg6AAD+1dT/QWdhf3v134Vd3DCVO1w1dYAHNTXZuqyUzQ6qEYfGXQ9+DXuP7xauojDiv1I3yfAP9n6gBZdMBwZvtE2k711GAPtKHQ9yAAAA",
     "variants": {
       "avif": {
         "480": "/images/generated/service-landscape-design-480.avif",
         "640": "/images/generated/service-landscape-design-640.avif",
         "768": "/images/generated/service-landscape-design-768.avif",
         "1024": "/images/generated/service-landscape-design-1024.avif",
-        "1200": "/images/generated/service-landscape-design-1200.avif"
+        "1280": "/images/generated/service-landscape-design-1280.avif",
+        "1536": "/images/generated/service-landscape-design-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-landscape-design-480.webp",
         "640": "/images/generated/service-landscape-design-640.webp",
         "768": "/images/generated/service-landscape-design-768.webp",
         "1024": "/images/generated/service-landscape-design-1024.webp",
-        "1200": "/images/generated/service-landscape-design-1200.webp"
+        "1280": "/images/generated/service-landscape-design-1280.webp",
+        "1536": "/images/generated/service-landscape-design-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-landscape-design-480.jpeg",
         "640": "/images/generated/service-landscape-design-640.jpeg",
         "768": "/images/generated/service-landscape-design-768.jpeg",
         "1024": "/images/generated/service-landscape-design-1024.jpeg",
-        "1200": "/images/generated/service-landscape-design-1200.jpeg"
+        "1280": "/images/generated/service-landscape-design-1280.jpeg",
+        "1536": "/images/generated/service-landscape-design-1536.jpeg"
       }
     }
   },
   "/images/service-landscape-installation.webp": {
     "originalPath": "/images/service-landscape-installation.webp",
     "altBase": "service-landscape-installation",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAgCdASoUAA0APzmGulQvKSWjMAgB4CcJaAC7ADchAAD+1ddFmnyiRx30a+lH9Jt2QE3AitGvLkP9sUmxEJzB9lntuVk3veudlMf536MwCb/5xT8nxFJr/cekiqynCsev01LHvyvF8iy9rgAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABwAwCdASoUAA0APzmIulQvKSWjMAgB4CcJai0sviUB9MRTf3wA/thz9+sV5TuvtUoM410eq1FNM6jeBBvN8JeDzcIuNJYqnfUlUf+7oPcWudKdczXtSoTaWfwCl775u97Dh9Croje+PYcPmz3HZ5zcLvOb5HtfLMAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/service-landscape-installation-480.avif",
         "640": "/images/generated/service-landscape-installation-640.avif",
         "768": "/images/generated/service-landscape-installation-768.avif",
         "1024": "/images/generated/service-landscape-installation-1024.avif",
-        "1200": "/images/generated/service-landscape-installation-1200.avif"
+        "1280": "/images/generated/service-landscape-installation-1280.avif",
+        "1536": "/images/generated/service-landscape-installation-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-landscape-installation-480.webp",
         "640": "/images/generated/service-landscape-installation-640.webp",
         "768": "/images/generated/service-landscape-installation-768.webp",
         "1024": "/images/generated/service-landscape-installation-1024.webp",
-        "1200": "/images/generated/service-landscape-installation-1200.webp"
+        "1280": "/images/generated/service-landscape-installation-1280.webp",
+        "1536": "/images/generated/service-landscape-installation-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-landscape-installation-480.jpeg",
         "640": "/images/generated/service-landscape-installation-640.jpeg",
         "768": "/images/generated/service-landscape-installation-768.jpeg",
         "1024": "/images/generated/service-landscape-installation-1024.jpeg",
-        "1200": "/images/generated/service-landscape-installation-1200.jpeg"
+        "1280": "/images/generated/service-landscape-installation-1280.jpeg",
+        "1536": "/images/generated/service-landscape-installation-1536.jpeg"
       }
     }
   },
@@ -975,64 +1714,70 @@
   "/images/service-lawn-care.webp": {
     "originalPath": "/images/service-lawn-care.webp",
     "altBase": "service-lawn-care",
-    "width": 1200,
-    "height": 652,
-    "aspectRatio": 1.8404907975460123,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoUAAsAPzmMu1SvKaYjMAgB4CcJZCzcKPyXQApmngAA/sIn+oOmh/0n/2so5oTpjOEB84eewKQXNmo+SV/5Ff/uTqGP/7vHkoUEjMQEHrlbAk+lwS3PhCek571oPOR9JhPSc9+jeRSCePaygAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJaD4FuAB/ACw8IAD5q/rPeuXXXSg9S/fm9jRgIjiIeeL5oFVrsQf4YrioRZvKlXqCdl0RP/w8//h6xYXiatXNqteO0ckY1kIiN0H3Vf+OybuXFOJudTibnW9Cl7/g2wItd+Zwc8zg55nB2Lc8rCDYgAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-lawn-care-480.avif",
         "640": "/images/generated/service-lawn-care-640.avif",
         "768": "/images/generated/service-lawn-care-768.avif",
         "1024": "/images/generated/service-lawn-care-1024.avif",
-        "1200": "/images/generated/service-lawn-care-1200.avif"
+        "1280": "/images/generated/service-lawn-care-1280.avif",
+        "1536": "/images/generated/service-lawn-care-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-lawn-care-480.webp",
         "640": "/images/generated/service-lawn-care-640.webp",
         "768": "/images/generated/service-lawn-care-768.webp",
         "1024": "/images/generated/service-lawn-care-1024.webp",
-        "1200": "/images/generated/service-lawn-care-1200.webp"
+        "1280": "/images/generated/service-lawn-care-1280.webp",
+        "1536": "/images/generated/service-lawn-care-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-lawn-care-480.jpeg",
         "640": "/images/generated/service-lawn-care-640.jpeg",
         "768": "/images/generated/service-lawn-care-768.jpeg",
         "1024": "/images/generated/service-lawn-care-1024.jpeg",
-        "1200": "/images/generated/service-lawn-care-1200.jpeg"
+        "1280": "/images/generated/service-lawn-care-1280.jpeg",
+        "1536": "/images/generated/service-lawn-care-1536.jpeg"
       }
     }
   },
   "/images/service-mulching.webp": {
     "originalPath": "/images/service-mulching.webp",
     "altBase": "service-mulching",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoUAA0APzmMu1SvKaYjMAgB4CcJR5p23/un3ANaRLEATUcAAP5nmj/mdIOXs+zv/tnE1EjWeEVNoN4VFm8K6qNflysJayUGjSMVWrnBr01LO6FXGvzP2x6//MJH5nYswR19w9f8tzWJZGNxVME4qmCc4s/DaDputTP5uLGT6iO9FhKAiZxoUZONCpi/Li8KQAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZhtoI0B4rgAf/lgA/trp/3gUnNXQJUfpXsxLhaB1tG0C445MEnTYDwpdsp8Jc5ZbLYzVdAxqsiH/xzo2l4EeF1hipx03TKtN0ymZzBd43Jy8ETnVwROdXBjmJH2tMgn7+tug/f4vNn9/focN5ABbo+QO7pajr9vyNAAA",
     "variants": {
       "avif": {
         "480": "/images/generated/service-mulching-480.avif",
         "640": "/images/generated/service-mulching-640.avif",
         "768": "/images/generated/service-mulching-768.avif",
         "1024": "/images/generated/service-mulching-1024.avif",
-        "1200": "/images/generated/service-mulching-1200.avif"
+        "1280": "/images/generated/service-mulching-1280.avif",
+        "1536": "/images/generated/service-mulching-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-mulching-480.webp",
         "640": "/images/generated/service-mulching-640.webp",
         "768": "/images/generated/service-mulching-768.webp",
         "1024": "/images/generated/service-mulching-1024.webp",
-        "1200": "/images/generated/service-mulching-1200.webp"
+        "1280": "/images/generated/service-mulching-1280.webp",
+        "1536": "/images/generated/service-mulching-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-mulching-480.jpeg",
         "640": "/images/generated/service-mulching-640.jpeg",
         "768": "/images/generated/service-mulching-768.jpeg",
         "1024": "/images/generated/service-mulching-1024.jpeg",
-        "1200": "/images/generated/service-mulching-1200.jpeg"
+        "1280": "/images/generated/service-mulching-1280.jpeg",
+        "1536": "/images/generated/service-mulching-1536.jpeg"
       }
     }
   },
@@ -1040,10 +1785,10 @@
     "originalPath": "/images/service-outdoor-living.webp",
     "altBase": "service-outdoor-living",
     "width": 2560,
-    "height": 1709,
-    "aspectRatio": 1.4979520187244002,
+    "height": 1707,
+    "aspectRatio": 1.5,
     "isHero": true,
-    "blurPlaceholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAgCdASoUAA0APzmIvlOvKScisAgB4CcJZVnyAFKn4ADkDU8heD+rj5xdK6ZKvcxFHL7RXoNSZiQP4Y4PvlqZ0lg98qfIbSNFPb4i8DQPil+YvrNGHxLicH8Fsh4grmUdkBqkAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwAwCdASoUAA0APzmQvlWvKqajMAgB4CcJZixAKUAjnoXsAfpmAAD+5h/+/WGHn+/tehRT/eNDn54OqeLhZi9FXwWcuHSQg5ICoTLDCrL0iJ0OP/YnIj75IDDM3k12cQVOTiCpycQXxXYfhw9gqqOEbFhNWnPTeELaC7TJWbwhoU5Troryoh+HjCNAEkAA",
     "variants": {
       "avif": {
         "480": "/images/generated/service-outdoor-living-480.avif",
@@ -1080,160 +1825,175 @@
   "/images/service-preservation-restoration.webp": {
     "originalPath": "/images/service-preservation-restoration.webp",
     "altBase": "service-preservation-restoration",
-    "width": 1200,
-    "height": 1200,
-    "aspectRatio": 1,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwAwCdASoUABQALvmczmclLy8vDwD4Szn4ndoEqAKfBtAAAP7tpmx/8WYrhUqX/maVdpPKnF7RxZVlS+j/Y8vUJMx198yPXZ/1H/i5fPs51f/Eut9avz/fPLdexoJSHLOtAUktiyi/e3NcG93/67A4n/pE8v2yoECa8E5xA//Guu/m/K7gAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAgCdASoUAA0APzmEuVOvKKWisAgB4CcJbAC7ADcbQAD+1cWYlCPnfgTU52WFXxdeLvzGorZqgUz7wNKRVhkF2vdXlK3t05F+4uQbz//awq8I3EM+wSul0zs5f7OWS/flGVmcq+jmhev2RrKIFaB8AAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-preservation-restoration-480.avif",
         "640": "/images/generated/service-preservation-restoration-640.avif",
         "768": "/images/generated/service-preservation-restoration-768.avif",
         "1024": "/images/generated/service-preservation-restoration-1024.avif",
-        "1200": "/images/generated/service-preservation-restoration-1200.avif"
+        "1280": "/images/generated/service-preservation-restoration-1280.avif",
+        "1536": "/images/generated/service-preservation-restoration-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-preservation-restoration-480.webp",
         "640": "/images/generated/service-preservation-restoration-640.webp",
         "768": "/images/generated/service-preservation-restoration-768.webp",
         "1024": "/images/generated/service-preservation-restoration-1024.webp",
-        "1200": "/images/generated/service-preservation-restoration-1200.webp"
+        "1280": "/images/generated/service-preservation-restoration-1280.webp",
+        "1536": "/images/generated/service-preservation-restoration-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-preservation-restoration-480.jpeg",
         "640": "/images/generated/service-preservation-restoration-640.jpeg",
         "768": "/images/generated/service-preservation-restoration-768.jpeg",
         "1024": "/images/generated/service-preservation-restoration-1024.jpeg",
-        "1200": "/images/generated/service-preservation-restoration-1200.jpeg"
+        "1280": "/images/generated/service-preservation-restoration-1280.jpeg",
+        "1536": "/images/generated/service-preservation-restoration-1536.jpeg"
       }
     }
   },
   "/images/service-residential-landscaping.webp": {
     "originalPath": "/images/service-residential-landscaping.webp",
     "altBase": "service-residential-landscaping",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoUAA0APzmGuVOvKSWisAgB4CcJaC0Af2b7gK0G1lmwLXEAZsMAAP7GR/R3/iEK5+x//71QB8Hf/5tj69NsSj6PIZE1hCzUb+pHwmhQB1OqjYMAwjy11lMvSXanMW3/50H/zmJ34b9RnoPnujf/BHwfzOt0jctyb+msIlRzchYyo67dMWYuq7evsz8kyBP5zQJpf9k1sy4FnMwBFT8K8AAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADQAwCdASoUAA0APzmKulOvKaWisAgB4CcJYjzTwB/ZgZIBU4Bsq7gA/pnjKRrR1Jp6pa7pVM7paTpLpM9NcehiRgzWwi3ZJUpNTpTztdBiihD4uPNH7sSfj//5olDhc385cy352tFEBjzZxh6xh6xh7Wlmj9v9LRIvlQDvQD0x3dFNRYcjkvsPLha0/xVeOUQA+QAA",
     "variants": {
       "avif": {
         "480": "/images/generated/service-residential-landscaping-480.avif",
         "640": "/images/generated/service-residential-landscaping-640.avif",
         "768": "/images/generated/service-residential-landscaping-768.avif",
         "1024": "/images/generated/service-residential-landscaping-1024.avif",
-        "1200": "/images/generated/service-residential-landscaping-1200.avif"
+        "1280": "/images/generated/service-residential-landscaping-1280.avif",
+        "1536": "/images/generated/service-residential-landscaping-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-residential-landscaping-480.webp",
         "640": "/images/generated/service-residential-landscaping-640.webp",
         "768": "/images/generated/service-residential-landscaping-768.webp",
         "1024": "/images/generated/service-residential-landscaping-1024.webp",
-        "1200": "/images/generated/service-residential-landscaping-1200.webp"
+        "1280": "/images/generated/service-residential-landscaping-1280.webp",
+        "1536": "/images/generated/service-residential-landscaping-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-residential-landscaping-480.jpeg",
         "640": "/images/generated/service-residential-landscaping-640.jpeg",
         "768": "/images/generated/service-residential-landscaping-768.jpeg",
         "1024": "/images/generated/service-residential-landscaping-1024.jpeg",
-        "1200": "/images/generated/service-residential-landscaping-1200.jpeg"
+        "1280": "/images/generated/service-residential-landscaping-1280.jpeg",
+        "1536": "/images/generated/service-residential-landscaping-1536.jpeg"
       }
     }
   },
   "/images/service-rock-landscaping.webp": {
     "originalPath": "/images/service-rock-landscaping.webp",
     "altBase": "service-rock-landscaping",
-    "width": 1200,
-    "height": 674,
-    "aspectRatio": 1.7804154302670623,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoUAAsAPzmQvlWvKqajMAgB4CcJZT11vvwiMAHqYZoAAdZAAP5mGL6Rbz0UEhCdRgs+BIw7uRJHjo4a+NGRvg0fW7ChImNNddvfia+C1w5zHq/QBL7E/zgfcPmead2ro4/f7T4nU1e39+n7KpMI6y79R8r9UtTd6k2AAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAwCdASoUAA0APzmGvFQvKSYjMAgB4CcJYj11tX/ZgcoC2JcuFu7QAP7N7mASd9ckX//Af+BUeJl8oIfAsNfzc8qkZIyn/OCGuMUdCOVvY//CynynChAd4pQoZ1pCn3gMxYmayZVge35Ih91jkh0IACR2cSzFSB04UkRwAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-rock-landscaping-480.avif",
         "640": "/images/generated/service-rock-landscaping-640.avif",
         "768": "/images/generated/service-rock-landscaping-768.avif",
         "1024": "/images/generated/service-rock-landscaping-1024.avif",
-        "1200": "/images/generated/service-rock-landscaping-1200.avif"
+        "1280": "/images/generated/service-rock-landscaping-1280.avif",
+        "1536": "/images/generated/service-rock-landscaping-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-rock-landscaping-480.webp",
         "640": "/images/generated/service-rock-landscaping-640.webp",
         "768": "/images/generated/service-rock-landscaping-768.webp",
         "1024": "/images/generated/service-rock-landscaping-1024.webp",
-        "1200": "/images/generated/service-rock-landscaping-1200.webp"
+        "1280": "/images/generated/service-rock-landscaping-1280.webp",
+        "1536": "/images/generated/service-rock-landscaping-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-rock-landscaping-480.jpeg",
         "640": "/images/generated/service-rock-landscaping-640.jpeg",
         "768": "/images/generated/service-rock-landscaping-768.jpeg",
         "1024": "/images/generated/service-rock-landscaping-1024.jpeg",
-        "1200": "/images/generated/service-rock-landscaping-1200.jpeg"
+        "1280": "/images/generated/service-rock-landscaping-1280.jpeg",
+        "1536": "/images/generated/service-rock-landscaping-1536.jpeg"
       }
     }
   },
   "/images/service-shrub-installation.webp": {
     "originalPath": "/images/service-shrub-installation.webp",
     "altBase": "service-shrub-installation",
-    "width": 1200,
-    "height": 1600,
-    "aspectRatio": 0.75,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAAAQBQCdASoUABsAPxl2sVOsp6Sit+gBkCMJYmEHd/aAhvJ24IsAjrHk+OEAxctdS9cAAP7XO/8ghJiJ8b87ZIEzApySirI8h2bJQYiIwT2HJro6Yv0/uV7hPNaxLIBhh3dgfEf/jE0piCuP1mbiO99Lo15vxUgrTZ9rXQ1qWkuNuO6qOQqcQsndNGJgDr+jYuPz85xebnf3v2BiPCn1lwFApJrV9qIgsXeW03/VL/lwLxt+N3+uxtbk86xNUhxez7+szveIf6OLlE15OF/3RVw3W3fc+M0NaJ1zVTyW77NorTo3oqgBJLkgXjsAiN+k8VYAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACwAwCdASoUAA0APzmGu1QvKSYjMAgB4CcJbF2URVtAHuhgABJvDAD+zeNHyCE/u8iPKmV0lRvpmoBYYLUgWqydX0i+lnpyJwsUJfcuLQYxz2IxyOLzTZjP97/rJIrznwRjnPgjHOfBgnNt4jf/cmINE2gRU3phVSND7e/q2b9l02LQAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-shrub-installation-480.avif",
         "640": "/images/generated/service-shrub-installation-640.avif",
         "768": "/images/generated/service-shrub-installation-768.avif",
         "1024": "/images/generated/service-shrub-installation-1024.avif",
-        "1200": "/images/generated/service-shrub-installation-1200.avif"
+        "1280": "/images/generated/service-shrub-installation-1280.avif",
+        "1536": "/images/generated/service-shrub-installation-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-shrub-installation-480.webp",
         "640": "/images/generated/service-shrub-installation-640.webp",
         "768": "/images/generated/service-shrub-installation-768.webp",
         "1024": "/images/generated/service-shrub-installation-1024.webp",
-        "1200": "/images/generated/service-shrub-installation-1200.webp"
+        "1280": "/images/generated/service-shrub-installation-1280.webp",
+        "1536": "/images/generated/service-shrub-installation-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-shrub-installation-480.jpeg",
         "640": "/images/generated/service-shrub-installation-640.jpeg",
         "768": "/images/generated/service-shrub-installation-768.jpeg",
         "1024": "/images/generated/service-shrub-installation-1024.jpeg",
-        "1200": "/images/generated/service-shrub-installation-1200.jpeg"
+        "1280": "/images/generated/service-shrub-installation-1280.jpeg",
+        "1536": "/images/generated/service-shrub-installation-1536.jpeg"
       }
     }
   },
   "/images/service-snow-removal.webp": {
     "originalPath": "/images/service-snow-removal.webp",
     "altBase": "service-snow-removal",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoUAA0APzmGuVOvKSWisAgB4CcJbEwARhYhZhsAAJIfAAD+3P7ciX45dBvUte1QvcLzZGXoOry27Dgl3e+ePF++stfXQn04sziwRq/nxB8Y0pHkDilh2m1oxvbf30WTcoLZdy/2X4kfxI/mFOxxptJCTBjj6BvXWOdgAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwAQCdASoUAA0ABUB8JZwABdSQAAD9/bOZP97hKf/Odcb5NpsLp2D3T4QAB2almDH/zJTAq6KvzuFjGPH0YCGGJ+vtiZerOF++5ZzHd9/l//nTt+v/6m6eeUEVzypkf0abTlH3ZdNdfDQdP1Sk6rD3DgAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/service-snow-removal-480.avif",
         "640": "/images/generated/service-snow-removal-640.avif",
         "768": "/images/generated/service-snow-removal-768.avif",
         "1024": "/images/generated/service-snow-removal-1024.avif",
-        "1200": "/images/generated/service-snow-removal-1200.avif"
+        "1280": "/images/generated/service-snow-removal-1280.avif",
+        "1536": "/images/generated/service-snow-removal-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-snow-removal-480.webp",
         "640": "/images/generated/service-snow-removal-640.webp",
         "768": "/images/generated/service-snow-removal-768.webp",
         "1024": "/images/generated/service-snow-removal-1024.webp",
-        "1200": "/images/generated/service-snow-removal-1200.webp"
+        "1280": "/images/generated/service-snow-removal-1280.webp",
+        "1536": "/images/generated/service-snow-removal-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-snow-removal-480.jpeg",
         "640": "/images/generated/service-snow-removal-640.jpeg",
         "768": "/images/generated/service-snow-removal-768.jpeg",
         "1024": "/images/generated/service-snow-removal-1024.jpeg",
-        "1200": "/images/generated/service-snow-removal-1200.jpeg"
+        "1280": "/images/generated/service-snow-removal-1280.jpeg",
+        "1536": "/images/generated/service-snow-removal-1536.jpeg"
       }
     }
   },
@@ -1310,32 +2070,35 @@
   "/images/service-tree-service.webp": {
     "originalPath": "/images/service-tree-service.webp",
     "altBase": "service-tree-service",
-    "width": 1200,
-    "height": 800,
+    "width": 1536,
+    "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACQAwCdASoUAA0APzmGuVOvKSWisAgB4CcJYjzuvXUgCdAC8NgAAP6D9lN+37h/4lbNy/sgyBswszc8MeFAc1Tf368p2ewB5NjkvyHsCyZ6fs4h/l9279Mf/OYr9U+bSZpfv5stf+dA888RC659aT8Zgw0K4sdXd9Je53jws0U0WktB8OGAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADQAwCdASoUAA0APzmOvlOvKqcisAgB4CcJbFoGPb8hpJF7gAF0+QAA/uEYN3RKv8BkgvGWmU3lHszGUuXMH13k8Ew2nm/+R4g/pvfHRWrboNn5U8Rcl5yXnJ8v9PWIDPvCgM16bifLY5+/koBULOvfK8LKUJwgPbQBONUls9ckAKpQowAmgAFHAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-tree-service-480.avif",
         "640": "/images/generated/service-tree-service-640.avif",
         "768": "/images/generated/service-tree-service-768.avif",
         "1024": "/images/generated/service-tree-service-1024.avif",
-        "1200": "/images/generated/service-tree-service-1200.avif"
+        "1280": "/images/generated/service-tree-service-1280.avif",
+        "1536": "/images/generated/service-tree-service-1536.avif"
       },
       "webp": {
         "480": "/images/generated/service-tree-service-480.webp",
         "640": "/images/generated/service-tree-service-640.webp",
         "768": "/images/generated/service-tree-service-768.webp",
         "1024": "/images/generated/service-tree-service-1024.webp",
-        "1200": "/images/generated/service-tree-service-1200.webp"
+        "1280": "/images/generated/service-tree-service-1280.webp",
+        "1536": "/images/generated/service-tree-service-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/service-tree-service-480.jpeg",
         "640": "/images/generated/service-tree-service-640.jpeg",
         "768": "/images/generated/service-tree-service-768.jpeg",
         "1024": "/images/generated/service-tree-service-1024.jpeg",
-        "1200": "/images/generated/service-tree-service-1200.jpeg"
+        "1280": "/images/generated/service-tree-service-1280.jpeg",
+        "1536": "/images/generated/service-tree-service-1536.jpeg"
       }
     }
   },
@@ -1343,17 +2106,16 @@
     "originalPath": "/images/services-hero.webp",
     "altBase": "services-hero",
     "width": 2560,
-    "height": 3840,
-    "aspectRatio": 0.6666666666666666,
+    "height": 1707,
+    "aspectRatio": 1.5,
     "isHero": true,
-    "blurPlaceholder": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAABQBACdASoUAB4APzmOuVcvKaUjqA1R4CcJZF2byrZItVMAFAAL20HMo3IAAP7iH4nnzAn+R+PQq1d/NqWLvaEod8wunNOrSIkvsxm/b5AXgOftOaUuuMOlOG1Q2wkf7To5AmJMZyDO6iqoEOf/VzcB5UJ++UUzPVR7v96H8Nf0ryioZ1+qB/HaEtNjr3jcQ23ey2kBepkf/cR9+10nVpgl+dhiqggtz33QAbz4zlwxPh4D5y5lvv/17cgjN7LPF9V/NmfPSvSKcH66qtKWelRHGZchD/pSlX2wA5MAII9AAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQAwCdASoUAA0APzmMvlUvKaajMAgB4CcJZD11uBMKwZAAk/tAAP7NkfdZurN/l+nFytKEUBlB38T0k7yRhKJlpJFe1ipKcO4fGjN7Gefrll2NX/m4//XrIhoiNL7U0+2fSp66fcavqG68EobrwSlgdSYwLk3+39n9v7P7gNe1eAjFllzIq95sjVVxjqTFuVm17c9Y2gAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/services-hero-480.avif",
         "640": "/images/generated/services-hero-640.avif",
         "768": "/images/generated/services-hero-768.avif",
         "1024": "/images/generated/services-hero-1024.avif",
-        "1200": "/images/generated/services-hero-1200.avif",
         "1280": "/images/generated/services-hero-1280.avif",
         "1536": "/images/generated/services-hero-1536.avif",
         "1920": "/images/generated/services-hero-1920.avif",
@@ -1364,7 +2126,6 @@
         "640": "/images/generated/services-hero-640.webp",
         "768": "/images/generated/services-hero-768.webp",
         "1024": "/images/generated/services-hero-1024.webp",
-        "1200": "/images/generated/services-hero-1200.webp",
         "1280": "/images/generated/services-hero-1280.webp",
         "1536": "/images/generated/services-hero-1536.webp",
         "1920": "/images/generated/services-hero-1920.webp",
@@ -1375,7 +2136,6 @@
         "640": "/images/generated/services-hero-640.jpeg",
         "768": "/images/generated/services-hero-768.jpeg",
         "1024": "/images/generated/services-hero-1024.jpeg",
-        "1200": "/images/generated/services-hero-1200.jpeg",
         "1280": "/images/generated/services-hero-1280.jpeg",
         "1536": "/images/generated/services-hero-1536.jpeg",
         "1920": "/images/generated/services-hero-1920.jpeg",
@@ -1386,491 +2146,855 @@
   "/images/sprinklers.webp": {
     "originalPath": "/images/sprinklers.webp",
     "altBase": "sprinklers",
-    "width": 1200,
-    "height": 652,
-    "aspectRatio": 1.8404907975460123,
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwAwCdASoUAAsAPzmGu1OvKSYisAgB4CcJZCzcKPyXQApmngAA/sIn+oOmh/0n/2so5oTpjOEB84eewKQXNmo+w2/qv/4JIU+//3ePJhXsVWwYUBrvveh8BOz9b/Z3+N8+9iD/G+fexB/jfPv0byTYc8mrKAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABQAQCdASoUAA0ABUB8JQAAmLAAAP7bCs+mNMHetm5r6JrpdqX56ogRhAT+U67bU6zlMeas4zTFpAhIBTDuU5YFxr9yhXD3Rj6emtiXrhzG2ooAAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/sprinklers-480.avif",
         "640": "/images/generated/sprinklers-640.avif",
         "768": "/images/generated/sprinklers-768.avif",
         "1024": "/images/generated/sprinklers-1024.avif",
-        "1200": "/images/generated/sprinklers-1200.avif"
+        "1280": "/images/generated/sprinklers-1280.avif",
+        "1536": "/images/generated/sprinklers-1536.avif"
       },
       "webp": {
         "480": "/images/generated/sprinklers-480.webp",
         "640": "/images/generated/sprinklers-640.webp",
         "768": "/images/generated/sprinklers-768.webp",
         "1024": "/images/generated/sprinklers-1024.webp",
-        "1200": "/images/generated/sprinklers-1200.webp"
+        "1280": "/images/generated/sprinklers-1280.webp",
+        "1536": "/images/generated/sprinklers-1536.webp"
       },
       "jpeg": {
         "480": "/images/generated/sprinklers-480.jpeg",
         "640": "/images/generated/sprinklers-640.jpeg",
         "768": "/images/generated/sprinklers-768.jpeg",
         "1024": "/images/generated/sprinklers-1024.jpeg",
-        "1200": "/images/generated/sprinklers-1200.jpeg"
+        "1280": "/images/generated/sprinklers-1280.jpeg",
+        "1536": "/images/generated/sprinklers-1536.jpeg"
       }
     }
   },
   "/images/wall-after-1.webp": {
     "originalPath": "/images/wall-after-1.webp",
     "altBase": "wall-after-1",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAADQBQCdASoUABQAPzmKwFcvKScjsBgIAeAnCUe49G/Ld0j8IrFeCl3+H6q+gGXDNEAtQVsX/GugAP6ifjv+PfZsvzuJ++//Hb4MW8j/+Stm038wfvffjjCT7lRCKybFx61kmFjh77HITZJxwByDpixGhUnZ+G+vDcUEcncNV769j3Npkwf/1FM9ptvHAVVruLvjfaBlCXKEds5k68/tY8OET3gXn9crf/P65W/+mhh7fDEv7//uQJ6nHf7/CR9PXpNoOgv9kPYsuWotPvYSpKLDQdrWkXJdyBJ//Mlc7NLWtIug/y7RyafLQWMnQSTdSYUcNwDteX78nz7gAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABQBACdASoUABQAPy2Au1OuqKaisAwB0CWJR7WUbyj8T8yr7QAvEE9BuyFAAP7GR/0/0QS/z51FdlebZVnZzUA7xZvLulhXRScq85NKp/xJDLxpwuyBP/VvArI9AxSwaQmLPx4/ZjLsnX2Ut/AWPw/ltPZK69THg3X7jjrmnu9z19bbRpWiy+aXc+sdkkl+/b+XkOEF/5lTk9fN7l77uv+CM1myM4M9YryLw6aGbw6aGbw6aInc+cpa1UUT8AAA",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-1-480.avif",
         "640": "/images/generated/wall-after-1-640.avif",
         "768": "/images/generated/wall-after-1-768.avif",
         "1024": "/images/generated/wall-after-1-1024.avif",
-        "1200": "/images/generated/wall-after-1-1200.avif"
+        "1280": "/images/generated/wall-after-1-1280.avif",
+        "1536": "/images/generated/wall-after-1-1536.avif",
+        "1920": "/images/generated/wall-after-1-1920.avif",
+        "2560": "/images/generated/wall-after-1-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-after-1-480.webp",
         "640": "/images/generated/wall-after-1-640.webp",
         "768": "/images/generated/wall-after-1-768.webp",
         "1024": "/images/generated/wall-after-1-1024.webp",
-        "1200": "/images/generated/wall-after-1-1200.webp"
+        "1280": "/images/generated/wall-after-1-1280.webp",
+        "1536": "/images/generated/wall-after-1-1536.webp",
+        "1920": "/images/generated/wall-after-1-1920.webp",
+        "2560": "/images/generated/wall-after-1-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-after-1-480.jpeg",
         "640": "/images/generated/wall-after-1-640.jpeg",
         "768": "/images/generated/wall-after-1-768.jpeg",
         "1024": "/images/generated/wall-after-1-1024.jpeg",
-        "1200": "/images/generated/wall-after-1-1200.jpeg"
+        "1280": "/images/generated/wall-after-1-1280.jpeg",
+        "1536": "/images/generated/wall-after-1-1536.jpeg",
+        "1920": "/images/generated/wall-after-1-1920.jpeg",
+        "2560": "/images/generated/wall-after-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/wall-after-2.webp": {
+    "originalPath": "/images/wall-after-2.webp",
+    "altBase": "wall-after-2",
+    "width": 2560,
+    "height": 2560,
+    "aspectRatio": 1,
+    "isHero": false,
+    "blurPlaceholder": "",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/wall-after-2-480.avif",
+        "640": "/images/generated/wall-after-2-640.avif",
+        "768": "/images/generated/wall-after-2-768.avif",
+        "1024": "/images/generated/wall-after-2-1024.avif",
+        "1280": "/images/generated/wall-after-2-1280.avif",
+        "1536": "/images/generated/wall-after-2-1536.avif",
+        "1920": "/images/generated/wall-after-2-1920.avif",
+        "2560": "/images/generated/wall-after-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/wall-after-2-480.webp",
+        "640": "/images/generated/wall-after-2-640.webp",
+        "768": "/images/generated/wall-after-2-768.webp",
+        "1024": "/images/generated/wall-after-2-1024.webp",
+        "1280": "/images/generated/wall-after-2-1280.webp",
+        "1536": "/images/generated/wall-after-2-1536.webp",
+        "1920": "/images/generated/wall-after-2-1920.webp",
+        "2560": "/images/generated/wall-after-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/wall-after-2-480.jpeg",
+        "640": "/images/generated/wall-after-2-640.jpeg",
+        "768": "/images/generated/wall-after-2-768.jpeg",
+        "1024": "/images/generated/wall-after-2-1024.jpeg",
+        "1280": "/images/generated/wall-after-2-1280.jpeg",
+        "1536": "/images/generated/wall-after-2-1536.jpeg",
+        "1920": "/images/generated/wall-after-2-1920.jpeg",
+        "2560": "/images/generated/wall-after-2-2560.jpeg"
       }
     }
   },
   "/images/wall-after-3.webp": {
     "originalPath": "/images/wall-after-3.webp",
     "altBase": "wall-after-3",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACQAwCdASoUABQAPzmSvlgvKiYjqAqp4CcJZWf4SUGYADrRvMcAAP5EWn4aMHdsKnaUQlxFijph1az4joUQVUZi5kGTmkt9QGApD6GgOC4tAs9ezsMEIPp3eDxc+V+PJ4PFg6r4vdUkcW4JICDZwGUR8iIAjLFkXBNWqtogMazMlxPZ7UTeKAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwAwCdASoUABQAPzmSvlevKqYjqAqp4CcJZz8cwcAAO5vgWAAA/mWuvOzj7+alzuPj9pMTd9EFBJas8v7bjZXSJt8OJlaBa3ubwrZl2Tek6UrijJopnkwqkrw5R4mNNQYjKLlLdbqqDdSKoNatKc8qZbIEzMfaSHJcTZg4uxSVET0jEEpshX+iBrjbT3IIAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-3-480.avif",
         "640": "/images/generated/wall-after-3-640.avif",
         "768": "/images/generated/wall-after-3-768.avif",
         "1024": "/images/generated/wall-after-3-1024.avif",
-        "1200": "/images/generated/wall-after-3-1200.avif"
+        "1280": "/images/generated/wall-after-3-1280.avif",
+        "1536": "/images/generated/wall-after-3-1536.avif",
+        "1920": "/images/generated/wall-after-3-1920.avif",
+        "2560": "/images/generated/wall-after-3-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-after-3-480.webp",
         "640": "/images/generated/wall-after-3-640.webp",
         "768": "/images/generated/wall-after-3-768.webp",
         "1024": "/images/generated/wall-after-3-1024.webp",
-        "1200": "/images/generated/wall-after-3-1200.webp"
+        "1280": "/images/generated/wall-after-3-1280.webp",
+        "1536": "/images/generated/wall-after-3-1536.webp",
+        "1920": "/images/generated/wall-after-3-1920.webp",
+        "2560": "/images/generated/wall-after-3-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-after-3-480.jpeg",
         "640": "/images/generated/wall-after-3-640.jpeg",
         "768": "/images/generated/wall-after-3-768.jpeg",
         "1024": "/images/generated/wall-after-3-1024.jpeg",
-        "1200": "/images/generated/wall-after-3-1200.jpeg"
+        "1280": "/images/generated/wall-after-3-1280.jpeg",
+        "1536": "/images/generated/wall-after-3-1536.jpeg",
+        "1920": "/images/generated/wall-after-3-1920.jpeg",
+        "2560": "/images/generated/wall-after-3-2560.jpeg"
       }
     }
   },
   "/images/wall-after-4.webp": {
     "originalPath": "/images/wall-after-4.webp",
     "altBase": "wall-after-4",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABQAwCdASoUABQAPzmSwFevKqajqAqp4CcJZRxEDkCR7n2NgAD9Mf6T/6VPXWsd8OgkfTPo5jSwymaLX+7LfFJJey8GrU05mEzksejqbw/v/0QMJfCatWS/yD5v8g+b/IQmRjYqFihZRANWPxL+XYk6dcndMVknnhgvtU6//LnyPLXIx3/gTyemPyRrfyRrfyRUzxU9AAAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAADwAwCdASoUABQAPzmSu1gvKiWjqAqp4CcJZS08R6vQYSMDuaCFN1egAP0x/pP/pU9dax3w6BUN+XTWlKvvtk69AIEMEGC+N+5iqJsSaWSwuvdUu9//1pcsSwVKKv1nahPFldcw3PyxLB7o76IEAdECofZXQXroxJVZhXd7CCv/q58jy1yMd/4E8npj8ka38ka38kYA2JqnqFAAAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-4-480.avif",
         "640": "/images/generated/wall-after-4-640.avif",
         "768": "/images/generated/wall-after-4-768.avif",
         "1024": "/images/generated/wall-after-4-1024.avif",
-        "1200": "/images/generated/wall-after-4-1200.avif"
+        "1280": "/images/generated/wall-after-4-1280.avif",
+        "1536": "/images/generated/wall-after-4-1536.avif",
+        "1920": "/images/generated/wall-after-4-1920.avif",
+        "2560": "/images/generated/wall-after-4-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-after-4-480.webp",
         "640": "/images/generated/wall-after-4-640.webp",
         "768": "/images/generated/wall-after-4-768.webp",
         "1024": "/images/generated/wall-after-4-1024.webp",
-        "1200": "/images/generated/wall-after-4-1200.webp"
+        "1280": "/images/generated/wall-after-4-1280.webp",
+        "1536": "/images/generated/wall-after-4-1536.webp",
+        "1920": "/images/generated/wall-after-4-1920.webp",
+        "2560": "/images/generated/wall-after-4-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-after-4-480.jpeg",
         "640": "/images/generated/wall-after-4-640.jpeg",
         "768": "/images/generated/wall-after-4-768.jpeg",
         "1024": "/images/generated/wall-after-4-1024.jpeg",
-        "1200": "/images/generated/wall-after-4-1200.jpeg"
+        "1280": "/images/generated/wall-after-4-1280.jpeg",
+        "1536": "/images/generated/wall-after-4-1536.jpeg",
+        "1920": "/images/generated/wall-after-4-1920.jpeg",
+        "2560": "/images/generated/wall-after-4-2560.jpeg"
       }
     }
   },
   "/images/wall-after-5.webp": {
     "originalPath": "/images/wall-after-5.webp",
     "altBase": "wall-after-5",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADwAwCdASoUABQAPzmYxVqvKigkKAgB4CcJZz8cvJ+rq2KCiQBw4isAAP5lrrzs4+/mpc7j45FQW7Xj1cCHWnRIC16DakLaTyj4VjMRh+9laDVp8cN89rbPL4x24vRfFmYK/d5T7swTSBuIrPQvzrbjE9Pdv1EgzrEG36lRFEIPoARQce8SK+m3oH7RGW6L1mCDXgpNNR2soSzyCQAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQAwCdASoUABQAPzmQwlcvKaejqAqp4CcJZT5owuCWjBReApQAAP5EWn4aMHj7R32l/quxiFrZhCBDZCdhNGnaTLqKuIlflF5PtsTFjSftx2+4pPqiO84OnsGE45O6/CY3A1lMn5+aHPKPJBRHpV8143dXwt0//gVjeHoLFsBSiHlCAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-5-480.avif",
         "640": "/images/generated/wall-after-5-640.avif",
         "768": "/images/generated/wall-after-5-768.avif",
         "1024": "/images/generated/wall-after-5-1024.avif",
-        "1200": "/images/generated/wall-after-5-1200.avif"
+        "1280": "/images/generated/wall-after-5-1280.avif",
+        "1536": "/images/generated/wall-after-5-1536.avif",
+        "1920": "/images/generated/wall-after-5-1920.avif",
+        "2560": "/images/generated/wall-after-5-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-after-5-480.webp",
         "640": "/images/generated/wall-after-5-640.webp",
         "768": "/images/generated/wall-after-5-768.webp",
         "1024": "/images/generated/wall-after-5-1024.webp",
-        "1200": "/images/generated/wall-after-5-1200.webp"
+        "1280": "/images/generated/wall-after-5-1280.webp",
+        "1536": "/images/generated/wall-after-5-1536.webp",
+        "1920": "/images/generated/wall-after-5-1920.webp",
+        "2560": "/images/generated/wall-after-5-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-after-5-480.jpeg",
         "640": "/images/generated/wall-after-5-640.jpeg",
         "768": "/images/generated/wall-after-5-768.jpeg",
         "1024": "/images/generated/wall-after-5-1024.jpeg",
-        "1200": "/images/generated/wall-after-5-1200.jpeg"
+        "1280": "/images/generated/wall-after-5-1280.jpeg",
+        "1536": "/images/generated/wall-after-5-1536.jpeg",
+        "1920": "/images/generated/wall-after-5-1920.jpeg",
+        "2560": "/images/generated/wall-after-5-2560.jpeg"
       }
     }
   },
   "/images/wall-after-6.webp": {
     "originalPath": "/images/wall-after-6.webp",
     "altBase": "wall-after-6",
-    "width": 1200,
-    "height": 900,
+    "width": 2560,
+    "height": 1920,
     "aspectRatio": 1.3333333333333333,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADQAwCdASoUAA8ALvmczmclLy8vDwD4SxHcNgzhEeAyv1jAL2AfuQAA/tGJ/1z/6UEo/5Pfd/b/1fmOQ1OpDMaos6SY+C3E7jVvvTMTscqXgmuSLz0pyrXb/Lrridsh4B+uf/GLugW5TUNcipienSSLq3WcNT5HHpWd44KAUWM14uFcE0JFIK7SNdAAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADQAwCdASoUAA8ALvmczmclLy8vDwD4SxHcNgzhEeAyv1ioK0AfuQAA/tGJ/1z/6UEo/5Pfd/b/1flkwiispqE6kv/lacC3Jc030V9hu6dzJcuuj26zxKs4uPB+Ghzx/wGmN/LeO3L+/PgbnAX/Ofzgpqj4AftcU811qt1+Dv3uAwzfWTSMN/BeEggAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-6-480.avif",
         "640": "/images/generated/wall-after-6-640.avif",
         "768": "/images/generated/wall-after-6-768.avif",
         "1024": "/images/generated/wall-after-6-1024.avif",
-        "1200": "/images/generated/wall-after-6-1200.avif"
+        "1280": "/images/generated/wall-after-6-1280.avif",
+        "1536": "/images/generated/wall-after-6-1536.avif",
+        "1920": "/images/generated/wall-after-6-1920.avif",
+        "2560": "/images/generated/wall-after-6-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-after-6-480.webp",
         "640": "/images/generated/wall-after-6-640.webp",
         "768": "/images/generated/wall-after-6-768.webp",
         "1024": "/images/generated/wall-after-6-1024.webp",
-        "1200": "/images/generated/wall-after-6-1200.webp"
+        "1280": "/images/generated/wall-after-6-1280.webp",
+        "1536": "/images/generated/wall-after-6-1536.webp",
+        "1920": "/images/generated/wall-after-6-1920.webp",
+        "2560": "/images/generated/wall-after-6-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-after-6-480.jpeg",
         "640": "/images/generated/wall-after-6-640.jpeg",
         "768": "/images/generated/wall-after-6-768.jpeg",
         "1024": "/images/generated/wall-after-6-1024.jpeg",
-        "1200": "/images/generated/wall-after-6-1200.jpeg"
+        "1280": "/images/generated/wall-after-6-1280.jpeg",
+        "1536": "/images/generated/wall-after-6-1536.jpeg",
+        "1920": "/images/generated/wall-after-6-1920.jpeg",
+        "2560": "/images/generated/wall-after-6-2560.jpeg"
       }
     }
   },
   "/images/wall-after-7.webp": {
     "originalPath": "/images/wall-after-7.webp",
     "altBase": "wall-after-7",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAADQBACdASoUABQAPzmMvlSvKaajMAgB4CcJRnApmqgMUMT9ZC+0ALE4bgZb+ROEAAD+0nrhPe6iiSuaOVt/7+wU2/eNwLxbidHEqC9rOb+jn7A8YyrpETuBCSjK7cT+V/+uIr//2W/fbq5Jv1ScwUKEdc1SmNgnLCzS+hhpNMZKWb1KWb1KWcJX1eDq62vX1tevravW6I7dT0n0+3+TGRuTriNhI01MaRI/yf5OQ/Z3zEiaUAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBACdASoUABQAPzmMvlSvKaajMAgB4CcJRnApmqgMUMT9Y3/EAWJxYAy38icIAP7SeuE97qKJK5o5W3/v7BRcdhbWvFuI+aUQVICOJhXXzfXYXAZGlNK5P+lFMfyv/1xFf/+y377dWncQt6jAJcqINpBjhKK/YXzGGPnTSsHTEtL83qHODsD62tz1tbnrapXo+VaNY4QzMZUaAfEUWj52rHXZ3nPn9HFJgWEAAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-7-480.avif",
         "640": "/images/generated/wall-after-7-640.avif",
         "768": "/images/generated/wall-after-7-768.avif",
         "1024": "/images/generated/wall-after-7-1024.avif",
-        "1200": "/images/generated/wall-after-7-1200.avif"
+        "1280": "/images/generated/wall-after-7-1280.avif",
+        "1536": "/images/generated/wall-after-7-1536.avif",
+        "1920": "/images/generated/wall-after-7-1920.avif",
+        "2560": "/images/generated/wall-after-7-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-after-7-480.webp",
         "640": "/images/generated/wall-after-7-640.webp",
         "768": "/images/generated/wall-after-7-768.webp",
         "1024": "/images/generated/wall-after-7-1024.webp",
-        "1200": "/images/generated/wall-after-7-1200.webp"
+        "1280": "/images/generated/wall-after-7-1280.webp",
+        "1536": "/images/generated/wall-after-7-1536.webp",
+        "1920": "/images/generated/wall-after-7-1920.webp",
+        "2560": "/images/generated/wall-after-7-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-after-7-480.jpeg",
         "640": "/images/generated/wall-after-7-640.jpeg",
         "768": "/images/generated/wall-after-7-768.jpeg",
         "1024": "/images/generated/wall-after-7-1024.jpeg",
-        "1200": "/images/generated/wall-after-7-1200.jpeg"
+        "1280": "/images/generated/wall-after-7-1280.jpeg",
+        "1536": "/images/generated/wall-after-7-1536.jpeg",
+        "1920": "/images/generated/wall-after-7-1920.jpeg",
+        "2560": "/images/generated/wall-after-7-2560.jpeg"
       }
     }
   },
   "/images/wall-before-1.webp": {
     "originalPath": "/images/wall-before-1.webp",
     "altBase": "wall-before-1",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABwAwCdASoUABQAPzmCulOvKCWit/VYAeAnCUzICvMkvs6yhQAA/tif8D//SvV59LFjEKY0s8tM4Md8bOs67+tYuB7JRfA+X0SDfwmE8hF5z5K6Tb2J83z9MsW5zOrx1mM9tnvnKp+73Wrtu0fl7XAEHbIvK8BWooSohZB39szlZtf2X0ihwUVVuSUqLMWvFKfaJKbAWUOuoAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwAwCdASoUABQAPyl8tlOuJ6UisAwBwCUJYz3sU0yLzWwYUA1AJBwwAP7bCstP/wWirun7X9uK/7r0u+FJ6X2SSVICEs22qiPDXftigPHbd5bIVrTdBKnoIrHSUlpkTz7I1/tzQG/yiSpoHUT0eiA8ms7pl/jws1nruLsJdbcLUDUYcUACgjsrT7083kEQG9pA3VcLvCd6W4YPvXbnhXVACLosWpSgAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-1-480.avif",
         "640": "/images/generated/wall-before-1-640.avif",
         "768": "/images/generated/wall-before-1-768.avif",
         "1024": "/images/generated/wall-before-1-1024.avif",
-        "1200": "/images/generated/wall-before-1-1200.avif"
+        "1280": "/images/generated/wall-before-1-1280.avif",
+        "1536": "/images/generated/wall-before-1-1536.avif",
+        "1920": "/images/generated/wall-before-1-1920.avif",
+        "2560": "/images/generated/wall-before-1-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-before-1-480.webp",
         "640": "/images/generated/wall-before-1-640.webp",
         "768": "/images/generated/wall-before-1-768.webp",
         "1024": "/images/generated/wall-before-1-1024.webp",
-        "1200": "/images/generated/wall-before-1-1200.webp"
+        "1280": "/images/generated/wall-before-1-1280.webp",
+        "1536": "/images/generated/wall-before-1-1536.webp",
+        "1920": "/images/generated/wall-before-1-1920.webp",
+        "2560": "/images/generated/wall-before-1-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-before-1-480.jpeg",
         "640": "/images/generated/wall-before-1-640.jpeg",
         "768": "/images/generated/wall-before-1-768.jpeg",
         "1024": "/images/generated/wall-before-1-1024.jpeg",
-        "1200": "/images/generated/wall-before-1-1200.jpeg"
+        "1280": "/images/generated/wall-before-1-1280.jpeg",
+        "1536": "/images/generated/wall-before-1-1536.jpeg",
+        "1920": "/images/generated/wall-before-1-1920.jpeg",
+        "2560": "/images/generated/wall-before-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/wall-before-2.webp": {
+    "originalPath": "/images/wall-before-2.webp",
+    "altBase": "wall-before-2",
+    "width": 2560,
+    "height": 2560,
+    "aspectRatio": 1,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwAwCdASoUABQAPzmCulOvKCWit/VYAeAnCUZx4LWGTA/tLbAA/tif8D//SvV59LFjEKY0s/5RLTA67qIw5J9mlnyWiJXw1kjcX8xD3qzsiyYeoadJvp//B+6X5XNy+O5jPbZaTePyERct2AvTx6cJXnoMEEzAg7bMwGFeuRt+5TjwsGfxtEH0r9QsNNFzRc0XNKd5F8Ml9+39jEAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/wall-before-2-480.avif",
+        "640": "/images/generated/wall-before-2-640.avif",
+        "768": "/images/generated/wall-before-2-768.avif",
+        "1024": "/images/generated/wall-before-2-1024.avif",
+        "1280": "/images/generated/wall-before-2-1280.avif",
+        "1536": "/images/generated/wall-before-2-1536.avif",
+        "1920": "/images/generated/wall-before-2-1920.avif",
+        "2560": "/images/generated/wall-before-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/wall-before-2-480.webp",
+        "640": "/images/generated/wall-before-2-640.webp",
+        "768": "/images/generated/wall-before-2-768.webp",
+        "1024": "/images/generated/wall-before-2-1024.webp",
+        "1280": "/images/generated/wall-before-2-1280.webp",
+        "1536": "/images/generated/wall-before-2-1536.webp",
+        "1920": "/images/generated/wall-before-2-1920.webp",
+        "2560": "/images/generated/wall-before-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/wall-before-2-480.jpeg",
+        "640": "/images/generated/wall-before-2-640.jpeg",
+        "768": "/images/generated/wall-before-2-768.jpeg",
+        "1024": "/images/generated/wall-before-2-1024.jpeg",
+        "1280": "/images/generated/wall-before-2-1280.jpeg",
+        "1536": "/images/generated/wall-before-2-1536.jpeg",
+        "1920": "/images/generated/wall-before-2-1920.jpeg",
+        "2560": "/images/generated/wall-before-2-2560.jpeg"
       }
     }
   },
   "/images/wall-before-3.webp": {
     "originalPath": "/images/wall-before-3.webp",
     "altBase": "wall-before-3",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwAwCdASoUABQAPzmSwlovKackKAgB4CcJZWGLXFWYKrcF7uigAAD9jfBEXu5BufUTZFKkAn0PhpE3VsuFWAWfvaiW7ff+5f+6iivP/26ZOuvxgdSpYXqFHm7Pwydm1DJds8zqne8i8FWGT7BcUFogIArO1MmSescf5fthxaIpkwTyfNt3fUN9pBv1wAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQAwCdASoUABQAPzmKu1UvKaYjKA1R4CcJR8gxbgAK9rL1oAD9/a6cjpLHHcT7Z1FTZv7PkjQ7eV6Q0rUNSOR3f6NDKAt3aTobM8f2Ln6oc2lKgyf8ffO+IP/h0UQ9T9zVBcf/PRDzIQ31JMdlVJq2acoI8p5wr8sQ1FTsb1nNjo39nBu2AR55O/IJDC8Jv8OAUQosiNZyeFyoHGkHRgq61AAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-3-480.avif",
         "640": "/images/generated/wall-before-3-640.avif",
         "768": "/images/generated/wall-before-3-768.avif",
         "1024": "/images/generated/wall-before-3-1024.avif",
-        "1200": "/images/generated/wall-before-3-1200.avif"
+        "1280": "/images/generated/wall-before-3-1280.avif",
+        "1536": "/images/generated/wall-before-3-1536.avif",
+        "1920": "/images/generated/wall-before-3-1920.avif",
+        "2560": "/images/generated/wall-before-3-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-before-3-480.webp",
         "640": "/images/generated/wall-before-3-640.webp",
         "768": "/images/generated/wall-before-3-768.webp",
         "1024": "/images/generated/wall-before-3-1024.webp",
-        "1200": "/images/generated/wall-before-3-1200.webp"
+        "1280": "/images/generated/wall-before-3-1280.webp",
+        "1536": "/images/generated/wall-before-3-1536.webp",
+        "1920": "/images/generated/wall-before-3-1920.webp",
+        "2560": "/images/generated/wall-before-3-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-before-3-480.jpeg",
         "640": "/images/generated/wall-before-3-640.jpeg",
         "768": "/images/generated/wall-before-3-768.jpeg",
         "1024": "/images/generated/wall-before-3-1024.jpeg",
-        "1200": "/images/generated/wall-before-3-1200.jpeg"
+        "1280": "/images/generated/wall-before-3-1280.jpeg",
+        "1536": "/images/generated/wall-before-3-1536.jpeg",
+        "1920": "/images/generated/wall-before-3-1920.jpeg",
+        "2560": "/images/generated/wall-before-3-2560.jpeg"
       }
     }
   },
   "/images/wall-before-4.webp": {
     "originalPath": "/images/wall-before-4.webp",
     "altBase": "wall-before-4",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAADwAwCdASoUABQAPzmYwVmvKqcjqAgB4CcJTD+QfGfJeIOF3tDFR+lAAP6eWoVduBdnZWWUOZYBSATwQmqXillOYQpsa+rJ/pez3zcelzsZP/y//2zg///fImAYiH6is+orPqL4n8DnoELojFKnzIa9uLJzHv2yXL4UF9lv7qRH9O9FAKr5/Q3WLoal+Dbgzc8C/tzC2CNsiWCQ7zdtsiWCQ7zdtsidpO+X03ISMFRk9IWnDsJAAAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAADwAwCdASoUABQAPzmUwVmvKicjqAgB4CcJTJK2rGfJ0GmFuWjFR8cAAP6eWoVduBdnZWfroQlNtaVJRaZqZ1RvS85JS4yGsn+2T7gFT5hpYqH/vv/1nB//++RPBxwMG8p6TtZE7Xw/6kbgzaBC2aRtHU4dcBztAAVENZh437CP3UiP6d6gsMep8F2ZnWqk25v6897hMfmoBtNbZEiGIPb/JDjEa9DJMkkvGsqcENOLKbWupgAEwAAA",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-4-480.avif",
         "640": "/images/generated/wall-before-4-640.avif",
         "768": "/images/generated/wall-before-4-768.avif",
         "1024": "/images/generated/wall-before-4-1024.avif",
-        "1200": "/images/generated/wall-before-4-1200.avif"
+        "1280": "/images/generated/wall-before-4-1280.avif",
+        "1536": "/images/generated/wall-before-4-1536.avif",
+        "1920": "/images/generated/wall-before-4-1920.avif",
+        "2560": "/images/generated/wall-before-4-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-before-4-480.webp",
         "640": "/images/generated/wall-before-4-640.webp",
         "768": "/images/generated/wall-before-4-768.webp",
         "1024": "/images/generated/wall-before-4-1024.webp",
-        "1200": "/images/generated/wall-before-4-1200.webp"
+        "1280": "/images/generated/wall-before-4-1280.webp",
+        "1536": "/images/generated/wall-before-4-1536.webp",
+        "1920": "/images/generated/wall-before-4-1920.webp",
+        "2560": "/images/generated/wall-before-4-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-before-4-480.jpeg",
         "640": "/images/generated/wall-before-4-640.jpeg",
         "768": "/images/generated/wall-before-4-768.jpeg",
         "1024": "/images/generated/wall-before-4-1024.jpeg",
-        "1200": "/images/generated/wall-before-4-1200.jpeg"
+        "1280": "/images/generated/wall-before-4-1280.jpeg",
+        "1536": "/images/generated/wall-before-4-1536.jpeg",
+        "1920": "/images/generated/wall-before-4-1920.jpeg",
+        "2560": "/images/generated/wall-before-4-2560.jpeg"
       }
     }
   },
   "/images/wall-before-5.webp": {
     "originalPath": "/images/wall-before-5.webp",
     "altBase": "wall-before-5",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAADwBQCdASoUABQAPzmQvVWvKiajMBgIAeAnCWQ+EErf27sLrKD4A4w2JPkBzJfNCzckFLS6Kk+nkAD+s9i46nyydd7PvuHkan//E1tK1JQDvHv/Nnr/CWoEpH/E2doQsKJd4N7Ax6xuMwQqCV86rnpz1hOhkCrhvw5bCPkzcgYVOBUfpYQXfYJ5x6OSC4/OtU/oZ+1G06GCJHBhDgZHetMxuHQPQM+CZrWftNeR2DEbr7Pa2Tz94W6sOQW5zUyjWGiMoPFF+ktjtkICXRH/SWx2yEBLoj/pLY7ZCAlPS0Ghq4L8bihtiZcAVACfn0YAAAA=",
+    "blurPlaceholder": "",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-5-480.avif",
         "640": "/images/generated/wall-before-5-640.avif",
         "768": "/images/generated/wall-before-5-768.avif",
         "1024": "/images/generated/wall-before-5-1024.avif",
-        "1200": "/images/generated/wall-before-5-1200.avif"
+        "1280": "/images/generated/wall-before-5-1280.avif",
+        "1536": "/images/generated/wall-before-5-1536.avif",
+        "1920": "/images/generated/wall-before-5-1920.avif",
+        "2560": "/images/generated/wall-before-5-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-before-5-480.webp",
         "640": "/images/generated/wall-before-5-640.webp",
         "768": "/images/generated/wall-before-5-768.webp",
         "1024": "/images/generated/wall-before-5-1024.webp",
-        "1200": "/images/generated/wall-before-5-1200.webp"
+        "1280": "/images/generated/wall-before-5-1280.webp",
+        "1536": "/images/generated/wall-before-5-1536.webp",
+        "1920": "/images/generated/wall-before-5-1920.webp",
+        "2560": "/images/generated/wall-before-5-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-before-5-480.jpeg",
         "640": "/images/generated/wall-before-5-640.jpeg",
         "768": "/images/generated/wall-before-5-768.jpeg",
         "1024": "/images/generated/wall-before-5-1024.jpeg",
-        "1200": "/images/generated/wall-before-5-1200.jpeg"
+        "1280": "/images/generated/wall-before-5-1280.jpeg",
+        "1536": "/images/generated/wall-before-5-1536.jpeg",
+        "1920": "/images/generated/wall-before-5-1920.jpeg",
+        "2560": "/images/generated/wall-before-5-2560.jpeg"
       }
     }
   },
   "/images/wall-before-6-7.webp": {
     "originalPath": "/images/wall-before-6-7.webp",
     "altBase": "wall-before-6-7",
-    "width": 1200,
-    "height": 1200,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAwBACdASoUABQAPzmEuVOvKKWisAgB4CcJYz4qo7FKfQAX7HYBexnewAAA/tsNv2z/8dDuz++/vv/Qk3/Jft3wLbsxfTu6wRy+69wkZT/1tUtJzp9fOeKw4c8sR4/YTcjP0TvBiknA95ngmxxoFpgR5SVBbXp0n+k1YO5EovrI6bsoRfGMzzl8AZArcocENRxjn7Alrn0s9rIQY8Ks7bBsYuI3qQof5MFPj6YCiI0FfkAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQAwCdASoUABQAPzGCsVOuqSQisAwB0CYJYz3zwkCHmEmjO+wAAP7SdldP/gtF63p/q/p0n/del3wtjcXXwbqoUxkEKXXslhpHid9xOqy7gVgQt4fPSb/DmqQbDWsWVjNruv+k1YO5EovO1/lwB63xwJUF4t2gHKpwfha8sFdN+9yF4njwyMz6JIGokKeOhWwHnWhjMP0n3fedMxa6iiDjFi1KUAAA",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-6-7-480.avif",
         "640": "/images/generated/wall-before-6-7-640.avif",
         "768": "/images/generated/wall-before-6-7-768.avif",
         "1024": "/images/generated/wall-before-6-7-1024.avif",
-        "1200": "/images/generated/wall-before-6-7-1200.avif"
+        "1280": "/images/generated/wall-before-6-7-1280.avif",
+        "1536": "/images/generated/wall-before-6-7-1536.avif",
+        "1920": "/images/generated/wall-before-6-7-1920.avif",
+        "2560": "/images/generated/wall-before-6-7-2560.avif"
       },
       "webp": {
         "480": "/images/generated/wall-before-6-7-480.webp",
         "640": "/images/generated/wall-before-6-7-640.webp",
         "768": "/images/generated/wall-before-6-7-768.webp",
         "1024": "/images/generated/wall-before-6-7-1024.webp",
-        "1200": "/images/generated/wall-before-6-7-1200.webp"
+        "1280": "/images/generated/wall-before-6-7-1280.webp",
+        "1536": "/images/generated/wall-before-6-7-1536.webp",
+        "1920": "/images/generated/wall-before-6-7-1920.webp",
+        "2560": "/images/generated/wall-before-6-7-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/wall-before-6-7-480.jpeg",
         "640": "/images/generated/wall-before-6-7-640.jpeg",
         "768": "/images/generated/wall-before-6-7-768.jpeg",
         "1024": "/images/generated/wall-before-6-7-1024.jpeg",
-        "1200": "/images/generated/wall-before-6-7-1200.jpeg"
+        "1280": "/images/generated/wall-before-6-7-1280.jpeg",
+        "1536": "/images/generated/wall-before-6-7-1536.jpeg",
+        "1920": "/images/generated/wall-before-6-7-1920.jpeg",
+        "2560": "/images/generated/wall-before-6-7-2560.jpeg"
+      }
+    }
+  },
+  "/images/water-before-1.webp": {
+    "originalPath": "/images/water-before-1.webp",
+    "altBase": "water-before-1",
+    "width": 2560,
+    "height": 2560,
+    "aspectRatio": 1,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAwCdASoUABQAPzmOvlevKaYjqAqp4CcJYwC2FBvlT5AAAP7kXrUDov8JVHZ68WwugNopNsCxMwK21P/rzf/psRoJY8BnfvLJ/YoxE06K4ZRGS+pbWRAByMz+PwvoMZqc0HwffSmbgVQAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/water-before-1-480.avif",
+        "640": "/images/generated/water-before-1-640.avif",
+        "768": "/images/generated/water-before-1-768.avif",
+        "1024": "/images/generated/water-before-1-1024.avif",
+        "1280": "/images/generated/water-before-1-1280.avif",
+        "1536": "/images/generated/water-before-1-1536.avif",
+        "1920": "/images/generated/water-before-1-1920.avif",
+        "2560": "/images/generated/water-before-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/water-before-1-480.webp",
+        "640": "/images/generated/water-before-1-640.webp",
+        "768": "/images/generated/water-before-1-768.webp",
+        "1024": "/images/generated/water-before-1-1024.webp",
+        "1280": "/images/generated/water-before-1-1280.webp",
+        "1536": "/images/generated/water-before-1-1536.webp",
+        "1920": "/images/generated/water-before-1-1920.webp",
+        "2560": "/images/generated/water-before-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/water-before-1-480.jpeg",
+        "640": "/images/generated/water-before-1-640.jpeg",
+        "768": "/images/generated/water-before-1-768.jpeg",
+        "1024": "/images/generated/water-before-1-1024.jpeg",
+        "1280": "/images/generated/water-before-1-1280.jpeg",
+        "1536": "/images/generated/water-before-1-1536.jpeg",
+        "1920": "/images/generated/water-before-1-1920.jpeg",
+        "2560": "/images/generated/water-before-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/water-before-2.webp": {
+    "originalPath": "/images/water-before-2.webp",
+    "altBase": "water-before-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAwCdASoUAA0APzmKulQvKaWjMAgB4CcJYloGNWGSAHiJ4AD+3KRZys/t9y4PEhnoiV+8J2MWCT0l046fk8/1b/8Be//7tvojEycHOsHrgVg9cCorSZDMn8vKCM3bOvhFniitsRi8T1QA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/water-before-2-480.avif",
+        "640": "/images/generated/water-before-2-640.avif",
+        "768": "/images/generated/water-before-2-768.avif",
+        "1024": "/images/generated/water-before-2-1024.avif",
+        "1280": "/images/generated/water-before-2-1280.avif",
+        "1536": "/images/generated/water-before-2-1536.avif",
+        "1920": "/images/generated/water-before-2-1920.avif",
+        "2560": "/images/generated/water-before-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/water-before-2-480.webp",
+        "640": "/images/generated/water-before-2-640.webp",
+        "768": "/images/generated/water-before-2-768.webp",
+        "1024": "/images/generated/water-before-2-1024.webp",
+        "1280": "/images/generated/water-before-2-1280.webp",
+        "1536": "/images/generated/water-before-2-1536.webp",
+        "1920": "/images/generated/water-before-2-1920.webp",
+        "2560": "/images/generated/water-before-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/water-before-2-480.jpeg",
+        "640": "/images/generated/water-before-2-640.jpeg",
+        "768": "/images/generated/water-before-2-768.jpeg",
+        "1024": "/images/generated/water-before-2-1024.jpeg",
+        "1280": "/images/generated/water-before-2-1280.jpeg",
+        "1536": "/images/generated/water-before-2-1536.jpeg",
+        "1920": "/images/generated/water-before-2-1920.jpeg",
+        "2560": "/images/generated/water-before-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/water-before-3.webp": {
+    "originalPath": "/images/water-before-3.webp",
+    "altBase": "water-before-3",
+    "width": 2560,
+    "height": 2560,
+    "aspectRatio": 1,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABQBACdASoUABQAPzmWw1ovKqekKAgB4CcJTGteaU36AcYb9EcGoRO9P9+AAP7nFU2/1kpEC9apgcrRbetlMUYnIQMbrmcXJCn//BYacMXd/gAZtfPxSuI5oNoNpGcBCgeL40vnx5kb6DDjuhEVDK3SnRQlTehRAiifU5wKb3rZw/jqyDzEWMmehXQ2p/omJtQdtsV5fZtCUCoH/v0FfR+gr6P00gE+8zuMBf8FHrWAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/water-before-3-480.avif",
+        "640": "/images/generated/water-before-3-640.avif",
+        "768": "/images/generated/water-before-3-768.avif",
+        "1024": "/images/generated/water-before-3-1024.avif",
+        "1280": "/images/generated/water-before-3-1280.avif",
+        "1536": "/images/generated/water-before-3-1536.avif",
+        "1920": "/images/generated/water-before-3-1920.avif",
+        "2560": "/images/generated/water-before-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/water-before-3-480.webp",
+        "640": "/images/generated/water-before-3-640.webp",
+        "768": "/images/generated/water-before-3-768.webp",
+        "1024": "/images/generated/water-before-3-1024.webp",
+        "1280": "/images/generated/water-before-3-1280.webp",
+        "1536": "/images/generated/water-before-3-1536.webp",
+        "1920": "/images/generated/water-before-3-1920.webp",
+        "2560": "/images/generated/water-before-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/water-before-3-480.jpeg",
+        "640": "/images/generated/water-before-3-640.jpeg",
+        "768": "/images/generated/water-before-3-768.jpeg",
+        "1024": "/images/generated/water-before-3-1024.jpeg",
+        "1280": "/images/generated/water-before-3-1280.jpeg",
+        "1536": "/images/generated/water-before-3-1536.jpeg",
+        "1920": "/images/generated/water-before-3-1920.jpeg",
+        "2560": "/images/generated/water-before-3-2560.jpeg"
       }
     }
   },
   "/images/water-feature-image-1.webp": {
     "originalPath": "/images/water-feature-image-1.webp",
     "altBase": "water-feature-image-1",
-    "width": 1200,
-    "height": 1600,
-    "aspectRatio": 0.75,
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADwAwCdASoUABsAPzmQu1avKiWjqA1R4CcJY2D/XbuGuAC5oBf8QLYAAP7iHwpf+vRM673Mp1nVEu8ZnTOiVKju4is+jr8feZ4yu+zd9wdCtP/7v/+5z9EH365tLEfb6KMXeWZfvv9chH3X5ygRrZ85QI1s+coEaQifP/TXMQDpeNvI39xcWyiX4QYBsRFEAJ7UX8GWsf3xEmUWQuIINkt8iXoJ5yzzJ+yhXJuP1L/B9O3MOUCJQ7hLAHrRKr7TkIVYAAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACwAwCdASoUAA0APzmGuVOvKSWisAgB4CcJZGD/UDRgjWChRFu7QAD+3+l2mCpdRpU6U2yXsr10fqFzw5M8oDMvgPI/+B/yZkyMbHwcOq6NJ9neILvAIKZkWjLWsaLbYpvFiU5irLm+vjs+lgLOlgLOlfwlah4SjdSEAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-1-480.avif",
         "640": "/images/generated/water-feature-image-1-640.avif",
         "768": "/images/generated/water-feature-image-1-768.avif",
         "1024": "/images/generated/water-feature-image-1-1024.avif",
-        "1200": "/images/generated/water-feature-image-1-1200.avif"
+        "1280": "/images/generated/water-feature-image-1-1280.avif",
+        "1536": "/images/generated/water-feature-image-1-1536.avif",
+        "1920": "/images/generated/water-feature-image-1-1920.avif",
+        "2560": "/images/generated/water-feature-image-1-2560.avif"
       },
       "webp": {
         "480": "/images/generated/water-feature-image-1-480.webp",
         "640": "/images/generated/water-feature-image-1-640.webp",
         "768": "/images/generated/water-feature-image-1-768.webp",
         "1024": "/images/generated/water-feature-image-1-1024.webp",
-        "1200": "/images/generated/water-feature-image-1-1200.webp"
+        "1280": "/images/generated/water-feature-image-1-1280.webp",
+        "1536": "/images/generated/water-feature-image-1-1536.webp",
+        "1920": "/images/generated/water-feature-image-1-1920.webp",
+        "2560": "/images/generated/water-feature-image-1-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/water-feature-image-1-480.jpeg",
         "640": "/images/generated/water-feature-image-1-640.jpeg",
         "768": "/images/generated/water-feature-image-1-768.jpeg",
         "1024": "/images/generated/water-feature-image-1-1024.jpeg",
-        "1200": "/images/generated/water-feature-image-1-1200.jpeg"
+        "1280": "/images/generated/water-feature-image-1-1280.jpeg",
+        "1536": "/images/generated/water-feature-image-1-1536.jpeg",
+        "1920": "/images/generated/water-feature-image-1-1920.jpeg",
+        "2560": "/images/generated/water-feature-image-1-2560.jpeg"
       }
     }
   },
   "/images/water-feature-image-2.webp": {
     "originalPath": "/images/water-feature-image-2.webp",
     "altBase": "water-feature-image-2",
-    "width": 1024,
-    "height": 1024,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAADwBACdASoUABQAPzGAslOuqCSisAwB0CYJZj6EofEQ4RH4OYJGSLOCmkVgC/zSzQAA/t+4ngqRv7LlK6jUXxqbrILNoHrOcaPZQKlSZXMqwNOQhdI8jm+HQZ4HOM5txEl5AVf8Mr/Aaq/6nDyvKxmB0ii65eYjsiOb8r8qZmwepBnahJB3dMxeEiVsiEVcfb1//FCOnn8NH3sooUgqlYeP+u1Gx+G/Z7d25YxPxIw+PKvuH6SSVXiRh8eUbAQYVMWqvZCgOUVFg56PpQwDZAfJnYwAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAwBACdASoUABQAPzGCt1OuqKWisAwB0CYJR8UepzDtL/y3AACQeCevh0AA/uQuLsU7Ft4yMBz5w8uBkrS9HhZYw/7MIT/bOQsd/a2fEjbNM33//4ZY5EHUgM69LNDJRR2+G3jUIz+QMIMbCgyGo4aI1HDRGo4joto3+6by/mRcitZ5ckWX13PXEqQQOAsnTkiRaOfL/SrpHfqwGyPQGHjrnCAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-2-480.avif",
         "640": "/images/generated/water-feature-image-2-640.avif",
         "768": "/images/generated/water-feature-image-2-768.avif",
-        "1024": "/images/generated/water-feature-image-2-1024.avif"
+        "1024": "/images/generated/water-feature-image-2-1024.avif",
+        "1280": "/images/generated/water-feature-image-2-1280.avif",
+        "1536": "/images/generated/water-feature-image-2-1536.avif",
+        "1920": "/images/generated/water-feature-image-2-1920.avif",
+        "2560": "/images/generated/water-feature-image-2-2560.avif"
       },
       "webp": {
         "480": "/images/generated/water-feature-image-2-480.webp",
         "640": "/images/generated/water-feature-image-2-640.webp",
         "768": "/images/generated/water-feature-image-2-768.webp",
-        "1024": "/images/generated/water-feature-image-2-1024.webp"
+        "1024": "/images/generated/water-feature-image-2-1024.webp",
+        "1280": "/images/generated/water-feature-image-2-1280.webp",
+        "1536": "/images/generated/water-feature-image-2-1536.webp",
+        "1920": "/images/generated/water-feature-image-2-1920.webp",
+        "2560": "/images/generated/water-feature-image-2-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/water-feature-image-2-480.jpeg",
         "640": "/images/generated/water-feature-image-2-640.jpeg",
         "768": "/images/generated/water-feature-image-2-768.jpeg",
-        "1024": "/images/generated/water-feature-image-2-1024.jpeg"
+        "1024": "/images/generated/water-feature-image-2-1024.jpeg",
+        "1280": "/images/generated/water-feature-image-2-1280.jpeg",
+        "1536": "/images/generated/water-feature-image-2-1536.jpeg",
+        "1920": "/images/generated/water-feature-image-2-1920.jpeg",
+        "2560": "/images/generated/water-feature-image-2-2560.jpeg"
       }
     }
   },
   "/images/water-feature-image-3.webp": {
     "originalPath": "/images/water-feature-image-3.webp",
     "altBase": "water-feature-image-3",
-    "width": 612,
-    "height": 408,
-    "aspectRatio": 1.5,
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZD11thwhAgAuQFsAIPZQAP5JrDa7+MmKtnd5shl+0CByZQT4hKMJTdJc4o99N3qnN3skmdp37j/9Es3/y3bWMuaeP9pA2M5RGldbv3vfs5mrv2czV4TRnufyn4PbXlyTbQJNuQzskAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJR6o3QBCxBT66AAD+3pXh/RMqbWrT6Q9LFT8wSmsE20rZGrO0ptbJybqabe/x//59AHT/kyhuZCo65ppvOPtUjWcx+H+ieKIffgSLb03nmI1osmnGJCUCyxAhPlKJAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-3-480.avif",
-        "612": "/images/generated/water-feature-image-3-612.avif"
+        "640": "/images/generated/water-feature-image-3-640.avif",
+        "768": "/images/generated/water-feature-image-3-768.avif",
+        "1024": "/images/generated/water-feature-image-3-1024.avif",
+        "1280": "/images/generated/water-feature-image-3-1280.avif",
+        "1536": "/images/generated/water-feature-image-3-1536.avif",
+        "1920": "/images/generated/water-feature-image-3-1920.avif",
+        "2560": "/images/generated/water-feature-image-3-2560.avif"
       },
       "webp": {
         "480": "/images/generated/water-feature-image-3-480.webp",
-        "612": "/images/generated/water-feature-image-3-612.webp"
+        "640": "/images/generated/water-feature-image-3-640.webp",
+        "768": "/images/generated/water-feature-image-3-768.webp",
+        "1024": "/images/generated/water-feature-image-3-1024.webp",
+        "1280": "/images/generated/water-feature-image-3-1280.webp",
+        "1536": "/images/generated/water-feature-image-3-1536.webp",
+        "1920": "/images/generated/water-feature-image-3-1920.webp",
+        "2560": "/images/generated/water-feature-image-3-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/water-feature-image-3-480.jpeg",
-        "612": "/images/generated/water-feature-image-3-612.jpeg"
+        "640": "/images/generated/water-feature-image-3-640.jpeg",
+        "768": "/images/generated/water-feature-image-3-768.jpeg",
+        "1024": "/images/generated/water-feature-image-3-1024.jpeg",
+        "1280": "/images/generated/water-feature-image-3-1280.jpeg",
+        "1536": "/images/generated/water-feature-image-3-1536.jpeg",
+        "1920": "/images/generated/water-feature-image-3-1920.jpeg",
+        "2560": "/images/generated/water-feature-image-3-2560.jpeg"
       }
     }
   },
   "/images/water-feature-image-4.webp": {
     "originalPath": "/images/water-feature-image-4.webp",
     "altBase": "water-feature-image-4",
-    "width": 500,
-    "height": 500,
+    "width": 2560,
+    "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAABQBQCdASoUABQAPzWEtFOvKKSisAwB4CaJR6pUaCx3tXm6mBDGfNEHS8nZQVboEN37qAAA/uw+dOSfsgfss5xtv8Gzu2OvD7ITgsePetyT+of9UiHRjMBgkYhmPHVfTo2qkg/BwwEPruUWU+wrabihf9//5n0NL//1b8dffqg22Pw+WVvEUT/yT++cVMkjhpSOGlI5hWAz4Jf0b2R70cbyjVscibss00pBDb5CXaJemrDa8DhcDP/HDTkL0wgV52v18bO2h76iEYmMHkUW9Lq4AglLoHf9jw3/BXNT4faCyPWaNVtUc4Q2rV1RzmhAAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADQAwCdASoUABQAPzmEuVavJ6UjsBgMAeAnCWNhB912QPhkJJaBggAA/uhsoP99G7PHEHPZOceGq2WviC2JRIT8Rs9RbtnR+c/9uaCedhFbJs5E/elYfnPyvsutFAPBmuFN2bR/6Pxr+xl3PSymUiQ8TRwA0bnBSkL9WPbD4qpwvFgPyOaAWpiHfYZ5qNEDPjw2Kh1JyWskk9y72u0U1QAA",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-4-480.avif",
-        "500": "/images/generated/water-feature-image-4-500.avif"
+        "640": "/images/generated/water-feature-image-4-640.avif",
+        "768": "/images/generated/water-feature-image-4-768.avif",
+        "1024": "/images/generated/water-feature-image-4-1024.avif",
+        "1280": "/images/generated/water-feature-image-4-1280.avif",
+        "1536": "/images/generated/water-feature-image-4-1536.avif",
+        "1920": "/images/generated/water-feature-image-4-1920.avif",
+        "2560": "/images/generated/water-feature-image-4-2560.avif"
       },
       "webp": {
         "480": "/images/generated/water-feature-image-4-480.webp",
-        "500": "/images/generated/water-feature-image-4-500.webp"
+        "640": "/images/generated/water-feature-image-4-640.webp",
+        "768": "/images/generated/water-feature-image-4-768.webp",
+        "1024": "/images/generated/water-feature-image-4-1024.webp",
+        "1280": "/images/generated/water-feature-image-4-1280.webp",
+        "1536": "/images/generated/water-feature-image-4-1536.webp",
+        "1920": "/images/generated/water-feature-image-4-1920.webp",
+        "2560": "/images/generated/water-feature-image-4-2560.webp"
       },
       "jpeg": {
         "480": "/images/generated/water-feature-image-4-480.jpeg",
-        "500": "/images/generated/water-feature-image-4-500.jpeg"
+        "640": "/images/generated/water-feature-image-4-640.jpeg",
+        "768": "/images/generated/water-feature-image-4-768.jpeg",
+        "1024": "/images/generated/water-feature-image-4-1024.jpeg",
+        "1280": "/images/generated/water-feature-image-4-1280.jpeg",
+        "1536": "/images/generated/water-feature-image-4-1536.jpeg",
+        "1920": "/images/generated/water-feature-image-4-1920.jpeg",
+        "2560": "/images/generated/water-feature-image-4-2560.jpeg"
       }
     }
   }

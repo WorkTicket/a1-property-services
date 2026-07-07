@@ -7,6 +7,7 @@ type LcpHeroImageProps = {
   alt: string
   sizes?: string
   className?: string
+  objectPosition?: string
 }
 
 export default function LcpHeroImage({
@@ -14,15 +15,16 @@ export default function LcpHeroImage({
   alt,
   sizes = IMAGE_SIZES.hero,
   className,
+  objectPosition,
 }: LcpHeroImageProps) {
   const dimensions = getImageDimensions(src)
-  const avifSrcset = buildSrcset(src, 'avif')
+  const webpSrcset = buildSrcset(src, 'webp')
 
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={getVariantUrl(src, 'avif', 1536)}
-      srcSet={avifSrcset}
+      src={getVariantUrl(src, 'webp', 1920)}
+      srcSet={webpSrcset}
       sizes={sizes}
       alt={alt}
       width={dimensions?.width ?? 1920}
@@ -38,6 +40,7 @@ export default function LcpHeroImage({
         width: '100%',
         height: '100%',
         objectFit: 'cover',
+        ...(objectPosition ? { objectPosition } : {}),
       }}
     />
   )

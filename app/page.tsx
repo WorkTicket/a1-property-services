@@ -9,6 +9,7 @@ import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
 import { blogPosts } from '@/lib/blog'
 import RelatedContent from '@/components/sections/RelatedContent'
+import StatsBar from '@/components/sections/StatsBar'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -41,7 +42,7 @@ export const metadata: Metadata = generatePageMetadata({
     'snow removal cedar falls',
   ],
   ogImage: '/images/hero-background-image.webp',
-  ogImageAlt: 'Professional landscaping project in Cedar Falls, Iowa',
+  ogImageAlt: 'Aerial drone view of Cedar Falls, Iowa',
 })
 
 const trustPoints = [
@@ -121,7 +122,7 @@ export default function HomePage() {
       >
         <LcpHeroImage
           src={siteImages.homeHero}
-          alt="Professional landscaping project in Cedar Falls, Iowa"
+          alt="Aerial view of Cedar Falls, Iowa"
         />
         <HeroOverlay imageSrc={siteImages.homeHero} variant="left" />
 
@@ -129,7 +130,7 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow="CEDAR FALLS · IOWA · EST. 2009"
-              title="Outdoor Spaces|Cedar Valley Homeowners Are Proud Of"
+              title={'Outdoor Spaces|Cedar Valley Homeowners Are Proud\u00a0Of'}
               subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -160,19 +161,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <section className="stats-bar">
-        <div className="section-inner">
-          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-4 md:divide-y-0">
-            {stats.map((stat) => (
-              <div key={stat.label} className="px-4 py-8 text-center sm:px-6 md:py-6">
-                <p className="stats-value">{stat.value}</p>
-                <p className="stats-label">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBar stats={stats} />
 
       {/* SERVICES TEASER */}
       <section id="services" className="section bg-brand-stone">

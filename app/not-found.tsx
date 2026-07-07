@@ -7,6 +7,7 @@ import { generatePageMetadata, webPageJsonLd, siteConfig, jsonLdGraph } from '@/
 export const metadata: Metadata = generatePageMetadata({
   title: 'Page Not Found',
   description: 'The page you are looking for could not be found. It may have moved or no longer exists. Visit our homepage to find the information you need.',
+  path: '/404',
   noIndex: true,
 })
 

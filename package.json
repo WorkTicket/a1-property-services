@@ -9,6 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:images": "node scripts/optimize-images.mjs",
+    "build:hero-video": "node scripts/generate-hero-video.mjs",
+    "build:hero-video:ai": "py -3.12 scripts/generate-hero-i2v.py",
     "upscale-gallery": "node scripts/upscale-gallery-sources.mjs",
     "build:images:gallery": "npm run upscale-gallery && npm run build:images",
     "build:feed": "node scripts/generate-feed.mjs",
@@ -39,6 +41,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@fal-ai/client": "^1.10.1",
     "@next/bundle-analyzer": "^16.2.9",
     "@types/node": "^20",
     "@types/react": "^18",

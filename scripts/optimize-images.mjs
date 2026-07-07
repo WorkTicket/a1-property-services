@@ -16,18 +16,19 @@ const FORMAT_CONFIG = {
 }
 
 const HERO_FORMAT_CONFIG = {
-  avif: { quality: 50, effort: 8, lossless: false },
-  webp: { quality: 85, effort: 6 },
-  jpeg: { quality: 85, mozjpeg: true },
+  avif: { quality: 72, effort: 6, lossless: false },
+  webp: { quality: 94, effort: 6 },
+  jpeg: { quality: 92, mozjpeg: true },
 }
 
 const GALLERY_FORMAT_CONFIG = {
-  avif: { quality: 60, effort: 7, lossless: false },
-  webp: { quality: 85, effort: 6 },
-  jpeg: { quality: 85, mozjpeg: true },
+  avif: { quality: 78, effort: 7, lossless: false },
+  webp: { quality: 92, effort: 6 },
+  jpeg: { quality: 90, mozjpeg: true },
 }
 
 const HERO_MAX_WIDTH = 2560
+const GALLERY_MAX_WIDTH = 2560
 
 const HERO_NAMES = new Set([
   'hero-background-image', 'contact-page-hero', 'paver-patio-hero',
@@ -36,7 +37,11 @@ const HERO_NAMES = new Set([
 ])
 
 function isGalleryImage(name) {
-  return /^(wall-|patio-)/.test(name) || name.includes('before') || name.includes('after')
+  return (
+    /^(wall-|patio-|water-feature-image-)/.test(name) ||
+    name.includes('before') ||
+    name.includes('after')
+  )
 }
 
 function getFormatConfig(isHero, isGallery, format) {
@@ -45,14 +50,21 @@ function getFormatConfig(isHero, isGallery, format) {
   return FORMAT_CONFIG[format]
 }
 
-function getBreakpoints(width, isHero) {
+function getBreakpoints(width, isHero, isGallery) {
   const capped = BREAKPOINTS.filter((bp) => bp <= width)
   const withOriginal = [...capped, width].filter((v, i, a) => a.indexOf(v) === i)
 
-  if (!isHero) return withOriginal
+  if (isHero) {
+    const heroBreakpoints = BREAKPOINTS.filter((bp) => bp <= HERO_MAX_WIDTH)
+    return [...new Set([...withOriginal, ...heroBreakpoints])].sort((a, b) => a - b)
+  }
 
-  const heroBreakpoints = BREAKPOINTS.filter((bp) => bp <= HERO_MAX_WIDTH)
-  return [...new Set([...withOriginal, ...heroBreakpoints])].sort((a, b) => a - b)
+  if (isGallery) {
+    const galleryBreakpoints = BREAKPOINTS.filter((bp) => bp <= GALLERY_MAX_WIDTH)
+    return [...new Set([...withOriginal, ...galleryBreakpoints])].sort((a, b) => a - b)
+  }
+
+  return withOriginal
 }
 
 async function generateBlurPlaceholder(input, meta) {
@@ -75,7 +87,7 @@ async function processImage(filePath) {
   const originalWidth = meta.width
   const originalHeight = meta.height
   const aspectRatio = originalWidth / originalHeight
-  const breakpoints = getBreakpoints(originalWidth, isHero)
+  const breakpoints = getBreakpoints(originalWidth, isHero, isGallery)
 
   const variants = {}
   const blurPlaceholder = await generateBlurPlaceholder(input, meta)
@@ -88,14 +100,16 @@ async function processImage(filePath) {
       const filename = `${name}-${bp}.${format}`
       const outputPath = path.join(OUTPUT_DIR, filename)
 
-      const upscale = isHero && bp > originalWidth
+      const upscale = (isHero || isGallery) && bp > originalWidth
       let pipeline = input.clone().resize(bp, height, {
         fit: 'outside',
         withoutEnlargement: !upscale,
         kernel: sharp.kernel.lanczos3,
       })
       if (upscale) {
-        pipeline = pipeline.sharpen({ sigma: 0.5, m1: 0.5, m2: 0.3 })
+        pipeline = pipeline.sharpen({ sigma: 0.6, m1: 0.8, m2: 0.4 })
+      } else if (isGallery) {
+        pipeline = pipeline.sharpen({ sigma: 0.35, m1: 0.5, m2: 0.25 })
       }
       switch (format) {
         case 'avif':
@@ -119,8 +133,8 @@ async function processImage(filePath) {
   return {
     originalPath: `/images/${parsed.base}`,
     altBase: name,
-    width: isHero ? Math.max(originalWidth, ...breakpoints) : originalWidth,
-    height: isHero
+    width: isHero || isGallery ? Math.max(originalWidth, ...breakpoints) : originalWidth,
+    height: isHero || isGallery
       ? Math.round((Math.max(originalWidth, ...breakpoints) / aspectRatio))
       : originalHeight,
     aspectRatio,
