@@ -9,7 +9,6 @@ import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
 import { blogPosts } from '@/lib/blog'
 import RelatedContent from '@/components/sections/RelatedContent'
-import StatsBar from '@/components/sections/StatsBar'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -161,7 +160,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <StatsBar stats={stats} />
+      {/* STATS BAR */}
+      <section className="stats-bar">
+        <div className="section-inner">
+          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-4 md:divide-y-0">
+            {stats.map((stat) => (
+              <div key={stat.label} className="px-4 py-8 text-center sm:px-6 md:py-6">
+                <p className="stats-value">{stat.value}</p>
+                <p className="stats-label">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES TEASER */}
       <section id="services" className="section bg-brand-stone">
