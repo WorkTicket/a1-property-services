@@ -48,7 +48,7 @@ export default function GalleryFilter() {
           <h2 className="section-heading">
             {isWaterOnly ? 'Water Features' : 'Before & After'}
           </h2>
-          <p className="mt-2 text-brand-body/70 max-w-xl mx-auto">
+          <p className="mt-2 text-brand-muted max-w-xl mx-auto">
             {isWaterOnly
               ? 'Custom ponds, waterfalls, and water gardens built across the Cedar Valley.'
               : 'Drag the slider on each project to compare before and after.'}
@@ -59,7 +59,7 @@ export default function GalleryFilter() {
           {filtered.length > 0 ? (
             <GalleryGrid projects={filtered} />
           ) : (
-            <p className="text-center text-brand-body/70">
+            <p className="text-center text-brand-muted">
               No projects in this category yet.
             </p>
           )}

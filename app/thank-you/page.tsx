@@ -55,7 +55,7 @@ export default function ThankYouPage() {
         </div>
 
         <div className="mt-10 space-y-4">
-          <p className="text-sm text-brand-body/50">What happens next?</p>
+          <p className="text-sm text-brand-subtle">What happens next?</p>
           <ol className="mx-auto max-w-xs space-y-3 text-left text-sm text-brand-body">
             <li className="flex gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green-800/10 text-xs font-bold text-brand-green-800">1</span>
@@ -73,7 +73,7 @@ export default function ThankYouPage() {
         </div>
 
         <div className="mt-10 border-t border-brand-stone pt-10">
-          <p className="text-sm text-brand-body/50">
+          <p className="text-sm text-brand-subtle">
             Happy with our service? Leave us a review!
           </p>
           <Button

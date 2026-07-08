@@ -170,7 +170,7 @@ export default function AboutPage() {
                     {item.icon}
                   </div>
                   <h3 className="mt-3 font-bold text-brand-dark">{item.title}</h3>
-                  <p className="mt-1 text-sm text-brand-body/70">{item.desc}</p>
+                  <p className="mt-1 text-sm text-brand-muted">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}

@@ -287,7 +287,7 @@ export default function CityPage({ params }: Props) {
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-dark">{point.title}</h3>
-                    <p className="mt-1 text-sm text-brand-body/70">{point.desc}</p>
+                    <p className="mt-1 text-sm text-brand-muted">{point.desc}</p>
                   </div>
                 </div>
               </StaggerItem>

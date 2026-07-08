@@ -203,7 +203,7 @@ export default function HomePage() {
                     <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
                       {service.name}
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-brand-body/70">{service.shortDesc}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-brand-muted">{service.shortDesc}</p>
                   </div>
                   <span className="link-cta-sm mt-auto">
                     {CTA_COPY.learnMore}{' '}
@@ -229,7 +229,7 @@ export default function HomePage() {
             <div>
               <p className="section-eyebrow">Our Work</p>
               <h2 className="section-heading mt-3">Before &amp; After</h2>
-              <p className="mt-2 text-brand-body/70 max-w-xl">
+              <p className="mt-2 text-brand-muted max-w-xl">
                 Drag the slider on each project to compare before and after.
               </p>
             </div>
@@ -306,7 +306,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-dark">{point.title}</h3>
-                    <p className="mt-1 text-sm text-brand-body/70">{point.desc}</p>
+                    <p className="mt-1 text-sm text-brand-muted">{point.desc}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -334,7 +334,7 @@ export default function HomePage() {
                     <ChevronRight size={16} className="shrink-0 text-brand-gold transition-transform duration-300 group-open:rotate-90" />
                   </summary>
                   <div className="px-6 pb-6">
-                    <p className="text-sm leading-relaxed text-brand-body/70">{faq.a}</p>
+                    <p className="text-sm leading-relaxed text-brand-muted">{faq.a}</p>
                   </div>
                 </details>
               </FadeIn>
@@ -396,7 +396,7 @@ export default function HomePage() {
             <FadeIn delay={0.1}>
               <div className="form-card">
                 <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
-                <p className="mt-1 text-sm text-brand-body/70">Fill out the form and we&rsquo;ll be in touch shortly.</p>
+                <p className="mt-1 text-sm text-brand-muted">Fill out the form and we&rsquo;ll be in touch shortly.</p>
                 <div className="mt-6">
                   <QuoteForm variant="light" />
                 </div>
@@ -430,7 +430,7 @@ export default function HomePage() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone size={16} className="text-brand-gold shrink-0" />
-                  <a href={`tel:${siteConfig.phone}`} className="text-brand-green-800 transition-colors hover:underline">
+                  <a href={`tel:${siteConfig.phone}`} className="link-touch text-brand-green-800 transition-colors hover:underline">
                     {siteConfig.phoneDisplay}
                   </a>
                 </p>

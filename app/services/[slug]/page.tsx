@@ -91,7 +91,6 @@ export default function ServicePage({ params }: Props) {
   const seo = serviceSeoOverrides[service.slug]
   const complementaryServices = getComplementaryServices(service.slug, 3)
   const relatedContentGroups = getServiceRelatedContentGroups(service.slug)
-  const hasContent = service.slug in serviceBenefits || service.slug in serviceFaqs
 
   const benefits = serviceBenefits[service.slug] ?? []
   const problems = serviceProblemSolutions[service.slug] ?? []
@@ -114,7 +113,7 @@ export default function ServicePage({ params }: Props) {
   const pageUrl = `${siteConfig.url}/services/${service.slug}`
 
   function contentLinks(text: string, max = 3) {
-    return getContentSegments(text, max, [service.slug]).map((seg, i) =>
+    return getContentSegments(text, max, [params.slug]).map((seg, i) =>
       seg.type === 'link'
         ? <Link key={i} href={seg.url} className="text-brand-green-800 underline underline-offset-2 hover:text-brand-gold transition-colors">{seg.content}</Link>
         : seg.content
@@ -185,7 +184,7 @@ export default function ServicePage({ params }: Props) {
       <PageHero
         imageSrc={heroImage}
         imageAlt={heroImageAlt}
-        eyebrow={hasContent ? `${service.name} in Cedar Falls` : 'What We Offer'}
+        eyebrow="Cedar Falls, Iowa"
         title={serviceName}
         subtitle={service.shortDesc}
       />

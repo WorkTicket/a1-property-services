@@ -1637,7 +1637,7 @@
     "height": 1024,
     "aspectRatio": 1.5,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZTcA06foAqGYO/QN/YAAzP/9Svr3MOdfofIImSoxzHfpOGvHDAWezsq+Z8nfAz8JpjQm4AA/8SWjRf7XZRyCJtd051hodO6fd9+8lhOr1rnIkrrnIkrrnIpzX52NEmPwQI+CBHwUDXgY9lzqAAAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAQCdASoUAA0ABUB8JZwABMWAAP6/ln6Y+cfE9OPrrXb38uGXo5ZJmdpsG+DZgi/h49oks6noeNZeYTqtMFfdf/s+AGv5It5tDX+U7U2fqM3N/AC8V9ZO+XjnrD71aj4m28AAAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/service-content-snow-removal-480.avif",

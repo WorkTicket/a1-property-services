@@ -501,7 +501,7 @@ export default function Navbar() {
                               </span>
                               <span className="min-w-0 flex-1">
                                 <span className="block text-sm font-semibold leading-tight">{category.label}</span>
-                                <span className="mt-0.5 block text-[0.6875rem] leading-snug text-brand-body/50">
+                                <span className="mt-0.5 block text-[0.6875rem] leading-snug text-brand-subtle">
                                   {count} service{count === 1 ? '' : 's'}
                                 </span>
                               </span>

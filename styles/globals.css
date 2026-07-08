@@ -102,6 +102,10 @@
     @apply inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-brand-gold/35 bg-transparent px-7 py-3.5 text-[0.9375rem] font-semibold text-brand-gold transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:border-brand-gold hover:bg-brand-gold hover:text-white hover:shadow-[0_4px_14px_rgba(158,27,36,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 active:translate-y-0;
   }
 
+  .btn-outline-on-dark {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-brand-gold-light/50 bg-transparent px-7 py-3.5 text-[0.9375rem] font-semibold text-brand-gold-light transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:border-brand-gold-light hover:bg-brand-gold-light/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark active:translate-y-0;
+  }
+
   .btn-white {
     @apply inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-[0.9375rem] font-semibold text-brand-green-800 shadow-premium transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:bg-brand-stone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-800 focus-visible:ring-offset-2 active:translate-y-0;
   }
@@ -228,12 +232,19 @@
 
   /* Mobile form optimization - larger touch targets for inputs */
   @media (max-width: 639px) {
-    input, select, textarea, button, a.btn-primary, a.btn-ghost, a.btn-ghost-dark, a.btn-outline {
+    input, select, textarea, button, a.btn-primary, a.btn-ghost, a.btn-ghost-dark, a.btn-outline, a.btn-outline-on-dark, a.link-touch {
       @apply min-h-[48px];
     }
     input, select, textarea {
       @apply text-base;
     }
+    textarea {
+      @apply min-h-[120px] py-3;
+    }
+  }
+
+  .link-touch {
+    @apply inline-flex min-h-[44px] items-center gap-2 py-2;
   }
 
   .sticky-cta-bar {

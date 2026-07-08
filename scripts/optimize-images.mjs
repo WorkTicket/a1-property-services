@@ -16,10 +16,12 @@ const FORMAT_CONFIG = {
 }
 
 const HERO_FORMAT_CONFIG = {
-  avif: { quality: 72, effort: 6, lossless: false },
-  webp: { quality: 94, effort: 6 },
-  jpeg: { quality: 92, mozjpeg: true },
+  avif: { quality: 68, effort: 6, lossless: false },
+  webp: { quality: 82, effort: 6 },
+  jpeg: { quality: 88, mozjpeg: true },
 }
+
+const HERO_MOBILE_WEBP_CONFIG = { quality: 76, effort: 6 }
 
 const GALLERY_FORMAT_CONFIG = {
   avif: { quality: 78, effort: 7, lossless: false },
@@ -94,8 +96,11 @@ async function processImage(filePath) {
 
   for (const format of ['avif', 'webp', 'jpeg']) {
     variants[format] = {}
-    const formatConfig = getFormatConfig(isHero, isGallery, format)
     for (const bp of breakpoints) {
+      let formatConfig = getFormatConfig(isHero, isGallery, format)
+      if (isHero && format === 'webp' && bp <= 768) {
+        formatConfig = HERO_MOBILE_WEBP_CONFIG
+      }
       const height = Math.round(bp / aspectRatio)
       const filename = `${name}-${bp}.${format}`
       const outputPath = path.join(OUTPUT_DIR, filename)

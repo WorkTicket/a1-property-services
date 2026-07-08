@@ -4,8 +4,8 @@ import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
 import HeroOverlay from '@/components/ui/HeroOverlay'
 
 const heroSizeClasses = {
-  default: 'min-h-[50vh] md:min-h-[55vh]',
-  compact: 'min-h-[32vh] md:min-h-[38vh]',
+  default: 'h-[50vh] min-h-[360px] md:h-[55vh] md:min-h-[420px]',
+  compact: 'h-[32vh] min-h-[240px] md:h-[38vh] md:min-h-[280px]',
 } as const
 
 type PageHeroProps = {
@@ -33,7 +33,6 @@ export default function PageHero({
   return (
     <section
       className={`relative overflow-hidden flex items-center justify-center pt-24 pb-12 ${heroSizeClasses[size]} text-white ${usePhoto ? '' : 'bg-hero-gradient'}`}
-      style={usePhoto ? { minHeight: '50vh', position: 'relative' } : undefined}
     >
       {usePhoto && imageSrc && (
         <>
