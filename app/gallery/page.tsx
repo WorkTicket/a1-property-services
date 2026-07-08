@@ -5,6 +5,7 @@ import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import PageHero from '@/components/motion/PageHero'
 import GalleryFilter from '@/components/sections/GalleryFilter'
+import GallerySections from '@/components/sections/GallerySections'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Project Gallery',
@@ -42,6 +43,7 @@ export default function GalleryPage() {
         subtitle="Real projects across Cedar Falls, Waterloo, and the Cedar Valley. Drag the slider to compare before and after."
       />
       <GalleryFilter />
+      <GallerySections />
       <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />
     </>
   )

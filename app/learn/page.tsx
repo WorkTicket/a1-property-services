@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ChevronRight, BookOpen, FileText, ShoppingCart, Scale } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig, itemListJsonLd } from '@/lib/metadata'
 import { learnArticles } from '@/lib/learn'
+import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -61,6 +62,8 @@ export default function LearnPage() {
       />
 
       <PageHero
+        imageSrc={siteImages.learnHero}
+        imageAlt="Professionally designed Cedar Valley garden with stone path and perennials"
         eyebrow="Educational Resources"
         title="Landscaping|Knowledge Center"
         subtitle="Guides, comparisons, and buying tips for Cedar Valley homeowners planning a landscape project."

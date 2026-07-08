@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata, breadcrumbJsonLd, webPageJsonLd, siteConfig, itemListJsonLd, jsonLdGraph } from '@/lib/metadata'
 import { blogPosts } from '@/lib/blog'
+import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import BlogList from '@/components/ui/BlogList'
 
@@ -44,6 +45,8 @@ export default function BlogPage() {
       }}
     />
     <PageHero
+      imageSrc={siteImages.blogHero}
+      imageAlt="Tree-lined Cedar Valley residential street in autumn color"
       eyebrow="Tips & Notes"
       title="Cedar Valley|Landscaping Blog"
       subtitle="Hardscaping tips, lawn care advice, and seasonal notes from your local Cedar Falls crew."

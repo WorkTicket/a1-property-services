@@ -38,6 +38,12 @@ const siteImages = {
   contactHero: img('contact-hero-truck.png'),
   galleryHero: img('gallery-hero.webp'),
 
+  // Knowledge center heroes
+  resourcesHero: img('resources-hero.webp'),
+  faqsHero: img('faqs-hero.webp'),
+  blogHero: img('blog-hero.webp'),
+  learnHero: img('learn-hero.webp'),
+
   // Content section images: unique per section
   aboutPrimary: img('about-primary.webp'),
   aboutSecondary: img('about-secondary.webp'),
@@ -378,8 +384,348 @@ const galleryProjects: GalleryProject[] = [
   },
 ]
 
+// Additional before/after showcase sections for the gallery page.
+// Rendered as their own labeled sections after the water features.
+export type GalleryBeforeAfterSection = {
+  id: string
+  title: string
+  description: string
+  projects: GalleryBeforeAfterProject[]
+}
+
+const gallerySections: GalleryBeforeAfterSection[] = [
+  {
+    id: 'paver-patios',
+    title: 'Paver Patios',
+    description:
+      'Backyards transformed into paver patios with fire pits, pergolas, and outdoor living space.',
+    projects: [
+      {
+        id: 'patio-ba-3',
+        title: 'Paver Patio',
+        category: 'hardscape',
+        before: {
+          src: img('patio-before-3.webp'),
+          alt: 'Backyard with worn grass before paver patio installation in Cedar Falls',
+        },
+        after: {
+          src: img('patio-after-3.webp'),
+          alt: 'Completed paver patio with fire pit and seating area in Cedar Falls',
+        },
+      },
+      {
+        id: 'patio-ba-4',
+        title: 'Patio & Fire Pit',
+        category: 'hardscape',
+        before: {
+          src: img('patio-before-4.webp'),
+          alt: 'Bare backyard before paver patio and fire pit installation in Cedar Falls',
+        },
+        after: {
+          src: img('patio-after-4.webp'),
+          alt: 'New paver patio with stone fire pit and Adirondack chairs in Cedar Falls',
+        },
+      },
+      {
+        id: 'patio-ba-5',
+        title: 'Patio & Pergola',
+        category: 'hardscape',
+        before: {
+          src: img('patio-before-5.webp'),
+          alt: 'Backyard lawn before paver patio installation in Cedar Falls',
+        },
+        after: {
+          src: img('patio-after-5.webp'),
+          alt: 'New paver patio with pergola and outdoor lounge seating in Cedar Falls',
+        },
+      },
+    ],
+  },
+  {
+    id: 'paver-driveways',
+    title: 'Paver Driveways',
+    description:
+      'Cracked concrete and worn asphalt replaced with durable, high-end paver driveways.',
+    projects: [
+      {
+        id: 'driveway-ba-1',
+        title: 'Paver Driveway',
+        category: 'hardscape',
+        before: {
+          src: img('driveway-before-1.webp'),
+          alt: 'Cracked concrete driveway before paver replacement in Cedar Falls',
+        },
+        after: {
+          src: img('driveway-after-1.webp'),
+          alt: 'New paver driveway with contrasting border in Cedar Falls',
+        },
+      },
+      {
+        id: 'driveway-ba-2',
+        title: 'Brick Paver Driveway',
+        category: 'hardscape',
+        before: {
+          src: img('driveway-before-2.webp'),
+          alt: 'Old asphalt driveway before paver installation in Cedar Falls',
+        },
+        after: {
+          src: img('driveway-after-2.webp'),
+          alt: 'New brick paver driveway with herringbone pattern in Cedar Falls',
+        },
+      },
+      {
+        id: 'driveway-ba-3',
+        title: 'Modern Paver Driveway',
+        category: 'hardscape',
+        before: {
+          src: img('driveway-before-3.webp'),
+          alt: 'Plain concrete driveway before paver overlay in Cedar Falls',
+        },
+        after: {
+          src: img('driveway-after-3.webp'),
+          alt: 'New gray paver driveway at a modern farmhouse in Cedar Falls',
+        },
+      },
+      {
+        id: 'driveway-ba-4',
+        title: 'Paver Driveway',
+        category: 'hardscape',
+        before: {
+          src: img('driveway-before-4.webp'),
+          alt: 'Worn concrete driveway before paver upgrade in Cedar Falls',
+        },
+        after: {
+          src: img('driveway-after-4.webp'),
+          alt: 'New paver driveway with a decorative border in Cedar Falls',
+        },
+      },
+      {
+        id: 'driveway-ba-5',
+        title: 'Paver Driveway',
+        category: 'hardscape',
+        before: {
+          src: img('driveway-before-5.webp'),
+          alt: 'Cracked asphalt driveway before paver replacement in Cedar Falls',
+        },
+        after: {
+          src: img('driveway-after-5.webp'),
+          alt: 'New paver driveway leading to an attached garage in Cedar Falls',
+        },
+      },
+    ],
+  },
+  {
+    id: 'lawn-mowing',
+    title: 'Lawn Mowing',
+    description:
+      'Overgrown yards restored to crisp, healthy lawns with clean mowing stripes and edging.',
+    projects: [
+      {
+        id: 'mowing-ba-1',
+        title: 'Lawn Mowing',
+        category: 'hardscape',
+        before: {
+          src: img('mowing-before-1.webp'),
+          alt: 'Overgrown backyard lawn before professional mowing in Cedar Falls',
+        },
+        after: {
+          src: img('mowing-after-1.webp'),
+          alt: 'Freshly mowed backyard lawn with clean mowing stripes in Cedar Falls',
+        },
+      },
+      {
+        id: 'mowing-ba-2',
+        title: 'Lawn Mowing',
+        category: 'hardscape',
+        before: {
+          src: img('mowing-before-2.webp'),
+          alt: 'Tall, weedy front lawn before professional mowing in Cedar Falls',
+        },
+        after: {
+          src: img('mowing-after-2.webp'),
+          alt: 'Freshly cut front lawn with striped finish in Cedar Falls',
+        },
+      },
+      {
+        id: 'mowing-ba-3',
+        title: 'Lawn Mowing',
+        category: 'hardscape',
+        before: {
+          src: img('mowing-before-3.webp'),
+          alt: 'Overgrown acreage lawn before mowing in Cedar Falls',
+        },
+        after: {
+          src: img('mowing-after-3.webp'),
+          alt: 'Large mowed lawn with clean stripes around mature trees in Cedar Falls',
+        },
+      },
+      {
+        id: 'mowing-ba-4',
+        title: 'Lawn Mowing',
+        category: 'hardscape',
+        before: {
+          src: img('mowing-before-4.webp'),
+          alt: 'Shaggy roadside lawn before mowing and trimming in Cedar Falls',
+        },
+        after: {
+          src: img('mowing-after-4.webp'),
+          alt: 'Neatly mowed corner lawn with crisp edges in Cedar Falls',
+        },
+      },
+      {
+        id: 'mowing-ba-5',
+        title: 'Lawn Mowing',
+        category: 'hardscape',
+        before: {
+          src: img('mowing-before-5.webp'),
+          alt: 'Weedy front yard before professional lawn mowing in Cedar Falls',
+        },
+        after: {
+          src: img('mowing-after-5.webp'),
+          alt: 'Freshly mowed front yard with striped finish in Cedar Falls',
+        },
+      },
+    ],
+  },
+  {
+    id: 'landscape-installation',
+    title: 'Landscape Installation',
+    description:
+      'Bare yards turned into planted beds with shrubs, flowers, mulch, and clean edging.',
+    projects: [
+      {
+        id: 'landscape-ba-1',
+        title: 'Foundation Beds',
+        category: 'hardscape',
+        before: {
+          src: img('landscape-before-1.webp'),
+          alt: 'Bare foundation strip before landscape bed installation in Cedar Falls',
+        },
+        after: {
+          src: img('landscape-after-1.webp'),
+          alt: 'New foundation planting bed with shrubs, flowers, and mulch in Cedar Falls',
+        },
+      },
+      {
+        id: 'landscape-ba-2',
+        title: 'Island Bed',
+        category: 'hardscape',
+        before: {
+          src: img('landscape-before-2.webp'),
+          alt: 'Plain front lawn before island planting bed installation in Cedar Falls',
+        },
+        after: {
+          src: img('landscape-after-2.webp'),
+          alt: 'New island bed with a tree, perennials, and mulch in Cedar Falls',
+        },
+      },
+      {
+        id: 'landscape-ba-3',
+        title: 'Corner Bed',
+        category: 'hardscape',
+        before: {
+          src: img('landscape-before-3.webp'),
+          alt: 'Plain grass at house corner before landscape bed installation in Cedar Falls',
+        },
+        after: {
+          src: img('landscape-after-3.webp'),
+          alt: 'New corner bed with arborvitae, boulders, and river rock in Cedar Falls',
+        },
+      },
+      {
+        id: 'landscape-ba-4',
+        title: 'Walkway Beds',
+        category: 'hardscape',
+        before: {
+          src: img('landscape-before-4.webp'),
+          alt: 'Plain lawn along front walkway before landscape bed installation in Cedar Falls',
+        },
+        after: {
+          src: img('landscape-after-4.webp'),
+          alt: 'New planting beds lining the front walkway with hostas and flowers in Cedar Falls',
+        },
+      },
+      {
+        id: 'landscape-ba-5',
+        title: 'Border Bed',
+        category: 'hardscape',
+        before: {
+          src: img('landscape-before-5.webp'),
+          alt: 'Plain grass along privacy fence before landscape bed installation in Cedar Falls',
+        },
+        after: {
+          src: img('landscape-after-5.webp'),
+          alt: 'New border bed along the fence with hydrangeas and perennials in Cedar Falls',
+        },
+      },
+    ],
+  },
+]
+
+// City / location page hero images: one authentic downtown scene per city
+const cityHeroMap: Record<string, string> = {
+  'cedar-falls': img('city-hero-cedar-falls.webp'),
+  'waterloo': img('city-hero-waterloo.webp'),
+  'hudson': img('city-hero-hudson.webp'),
+  'evansdale': img('city-hero-evansdale.webp'),
+  'waverly': img('city-hero-waverly.webp'),
+  'denver': img('city-hero-denver.webp'),
+  'jesup': img('city-hero-jesup.webp'),
+  'parkersburg': img('city-hero-parkersburg.webp'),
+  'la-porte-city': img('city-hero-la-porte-city.webp'),
+  'dike': img('city-hero-dike.webp'),
+  'elk-run-heights': img('city-hero-elk-run-heights.webp'),
+  'dunkerton': img('city-hero-dunkerton.webp'),
+}
+
+export function getCityHeroImage(slug: string): string | undefined {
+  return cityHeroMap[slug]
+}
+
+// Per-city on-page content images: each city gets a distinct pair of real
+// project photos so no two city pages show the same landscaping images.
+type CityContentImage = { src: string; desc: string }
+
+const cityIntroImages: Record<string, CityContentImage> = {
+  'cedar-falls': { src: img('content-landscaping-cedar-falls.webp'), desc: 'Full landscape installation with fresh plantings and mulched beds' },
+  'waterloo': { src: img('service-content-residential-landscaping.webp'), desc: 'Complete residential backyard landscaping' },
+  'hudson': { src: img('service-content-landscape-installation.webp'), desc: 'New landscape installation with walkway and plantings' },
+  'evansdale': { src: img('service-content-lawn-care.webp'), desc: 'Healthy, freshly mowed lawn with crisp edging' },
+  'waverly': { src: img('service-content-landscape-design.webp'), desc: 'Custom landscape design with layered garden beds' },
+  'denver': { src: img('service-content-mulching.webp'), desc: 'Fresh mulch beds with clean bed edging' },
+  'jesup': { src: img('service-content-shrub-installation.webp'), desc: 'Foundation shrub plantings with fresh mulch' },
+  'parkersburg': { src: img('service-content-sod-installation.webp'), desc: 'New sod installation with an instant green lawn' },
+  'la-porte-city': { src: img('service-content-rock-landscaping.webp'), desc: 'Decorative rock landscaping with boulders' },
+  'dike': { src: img('service-content-landscape-maintenance.webp'), desc: 'Maintained landscape with pruned shrubs and fresh mulch' },
+  'elk-run-heights': { src: img('service-content-preservation-restoration.webp'), desc: 'Restored landscape beds and a healthy lawn' },
+  'dunkerton': { src: img('about-primary.webp'), desc: 'A1 Property Services landscaping project' },
+}
+
+const cityWhyImages: Record<string, CityContentImage> = {
+  'cedar-falls': { src: img('wall-after-4.webp'), desc: 'Segmental block retaining wall with a leveled yard' },
+  'waterloo': { src: img('patio-after-2.webp'), desc: 'New paver patio with clean edging' },
+  'hudson': { src: img('wall-after-1.webp'), desc: 'Retaining wall and patio foundation' },
+  'evansdale': { src: img('water-feature-image-1.webp'), desc: 'Backyard koi pond and stone waterfall' },
+  'waverly': { src: img('wall-after-2.webp'), desc: 'Block retaining wall with graded landscaping' },
+  'denver': { src: img('patio-after-1.webp'), desc: 'Raised paver patio with stone steps' },
+  'jesup': { src: img('wall-after-3.webp'), desc: 'Retaining wall with a decorative gravel finish' },
+  'parkersburg': { src: img('service-content-paver-patio.webp'), desc: 'Custom paver patio installation' },
+  'la-porte-city': { src: img('water-pond-after.webp'), desc: 'Koi pond and stone waterfall beside the home' },
+  'dike': { src: img('wall-after-5.webp'), desc: 'Retaining wall with a decorative gravel cap' },
+  'elk-run-heights': { src: img('water-feature-image-3.webp'), desc: 'Multi-tiered stone waterfall with garden steps' },
+  'dunkerton': { src: img('service-content-outdoor-living.webp'), desc: 'Outdoor living space with paver patio and fire pit' },
+}
+
+export function getCityIntroImage(slug: string): CityContentImage {
+  return cityIntroImages[slug] ?? { src: siteImages.cityIntro, desc: 'Landscaping project' }
+}
+
+export function getCityWhyImage(slug: string): CityContentImage {
+  return cityWhyImages[slug] ?? { src: siteImages.cityWhy, desc: 'A1 Property Services landscaping' }
+}
+
 // Exports
-export { siteImages, galleryProjects }
+export { siteImages, galleryProjects, gallerySections }
 
 export const homepageGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.filter(
   (p): p is GalleryBeforeAfterProject =>

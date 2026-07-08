@@ -36,6 +36,13 @@ const HERO_NAMES = new Set([
   'hero-background-image', 'contact-page-hero', 'paver-patio-hero',
   'about-hero', 'services-hero', 'gallery-hero', 'contact-hero-truck',
   'service-outdoor-living',
+  // Knowledge center heroes
+  'resources-hero', 'faqs-hero', 'blog-hero', 'learn-hero',
+  // City / location page heroes
+  'city-hero-cedar-falls', 'city-hero-waterloo', 'city-hero-hudson',
+  'city-hero-evansdale', 'city-hero-waverly', 'city-hero-denver',
+  'city-hero-jesup', 'city-hero-parkersburg', 'city-hero-la-porte-city',
+  'city-hero-dike', 'city-hero-elk-run-heights', 'city-hero-dunkerton',
 ])
 
 function isGalleryImage(name) {

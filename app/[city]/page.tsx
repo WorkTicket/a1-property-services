@@ -5,7 +5,7 @@ import { Phone, MapPin, Check, Star, ChevronRight } from 'lucide-react'
 import { cities, getCityBySlug } from '@/lib/cities'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { siteImages } from '@/lib/images'
+import { siteImages, getCityHeroImage, getCityIntroImage, getCityWhyImage } from '@/lib/images'
 import { services, hardscapeFeatures, hardscapeServices, getHardscapeFeatureHref } from '@/lib/services'
 import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${city.slug}`,
     keywords: city.metaKeywords,
     absoluteTitle: true,
-    ogImage: '/images/local-hero-image.webp',
-    ogImageAlt: `Landscaping services in ${city.name}, Iowa`,
+    ogImage: getCityHeroImage(city.slug) ?? '/images/local-hero-image.webp',
+    ogImageAlt: `Downtown ${city.name}, Iowa`,
   })
 }
 
@@ -72,6 +72,9 @@ const trustPoints = [
 export default function CityPage({ params }: Props) {
   const city = getCityBySlug(params.city)
   if (!city) notFound()
+
+  const introImage = getCityIntroImage(city.slug)
+  const whyImage = getCityWhyImage(city.slug)
 
   const cityJsonLd = {
     '@context': 'https://schema.org',
@@ -127,6 +130,8 @@ export default function CityPage({ params }: Props) {
       />
 
       <PageHero
+        imageSrc={getCityHeroImage(city.slug)}
+        imageAlt={`Downtown ${city.name}, Iowa`}
         eyebrow={city.heroEyebrow}
         title={city.heroTitle}
         subtitle={city.heroSubtitle}
@@ -156,8 +161,8 @@ export default function CityPage({ params }: Props) {
             <FadeIn direction="right" delay={0.1}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <ResponsiveImage
-                  src={siteImages.cityIntro}
-                  alt={`Landscaping project in ${city.name}, Iowa`}
+                  src={introImage.src}
+                  alt={`${introImage.desc} in ${city.name}, Iowa`}
                   fill
                   sizes={IMAGE_SIZES.halfCol}
                 />
@@ -264,8 +269,8 @@ export default function CityPage({ params }: Props) {
             <FadeIn direction="right" delay={0.1}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <ResponsiveImage
-                  src={siteImages.cityWhy}
-                  alt={`A1 Property Services landscaping in ${city.name}`}
+                  src={whyImage.src}
+                  alt={`${whyImage.desc} in ${city.name}, Iowa`}
                   fill
                   sizes={IMAGE_SIZES.halfCol}
                 />

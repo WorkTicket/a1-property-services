@@ -104,6 +104,539 @@
       }
     }
   },
+  "/images/blog-hero.webp": {
+    "originalPath": "/images/blog-hero.webp",
+    "altBase": "blog-hero",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADwAwCdASoUAA0APzmIuVOvKSWisAgB4CcJSpqGb/ALsABTniAAvDYAAP6ieV+xGL/uzkIQ7WUkD1tNZuSkj/euijgogb99/TEad9H3krK3Ic1Op+cv/DBcP/9TPltF9ZFqEc9WSmTrHf4YVaz6kbPzTvPmnik3IN+YhRe45ovV3sqvRQQAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/blog-hero-480.avif",
+        "640": "/images/generated/blog-hero-640.avif",
+        "768": "/images/generated/blog-hero-768.avif",
+        "1024": "/images/generated/blog-hero-1024.avif",
+        "1280": "/images/generated/blog-hero-1280.avif",
+        "1536": "/images/generated/blog-hero-1536.avif",
+        "1920": "/images/generated/blog-hero-1920.avif",
+        "2560": "/images/generated/blog-hero-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/blog-hero-480.webp",
+        "640": "/images/generated/blog-hero-640.webp",
+        "768": "/images/generated/blog-hero-768.webp",
+        "1024": "/images/generated/blog-hero-1024.webp",
+        "1280": "/images/generated/blog-hero-1280.webp",
+        "1536": "/images/generated/blog-hero-1536.webp",
+        "1920": "/images/generated/blog-hero-1920.webp",
+        "2560": "/images/generated/blog-hero-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/blog-hero-480.jpeg",
+        "640": "/images/generated/blog-hero-640.jpeg",
+        "768": "/images/generated/blog-hero-768.jpeg",
+        "1024": "/images/generated/blog-hero-1024.jpeg",
+        "1280": "/images/generated/blog-hero-1280.jpeg",
+        "1536": "/images/generated/blog-hero-1536.jpeg",
+        "1920": "/images/generated/blog-hero-1920.jpeg",
+        "2560": "/images/generated/blog-hero-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-cedar-falls.webp": {
+    "originalPath": "/images/city-hero-cedar-falls.webp",
+    "altBase": "city-hero-cedar-falls",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQAwCdASoUAA0APzmOvlOvKqcisAgB4CcJYhwBSgags7gCTAG07gAA/uut/Df/vV//ev7P/lLH7Pr+SyJPPt+DxOhrv+uTZ/m/8yU0Q8mh46hpzEf+PG0182j9HsS+Sr4/s8rj8VDYvU4t2L1KYIwfcTq5GjAYMO9VR7RismCwd5oWWuz9KU5L3/CUSonV8fSZusAkt+c1seYtVMXBs9RQAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-cedar-falls-480.avif",
+        "640": "/images/generated/city-hero-cedar-falls-640.avif",
+        "768": "/images/generated/city-hero-cedar-falls-768.avif",
+        "1024": "/images/generated/city-hero-cedar-falls-1024.avif",
+        "1280": "/images/generated/city-hero-cedar-falls-1280.avif",
+        "1536": "/images/generated/city-hero-cedar-falls-1536.avif",
+        "1920": "/images/generated/city-hero-cedar-falls-1920.avif",
+        "2560": "/images/generated/city-hero-cedar-falls-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-cedar-falls-480.webp",
+        "640": "/images/generated/city-hero-cedar-falls-640.webp",
+        "768": "/images/generated/city-hero-cedar-falls-768.webp",
+        "1024": "/images/generated/city-hero-cedar-falls-1024.webp",
+        "1280": "/images/generated/city-hero-cedar-falls-1280.webp",
+        "1536": "/images/generated/city-hero-cedar-falls-1536.webp",
+        "1920": "/images/generated/city-hero-cedar-falls-1920.webp",
+        "2560": "/images/generated/city-hero-cedar-falls-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-cedar-falls-480.jpeg",
+        "640": "/images/generated/city-hero-cedar-falls-640.jpeg",
+        "768": "/images/generated/city-hero-cedar-falls-768.jpeg",
+        "1024": "/images/generated/city-hero-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/city-hero-cedar-falls-1280.jpeg",
+        "1536": "/images/generated/city-hero-cedar-falls-1536.jpeg",
+        "1920": "/images/generated/city-hero-cedar-falls-1920.jpeg",
+        "2560": "/images/generated/city-hero-cedar-falls-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-denver.webp": {
+    "originalPath": "/images/city-hero-denver.webp",
+    "altBase": "city-hero-denver",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACQAgCdASoUAA0ALvmczmclLy8vDwD4SgCdAG+UQAD+0mZ/+RX+WF5qJafuWNc6mXenyJRitKmu3+sbq/Aeec26QGS5y3EmSI8Px5OZ38Fjz0Vaa/UmHgrZ+0pekxrcRfx9ACPPkxSWgAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-denver-480.avif",
+        "640": "/images/generated/city-hero-denver-640.avif",
+        "768": "/images/generated/city-hero-denver-768.avif",
+        "1024": "/images/generated/city-hero-denver-1024.avif",
+        "1280": "/images/generated/city-hero-denver-1280.avif",
+        "1536": "/images/generated/city-hero-denver-1536.avif",
+        "1920": "/images/generated/city-hero-denver-1920.avif",
+        "2560": "/images/generated/city-hero-denver-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-denver-480.webp",
+        "640": "/images/generated/city-hero-denver-640.webp",
+        "768": "/images/generated/city-hero-denver-768.webp",
+        "1024": "/images/generated/city-hero-denver-1024.webp",
+        "1280": "/images/generated/city-hero-denver-1280.webp",
+        "1536": "/images/generated/city-hero-denver-1536.webp",
+        "1920": "/images/generated/city-hero-denver-1920.webp",
+        "2560": "/images/generated/city-hero-denver-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-denver-480.jpeg",
+        "640": "/images/generated/city-hero-denver-640.jpeg",
+        "768": "/images/generated/city-hero-denver-768.jpeg",
+        "1024": "/images/generated/city-hero-denver-1024.jpeg",
+        "1280": "/images/generated/city-hero-denver-1280.jpeg",
+        "1536": "/images/generated/city-hero-denver-1536.jpeg",
+        "1920": "/images/generated/city-hero-denver-1920.jpeg",
+        "2560": "/images/generated/city-hero-denver-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-dike.webp": {
+    "originalPath": "/images/city-hero-dike.webp",
+    "altBase": "city-hero-dike",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAwCdASoUAA0APzmIvlOvKScisAgB4CcJRaOHoACMgCqt0AD+zK///FZcG//1nCv2h52rHOhDJp3PRFKOVtmIE9BF6o4mcOX4QBQeOA3XMg102cKw/N/E74p0qLoRe8FV3VX9ngLOPvEbrZtAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-dike-480.avif",
+        "640": "/images/generated/city-hero-dike-640.avif",
+        "768": "/images/generated/city-hero-dike-768.avif",
+        "1024": "/images/generated/city-hero-dike-1024.avif",
+        "1280": "/images/generated/city-hero-dike-1280.avif",
+        "1536": "/images/generated/city-hero-dike-1536.avif",
+        "1920": "/images/generated/city-hero-dike-1920.avif",
+        "2560": "/images/generated/city-hero-dike-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-dike-480.webp",
+        "640": "/images/generated/city-hero-dike-640.webp",
+        "768": "/images/generated/city-hero-dike-768.webp",
+        "1024": "/images/generated/city-hero-dike-1024.webp",
+        "1280": "/images/generated/city-hero-dike-1280.webp",
+        "1536": "/images/generated/city-hero-dike-1536.webp",
+        "1920": "/images/generated/city-hero-dike-1920.webp",
+        "2560": "/images/generated/city-hero-dike-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-dike-480.jpeg",
+        "640": "/images/generated/city-hero-dike-640.jpeg",
+        "768": "/images/generated/city-hero-dike-768.jpeg",
+        "1024": "/images/generated/city-hero-dike-1024.jpeg",
+        "1280": "/images/generated/city-hero-dike-1280.jpeg",
+        "1536": "/images/generated/city-hero-dike-1536.jpeg",
+        "1920": "/images/generated/city-hero-dike-1920.jpeg",
+        "2560": "/images/generated/city-hero-dike-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-dunkerton.webp": {
+    "originalPath": "/images/city-hero-dunkerton.webp",
+    "altBase": "city-hero-dunkerton",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwAwCdASoUAA0APzmIvlOvKScisAgB4CcJSvZri/gARQAU+ugA/rQ6/Jv/uiE7//EPDSKq16SsyJXxOCl9Sx0N7GpaFEK///O8i3YRf/21lkHqIdw6+P4/lilWkcuWH2mMNdC/MhyovYHs2k1p3ZLRf42QAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-dunkerton-480.avif",
+        "640": "/images/generated/city-hero-dunkerton-640.avif",
+        "768": "/images/generated/city-hero-dunkerton-768.avif",
+        "1024": "/images/generated/city-hero-dunkerton-1024.avif",
+        "1280": "/images/generated/city-hero-dunkerton-1280.avif",
+        "1536": "/images/generated/city-hero-dunkerton-1536.avif",
+        "1920": "/images/generated/city-hero-dunkerton-1920.avif",
+        "2560": "/images/generated/city-hero-dunkerton-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-dunkerton-480.webp",
+        "640": "/images/generated/city-hero-dunkerton-640.webp",
+        "768": "/images/generated/city-hero-dunkerton-768.webp",
+        "1024": "/images/generated/city-hero-dunkerton-1024.webp",
+        "1280": "/images/generated/city-hero-dunkerton-1280.webp",
+        "1536": "/images/generated/city-hero-dunkerton-1536.webp",
+        "1920": "/images/generated/city-hero-dunkerton-1920.webp",
+        "2560": "/images/generated/city-hero-dunkerton-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-dunkerton-480.jpeg",
+        "640": "/images/generated/city-hero-dunkerton-640.jpeg",
+        "768": "/images/generated/city-hero-dunkerton-768.jpeg",
+        "1024": "/images/generated/city-hero-dunkerton-1024.jpeg",
+        "1280": "/images/generated/city-hero-dunkerton-1280.jpeg",
+        "1536": "/images/generated/city-hero-dunkerton-1536.jpeg",
+        "1920": "/images/generated/city-hero-dunkerton-1920.jpeg",
+        "2560": "/images/generated/city-hero-dunkerton-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-elk-run-heights.webp": {
+    "originalPath": "/images/city-hero-elk-run-heights.webp",
+    "altBase": "city-hero-elk-run-heights",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQAwCdASoUAA0APzmIvlOvKScisAgB4CcJYy0gAAKh+7AA/aZ/1d/0e+r7/4BcBYJPIxc/RnPDjSSuOHxH+GzX/+/TpgP/9EEtDcd97gyXl6Ao4aMbndsHWox/CjNVXGaquQd71wgACEoP/jAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-elk-run-heights-480.avif",
+        "640": "/images/generated/city-hero-elk-run-heights-640.avif",
+        "768": "/images/generated/city-hero-elk-run-heights-768.avif",
+        "1024": "/images/generated/city-hero-elk-run-heights-1024.avif",
+        "1280": "/images/generated/city-hero-elk-run-heights-1280.avif",
+        "1536": "/images/generated/city-hero-elk-run-heights-1536.avif",
+        "1920": "/images/generated/city-hero-elk-run-heights-1920.avif",
+        "2560": "/images/generated/city-hero-elk-run-heights-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-elk-run-heights-480.webp",
+        "640": "/images/generated/city-hero-elk-run-heights-640.webp",
+        "768": "/images/generated/city-hero-elk-run-heights-768.webp",
+        "1024": "/images/generated/city-hero-elk-run-heights-1024.webp",
+        "1280": "/images/generated/city-hero-elk-run-heights-1280.webp",
+        "1536": "/images/generated/city-hero-elk-run-heights-1536.webp",
+        "1920": "/images/generated/city-hero-elk-run-heights-1920.webp",
+        "2560": "/images/generated/city-hero-elk-run-heights-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-elk-run-heights-480.jpeg",
+        "640": "/images/generated/city-hero-elk-run-heights-640.jpeg",
+        "768": "/images/generated/city-hero-elk-run-heights-768.jpeg",
+        "1024": "/images/generated/city-hero-elk-run-heights-1024.jpeg",
+        "1280": "/images/generated/city-hero-elk-run-heights-1280.jpeg",
+        "1536": "/images/generated/city-hero-elk-run-heights-1536.jpeg",
+        "1920": "/images/generated/city-hero-elk-run-heights-1920.jpeg",
+        "2560": "/images/generated/city-hero-elk-run-heights-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-evansdale.webp": {
+    "originalPath": "/images/city-hero-evansdale.webp",
+    "altBase": "city-hero-evansdale",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAgCdASoUAA0ALvmczmclLy8vDwD4ShtswALfsgAA/r9N/7h/17uyDuHyezQV/9DX9Nsf7XyZ/KiHMaurae8LIHPUCwLhvasv5X/6VuT7xtMNn5M9G2409j2Ge6lhoAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-evansdale-480.avif",
+        "640": "/images/generated/city-hero-evansdale-640.avif",
+        "768": "/images/generated/city-hero-evansdale-768.avif",
+        "1024": "/images/generated/city-hero-evansdale-1024.avif",
+        "1280": "/images/generated/city-hero-evansdale-1280.avif",
+        "1536": "/images/generated/city-hero-evansdale-1536.avif",
+        "1920": "/images/generated/city-hero-evansdale-1920.avif",
+        "2560": "/images/generated/city-hero-evansdale-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-evansdale-480.webp",
+        "640": "/images/generated/city-hero-evansdale-640.webp",
+        "768": "/images/generated/city-hero-evansdale-768.webp",
+        "1024": "/images/generated/city-hero-evansdale-1024.webp",
+        "1280": "/images/generated/city-hero-evansdale-1280.webp",
+        "1536": "/images/generated/city-hero-evansdale-1536.webp",
+        "1920": "/images/generated/city-hero-evansdale-1920.webp",
+        "2560": "/images/generated/city-hero-evansdale-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-evansdale-480.jpeg",
+        "640": "/images/generated/city-hero-evansdale-640.jpeg",
+        "768": "/images/generated/city-hero-evansdale-768.jpeg",
+        "1024": "/images/generated/city-hero-evansdale-1024.jpeg",
+        "1280": "/images/generated/city-hero-evansdale-1280.jpeg",
+        "1536": "/images/generated/city-hero-evansdale-1536.jpeg",
+        "1920": "/images/generated/city-hero-evansdale-1920.jpeg",
+        "2560": "/images/generated/city-hero-evansdale-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-hudson.webp": {
+    "originalPath": "/images/city-hero-hudson.webp",
+    "altBase": "city-hero-hudson",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQAwCdASoUAA0APzleyV8vI6qmGAHgJwliYP9QXxLfswYtGOAqadAAyZ/94S96M3ir+PtYUJuz6ztJcO6vlhqSf8TTzp4e7/L/nHbL9bu8niWrECNeOfRI1XDoz6NYQzEemxQdiuroe788NIAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-hudson-480.avif",
+        "640": "/images/generated/city-hero-hudson-640.avif",
+        "768": "/images/generated/city-hero-hudson-768.avif",
+        "1024": "/images/generated/city-hero-hudson-1024.avif",
+        "1280": "/images/generated/city-hero-hudson-1280.avif",
+        "1536": "/images/generated/city-hero-hudson-1536.avif",
+        "1920": "/images/generated/city-hero-hudson-1920.avif",
+        "2560": "/images/generated/city-hero-hudson-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-hudson-480.webp",
+        "640": "/images/generated/city-hero-hudson-640.webp",
+        "768": "/images/generated/city-hero-hudson-768.webp",
+        "1024": "/images/generated/city-hero-hudson-1024.webp",
+        "1280": "/images/generated/city-hero-hudson-1280.webp",
+        "1536": "/images/generated/city-hero-hudson-1536.webp",
+        "1920": "/images/generated/city-hero-hudson-1920.webp",
+        "2560": "/images/generated/city-hero-hudson-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-hudson-480.jpeg",
+        "640": "/images/generated/city-hero-hudson-640.jpeg",
+        "768": "/images/generated/city-hero-hudson-768.jpeg",
+        "1024": "/images/generated/city-hero-hudson-1024.jpeg",
+        "1280": "/images/generated/city-hero-hudson-1280.jpeg",
+        "1536": "/images/generated/city-hero-hudson-1536.jpeg",
+        "1920": "/images/generated/city-hero-hudson-1920.jpeg",
+        "2560": "/images/generated/city-hero-hudson-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-jesup.webp": {
+    "originalPath": "/images/city-hero-jesup.webp",
+    "altBase": "city-hero-jesup",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoUAA0APzleyV8vI6qmGAHgJwljPS3A/6SrYcJ0OH/AyAWAAP6z2/9Dz4mr7/9KmJ7upGtBclBDlYpjjJc9kz1FHvk+08X0X+4nrSfay91RLEVaFUqzhL1iQ3G7EeDCEMwqQ20iZ2PVfpQbeG/BGnNe3zzJqwTEcqTiUAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-jesup-480.avif",
+        "640": "/images/generated/city-hero-jesup-640.avif",
+        "768": "/images/generated/city-hero-jesup-768.avif",
+        "1024": "/images/generated/city-hero-jesup-1024.avif",
+        "1280": "/images/generated/city-hero-jesup-1280.avif",
+        "1536": "/images/generated/city-hero-jesup-1536.avif",
+        "1920": "/images/generated/city-hero-jesup-1920.avif",
+        "2560": "/images/generated/city-hero-jesup-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-jesup-480.webp",
+        "640": "/images/generated/city-hero-jesup-640.webp",
+        "768": "/images/generated/city-hero-jesup-768.webp",
+        "1024": "/images/generated/city-hero-jesup-1024.webp",
+        "1280": "/images/generated/city-hero-jesup-1280.webp",
+        "1536": "/images/generated/city-hero-jesup-1536.webp",
+        "1920": "/images/generated/city-hero-jesup-1920.webp",
+        "2560": "/images/generated/city-hero-jesup-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-jesup-480.jpeg",
+        "640": "/images/generated/city-hero-jesup-640.jpeg",
+        "768": "/images/generated/city-hero-jesup-768.jpeg",
+        "1024": "/images/generated/city-hero-jesup-1024.jpeg",
+        "1280": "/images/generated/city-hero-jesup-1280.jpeg",
+        "1536": "/images/generated/city-hero-jesup-1536.jpeg",
+        "1920": "/images/generated/city-hero-jesup-1920.jpeg",
+        "2560": "/images/generated/city-hero-jesup-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-la-porte-city.webp": {
+    "originalPath": "/images/city-hero-la-porte-city.webp",
+    "altBase": "city-hero-la-porte-city",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQAwCdASoUAA0APzmKulOvKaWisAgB4CcJaizgQqRXgAF3bAD+sR/+b7yb+/AP5Ni/mVXe6CGTGFQmOz6qNjiXYaL5beikLWJjE4ps8Xgj/NUH//d/9v/+974fl9bZ6yyjAMZRgGMowL829WojgIVr4C18Ba+nA1Q18cuKw0HlrJqH+lgznZxvrtqWPB2pe1X7R0AA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-la-porte-city-480.avif",
+        "640": "/images/generated/city-hero-la-porte-city-640.avif",
+        "768": "/images/generated/city-hero-la-porte-city-768.avif",
+        "1024": "/images/generated/city-hero-la-porte-city-1024.avif",
+        "1280": "/images/generated/city-hero-la-porte-city-1280.avif",
+        "1536": "/images/generated/city-hero-la-porte-city-1536.avif",
+        "1920": "/images/generated/city-hero-la-porte-city-1920.avif",
+        "2560": "/images/generated/city-hero-la-porte-city-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-la-porte-city-480.webp",
+        "640": "/images/generated/city-hero-la-porte-city-640.webp",
+        "768": "/images/generated/city-hero-la-porte-city-768.webp",
+        "1024": "/images/generated/city-hero-la-porte-city-1024.webp",
+        "1280": "/images/generated/city-hero-la-porte-city-1280.webp",
+        "1536": "/images/generated/city-hero-la-porte-city-1536.webp",
+        "1920": "/images/generated/city-hero-la-porte-city-1920.webp",
+        "2560": "/images/generated/city-hero-la-porte-city-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-la-porte-city-480.jpeg",
+        "640": "/images/generated/city-hero-la-porte-city-640.jpeg",
+        "768": "/images/generated/city-hero-la-porte-city-768.jpeg",
+        "1024": "/images/generated/city-hero-la-porte-city-1024.jpeg",
+        "1280": "/images/generated/city-hero-la-porte-city-1280.jpeg",
+        "1536": "/images/generated/city-hero-la-porte-city-1536.jpeg",
+        "1920": "/images/generated/city-hero-la-porte-city-1920.jpeg",
+        "2560": "/images/generated/city-hero-la-porte-city-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-parkersburg.webp": {
+    "originalPath": "/images/city-hero-parkersburg.webp",
+    "altBase": "city-hero-parkersburg",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJY2H0VN+zfYACDQCzzEgA/aZ/7TPHX5juMcOnhSFmjRGsIXA2pU8y/bp2s+WyZ4rpDBniqzLv4opf/g8/+hvYIVf//OAlk/77285RTvvQ28Q5cBArY6V2U4s8mdqmj53MbUhRqbJqT+kn0g6t0mawAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-parkersburg-480.avif",
+        "640": "/images/generated/city-hero-parkersburg-640.avif",
+        "768": "/images/generated/city-hero-parkersburg-768.avif",
+        "1024": "/images/generated/city-hero-parkersburg-1024.avif",
+        "1280": "/images/generated/city-hero-parkersburg-1280.avif",
+        "1536": "/images/generated/city-hero-parkersburg-1536.avif",
+        "1920": "/images/generated/city-hero-parkersburg-1920.avif",
+        "2560": "/images/generated/city-hero-parkersburg-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-parkersburg-480.webp",
+        "640": "/images/generated/city-hero-parkersburg-640.webp",
+        "768": "/images/generated/city-hero-parkersburg-768.webp",
+        "1024": "/images/generated/city-hero-parkersburg-1024.webp",
+        "1280": "/images/generated/city-hero-parkersburg-1280.webp",
+        "1536": "/images/generated/city-hero-parkersburg-1536.webp",
+        "1920": "/images/generated/city-hero-parkersburg-1920.webp",
+        "2560": "/images/generated/city-hero-parkersburg-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-parkersburg-480.jpeg",
+        "640": "/images/generated/city-hero-parkersburg-640.jpeg",
+        "768": "/images/generated/city-hero-parkersburg-768.jpeg",
+        "1024": "/images/generated/city-hero-parkersburg-1024.jpeg",
+        "1280": "/images/generated/city-hero-parkersburg-1280.jpeg",
+        "1536": "/images/generated/city-hero-parkersburg-1536.jpeg",
+        "1920": "/images/generated/city-hero-parkersburg-1920.jpeg",
+        "2560": "/images/generated/city-hero-parkersburg-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-waterloo.webp": {
+    "originalPath": "/images/city-hero-waterloo.webp",
+    "altBase": "city-hero-waterloo",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBACdASoUAA0APzmYvlYvLCajsAgB4CcJZT1Rvp/gJczBti4/wMcVgAD+2Av/59/5oyP/+HfBFRQXt/Lfp2rEFMycC1GZi+NPzOzfk8la//nCvg5d7/+OyBvSYWYVgR9zHLx9hlgcB+Ki6eB+HGNGRa5spVoU2PpsnOEk/Wh8LYK4joTkCpJJqMQxuKuAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-waterloo-480.avif",
+        "640": "/images/generated/city-hero-waterloo-640.avif",
+        "768": "/images/generated/city-hero-waterloo-768.avif",
+        "1024": "/images/generated/city-hero-waterloo-1024.avif",
+        "1280": "/images/generated/city-hero-waterloo-1280.avif",
+        "1536": "/images/generated/city-hero-waterloo-1536.avif",
+        "1920": "/images/generated/city-hero-waterloo-1920.avif",
+        "2560": "/images/generated/city-hero-waterloo-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-waterloo-480.webp",
+        "640": "/images/generated/city-hero-waterloo-640.webp",
+        "768": "/images/generated/city-hero-waterloo-768.webp",
+        "1024": "/images/generated/city-hero-waterloo-1024.webp",
+        "1280": "/images/generated/city-hero-waterloo-1280.webp",
+        "1536": "/images/generated/city-hero-waterloo-1536.webp",
+        "1920": "/images/generated/city-hero-waterloo-1920.webp",
+        "2560": "/images/generated/city-hero-waterloo-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-waterloo-480.jpeg",
+        "640": "/images/generated/city-hero-waterloo-640.jpeg",
+        "768": "/images/generated/city-hero-waterloo-768.jpeg",
+        "1024": "/images/generated/city-hero-waterloo-1024.jpeg",
+        "1280": "/images/generated/city-hero-waterloo-1280.jpeg",
+        "1536": "/images/generated/city-hero-waterloo-1536.jpeg",
+        "1920": "/images/generated/city-hero-waterloo-1920.jpeg",
+        "2560": "/images/generated/city-hero-waterloo-2560.jpeg"
+      }
+    }
+  },
+  "/images/city-hero-waverly.webp": {
+    "originalPath": "/images/city-hero-waverly.webp",
+    "altBase": "city-hero-waverly",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABQBACdASoUAA0APzmIvlOvKScisAgB4CcJZi0l/46YATS7xdEOI8AAsRYAAP5Fp/8HmL1bnj56KuquxhGogm0qp2Y2OMgvyDbYk0eK4zWutDRRKnLuThyyno0f/YN4ye/lSOpbP2PQqTQimnNf4N64ecG9cPODenhviClkJV4ug/pCFRI6LxF+6PFq4tXCso1Fe7+27F18S3Gsl+p5cAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-hero-waverly-480.avif",
+        "640": "/images/generated/city-hero-waverly-640.avif",
+        "768": "/images/generated/city-hero-waverly-768.avif",
+        "1024": "/images/generated/city-hero-waverly-1024.avif",
+        "1280": "/images/generated/city-hero-waverly-1280.avif",
+        "1536": "/images/generated/city-hero-waverly-1536.avif",
+        "1920": "/images/generated/city-hero-waverly-1920.avif",
+        "2560": "/images/generated/city-hero-waverly-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-hero-waverly-480.webp",
+        "640": "/images/generated/city-hero-waverly-640.webp",
+        "768": "/images/generated/city-hero-waverly-768.webp",
+        "1024": "/images/generated/city-hero-waverly-1024.webp",
+        "1280": "/images/generated/city-hero-waverly-1280.webp",
+        "1536": "/images/generated/city-hero-waverly-1536.webp",
+        "1920": "/images/generated/city-hero-waverly-1920.webp",
+        "2560": "/images/generated/city-hero-waverly-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-hero-waverly-480.jpeg",
+        "640": "/images/generated/city-hero-waverly-640.jpeg",
+        "768": "/images/generated/city-hero-waverly-768.jpeg",
+        "1024": "/images/generated/city-hero-waverly-1024.jpeg",
+        "1280": "/images/generated/city-hero-waverly-1280.jpeg",
+        "1536": "/images/generated/city-hero-waverly-1536.jpeg",
+        "1920": "/images/generated/city-hero-waverly-1920.jpeg",
+        "2560": "/images/generated/city-hero-waverly-2560.jpeg"
+      }
+    }
+  },
   "/images/city-intro.webp": {
     "originalPath": "/images/city-intro.webp",
     "altBase": "city-intro",
@@ -431,6 +964,457 @@
       }
     }
   },
+  "/images/driveway-after-1.webp": {
+    "originalPath": "/images/driveway-after-1.webp",
+    "altBase": "driveway-after-1",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwAwCdASoUAA0ALvmczmclLy8vDwD4Siz3KPyXSL/Qc3dgAP7D28fmWu39i62TPip3jH/8Ceq5CPlb8zNjuJ3bjY5iVoRxH2pVe/1nNTY+rpFehhf07NBiIADX3PebYeZPTnbn/nKX+cpf5yna1OKl7vp7dTIbis80yhbmk7jsgAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-after-1-480.avif",
+        "640": "/images/generated/driveway-after-1-640.avif",
+        "768": "/images/generated/driveway-after-1-768.avif",
+        "1024": "/images/generated/driveway-after-1-1024.avif",
+        "1280": "/images/generated/driveway-after-1-1280.avif",
+        "1536": "/images/generated/driveway-after-1-1536.avif",
+        "1920": "/images/generated/driveway-after-1-1920.avif",
+        "2560": "/images/generated/driveway-after-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-after-1-480.webp",
+        "640": "/images/generated/driveway-after-1-640.webp",
+        "768": "/images/generated/driveway-after-1-768.webp",
+        "1024": "/images/generated/driveway-after-1-1024.webp",
+        "1280": "/images/generated/driveway-after-1-1280.webp",
+        "1536": "/images/generated/driveway-after-1-1536.webp",
+        "1920": "/images/generated/driveway-after-1-1920.webp",
+        "2560": "/images/generated/driveway-after-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-after-1-480.jpeg",
+        "640": "/images/generated/driveway-after-1-640.jpeg",
+        "768": "/images/generated/driveway-after-1-768.jpeg",
+        "1024": "/images/generated/driveway-after-1-1024.jpeg",
+        "1280": "/images/generated/driveway-after-1-1280.jpeg",
+        "1536": "/images/generated/driveway-after-1-1536.jpeg",
+        "1920": "/images/generated/driveway-after-1-1920.jpeg",
+        "2560": "/images/generated/driveway-after-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-after-2.webp": {
+    "originalPath": "/images/driveway-after-2.webp",
+    "altBase": "driveway-after-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAwCdASoUAA0ALvmczmclLy8vDwD4Sh9ACKJEJAq/9CtjkAD+1ddH926W9eUBXENT/7n/++aMuzzC46v7XOnFh8s7LZeu9s7v2tw0bbfbwi5dxDxAzumYfPBPSdeYMxpOZ/D8ZFEXtb/06b/06b/1mcQapVZWWSawAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-after-2-480.avif",
+        "640": "/images/generated/driveway-after-2-640.avif",
+        "768": "/images/generated/driveway-after-2-768.avif",
+        "1024": "/images/generated/driveway-after-2-1024.avif",
+        "1280": "/images/generated/driveway-after-2-1280.avif",
+        "1536": "/images/generated/driveway-after-2-1536.avif",
+        "1920": "/images/generated/driveway-after-2-1920.avif",
+        "2560": "/images/generated/driveway-after-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-after-2-480.webp",
+        "640": "/images/generated/driveway-after-2-640.webp",
+        "768": "/images/generated/driveway-after-2-768.webp",
+        "1024": "/images/generated/driveway-after-2-1024.webp",
+        "1280": "/images/generated/driveway-after-2-1280.webp",
+        "1536": "/images/generated/driveway-after-2-1536.webp",
+        "1920": "/images/generated/driveway-after-2-1920.webp",
+        "2560": "/images/generated/driveway-after-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-after-2-480.jpeg",
+        "640": "/images/generated/driveway-after-2-640.jpeg",
+        "768": "/images/generated/driveway-after-2-768.jpeg",
+        "1024": "/images/generated/driveway-after-2-1024.jpeg",
+        "1280": "/images/generated/driveway-after-2-1280.jpeg",
+        "1536": "/images/generated/driveway-after-2-1536.jpeg",
+        "1920": "/images/generated/driveway-after-2-1920.jpeg",
+        "2560": "/images/generated/driveway-after-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-after-3.webp": {
+    "originalPath": "/images/driveway-after-3.webp",
+    "altBase": "driveway-after-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAQAwCdASoUAA0APzmKulOvKaWisAgB4CcJYw3LwAhD5AAAzP9Lf//jt6Jvdw///mi+emt/ft3/t/uh/bx78xwx89z6+iQbetGuuozpv0csrc8nLJ/r+4sxtSLO3iG5zmWn/N7C3bezP0ZF8ox3kM9KfZ6HJjfhPmGZRMgUlu4cKfvYF+9GDd/h66AhZS2SJ1/nCTjl9TOZAQgJYAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-after-3-480.avif",
+        "640": "/images/generated/driveway-after-3-640.avif",
+        "768": "/images/generated/driveway-after-3-768.avif",
+        "1024": "/images/generated/driveway-after-3-1024.avif",
+        "1280": "/images/generated/driveway-after-3-1280.avif",
+        "1536": "/images/generated/driveway-after-3-1536.avif",
+        "1920": "/images/generated/driveway-after-3-1920.avif",
+        "2560": "/images/generated/driveway-after-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-after-3-480.webp",
+        "640": "/images/generated/driveway-after-3-640.webp",
+        "768": "/images/generated/driveway-after-3-768.webp",
+        "1024": "/images/generated/driveway-after-3-1024.webp",
+        "1280": "/images/generated/driveway-after-3-1280.webp",
+        "1536": "/images/generated/driveway-after-3-1536.webp",
+        "1920": "/images/generated/driveway-after-3-1920.webp",
+        "2560": "/images/generated/driveway-after-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-after-3-480.jpeg",
+        "640": "/images/generated/driveway-after-3-640.jpeg",
+        "768": "/images/generated/driveway-after-3-768.jpeg",
+        "1024": "/images/generated/driveway-after-3-1024.jpeg",
+        "1280": "/images/generated/driveway-after-3-1280.jpeg",
+        "1536": "/images/generated/driveway-after-3-1536.jpeg",
+        "1920": "/images/generated/driveway-after-3-1920.jpeg",
+        "2560": "/images/generated/driveway-after-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-after-4.webp": {
+    "originalPath": "/images/driveway-after-4.webp",
+    "altBase": "driveway-after-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQAwCdASoUAA0ALvmczmclLy8vDwD4SxlnBkgBInClNYAA/tJ941H9L/pccP9SJP+3ym4ngazAQiNfZFdEl3jhNesMNvV8hXHnfxKX0/s+XnxuZh6f4n+KDK7pU6XiiqRjiqRjmetb/saq2fgAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-after-4-480.avif",
+        "640": "/images/generated/driveway-after-4-640.avif",
+        "768": "/images/generated/driveway-after-4-768.avif",
+        "1024": "/images/generated/driveway-after-4-1024.avif",
+        "1280": "/images/generated/driveway-after-4-1280.avif",
+        "1536": "/images/generated/driveway-after-4-1536.avif",
+        "1920": "/images/generated/driveway-after-4-1920.avif",
+        "2560": "/images/generated/driveway-after-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-after-4-480.webp",
+        "640": "/images/generated/driveway-after-4-640.webp",
+        "768": "/images/generated/driveway-after-4-768.webp",
+        "1024": "/images/generated/driveway-after-4-1024.webp",
+        "1280": "/images/generated/driveway-after-4-1280.webp",
+        "1536": "/images/generated/driveway-after-4-1536.webp",
+        "1920": "/images/generated/driveway-after-4-1920.webp",
+        "2560": "/images/generated/driveway-after-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-after-4-480.jpeg",
+        "640": "/images/generated/driveway-after-4-640.jpeg",
+        "768": "/images/generated/driveway-after-4-768.jpeg",
+        "1024": "/images/generated/driveway-after-4-1024.jpeg",
+        "1280": "/images/generated/driveway-after-4-1280.jpeg",
+        "1536": "/images/generated/driveway-after-4-1536.jpeg",
+        "1920": "/images/generated/driveway-after-4-1920.jpeg",
+        "2560": "/images/generated/driveway-after-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-after-5.webp": {
+    "originalPath": "/images/driveway-after-5.webp",
+    "altBase": "driveway-after-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwAwCdASoUAA0ALvmczmclLy8vDwD4Si0XqA/AAJtSdVcgAMz//4a/j0fdp2ZZ5LV7/giD0nzJO3gUYtdCAyvEULBX50+KgW32K0Weso2qMz6Bq482NpGSg2+EY67xfvH7fJ6X5yCg3xlpPbcDbQAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-after-5-480.avif",
+        "640": "/images/generated/driveway-after-5-640.avif",
+        "768": "/images/generated/driveway-after-5-768.avif",
+        "1024": "/images/generated/driveway-after-5-1024.avif",
+        "1280": "/images/generated/driveway-after-5-1280.avif",
+        "1536": "/images/generated/driveway-after-5-1536.avif",
+        "1920": "/images/generated/driveway-after-5-1920.avif",
+        "2560": "/images/generated/driveway-after-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-after-5-480.webp",
+        "640": "/images/generated/driveway-after-5-640.webp",
+        "768": "/images/generated/driveway-after-5-768.webp",
+        "1024": "/images/generated/driveway-after-5-1024.webp",
+        "1280": "/images/generated/driveway-after-5-1280.webp",
+        "1536": "/images/generated/driveway-after-5-1536.webp",
+        "1920": "/images/generated/driveway-after-5-1920.webp",
+        "2560": "/images/generated/driveway-after-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-after-5-480.jpeg",
+        "640": "/images/generated/driveway-after-5-640.jpeg",
+        "768": "/images/generated/driveway-after-5-768.jpeg",
+        "1024": "/images/generated/driveway-after-5-1024.jpeg",
+        "1280": "/images/generated/driveway-after-5-1280.jpeg",
+        "1536": "/images/generated/driveway-after-5-1536.jpeg",
+        "1920": "/images/generated/driveway-after-5-1920.jpeg",
+        "2560": "/images/generated/driveway-after-5-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-before-1.webp": {
+    "originalPath": "/images/driveway-before-1.webp",
+    "altBase": "driveway-before-1",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwAwCdASoUAA0ALvmczmclLy8vDwD4Si0saPyXSL/Qc3dgAP66Wrfqvrp/fzOELrxxPS/8Ceq5C4K35n8O4SMFYeEJjrI/NNbfWc3BkvdWXW8Is/iAs6wddebaORa7TJ/E1YOjzlL/nKX/OU7WpxUvU7W0sLNCPmwtnWTPJ4TlgAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-before-1-480.avif",
+        "640": "/images/generated/driveway-before-1-640.avif",
+        "768": "/images/generated/driveway-before-1-768.avif",
+        "1024": "/images/generated/driveway-before-1-1024.avif",
+        "1280": "/images/generated/driveway-before-1-1280.avif",
+        "1536": "/images/generated/driveway-before-1-1536.avif",
+        "1920": "/images/generated/driveway-before-1-1920.avif",
+        "2560": "/images/generated/driveway-before-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-before-1-480.webp",
+        "640": "/images/generated/driveway-before-1-640.webp",
+        "768": "/images/generated/driveway-before-1-768.webp",
+        "1024": "/images/generated/driveway-before-1-1024.webp",
+        "1280": "/images/generated/driveway-before-1-1280.webp",
+        "1536": "/images/generated/driveway-before-1-1536.webp",
+        "1920": "/images/generated/driveway-before-1-1920.webp",
+        "2560": "/images/generated/driveway-before-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-before-1-480.jpeg",
+        "640": "/images/generated/driveway-before-1-640.jpeg",
+        "768": "/images/generated/driveway-before-1-768.jpeg",
+        "1024": "/images/generated/driveway-before-1-1024.jpeg",
+        "1280": "/images/generated/driveway-before-1-1280.jpeg",
+        "1536": "/images/generated/driveway-before-1-1536.jpeg",
+        "1920": "/images/generated/driveway-before-1-1920.jpeg",
+        "2560": "/images/generated/driveway-before-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-before-2.webp": {
+    "originalPath": "/images/driveway-before-2.webp",
+    "altBase": "driveway-before-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQAwCdASoUAA0APzmQvlWvKqajMAgB4CcJR64hqg0ABIJFgAD+5k/O/8B/8QR8+mR//f/jdYl/zb//zTnhzGjsCfwnXTa7/lT7bb+cSbRz3Xa8MKtCG0arp38+3oy3UeqBRv7lbkzrWtYAaUOCvvhyDtt8fo/iePRuMpw1nGyUbFGfmrYAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-before-2-480.avif",
+        "640": "/images/generated/driveway-before-2-640.avif",
+        "768": "/images/generated/driveway-before-2-768.avif",
+        "1024": "/images/generated/driveway-before-2-1024.avif",
+        "1280": "/images/generated/driveway-before-2-1280.avif",
+        "1536": "/images/generated/driveway-before-2-1536.avif",
+        "1920": "/images/generated/driveway-before-2-1920.avif",
+        "2560": "/images/generated/driveway-before-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-before-2-480.webp",
+        "640": "/images/generated/driveway-before-2-640.webp",
+        "768": "/images/generated/driveway-before-2-768.webp",
+        "1024": "/images/generated/driveway-before-2-1024.webp",
+        "1280": "/images/generated/driveway-before-2-1280.webp",
+        "1536": "/images/generated/driveway-before-2-1536.webp",
+        "1920": "/images/generated/driveway-before-2-1920.webp",
+        "2560": "/images/generated/driveway-before-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-before-2-480.jpeg",
+        "640": "/images/generated/driveway-before-2-640.jpeg",
+        "768": "/images/generated/driveway-before-2-768.jpeg",
+        "1024": "/images/generated/driveway-before-2-1024.jpeg",
+        "1280": "/images/generated/driveway-before-2-1280.jpeg",
+        "1536": "/images/generated/driveway-before-2-1536.jpeg",
+        "1920": "/images/generated/driveway-before-2-1920.jpeg",
+        "2560": "/images/generated/driveway-before-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-before-3.webp": {
+    "originalPath": "/images/driveway-before-3.webp",
+    "altBase": "driveway-before-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwAwCdASoUAA0APzleyV8vI6qmGAHgJwlG6SjYHjVKV7dcnQAA/rpX3f/8Gm/juNn//g1pmEPnn/cOG6iMw3h9zlAjwbuGc0D17N3IP488vXGYze04/xoh9n6lI7Gi+WeIWmHfmfwatA1HqnlUPhV2PSXozI8/TvL/wxjtpCTpP5WvazWTH9yFW8SBcgZAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-before-3-480.avif",
+        "640": "/images/generated/driveway-before-3-640.avif",
+        "768": "/images/generated/driveway-before-3-768.avif",
+        "1024": "/images/generated/driveway-before-3-1024.avif",
+        "1280": "/images/generated/driveway-before-3-1280.avif",
+        "1536": "/images/generated/driveway-before-3-1536.avif",
+        "1920": "/images/generated/driveway-before-3-1920.avif",
+        "2560": "/images/generated/driveway-before-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-before-3-480.webp",
+        "640": "/images/generated/driveway-before-3-640.webp",
+        "768": "/images/generated/driveway-before-3-768.webp",
+        "1024": "/images/generated/driveway-before-3-1024.webp",
+        "1280": "/images/generated/driveway-before-3-1280.webp",
+        "1536": "/images/generated/driveway-before-3-1536.webp",
+        "1920": "/images/generated/driveway-before-3-1920.webp",
+        "2560": "/images/generated/driveway-before-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-before-3-480.jpeg",
+        "640": "/images/generated/driveway-before-3-640.jpeg",
+        "768": "/images/generated/driveway-before-3-768.jpeg",
+        "1024": "/images/generated/driveway-before-3-1024.jpeg",
+        "1280": "/images/generated/driveway-before-3-1280.jpeg",
+        "1536": "/images/generated/driveway-before-3-1536.jpeg",
+        "1920": "/images/generated/driveway-before-3-1920.jpeg",
+        "2560": "/images/generated/driveway-before-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-before-4.webp": {
+    "originalPath": "/images/driveway-before-4.webp",
+    "altBase": "driveway-before-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAQCdASoUAA0ABUB8JYwABK8oAP7N7R9k4S/63jIfyjw9Q8EIrAnHdYr/jYZ4dsNLbWl+iNuJ62qm+PpHU9cbpnVv9/0P/Yf49N21aljVk5ewckdiqqK3Tait020CqGN5ynVcNLAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-before-4-480.avif",
+        "640": "/images/generated/driveway-before-4-640.avif",
+        "768": "/images/generated/driveway-before-4-768.avif",
+        "1024": "/images/generated/driveway-before-4-1024.avif",
+        "1280": "/images/generated/driveway-before-4-1280.avif",
+        "1536": "/images/generated/driveway-before-4-1536.avif",
+        "1920": "/images/generated/driveway-before-4-1920.avif",
+        "2560": "/images/generated/driveway-before-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-before-4-480.webp",
+        "640": "/images/generated/driveway-before-4-640.webp",
+        "768": "/images/generated/driveway-before-4-768.webp",
+        "1024": "/images/generated/driveway-before-4-1024.webp",
+        "1280": "/images/generated/driveway-before-4-1280.webp",
+        "1536": "/images/generated/driveway-before-4-1536.webp",
+        "1920": "/images/generated/driveway-before-4-1920.webp",
+        "2560": "/images/generated/driveway-before-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-before-4-480.jpeg",
+        "640": "/images/generated/driveway-before-4-640.jpeg",
+        "768": "/images/generated/driveway-before-4-768.jpeg",
+        "1024": "/images/generated/driveway-before-4-1024.jpeg",
+        "1280": "/images/generated/driveway-before-4-1280.jpeg",
+        "1536": "/images/generated/driveway-before-4-1536.jpeg",
+        "1920": "/images/generated/driveway-before-4-1920.jpeg",
+        "2560": "/images/generated/driveway-before-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/driveway-before-5.webp": {
+    "originalPath": "/images/driveway-before-5.webp",
+    "altBase": "driveway-before-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACQAgCdASoUAA0APzleyV8vI6qmGAHgJwlAACqDAAD+41P9By/zi/UzM+tQH7/1+s8c+prWix4/+X+98zqmR8/81w4VAMmdekbg839q4yRmzGQa4dK/TEYyNZ6JeGZmtRAq7HK64xhDZGM7s4DSwAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/driveway-before-5-480.avif",
+        "640": "/images/generated/driveway-before-5-640.avif",
+        "768": "/images/generated/driveway-before-5-768.avif",
+        "1024": "/images/generated/driveway-before-5-1024.avif",
+        "1280": "/images/generated/driveway-before-5-1280.avif",
+        "1536": "/images/generated/driveway-before-5-1536.avif",
+        "1920": "/images/generated/driveway-before-5-1920.avif",
+        "2560": "/images/generated/driveway-before-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/driveway-before-5-480.webp",
+        "640": "/images/generated/driveway-before-5-640.webp",
+        "768": "/images/generated/driveway-before-5-768.webp",
+        "1024": "/images/generated/driveway-before-5-1024.webp",
+        "1280": "/images/generated/driveway-before-5-1280.webp",
+        "1536": "/images/generated/driveway-before-5-1536.webp",
+        "1920": "/images/generated/driveway-before-5-1920.webp",
+        "2560": "/images/generated/driveway-before-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/driveway-before-5-480.jpeg",
+        "640": "/images/generated/driveway-before-5-640.jpeg",
+        "768": "/images/generated/driveway-before-5-768.jpeg",
+        "1024": "/images/generated/driveway-before-5-1024.jpeg",
+        "1280": "/images/generated/driveway-before-5-1280.jpeg",
+        "1536": "/images/generated/driveway-before-5-1536.jpeg",
+        "1920": "/images/generated/driveway-before-5-1920.jpeg",
+        "2560": "/images/generated/driveway-before-5-2560.jpeg"
+      }
+    }
+  },
+  "/images/faqs-hero.webp": {
+    "originalPath": "/images/faqs-hero.webp",
+    "altBase": "faqs-hero",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwAwCdASoUAA0APzmMvlUvKaajMAgB4CcJbCzWgqQAyioAAMs2y91YfzDNkGMmxqZHy9YiPigpg30c3tTrM6bVKQQRxLnmBDiK7z9+c/0FtO4kBdK5l4KejCYN8gfv3WBtr9YBYViHST/LB+bg0DITKwBNvkCsAcQAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/faqs-hero-480.avif",
+        "640": "/images/generated/faqs-hero-640.avif",
+        "768": "/images/generated/faqs-hero-768.avif",
+        "1024": "/images/generated/faqs-hero-1024.avif",
+        "1280": "/images/generated/faqs-hero-1280.avif",
+        "1536": "/images/generated/faqs-hero-1536.avif",
+        "1920": "/images/generated/faqs-hero-1920.avif",
+        "2560": "/images/generated/faqs-hero-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/faqs-hero-480.webp",
+        "640": "/images/generated/faqs-hero-640.webp",
+        "768": "/images/generated/faqs-hero-768.webp",
+        "1024": "/images/generated/faqs-hero-1024.webp",
+        "1280": "/images/generated/faqs-hero-1280.webp",
+        "1536": "/images/generated/faqs-hero-1536.webp",
+        "1920": "/images/generated/faqs-hero-1920.webp",
+        "2560": "/images/generated/faqs-hero-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/faqs-hero-480.jpeg",
+        "640": "/images/generated/faqs-hero-640.jpeg",
+        "768": "/images/generated/faqs-hero-768.jpeg",
+        "1024": "/images/generated/faqs-hero-1024.jpeg",
+        "1280": "/images/generated/faqs-hero-1280.jpeg",
+        "1536": "/images/generated/faqs-hero-1536.jpeg",
+        "1920": "/images/generated/faqs-hero-1920.jpeg",
+        "2560": "/images/generated/faqs-hero-2560.jpeg"
+      }
+    }
+  },
   "/images/full-logo.webp": {
     "originalPath": "/images/full-logo.webp",
     "altBase": "full-logo",
@@ -649,6 +1633,457 @@
       }
     }
   },
+  "/images/landscape-after-1.webp": {
+    "originalPath": "/images/landscape-after-1.webp",
+    "altBase": "landscape-after-1",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZEwUU8GrgHfdIAD+2J5V/5lMvdYvfnapxDg3JqsJHN42zxSIX4V332cPaXIB981Hmf/4egVkrTXXwugO1b+8GJaC9q3J8FIde39FHRG+75w4foD/rB1F/kAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-after-1-480.avif",
+        "640": "/images/generated/landscape-after-1-640.avif",
+        "768": "/images/generated/landscape-after-1-768.avif",
+        "1024": "/images/generated/landscape-after-1-1024.avif",
+        "1280": "/images/generated/landscape-after-1-1280.avif",
+        "1536": "/images/generated/landscape-after-1-1536.avif",
+        "1920": "/images/generated/landscape-after-1-1920.avif",
+        "2560": "/images/generated/landscape-after-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-after-1-480.webp",
+        "640": "/images/generated/landscape-after-1-640.webp",
+        "768": "/images/generated/landscape-after-1-768.webp",
+        "1024": "/images/generated/landscape-after-1-1024.webp",
+        "1280": "/images/generated/landscape-after-1-1280.webp",
+        "1536": "/images/generated/landscape-after-1-1536.webp",
+        "1920": "/images/generated/landscape-after-1-1920.webp",
+        "2560": "/images/generated/landscape-after-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-after-1-480.jpeg",
+        "640": "/images/generated/landscape-after-1-640.jpeg",
+        "768": "/images/generated/landscape-after-1-768.jpeg",
+        "1024": "/images/generated/landscape-after-1-1024.jpeg",
+        "1280": "/images/generated/landscape-after-1-1280.jpeg",
+        "1536": "/images/generated/landscape-after-1-1536.jpeg",
+        "1920": "/images/generated/landscape-after-1-1920.jpeg",
+        "2560": "/images/generated/landscape-after-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-after-2.webp": {
+    "originalPath": "/images/landscape-after-2.webp",
+    "altBase": "landscape-after-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAgCdASoUAA0APzmGu1OvKSYisAgB4CcJZFefAEOpAAD+1dMF0zUuNnnk72mF5TfPIgmAqwAVFH/Jc9uKdukL/8ED/6uigHH/+20pnuX+/61fS6wj/v88RdrxturVe2rkm9gvHvTQFUyb+8OLORXZAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-after-2-480.avif",
+        "640": "/images/generated/landscape-after-2-640.avif",
+        "768": "/images/generated/landscape-after-2-768.avif",
+        "1024": "/images/generated/landscape-after-2-1024.avif",
+        "1280": "/images/generated/landscape-after-2-1280.avif",
+        "1536": "/images/generated/landscape-after-2-1536.avif",
+        "1920": "/images/generated/landscape-after-2-1920.avif",
+        "2560": "/images/generated/landscape-after-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-after-2-480.webp",
+        "640": "/images/generated/landscape-after-2-640.webp",
+        "768": "/images/generated/landscape-after-2-768.webp",
+        "1024": "/images/generated/landscape-after-2-1024.webp",
+        "1280": "/images/generated/landscape-after-2-1280.webp",
+        "1536": "/images/generated/landscape-after-2-1536.webp",
+        "1920": "/images/generated/landscape-after-2-1920.webp",
+        "2560": "/images/generated/landscape-after-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-after-2-480.jpeg",
+        "640": "/images/generated/landscape-after-2-640.jpeg",
+        "768": "/images/generated/landscape-after-2-768.jpeg",
+        "1024": "/images/generated/landscape-after-2-1024.jpeg",
+        "1280": "/images/generated/landscape-after-2-1280.jpeg",
+        "1536": "/images/generated/landscape-after-2-1536.jpeg",
+        "1920": "/images/generated/landscape-after-2-1920.jpeg",
+        "2560": "/images/generated/landscape-after-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-after-3.webp": {
+    "originalPath": "/images/landscape-after-3.webp",
+    "altBase": "landscape-after-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwAwCdASoUAA0APzmQvlWvKqajMAgB4CcJYxwADXNj65gAAP7f8b4j+X10r/7SGnr1/358n77P49+iPjlt5RLAfW7jiQd6qm4IiDD65XBT/3mlPS/5DoOfNkg//j96nrGu99+Z6qw3/6Eu2acP9Efw2wioimPQAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-after-3-480.avif",
+        "640": "/images/generated/landscape-after-3-640.avif",
+        "768": "/images/generated/landscape-after-3-768.avif",
+        "1024": "/images/generated/landscape-after-3-1024.avif",
+        "1280": "/images/generated/landscape-after-3-1280.avif",
+        "1536": "/images/generated/landscape-after-3-1536.avif",
+        "1920": "/images/generated/landscape-after-3-1920.avif",
+        "2560": "/images/generated/landscape-after-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-after-3-480.webp",
+        "640": "/images/generated/landscape-after-3-640.webp",
+        "768": "/images/generated/landscape-after-3-768.webp",
+        "1024": "/images/generated/landscape-after-3-1024.webp",
+        "1280": "/images/generated/landscape-after-3-1280.webp",
+        "1536": "/images/generated/landscape-after-3-1536.webp",
+        "1920": "/images/generated/landscape-after-3-1920.webp",
+        "2560": "/images/generated/landscape-after-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-after-3-480.jpeg",
+        "640": "/images/generated/landscape-after-3-640.jpeg",
+        "768": "/images/generated/landscape-after-3-768.jpeg",
+        "1024": "/images/generated/landscape-after-3-1024.jpeg",
+        "1280": "/images/generated/landscape-after-3-1280.jpeg",
+        "1536": "/images/generated/landscape-after-3-1536.jpeg",
+        "1920": "/images/generated/landscape-after-3-1920.jpeg",
+        "2560": "/images/generated/landscape-after-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-after-4.webp": {
+    "originalPath": "/images/landscape-after-4.webp",
+    "altBase": "landscape-after-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACwAwCdASoUAA0APzmIuVOvKSWisAgB4CcJR7jXV/QDjD8AABcwAAD+2Jgevs+uOoG6n7LNKq3wGfkZvhQ5xW/fAS4poMmIEoRyjwyyzfb7e4X7B7/+DzBO0df/4f0nZf/oqS5gwbMToc4w+JW8RbpAlKEY0DyXggaK5uf6leYQAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-after-4-480.avif",
+        "640": "/images/generated/landscape-after-4-640.avif",
+        "768": "/images/generated/landscape-after-4-768.avif",
+        "1024": "/images/generated/landscape-after-4-1024.avif",
+        "1280": "/images/generated/landscape-after-4-1280.avif",
+        "1536": "/images/generated/landscape-after-4-1536.avif",
+        "1920": "/images/generated/landscape-after-4-1920.avif",
+        "2560": "/images/generated/landscape-after-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-after-4-480.webp",
+        "640": "/images/generated/landscape-after-4-640.webp",
+        "768": "/images/generated/landscape-after-4-768.webp",
+        "1024": "/images/generated/landscape-after-4-1024.webp",
+        "1280": "/images/generated/landscape-after-4-1280.webp",
+        "1536": "/images/generated/landscape-after-4-1536.webp",
+        "1920": "/images/generated/landscape-after-4-1920.webp",
+        "2560": "/images/generated/landscape-after-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-after-4-480.jpeg",
+        "640": "/images/generated/landscape-after-4-640.jpeg",
+        "768": "/images/generated/landscape-after-4-768.jpeg",
+        "1024": "/images/generated/landscape-after-4-1024.jpeg",
+        "1280": "/images/generated/landscape-after-4-1280.jpeg",
+        "1536": "/images/generated/landscape-after-4-1536.jpeg",
+        "1920": "/images/generated/landscape-after-4-1920.jpeg",
+        "2560": "/images/generated/landscape-after-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-after-5.webp": {
+    "originalPath": "/images/landscape-after-5.webp",
+    "altBase": "landscape-after-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAgCdASoUAA0APzmGuVOvKSWisAgB4CcJYgCAAA4KgAD+2vWNu5uNsVyL5fkfucZqxnMXKf/lfM6GmcBzj+XytaZ/8e66W/7V+cQ1XzKTJW0bAE1cfMZJmenHVTCeXzQUqSjEwAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-after-5-480.avif",
+        "640": "/images/generated/landscape-after-5-640.avif",
+        "768": "/images/generated/landscape-after-5-768.avif",
+        "1024": "/images/generated/landscape-after-5-1024.avif",
+        "1280": "/images/generated/landscape-after-5-1280.avif",
+        "1536": "/images/generated/landscape-after-5-1536.avif",
+        "1920": "/images/generated/landscape-after-5-1920.avif",
+        "2560": "/images/generated/landscape-after-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-after-5-480.webp",
+        "640": "/images/generated/landscape-after-5-640.webp",
+        "768": "/images/generated/landscape-after-5-768.webp",
+        "1024": "/images/generated/landscape-after-5-1024.webp",
+        "1280": "/images/generated/landscape-after-5-1280.webp",
+        "1536": "/images/generated/landscape-after-5-1536.webp",
+        "1920": "/images/generated/landscape-after-5-1920.webp",
+        "2560": "/images/generated/landscape-after-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-after-5-480.jpeg",
+        "640": "/images/generated/landscape-after-5-640.jpeg",
+        "768": "/images/generated/landscape-after-5-768.jpeg",
+        "1024": "/images/generated/landscape-after-5-1024.jpeg",
+        "1280": "/images/generated/landscape-after-5-1280.jpeg",
+        "1536": "/images/generated/landscape-after-5-1536.jpeg",
+        "1920": "/images/generated/landscape-after-5-1920.jpeg",
+        "2560": "/images/generated/landscape-after-5-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-before-1.webp": {
+    "originalPath": "/images/landscape-before-1.webp",
+    "altBase": "landscape-before-1",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAgCdASoUAA0APzmKulQvKaWjMAgB4CcJZADImDdLwAD+d/1fX3iS38DPjDQ+d7+mDuakfbz7Yp//Xm5BYDBUNF2+EObNAhsz9X2rM5ZtY0lzBRNjqPdgAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-before-1-480.avif",
+        "640": "/images/generated/landscape-before-1-640.avif",
+        "768": "/images/generated/landscape-before-1-768.avif",
+        "1024": "/images/generated/landscape-before-1-1024.avif",
+        "1280": "/images/generated/landscape-before-1-1280.avif",
+        "1536": "/images/generated/landscape-before-1-1536.avif",
+        "1920": "/images/generated/landscape-before-1-1920.avif",
+        "2560": "/images/generated/landscape-before-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-before-1-480.webp",
+        "640": "/images/generated/landscape-before-1-640.webp",
+        "768": "/images/generated/landscape-before-1-768.webp",
+        "1024": "/images/generated/landscape-before-1-1024.webp",
+        "1280": "/images/generated/landscape-before-1-1280.webp",
+        "1536": "/images/generated/landscape-before-1-1536.webp",
+        "1920": "/images/generated/landscape-before-1-1920.webp",
+        "2560": "/images/generated/landscape-before-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-before-1-480.jpeg",
+        "640": "/images/generated/landscape-before-1-640.jpeg",
+        "768": "/images/generated/landscape-before-1-768.jpeg",
+        "1024": "/images/generated/landscape-before-1-1024.jpeg",
+        "1280": "/images/generated/landscape-before-1-1280.jpeg",
+        "1536": "/images/generated/landscape-before-1-1536.jpeg",
+        "1920": "/images/generated/landscape-before-1-1920.jpeg",
+        "2560": "/images/generated/landscape-before-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-before-2.webp": {
+    "originalPath": "/images/landscape-before-2.webp",
+    "altBase": "landscape-before-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAwCdASoUAA0APzmGu1OvKSYisAgB4CcJYmVuVR0YHsAA/r9NuQJOCIx7M3ziOO6EBLABYiFXqMtZT6hn//VEf+w4Simf/7UIJetef7/hB7ggj6+bBYI4gl9rH+f/o/LS7Ss2tfUVAIkgBgmeAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-before-2-480.avif",
+        "640": "/images/generated/landscape-before-2-640.avif",
+        "768": "/images/generated/landscape-before-2-768.avif",
+        "1024": "/images/generated/landscape-before-2-1024.avif",
+        "1280": "/images/generated/landscape-before-2-1280.avif",
+        "1536": "/images/generated/landscape-before-2-1536.avif",
+        "1920": "/images/generated/landscape-before-2-1920.avif",
+        "2560": "/images/generated/landscape-before-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-before-2-480.webp",
+        "640": "/images/generated/landscape-before-2-640.webp",
+        "768": "/images/generated/landscape-before-2-768.webp",
+        "1024": "/images/generated/landscape-before-2-1024.webp",
+        "1280": "/images/generated/landscape-before-2-1280.webp",
+        "1536": "/images/generated/landscape-before-2-1536.webp",
+        "1920": "/images/generated/landscape-before-2-1920.webp",
+        "2560": "/images/generated/landscape-before-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-before-2-480.jpeg",
+        "640": "/images/generated/landscape-before-2-640.jpeg",
+        "768": "/images/generated/landscape-before-2-768.jpeg",
+        "1024": "/images/generated/landscape-before-2-1024.jpeg",
+        "1280": "/images/generated/landscape-before-2-1280.jpeg",
+        "1536": "/images/generated/landscape-before-2-1536.jpeg",
+        "1920": "/images/generated/landscape-before-2-1920.jpeg",
+        "2560": "/images/generated/landscape-before-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-before-3.webp": {
+    "originalPath": "/images/landscape-before-3.webp",
+    "altBase": "landscape-before-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAwCdASoUAA0APzmIvlSvKSajMAgB4CcJQc4ANc2P0zAA/tz6vk+hqMrIf46ctM/78+T/MOQNvuiPjl8Wm/wGO1LqdiRw9wRxflf9mw89Ji/uvM2NDSGV5XxHf+O9HrFCtVVQh5CAi2Kdfpl6QAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-before-3-480.avif",
+        "640": "/images/generated/landscape-before-3-640.avif",
+        "768": "/images/generated/landscape-before-3-768.avif",
+        "1024": "/images/generated/landscape-before-3-1024.avif",
+        "1280": "/images/generated/landscape-before-3-1280.avif",
+        "1536": "/images/generated/landscape-before-3-1536.avif",
+        "1920": "/images/generated/landscape-before-3-1920.avif",
+        "2560": "/images/generated/landscape-before-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-before-3-480.webp",
+        "640": "/images/generated/landscape-before-3-640.webp",
+        "768": "/images/generated/landscape-before-3-768.webp",
+        "1024": "/images/generated/landscape-before-3-1024.webp",
+        "1280": "/images/generated/landscape-before-3-1280.webp",
+        "1536": "/images/generated/landscape-before-3-1536.webp",
+        "1920": "/images/generated/landscape-before-3-1920.webp",
+        "2560": "/images/generated/landscape-before-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-before-3-480.jpeg",
+        "640": "/images/generated/landscape-before-3-640.jpeg",
+        "768": "/images/generated/landscape-before-3-768.jpeg",
+        "1024": "/images/generated/landscape-before-3-1024.jpeg",
+        "1280": "/images/generated/landscape-before-3-1280.jpeg",
+        "1536": "/images/generated/landscape-before-3-1536.jpeg",
+        "1920": "/images/generated/landscape-before-3-1920.jpeg",
+        "2560": "/images/generated/landscape-before-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-before-4.webp": {
+    "originalPath": "/images/landscape-before-4.webp",
+    "altBase": "landscape-before-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQAwCdASoUAA0APzmIuVOvKSWisAgB4CcJSpqJBAAnkPAA/tXTtfw/IbtZaFGuNtGKd+64PRsSqqlqfMWecaxtq/Puy32+3uF94z+yrg/hnCt/o9as/IbRZijiRDcnqjguyP48xsLKJcAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-before-4-480.avif",
+        "640": "/images/generated/landscape-before-4-640.avif",
+        "768": "/images/generated/landscape-before-4-768.avif",
+        "1024": "/images/generated/landscape-before-4-1024.avif",
+        "1280": "/images/generated/landscape-before-4-1280.avif",
+        "1536": "/images/generated/landscape-before-4-1536.avif",
+        "1920": "/images/generated/landscape-before-4-1920.avif",
+        "2560": "/images/generated/landscape-before-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-before-4-480.webp",
+        "640": "/images/generated/landscape-before-4-640.webp",
+        "768": "/images/generated/landscape-before-4-768.webp",
+        "1024": "/images/generated/landscape-before-4-1024.webp",
+        "1280": "/images/generated/landscape-before-4-1280.webp",
+        "1536": "/images/generated/landscape-before-4-1536.webp",
+        "1920": "/images/generated/landscape-before-4-1920.webp",
+        "2560": "/images/generated/landscape-before-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-before-4-480.jpeg",
+        "640": "/images/generated/landscape-before-4-640.jpeg",
+        "768": "/images/generated/landscape-before-4-768.jpeg",
+        "1024": "/images/generated/landscape-before-4-1024.jpeg",
+        "1280": "/images/generated/landscape-before-4-1280.jpeg",
+        "1536": "/images/generated/landscape-before-4-1536.jpeg",
+        "1920": "/images/generated/landscape-before-4-1920.jpeg",
+        "2560": "/images/generated/landscape-before-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/landscape-before-5.webp": {
+    "originalPath": "/images/landscape-before-5.webp",
+    "altBase": "landscape-before-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAgCdASoUAA0APzmGulQvKSWjMAgB4CcJQAASylAA/tHgLEfvSuu/eX5H7nGaBBfgrwDDvYhn6PTymfSfjzlgQcRkcLzaxy6beRDddU3XVN12Ugr2DvvILgA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/landscape-before-5-480.avif",
+        "640": "/images/generated/landscape-before-5-640.avif",
+        "768": "/images/generated/landscape-before-5-768.avif",
+        "1024": "/images/generated/landscape-before-5-1024.avif",
+        "1280": "/images/generated/landscape-before-5-1280.avif",
+        "1536": "/images/generated/landscape-before-5-1536.avif",
+        "1920": "/images/generated/landscape-before-5-1920.avif",
+        "2560": "/images/generated/landscape-before-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/landscape-before-5-480.webp",
+        "640": "/images/generated/landscape-before-5-640.webp",
+        "768": "/images/generated/landscape-before-5-768.webp",
+        "1024": "/images/generated/landscape-before-5-1024.webp",
+        "1280": "/images/generated/landscape-before-5-1280.webp",
+        "1536": "/images/generated/landscape-before-5-1536.webp",
+        "1920": "/images/generated/landscape-before-5-1920.webp",
+        "2560": "/images/generated/landscape-before-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/landscape-before-5-480.jpeg",
+        "640": "/images/generated/landscape-before-5-640.jpeg",
+        "768": "/images/generated/landscape-before-5-768.jpeg",
+        "1024": "/images/generated/landscape-before-5-1024.jpeg",
+        "1280": "/images/generated/landscape-before-5-1280.jpeg",
+        "1536": "/images/generated/landscape-before-5-1536.jpeg",
+        "1920": "/images/generated/landscape-before-5-1920.jpeg",
+        "2560": "/images/generated/landscape-before-5-2560.jpeg"
+      }
+    }
+  },
+  "/images/learn-hero.webp": {
+    "originalPath": "/images/learn-hero.webp",
+    "altBase": "learn-hero",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAgCdASoUAA0ALvmczmclLy8vDwD4Sj467qJUAYZXAAD+LD/hD/17t/C3V7rz5H1G/+74cZc3PDK7ZKpXT41/jT/fSK0+1Wo0+oycizR95QwFZKgU1aAx/6Hn/uijhfuGb7n1C9IvpF9HMTtZNL+ISmNGmIFa6KjyGgAWEAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/learn-hero-480.avif",
+        "640": "/images/generated/learn-hero-640.avif",
+        "768": "/images/generated/learn-hero-768.avif",
+        "1024": "/images/generated/learn-hero-1024.avif",
+        "1280": "/images/generated/learn-hero-1280.avif",
+        "1536": "/images/generated/learn-hero-1536.avif",
+        "1920": "/images/generated/learn-hero-1920.avif",
+        "2560": "/images/generated/learn-hero-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/learn-hero-480.webp",
+        "640": "/images/generated/learn-hero-640.webp",
+        "768": "/images/generated/learn-hero-768.webp",
+        "1024": "/images/generated/learn-hero-1024.webp",
+        "1280": "/images/generated/learn-hero-1280.webp",
+        "1536": "/images/generated/learn-hero-1536.webp",
+        "1920": "/images/generated/learn-hero-1920.webp",
+        "2560": "/images/generated/learn-hero-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/learn-hero-480.jpeg",
+        "640": "/images/generated/learn-hero-640.jpeg",
+        "768": "/images/generated/learn-hero-768.jpeg",
+        "1024": "/images/generated/learn-hero-1024.jpeg",
+        "1280": "/images/generated/learn-hero-1280.jpeg",
+        "1536": "/images/generated/learn-hero-1536.jpeg",
+        "1920": "/images/generated/learn-hero-1920.jpeg",
+        "2560": "/images/generated/learn-hero-2560.jpeg"
+      }
+    }
+  },
   "/images/local-hero-image.webp": {
     "originalPath": "/images/local-hero-image.webp",
     "altBase": "local-hero-image",
@@ -681,6 +2116,416 @@
         "1024": "/images/generated/local-hero-image-1024.jpeg",
         "1280": "/images/generated/local-hero-image-1280.jpeg",
         "1536": "/images/generated/local-hero-image-1536.jpeg"
+      }
+    }
+  },
+  "/images/mowing-after-1.webp": {
+    "originalPath": "/images/mowing-after-1.webp",
+    "altBase": "mowing-after-1",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACQAwCdASoUAA0APzmGulQvKSWjMAgB4CcJYloGRp/AfYAAAhkQAP3//Ytr6oP9o87/8k/trSgXCEEoEdfbHHhE7iqYIJGwEzP++bOVCKznf4++GuEJOfhOD/3//kVFwoRbZwdd+W64ze7IJzedNW8pUip8Z+/Rgtp9au/o0C7+Tzbfz6icz3WLwVd+Z3h5AAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-after-1-480.avif",
+        "640": "/images/generated/mowing-after-1-640.avif",
+        "768": "/images/generated/mowing-after-1-768.avif",
+        "1024": "/images/generated/mowing-after-1-1024.avif",
+        "1280": "/images/generated/mowing-after-1-1280.avif",
+        "1536": "/images/generated/mowing-after-1-1536.avif",
+        "1920": "/images/generated/mowing-after-1-1920.avif",
+        "2560": "/images/generated/mowing-after-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-after-1-480.webp",
+        "640": "/images/generated/mowing-after-1-640.webp",
+        "768": "/images/generated/mowing-after-1-768.webp",
+        "1024": "/images/generated/mowing-after-1-1024.webp",
+        "1280": "/images/generated/mowing-after-1-1280.webp",
+        "1536": "/images/generated/mowing-after-1-1536.webp",
+        "1920": "/images/generated/mowing-after-1-1920.webp",
+        "2560": "/images/generated/mowing-after-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-after-1-480.jpeg",
+        "640": "/images/generated/mowing-after-1-640.jpeg",
+        "768": "/images/generated/mowing-after-1-768.jpeg",
+        "1024": "/images/generated/mowing-after-1-1024.jpeg",
+        "1280": "/images/generated/mowing-after-1-1280.jpeg",
+        "1536": "/images/generated/mowing-after-1-1536.jpeg",
+        "1920": "/images/generated/mowing-after-1-1920.jpeg",
+        "2560": "/images/generated/mowing-after-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-after-2.webp": {
+    "originalPath": "/images/mowing-after-2.webp",
+    "altBase": "mowing-after-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAgCdASoUAA0APzmIvlSvKSajMAgB4CcJZgAAllKAAP7mH+SlNxfUsEGb4oWk7+fDJwPn0P/2/+3/DfDrTlvrkLpC6KKZXlrye6atRw4pRX/t1PRJcNe3Mfs/DjGAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-after-2-480.avif",
+        "640": "/images/generated/mowing-after-2-640.avif",
+        "768": "/images/generated/mowing-after-2-768.avif",
+        "1024": "/images/generated/mowing-after-2-1024.avif",
+        "1280": "/images/generated/mowing-after-2-1280.avif",
+        "1536": "/images/generated/mowing-after-2-1536.avif",
+        "1920": "/images/generated/mowing-after-2-1920.avif",
+        "2560": "/images/generated/mowing-after-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-after-2-480.webp",
+        "640": "/images/generated/mowing-after-2-640.webp",
+        "768": "/images/generated/mowing-after-2-768.webp",
+        "1024": "/images/generated/mowing-after-2-1024.webp",
+        "1280": "/images/generated/mowing-after-2-1280.webp",
+        "1536": "/images/generated/mowing-after-2-1536.webp",
+        "1920": "/images/generated/mowing-after-2-1920.webp",
+        "2560": "/images/generated/mowing-after-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-after-2-480.jpeg",
+        "640": "/images/generated/mowing-after-2-640.jpeg",
+        "768": "/images/generated/mowing-after-2-768.jpeg",
+        "1024": "/images/generated/mowing-after-2-1024.jpeg",
+        "1280": "/images/generated/mowing-after-2-1280.jpeg",
+        "1536": "/images/generated/mowing-after-2-1536.jpeg",
+        "1920": "/images/generated/mowing-after-2-1920.jpeg",
+        "2560": "/images/generated/mowing-after-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-after-3.webp": {
+    "originalPath": "/images/mowing-after-3.webp",
+    "altBase": "mowing-after-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoUAA0APzmGulQvKSWjMAgB4CcJakwUL18QLAACxOAAGB7AAPs/z1cv0j+AfD2p48mqLgPRaHSKrGM8vmpZ6jKWdzbOafqk3psQb//iSj62+u+IvxSufOF10b8oBHXvM020+ldL6L9K6X0X6V0vok5oYxcWVeoYjItlAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-after-3-480.avif",
+        "640": "/images/generated/mowing-after-3-640.avif",
+        "768": "/images/generated/mowing-after-3-768.avif",
+        "1024": "/images/generated/mowing-after-3-1024.avif",
+        "1280": "/images/generated/mowing-after-3-1280.avif",
+        "1536": "/images/generated/mowing-after-3-1536.avif",
+        "1920": "/images/generated/mowing-after-3-1920.avif",
+        "2560": "/images/generated/mowing-after-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-after-3-480.webp",
+        "640": "/images/generated/mowing-after-3-640.webp",
+        "768": "/images/generated/mowing-after-3-768.webp",
+        "1024": "/images/generated/mowing-after-3-1024.webp",
+        "1280": "/images/generated/mowing-after-3-1280.webp",
+        "1536": "/images/generated/mowing-after-3-1536.webp",
+        "1920": "/images/generated/mowing-after-3-1920.webp",
+        "2560": "/images/generated/mowing-after-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-after-3-480.jpeg",
+        "640": "/images/generated/mowing-after-3-640.jpeg",
+        "768": "/images/generated/mowing-after-3-768.jpeg",
+        "1024": "/images/generated/mowing-after-3-1024.jpeg",
+        "1280": "/images/generated/mowing-after-3-1280.jpeg",
+        "1536": "/images/generated/mowing-after-3-1536.jpeg",
+        "1920": "/images/generated/mowing-after-3-1920.jpeg",
+        "2560": "/images/generated/mowing-after-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-after-4.webp": {
+    "originalPath": "/images/mowing-after-4.webp",
+    "altBase": "mowing-after-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoUAA0APzmQvlWvKqajMAgB4CcJYyzSvgCP/i5r1KG/sn6ZgAD+6ZUnk/+YulMvIerB0LP3DqqtSfgX8pW/tflxOK//4WU9fXft0CH0HgeSMRSiWhT0foob7QfiuBz4gv8fp33PtII7SCO0h6cAHiABUm0AAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-after-4-480.avif",
+        "640": "/images/generated/mowing-after-4-640.avif",
+        "768": "/images/generated/mowing-after-4-768.avif",
+        "1024": "/images/generated/mowing-after-4-1024.avif",
+        "1280": "/images/generated/mowing-after-4-1280.avif",
+        "1536": "/images/generated/mowing-after-4-1536.avif",
+        "1920": "/images/generated/mowing-after-4-1920.avif",
+        "2560": "/images/generated/mowing-after-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-after-4-480.webp",
+        "640": "/images/generated/mowing-after-4-640.webp",
+        "768": "/images/generated/mowing-after-4-768.webp",
+        "1024": "/images/generated/mowing-after-4-1024.webp",
+        "1280": "/images/generated/mowing-after-4-1280.webp",
+        "1536": "/images/generated/mowing-after-4-1536.webp",
+        "1920": "/images/generated/mowing-after-4-1920.webp",
+        "2560": "/images/generated/mowing-after-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-after-4-480.jpeg",
+        "640": "/images/generated/mowing-after-4-640.jpeg",
+        "768": "/images/generated/mowing-after-4-768.jpeg",
+        "1024": "/images/generated/mowing-after-4-1024.jpeg",
+        "1280": "/images/generated/mowing-after-4-1280.jpeg",
+        "1536": "/images/generated/mowing-after-4-1536.jpeg",
+        "1920": "/images/generated/mowing-after-4-1920.jpeg",
+        "2560": "/images/generated/mowing-after-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-after-5.webp": {
+    "originalPath": "/images/mowing-after-5.webp",
+    "altBase": "mowing-after-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQAwCdASoUAA0APzmGulOvKSWisAgB4CcJYizAuwAABD1YAADM/9O2V/4ue7uwPXjpQH+P/9vQoNMMFfB80CBWK49Un2HMFhF134xp7ITTzB/cvOI//7gf/78kXO1tv0/PhtTfX/19OPYLQQSzsqdlTxcdL6911bP/0QjE+iEYn1vz1n88IpV8mJaH0oPcagUpXmQA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-after-5-480.avif",
+        "640": "/images/generated/mowing-after-5-640.avif",
+        "768": "/images/generated/mowing-after-5-768.avif",
+        "1024": "/images/generated/mowing-after-5-1024.avif",
+        "1280": "/images/generated/mowing-after-5-1280.avif",
+        "1536": "/images/generated/mowing-after-5-1536.avif",
+        "1920": "/images/generated/mowing-after-5-1920.avif",
+        "2560": "/images/generated/mowing-after-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-after-5-480.webp",
+        "640": "/images/generated/mowing-after-5-640.webp",
+        "768": "/images/generated/mowing-after-5-768.webp",
+        "1024": "/images/generated/mowing-after-5-1024.webp",
+        "1280": "/images/generated/mowing-after-5-1280.webp",
+        "1536": "/images/generated/mowing-after-5-1536.webp",
+        "1920": "/images/generated/mowing-after-5-1920.webp",
+        "2560": "/images/generated/mowing-after-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-after-5-480.jpeg",
+        "640": "/images/generated/mowing-after-5-640.jpeg",
+        "768": "/images/generated/mowing-after-5-768.jpeg",
+        "1024": "/images/generated/mowing-after-5-1024.jpeg",
+        "1280": "/images/generated/mowing-after-5-1280.jpeg",
+        "1536": "/images/generated/mowing-after-5-1536.jpeg",
+        "1920": "/images/generated/mowing-after-5-1920.jpeg",
+        "2560": "/images/generated/mowing-after-5-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-before-1.webp": {
+    "originalPath": "/images/mowing-before-1.webp",
+    "altBase": "mowing-before-1",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQAwCdASoUAA0APzmGvFQvKSYjMAgB4CcJS0DIZ7AAAEMiAADkP/4a6XML/aM9uQv3WzB1FBFF648GDygLIhVu0/SBg+vdYLnZB329+x2vuvf/of/lXQibat9H4/5qkyXTqDXS8yGljhzT4L7+LO+jOT/v6NAv+/o0C/7+jSeACeRElouAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-before-1-480.avif",
+        "640": "/images/generated/mowing-before-1-640.avif",
+        "768": "/images/generated/mowing-before-1-768.avif",
+        "1024": "/images/generated/mowing-before-1-1024.avif",
+        "1280": "/images/generated/mowing-before-1-1280.avif",
+        "1536": "/images/generated/mowing-before-1-1536.avif",
+        "1920": "/images/generated/mowing-before-1-1920.avif",
+        "2560": "/images/generated/mowing-before-1-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-before-1-480.webp",
+        "640": "/images/generated/mowing-before-1-640.webp",
+        "768": "/images/generated/mowing-before-1-768.webp",
+        "1024": "/images/generated/mowing-before-1-1024.webp",
+        "1280": "/images/generated/mowing-before-1-1280.webp",
+        "1536": "/images/generated/mowing-before-1-1536.webp",
+        "1920": "/images/generated/mowing-before-1-1920.webp",
+        "2560": "/images/generated/mowing-before-1-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-before-1-480.jpeg",
+        "640": "/images/generated/mowing-before-1-640.jpeg",
+        "768": "/images/generated/mowing-before-1-768.jpeg",
+        "1024": "/images/generated/mowing-before-1-1024.jpeg",
+        "1280": "/images/generated/mowing-before-1-1280.jpeg",
+        "1536": "/images/generated/mowing-before-1-1536.jpeg",
+        "1920": "/images/generated/mowing-before-1-1920.jpeg",
+        "2560": "/images/generated/mowing-before-1-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-before-2.webp": {
+    "originalPath": "/images/mowing-before-2.webp",
+    "altBase": "mowing-before-2",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAgCdASoUAA0APzmMu1SvKaYjMAgB4CcJZAAAllKAAP7m73dzmDVNfdZTYoWsi18+GTgfOI/9rnBvy8tx+BWgTS8unoX3lzrXM7cNcljxLHiWhqPtnofdKlHPHbgAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-before-2-480.avif",
+        "640": "/images/generated/mowing-before-2-640.avif",
+        "768": "/images/generated/mowing-before-2-768.avif",
+        "1024": "/images/generated/mowing-before-2-1024.avif",
+        "1280": "/images/generated/mowing-before-2-1280.avif",
+        "1536": "/images/generated/mowing-before-2-1536.avif",
+        "1920": "/images/generated/mowing-before-2-1920.avif",
+        "2560": "/images/generated/mowing-before-2-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-before-2-480.webp",
+        "640": "/images/generated/mowing-before-2-640.webp",
+        "768": "/images/generated/mowing-before-2-768.webp",
+        "1024": "/images/generated/mowing-before-2-1024.webp",
+        "1280": "/images/generated/mowing-before-2-1280.webp",
+        "1536": "/images/generated/mowing-before-2-1536.webp",
+        "1920": "/images/generated/mowing-before-2-1920.webp",
+        "2560": "/images/generated/mowing-before-2-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-before-2-480.jpeg",
+        "640": "/images/generated/mowing-before-2-640.jpeg",
+        "768": "/images/generated/mowing-before-2-768.jpeg",
+        "1024": "/images/generated/mowing-before-2-1024.jpeg",
+        "1280": "/images/generated/mowing-before-2-1280.jpeg",
+        "1536": "/images/generated/mowing-before-2-1536.jpeg",
+        "1920": "/images/generated/mowing-before-2-1920.jpeg",
+        "2560": "/images/generated/mowing-before-2-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-before-3.webp": {
+    "originalPath": "/images/mowing-before-3.webp",
+    "altBase": "mowing-before-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoUAA0APzmGulQvKSWjMAgB4CcJbEwUMf6AVYAjy2mBPK/AAP6iemsdfulmXyKWNAMkS3vWcXUqiGzLkuOMmy18zMHuJZBv/9ulFeatl1lz4zc+JEdWDgMtQjxv7I0aHZGjQ7I0csBcbkdn0iXTITvNAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-before-3-480.avif",
+        "640": "/images/generated/mowing-before-3-640.avif",
+        "768": "/images/generated/mowing-before-3-768.avif",
+        "1024": "/images/generated/mowing-before-3-1024.avif",
+        "1280": "/images/generated/mowing-before-3-1280.avif",
+        "1536": "/images/generated/mowing-before-3-1536.avif",
+        "1920": "/images/generated/mowing-before-3-1920.avif",
+        "2560": "/images/generated/mowing-before-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-before-3-480.webp",
+        "640": "/images/generated/mowing-before-3-640.webp",
+        "768": "/images/generated/mowing-before-3-768.webp",
+        "1024": "/images/generated/mowing-before-3-1024.webp",
+        "1280": "/images/generated/mowing-before-3-1280.webp",
+        "1536": "/images/generated/mowing-before-3-1536.webp",
+        "1920": "/images/generated/mowing-before-3-1920.webp",
+        "2560": "/images/generated/mowing-before-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-before-3-480.jpeg",
+        "640": "/images/generated/mowing-before-3-640.jpeg",
+        "768": "/images/generated/mowing-before-3-768.jpeg",
+        "1024": "/images/generated/mowing-before-3-1024.jpeg",
+        "1280": "/images/generated/mowing-before-3-1280.jpeg",
+        "1536": "/images/generated/mowing-before-3-1536.jpeg",
+        "1920": "/images/generated/mowing-before-3-1920.jpeg",
+        "2560": "/images/generated/mowing-before-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-before-4.webp": {
+    "originalPath": "/images/mowing-before-4.webp",
+    "altBase": "mowing-before-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBACdASoUAA0APzmEuVOvKKWisAgB4CcJYyzRPkBa2XqUNr0X+BjisAD+6Gr7qCjHnLr/NJIpFElPm56I5+3Zybm1ban/3z266X//FrMYuSnDxi1tYw5joTTmOhNOY6ER/wwDJQ7VtaXPWqBGLegbPJDdBlE4l7+Du6TYCMSyK7DkAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-before-4-480.avif",
+        "640": "/images/generated/mowing-before-4-640.avif",
+        "768": "/images/generated/mowing-before-4-768.avif",
+        "1024": "/images/generated/mowing-before-4-1024.avif",
+        "1280": "/images/generated/mowing-before-4-1280.avif",
+        "1536": "/images/generated/mowing-before-4-1536.avif",
+        "1920": "/images/generated/mowing-before-4-1920.avif",
+        "2560": "/images/generated/mowing-before-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-before-4-480.webp",
+        "640": "/images/generated/mowing-before-4-640.webp",
+        "768": "/images/generated/mowing-before-4-768.webp",
+        "1024": "/images/generated/mowing-before-4-1024.webp",
+        "1280": "/images/generated/mowing-before-4-1280.webp",
+        "1536": "/images/generated/mowing-before-4-1536.webp",
+        "1920": "/images/generated/mowing-before-4-1920.webp",
+        "2560": "/images/generated/mowing-before-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-before-4-480.jpeg",
+        "640": "/images/generated/mowing-before-4-640.jpeg",
+        "768": "/images/generated/mowing-before-4-768.jpeg",
+        "1024": "/images/generated/mowing-before-4-1024.jpeg",
+        "1280": "/images/generated/mowing-before-4-1280.jpeg",
+        "1536": "/images/generated/mowing-before-4-1536.jpeg",
+        "1920": "/images/generated/mowing-before-4-1920.jpeg",
+        "2560": "/images/generated/mowing-before-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/mowing-before-5.webp": {
+    "originalPath": "/images/mowing-before-5.webp",
+    "altBase": "mowing-before-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoUAA0APzmKulQvKaWjMAgB4CcJYkwUVx/AfYBXKTtbgCXuAAD+g9tah+zRzytBrxmN+t6GFoc8t8dxouZLDNK10y2bYIXEfP/rZ3lnfb9BO+6h/+5T//B8G+T6szEb+kZDB/9eCv2rgQJpL5ZC851MjTGqgAnGO8lr/8NyHrNxCrXbMHXpG1LCB6PgYt7iA8AAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/mowing-before-5-480.avif",
+        "640": "/images/generated/mowing-before-5-640.avif",
+        "768": "/images/generated/mowing-before-5-768.avif",
+        "1024": "/images/generated/mowing-before-5-1024.avif",
+        "1280": "/images/generated/mowing-before-5-1280.avif",
+        "1536": "/images/generated/mowing-before-5-1536.avif",
+        "1920": "/images/generated/mowing-before-5-1920.avif",
+        "2560": "/images/generated/mowing-before-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/mowing-before-5-480.webp",
+        "640": "/images/generated/mowing-before-5-640.webp",
+        "768": "/images/generated/mowing-before-5-768.webp",
+        "1024": "/images/generated/mowing-before-5-1024.webp",
+        "1280": "/images/generated/mowing-before-5-1280.webp",
+        "1536": "/images/generated/mowing-before-5-1536.webp",
+        "1920": "/images/generated/mowing-before-5-1920.webp",
+        "2560": "/images/generated/mowing-before-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/mowing-before-5-480.jpeg",
+        "640": "/images/generated/mowing-before-5-640.jpeg",
+        "768": "/images/generated/mowing-before-5-768.jpeg",
+        "1024": "/images/generated/mowing-before-5-1024.jpeg",
+        "1280": "/images/generated/mowing-before-5-1280.jpeg",
+        "1536": "/images/generated/mowing-before-5-1536.jpeg",
+        "1920": "/images/generated/mowing-before-5-1920.jpeg",
+        "2560": "/images/generated/mowing-before-5-2560.jpeg"
       }
     }
   },
@@ -766,6 +2611,129 @@
       }
     }
   },
+  "/images/patio-after-3.webp": {
+    "originalPath": "/images/patio-after-3.webp",
+    "altBase": "patio-after-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAwCdASoUAA0APzleyV8vI6qmGAHgJwllV7MuP8AAAYpAAP7N41omcTX5AfCn0ukFbrrOgSg70dzxOXwyINxb8d85/d6v5HX1H/EH/1OKqCX3/wM7Kpt/GT5e2t2vw++V31iflpQMDmyXwAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/patio-after-3-480.avif",
+        "640": "/images/generated/patio-after-3-640.avif",
+        "768": "/images/generated/patio-after-3-768.avif",
+        "1024": "/images/generated/patio-after-3-1024.avif",
+        "1280": "/images/generated/patio-after-3-1280.avif",
+        "1536": "/images/generated/patio-after-3-1536.avif",
+        "1920": "/images/generated/patio-after-3-1920.avif",
+        "2560": "/images/generated/patio-after-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/patio-after-3-480.webp",
+        "640": "/images/generated/patio-after-3-640.webp",
+        "768": "/images/generated/patio-after-3-768.webp",
+        "1024": "/images/generated/patio-after-3-1024.webp",
+        "1280": "/images/generated/patio-after-3-1280.webp",
+        "1536": "/images/generated/patio-after-3-1536.webp",
+        "1920": "/images/generated/patio-after-3-1920.webp",
+        "2560": "/images/generated/patio-after-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/patio-after-3-480.jpeg",
+        "640": "/images/generated/patio-after-3-640.jpeg",
+        "768": "/images/generated/patio-after-3-768.jpeg",
+        "1024": "/images/generated/patio-after-3-1024.jpeg",
+        "1280": "/images/generated/patio-after-3-1280.jpeg",
+        "1536": "/images/generated/patio-after-3-1536.jpeg",
+        "1920": "/images/generated/patio-after-3-1920.jpeg",
+        "2560": "/images/generated/patio-after-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/patio-after-4.webp": {
+    "originalPath": "/images/patio-after-4.webp",
+    "altBase": "patio-after-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAwCdASoUAA0APzmOvlOvKqcisAgB4CcJR71YAl2YABcwAAD+0mEp/kWzL9FtBcmj5cbA2bJqC5OWeO9WZj24Edi+JF2c7zJcZoDf3XPuVv/4sP/VzccSmP/8RTn7RjP4EhCVnc5nrtZHztxyeoPgPbeCQxJKj5jGdQCZiXjUmmAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/patio-after-4-480.avif",
+        "640": "/images/generated/patio-after-4-640.avif",
+        "768": "/images/generated/patio-after-4-768.avif",
+        "1024": "/images/generated/patio-after-4-1024.avif",
+        "1280": "/images/generated/patio-after-4-1280.avif",
+        "1536": "/images/generated/patio-after-4-1536.avif",
+        "1920": "/images/generated/patio-after-4-1920.avif",
+        "2560": "/images/generated/patio-after-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/patio-after-4-480.webp",
+        "640": "/images/generated/patio-after-4-640.webp",
+        "768": "/images/generated/patio-after-4-768.webp",
+        "1024": "/images/generated/patio-after-4-1024.webp",
+        "1280": "/images/generated/patio-after-4-1280.webp",
+        "1536": "/images/generated/patio-after-4-1536.webp",
+        "1920": "/images/generated/patio-after-4-1920.webp",
+        "2560": "/images/generated/patio-after-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/patio-after-4-480.jpeg",
+        "640": "/images/generated/patio-after-4-640.jpeg",
+        "768": "/images/generated/patio-after-4-768.jpeg",
+        "1024": "/images/generated/patio-after-4-1024.jpeg",
+        "1280": "/images/generated/patio-after-4-1280.jpeg",
+        "1536": "/images/generated/patio-after-4-1536.jpeg",
+        "1920": "/images/generated/patio-after-4-1920.jpeg",
+        "2560": "/images/generated/patio-after-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/patio-after-5.webp": {
+    "originalPath": "/images/patio-after-5.webp",
+    "altBase": "patio-after-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwAwCdASoUAA0APzmGvFQvKSYjMAgB4CcJSpqFx/gPsABAe5UlWAD+v79d6B8mv+f+6rvrK7rnNDiMvA0NxDcpfQJOOQtzc4+eu9TwWmL1ef/xOH/jFjBdh/+x9zue/+1TLbweyHzqATzqATzqj7Wn397+f/ysVD0d0+/GdsGwhSVisErVMdVNX5NAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/patio-after-5-480.avif",
+        "640": "/images/generated/patio-after-5-640.avif",
+        "768": "/images/generated/patio-after-5-768.avif",
+        "1024": "/images/generated/patio-after-5-1024.avif",
+        "1280": "/images/generated/patio-after-5-1280.avif",
+        "1536": "/images/generated/patio-after-5-1536.avif",
+        "1920": "/images/generated/patio-after-5-1920.avif",
+        "2560": "/images/generated/patio-after-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/patio-after-5-480.webp",
+        "640": "/images/generated/patio-after-5-640.webp",
+        "768": "/images/generated/patio-after-5-768.webp",
+        "1024": "/images/generated/patio-after-5-1024.webp",
+        "1280": "/images/generated/patio-after-5-1280.webp",
+        "1536": "/images/generated/patio-after-5-1536.webp",
+        "1920": "/images/generated/patio-after-5-1920.webp",
+        "2560": "/images/generated/patio-after-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/patio-after-5-480.jpeg",
+        "640": "/images/generated/patio-after-5-640.jpeg",
+        "768": "/images/generated/patio-after-5-768.jpeg",
+        "1024": "/images/generated/patio-after-5-1024.jpeg",
+        "1280": "/images/generated/patio-after-5-1280.jpeg",
+        "1536": "/images/generated/patio-after-5-1536.jpeg",
+        "1920": "/images/generated/patio-after-5-1920.jpeg",
+        "2560": "/images/generated/patio-after-5-2560.jpeg"
+      }
+    }
+  },
   "/images/patio-before-1.webp": {
     "originalPath": "/images/patio-before-1.webp",
     "altBase": "patio-before-1",
@@ -848,6 +2816,129 @@
       }
     }
   },
+  "/images/patio-before-3.webp": {
+    "originalPath": "/images/patio-before-3.webp",
+    "altBase": "patio-before-3",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQAwCdASoUAA0APzmKulOvKaWisAgB4CcJY2D/P+GnAHiJ4AD+1dT/QRn7VJnWbmO1YTYLvSioaJsbVa8HeJj0nk2zeUdq//Z3WA//j+1XN9+BnpcxxqnMcapzHFcKxn034v8xYdGb7MZvsxm6vawcswAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/patio-before-3-480.avif",
+        "640": "/images/generated/patio-before-3-640.avif",
+        "768": "/images/generated/patio-before-3-768.avif",
+        "1024": "/images/generated/patio-before-3-1024.avif",
+        "1280": "/images/generated/patio-before-3-1280.avif",
+        "1536": "/images/generated/patio-before-3-1536.avif",
+        "1920": "/images/generated/patio-before-3-1920.avif",
+        "2560": "/images/generated/patio-before-3-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/patio-before-3-480.webp",
+        "640": "/images/generated/patio-before-3-640.webp",
+        "768": "/images/generated/patio-before-3-768.webp",
+        "1024": "/images/generated/patio-before-3-1024.webp",
+        "1280": "/images/generated/patio-before-3-1280.webp",
+        "1536": "/images/generated/patio-before-3-1536.webp",
+        "1920": "/images/generated/patio-before-3-1920.webp",
+        "2560": "/images/generated/patio-before-3-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/patio-before-3-480.jpeg",
+        "640": "/images/generated/patio-before-3-640.jpeg",
+        "768": "/images/generated/patio-before-3-768.jpeg",
+        "1024": "/images/generated/patio-before-3-1024.jpeg",
+        "1280": "/images/generated/patio-before-3-1280.jpeg",
+        "1536": "/images/generated/patio-before-3-1536.jpeg",
+        "1920": "/images/generated/patio-before-3-1920.jpeg",
+        "2560": "/images/generated/patio-before-3-2560.jpeg"
+      }
+    }
+  },
+  "/images/patio-before-4.webp": {
+    "originalPath": "/images/patio-before-4.webp",
+    "altBase": "patio-before-4",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAwCdASoUAA0APzmGvFQvKSYjMAgB4CcJRaTARYAH6ZgAAP7VTJHrxACp/HI/7plb7Zsne+m7qzzlDp4kc7tpzvtDaRYTjmnFJWho4pzinOHbqX9qj0W2PjXtgPHr/u6oAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/patio-before-4-480.avif",
+        "640": "/images/generated/patio-before-4-640.avif",
+        "768": "/images/generated/patio-before-4-768.avif",
+        "1024": "/images/generated/patio-before-4-1024.avif",
+        "1280": "/images/generated/patio-before-4-1280.avif",
+        "1536": "/images/generated/patio-before-4-1536.avif",
+        "1920": "/images/generated/patio-before-4-1920.avif",
+        "2560": "/images/generated/patio-before-4-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/patio-before-4-480.webp",
+        "640": "/images/generated/patio-before-4-640.webp",
+        "768": "/images/generated/patio-before-4-768.webp",
+        "1024": "/images/generated/patio-before-4-1024.webp",
+        "1280": "/images/generated/patio-before-4-1280.webp",
+        "1536": "/images/generated/patio-before-4-1536.webp",
+        "1920": "/images/generated/patio-before-4-1920.webp",
+        "2560": "/images/generated/patio-before-4-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/patio-before-4-480.jpeg",
+        "640": "/images/generated/patio-before-4-640.jpeg",
+        "768": "/images/generated/patio-before-4-768.jpeg",
+        "1024": "/images/generated/patio-before-4-1024.jpeg",
+        "1280": "/images/generated/patio-before-4-1280.jpeg",
+        "1536": "/images/generated/patio-before-4-1536.jpeg",
+        "1920": "/images/generated/patio-before-4-1920.jpeg",
+        "2560": "/images/generated/patio-before-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/patio-before-5.webp": {
+    "originalPath": "/images/patio-before-5.webp",
+    "altBase": "patio-before-5",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoUAA0APzmGulOvKSWisAgB4CcJZFTUWb/AfYBTgHmA/wAPNYSmwgAA/t6r1yf2sPzsZ1qX5Bfl8+dPsVTqaQxu+9SakBrN6uvO9Mf/9mN/7UUPjit4p/+uaPTFcyBwPUv5dCcVovZj/u4tjYGfYGfYGWeMbyUQiUKUmOdDGPXrdtYkg4aAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/patio-before-5-480.avif",
+        "640": "/images/generated/patio-before-5-640.avif",
+        "768": "/images/generated/patio-before-5-768.avif",
+        "1024": "/images/generated/patio-before-5-1024.avif",
+        "1280": "/images/generated/patio-before-5-1280.avif",
+        "1536": "/images/generated/patio-before-5-1536.avif",
+        "1920": "/images/generated/patio-before-5-1920.avif",
+        "2560": "/images/generated/patio-before-5-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/patio-before-5-480.webp",
+        "640": "/images/generated/patio-before-5-640.webp",
+        "768": "/images/generated/patio-before-5-768.webp",
+        "1024": "/images/generated/patio-before-5-1024.webp",
+        "1280": "/images/generated/patio-before-5-1280.webp",
+        "1536": "/images/generated/patio-before-5-1536.webp",
+        "1920": "/images/generated/patio-before-5-1920.webp",
+        "2560": "/images/generated/patio-before-5-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/patio-before-5-480.jpeg",
+        "640": "/images/generated/patio-before-5-640.jpeg",
+        "768": "/images/generated/patio-before-5-768.jpeg",
+        "1024": "/images/generated/patio-before-5-1024.jpeg",
+        "1280": "/images/generated/patio-before-5-1280.jpeg",
+        "1536": "/images/generated/patio-before-5-1536.jpeg",
+        "1920": "/images/generated/patio-before-5-1920.jpeg",
+        "2560": "/images/generated/patio-before-5-2560.jpeg"
+      }
+    }
+  },
   "/images/patio-wall.webp": {
     "originalPath": "/images/patio-wall.webp",
     "altBase": "patio-wall",
@@ -927,6 +3018,47 @@
         "1536": "/images/generated/paver-patio-hero-1536.jpeg",
         "1920": "/images/generated/paver-patio-hero-1920.jpeg",
         "2560": "/images/generated/paver-patio-hero-2560.jpeg"
+      }
+    }
+  },
+  "/images/resources-hero.webp": {
+    "originalPath": "/images/resources-hero.webp",
+    "altBase": "resources-hero",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.5,
+    "isHero": true,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAgCdASoUAA0APzmIulQvKSWjMAgB4CcJZADCgDbQAAD+SxP7OD9zjfgYp6YLfTGmy7orwSaS7u3s4FgCUgzpk6UZSB19rSq0rvmQcIlv/+pSVeaUVkBGwjJs/fIw6CIZgiMoVT96SSPhKADSkvKbPwiBQAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/resources-hero-480.avif",
+        "640": "/images/generated/resources-hero-640.avif",
+        "768": "/images/generated/resources-hero-768.avif",
+        "1024": "/images/generated/resources-hero-1024.avif",
+        "1280": "/images/generated/resources-hero-1280.avif",
+        "1536": "/images/generated/resources-hero-1536.avif",
+        "1920": "/images/generated/resources-hero-1920.avif",
+        "2560": "/images/generated/resources-hero-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/resources-hero-480.webp",
+        "640": "/images/generated/resources-hero-640.webp",
+        "768": "/images/generated/resources-hero-768.webp",
+        "1024": "/images/generated/resources-hero-1024.webp",
+        "1280": "/images/generated/resources-hero-1280.webp",
+        "1536": "/images/generated/resources-hero-1536.webp",
+        "1920": "/images/generated/resources-hero-1920.webp",
+        "2560": "/images/generated/resources-hero-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/resources-hero-480.jpeg",
+        "640": "/images/generated/resources-hero-640.jpeg",
+        "768": "/images/generated/resources-hero-768.jpeg",
+        "1024": "/images/generated/resources-hero-1024.jpeg",
+        "1280": "/images/generated/resources-hero-1280.jpeg",
+        "1536": "/images/generated/resources-hero-1536.jpeg",
+        "1920": "/images/generated/resources-hero-1920.jpeg",
+        "2560": "/images/generated/resources-hero-2560.jpeg"
       }
     }
   },
