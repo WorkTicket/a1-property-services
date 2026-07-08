@@ -18,6 +18,8 @@ import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
 import HeroOverlay from '@/components/ui/HeroOverlay'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
+import { getYearsInBusiness, yearsInBusinessLabel, establishedEyebrow, sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
+import { projectsCompletedValue } from '@/lib/projects-completed'
 
 const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
   loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
@@ -62,12 +64,14 @@ const trustPoints = [
   },
 ]
 
-const stats = [
-  { value: '500+', label: 'Projects Completed' },
-  { value: '15', label: 'Years in Cedar Valley' },
-  { value: '5.0', label: 'Average Rating' },
-  { value: 'Licensed', label: '& Insured Iowa Contractor' },
-]
+function getStats() {
+  return [
+    { value: projectsCompletedValue(), label: 'Projects Completed' },
+    { value: String(getYearsInBusiness()), label: 'Years in Cedar Valley' },
+    { value: '5.0', label: 'Average Rating' },
+    { value: 'Licensed', label: '& Insured Iowa Contractor' },
+  ]
+}
 
 const faqItems = [
   {
@@ -93,6 +97,8 @@ const faqJsonLd = faqPageJsonLd(
 )
 
 export default function HomePage() {
+  const stats = getStats()
+
   const pageSchema = webPageJsonLd({
     name: 'A1 Property Services | Landscaping in Cedar Falls, IA',
     description: siteConfig.description,
@@ -114,7 +120,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
-      {/* HERO — photo background, left-aligned, trust bar below content */}
+      {/* HERO: photo background, left-aligned, trust bar below content */}
       <section
         className="relative flex min-h-[100vh] flex-col md:min-h-[105vh]"
         style={{ minHeight: '100dvh', height: '100dvh', position: 'relative', display: 'flex', flexDirection: 'column' }}
@@ -128,7 +134,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-8 pt-28 sm:px-6 lg:px-8">
           <div>
             <HeroCopyDeferred
-              eyebrow="CEDAR FALLS · IOWA · EST. 2009"
+              eyebrow={establishedEyebrow()}
               title={'Outdoor Spaces|Cedar Valley Homeowners Are Proud\u00a0Of'}
               subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
             />
@@ -144,7 +150,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Trust bar — flows below hero content, not overlapping CTAs */}
+        {/* Trust bar: flows below hero content, not overlapping CTAs */}
         <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/50 backdrop-blur-sm">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-4 text-sm text-white/90 sm:gap-10">
             <span className="flex items-center gap-1.5">
@@ -153,7 +159,7 @@ export default function HomePage() {
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <span>Licensed &amp; Insured</span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
-            <span>15+ Years</span>
+            <span>{yearsInBusinessLabel()}</span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <span>Cedar Falls &amp; Waterloo</span>
           </div>
@@ -259,10 +265,10 @@ export default function HomePage() {
                 A Local Landscaping Crew in the Cedar Valley
               </h2>
               <p className="mt-6 leading-relaxed text-brand-body">
-                A1 Property Services started in 2009 with one goal: do good work and keep showing up. Retaining walls, paver patios, full yard installs, seasonal maintenance. Big jobs and small ones.
+                A1 Property Services {startedInYearPhrase()} with one goal: do good work and keep showing up. Retaining walls, paver patios, full yard installs, seasonal maintenance. Big jobs and small ones.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley since 2009. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
+                We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/about" variant="ghost-dark">
@@ -408,8 +414,14 @@ export default function HomePage() {
               <p className="section-eyebrow">Find Us</p>
               <h2 className="section-heading mt-3">Serving the Cedar Valley</h2>
               <p className="mt-4 text-brand-body">
-                A1 Property Services is a locally owned and operated landscaping company based in Cedar Falls, Iowa.
-                We serve homeowners throughout the Cedar Valley.
+                A1 Property Services is a locally owned and operated{' '}
+                <Link
+                  href="/landscaping-services-in-cedar-falls"
+                  className="text-brand-green-800 underline underline-offset-2 transition-colors hover:text-brand-gold"
+                >
+                  landscaping Cedar Falls
+                </Link>{' '}
+                company based in Cedar Falls, Iowa. We serve homeowners throughout the Cedar Valley.
               </p>
               <div className="mt-8 space-y-3 text-sm text-brand-body">
                 <p className="flex items-center gap-2">

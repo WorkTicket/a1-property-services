@@ -1,4 +1,4 @@
-import { allServices, getFaqPageServices, type Service, serviceFaqs } from '@/lib/services'
+import { allServices, getFaqPageServices, type Service, serviceFaqs, getServicePageHref } from '@/lib/services'
 import { blogPosts, type BlogPost } from '@/lib/blog'
 import { cities } from '@/lib/cities'
 import { learnArticles, type LearnArticle } from '@/lib/learn'
@@ -21,7 +21,7 @@ export type RelatedContentGroup = {
   items: LinkedContent[]
 }
 
-/** Curated services that pair well together — shown as "Other Landscaping Services" on service pages. */
+/** Curated services that pair well together: shown as "Other Landscaping Services" on service pages. */
 const complementaryServiceSlugs: Record<string, string[]> = {
   'landscape-maintenance': ['landscape-installation', 'lawn-care', 'preservation-restoration'],
   'landscape-installation': ['landscape-design', 'mulching', 'shrub-installation'],
@@ -47,7 +47,7 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
 }
 
-function serviceUrl(slug: string) { return `/services/${slug}` }
+function serviceUrl(slug: string) { return getServicePageHref(slug) }
 function blogUrl(slug: string) { return `/blog/${slug}` }
 function cityUrl(slug: string) { return `/${slug}` }
 function cityServiceUrl(city: string, service: string) { return `/${city}/${service}` }
@@ -538,8 +538,12 @@ export type ContentSegment =
   | { type: 'text'; content: string }
   | { type: 'link'; content: string; url: string; title: string }
 
-export function getContentSegments(content: string, maxLinks = 3): ContentSegment[] {
-  const candidates = getContextualLinks(content, maxLinks)
+export function getContentSegments(
+  content: string,
+  maxLinks = 3,
+  excludeSlugs: string[] = [],
+): ContentSegment[] {
+  const candidates = getContextualLinks(content, maxLinks, excludeSlugs)
   if (candidates.length === 0) return [{ type: 'text', content }]
 
   const matches: { index: number; text: string; candidate: LinkedContent }[] = []
@@ -571,11 +575,17 @@ export function getContentSegments(content: string, maxLinks = 3): ContentSegmen
   return result
 }
 
-export function getContextualLinks(content: string, maxLinks = 3): LinkedContent[] {
+export function getContextualLinks(
+  content: string,
+  maxLinks = 3,
+  excludeSlugs: string[] = [],
+): LinkedContent[] {
   const contentLower = content.toLowerCase()
   const candidates: LinkedContent[] = []
+  const excluded = new Set(excludeSlugs)
 
   for (const service of allServices) {
+    if (excluded.has(service.slug)) continue
     const nameLower = service.name.toLowerCase()
     if (contentLower.includes(nameLower) && !candidates.some(c => c.slug === service.slug)) {
       candidates.push(toLinked({

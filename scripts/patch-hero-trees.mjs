@@ -24,7 +24,7 @@ const dest = path.resolve(
     ),
 )
 
-/** [name, left, top, width, height, featherPad] — pixel coords on 1536×1024 hero */
+/** [name, left, top, width, height, featherPad]: pixel coords on 1536×1024 hero */
 const TREE_PATCHES = [
   // Distant forest canopy only (no buildings/parking)
   ['forest-horizon', 0, 0, 1536, 195, 50],

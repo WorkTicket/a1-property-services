@@ -23,7 +23,7 @@ import { CTA_COPY } from '@/lib/cta'
 import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
 import ServiceIcon from '@/components/ui/ServiceIcon'
-import { allServices, type Service } from '@/lib/services'
+import { allServices, type Service, getServicePageHref, getLegacyLandingPageHref } from '@/lib/services'
 import { trackPhoneCall, trackNavigation } from '@/lib/analytics'
 
 const serviceCategories = [
@@ -107,7 +107,11 @@ export default function Navbar() {
   }, [pathname])
 
   useEffect(() => {
-    const match = allServices.find((s) => pathname === `/services/${s.slug}`)
+    const match = allServices.find(
+      (s) =>
+        pathname === `/services/${s.slug}` ||
+        pathname === getLegacyLandingPageHref(s.slug),
+    )
     if (match?.category) {
       setActiveServiceCategory(match.category)
     } else if (match && hardscapeSlugs.has(match.slug)) {
@@ -243,10 +247,11 @@ export default function Navbar() {
               {allServices.map((service) => (
                 <Link
                   key={service.slug}
-                  href={`/services/${service.slug}`}
+                  href={getServicePageHref(service.slug)}
                   className={cn(
                     'block py-2 text-base',
-                    pathname === `/services/${service.slug}`
+                    pathname === `/services/${service.slug}` ||
+                    pathname === getLegacyLandingPageHref(service.slug)
                       ? 'font-semibold text-brand-gold'
                       : 'text-brand-body',
                   )}
@@ -422,7 +427,7 @@ export default function Navbar() {
                 )}
               </button>
 
-              {/* Padding bridge — unlike margin, padding keeps pointer events while moving into the panel */}
+              {/* Padding bridge: unlike margin, padding keeps pointer events while moving into the panel */}
               <div
                 className={cn(
                   'absolute left-1/2 top-full z-50 w-[min(760px,calc(100vw-2rem))] -translate-x-1/2 pt-4',
@@ -475,10 +480,10 @@ export default function Navbar() {
                             <button
                               type="button"
                               className={cn(
-                                'flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left transition-all duration-200',
+                                'flex w-full items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left transition-all duration-200',
                                 isActive
-                                  ? 'bg-white text-brand-dark shadow-sm ring-1 ring-black/[0.06]'
-                                  : 'text-brand-body hover:bg-white/80 hover:text-brand-dark',
+                                  ? 'border-black/[0.08] bg-white text-brand-dark shadow-sm'
+                                  : 'border-transparent text-brand-body hover:border-black/[0.06] hover:bg-white hover:text-brand-dark',
                               )}
                               onMouseEnter={() => setActiveServiceCategory(category.key)}
                               onFocus={() => setActiveServiceCategory(category.key)}
@@ -486,10 +491,10 @@ export default function Navbar() {
                             >
                               <span
                                 className={cn(
-                                  'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors',
+                                  'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors',
                                   isActive
-                                    ? 'bg-brand-green-100 text-brand-gold'
-                                    : 'bg-white text-brand-body/50 ring-1 ring-black/[0.05]',
+                                    ? 'border-brand-gold/20 bg-brand-green-100 text-brand-gold'
+                                    : 'border-black/[0.06] bg-white text-brand-body/55',
                                 )}
                               >
                                 <CategoryIcon size={15} strokeWidth={2} aria-hidden />
@@ -521,31 +526,41 @@ export default function Navbar() {
 
                     <ul
                       className={cn(
-                        'grid flex-1 gap-1 sm:grid-cols-2',
-                        activeCategoryServices.length > 8 && 'max-h-[280px] overflow-y-auto pr-1',
+                        'grid flex-1 gap-1.5 sm:grid-cols-2',
+                        activeCategoryServices.length > 8 && 'max-h-[280px] overflow-y-auto overscroll-contain pr-0.5',
                       )}
                     >
-                      {activeCategoryServices.map((service: Service) => (
+                      {activeCategoryServices.map((service: Service) => {
+                        const isServiceActive =
+                          pathname === `/services/${service.slug}` ||
+                          pathname === getLegacyLandingPageHref(service.slug)
+
+                        return (
                         <li key={service.slug}>
                           <Link
-                            href={`/services/${service.slug}`}
+                            href={getServicePageHref(service.slug)}
                             className={cn(
-                              'group flex items-center gap-2.5 rounded-xl px-3 py-2.5 transition-all duration-200',
-                              pathname === `/services/${service.slug}`
-                                ? 'bg-brand-green-100 ring-1 ring-brand-gold/20'
-                                : 'hover:bg-neutral-50',
+                              'group flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition-all duration-200',
+                              isServiceActive
+                                ? 'border-brand-gold/30 bg-brand-green-50 shadow-sm'
+                                : 'border-transparent hover:border-black/[0.06] hover:bg-white hover:shadow-sm',
                             )}
                             onClick={() => setServicesOpen(false)}
                           >
                             <ServiceIcon
                               name={service.icon}
-                              size={15}
-                              className="shrink-0 rounded-md p-1.5 transition-colors group-hover:bg-white"
+                              variant="compact"
+                              className={cn(
+                                'border transition-colors',
+                                isServiceActive
+                                  ? 'border-brand-gold/30 bg-white text-brand-gold'
+                                  : 'border-brand-green-200/80 group-hover:border-brand-gold/25 group-hover:bg-white',
+                              )}
                             />
                             <span
                               className={cn(
                                 'text-sm leading-snug transition-colors',
-                                pathname === `/services/${service.slug}`
+                                isServiceActive
                                   ? 'font-semibold text-brand-gold'
                                   : 'text-brand-body group-hover:text-brand-dark',
                               )}
@@ -554,7 +569,8 @@ export default function Navbar() {
                             </span>
                           </Link>
                         </li>
-                      ))}
+                        )
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -568,7 +584,7 @@ export default function Navbar() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="rounded-full border border-black/[0.08] bg-white px-3 py-1 text-xs font-medium text-brand-body transition-all hover:border-brand-gold/40 hover:text-brand-gold hover:shadow-sm"
+                        className="rounded-full border border-black/[0.08] bg-white px-3 py-1.5 text-xs font-medium text-brand-body transition-all duration-200 hover:border-brand-gold/35 hover:bg-brand-green-50 hover:text-brand-gold"
                         onClick={() => setServicesOpen(false)}
                       >
                         {link.label}

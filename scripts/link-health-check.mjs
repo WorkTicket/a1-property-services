@@ -109,33 +109,37 @@ async function main() {
     }
   }
 
-  // Also check for redirect chains in _redirects
-  const redirectsFile = path.resolve('public/_redirects')
+  // Also check for redirect chains in migration map / _redirects
   let redirectChains = []
-  if (existsSync(redirectsFile)) {
-    const redirectContent = readFileSync(redirectsFile, 'utf-8')
-    const redirects = redirectContent.split('\n').filter(l => l.trim() && !l.startsWith('#')).map(l => {
-      const parts = l.trim().split(/\s+/)
-      return { from: parts[0], to: parts[1], status: parseInt(parts[2]) || 301 }
-    })
+  try {
+    const { migrationRedirects, detectRedirectChains } = await import('../lib/migration-redirects.mjs')
+    redirectChains = detectRedirectChains(migrationRedirects)
+  } catch {
+    const redirectsFile = path.resolve('public/_redirects')
+    if (existsSync(redirectsFile)) {
+      const redirectContent = readFileSync(redirectsFile, 'utf-8')
+      const redirects = redirectContent.split('\n').filter(l => l.trim() && !l.startsWith('#')).map(l => {
+        const parts = l.trim().split(/\s+/)
+        return { from: parts[0], to: parts[1], status: parseInt(parts[2]) || 301 }
+      })
 
-    // Check for redirect chains (A -> B -> C)
-    const redirectMap = {}
-    for (const r of redirects) {
-      redirectMap[r.from] = r.to
-    }
-    for (const r of redirects) {
-      let target = r.to
-      let chain = [r.from]
-      let hops = 0
-      while (redirectMap[target] && hops < 5) {
-        chain.push(target)
-        target = redirectMap[target]
-        hops++
+      const redirectMap = {}
+      for (const r of redirects) {
+        redirectMap[r.from.replace(/\/$/, '') || '/'] = r.to.replace(/\/$/, '') || '/'
       }
-      if (chain.length > 1) {
-        chain.push(target)
-        redirectChains.push(chain)
+      for (const r of redirects) {
+        let target = r.to.replace(/\/$/, '') || '/'
+        const chain = [r.from]
+        let hops = 0
+        while (redirectMap[target] && hops < 5) {
+          chain.push(target)
+          target = redirectMap[target]
+          hops++
+        }
+        if (chain.length > 1) {
+          chain.push(target)
+          redirectChains.push(chain)
+        }
       }
     }
   }

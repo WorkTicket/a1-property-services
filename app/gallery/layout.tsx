@@ -13,7 +13,7 @@ export const metadata: Metadata = generatePageMetadata({
     'paver patio photos cedar falls',
     'retaining wall projects cedar falls',
   ],
-  ogImage: '/images/wall.webp',
+  ogImage: '/images/gallery-hero.webp',
   ogImageAlt: 'Landscaping project gallery in Cedar Falls, Iowa',
 })
 

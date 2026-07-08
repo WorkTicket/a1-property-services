@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Phone, Check, Shield, MapPin, Clock, Star } from 'lucide-react'
+import { Phone, Check } from 'lucide-react'
 import {
   allServices,
   getServiceBySlug,
@@ -17,11 +17,12 @@ import {
 } from '@/lib/services'
 import { getPostBySlug } from '@/lib/blog'
 import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd } from '@/lib/metadata'
-import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt } from '@/lib/images'
+import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt, getServiceContentImage, getServiceContentImageAlt } from '@/lib/images'
 import { getComplementaryServices, getServiceRelatedContentGroups, getContentSegments } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
+import ServiceIntroSection from '@/components/sections/ServiceIntroSection'
 import CtaBanner from '@/components/sections/CtaBanner'
 import GalleryGrid from '@/components/sections/GalleryGrid'
 import PageHero from '@/components/motion/PageHero'
@@ -105,13 +106,15 @@ export default function ServicePage({ params }: Props) {
   const galleryProjects = getGalleryProjectsForService(service.slug)
   const heroImage = getServiceHeroImage(service.slug)
   const heroImageAlt = getServiceHeroImageAlt(service.slug)
+  const contentImage = getServiceContentImage(service.slug)
+  const contentImageAlt = getServiceContentImageAlt(service.slug)
   const relatedBlog = extended?.relatedBlogSlug ? getPostBySlug(extended.relatedBlogSlug) : undefined
 
   const serviceName = seo ? seo.h1 : `${service.name} in Cedar Falls`
   const pageUrl = `${siteConfig.url}/services/${service.slug}`
 
   function contentLinks(text: string, max = 3) {
-    return getContentSegments(text, max).map((seg, i) =>
+    return getContentSegments(text, max, [service.slug]).map((seg, i) =>
       seg.type === 'link'
         ? <Link key={i} href={seg.url} className="text-brand-green-800 underline underline-offset-2 hover:text-brand-gold transition-colors">{seg.content}</Link>
         : seg.content
@@ -187,53 +190,13 @@ export default function ServicePage({ params }: Props) {
         subtitle={service.shortDesc}
       />
 
-      <section className="section bg-white">
-        <FadeIn className="section-inner-narrow">
-          <div className="flex flex-wrap gap-6 text-sm">
-            <div className="flex items-center gap-2 text-brand-body">
-              <Shield size={16} className="text-brand-green-700" />
-              <span>Licensed & Insured</span>
-            </div>
-            <div className="flex items-center gap-2 text-brand-body">
-              <Star size={16} className="text-brand-green-700" />
-              <span>5.0 Rated</span>
-            </div>
-            <div className="flex items-center gap-2 text-brand-body">
-              <MapPin size={16} className="text-brand-green-700" />
-              <span>Serving the Cedar Valley</span>
-            </div>
-            <div className="flex items-center gap-2 text-brand-body">
-              <Clock size={16} className="text-brand-green-700" />
-              <span>Serving Since 2009</span>
-            </div>
-          </div>
-
-          <p className="mt-6 text-lg leading-relaxed text-brand-body">{contentLinks(service.longDesc)}</p>
-          {extended && (
-            <div className="mt-8 space-y-4">
-              <h2 className="text-2xl font-bold text-brand-dark">{extended.heading}</h2>
-              {extended.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)} className="leading-relaxed text-brand-body">
-                  {contentLinks(p)}
-                </p>
-              ))}
-            </div>
-          )}
-
-          <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
-            <Button href="/contact" fullWidth className="sm:w-auto">
-              {CTA_COPY.quote}
-            </Button>
-            <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark" fullWidth className="sm:w-auto">
-              <Phone size={16} />
-              {siteConfig.phoneDisplay}
-            </Button>
-            <Button href="/gallery" variant="ghost-dark" fullWidth className="sm:w-auto">
-              {CTA_COPY.gallery}
-            </Button>
-          </div>
-        </FadeIn>
-      </section>
+      <ServiceIntroSection
+        intro={contentLinks(service.longDesc)}
+        extendedHeading={extended?.heading}
+        extendedParagraphs={extended?.paragraphs.map((p) => contentLinks(p))}
+        imageSrc={contentImage ?? heroImage ?? ''}
+        imageAlt={contentImageAlt ?? heroImageAlt}
+      />
 
       {problems.length > 0 && (
         <section className="section bg-brand-stone">

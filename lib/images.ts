@@ -29,7 +29,7 @@ const siteImages = {
   logo: img('full-logo.webp'),
   icon: img('icon.webp'),
 
-  // Page heroes — unique per page
+  // Page heroes: unique per page
   homeHero: img('hero-background-image.webp'),
   homeHeroVideoMp4: img('hero-drone-cedar-falls.mp4'),
   homeHeroVideoWebm: img('hero-drone-cedar-falls.webm'),
@@ -38,13 +38,18 @@ const siteImages = {
   contactHero: img('contact-hero-truck.png'),
   galleryHero: img('gallery-hero.webp'),
 
-  // Content section images — unique per section
+  // Content section images: unique per section
   aboutPrimary: img('about-primary.webp'),
   aboutSecondary: img('about-secondary.webp'),
   cityIntro: img('city-intro.webp'),
   cityWhy: img('city-why.webp'),
+  contentLandscapingCedarFalls: img('content-landscaping-cedar-falls.webp'),
+  contentRetainingWallCedarFalls: img('content-retaining-wall-cedar-falls.webp'),
+  contentWaterFeaturesCedarFalls: img('content-water-features-cedar-falls.webp'),
+  contentLandscapeInstallation: img('content-landscape-installation.webp'),
+  contentPaverPatioCedarFalls: img('content-paver-patio-cedar-falls.webp'),
 
-  // Service hero images — one per service, zero repetition
+  // Service hero images: one per service, zero repetition
   serviceRetainingWalls: img('retaining-wall.webp'),
   servicePaverPatio: img('paver-patio-hero.webp'),
   servicePondsWaterFeatures: img('water-feature-image-1.webp'),
@@ -68,13 +73,37 @@ const siteImages = {
   serviceGrading: img('service-grading.webp'),
   serviceOutdoorLiving: img('service-outdoor-living.webp'),
 
+  // Service content section images: unique per service, not from gallery
+  serviceContentLandscapeInstallation: img('service-content-landscape-installation.webp'),
+  serviceContentLawnCare: img('service-content-lawn-care.webp'),
+  serviceContentPreservationRestoration: img('service-content-preservation-restoration.webp'),
+  serviceContentTreeService: img('service-content-tree-service.webp'),
+  serviceContentLandscapeMaintenance: img('service-content-landscape-maintenance.webp'),
+  serviceContentPondsWaterFeatures: img('service-content-ponds-water-features.webp'),
+  serviceContentHydroseeding: img('service-content-hydroseeding.webp'),
+  serviceContentSnowRemoval: img('service-content-snow-removal.webp'),
+  serviceContentLandscapeDesign: img('service-content-landscape-design.webp'),
+  serviceContentDrainage: img('service-content-drainage.webp'),
+  serviceContentExcavation: img('service-content-excavation.webp'),
+  serviceContentSodInstallation: img('service-content-sod-installation.webp'),
+  serviceContentMulching: img('service-content-mulching.webp'),
+  serviceContentRockLandscaping: img('service-content-rock-landscaping.webp'),
+  serviceContentTreePlanting: img('service-content-tree-planting.webp'),
+  serviceContentShrubInstallation: img('service-content-shrub-installation.webp'),
+  serviceContentCommercialLandscaping: img('service-content-commercial-landscaping.webp'),
+  serviceContentResidentialLandscaping: img('service-content-residential-landscaping.webp'),
+  serviceContentGrading: img('service-content-grading.webp'),
+  serviceContentOutdoorLiving: img('service-content-outdoor-living.webp'),
+  serviceContentRetainingWalls: img('service-content-retaining-walls.webp'),
+  serviceContentPaverPatio: img('service-content-paver-patio.webp'),
+
   // Hardscape card images for services hub
-  hardscapeRetainingWalls: img('hardscape-retaining-walls.webp'),
-  hardscapePaverPatio: img('hardscape-paver-patio.webp'),
-  hardscapePondsWaterFeatures: img('hardscape-ponds-water-features.webp'),
+  hardscapeRetainingWalls: img('wall-after-4.webp'),
+  hardscapePaverPatio: img('patio-after-2.webp'),
+  hardscapePondsWaterFeatures: img('water-pond-after.webp'),
 }
 
-// Hero image map — every slug gets its own unique key
+// Hero image map: every slug gets its own unique key
 const serviceHeroMap: Record<string, string> = {
   'retaining-walls': siteImages.serviceRetainingWalls,
   'paver-patio': siteImages.servicePaverPatio,
@@ -123,6 +152,78 @@ const serviceHeroAltMap: Record<string, string> = {
   'residential-landscaping': 'Residential landscaping in Cedar Falls, Iowa',
   'grading': 'Grading and leveling in Cedar Falls, Iowa',
   'outdoor-living': 'Outdoor kitchen and fireplace patio in Cedar Falls, Iowa',
+}
+
+const serviceContentImageMap: Record<string, string> = {
+  'landscape-installation': siteImages.serviceContentLandscapeInstallation,
+  'lawn-care': siteImages.serviceContentLawnCare,
+  'preservation-restoration': siteImages.serviceContentPreservationRestoration,
+  'tree-service': siteImages.serviceContentTreeService,
+  'landscape-maintenance': siteImages.serviceContentLandscapeMaintenance,
+  'ponds-water-features': siteImages.serviceContentPondsWaterFeatures,
+  'hydroseeding': siteImages.serviceContentHydroseeding,
+  'snow-removal': siteImages.serviceContentSnowRemoval,
+  'landscape-design': siteImages.serviceContentLandscapeDesign,
+  'drainage': siteImages.serviceContentDrainage,
+  'excavation': siteImages.serviceContentExcavation,
+  'sod-installation': siteImages.serviceContentSodInstallation,
+  'mulching': siteImages.serviceContentMulching,
+  'rock-landscaping': siteImages.serviceContentRockLandscaping,
+  'tree-planting': siteImages.serviceContentTreePlanting,
+  'shrub-installation': siteImages.serviceContentShrubInstallation,
+  'commercial-landscaping': siteImages.serviceContentCommercialLandscaping,
+  'residential-landscaping': siteImages.serviceContentResidentialLandscaping,
+  'grading': siteImages.serviceContentGrading,
+  'outdoor-living': siteImages.serviceContentOutdoorLiving,
+  'retaining-walls': siteImages.serviceContentRetainingWalls,
+  'paver-patio': siteImages.serviceContentPaverPatio,
+}
+
+const serviceContentImageAltMap: Record<string, string> = {
+  'landscape-installation':
+    'New landscape installation with mulch beds, plantings, and walkway in Cedar Falls, Iowa',
+  'lawn-care':
+    'Professionally maintained green lawn with crisp edging in Cedar Falls, Iowa',
+  'preservation-restoration':
+    'Restored residential landscape with replanted beds and healthy lawn in Cedar Falls, Iowa',
+  'tree-service':
+    'Professional tree pruning and care on mature trees in Cedar Falls, Iowa',
+  'landscape-maintenance':
+    'Landscape maintenance with pruned shrubs, fresh mulch, and bed edging in Cedar Falls, Iowa',
+  'ponds-water-features':
+    'Custom backyard pond and stone waterfall installation in Cedar Falls, Iowa',
+  'hydroseeding':
+    'Hydroseeding application for new lawn establishment in Cedar Falls, Iowa',
+  'snow-removal':
+    'Cleared residential driveway and sidewalk after snow removal in Cedar Falls, Iowa',
+  'landscape-design':
+    'Custom landscape design plan with completed garden installation in Cedar Falls, Iowa',
+  'drainage':
+    'Yard drainage solution with French drain and regraded lawn in Cedar Falls, Iowa',
+  'excavation':
+    'Residential excavation and site grading for landscaping in Cedar Falls, Iowa',
+  'sod-installation':
+    'Fresh sod installation with instant green lawn in Cedar Falls, Iowa',
+  'mulching':
+    'Fresh mulch installation in garden beds with clean edging in Cedar Falls, Iowa',
+  'rock-landscaping':
+    'Decorative river rock and boulder landscaping in Cedar Falls, Iowa',
+  'tree-planting':
+    'Newly planted shade trees with mulch rings in Cedar Falls, Iowa',
+  'shrub-installation':
+    'Foundation shrub plantings with fresh mulch beds in Cedar Falls, Iowa',
+  'commercial-landscaping':
+    'Professional commercial property landscaping and maintenance in Cedar Falls, Iowa',
+  'residential-landscaping':
+    'Complete residential backyard landscaping in Cedar Falls, Iowa',
+  'grading':
+    'Yard grading and leveling for proper drainage in Cedar Falls, Iowa',
+  'outdoor-living':
+    'Outdoor living space with paver patio and fire pit in Cedar Falls, Iowa',
+  'retaining-walls':
+    'Segmental block retaining wall with terraced garden beds in Cedar Falls, Iowa',
+  'paver-patio':
+    'Custom paver patio installation in Cedar Falls, Iowa',
 }
 
 // Gallery projects
@@ -226,33 +327,37 @@ const galleryProjects: GalleryProject[] = [
   },
   {
     id: 'water-1',
-    title: 'Pond & Waterfall',
+    title: 'Backyard Waterfall',
     category: 'water',
     before: {
-      src: img('water-before-1.webp'),
-      alt: 'Backyard garden before pond and waterfall installation',
+      src: img('water-before-2.webp'),
+      alt: 'Hillside yard before stone waterfall and pond installation',
+      objectPosition: '30% 25%',
       quality: 80,
       priority: true,
     },
     after: {
-      src: img('water-feature-image-2.webp'),
-      alt: 'Custom pond and waterfall with colorful garden plantings in Cedar Falls',
+      src: img('water-feature-image-3.webp'),
+      alt: 'Multi-tiered stone waterfall with retaining wall and garden steps',
+      objectPosition: '32% 24%',
       quality: 80,
       priority: true,
     },
   },
   {
     id: 'water-2',
-    title: 'Backyard Waterfall',
+    title: 'Pond & Waterfall',
     category: 'water',
     before: {
-      src: img('water-before-2.webp'),
-      alt: 'Hillside yard before stone waterfall and pond installation',
+      src: img('water-pond-before.webp'),
+      alt: 'Backyard lawn before koi pond and waterfall installation',
+      objectPosition: '40% 50%',
       quality: 80,
     },
     after: {
-      src: img('water-feature-image-3.webp'),
-      alt: 'Multi-tiered stone waterfall with retaining wall and garden steps',
+      src: img('water-pond-after.webp'),
+      alt: 'Completed koi pond and stone waterfall beside the home',
+      objectPosition: '56% 50%',
       quality: 80,
     },
   },
@@ -287,6 +392,14 @@ export function getServiceHeroImage(slug: string): string | undefined {
 
 export function getServiceHeroImageAlt(slug: string): string {
   return serviceHeroAltMap[slug] ?? 'A1 Property Services landscaping in Cedar Falls, Iowa'
+}
+
+export function getServiceContentImage(slug: string): string | undefined {
+  return serviceContentImageMap[slug]
+}
+
+export function getServiceContentImageAlt(slug: string): string | undefined {
+  return serviceContentImageAltMap[slug]
 }
 
 export function getGalleryProjectsForService(slug: string, limit = 4): GalleryProject[] {

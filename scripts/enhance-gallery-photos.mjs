@@ -43,8 +43,10 @@ async function multiStepUpscale(input, targetWidth) {
   return sharp(current)
 }
 
-async function enhancePipeline(input, { cropBottomFocus = false } = {}) {
-  let pipeline = input.rotate().modulate({ saturation: 1.04, brightness: 1.02 }).normalize()
+async function enhancePipeline(input, { cropBottomFocus = false, natural = false } = {}) {
+  let pipeline = natural
+    ? input.rotate().modulate({ saturation: 0.96, brightness: 0.98 })
+    : input.rotate().modulate({ saturation: 1.04, brightness: 1.02 }).normalize()
 
   if (cropBottomFocus) {
     const meta = await pipeline.metadata()
@@ -56,7 +58,9 @@ async function enhancePipeline(input, { cropBottomFocus = false } = {}) {
   }
 
   pipeline = await multiStepUpscale(pipeline, TARGET_WIDTH)
-  return pipeline.sharpen({ sigma: 0.75, m1: 1.0, m2: 0.45 })
+  return natural
+    ? pipeline.sharpen({ sigma: 0.35, m1: 0.5, m2: 0.25 })
+    : pipeline.sharpen({ sigma: 0.75, m1: 1.0, m2: 0.45 })
 }
 
 async function writeSources(name, pipeline) {
@@ -125,9 +129,10 @@ const defaultJobs = [
   { name: 'patio-after-1', src: path.join(ASSETS, 'patio-after-1.png'), cropBottomFocus: true },
 ]
 
-const [nameArg, srcArg] = process.argv.slice(2)
+const [nameArg, srcArg, ...flags] = process.argv.slice(2)
+const natural = flags.includes('--natural')
 const jobs = nameArg && srcArg
-  ? [{ name: nameArg, src: path.resolve(srcArg), cropBottomFocus: false }]
+  ? [{ name: nameArg, src: path.resolve(srcArg), cropBottomFocus: false, natural }]
   : defaultJobs
 
 if (!existsSync(GENERATED)) mkdirSync(GENERATED, { recursive: true })
@@ -140,7 +145,10 @@ for (const job of jobs) {
   const srcMeta = await input.metadata()
   console.log(`${job.name}: source ${srcMeta.width}x${srcMeta.height} (${path.basename(job.src)})`)
 
-  const pipeline = await enhancePipeline(input, { cropBottomFocus: job.cropBottomFocus })
+  const pipeline = await enhancePipeline(input, {
+    cropBottomFocus: job.cropBottomFocus,
+    natural: job.natural,
+  })
   const { webpPath } = await writeSources(job.name, pipeline)
   manifest[`/images/${job.name}.webp`] = await generateVariants(job.name, webpPath)
 }

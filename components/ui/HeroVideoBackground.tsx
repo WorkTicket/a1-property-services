@@ -42,7 +42,7 @@ export default function HeroVideoBackground({
 
     const play = () => {
       void video.play().catch(() => {
-        // Autoplay blocked — poster image remains visible underneath.
+        // Autoplay blocked: poster image remains visible underneath.
       })
     }
 

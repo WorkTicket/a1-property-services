@@ -9,7 +9,9 @@ import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
+import FaqSectionCta from '@/components/sections/FaqSectionCta'
 import ServiceIcon from '@/components/ui/ServiceIcon'
+import FaqAccordion from '@/components/ui/FaqAccordion'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -20,7 +22,7 @@ export const metadata: Metadata = generatePageMetadata({
     'Landscaping services in Cedar Falls, IA. Retaining walls, paver patios, water features, lawn care, tree service, snow removal, and more. Free estimates.',
   path: '/services',
   keywords: servicesHubKeywords,
-  ogImage: '/images/landscaping.webp',
+  ogImage: '/images/services-hero.webp',
   ogImageAlt: 'Landscaping services in Cedar Falls, Iowa',
 })
 
@@ -94,7 +96,7 @@ export default function ServicesPage() {
     name: 'Landscaping Services in Cedar Falls',
     description: 'Full landscaping and hardscaping services by A1 Property Services in Cedar Falls, IA.',
     path: '/services',
-    image: '/images/landscaping.webp',
+    image: '/images/services-hero.webp',
     about: 'Landscaping Services',
   })
 
@@ -266,14 +268,15 @@ export default function ServicesPage() {
       <section className="section bg-brand-stone">
         <FadeIn className="section-inner-narrow">
           <h2 className="section-heading">Landscaping Services in Cedar Falls: FAQ</h2>
-          <dl className="mt-10 space-y-8">
-            {servicesHubFaqs.map((faq) => (
-              <div key={faq.question}>
-                <dt className="font-bold text-brand-dark">{faq.question}</dt>
-                <dd className="mt-2 leading-relaxed text-brand-body">{faq.answer}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-10">
+            <FaqAccordion
+              items={servicesHubFaqs.map((faq) => ({ q: faq.question, a: faq.answer }))}
+            />
+          </div>
+          <FaqSectionCta
+            learnMoreHref="/faqs"
+            learnMoreLabel="View All FAQs"
+          />
         </FadeIn>
       </section>
 

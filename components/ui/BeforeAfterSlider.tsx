@@ -23,23 +23,7 @@ type BeforeAfterSliderProps = {
 
 const SLIDER_SIZES = IMAGE_SIZES.galleryGrid
 const DRAG_THRESHOLD = 10
-
-function getSliderPreloadWidth(): number {
-  if (typeof window === 'undefined') return 1920
-  return window.innerWidth <= 768 ? 1024 : 2560
-}
-
-function preloadSliderImages(beforeSrc: string, afterSrc: string) {
-  const width = getSliderPreloadWidth()
-  const urls = [
-    getVariantUrl(beforeSrc, 'avif', width),
-    getVariantUrl(afterSrc, 'avif', width),
-  ]
-  urls.forEach((url) => {
-    const img = new window.Image()
-    img.src = url
-  })
-}
+const SLIDER_FALLBACK_WIDTH = 768
 
 function SliderPicture({
   src,
@@ -65,7 +49,7 @@ function SliderPicture({
       <source srcSet={buildSrcset(src, 'avif')} sizes={SLIDER_SIZES} type="image/avif" />
       <source srcSet={buildSrcset(src, 'webp')} sizes={SLIDER_SIZES} type="image/webp" />
       <img
-        src={getVariantUrl(src, 'webp', 1920)}
+        src={getVariantUrl(src, 'webp', priority ? 1280 : SLIDER_FALLBACK_WIDTH)}
         srcSet={buildSrcset(src, 'webp')}
         sizes={SLIDER_SIZES}
         alt={alt}
@@ -130,26 +114,10 @@ export default function BeforeAfterSlider({
 
   useEffect(() => {
     applyPosition(50)
-
-    const container = containerRef.current
-    if (!container) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          preloadSliderImages(before.src, after.src)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '400px' },
-    )
-
-    observer.observe(container)
     return () => {
-      observer.disconnect()
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
     }
-  }, [before.src, after.src, applyPosition])
+  }, [applyPosition])
 
   const beginDrag = useCallback(
     (e: React.PointerEvent) => {

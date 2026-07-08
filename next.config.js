@@ -35,6 +35,14 @@ const nextConfig = {
     maxInactiveAge: 60 * 60 * 1000,
     pagesBufferLength: 5,
   },
+  webpack: (config, { dev }) => {
+    // Avoid corrupted filesystem cache on Windows (EPERM/hasStartTime errors) when
+    // multiple dev servers share .next/cache or Node 23+ hits webpack pack bugs.
+    if (dev) {
+      config.cache = { type: 'memory' }
+    }
+    return config
+  },
 }
 
 module.exports = withBundleAnalyzer(nextConfig)

@@ -105,7 +105,7 @@ def main() -> None:
     )
 
     TEMP_MP4.unlink(missing_ok=True)
-    print('Done — real AI video generated.')
+    print('Done: real AI video generated.')
     print(' MP4:', OUT_MP4)
     print(' WebM:', OUT_WEBM)
 

@@ -1,651 +1,4 @@
 {
-  "/images/.artifact-zone-hero.png": {
-    "originalPath": "/images/.artifact-zone-hero.png",
-    "altBase": ".artifact-zone-hero",
-    "width": 307,
-    "height": 184,
-    "aspectRatio": 1.6684782608695652,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQAwCdASoUAAwAPzmIvlOvKScisAgB4CcJYxwA+MJHyLW9wAD+onlT95+4P7+Yfm+PEvjxFNPD/oOEgf/0baeAZP6P6kVaVwkx/ofzBf4mtWm+Tcl1Ne/L9/tZOW3XSE2t9rRJ9K7SvaP7/4KV+45Jy60jndcCB6Ou1itvG/mqz85bHe3+//7a7c/f5nAOfIJwibSbRyy6/33HOaObb0qJdrew9645WY4AAA==",
-    "variants": {
-      "avif": {
-        "307": "/images/generated/.artifact-zone-hero-307.avif"
-      },
-      "webp": {
-        "307": "/images/generated/.artifact-zone-hero-307.webp"
-      },
-      "jpeg": {
-        "307": "/images/generated/.artifact-zone-hero-307.jpeg"
-      }
-    }
-  },
-  "/images/.artifact-zone-ref.png": {
-    "originalPath": "/images/.artifact-zone-ref.png",
-    "altBase": ".artifact-zone-ref",
-    "width": 205,
-    "height": 84,
-    "aspectRatio": 2.4404761904761907,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAwCdASoUAAgALvmczmclLy8vDwD4SyloM/EtMABveERowAD+x+s/+nZrj6J+KF530v9dcXrWw8wxEXZZdjyt3PLf6hKqrTRm6vKV9YWEdZbYZ97HuqxSYa2exlNIeZ//Pd8nk8AAAA==",
-    "variants": {
-      "avif": {
-        "205": "/images/generated/.artifact-zone-ref-205.avif"
-      },
-      "webp": {
-        "205": "/images/generated/.artifact-zone-ref-205.webp"
-      },
-      "jpeg": {
-        "205": "/images/generated/.artifact-zone-ref-205.jpeg"
-      }
-    }
-  },
-  "/images/.artifact-zone2-hero.png": {
-    "originalPath": "/images/.artifact-zone2-hero.png",
-    "altBase": ".artifact-zone2-hero",
-    "width": 369,
-    "height": 164,
-    "aspectRatio": 2.25,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwAwCdASoUAAkALvmczmclLy8vDwD4SynwFFVq/4fwBbeAAP60/viL/QKFo78l+BWKkt4ueJZRXoz4o6//EeFuy8oIkJmRDN2h+PRTDqIf+In6mIXx9orL+0oCuTZIhv7MEpOkVGJADiuRLPVAAA==",
-    "variants": {
-      "avif": {
-        "369": "/images/generated/.artifact-zone2-hero-369.avif"
-      },
-      "webp": {
-        "369": "/images/generated/.artifact-zone2-hero-369.webp"
-      },
-      "jpeg": {
-        "369": "/images/generated/.artifact-zone2-hero-369.jpeg"
-      }
-    }
-  },
-  "/images/.artifact-zone2-ref.png": {
-    "originalPath": "/images/.artifact-zone2-ref.png",
-    "altBase": ".artifact-zone2-ref",
-    "width": 246,
-    "height": 75,
-    "aspectRatio": 3.28,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAwCdASoUAAYAPzmOvlOvKqcisAgB4CcJZSzgQyQA/bfwAP7N6Ej+9nNjYin5cj2OS4k2Nm80s7EACBRKv5b/7En3/7PeQUFDQhdVasZhUtY1Z9bpQYsitN64knIAAAA=",
-    "variants": {
-      "avif": {
-        "246": "/images/generated/.artifact-zone2-ref-246.avif"
-      },
-      "webp": {
-        "246": "/images/generated/.artifact-zone2-ref-246.webp"
-      },
-      "jpeg": {
-        "246": "/images/generated/.artifact-zone2-ref-246.jpeg"
-      }
-    }
-  },
-  "/images/.bg-forest-hero.png": {
-    "originalPath": "/images/.bg-forest-hero.png",
-    "altBase": ".bg-forest-hero",
-    "width": 1536,
-    "height": 328,
-    "aspectRatio": 4.682926829268292,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAgCdASoUAAQALvmczmclLy8vDwD4SylnMhdoDxNAAP7g//nvXTnbkv+TQpyhyuhPVpXGqQMaAp0MufO2R6WHRTZTOVWULOhyOPBrCws1w4eXtgOvAAAA",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.bg-forest-hero-480.avif",
-        "640": "/images/generated/.bg-forest-hero-640.avif",
-        "768": "/images/generated/.bg-forest-hero-768.avif",
-        "1024": "/images/generated/.bg-forest-hero-1024.avif",
-        "1280": "/images/generated/.bg-forest-hero-1280.avif",
-        "1536": "/images/generated/.bg-forest-hero-1536.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.bg-forest-hero-480.webp",
-        "640": "/images/generated/.bg-forest-hero-640.webp",
-        "768": "/images/generated/.bg-forest-hero-768.webp",
-        "1024": "/images/generated/.bg-forest-hero-1024.webp",
-        "1280": "/images/generated/.bg-forest-hero-1280.webp",
-        "1536": "/images/generated/.bg-forest-hero-1536.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.bg-forest-hero-480.jpeg",
-        "640": "/images/generated/.bg-forest-hero-640.jpeg",
-        "768": "/images/generated/.bg-forest-hero-768.jpeg",
-        "1024": "/images/generated/.bg-forest-hero-1024.jpeg",
-        "1280": "/images/generated/.bg-forest-hero-1280.jpeg",
-        "1536": "/images/generated/.bg-forest-hero-1536.jpeg"
-      }
-    }
-  },
-  "/images/.bg-forest-ref.png": {
-    "originalPath": "/images/.bg-forest-ref.png",
-    "altBase": ".bg-forest-ref",
-    "width": 1536,
-    "height": 328,
-    "aspectRatio": 4.682926829268292,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAgCdASoUAAQAPzleyV8vI6qmGAHgJwllZW5Yh5l4yAD+4h1EUXm3dKqvRQAIbzQFmwfAeUG//S/997acS1/vLXAyrtOukjif7IWyBrc9gAAA",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.bg-forest-ref-480.avif",
-        "640": "/images/generated/.bg-forest-ref-640.avif",
-        "768": "/images/generated/.bg-forest-ref-768.avif",
-        "1024": "/images/generated/.bg-forest-ref-1024.avif",
-        "1280": "/images/generated/.bg-forest-ref-1280.avif",
-        "1536": "/images/generated/.bg-forest-ref-1536.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.bg-forest-ref-480.webp",
-        "640": "/images/generated/.bg-forest-ref-640.webp",
-        "768": "/images/generated/.bg-forest-ref-768.webp",
-        "1024": "/images/generated/.bg-forest-ref-1024.webp",
-        "1280": "/images/generated/.bg-forest-ref-1280.webp",
-        "1536": "/images/generated/.bg-forest-ref-1536.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.bg-forest-ref-480.jpeg",
-        "640": "/images/generated/.bg-forest-ref-640.jpeg",
-        "768": "/images/generated/.bg-forest-ref-768.jpeg",
-        "1024": "/images/generated/.bg-forest-ref-1024.jpeg",
-        "1280": "/images/generated/.bg-forest-ref-1280.jpeg",
-        "1536": "/images/generated/.bg-forest-ref-1536.jpeg"
-      }
-    }
-  },
-  "/images/.car-blob-debug.png": {
-    "originalPath": "/images/.car-blob-debug.png",
-    "altBase": ".car-blob-debug",
-    "width": 1536,
-    "height": 1024,
-    "aspectRatio": 1.5,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJYi0bfk2P+ydADGfsAAD+6FS/2L9S7+iqyXW7o1l5zdlQlET9xZpM4eoETrSRkZWRM/6HzTxFyBjSwjVSwjVSyOP1U/TLJqFHJPLBAxGkLBl3EbpzxT/ocmWUTP/ByZTpgAAA",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.car-blob-debug-480.avif",
-        "640": "/images/generated/.car-blob-debug-640.avif",
-        "768": "/images/generated/.car-blob-debug-768.avif",
-        "1024": "/images/generated/.car-blob-debug-1024.avif",
-        "1280": "/images/generated/.car-blob-debug-1280.avif",
-        "1536": "/images/generated/.car-blob-debug-1536.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.car-blob-debug-480.webp",
-        "640": "/images/generated/.car-blob-debug-640.webp",
-        "768": "/images/generated/.car-blob-debug-768.webp",
-        "1024": "/images/generated/.car-blob-debug-1024.webp",
-        "1280": "/images/generated/.car-blob-debug-1280.webp",
-        "1536": "/images/generated/.car-blob-debug-1536.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.car-blob-debug-480.jpeg",
-        "640": "/images/generated/.car-blob-debug-640.jpeg",
-        "768": "/images/generated/.car-blob-debug-768.jpeg",
-        "1024": "/images/generated/.car-blob-debug-1024.jpeg",
-        "1280": "/images/generated/.car-blob-debug-1280.jpeg",
-        "1536": "/images/generated/.car-blob-debug-1536.jpeg"
-      }
-    }
-  },
-  "/images/.edge-bridge.png": {
-    "originalPath": "/images/.edge-bridge.png",
-    "altBase": ".edge-bridge",
-    "width": 336,
-    "height": 324,
-    "aspectRatio": 1.037037037037037,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwAwCdASoUABMAPzmQvlWvKqajMAgB4CcJZwDKADpisB0AAP7sO75bza1pgO5MKYdb02FDKuIdIrvs99BhrIAKZFGN6lAA",
-    "variants": {
-      "avif": {
-        "336": "/images/generated/.edge-bridge-336.avif"
-      },
-      "webp": {
-        "336": "/images/generated/.edge-bridge-336.webp"
-      },
-      "jpeg": {
-        "336": "/images/generated/.edge-bridge-336.jpeg"
-      }
-    }
-  },
-  "/images/.edge-clean.png": {
-    "originalPath": "/images/.edge-clean.png",
-    "altBase": ".edge-clean",
-    "width": 156,
-    "height": 280,
-    "aspectRatio": 0.5571428571428572,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAADQBgCdASoUACQAPzmEvlUvKCajMBVaqeAnCUe8abuR2Zh/ruIP1nqDyY/pv3XKx+z9GkBzc+/x4Fpup2WtlAAA/eA4f/53bv/+M/bS0cYDrnVBwdOwlLcDKTGdRHm7QJMXoET0ciTwpetk58HGIhxgyQD8nPucGwYcwst3/nvHdE+DB77zdeN6//5EFd+/3d/cLy+BregOrI0NExo/vbvDLHv+X8X/3e9vJ3d728nd3vgPC9J9yRmv9eR/fhfpLW0iURhjoPrrpx31EfocJGZCA+vFmw0wyjy+sjUy/dfoDvtyQTm1sGdOxdEbZD1hLg/oL/UKn25ZiqiJ8/xupj3NF4tM9FFqvm3Xzbr5uw5g6sa44hIzys82kwCBlBo//yoaXq28JKvPe/I3Yw1ZpgULn31f4m9CHry3NmLHjW3AXFbMGfVhjk95gbYrF2UiFYDxXd99g8wAAA==",
-    "variants": {
-      "avif": {
-        "156": "/images/generated/.edge-clean-156.avif"
-      },
-      "webp": {
-        "156": "/images/generated/.edge-clean-156.webp"
-      },
-      "jpeg": {
-        "156": "/images/generated/.edge-clean-156.jpeg"
-      }
-    }
-  },
-  "/images/.edge-crop.png": {
-    "originalPath": "/images/.edge-crop.png",
-    "altBase": ".edge-crop",
-    "width": 156,
-    "height": 280,
-    "aspectRatio": 0.5571428571428572,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAABQBQCdASoUACQAPzmWv1kvKqajpWsx4CcJTPL4RqZ+cpjqAx4HNYbyvT3wAB/baPar4YAAzP+6xrmfyWa760RjImohcdMUTxFrbmMKwBUw31WiFP/vL66cD8VrQJv5Zgyc/2hYyHg0chhPxBjJLk6s1818RUCZyfvK/mhj1GAT4ACgicdRX3qTlYR8E/EH/n87jwR8buFZD+HPOXf73MnAyo92OlNxSmSeXTSxKOTF/6S5nAKSoTjk2fmrJsOS6aBIWWrzbSybDXwhmU4XLUCAnA6aybcm5ol4R96Fw3rpuL3x83vgebeLsVo4U/Nghp1Zqyk2huVo7O863+v33hdnZMFRIpWi6QKSYHQQI1AAAA==",
-    "variants": {
-      "avif": {
-        "156": "/images/generated/.edge-crop-156.avif"
-      },
-      "webp": {
-        "156": "/images/generated/.edge-crop-156.webp"
-      },
-      "jpeg": {
-        "156": "/images/generated/.edge-crop-156.jpeg"
-      }
-    }
-  },
-  "/images/.edge-crop2.png": {
-    "originalPath": "/images/.edge-crop2.png",
-    "altBase": ".edge-crop2",
-    "width": 210,
-    "height": 400,
-    "aspectRatio": 0.525,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRjoBAABXRUJQVlA4IC4BAADQBQCdASoUACYAPzmWwVqvKqakJWmZ4CcJS0HVsqKWT9VeQwADqtLKGgiEG0Lm3b/gKSKa+w6QAN939/2gqWX2fma0pLIkbgrUx3hn7IFObGs8nfhHItDtsDxvuH5SLMxWmiVM/9MMBWDusYPv26u0t16dqPjBMx72gBu+gBu+0TBynZzrtKDMHUc+6ejs2R+VbggKKkkU/+e/vx+CuM/s+GTwNmHT+pgBq8txfbHy5Pa0PUoxpmKHe1zRHoWsftA/3phvgJyC5KQoI/bv/ICZoV10Hoze9nlSHtY+sohaoY+lfpLvoyWnP/PhKjrA0fwvSPDXuEe73yhMLhtspEu+V1tmwl3yutszQHHzQd8Gv+zPicZP+MOIOj0g8xBvDb8SYKiC8wI2DxjQ9FAAAA==",
-    "variants": {
-      "avif": {
-        "210": "/images/generated/.edge-crop2-210.avif"
-      },
-      "webp": {
-        "210": "/images/generated/.edge-crop2-210.webp"
-      },
-      "jpeg": {
-        "210": "/images/generated/.edge-crop2-210.jpeg"
-      }
-    }
-  },
-  "/images/.edge-crop3.png": {
-    "originalPath": "/images/.edge-crop3.png",
-    "altBase": ".edge-crop3",
-    "width": 210,
-    "height": 400,
-    "aspectRatio": 0.525,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRkQBAABXRUJQVlA4IDgBAAAQBwCdASoUACYAPzmEuVOvKKWisBVdUeAnCUzhghKUlS/1X8A5TYVeN/Kd6YyQONI9m+tklba2wUB/3gwcha0HAAD+ybf+P//Nx5+q/+cvpha5vvapHI3FGz1ha7yPd9rooh7rh995b6bREAEzzmdJLm819tdGxlt7kLkymOe0wUc7VrD66A1FpmAlXLGy+/tCE//llnsN/OZpxkFnknjOwGjzBUUu9AWqPTSBui3xCDfFeNCz8elMnot8Qa/+oUQLbmQbHOBvfKO+j1j5NDauFd0mgl1+jv1T/hTg2A7X3L0owRXjdtkLvP4ss2/uHU/pRGA/okj1iJXokj1iJXokj1nAqEfnV4WqJeEk74f3mcV+l8NBrfI2yY3dcUWJ1YFn8/6knANdKZPinMm6Q8TGP7EatAckAAA=",
-    "variants": {
-      "avif": {
-        "210": "/images/generated/.edge-crop3-210.avif"
-      },
-      "webp": {
-        "210": "/images/generated/.edge-crop3-210.webp"
-      },
-      "jpeg": {
-        "210": "/images/generated/.edge-crop3-210.jpeg"
-      }
-    }
-  },
-  "/images/.edge-crop4.png": {
-    "originalPath": "/images/.edge-crop4.png",
-    "altBase": ".edge-crop4",
-    "width": 210,
-    "height": 400,
-    "aspectRatio": 0.525,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpIBAABXRUJQVlA4IIYBAABQCACdASoUACYAPzmEvFUvKCYjNVQIAeAnCWhdnB00+Kn/pfuA6UObsnsw55Pf8hwJ3CwOn+O/Wg1wCnVw5WVXtmHdoAAdustBFIAA/r8WCjar7ZmCGz9XQMRkNI8PHFsaXZbwW55ZQgGR22lxxM6d/834j8ik7zvcX8Zb1CFrDc3lZ9d8qbjho16+BjyQfGndfxp3X8af9tAxm1anSxx+QuXQst7rlKM84PcdlroiNMgihZKdAbfvDrrP1nS8MSsRmKOvNT0MTd8fGdYETUfF/QkYYCrntzLqE6NLtFCft6t10YALMZql8z5Lzb86fBoSefk//6yZfTIBacJ4Zh5gbmYs8F7yFbMCmIG6XsKGAbWzdcfqz+1JrHsp/j0j3PiZTQ1Kzq5MYA8Sx20W3iVGmz7pbCDD1zZIenGRxj+/wi2M24v/GmdGvS5I3IPVLC1x+r+JFiJe/4l1gcDuX6+MtfPYU9O73bVWsU9RO6n2HtcjXuezGRB23u57AwCY7Rs41Bh5wAA=",
-    "variants": {
-      "avif": {
-        "210": "/images/generated/.edge-crop4-210.avif"
-      },
-      "webp": {
-        "210": "/images/generated/.edge-crop4-210.webp"
-      },
-      "jpeg": {
-        "210": "/images/generated/.edge-crop4-210.jpeg"
-      }
-    }
-  },
-  "/images/.edge-f2.png": {
-    "originalPath": "/images/.edge-f2.png",
-    "altBase": ".edge-f2",
-    "width": 156,
-    "height": 280,
-    "aspectRatio": 0.5571428571428572,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmoBAABXRUJQVlA4IF4BAACwBgCdASoUACQAPzmSvVgvKiYjpWzJ4CcJYj3aNm8Wgmv6780AMYDH9bu7N+gFdLZ1x+axjbr/9CNKBmMekAD+XDzP/0cuh//0s5n2vizpPx4mHT8pR1cDDOKTuHX7M9JTYJkP2mvtbxioLzJYdvdwSUMtRboWbQMDJzBNlGf8ig2Kzg2O9o0Mz3PWPHdegrpd//8Mi9nxTvU/LwrqYaQpQyfbqaW/lg1zN7/mARbrTCwBrTCwBrTDd0/gLkucOexguH87o327+GYu/Hdr5vNK83mlebzaAGLW8Qi0QDVuPikQedmqIkFk7tO/dIkhGNOKw5NTExKewrXAb8yaHHV88TzciU0CN4hxLjbmyzWhsNSX5N9Y3C6/6btG9S3W9xm3XOYaspJ+10pyub1qkV0PAHU5i3pO/YTqk1cH4lJ3yNm+wnQ0PM+KbtjmTsZJ62M3WEDdHsDI+Sm8x4AAAA==",
-    "variants": {
-      "avif": {
-        "156": "/images/generated/.edge-f2-156.avif"
-      },
-      "webp": {
-        "156": "/images/generated/.edge-f2-156.webp"
-      },
-      "jpeg": {
-        "156": "/images/generated/.edge-f2-156.jpeg"
-      }
-    }
-  },
-  "/images/.edge-fixed.png": {
-    "originalPath": "/images/.edge-fixed.png",
-    "altBase": ".edge-fixed",
-    "width": 336,
-    "height": 280,
-    "aspectRatio": 1.2,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACQBACdASoUABEAPyWEuVOuKaaisAwBwCSJYz5po+lG4Q1wC4AAxZxswI5JrzgA/s3p+0n3s29j56A9XrPfvs6FWDZ2hYIsZytFUaVEPbFgWKlDCkqNDR9pH4UZH+tQ+p/P2e5ixSCbmn9cBNScEnHIyh/6RNNZftxUqw/Op2zU413spbKiRlgL8Ef6K8JOWVblaX/hZ5UtFuG6vfjK8d5V/ZbR+qPKlotw3V78ZXjwJ2G446ZhMeCbV0cwlIHsHwAAAA==",
-    "variants": {
-      "avif": {
-        "336": "/images/generated/.edge-fixed-336.avif"
-      },
-      "webp": {
-        "336": "/images/generated/.edge-fixed-336.webp"
-      },
-      "jpeg": {
-        "336": "/images/generated/.edge-fixed-336.jpeg"
-      }
-    }
-  },
-  "/images/.edge-original.png": {
-    "originalPath": "/images/.edge-original.png",
-    "altBase": ".edge-original",
-    "width": 156,
-    "height": 280,
-    "aspectRatio": 0.5571428571428572,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAABQBQCdASoUACQAPzmWv1kvKqajpWsx4CcJTPL4RqZ+cpjqAx4HNYbyvT3wAB/baPar4YAAzP+6xrmfyWa760RjImohcdMUTxFrbmMKwBUw31WiFP/vL66cD8VrQJv5Zgyc/2hYyHg0chhPxBjJLk6s1818RUCZyfvK/mhj1GAT4ACgicdRX3qTlYR8E/EH/n87jwR8buFZD+HPOXf73MnAyo92OlNxSmSeXTSxKOTF/6S5nAKSoTjk2fmrJsOS6aBIWWrzbSybDXwhmU4XLUCAnA6aybcm5ol4R96Fw3rpuL3x83vgebeLsVo4U/Nghp1Zqyk2huVo7O863+v33hdnZMFRIpWi6QKSYHQQI1AAAA==",
-    "variants": {
-      "avif": {
-        "156": "/images/generated/.edge-original-156.avif"
-      },
-      "webp": {
-        "156": "/images/generated/.edge-original-156.webp"
-      },
-      "jpeg": {
-        "156": "/images/generated/.edge-original-156.jpeg"
-      }
-    }
-  },
-  "/images/.final-zone.png": {
-    "originalPath": "/images/.final-zone.png",
-    "altBase": ".final-zone",
-    "width": 369,
-    "height": 164,
-    "aspectRatio": 2.25,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABwAQCdASoUAAkABUB8JZQABQfvwAD+ze8fSv6BPsFYnLI9UmFCxgzuYWC1jfEk3yh3/YQGZEfDWE4TDtV6eAbZp58+n/lqTEKPbUklV/mWeB3n9YNQgmhBzyGxUAAA",
-    "variants": {
-      "avif": {
-        "369": "/images/generated/.final-zone-369.avif"
-      },
-      "webp": {
-        "369": "/images/generated/.final-zone-369.webp"
-      },
-      "jpeg": {
-        "369": "/images/generated/.final-zone-369.jpeg"
-      }
-    }
-  },
-  "/images/.hero-full-check.png": {
-    "originalPath": "/images/.hero-full-check.png",
-    "altBase": ".hero-full-check",
-    "width": 1536,
-    "height": 1024,
-    "aspectRatio": 1.5,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAgCdASoUAA0ALvmczmclLy8vDwD4Sxln/hnoDyhgAP7sfb/sW/O/e5+EahuXAd+eLQUH/xBI+q7Iumk3P9UrLsv/8SQ55gp3/9lQPnO0w6OHfn/x3sd7JKdDqoRAiAbTXAAA",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.hero-full-check-480.avif",
-        "640": "/images/generated/.hero-full-check-640.avif",
-        "768": "/images/generated/.hero-full-check-768.avif",
-        "1024": "/images/generated/.hero-full-check-1024.avif",
-        "1280": "/images/generated/.hero-full-check-1280.avif",
-        "1536": "/images/generated/.hero-full-check-1536.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.hero-full-check-480.webp",
-        "640": "/images/generated/.hero-full-check-640.webp",
-        "768": "/images/generated/.hero-full-check-768.webp",
-        "1024": "/images/generated/.hero-full-check-1024.webp",
-        "1280": "/images/generated/.hero-full-check-1280.webp",
-        "1536": "/images/generated/.hero-full-check-1536.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.hero-full-check-480.jpeg",
-        "640": "/images/generated/.hero-full-check-640.jpeg",
-        "768": "/images/generated/.hero-full-check-768.jpeg",
-        "1024": "/images/generated/.hero-full-check-1024.jpeg",
-        "1280": "/images/generated/.hero-full-check-1280.jpeg",
-        "1536": "/images/generated/.hero-full-check-1536.jpeg"
-      }
-    }
-  },
-  "/images/.hero-inspect.png": {
-    "originalPath": "/images/.hero-inspect.png",
-    "altBase": ".hero-inspect",
-    "width": 2560,
-    "height": 1707,
-    "aspectRatio": 1.4997070884592854,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoUAA0APzleyV8vI6qmGAHgJwljTBRQNH5NksRGRwAA/umAP35/9r7MI1ciXGXlR7ihcYIev0I83w+Ab/uVouPe69b/pu8y62Lhkz7k331/P6+rr3p3vr+m4/+1lYCg4Cg4Bmwvxn86eYGQAAA=",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.hero-inspect-480.avif",
-        "640": "/images/generated/.hero-inspect-640.avif",
-        "768": "/images/generated/.hero-inspect-768.avif",
-        "1024": "/images/generated/.hero-inspect-1024.avif",
-        "1280": "/images/generated/.hero-inspect-1280.avif",
-        "1536": "/images/generated/.hero-inspect-1536.avif",
-        "1920": "/images/generated/.hero-inspect-1920.avif",
-        "2560": "/images/generated/.hero-inspect-2560.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.hero-inspect-480.webp",
-        "640": "/images/generated/.hero-inspect-640.webp",
-        "768": "/images/generated/.hero-inspect-768.webp",
-        "1024": "/images/generated/.hero-inspect-1024.webp",
-        "1280": "/images/generated/.hero-inspect-1280.webp",
-        "1536": "/images/generated/.hero-inspect-1536.webp",
-        "1920": "/images/generated/.hero-inspect-1920.webp",
-        "2560": "/images/generated/.hero-inspect-2560.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.hero-inspect-480.jpeg",
-        "640": "/images/generated/.hero-inspect-640.jpeg",
-        "768": "/images/generated/.hero-inspect-768.jpeg",
-        "1024": "/images/generated/.hero-inspect-1024.jpeg",
-        "1280": "/images/generated/.hero-inspect-1280.jpeg",
-        "1536": "/images/generated/.hero-inspect-1536.jpeg",
-        "1920": "/images/generated/.hero-inspect-1920.jpeg",
-        "2560": "/images/generated/.hero-inspect-2560.jpeg"
-      }
-    }
-  },
-  "/images/.left-bank-hero.png": {
-    "originalPath": "/images/.left-bank-hero.png",
-    "altBase": ".left-bank-hero",
-    "width": 430,
-    "height": 287,
-    "aspectRatio": 1.4982578397212543,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAA0APzmMvlUvKaajMAgB4CcJTB1qLGMt+uAA/uhew//nWnzd7DD0lM4MlQnj3hVSItYP83buhf+Rzbe2Xw8T2VHS+OibPjoaVPKbMqX7uEF/VXJggAAA",
-    "variants": {
-      "avif": {
-        "430": "/images/generated/.left-bank-hero-430.avif"
-      },
-      "webp": {
-        "430": "/images/generated/.left-bank-hero-430.webp"
-      },
-      "jpeg": {
-        "430": "/images/generated/.left-bank-hero-430.jpeg"
-      }
-    }
-  },
-  "/images/.left-bank-ref.png": {
-    "originalPath": "/images/.left-bank-ref.png",
-    "altBase": ".left-bank-ref",
-    "width": 430,
-    "height": 287,
-    "aspectRatio": 1.4982578397212543,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAgCdASoUAA0APzmKulOvKaWisAgB4CcJZGM+AEPegAD+5v40O/Izii17uprxkgvuSJtm3D+zf/bi/6wx0H72ZV2YEe+jgbYW9EAZp4CEe06xAAA=",
-    "variants": {
-      "avif": {
-        "430": "/images/generated/.left-bank-ref-430.avif"
-      },
-      "webp": {
-        "430": "/images/generated/.left-bank-ref-430.webp"
-      },
-      "jpeg": {
-        "430": "/images/generated/.left-bank-ref-430.jpeg"
-      }
-    }
-  },
-  "/images/.left-bridge-check.png": {
-    "originalPath": "/images/.left-bridge-check.png",
-    "altBase": ".left-bridge-check",
-    "width": 280,
-    "height": 200,
-    "aspectRatio": 1.4,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAA4APzmKulOvKaWisAgB4CcJYl2AU0A19YAA/vAJL9f/9vdtcOqWCPQ3WlplaveOGJQVtEJ1YSPoWIA9axpd7YsciwsmQzvGN3veNHV66C3g/0voKAAA",
-    "variants": {
-      "avif": {
-        "280": "/images/generated/.left-bridge-check-280.avif"
-      },
-      "webp": {
-        "280": "/images/generated/.left-bridge-check-280.webp"
-      },
-      "jpeg": {
-        "280": "/images/generated/.left-bridge-check-280.jpeg"
-      }
-    }
-  },
-  "/images/.mid-trees-hero.png": {
-    "originalPath": "/images/.mid-trees-hero.png",
-    "altBase": ".mid-trees-hero",
-    "width": 430,
-    "height": 225,
-    "aspectRatio": 1.9111111111111112,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADQAwCdASoUAAoAPzmIulOvKSWisAgB4CcJYkwURAGeuT/bf4GKewAA/uNSjt9zNsgZO3oao8wvKqArf02uyBfqJrxmAc2aY9NRoh+x1B40APwyRR3+GfbWEDGY/qhYzH9ULGY/pKjGCQZlljZY2a+ADg7vQlroYRaJXQJqBPQgmAAA",
-    "variants": {
-      "avif": {
-        "430": "/images/generated/.mid-trees-hero-430.avif"
-      },
-      "webp": {
-        "430": "/images/generated/.mid-trees-hero-430.webp"
-      },
-      "jpeg": {
-        "430": "/images/generated/.mid-trees-hero-430.jpeg"
-      }
-    }
-  },
-  "/images/.mid-trees-ref.png": {
-    "originalPath": "/images/.mid-trees-ref.png",
-    "altBase": ".mid-trees-ref",
-    "width": 430,
-    "height": 225,
-    "aspectRatio": 1.9111111111111112,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwAwCdASoUAAoAPzmEuVOvKKWisAgB4CcJYhFAA9wCxFIAAP7tH5n+Ztn/v9Ez+iE6fk2OCSkYWljrKg79gZ2eHiYlaPWc/5nU6VUJZ1dMbxhV9trKLWNsTn3vGj99gVQyHG4uMkhJ3h++3EkDyaqP/FpPoKsQSjdrmZOkZyjRjXAA",
-    "variants": {
-      "avif": {
-        "430": "/images/generated/.mid-trees-ref-430.avif"
-      },
-      "webp": {
-        "430": "/images/generated/.mid-trees-ref-430.webp"
-      },
-      "jpeg": {
-        "430": "/images/generated/.mid-trees-ref-430.jpeg"
-      }
-    }
-  },
-  "/images/.patched-zone.png": {
-    "originalPath": "/images/.patched-zone.png",
-    "altBase": ".patched-zone",
-    "width": 369,
-    "height": 164,
-    "aspectRatio": 2.25,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQAwCdASoUAAkALvmczmclLy8vDwD4SyloL/FOSIAt+yAA/qJ7PrD6yDo4fDpVJ1fKNduhIeNB0rngE3fhvVk5VG/RdTbWzlgBqzur4QAgDofkWckv/mQ6thUACQR6AXuQSajq/iq/nLsnOXZOctF9KiSPrkMAAAA=",
-    "variants": {
-      "avif": {
-        "369": "/images/generated/.patched-zone-369.avif"
-      },
-      "webp": {
-        "369": "/images/generated/.patched-zone-369.webp"
-      },
-      "jpeg": {
-        "369": "/images/generated/.patched-zone-369.jpeg"
-      }
-    }
-  },
-  "/images/.right-trees-hero.png": {
-    "originalPath": "/images/.right-trees-hero.png",
-    "altBase": ".right-trees-hero",
-    "width": 492,
-    "height": 287,
-    "aspectRatio": 1.7142857142857142,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAwCdASoUAAwALvmczmclLy8vDwD4Sxk4FsAPpAq+xl/rgAD+1cW5i7Prl5+gyE16Uvx1r7pu9/HfHHAuUrOyI7Uq4cLoIEKUXlxnYbi4MM9pIfHQ8j7R8uG2A/hjiA3+Ly/sFXtP2+HOMJpKJWHWxU0L0nfK4u1wAA==",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.right-trees-hero-480.avif",
-        "492": "/images/generated/.right-trees-hero-492.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.right-trees-hero-480.webp",
-        "492": "/images/generated/.right-trees-hero-492.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.right-trees-hero-480.jpeg",
-        "492": "/images/generated/.right-trees-hero-492.jpeg"
-      }
-    }
-  },
-  "/images/.right-trees-ref.png": {
-    "originalPath": "/images/.right-trees-ref.png",
-    "altBase": ".right-trees-ref",
-    "width": 492,
-    "height": 287,
-    "aspectRatio": 1.7142857142857142,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQAwCdASoUAAwAPzleyV8vI6qmGAHgJwlJgoa34lBIcpaZeAD+2roWrSssftQWKDFdsAb5tLYs9QrVwg31+MJuYbssESyXTk73/7Pfv/lrT0wJCxZh597qilLRdDL5FpMBh7F7wajfRa9f3zQL9Q8ZOAA=",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/.right-trees-ref-480.avif",
-        "492": "/images/generated/.right-trees-ref-492.avif"
-      },
-      "webp": {
-        "480": "/images/generated/.right-trees-ref-480.webp",
-        "492": "/images/generated/.right-trees-ref-492.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/.right-trees-ref-480.jpeg",
-        "492": "/images/generated/.right-trees-ref-492.jpeg"
-      }
-    }
-  },
-  "/images/.v3-zone.png": {
-    "originalPath": "/images/.v3-zone.png",
-    "altBase": ".v3-zone",
-    "width": 369,
-    "height": 164,
-    "aspectRatio": 2.25,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAAkALvmczmclLy8vDwD4SynqbaAE/JtEzEAA/tJ/CjmdY3NlH8MCplJmBonR+j7CgdLSecFpG8+qumEfDU/wKZ//mwZO3toTQmbpjDZxaIxxY4zrkMAA",
-    "variants": {
-      "avif": {
-        "369": "/images/generated/.v3-zone-369.avif"
-      },
-      "webp": {
-        "369": "/images/generated/.v3-zone-369.webp"
-      },
-      "jpeg": {
-        "369": "/images/generated/.v3-zone-369.jpeg"
-      }
-    }
-  },
   "/images/about-hero.webp": {
     "originalPath": "/images/about-hero.webp",
     "altBase": "about-hero",
@@ -900,6 +253,181 @@
         "1600": "/images/generated/contact-page-hero-1600.jpeg",
         "1920": "/images/generated/contact-page-hero-1920.jpeg",
         "2560": "/images/generated/contact-page-hero-2560.jpeg"
+      }
+    }
+  },
+  "/images/content-landscape-installation.webp": {
+    "originalPath": "/images/content-landscape-installation.webp",
+    "altBase": "content-landscape-installation",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAwBACdASoUAA0APzmMvlUvKaajMAgB4CcJR53YA/wF8r4WcaMCtAD9MwAA/tqzL//YGZy/qr75Vbm62Q4IyHSjc4MDBuVlxhIHj6+bnlds0GDcw5n2BTYjD8H3qzZ2N3v/9TA/hDGvG/2Xk9ouy9c2Huxb88Z+EWdVq+JgIk1yhRx4vMiyMHnBENHCue9vtI6c38GWJy0OA2IH5gA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/content-landscape-installation-480.avif",
+        "640": "/images/generated/content-landscape-installation-640.avif",
+        "768": "/images/generated/content-landscape-installation-768.avif",
+        "1024": "/images/generated/content-landscape-installation-1024.avif",
+        "1280": "/images/generated/content-landscape-installation-1280.avif",
+        "1536": "/images/generated/content-landscape-installation-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/content-landscape-installation-480.webp",
+        "640": "/images/generated/content-landscape-installation-640.webp",
+        "768": "/images/generated/content-landscape-installation-768.webp",
+        "1024": "/images/generated/content-landscape-installation-1024.webp",
+        "1280": "/images/generated/content-landscape-installation-1280.webp",
+        "1536": "/images/generated/content-landscape-installation-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/content-landscape-installation-480.jpeg",
+        "640": "/images/generated/content-landscape-installation-640.jpeg",
+        "768": "/images/generated/content-landscape-installation-768.jpeg",
+        "1024": "/images/generated/content-landscape-installation-1024.jpeg",
+        "1280": "/images/generated/content-landscape-installation-1280.jpeg",
+        "1536": "/images/generated/content-landscape-installation-1536.jpeg"
+      }
+    }
+  },
+  "/images/content-landscaping-cedar-falls.webp": {
+    "originalPath": "/images/content-landscaping-cedar-falls.webp",
+    "altBase": "content-landscaping-cedar-falls",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAwCdASoUAA0APzmGuVOvKSWisAgB4CcJZGD/TF8ZYAPB0AD+5WkeeyLSmL28biRAVcMh7ChIaJFufc3X7lHf/P5Wk/cNBX1Vnwdoj8kJ/rU/nlwFg0Sn+xs3Txw5xYPaQTwj8adcU3VkwPAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/content-landscaping-cedar-falls-480.avif",
+        "640": "/images/generated/content-landscaping-cedar-falls-640.avif",
+        "768": "/images/generated/content-landscaping-cedar-falls-768.avif",
+        "1024": "/images/generated/content-landscaping-cedar-falls-1024.avif",
+        "1280": "/images/generated/content-landscaping-cedar-falls-1280.avif",
+        "1536": "/images/generated/content-landscaping-cedar-falls-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/content-landscaping-cedar-falls-480.webp",
+        "640": "/images/generated/content-landscaping-cedar-falls-640.webp",
+        "768": "/images/generated/content-landscaping-cedar-falls-768.webp",
+        "1024": "/images/generated/content-landscaping-cedar-falls-1024.webp",
+        "1280": "/images/generated/content-landscaping-cedar-falls-1280.webp",
+        "1536": "/images/generated/content-landscaping-cedar-falls-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/content-landscaping-cedar-falls-480.jpeg",
+        "640": "/images/generated/content-landscaping-cedar-falls-640.jpeg",
+        "768": "/images/generated/content-landscaping-cedar-falls-768.jpeg",
+        "1024": "/images/generated/content-landscaping-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/content-landscaping-cedar-falls-1280.jpeg",
+        "1536": "/images/generated/content-landscaping-cedar-falls-1536.jpeg"
+      }
+    }
+  },
+  "/images/content-paver-patio-cedar-falls.webp": {
+    "originalPath": "/images/content-paver-patio-cedar-falls.webp",
+    "altBase": "content-paver-patio-cedar-falls",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoUAA0APzmGulOvKSWisAgB4CcJZD1Ru79ACzAAsTgABgOgAP7YmQBTP2vliNPSs/NuC5HLnUYDBxbb9r8nI122G75h9nW33/E6Nqq3nDf/5Fb7/pd9z7v/9fl/WxJQdSlT794QdXeEHV3hCk+PIZlubpP3G1/Ow/66W4DrUq1KtXeUi1oaBuG5WAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/content-paver-patio-cedar-falls-480.avif",
+        "640": "/images/generated/content-paver-patio-cedar-falls-640.avif",
+        "768": "/images/generated/content-paver-patio-cedar-falls-768.avif",
+        "1024": "/images/generated/content-paver-patio-cedar-falls-1024.avif",
+        "1280": "/images/generated/content-paver-patio-cedar-falls-1280.avif",
+        "1536": "/images/generated/content-paver-patio-cedar-falls-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/content-paver-patio-cedar-falls-480.webp",
+        "640": "/images/generated/content-paver-patio-cedar-falls-640.webp",
+        "768": "/images/generated/content-paver-patio-cedar-falls-768.webp",
+        "1024": "/images/generated/content-paver-patio-cedar-falls-1024.webp",
+        "1280": "/images/generated/content-paver-patio-cedar-falls-1280.webp",
+        "1536": "/images/generated/content-paver-patio-cedar-falls-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/content-paver-patio-cedar-falls-480.jpeg",
+        "640": "/images/generated/content-paver-patio-cedar-falls-640.jpeg",
+        "768": "/images/generated/content-paver-patio-cedar-falls-768.jpeg",
+        "1024": "/images/generated/content-paver-patio-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/content-paver-patio-cedar-falls-1280.jpeg",
+        "1536": "/images/generated/content-paver-patio-cedar-falls-1536.jpeg"
+      }
+    }
+  },
+  "/images/content-retaining-wall-cedar-falls.webp": {
+    "originalPath": "/images/content-retaining-wall-cedar-falls.webp",
+    "altBase": "content-retaining-wall-cedar-falls",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJTB1qaAL80AAA/tqN79gqx031/Dk6sTmCp/lIrA3knVxEv72eWueAMJwZ5pH94kkrf0AX6AL9AmxA9DaBfUydbtlBgAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/content-retaining-wall-cedar-falls-480.avif",
+        "640": "/images/generated/content-retaining-wall-cedar-falls-640.avif",
+        "768": "/images/generated/content-retaining-wall-cedar-falls-768.avif",
+        "1024": "/images/generated/content-retaining-wall-cedar-falls-1024.avif",
+        "1280": "/images/generated/content-retaining-wall-cedar-falls-1280.avif",
+        "1536": "/images/generated/content-retaining-wall-cedar-falls-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/content-retaining-wall-cedar-falls-480.webp",
+        "640": "/images/generated/content-retaining-wall-cedar-falls-640.webp",
+        "768": "/images/generated/content-retaining-wall-cedar-falls-768.webp",
+        "1024": "/images/generated/content-retaining-wall-cedar-falls-1024.webp",
+        "1280": "/images/generated/content-retaining-wall-cedar-falls-1280.webp",
+        "1536": "/images/generated/content-retaining-wall-cedar-falls-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/content-retaining-wall-cedar-falls-480.jpeg",
+        "640": "/images/generated/content-retaining-wall-cedar-falls-640.jpeg",
+        "768": "/images/generated/content-retaining-wall-cedar-falls-768.jpeg",
+        "1024": "/images/generated/content-retaining-wall-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/content-retaining-wall-cedar-falls-1280.jpeg",
+        "1536": "/images/generated/content-retaining-wall-cedar-falls-1536.jpeg"
+      }
+    }
+  },
+  "/images/content-water-features-cedar-falls.webp": {
+    "originalPath": "/images/content-water-features-cedar-falls.webp",
+    "altBase": "content-water-features-cedar-falls",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJYlTAVpAXxgAA/uHfOghGsA51m0psjh6JVxr2XQzCuJHCv7Q2QYgSL5mN2PVNawrzNUQV7/BU3XqzKRiz2tV/Trl+IaJF8qO1FRXbEGAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/content-water-features-cedar-falls-480.avif",
+        "640": "/images/generated/content-water-features-cedar-falls-640.avif",
+        "768": "/images/generated/content-water-features-cedar-falls-768.avif",
+        "1024": "/images/generated/content-water-features-cedar-falls-1024.avif",
+        "1280": "/images/generated/content-water-features-cedar-falls-1280.avif",
+        "1536": "/images/generated/content-water-features-cedar-falls-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/content-water-features-cedar-falls-480.webp",
+        "640": "/images/generated/content-water-features-cedar-falls-640.webp",
+        "768": "/images/generated/content-water-features-cedar-falls-768.webp",
+        "1024": "/images/generated/content-water-features-cedar-falls-1024.webp",
+        "1280": "/images/generated/content-water-features-cedar-falls-1280.webp",
+        "1536": "/images/generated/content-water-features-cedar-falls-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/content-water-features-cedar-falls-480.jpeg",
+        "640": "/images/generated/content-water-features-cedar-falls-640.jpeg",
+        "768": "/images/generated/content-water-features-cedar-falls-768.jpeg",
+        "1024": "/images/generated/content-water-features-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/content-water-features-cedar-falls-1280.jpeg",
+        "1536": "/images/generated/content-water-features-cedar-falls-1536.jpeg"
       }
     }
   },
@@ -1160,10 +688,10 @@
     "originalPath": "/images/patio-after-1.webp",
     "altBase": "patio-after-1",
     "width": 2560,
-    "height": 1920,
-    "aspectRatio": 1.3333333333333333,
+    "height": 1871,
+    "aspectRatio": 1.3682522715125602,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQAgCdASoUAA8ALvmczmclLy8vDwD4Syq8+rb90skAAP32ne+T3XPe7/xlJgyFoc20dqtrNcmy+CnmNLaPOUgv20MBd7/FB5dnCQfUxmJwzYZmDPpBGvZI2/WJtbKJ6jB6pMUf2GL91NY62abZkp2voIHG5KaoAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQAQCdASoUAA8ABUB8JZwABKKAAP6/gQP/UejlCdgTvvTKH0jIAuuOZYkWnF20rFX7loQu5FBHitjhttSq+NdSugusAINbRHygWkne4s0mr9+Stf7dUoUfSl4rcuTziZZWLP/bXoC16AtejlEaYcgrJ5vVx9D7rO8GJ2r0AAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/patio-after-1-480.avif",
@@ -1472,6 +1000,776 @@
       }
     }
   },
+  "/images/service-content-commercial-landscaping.webp": {
+    "originalPath": "/images/service-content-commercial-landscaping.webp",
+    "altBase": "service-content-commercial-landscaping",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwAwCdASoUAA0APzmEulOvKKWisAgB4CcJZi0QfMAC+WT9MwAA/tUlzKtu962Od/l8de3EuWCycY1pp7iv8afyQ0lpy3OOxIVPH7gCtkUZZQZYabbz0mj/8PP/tWmR6kab0VnlPAgWtm1iTzzpPO85gA2R5EqMHA68djmTi8p7f0v+U9v6X/Ke38yxpMumR9UAPrQA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-commercial-landscaping-480.avif",
+        "640": "/images/generated/service-content-commercial-landscaping-640.avif",
+        "768": "/images/generated/service-content-commercial-landscaping-768.avif",
+        "1024": "/images/generated/service-content-commercial-landscaping-1024.avif",
+        "1280": "/images/generated/service-content-commercial-landscaping-1280.avif",
+        "1536": "/images/generated/service-content-commercial-landscaping-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-commercial-landscaping-480.webp",
+        "640": "/images/generated/service-content-commercial-landscaping-640.webp",
+        "768": "/images/generated/service-content-commercial-landscaping-768.webp",
+        "1024": "/images/generated/service-content-commercial-landscaping-1024.webp",
+        "1280": "/images/generated/service-content-commercial-landscaping-1280.webp",
+        "1536": "/images/generated/service-content-commercial-landscaping-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-commercial-landscaping-480.jpeg",
+        "640": "/images/generated/service-content-commercial-landscaping-640.jpeg",
+        "768": "/images/generated/service-content-commercial-landscaping-768.jpeg",
+        "1024": "/images/generated/service-content-commercial-landscaping-1024.jpeg",
+        "1280": "/images/generated/service-content-commercial-landscaping-1280.jpeg",
+        "1536": "/images/generated/service-content-commercial-landscaping-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-drainage.webp": {
+    "originalPath": "/images/service-content-drainage.webp",
+    "altBase": "service-content-drainage",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAgCdASoUAA0APzmGu1QvKSYjMAgB4CcJZF/2AENuQAD+1dAX7PSxdVicCEFk0ErihPQVfxvDdgeXG3sIRmDGn89sua2GME23v9WeDDnJh10f+dkB6l7WCVP0KkODsMEksAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-drainage-480.avif",
+        "640": "/images/generated/service-content-drainage-640.avif",
+        "768": "/images/generated/service-content-drainage-768.avif",
+        "1024": "/images/generated/service-content-drainage-1024.avif",
+        "1280": "/images/generated/service-content-drainage-1280.avif",
+        "1536": "/images/generated/service-content-drainage-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-drainage-480.webp",
+        "640": "/images/generated/service-content-drainage-640.webp",
+        "768": "/images/generated/service-content-drainage-768.webp",
+        "1024": "/images/generated/service-content-drainage-1024.webp",
+        "1280": "/images/generated/service-content-drainage-1280.webp",
+        "1536": "/images/generated/service-content-drainage-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-drainage-480.jpeg",
+        "640": "/images/generated/service-content-drainage-640.jpeg",
+        "768": "/images/generated/service-content-drainage-768.jpeg",
+        "1024": "/images/generated/service-content-drainage-1024.jpeg",
+        "1280": "/images/generated/service-content-drainage-1280.jpeg",
+        "1536": "/images/generated/service-content-drainage-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-excavation.webp": {
+    "originalPath": "/images/service-content-excavation.webp",
+    "altBase": "service-content-excavation",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABQAQCdASoUAA0ABUB8JYgABbWAAMqz/icVTvh+13MOuX6sp/oo3m9LXhQvbJVCbjNSi1kOa82NEOcWPULxWKKU3sqx8D4SB8dumr5zgcGD8RfhA0pbk0hLPZ0ILWQA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-excavation-480.avif",
+        "640": "/images/generated/service-content-excavation-640.avif",
+        "768": "/images/generated/service-content-excavation-768.avif",
+        "1024": "/images/generated/service-content-excavation-1024.avif",
+        "1280": "/images/generated/service-content-excavation-1280.avif",
+        "1536": "/images/generated/service-content-excavation-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-excavation-480.webp",
+        "640": "/images/generated/service-content-excavation-640.webp",
+        "768": "/images/generated/service-content-excavation-768.webp",
+        "1024": "/images/generated/service-content-excavation-1024.webp",
+        "1280": "/images/generated/service-content-excavation-1280.webp",
+        "1536": "/images/generated/service-content-excavation-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-excavation-480.jpeg",
+        "640": "/images/generated/service-content-excavation-640.jpeg",
+        "768": "/images/generated/service-content-excavation-768.jpeg",
+        "1024": "/images/generated/service-content-excavation-1024.jpeg",
+        "1280": "/images/generated/service-content-excavation-1280.jpeg",
+        "1536": "/images/generated/service-content-excavation-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-grading.webp": {
+    "originalPath": "/images/service-content-grading.webp",
+    "altBase": "service-content-grading",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAwCdASoUAA0APzmQvlWvKqajMAgB4CcJYgC06IHiZAAA/uYf//+CB/65s+wf3//Jt42+92fbxXfDJrb7IN/IMIHqQYPL1TFV8b91ZB3/9KXP1S/pfAqmuB/Fru+paRjHhMKAuU+R7XKVuVZyQAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-grading-480.avif",
+        "640": "/images/generated/service-content-grading-640.avif",
+        "768": "/images/generated/service-content-grading-768.avif",
+        "1024": "/images/generated/service-content-grading-1024.avif",
+        "1280": "/images/generated/service-content-grading-1280.avif",
+        "1536": "/images/generated/service-content-grading-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-grading-480.webp",
+        "640": "/images/generated/service-content-grading-640.webp",
+        "768": "/images/generated/service-content-grading-768.webp",
+        "1024": "/images/generated/service-content-grading-1024.webp",
+        "1280": "/images/generated/service-content-grading-1280.webp",
+        "1536": "/images/generated/service-content-grading-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-grading-480.jpeg",
+        "640": "/images/generated/service-content-grading-640.jpeg",
+        "768": "/images/generated/service-content-grading-768.jpeg",
+        "1024": "/images/generated/service-content-grading-1024.jpeg",
+        "1280": "/images/generated/service-content-grading-1280.jpeg",
+        "1536": "/images/generated/service-content-grading-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-hydroseeding.webp": {
+    "originalPath": "/images/service-content-hydroseeding.webp",
+    "altBase": "service-content-hydroseeding",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoUAA0APzmYvlYvLCajsAgB4CcJQzQCbHfYAABT66AA/kKf+O33m1b//9tIiKnhjhzgZRKl4CbP64oyPZhjPs/FP+9JX6P/70nWCjgn+8BvfJvjcvdJeyO5zW9HhypkCmSdJC8tnJC/7UHgAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-hydroseeding-480.avif",
+        "640": "/images/generated/service-content-hydroseeding-640.avif",
+        "768": "/images/generated/service-content-hydroseeding-768.avif",
+        "1024": "/images/generated/service-content-hydroseeding-1024.avif",
+        "1280": "/images/generated/service-content-hydroseeding-1280.avif",
+        "1536": "/images/generated/service-content-hydroseeding-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-hydroseeding-480.webp",
+        "640": "/images/generated/service-content-hydroseeding-640.webp",
+        "768": "/images/generated/service-content-hydroseeding-768.webp",
+        "1024": "/images/generated/service-content-hydroseeding-1024.webp",
+        "1280": "/images/generated/service-content-hydroseeding-1280.webp",
+        "1536": "/images/generated/service-content-hydroseeding-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-hydroseeding-480.jpeg",
+        "640": "/images/generated/service-content-hydroseeding-640.jpeg",
+        "768": "/images/generated/service-content-hydroseeding-768.jpeg",
+        "1024": "/images/generated/service-content-hydroseeding-1024.jpeg",
+        "1280": "/images/generated/service-content-hydroseeding-1280.jpeg",
+        "1536": "/images/generated/service-content-hydroseeding-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-landscape-design.webp": {
+    "originalPath": "/images/service-content-landscape-design.webp",
+    "altBase": "service-content-landscape-design",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADQAwCdASoUAA0APzmOvlOvKqcisAgB4CcJYj1zOE6AgBhWKoCpsAAAzP//b33//6j/Imv4t//zmOptFVCyYfvlKohuih8IklYnPJ2lVzV2tcLeQWcE8PF73/ichbq6n1Zez93b3he9+BZOgm/3kaoW+VQky3niAMIcc3JvBVe3W/+xv/Pv7dLfeS//W2ckTRTNr/gNZBcofZnugJHzgP/FmYvyW/JTv2sojgK0AAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-landscape-design-480.avif",
+        "640": "/images/generated/service-content-landscape-design-640.avif",
+        "768": "/images/generated/service-content-landscape-design-768.avif",
+        "1024": "/images/generated/service-content-landscape-design-1024.avif",
+        "1280": "/images/generated/service-content-landscape-design-1280.avif",
+        "1536": "/images/generated/service-content-landscape-design-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-landscape-design-480.webp",
+        "640": "/images/generated/service-content-landscape-design-640.webp",
+        "768": "/images/generated/service-content-landscape-design-768.webp",
+        "1024": "/images/generated/service-content-landscape-design-1024.webp",
+        "1280": "/images/generated/service-content-landscape-design-1280.webp",
+        "1536": "/images/generated/service-content-landscape-design-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-landscape-design-480.jpeg",
+        "640": "/images/generated/service-content-landscape-design-640.jpeg",
+        "768": "/images/generated/service-content-landscape-design-768.jpeg",
+        "1024": "/images/generated/service-content-landscape-design-1024.jpeg",
+        "1280": "/images/generated/service-content-landscape-design-1280.jpeg",
+        "1536": "/images/generated/service-content-landscape-design-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-landscape-installation.webp": {
+    "originalPath": "/images/service-content-landscape-installation.webp",
+    "altBase": "service-content-landscape-installation",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwAwCdASoUAA0APzmGulQvKSWjMAgB4CcJalezVN+zVSkqgAwHQAD+2un8ZLIxJ97u+KUhIYXmqXIEJCIkKFGX1rzssejB3GbfqcLs9jn9etf+ng6v//T6sUZxQTchv2ZJ8aggf/HNm2tvNpTf1AAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-landscape-installation-480.avif",
+        "640": "/images/generated/service-content-landscape-installation-640.avif",
+        "768": "/images/generated/service-content-landscape-installation-768.avif",
+        "1024": "/images/generated/service-content-landscape-installation-1024.avif",
+        "1280": "/images/generated/service-content-landscape-installation-1280.avif",
+        "1536": "/images/generated/service-content-landscape-installation-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-landscape-installation-480.webp",
+        "640": "/images/generated/service-content-landscape-installation-640.webp",
+        "768": "/images/generated/service-content-landscape-installation-768.webp",
+        "1024": "/images/generated/service-content-landscape-installation-1024.webp",
+        "1280": "/images/generated/service-content-landscape-installation-1280.webp",
+        "1536": "/images/generated/service-content-landscape-installation-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-landscape-installation-480.jpeg",
+        "640": "/images/generated/service-content-landscape-installation-640.jpeg",
+        "768": "/images/generated/service-content-landscape-installation-768.jpeg",
+        "1024": "/images/generated/service-content-landscape-installation-1024.jpeg",
+        "1280": "/images/generated/service-content-landscape-installation-1280.jpeg",
+        "1536": "/images/generated/service-content-landscape-installation-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-landscape-maintenance.webp": {
+    "originalPath": "/images/service-content-landscape-maintenance.webp",
+    "altBase": "service-content-landscape-maintenance",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJaC0ZPiUAAzYYAP7au1jMPN9tpsMTwKN3R18LhFpCMDDs5A5qnQC8C/t9R7TBAN8QfyWJUV9rqAdJ/w+S7Kf9tjhEDiBRH3PD9kP2RB1/GU2DZ/1wlY+nMKj6cwqcOicq7ZPJitLeEAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-landscape-maintenance-480.avif",
+        "640": "/images/generated/service-content-landscape-maintenance-640.avif",
+        "768": "/images/generated/service-content-landscape-maintenance-768.avif",
+        "1024": "/images/generated/service-content-landscape-maintenance-1024.avif",
+        "1280": "/images/generated/service-content-landscape-maintenance-1280.avif",
+        "1536": "/images/generated/service-content-landscape-maintenance-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-landscape-maintenance-480.webp",
+        "640": "/images/generated/service-content-landscape-maintenance-640.webp",
+        "768": "/images/generated/service-content-landscape-maintenance-768.webp",
+        "1024": "/images/generated/service-content-landscape-maintenance-1024.webp",
+        "1280": "/images/generated/service-content-landscape-maintenance-1280.webp",
+        "1536": "/images/generated/service-content-landscape-maintenance-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-landscape-maintenance-480.jpeg",
+        "640": "/images/generated/service-content-landscape-maintenance-640.jpeg",
+        "768": "/images/generated/service-content-landscape-maintenance-768.jpeg",
+        "1024": "/images/generated/service-content-landscape-maintenance-1024.jpeg",
+        "1280": "/images/generated/service-content-landscape-maintenance-1280.jpeg",
+        "1536": "/images/generated/service-content-landscape-maintenance-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-lawn-care.webp": {
+    "originalPath": "/images/service-content-lawn-care.webp",
+    "altBase": "service-content-lawn-care",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAgCdASoUAA0APzmEuVOvKKWisAgB4CcJZgCsADcbQAD+tHQPxCDVCh479+ZQerSV/9bocpmnyaGSj/3IcGDa44ul59qkXntrew/9MVDVQ1VfutoJ3BgBSAAP/FsgAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-lawn-care-480.avif",
+        "640": "/images/generated/service-content-lawn-care-640.avif",
+        "768": "/images/generated/service-content-lawn-care-768.avif",
+        "1024": "/images/generated/service-content-lawn-care-1024.avif",
+        "1280": "/images/generated/service-content-lawn-care-1280.avif",
+        "1536": "/images/generated/service-content-lawn-care-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-lawn-care-480.webp",
+        "640": "/images/generated/service-content-lawn-care-640.webp",
+        "768": "/images/generated/service-content-lawn-care-768.webp",
+        "1024": "/images/generated/service-content-lawn-care-1024.webp",
+        "1280": "/images/generated/service-content-lawn-care-1280.webp",
+        "1536": "/images/generated/service-content-lawn-care-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-lawn-care-480.jpeg",
+        "640": "/images/generated/service-content-lawn-care-640.jpeg",
+        "768": "/images/generated/service-content-lawn-care-768.jpeg",
+        "1024": "/images/generated/service-content-lawn-care-1024.jpeg",
+        "1280": "/images/generated/service-content-lawn-care-1280.jpeg",
+        "1536": "/images/generated/service-content-lawn-care-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-mulching.webp": {
+    "originalPath": "/images/service-content-mulching.webp",
+    "altBase": "service-content-mulching",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAgCdASoUAA0APzmGulOvKSWisAgB4CcJYizqwAJ1wAD+5TOJz0vXebez7ytfqWbQVRS0Wn2cnH8xfcQk6LXf/Gohbl6zXHuliRhykK2N0GPIYr/g6jlDlfZ4n/MGIAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-mulching-480.avif",
+        "640": "/images/generated/service-content-mulching-640.avif",
+        "768": "/images/generated/service-content-mulching-768.avif",
+        "1024": "/images/generated/service-content-mulching-1024.avif",
+        "1280": "/images/generated/service-content-mulching-1280.avif",
+        "1536": "/images/generated/service-content-mulching-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-mulching-480.webp",
+        "640": "/images/generated/service-content-mulching-640.webp",
+        "768": "/images/generated/service-content-mulching-768.webp",
+        "1024": "/images/generated/service-content-mulching-1024.webp",
+        "1280": "/images/generated/service-content-mulching-1280.webp",
+        "1536": "/images/generated/service-content-mulching-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-mulching-480.jpeg",
+        "640": "/images/generated/service-content-mulching-640.jpeg",
+        "768": "/images/generated/service-content-mulching-768.jpeg",
+        "1024": "/images/generated/service-content-mulching-1024.jpeg",
+        "1280": "/images/generated/service-content-mulching-1280.jpeg",
+        "1536": "/images/generated/service-content-mulching-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-outdoor-living.webp": {
+    "originalPath": "/images/service-content-outdoor-living.webp",
+    "altBase": "service-content-outdoor-living",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACQAwCdASoUAA0APzmGuVOvKSWisAgB4CcJZD11vlUgCEAC6fIAAP7iHfe+INJb/+kwvdu/6pjTXk3ed7PN6WJi6U8Zh3DkJw/JiBM+48Ap//MBLny4vd//8vT/tnE///SnJM9D7Fo9/4hJx6he8Z9gz6rsDZwZOeXD2CgwSCRXSeGmxPpk8TZRgeOWJiiy4PdoHlAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-outdoor-living-480.avif",
+        "640": "/images/generated/service-content-outdoor-living-640.avif",
+        "768": "/images/generated/service-content-outdoor-living-768.avif",
+        "1024": "/images/generated/service-content-outdoor-living-1024.avif",
+        "1280": "/images/generated/service-content-outdoor-living-1280.avif",
+        "1536": "/images/generated/service-content-outdoor-living-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-outdoor-living-480.webp",
+        "640": "/images/generated/service-content-outdoor-living-640.webp",
+        "768": "/images/generated/service-content-outdoor-living-768.webp",
+        "1024": "/images/generated/service-content-outdoor-living-1024.webp",
+        "1280": "/images/generated/service-content-outdoor-living-1280.webp",
+        "1536": "/images/generated/service-content-outdoor-living-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-outdoor-living-480.jpeg",
+        "640": "/images/generated/service-content-outdoor-living-640.jpeg",
+        "768": "/images/generated/service-content-outdoor-living-768.jpeg",
+        "1024": "/images/generated/service-content-outdoor-living-1024.jpeg",
+        "1280": "/images/generated/service-content-outdoor-living-1280.jpeg",
+        "1536": "/images/generated/service-content-outdoor-living-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-paver-patio.webp": {
+    "originalPath": "/images/service-content-paver-patio.webp",
+    "altBase": "service-content-paver-patio",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQAwCdASoUAA0APzmIvlSvKSajMAgB4CcJSYKKkAAn7fgA/tg/2X/v4odjuVd7c8/rJgu6QAUrlcybDhEq8Rc2N6an6U02UDbco6ewcPP/4a//pOzJXjPxaakBpixaJpOzl4WLfe/CbbJRYLVLicNZaDYi0kEUzEF2EAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-paver-patio-480.avif",
+        "640": "/images/generated/service-content-paver-patio-640.avif",
+        "768": "/images/generated/service-content-paver-patio-768.avif",
+        "1024": "/images/generated/service-content-paver-patio-1024.avif",
+        "1280": "/images/generated/service-content-paver-patio-1280.avif",
+        "1536": "/images/generated/service-content-paver-patio-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-paver-patio-480.webp",
+        "640": "/images/generated/service-content-paver-patio-640.webp",
+        "768": "/images/generated/service-content-paver-patio-768.webp",
+        "1024": "/images/generated/service-content-paver-patio-1024.webp",
+        "1280": "/images/generated/service-content-paver-patio-1280.webp",
+        "1536": "/images/generated/service-content-paver-patio-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-paver-patio-480.jpeg",
+        "640": "/images/generated/service-content-paver-patio-640.jpeg",
+        "768": "/images/generated/service-content-paver-patio-768.jpeg",
+        "1024": "/images/generated/service-content-paver-patio-1024.jpeg",
+        "1280": "/images/generated/service-content-paver-patio-1280.jpeg",
+        "1536": "/images/generated/service-content-paver-patio-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-ponds-water-features.webp": {
+    "originalPath": "/images/service-content-ponds-water-features.webp",
+    "altBase": "service-content-ponds-water-features",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACQAwCdASoUAA0APzmIulOvKSWisAgB4CcJaEwUODR+RjgA8HQAAP7SRdyiWBNDAkU5rWN8ZjCLso0J8sh0rPu/eIaMI/jceUr8AZ9NbcQ/83SsPf9bSQ9V2q9hidoayW1PIx+9wIDQAgNACBJCYhr4yZjGuqTbbOi0fsRkK8OnWgFf3kAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-ponds-water-features-480.avif",
+        "640": "/images/generated/service-content-ponds-water-features-640.avif",
+        "768": "/images/generated/service-content-ponds-water-features-768.avif",
+        "1024": "/images/generated/service-content-ponds-water-features-1024.avif",
+        "1280": "/images/generated/service-content-ponds-water-features-1280.avif",
+        "1536": "/images/generated/service-content-ponds-water-features-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-ponds-water-features-480.webp",
+        "640": "/images/generated/service-content-ponds-water-features-640.webp",
+        "768": "/images/generated/service-content-ponds-water-features-768.webp",
+        "1024": "/images/generated/service-content-ponds-water-features-1024.webp",
+        "1280": "/images/generated/service-content-ponds-water-features-1280.webp",
+        "1536": "/images/generated/service-content-ponds-water-features-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-ponds-water-features-480.jpeg",
+        "640": "/images/generated/service-content-ponds-water-features-640.jpeg",
+        "768": "/images/generated/service-content-ponds-water-features-768.jpeg",
+        "1024": "/images/generated/service-content-ponds-water-features-1024.jpeg",
+        "1280": "/images/generated/service-content-ponds-water-features-1280.jpeg",
+        "1536": "/images/generated/service-content-ponds-water-features-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-preservation-restoration.webp": {
+    "originalPath": "/images/service-content-preservation-restoration.webp",
+    "altBase": "service-content-preservation-restoration",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQAwCdASoUAA0APzleyV8vI6qmGAHgJwlmLIA+wAEoQFXDkAD+3/6/7x+x2y/p17ySjwsyIavvZ2Kcu2cRidpLWAuwuRNz0an7Ogpi05l/1tzmU65uP6H7jrXjG+HtT5ulyeWJ82bvePEfTVM/JJhe/ArptbQVaix/Ei18AAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-preservation-restoration-480.avif",
+        "640": "/images/generated/service-content-preservation-restoration-640.avif",
+        "768": "/images/generated/service-content-preservation-restoration-768.avif",
+        "1024": "/images/generated/service-content-preservation-restoration-1024.avif",
+        "1280": "/images/generated/service-content-preservation-restoration-1280.avif",
+        "1536": "/images/generated/service-content-preservation-restoration-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-preservation-restoration-480.webp",
+        "640": "/images/generated/service-content-preservation-restoration-640.webp",
+        "768": "/images/generated/service-content-preservation-restoration-768.webp",
+        "1024": "/images/generated/service-content-preservation-restoration-1024.webp",
+        "1280": "/images/generated/service-content-preservation-restoration-1280.webp",
+        "1536": "/images/generated/service-content-preservation-restoration-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-preservation-restoration-480.jpeg",
+        "640": "/images/generated/service-content-preservation-restoration-640.jpeg",
+        "768": "/images/generated/service-content-preservation-restoration-768.jpeg",
+        "1024": "/images/generated/service-content-preservation-restoration-1024.jpeg",
+        "1280": "/images/generated/service-content-preservation-restoration-1280.jpeg",
+        "1536": "/images/generated/service-content-preservation-restoration-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-residential-landscaping.webp": {
+    "originalPath": "/images/service-content-residential-landscaping.webp",
+    "altBase": "service-content-residential-landscaping",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoUAA0APzmGuVOvKSWisAgB4CcJZFoGQD+zfcAuDTLhRXAUNQAA/uNAqtVG+Ego9/HLNMEvZ35/1I6JCLpS3z3He07/9s6B9/cP/LCfYH/LC7+55VIV0yrpgiybKKHt/s5krEdtCEg7sHhUN4g0gFkgFKgIkX/9kMYNjFiOwAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-residential-landscaping-480.avif",
+        "640": "/images/generated/service-content-residential-landscaping-640.avif",
+        "768": "/images/generated/service-content-residential-landscaping-768.avif",
+        "1024": "/images/generated/service-content-residential-landscaping-1024.avif",
+        "1280": "/images/generated/service-content-residential-landscaping-1280.avif",
+        "1536": "/images/generated/service-content-residential-landscaping-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-residential-landscaping-480.webp",
+        "640": "/images/generated/service-content-residential-landscaping-640.webp",
+        "768": "/images/generated/service-content-residential-landscaping-768.webp",
+        "1024": "/images/generated/service-content-residential-landscaping-1024.webp",
+        "1280": "/images/generated/service-content-residential-landscaping-1280.webp",
+        "1536": "/images/generated/service-content-residential-landscaping-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-residential-landscaping-480.jpeg",
+        "640": "/images/generated/service-content-residential-landscaping-640.jpeg",
+        "768": "/images/generated/service-content-residential-landscaping-768.jpeg",
+        "1024": "/images/generated/service-content-residential-landscaping-1024.jpeg",
+        "1280": "/images/generated/service-content-residential-landscaping-1280.jpeg",
+        "1536": "/images/generated/service-content-residential-landscaping-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-retaining-walls.webp": {
+    "originalPath": "/images/service-content-retaining-walls.webp",
+    "altBase": "service-content-retaining-walls",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQAwCdASoUAA0APzmYvlYvLCajsAgB4CcJaEwUVIFyAHbYAAD+3Hx++k+fqypED7Q3spiDXzm8e3mKF8hPErxTlOSwmtIv+Q2c//6l8aWj9HMSYWi8DXbekdXRoVIbtnXwthNBVhITLYKPqZQTVF+4AAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-retaining-walls-480.avif",
+        "640": "/images/generated/service-content-retaining-walls-640.avif",
+        "768": "/images/generated/service-content-retaining-walls-768.avif",
+        "1024": "/images/generated/service-content-retaining-walls-1024.avif",
+        "1280": "/images/generated/service-content-retaining-walls-1280.avif",
+        "1536": "/images/generated/service-content-retaining-walls-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-retaining-walls-480.webp",
+        "640": "/images/generated/service-content-retaining-walls-640.webp",
+        "768": "/images/generated/service-content-retaining-walls-768.webp",
+        "1024": "/images/generated/service-content-retaining-walls-1024.webp",
+        "1280": "/images/generated/service-content-retaining-walls-1280.webp",
+        "1536": "/images/generated/service-content-retaining-walls-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-retaining-walls-480.jpeg",
+        "640": "/images/generated/service-content-retaining-walls-640.jpeg",
+        "768": "/images/generated/service-content-retaining-walls-768.jpeg",
+        "1024": "/images/generated/service-content-retaining-walls-1024.jpeg",
+        "1280": "/images/generated/service-content-retaining-walls-1280.jpeg",
+        "1536": "/images/generated/service-content-retaining-walls-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-rock-landscaping.webp": {
+    "originalPath": "/images/service-content-rock-landscaping.webp",
+    "altBase": "service-content-rock-landscaping",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZj0JtvUgCdKcAErEAAD+1c/f/81771UFP2RjLyDNB0NCcu021gKdWsOKFPRYV2858z6CcCvLQhKOImXbiRIT/EJ+if/m2/KzbH8D7X4iO1DBQwUfCY/3/3ic8t7Dti2Ad367fEzg0pqlaTPAr8WL7QhM7oAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-rock-landscaping-480.avif",
+        "640": "/images/generated/service-content-rock-landscaping-640.avif",
+        "768": "/images/generated/service-content-rock-landscaping-768.avif",
+        "1024": "/images/generated/service-content-rock-landscaping-1024.avif",
+        "1280": "/images/generated/service-content-rock-landscaping-1280.avif",
+        "1536": "/images/generated/service-content-rock-landscaping-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-rock-landscaping-480.webp",
+        "640": "/images/generated/service-content-rock-landscaping-640.webp",
+        "768": "/images/generated/service-content-rock-landscaping-768.webp",
+        "1024": "/images/generated/service-content-rock-landscaping-1024.webp",
+        "1280": "/images/generated/service-content-rock-landscaping-1280.webp",
+        "1536": "/images/generated/service-content-rock-landscaping-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-rock-landscaping-480.jpeg",
+        "640": "/images/generated/service-content-rock-landscaping-640.jpeg",
+        "768": "/images/generated/service-content-rock-landscaping-768.jpeg",
+        "1024": "/images/generated/service-content-rock-landscaping-1024.jpeg",
+        "1280": "/images/generated/service-content-rock-landscaping-1280.jpeg",
+        "1536": "/images/generated/service-content-rock-landscaping-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-shrub-installation.webp": {
+    "originalPath": "/images/service-content-shrub-installation.webp",
+    "altBase": "service-content-shrub-installation",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwAwCdASoUAA0APzmKulQvKaWjMAgB4CcJaizwhwDy6T0AAFVboAD+3/h39c/WT/fbSL/0l+B4K9wjhVxN3vcv2UeS/huktz0bop6x6u1X0WnaLfMQuJHzyWzZWS2JvLFqG5yDIPf8j5POgjesuqNmefKJkSdSsvpDbTj5ez6+trhCW8CgAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-shrub-installation-480.avif",
+        "640": "/images/generated/service-content-shrub-installation-640.avif",
+        "768": "/images/generated/service-content-shrub-installation-768.avif",
+        "1024": "/images/generated/service-content-shrub-installation-1024.avif",
+        "1280": "/images/generated/service-content-shrub-installation-1280.avif",
+        "1536": "/images/generated/service-content-shrub-installation-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-shrub-installation-480.webp",
+        "640": "/images/generated/service-content-shrub-installation-640.webp",
+        "768": "/images/generated/service-content-shrub-installation-768.webp",
+        "1024": "/images/generated/service-content-shrub-installation-1024.webp",
+        "1280": "/images/generated/service-content-shrub-installation-1280.webp",
+        "1536": "/images/generated/service-content-shrub-installation-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-shrub-installation-480.jpeg",
+        "640": "/images/generated/service-content-shrub-installation-640.jpeg",
+        "768": "/images/generated/service-content-shrub-installation-768.jpeg",
+        "1024": "/images/generated/service-content-shrub-installation-1024.jpeg",
+        "1280": "/images/generated/service-content-shrub-installation-1280.jpeg",
+        "1536": "/images/generated/service-content-shrub-installation-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-snow-removal.webp": {
+    "originalPath": "/images/service-content-snow-removal.webp",
+    "altBase": "service-content-snow-removal",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZTcA06foAqGYO/QN/YAAzP/9Svr3MOdfofIImSoxzHfpOGvHDAWezsq+Z8nfAz8JpjQm4AA/8SWjRf7XZRyCJtd051hodO6fd9+8lhOr1rnIkrrnIkrrnIpzX52NEmPwQI+CBHwUDXgY9lzqAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-snow-removal-480.avif",
+        "640": "/images/generated/service-content-snow-removal-640.avif",
+        "768": "/images/generated/service-content-snow-removal-768.avif",
+        "1024": "/images/generated/service-content-snow-removal-1024.avif",
+        "1280": "/images/generated/service-content-snow-removal-1280.avif",
+        "1536": "/images/generated/service-content-snow-removal-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-snow-removal-480.webp",
+        "640": "/images/generated/service-content-snow-removal-640.webp",
+        "768": "/images/generated/service-content-snow-removal-768.webp",
+        "1024": "/images/generated/service-content-snow-removal-1024.webp",
+        "1280": "/images/generated/service-content-snow-removal-1280.webp",
+        "1536": "/images/generated/service-content-snow-removal-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-snow-removal-480.jpeg",
+        "640": "/images/generated/service-content-snow-removal-640.jpeg",
+        "768": "/images/generated/service-content-snow-removal-768.jpeg",
+        "1024": "/images/generated/service-content-snow-removal-1024.jpeg",
+        "1280": "/images/generated/service-content-snow-removal-1280.jpeg",
+        "1536": "/images/generated/service-content-snow-removal-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-sod-installation.webp": {
+    "originalPath": "/images/service-content-sod-installation.webp",
+    "altBase": "service-content-sod-installation",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABwAwCdASoUAA0APzmGu1OvKSYisAgB4CcJZhiSAy0mf8DHFYAA/t6SaPfW135diitR3C/Ag5g5xeqhDA7/5o/fEZ8sEyBtdnYcz6PMpok4fJ6jWLDfew6+3DJ9TzFGIQiBl3bPBAWA9JRet0wS1wyveaCujM5iQAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-sod-installation-480.avif",
+        "640": "/images/generated/service-content-sod-installation-640.avif",
+        "768": "/images/generated/service-content-sod-installation-768.avif",
+        "1024": "/images/generated/service-content-sod-installation-1024.avif",
+        "1280": "/images/generated/service-content-sod-installation-1280.avif",
+        "1536": "/images/generated/service-content-sod-installation-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-sod-installation-480.webp",
+        "640": "/images/generated/service-content-sod-installation-640.webp",
+        "768": "/images/generated/service-content-sod-installation-768.webp",
+        "1024": "/images/generated/service-content-sod-installation-1024.webp",
+        "1280": "/images/generated/service-content-sod-installation-1280.webp",
+        "1536": "/images/generated/service-content-sod-installation-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-sod-installation-480.jpeg",
+        "640": "/images/generated/service-content-sod-installation-640.jpeg",
+        "768": "/images/generated/service-content-sod-installation-768.jpeg",
+        "1024": "/images/generated/service-content-sod-installation-1024.jpeg",
+        "1280": "/images/generated/service-content-sod-installation-1280.jpeg",
+        "1536": "/images/generated/service-content-sod-installation-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-tree-planting.webp": {
+    "originalPath": "/images/service-content-tree-planting.webp",
+    "altBase": "service-content-tree-planting",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJbC0mPZACuAFBvoAA/pMqn3kJVA69z3in9A0g/4J+r5WpeBaUHxLX6+bNMmhGK457dPBzMHqt/9LD/3qTvO7h//9Qgf8YDH9+pPCKxR8elKGTZQybKGw4WO6jh2/92nkHTW5OT7EhpRXZzfzKpGFYJiAz1eMm7v8wiiyA1WQAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-tree-planting-480.avif",
+        "640": "/images/generated/service-content-tree-planting-640.avif",
+        "768": "/images/generated/service-content-tree-planting-768.avif",
+        "1024": "/images/generated/service-content-tree-planting-1024.avif",
+        "1280": "/images/generated/service-content-tree-planting-1280.avif",
+        "1536": "/images/generated/service-content-tree-planting-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-tree-planting-480.webp",
+        "640": "/images/generated/service-content-tree-planting-640.webp",
+        "768": "/images/generated/service-content-tree-planting-768.webp",
+        "1024": "/images/generated/service-content-tree-planting-1024.webp",
+        "1280": "/images/generated/service-content-tree-planting-1280.webp",
+        "1536": "/images/generated/service-content-tree-planting-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-tree-planting-480.jpeg",
+        "640": "/images/generated/service-content-tree-planting-640.jpeg",
+        "768": "/images/generated/service-content-tree-planting-768.jpeg",
+        "1024": "/images/generated/service-content-tree-planting-1024.jpeg",
+        "1280": "/images/generated/service-content-tree-planting-1280.jpeg",
+        "1536": "/images/generated/service-content-tree-planting-1536.jpeg"
+      }
+    }
+  },
+  "/images/service-content-tree-service.webp": {
+    "originalPath": "/images/service-content-tree-service.webp",
+    "altBase": "service-content-tree-service",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": 1.5,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwAwCdASoUAA0APzmMvlUvKaajMAgB4CcJY12OQBzuzrAESsAA/tyDoXXj4I0ir5LEo7PZIWAenBYLV/GJgNejJ6RSLAr1aC8N8XnenCHjf4yDvL+XOwr5ROMlgqjW8OlWU1bw/BZ9FinUfrZ09LxiTDWbsAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/service-content-tree-service-480.avif",
+        "640": "/images/generated/service-content-tree-service-640.avif",
+        "768": "/images/generated/service-content-tree-service-768.avif",
+        "1024": "/images/generated/service-content-tree-service-1024.avif",
+        "1280": "/images/generated/service-content-tree-service-1280.avif",
+        "1536": "/images/generated/service-content-tree-service-1536.avif"
+      },
+      "webp": {
+        "480": "/images/generated/service-content-tree-service-480.webp",
+        "640": "/images/generated/service-content-tree-service-640.webp",
+        "768": "/images/generated/service-content-tree-service-768.webp",
+        "1024": "/images/generated/service-content-tree-service-1024.webp",
+        "1280": "/images/generated/service-content-tree-service-1280.webp",
+        "1536": "/images/generated/service-content-tree-service-1536.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/service-content-tree-service-480.jpeg",
+        "640": "/images/generated/service-content-tree-service-640.jpeg",
+        "768": "/images/generated/service-content-tree-service-768.jpeg",
+        "1024": "/images/generated/service-content-tree-service-1024.jpeg",
+        "1280": "/images/generated/service-content-tree-service-1280.jpeg",
+        "1536": "/images/generated/service-content-tree-service-1536.jpeg"
+      }
+    }
+  },
   "/images/service-drainage.webp": {
     "originalPath": "/images/service-drainage.webp",
     "altBase": "service-drainage",
@@ -1577,38 +1875,6 @@
       }
     }
   },
-  "/images/service-hydroseeding.webp": {
-    "originalPath": "/images/service-hydroseeding.webp",
-    "altBase": "service-hydroseeding",
-    "width": 1200,
-    "height": 652,
-    "aspectRatio": 1.8404907975460123,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoUAAsAPzmMu1SvKaYjMAgB4CcJZCzcKPyXQApmngAA/sIn+oOmh/0n/2so5oTpjOEB84eewKQXNmo+SV/5Ff/uTqGP/7vHkoUEjMQEHrlbAk+lwS3PhCek571oPOR9JhPSc9+jeRSCePaygAA=",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/service-hydroseeding-480.avif",
-        "640": "/images/generated/service-hydroseeding-640.avif",
-        "768": "/images/generated/service-hydroseeding-768.avif",
-        "1024": "/images/generated/service-hydroseeding-1024.avif",
-        "1200": "/images/generated/service-hydroseeding-1200.avif"
-      },
-      "webp": {
-        "480": "/images/generated/service-hydroseeding-480.webp",
-        "640": "/images/generated/service-hydroseeding-640.webp",
-        "768": "/images/generated/service-hydroseeding-768.webp",
-        "1024": "/images/generated/service-hydroseeding-1024.webp",
-        "1200": "/images/generated/service-hydroseeding-1200.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/service-hydroseeding-480.jpeg",
-        "640": "/images/generated/service-hydroseeding-640.jpeg",
-        "768": "/images/generated/service-hydroseeding-768.jpeg",
-        "1024": "/images/generated/service-hydroseeding-1024.jpeg",
-        "1200": "/images/generated/service-hydroseeding-1200.jpeg"
-      }
-    }
-  },
   "/images/service-landscape-design.webp": {
     "originalPath": "/images/service-landscape-design.webp",
     "altBase": "service-landscape-design",
@@ -1676,38 +1942,6 @@
         "1024": "/images/generated/service-landscape-installation-1024.jpeg",
         "1280": "/images/generated/service-landscape-installation-1280.jpeg",
         "1536": "/images/generated/service-landscape-installation-1536.jpeg"
-      }
-    }
-  },
-  "/images/service-landscape-maintenance.webp": {
-    "originalPath": "/images/service-landscape-maintenance.webp",
-    "altBase": "service-landscape-maintenance",
-    "width": 1200,
-    "height": 800,
-    "aspectRatio": 1.5,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoUAA0APzmGuVOvKSWisAgB4CcJaC0Af2b7gK0G1lmwLXEAZsMAAP7GR/R3/iEK5+x//71QB8Hf/5tj69NsSj6PIZE1hCzUb+pHwmhQB1OqjYMAwjy11lMvSXanMW3/50H/zmJ34b9RnoPnujf/BHwfzOt0jctyb+msIlRzchYyo67dMWYuq7evsz8kyBP5zQJpf9k1sy4FnMwBFT8K8AAA",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/service-landscape-maintenance-480.avif",
-        "640": "/images/generated/service-landscape-maintenance-640.avif",
-        "768": "/images/generated/service-landscape-maintenance-768.avif",
-        "1024": "/images/generated/service-landscape-maintenance-1024.avif",
-        "1200": "/images/generated/service-landscape-maintenance-1200.avif"
-      },
-      "webp": {
-        "480": "/images/generated/service-landscape-maintenance-480.webp",
-        "640": "/images/generated/service-landscape-maintenance-640.webp",
-        "768": "/images/generated/service-landscape-maintenance-768.webp",
-        "1024": "/images/generated/service-landscape-maintenance-1024.webp",
-        "1200": "/images/generated/service-landscape-maintenance-1200.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/service-landscape-maintenance-480.jpeg",
-        "640": "/images/generated/service-landscape-maintenance-640.jpeg",
-        "768": "/images/generated/service-landscape-maintenance-768.jpeg",
-        "1024": "/images/generated/service-landscape-maintenance-1024.jpeg",
-        "1200": "/images/generated/service-landscape-maintenance-1200.jpeg"
       }
     }
   },
@@ -2226,7 +2460,7 @@
     "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "",
+    "blurPlaceholder": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4ICIBAABQBgCdASoUABQAPzmWwlovKqckKAgB4CcJR7+0b9caoXjPnU458YDt8fqrmAYYD0LoABwgF7dN4ej8AAD+2w/v//UfZ3aa+/8k/8m3450n/5K2qyLygK/79gZ/xrE6ZcYulN46KDLp3MyAQEFS+SYeCB/knUfUmJijBNDIvEwhtL6MWeKkSam7/4NUmpi817C+QSe17mM1nLGshndy36jN5U5/9ZtsihYkYUoTID1Wn02TuLNwj/7X0fTE63748ooTf3x5RQm/vjyihmxHr8uyN99nhX//a0b4ePX6VG3D70bnpWANUc12tXU1fxUaduLWC2R6fZ2k4GPWt5PZdLi1yPT7QkCFeO59aqdT0RFu7e1PPqa2APvoyPiAjgSY28gAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-after-2-480.avif",
@@ -2383,88 +2617,6 @@
       }
     }
   },
-  "/images/wall-after-6.webp": {
-    "originalPath": "/images/wall-after-6.webp",
-    "altBase": "wall-after-6",
-    "width": 2560,
-    "height": 1920,
-    "aspectRatio": 1.3333333333333333,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADQAwCdASoUAA8ALvmczmclLy8vDwD4SxHcNgzhEeAyv1ioK0AfuQAA/tGJ/1z/6UEo/5Pfd/b/1flkwiispqE6kv/lacC3Jc030V9hu6dzJcuuj26zxKs4uPB+Ghzx/wGmN/LeO3L+/PgbnAX/Ofzgpqj4AftcU811qt1+Dv3uAwzfWTSMN/BeEggAAA==",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/wall-after-6-480.avif",
-        "640": "/images/generated/wall-after-6-640.avif",
-        "768": "/images/generated/wall-after-6-768.avif",
-        "1024": "/images/generated/wall-after-6-1024.avif",
-        "1280": "/images/generated/wall-after-6-1280.avif",
-        "1536": "/images/generated/wall-after-6-1536.avif",
-        "1920": "/images/generated/wall-after-6-1920.avif",
-        "2560": "/images/generated/wall-after-6-2560.avif"
-      },
-      "webp": {
-        "480": "/images/generated/wall-after-6-480.webp",
-        "640": "/images/generated/wall-after-6-640.webp",
-        "768": "/images/generated/wall-after-6-768.webp",
-        "1024": "/images/generated/wall-after-6-1024.webp",
-        "1280": "/images/generated/wall-after-6-1280.webp",
-        "1536": "/images/generated/wall-after-6-1536.webp",
-        "1920": "/images/generated/wall-after-6-1920.webp",
-        "2560": "/images/generated/wall-after-6-2560.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/wall-after-6-480.jpeg",
-        "640": "/images/generated/wall-after-6-640.jpeg",
-        "768": "/images/generated/wall-after-6-768.jpeg",
-        "1024": "/images/generated/wall-after-6-1024.jpeg",
-        "1280": "/images/generated/wall-after-6-1280.jpeg",
-        "1536": "/images/generated/wall-after-6-1536.jpeg",
-        "1920": "/images/generated/wall-after-6-1920.jpeg",
-        "2560": "/images/generated/wall-after-6-2560.jpeg"
-      }
-    }
-  },
-  "/images/wall-after-7.webp": {
-    "originalPath": "/images/wall-after-7.webp",
-    "altBase": "wall-after-7",
-    "width": 2560,
-    "height": 2560,
-    "aspectRatio": 1,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBACdASoUABQAPzmMvlSvKaajMAgB4CcJRnApmqgMUMT9Y3/EAWJxYAy38icIAP7SeuE97qKJK5o5W3/v7BRcdhbWvFuI+aUQVICOJhXXzfXYXAZGlNK5P+lFMfyv/1xFf/+y377dWncQt6jAJcqINpBjhKK/YXzGGPnTSsHTEtL83qHODsD62tz1tbnrapXo+VaNY4QzMZUaAfEUWj52rHXZ3nPn9HFJgWEAAAA=",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/wall-after-7-480.avif",
-        "640": "/images/generated/wall-after-7-640.avif",
-        "768": "/images/generated/wall-after-7-768.avif",
-        "1024": "/images/generated/wall-after-7-1024.avif",
-        "1280": "/images/generated/wall-after-7-1280.avif",
-        "1536": "/images/generated/wall-after-7-1536.avif",
-        "1920": "/images/generated/wall-after-7-1920.avif",
-        "2560": "/images/generated/wall-after-7-2560.avif"
-      },
-      "webp": {
-        "480": "/images/generated/wall-after-7-480.webp",
-        "640": "/images/generated/wall-after-7-640.webp",
-        "768": "/images/generated/wall-after-7-768.webp",
-        "1024": "/images/generated/wall-after-7-1024.webp",
-        "1280": "/images/generated/wall-after-7-1280.webp",
-        "1536": "/images/generated/wall-after-7-1536.webp",
-        "1920": "/images/generated/wall-after-7-1920.webp",
-        "2560": "/images/generated/wall-after-7-2560.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/wall-after-7-480.jpeg",
-        "640": "/images/generated/wall-after-7-640.jpeg",
-        "768": "/images/generated/wall-after-7-768.jpeg",
-        "1024": "/images/generated/wall-after-7-1024.jpeg",
-        "1280": "/images/generated/wall-after-7-1280.jpeg",
-        "1536": "/images/generated/wall-after-7-1536.jpeg",
-        "1920": "/images/generated/wall-after-7-1920.jpeg",
-        "2560": "/images/generated/wall-after-7-2560.jpeg"
-      }
-    }
-  },
   "/images/wall-before-1.webp": {
     "originalPath": "/images/wall-before-1.webp",
     "altBase": "wall-before-1",
@@ -2472,7 +2624,7 @@
     "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwAwCdASoUABQAPyl8tlOuJ6UisAwBwCUJYz3sU0yLzWwYUA1AJBwwAP7bCstP/wWirun7X9uK/7r0u+FJ6X2SSVICEs22qiPDXftigPHbd5bIVrTdBKnoIrHSUlpkTz7I1/tzQG/yiSpoHUT0eiA8ms7pl/jws1nruLsJdbcLUDUYcUACgjsrT7083kEQG9pA3VcLvCd6W4YPvXbnhXVACLosWpSgAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADwAwCdASoUABQAPzmcx1mvLCkjqAqp4CcJYz31VDZZQvnahzRN0SAAAP7pnbw3f+9JtP/OcT9Zdz9PYyxt8OmXhNM0ntWT3K/tCkoMYbugmddOeBNYSHiHa1XjuK8+c6SOz49A4NKWFnr/zn3qHI53TBkXgA0hK+HzPrk298mjgxdIrvO5F5DMz14fTjYfLqj0BXRSxpA8ekhpcnJrhRjESR2McrMLXezXV2AL/cwAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-1-480.avif",
@@ -2636,7 +2788,7 @@
     "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "",
+    "blurPlaceholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAQBACdASoUABQAPzmYwVmvKqcjqAgB4CcJZWZUQtQDtlRtA4+ofoR0AAD+1aPtwpBW7D+7c6Z8RBWNAV392fe3MWdXPp2u4T6E/C1Jzeix4jBiSf9c//Uls//ff0vX1LJbLfrR1dur3j6clQaFHAQCbI1+WJqjDpkQTmLr0amie7zYubFzb54bpdy1VjkOeEihm8Ci7o9i5IDd3lrX42wgAAA=",
     "variants": {
       "avif": {
         "480": "/images/generated/wall-before-5-480.avif",
@@ -2667,88 +2819,6 @@
         "1536": "/images/generated/wall-before-5-1536.jpeg",
         "1920": "/images/generated/wall-before-5-1920.jpeg",
         "2560": "/images/generated/wall-before-5-2560.jpeg"
-      }
-    }
-  },
-  "/images/wall-before-6-7.webp": {
-    "originalPath": "/images/wall-before-6-7.webp",
-    "altBase": "wall-before-6-7",
-    "width": 2560,
-    "height": 2560,
-    "aspectRatio": 1,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQAwCdASoUABQAPzGCsVOuqSQisAwB0CYJYz3zwkCHmEmjO+wAAP7SdldP/gtF63p/q/p0n/del3wtjcXXwbqoUxkEKXXslhpHid9xOqy7gVgQt4fPSb/DmqQbDWsWVjNruv+k1YO5EovO1/lwB63xwJUF4t2gHKpwfha8sFdN+9yF4njwyMz6JIGokKeOhWwHnWhjMP0n3fedMxa6iiDjFi1KUAAA",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/wall-before-6-7-480.avif",
-        "640": "/images/generated/wall-before-6-7-640.avif",
-        "768": "/images/generated/wall-before-6-7-768.avif",
-        "1024": "/images/generated/wall-before-6-7-1024.avif",
-        "1280": "/images/generated/wall-before-6-7-1280.avif",
-        "1536": "/images/generated/wall-before-6-7-1536.avif",
-        "1920": "/images/generated/wall-before-6-7-1920.avif",
-        "2560": "/images/generated/wall-before-6-7-2560.avif"
-      },
-      "webp": {
-        "480": "/images/generated/wall-before-6-7-480.webp",
-        "640": "/images/generated/wall-before-6-7-640.webp",
-        "768": "/images/generated/wall-before-6-7-768.webp",
-        "1024": "/images/generated/wall-before-6-7-1024.webp",
-        "1280": "/images/generated/wall-before-6-7-1280.webp",
-        "1536": "/images/generated/wall-before-6-7-1536.webp",
-        "1920": "/images/generated/wall-before-6-7-1920.webp",
-        "2560": "/images/generated/wall-before-6-7-2560.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/wall-before-6-7-480.jpeg",
-        "640": "/images/generated/wall-before-6-7-640.jpeg",
-        "768": "/images/generated/wall-before-6-7-768.jpeg",
-        "1024": "/images/generated/wall-before-6-7-1024.jpeg",
-        "1280": "/images/generated/wall-before-6-7-1280.jpeg",
-        "1536": "/images/generated/wall-before-6-7-1536.jpeg",
-        "1920": "/images/generated/wall-before-6-7-1920.jpeg",
-        "2560": "/images/generated/wall-before-6-7-2560.jpeg"
-      }
-    }
-  },
-  "/images/water-before-1.webp": {
-    "originalPath": "/images/water-before-1.webp",
-    "altBase": "water-before-1",
-    "width": 2560,
-    "height": 2560,
-    "aspectRatio": 1,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAwCdASoUABQAPzmOvlevKaYjqAqp4CcJYwC2FBvlT5AAAP7kXrUDov8JVHZ68WwugNopNsCxMwK21P/rzf/psRoJY8BnfvLJ/YoxE06K4ZRGS+pbWRAByMz+PwvoMZqc0HwffSmbgVQAAAA=",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/water-before-1-480.avif",
-        "640": "/images/generated/water-before-1-640.avif",
-        "768": "/images/generated/water-before-1-768.avif",
-        "1024": "/images/generated/water-before-1-1024.avif",
-        "1280": "/images/generated/water-before-1-1280.avif",
-        "1536": "/images/generated/water-before-1-1536.avif",
-        "1920": "/images/generated/water-before-1-1920.avif",
-        "2560": "/images/generated/water-before-1-2560.avif"
-      },
-      "webp": {
-        "480": "/images/generated/water-before-1-480.webp",
-        "640": "/images/generated/water-before-1-640.webp",
-        "768": "/images/generated/water-before-1-768.webp",
-        "1024": "/images/generated/water-before-1-1024.webp",
-        "1280": "/images/generated/water-before-1-1280.webp",
-        "1536": "/images/generated/water-before-1-1536.webp",
-        "1920": "/images/generated/water-before-1-1920.webp",
-        "2560": "/images/generated/water-before-1-2560.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/water-before-1-480.jpeg",
-        "640": "/images/generated/water-before-1-640.jpeg",
-        "768": "/images/generated/water-before-1-768.jpeg",
-        "1024": "/images/generated/water-before-1-1024.jpeg",
-        "1280": "/images/generated/water-before-1-1280.jpeg",
-        "1536": "/images/generated/water-before-1-1536.jpeg",
-        "1920": "/images/generated/water-before-1-1920.jpeg",
-        "2560": "/images/generated/water-before-1-2560.jpeg"
       }
     }
   },
@@ -2800,7 +2870,7 @@
     "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABQBACdASoUABQAPzmWw1ovKqekKAgB4CcJTGteaU36AcYb9EcGoRO9P9+AAP7nFU2/1kpEC9apgcrRbetlMUYnIQMbrmcXJCn//BYacMXd/gAZtfPxSuI5oNoNpGcBCgeL40vnx5kb6DDjuhEVDK3SnRQlTehRAiifU5wKb3rZw/jqyDzEWMmehXQ2p/omJtQdtsV5fZtCUCoH/v0FfR+gr6P00gE+8zuMBf8FHrWAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQAwCdASoUABQAPzmSv1ovKaakKAgB4CcJZD6C8I9mEKgCWTaAAP7hIZwdZ0CEscJ7jjLW+SZh8JytQFqfjitTrVQ7tPjs1p48lpxO9Q/NK9GnPgS1fhEhOS0Ar8xja+47MC7hnfkKrmOieiVDhK+ZT0AmjMVvzrLGaDB1K+WF9wa9YsshuzMWahnoZYaGWGhnzDvUZf7nAAAA",
     "variants": {
       "avif": {
         "480": "/images/generated/water-before-3-480.avif",
@@ -2841,7 +2911,7 @@
     "height": 1707,
     "aspectRatio": 1.4997070884592854,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACwAwCdASoUAA0APzmGuVOvKSWisAgB4CcJZGD/UDRgjWChRFu7QAD+3+l2mCpdRpU6U2yXsr10fqFzw5M8oDMvgPI/+B/yZkyMbHwcOq6NJ9neILvAIKZkWjLWsaLbYpvFiU5irLm+vjs+lgLOlgLOlfwlah4SjdSEAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwAwCdASoUAA0APzmIuVQvKSWjMAgB4CcJZlezTEGFRVYKlXQA/uRVyCsJEtGsxb1CfVV1TWInLkhlaXJnlAhlEHZtv/iYEmI7F9aDqUnX/kcXmm0H/7ydsBgL7+kxpe/pMaXv6TGld4PE+WscbobHJPKk4tfiqzmTUidZ3oAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-1-480.avif",
@@ -2875,47 +2945,6 @@
       }
     }
   },
-  "/images/water-feature-image-2.webp": {
-    "originalPath": "/images/water-feature-image-2.webp",
-    "altBase": "water-feature-image-2",
-    "width": 2560,
-    "height": 2560,
-    "aspectRatio": 1,
-    "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAwBACdASoUABQAPzGCt1OuqKWisAwB0CYJR8UepzDtL/y3AACQeCevh0AA/uQuLsU7Ft4yMBz5w8uBkrS9HhZYw/7MIT/bOQsd/a2fEjbNM33//4ZY5EHUgM69LNDJRR2+G3jUIz+QMIMbCgyGo4aI1HDRGo4joto3+6by/mRcitZ5ckWX13PXEqQQOAsnTkiRaOfL/SrpHfqwGyPQGHjrnCAAAA==",
-    "variants": {
-      "avif": {
-        "480": "/images/generated/water-feature-image-2-480.avif",
-        "640": "/images/generated/water-feature-image-2-640.avif",
-        "768": "/images/generated/water-feature-image-2-768.avif",
-        "1024": "/images/generated/water-feature-image-2-1024.avif",
-        "1280": "/images/generated/water-feature-image-2-1280.avif",
-        "1536": "/images/generated/water-feature-image-2-1536.avif",
-        "1920": "/images/generated/water-feature-image-2-1920.avif",
-        "2560": "/images/generated/water-feature-image-2-2560.avif"
-      },
-      "webp": {
-        "480": "/images/generated/water-feature-image-2-480.webp",
-        "640": "/images/generated/water-feature-image-2-640.webp",
-        "768": "/images/generated/water-feature-image-2-768.webp",
-        "1024": "/images/generated/water-feature-image-2-1024.webp",
-        "1280": "/images/generated/water-feature-image-2-1280.webp",
-        "1536": "/images/generated/water-feature-image-2-1536.webp",
-        "1920": "/images/generated/water-feature-image-2-1920.webp",
-        "2560": "/images/generated/water-feature-image-2-2560.webp"
-      },
-      "jpeg": {
-        "480": "/images/generated/water-feature-image-2-480.jpeg",
-        "640": "/images/generated/water-feature-image-2-640.jpeg",
-        "768": "/images/generated/water-feature-image-2-768.jpeg",
-        "1024": "/images/generated/water-feature-image-2-1024.jpeg",
-        "1280": "/images/generated/water-feature-image-2-1280.jpeg",
-        "1536": "/images/generated/water-feature-image-2-1536.jpeg",
-        "1920": "/images/generated/water-feature-image-2-1920.jpeg",
-        "2560": "/images/generated/water-feature-image-2-2560.jpeg"
-      }
-    }
-  },
   "/images/water-feature-image-3.webp": {
     "originalPath": "/images/water-feature-image-3.webp",
     "altBase": "water-feature-image-3",
@@ -2923,7 +2952,7 @@
     "height": 1707,
     "aspectRatio": 1.4997070884592854,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQAwCdASoUAA0APzmEuVOvKKWisAgB4CcJR6o3QBCxBT66AAD+3pXh/RMqbWrT6Q9LFT8wSmsE20rZGrO0ptbJybqabe/x//59AHT/kyhuZCo65ppvOPtUjWcx+H+ieKIffgSLb03nmI1osmnGJCUCyxAhPlKJAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAwCdASoUAA0APzmMvlUvKaajMAgB4CcJTD6FIDNgDu7AAP7f8bRzC5j3SyyTX9rcWqenFAw+ramGfEe0/8tAInH/irlt1/cnFKSmTWAs2VVGe+KRsMZ2NabVfrTar9edgqAmi7QAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-3-480.avif",
@@ -2964,7 +2993,7 @@
     "height": 2560,
     "aspectRatio": 1,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADQAwCdASoUABQAPzmEuVavJ6UjsBgMAeAnCWNhB912QPhkJJaBggAA/uhsoP99G7PHEHPZOceGq2WviC2JRIT8Rs9RbtnR+c/9uaCedhFbJs5E/elYfnPyvsutFAPBmuFN2bR/6Pxr+xl3PSymUiQ8TRwA0bnBSkL9WPbD4qpwvFgPyOaAWpiHfYZ5qNEDPjw2Kh1JyWskk9y72u0U1QAA",
+    "blurPlaceholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACwAwCdASoUABQAPzmMvlUvKaajKA1R4CcJY2NatDbQ8igkkQDdMAD+6ZUMP5wN0xRimk+HRQKkBIRBbjAzQTxhhovEpiP1r/z1HV/cYxzWJHcEbKS3s1fPtBmwfbl1ZlPxQtdp+Z/IIn+FwCIMWLPylgM/1lii6NpIlACXcy9gGvQSFmXrMkLAF68ak6CbsRYHUu1QAnhJ2FaQNwAAAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/water-feature-image-4-480.avif",
@@ -2995,6 +3024,88 @@
         "1536": "/images/generated/water-feature-image-4-1536.jpeg",
         "1920": "/images/generated/water-feature-image-4-1920.jpeg",
         "2560": "/images/generated/water-feature-image-4-2560.jpeg"
+      }
+    }
+  },
+  "/images/water-pond-after.webp": {
+    "originalPath": "/images/water-pond-after.webp",
+    "altBase": "water-pond-after",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACwAwCdASoUAA0APzmIvlSvKSajMAgB4CcJYyzcf4D7AAShAVN8AAD+5WOHf+svU8+BT6JrUpjFykPjtZiBDz9f+45J7XECbl+24NSFe1fo6H/hm6ULGFUvHyZ18Teehd2CASP10AAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/water-pond-after-480.avif",
+        "640": "/images/generated/water-pond-after-640.avif",
+        "768": "/images/generated/water-pond-after-768.avif",
+        "1024": "/images/generated/water-pond-after-1024.avif",
+        "1280": "/images/generated/water-pond-after-1280.avif",
+        "1536": "/images/generated/water-pond-after-1536.avif",
+        "1920": "/images/generated/water-pond-after-1920.avif",
+        "2560": "/images/generated/water-pond-after-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/water-pond-after-480.webp",
+        "640": "/images/generated/water-pond-after-640.webp",
+        "768": "/images/generated/water-pond-after-768.webp",
+        "1024": "/images/generated/water-pond-after-1024.webp",
+        "1280": "/images/generated/water-pond-after-1280.webp",
+        "1536": "/images/generated/water-pond-after-1536.webp",
+        "1920": "/images/generated/water-pond-after-1920.webp",
+        "2560": "/images/generated/water-pond-after-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/water-pond-after-480.jpeg",
+        "640": "/images/generated/water-pond-after-640.jpeg",
+        "768": "/images/generated/water-pond-after-768.jpeg",
+        "1024": "/images/generated/water-pond-after-1024.jpeg",
+        "1280": "/images/generated/water-pond-after-1280.jpeg",
+        "1536": "/images/generated/water-pond-after-1536.jpeg",
+        "1920": "/images/generated/water-pond-after-1920.jpeg",
+        "2560": "/images/generated/water-pond-after-2560.jpeg"
+      }
+    }
+  },
+  "/images/water-pond-before.webp": {
+    "originalPath": "/images/water-pond-before.webp",
+    "altBase": "water-pond-before",
+    "width": 2560,
+    "height": 1707,
+    "aspectRatio": 1.4997070884592854,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQAwCdASoUAA0APzmGuVOvKSWisAgB4CcJZlezPf2AAZQAKz5wAP7iHvu9J8jp5M9bxaPDuP591Fx60rAvZH6209dfPaW433FpK/+9KS1H/+n2SwVzTX+eaXuY4wa0Tsphg3O/73ZQJ9nV+M78Gr8Z34NX4zuJ/jsRImt/iWCkAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/water-pond-before-480.avif",
+        "640": "/images/generated/water-pond-before-640.avif",
+        "768": "/images/generated/water-pond-before-768.avif",
+        "1024": "/images/generated/water-pond-before-1024.avif",
+        "1280": "/images/generated/water-pond-before-1280.avif",
+        "1536": "/images/generated/water-pond-before-1536.avif",
+        "1920": "/images/generated/water-pond-before-1920.avif",
+        "2560": "/images/generated/water-pond-before-2560.avif"
+      },
+      "webp": {
+        "480": "/images/generated/water-pond-before-480.webp",
+        "640": "/images/generated/water-pond-before-640.webp",
+        "768": "/images/generated/water-pond-before-768.webp",
+        "1024": "/images/generated/water-pond-before-1024.webp",
+        "1280": "/images/generated/water-pond-before-1280.webp",
+        "1536": "/images/generated/water-pond-before-1536.webp",
+        "1920": "/images/generated/water-pond-before-1920.webp",
+        "2560": "/images/generated/water-pond-before-2560.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/water-pond-before-480.jpeg",
+        "640": "/images/generated/water-pond-before-640.jpeg",
+        "768": "/images/generated/water-pond-before-768.jpeg",
+        "1024": "/images/generated/water-pond-before-1024.jpeg",
+        "1280": "/images/generated/water-pond-before-1280.jpeg",
+        "1536": "/images/generated/water-pond-before-1536.jpeg",
+        "1920": "/images/generated/water-pond-before-1920.jpeg",
+        "2560": "/images/generated/water-pond-before-2560.jpeg"
       }
     }
   }

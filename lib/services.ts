@@ -244,21 +244,21 @@ export const hardscapeFeatures = [
     name: 'Retaining Walls',
     shortDesc:
       'Block and stone walls for slopes, erosion, and curb appeal that lasts.',
-    href: '/services/retaining-walls',
+    href: '/retaining-wall-in-cedar-falls',
     oldHref: '/retaining-wall-in-cedar-falls',
   },
   {
     slug: 'paver-patio',
     name: 'Paver Patios',
     shortDesc: 'Custom patios built to handle Iowa weather and daily use.',
-    href: '/services/paver-patio',
+    href: '/paver-patio-installation',
     oldHref: '/paver-patio-installation',
   },
   {
     slug: 'water-features',
     name: 'Water Features',
     shortDesc: 'Ponds and waterfalls that add movement and character to your yard.',
-    href: '/services/ponds-water-features',
+    href: '/cedar-falls-water-features',
     oldHref: '/cedar-falls-water-features',
   },
   {
@@ -270,6 +270,40 @@ export const hardscapeFeatures = [
   },
 ]
 
+/** SEO landing page URLs for hardscape services (separate from /services/* pages). */
+export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
+  'retaining-walls': '/retaining-wall-in-cedar-falls',
+  'paver-patio': '/paver-patio-installation',
+  'ponds-water-features': '/cedar-falls-water-features',
+}
+
+/** @deprecated Use legacyLandingPageHrefs */
+export const legacyServiceHrefs = legacyLandingPageHrefs
+
+export function getServicePageHref(slug: string): string {
+  return `/services/${slug}`
+}
+
+export function getLegacyLandingPageHref(slug: string): string | undefined {
+  return legacyLandingPageHrefs[slug]
+}
+
+const hardscapeCitySlugMap: Record<string, string> = {
+  'retaining-walls': 'retaining-walls',
+  'paver-patio': 'paver-patio',
+  'water-features': 'ponds-water-features',
+  'outdoor-living': 'outdoor-living',
+}
+
+/** City hub cards: Cedar Falls uses legacy ranking URLs; other cities use /{city}/{service}. */
+export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, legacyHref: string): string {
+  if (citySlug === 'cedar-falls' && legacyHref) {
+    return legacyHref
+  }
+  const serviceSlug = hardscapeCitySlugMap[featureSlug] ?? featureSlug
+  return `/${citySlug}/${serviceSlug}`
+}
+
 export const hardscapeServices: Service[] = [
   {
     slug: 'retaining-walls',
@@ -278,7 +312,7 @@ export const hardscapeServices: Service[] = [
     shortDesc:
       'Block and stone walls for slopes, erosion, and curb appeal that lasts.',
     longDesc:
-      'Sloped Cedar Valley lots need retaining walls that handle runoff, stop erosion, and give you flat, usable space. Our retaining wall installation in Cedar Falls starts with a site assessment: we check slope, soil, drainage patterns, and how the wall ties into your yard. That means proper base compaction, gravel backfill, and weep drainage built for Iowa freeze-thaw. We build retaining walls with segmental block and natural stone. Single tier along a driveway or multi-level for a backyard terrace. Either way, the wall is built to last and finished to match your property.',
+      'Sloped lots need walls that handle runoff and stop erosion while giving you flat, usable yard space. We build segmental block and natural stone retaining walls with proper drainage and base prep for Iowa freeze-thaw.',
     anchorId: 'retainingwalls',
     featured: true,
     category: 'hardscaping',
@@ -289,7 +323,7 @@ export const hardscapeServices: Service[] = [
     name: 'Paver Patios',
     shortDesc: 'Custom patios built to handle Iowa weather and daily use.',
     longDesc:
-      'A well-built paver patio gives you a solid outdoor space that holds up to Iowa weather and heavy use. Our paver patio installation in Cedar Falls covers every step: excavation, compacted aggregate base, edge restraint, pattern layout, and final compaction so your patio stays level and drains right for years. Pick from a range of paver styles, colors, and patterns. Add seat walls, fire pits, or lighting if you want. From small backyard patios to large entertainment areas, we build them the same way every time.',
+      'A well-built paver patio gives you a solid outdoor space that holds up to Iowa weather and daily use. We handle excavation, base prep, edge restraint, and pattern layout so your patio stays level and drains right for years.',
     anchorId: 'paverpatio',
     featured: true,
     category: 'hardscaping',
@@ -938,22 +972,54 @@ export type ServiceExtendedContent = {
 }
 
 export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
+  'landscape-installation': {
+    heading: 'Complete Landscape Installation for Cedar Valley Homes',
+    paragraphs: [
+      'A full landscape installation transforms your yard from the ground up. We handle grading, soil preparation, bed layout, hardscape integration, and planting in the right order so every layer performs the way it should.',
+      'Our installation process starts with a site assessment and plant selection for Iowa growing conditions. We prep soil, install drainage where needed, lay mulch and edging, and plant at the right depth and spacing. The result is a landscape that looks finished from day one and gets better as plants mature.',
+    ],
+  },
+  'lawn-care': {
+    heading: 'Professional Lawn Care Built for Iowa Grass',
+    paragraphs: [
+      'Healthy lawns in the Cedar Valley need more than weekly mowing. We combine proper mowing height, seasonal aeration, timed fertilization, and targeted weed control to keep your grass thick and resilient through Iowa heat and cold.',
+      'Our lawn care program is adjusted for your turf type, soil, and sun exposure. We aerate compacted soil in fall, fertilize at key growth stages, and treat weeds before they spread. You get a lawn that looks good all season without managing the schedule yourself.',
+    ],
+  },
+  'preservation-restoration': {
+    heading: 'Restoring Neglected Landscapes in Cedar Falls',
+    paragraphs: [
+      'Yards fall behind for many reasons, including overgrown plantings, compacted soil, erosion, or damage from storms and pests. We assess what is salvageable, what needs removal, and what it takes to get the landscape healthy again.',
+      'Our restoration work includes selective pruning and removal, soil amendment and grading repairs, replanting with Iowa-hardy varieties, and plant health treatments for trees and shrubs under stress. We focus on practical fixes that restore curb appeal and long-term performance.',
+    ],
+  },
+  'tree-service': {
+    heading: 'Safe, Professional Tree Service in the Cedar Valley',
+    paragraphs: [
+      'Mature trees add shade, privacy, and property value, but they also need skilled care. We provide pruning, hazard removal, stump grinding, and disease management with equipment sized for residential properties and crews trained for safe work around structures.',
+      'Our tree service includes crown thinning and deadwood removal to reduce storm risk, stump grinding after removals, and diagnosis of common Iowa tree pests and diseases. We recommend the right treatment or removal before small problems become expensive emergencies.',
+    ],
+  },
+  'landscape-maintenance': {
+    heading: 'Seasonal Landscape Maintenance That Keeps Up',
+    paragraphs: [
+      'Installed landscapes need ongoing care to stay sharp. Our maintenance crews handle pruning, bed edging, mulch refresh, fertilization, and spring and fall cleanups on a schedule matched to Iowa growing seasons.',
+      'We tailor maintenance plans to your property: foundation beds, privacy hedges, ornamental plantings, and seasonal color. Regular visits catch problems early, keep weeds under control, and maintain the clean, finished look your landscape was designed for.',
+    ],
+  },
   'retaining-walls': {
     heading: 'Why Cedar Falls Homeowners Choose Our Retaining Walls',
     paragraphs: [
-      'Retaining walls are one of the most practical upgrades for sloped Cedar Valley properties. A properly installed retaining wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
-      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install in Cedar Falls includes gravel backfill, drain pipe, and materials rated for local conditions. Need a single-tier block wall along a driveway or a multi-level stone terrace in the backyard? We build it to last.',
-      'Concrete retaining walls deliver maximum strength for tall walls and load-bearing applications. Block retaining walls (segmental concrete block) are the most popular choice for residential projects because they install faster, flex through freeze-thaw without cracking, and come in a variety of colors and textures. Decorative retaining walls add architectural interest with stone veneer, cap systems, and layered tiers that double as seating.',
-      'Whichever material you choose, the engineering underneath is what matters most. Proper base compaction, geogrid reinforcement for walls over four feet, and drainage gravel behind every course. That is what keeps your retaining wall standing for decades.',
+      'Retaining walls are one of the most practical upgrades for sloped Cedar Valley properties. A properly installed wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
+      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install in Cedar Falls includes gravel backfill, drain pipe, and proper base compaction, whether block, stone, or concrete, for walls that stand for decades.',
     ],
     relatedBlogSlug: 'retaining-wall-benefits-cedar-falls',
   },
   'paver-patio': {
     heading: 'Paver Patios Built for Cedar Falls Weather',
     paragraphs: [
-      'A paver patio is one of the best investments you can make in outdoor living. Unlike poured concrete, pavers flex slightly through Iowa freeze-thaw without cracking, and individual units can be replaced if needed.',
-      'We excavate to the right depth, compact the aggregate base in lifts, set edge restraint, and finish with polymeric joint sand. The result is a level, well-draining patio that looks good and holds up through years of use across the Cedar Valley.',
-      'Natural stone patios offer a premium alternative with unique flagstone, travertine, or bluestone surfaces that no two are alike. We also integrate fire pits and outdoor kitchens into paver patios for complete outdoor living spaces. Fire pit patios become the natural gathering point for cooler evenings, while outdoor kitchen patios extend the cooking and entertaining season well into fall.',
+      'A paver patio is one of the best investments you can make in outdoor living. Unlike poured concrete, pavers flex through Iowa freeze-thaw without cracking, and individual units can be replaced if needed.',
+      'We excavate to the right depth, compact the aggregate base in lifts, set edge restraint, and finish with polymeric joint sand. Natural stone, fire pits, and outdoor kitchen integration are available for complete outdoor living spaces that drain well and hold up through years of use.',
     ],
     relatedBlogSlug: 'paver-patio-planning-guide',
   },
@@ -962,6 +1028,20 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     paragraphs: [
       'Water features add movement, sound, and a natural centerpiece to any landscape. From compact pondless waterfalls for smaller yards to full koi ponds with streams and bridges, we design and install water features that fit what is already in your yard.',
       'Every water features installation in Cedar Falls includes proper pump sizing, filtration, and winterization planning. We work with natural stone and boulders to create features that look like they belong on your property, not a kit dropped in the yard.',
+    ],
+  },
+  'hydroseeding': {
+    heading: 'Fast Lawn Establishment with Hydroseeding',
+    paragraphs: [
+      'Hydroseeding covers large areas quickly with a slurry of seed, mulch, and starter fertilizer sprayed evenly across prepared soil. The mulch layer holds moisture, protects seed from birds, and helps grass germinate evenly across slopes and bare lots.',
+      'Our hydroseeding process includes soil preparation, seed selection for Iowa conditions, and application at the right rate for your site. It costs less than sod for large areas and establishes faster than hand-seeded lawns, making it ideal for new construction and erosion control.',
+    ],
+  },
+  'snow-removal': {
+    heading: 'Reliable Snow Removal for Cedar Valley Properties',
+    paragraphs: [
+      'Iowa storms do not wait for a convenient time. Our contracted snow removal service covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
+      'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm.',
     ],
   },
   'landscape-design': {
@@ -999,11 +1079,53 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
       'Our sod installation process includes soil testing to determine if amendments are needed, final grading to eliminate low spots, and rolling to ensure good soil-to-root contact. We provide detailed care instructions for the critical first two weeks.',
     ],
   },
+  'mulching': {
+    heading: 'Professional Mulch Installation for Iowa Beds',
+    paragraphs: [
+      'Fresh mulch gives beds a clean, finished look while protecting plant roots from temperature swings and moisture loss. We weed and edge first, then apply mulch at a consistent 2–3 inch depth without piling against trunks or stems.',
+      'We offer shredded hardwood, dyed, and cedar mulch options depending on your beds and aesthetic goals. Annual mulch refresh keeps weeds down, retains soil moisture through Iowa summers, and restores color when last year\'s mulch has faded and thinned.',
+    ],
+  },
+  'rock-landscaping': {
+    heading: 'Low-Maintenance Rock Landscaping for Iowa Properties',
+    paragraphs: [
+      'Rock landscaping replaces annual mulch with durable stone that lasts for years. River rock, pea gravel, boulders, and dry creek beds solve drainage problems and add visual interest in areas where grass struggles or maintenance is a burden.',
+      'We install weed barrier fabric, proper base prep, and edge restraint so stone stays in place and looks natural. Rock gardens, dry creek beds, and decorative stone beds give you a polished landscape with minimal ongoing upkeep.',
+    ],
+  },
+  'tree-planting': {
+    heading: 'Strategic Tree Planting for Cedar Valley Properties',
+    paragraphs: [
+      'The right tree in the right spot provides decades of shade, privacy, and curb appeal. We select Iowa-hardy species matched to your soil, sun exposure, and space, then plant at the correct depth with amended backfill.',
+      'Our tree planting service includes site evaluation, species recommendations for your goals, proper planting technique, mulch rings, and initial watering guidance. Trees planted correctly establish faster and avoid common problems like girdling roots and depth issues.',
+    ],
+  },
+  'shrub-installation': {
+    heading: 'Foundation Plantings and Shrubs That Perform in Iowa',
+    paragraphs: [
+      'Shrubs anchor most residential landscapes: foundation plantings, privacy hedges, and ornamental accents that provide structure year-round. We install shrubs at proper spacing with varieties suited to Iowa winters and your property\'s sun and drainage.',
+      'Our shrub installation includes bed preparation, soil amendment where needed, correct planting depth, and initial mulching. Whether you need a privacy hedge, refreshed foundation beds, or mixed ornamental plantings, we lay out shrubs for mature size and long-term health.',
+    ],
+  },
   'commercial-landscaping': {
     heading: 'Commercial Landscape Services Across the Cedar Valley',
     paragraphs: [
       'Commercial properties require consistent, professional landscaping that maintains curb appeal year-round. We provide scheduled maintenance, seasonal enhancements, and hardscape construction for office parks, retail centers, HOAs, and industrial properties.',
       'Our commercial clients value reliable scheduling, clear communication, and single-invoice simplicity. We handle everything from weekly mowing and pruning to snow removal and full hardscape installations, so property managers have one less thing to worry about.',
+    ],
+  },
+  'residential-landscaping': {
+    heading: 'Full-Service Residential Landscaping in the Cedar Valley',
+    paragraphs: [
+      'Residential landscaping should match how you actually live in your yard. We handle design, installation, and ongoing maintenance, from complete yard overhauls to weekly mowing and seasonal cleanups, scoped to your budget and priorities.',
+      'Whether you need a new patio and plantings, drainage fixes, or a maintenance plan that keeps things handled, we coordinate the full job under one contractor. Cedar Valley homeowners get one team for design through install and seasonal care.',
+    ],
+  },
+  'grading': {
+    heading: 'Yard Grading and Leveling for Cedar Falls Properties',
+    paragraphs: [
+      'Water pooling near your foundation, soggy low spots, and uneven surfaces are grading problems. We cut and fill to direct runoff away from structures, level areas for patios and lawns, and prepare sites for sod, seed, or hardscape installation.',
+      'Our grading work uses laser-level equipment and compacted fill where needed so finished surfaces hold their shape through Iowa freeze-thaw cycles. Proper grading is the foundation for healthy lawns, dry basements, and hardscape that does not settle.',
     ],
   },
 }

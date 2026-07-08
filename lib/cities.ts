@@ -34,7 +34,7 @@ export const cities: City[] = [
     heroEyebrow: 'Cedar Falls \u00b7 Iowa',
     heroTitle: 'Cedar Falls Landscaping|Local Crew',
     heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care for Cedar Falls homeowners since 2009.',
+      'Full-service landscaping, hardscaping, and lawn care for Cedar Falls homeowners since 2014.',
     metaTitle: 'Landscaping in Cedar Falls, IA | A1 Property Services',
     metaDescription:
       'Cedar Falls landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates.',
@@ -510,7 +510,7 @@ export const cities: City[] = [
       'grundy county landscaping',
       'landscaper dike',
     ],
-    introHeading: 'Dike Landscaping Since 2009',
+    introHeading: 'Dike Landscaping Since 2014',
     introBody: [
       'Dike homeowners want their yards looking good without having to chase contractors. We make it easy. One call gets you on the schedule for mowing, trimming, seasonal cleanups, or a full hardscape project. We handle the details so you do not have to.',
     ],
@@ -635,118 +635,6 @@ export const cities: City[] = [
       {
         q: 'How do I get a free estimate in Dunkerton?',
         a: 'Call us at (319) 464-1889 or fill out our online quote form. We provide free estimates for all Dunkerton properties.',
-      },
-    ],
-  },
-  {
-    slug: 'cedar-rapids',
-    name: 'Cedar Rapids',
-    county: 'Linn',
-    population: '135,000+',
-    description:
-      'Professional landscaping, retaining walls, paver patios, and lawn care in Cedar Rapids, IA.',
-    isCedarValley: false,
-    heroEyebrow: 'Cedar Rapids \u00b7 Iowa',
-    heroTitle: 'Cedar Rapids Landscaping|Local Crew',
-    heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care for Cedar Rapids homes and businesses.',
-    metaTitle: 'Landscaping in Cedar Rapids, IA | A1 Property Services',
-    metaDescription:
-      'Cedar Rapids landscaping company. Retaining walls, paver patios, lawn care, tree service. Licensed and insured. Free estimates.',
-    metaKeywords: [
-      'landscaping cedar rapids',
-      'cedar rapids landscaping',
-      'landscaper cedar rapids ia',
-      'retaining wall cedar rapids',
-      'paver patio cedar rapids',
-      'lawn care cedar rapids',
-      'hardscaping cedar rapids',
-    ],
-    introHeading: 'Cedar Rapids Landscaping for Your Property',
-    introBody: [
-      'Cedar Rapids is a big city with a wide range of properties\u2014from the established neighborhoods near the river to growing suburbs on the outskirts. We bring our full landscaping and hardscaping services to every part of it. Retaining walls, paver patios, lawn care, and tree service, handled by crews that know Iowa soil.',
-    ],
-    introBody2: [
-      'Residential and commercial. New builds and longtime homes. We treat every Cedar Rapids property with the same standard: proper materials, honest communication, and work that lasts.',
-    ],
-    servicesIntro:
-      'Full landscaping and hardscaping services for Cedar Rapids homeowners and commercial properties.',
-    uniqueContent: {
-      heading: 'Reliable Landscaping Across Cedar Rapids',
-      body: 'Cedar Rapids has real variety in its neighborhoods, from the trees near Mt. Mercy to the newer developments out by the interstate. Every job gets the same attention: proper base prep on hardscape, clean bed edges, and we keep you informed throughout the project.',
-    },
-    faqs: [
-      {
-        q: 'Do you serve all of Cedar Rapids?',
-        a: 'Yes. We serve Cedar Rapids and the surrounding Linn County area including all residential neighborhoods and commercial zones.',
-      },
-      {
-        q: 'Can you handle commercial landscaping in Cedar Rapids?',
-        a: 'Yes. We provide landscape maintenance, snow removal, and hardscaping for commercial properties in Cedar Rapids. Contact us for a commercial quote.',
-      },
-      {
-        q: 'How quickly can you start my landscaping project in Cedar Rapids?',
-        a: 'Spring and fall fill up fast. We recommend contacting us early to get on the schedule. We typically begin projects within 1-2 weeks of signing.',
-      },
-      {
-        q: 'Do you offer free estimates for Cedar Rapids properties?',
-        a: 'Yes. We provide free, no-obligation estimates for all Cedar Rapids properties. Call (319) 464-1889 or fill out our online form to schedule yours.',
-      },
-    ],
-  },
-  {
-    slug: 'des-moines',
-    name: 'Des Moines',
-    county: 'Polk',
-    population: '210,000+',
-    description:
-      'Professional landscaping, retaining walls, paver patios, and lawn care in Des Moines, IA.',
-    isCedarValley: false,
-    heroEyebrow: 'Des Moines \u00b7 Iowa',
-    heroTitle: 'Des Moines Landscaping|Local Crew',
-    heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care for Des Moines homeowners and businesses.',
-    metaTitle: 'Landscaping in Des Moines, IA | A1 Property Services',
-    metaDescription:
-      'Des Moines landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Des Moines properties.',
-    metaKeywords: [
-      'landscaping des moines',
-      'des moines landscaping',
-      'landscaper des moines ia',
-      'retaining wall des moines',
-      'paver patio des moines',
-      'lawn care des moines',
-      'hardscaping des moines',
-    ],
-    introHeading: 'Des Moines Landscaping for Your Property',
-    introBody: [
-      'Des Moines is the largest city in Iowa with every type of property you can imagine. Established historic districts, new suburban developments, commercial corridors, and everything between. We bring our landscaping services across the metro: retaining walls, paver patios, lawn care, tree service, and seasonal maintenance.',
-    ],
-    introBody2: [
-      'Residential lawns and commercial properties. Full yard installs and ongoing mowing. Our crews are experienced with Polk County conditions and treat every Des Moines job with the same attention to detail.',
-    ],
-    servicesIntro:
-      'Full landscaping and hardscaping services for Des Moines homeowners and commercial properties.',
-    uniqueContent: {
-      heading: 'Landscaping in Des Moines',
-      body: 'Des Moines properties vary block to block, and we like that. Tight city lots near downtown, sprawling suburban yards, commercial storefronts. Every job gets proper base prep, clean finished edges, and clear communication from start to finish.',
-    },
-    faqs: [
-      {
-        q: 'Do you serve all of Des Moines?',
-        a: 'Yes. We serve Des Moines and the surrounding Polk County area including all neighborhoods and commercial districts.',
-      },
-      {
-        q: 'Can you handle commercial landscaping in Des Moines?',
-        a: 'Yes. We provide landscape maintenance, snow removal, and hardscaping for commercial properties in Des Moines. Contact us for a commercial quote.',
-      },
-      {
-        q: 'How quickly can you start my landscaping project in Des Moines?',
-        a: 'Spring and fall fill up fast. We recommend contacting us early to get on the schedule. We typically begin projects within 1-2 weeks of signing.',
-      },
-      {
-        q: 'Do you offer free estimates for Des Moines properties?',
-        a: 'Yes. We provide free, no-obligation estimates for all Des Moines properties. Call (319) 464-1889 or fill out our online form to schedule yours.',
       },
     ],
   },

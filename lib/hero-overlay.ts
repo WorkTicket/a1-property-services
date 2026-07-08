@@ -3,7 +3,7 @@ import { getHeroLuminance } from '@/lib/hero-luminance'
 
 export type HeroOverlayVariant = 'center' | 'left'
 
-/** Scale overlay strength from image luminance — bright photos need more, dark photos need less. */
+/** Scale overlay strength from image luminance: bright photos need more, dark photos need less. */
 function overlayMultiplier(luminance: number): number {
   return 0.5 + luminance * 0.65
 }

@@ -5,11 +5,15 @@ import { Phone, Mail, MapPin, Star, Shield, ChevronRight } from 'lucide-react'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
+import FooterSignature from '@/components/FooterSignature'
 import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
+import { yearsExperienceLabel } from '@/lib/years-in-business'
+import { projectsCompletedLabel } from '@/lib/projects-completed'
 
 const quickLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Landscaping Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
   { label: 'Services', href: '/services' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
@@ -20,8 +24,6 @@ const quickLinks = [
 const serviceCities = [
   { name: 'Cedar Falls', href: '/cedar-falls' },
   { name: 'Waterloo', href: '/waterloo' },
-  { name: 'Cedar Rapids', href: '/cedar-rapids' },
-  { name: 'Des Moines', href: '/des-moines' },
   { name: 'Hudson', href: '/hudson' },
   { name: 'Evansdale', href: '/evansdale' },
   { name: 'Waverly', href: '/waverly' },
@@ -157,11 +159,12 @@ export default function Footer() {
           </p>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs text-neutral-600">
-          <span>500+ Projects Completed</span>
-          <span>15+ Years Experience</span>
+          <span>{projectsCompletedLabel()}</span>
+          <span>{yearsExperienceLabel()}</span>
           <span>5.0 Average Rating</span>
           <span>Free Estimates</span>
         </div>
+        <FooterSignature />
       </div>
     </footer>
   )
