@@ -2,18 +2,16 @@
 
 import { useState } from 'react'
 import type { GalleryCategory } from '@/lib/images'
-import { galleryProjects } from '@/lib/images'
+import {
+  galleryProjects,
+  galleryFilterCategories,
+  galleryCategoryMeta,
+} from '@/lib/images'
 import { CTA_COPY } from '@/lib/cta'
 import { trackGalleryFilter, trackCtaClick } from '@/lib/analytics'
 import Button from '@/components/ui/Button'
 import FadeIn from '@/components/motion/FadeIn'
 import GalleryGrid from '@/components/sections/GalleryGrid'
-
-const categories: { key: GalleryCategory; label: string }[] = [
-  { key: 'all', label: 'All' },
-  { key: 'hardscape', label: 'Hardscape' },
-  { key: 'water', label: 'Water Features' },
-]
 
 export default function GalleryFilter() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('all')
@@ -23,13 +21,14 @@ export default function GalleryFilter() {
       ? galleryProjects
       : galleryProjects.filter((p) => p.category === activeCategory)
 
-  const isWaterOnly = activeCategory === 'water'
+  const categoryMeta =
+    activeCategory === 'all' ? null : galleryCategoryMeta[activeCategory]
 
   return (
     <section className="section bg-brand-stone">
       <div className="section-inner">
         <div className="flex flex-wrap justify-center gap-1">
-          {categories.map((cat) => (
+          {galleryFilterCategories.map((cat) => (
             <button
               key={cat.key}
               onClick={() => { setActiveCategory(cat.key); trackGalleryFilter(cat.label) }}
@@ -46,12 +45,11 @@ export default function GalleryFilter() {
 
         <FadeIn className="mt-10 text-center">
           <h2 className="section-heading">
-            {isWaterOnly ? 'Water Features' : 'Before & After'}
+            {categoryMeta?.heading ?? 'Before & After'}
           </h2>
           <p className="mt-2 text-brand-muted max-w-xl mx-auto">
-            {isWaterOnly
-              ? 'Custom ponds, waterfalls, and water gardens built across the Cedar Valley.'
-              : 'Drag the slider on each project to compare before and after.'}
+            {categoryMeta?.description ??
+              'Drag the slider on each project to compare before and after.'}
           </p>
         </FadeIn>
 

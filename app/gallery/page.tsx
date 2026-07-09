@@ -5,12 +5,11 @@ import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import PageHero from '@/components/motion/PageHero'
 import GalleryFilter from '@/components/sections/GalleryFilter'
-import GallerySections from '@/components/sections/GallerySections'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Project Gallery',
   description:
-    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, and water features.',
+    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, driveways, water features, lawn care, and landscape installation.',
   path: '/gallery',
   ogImage: siteImages.galleryHero,
   ogImageAlt: 'Landscaping project gallery in Cedar Falls',
@@ -19,7 +18,7 @@ export const metadata: Metadata = generatePageMetadata({
 export default function GalleryPage() {
   const pageSchema = webPageJsonLd({
     name: 'Project Gallery | A1 Property Services',
-    description: 'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, and water features.',
+    description: 'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, driveways, water features, lawn care, and landscape installation.',
     path: '/gallery',
     image: siteImages.galleryHero,
     about: 'Project Gallery',
@@ -43,7 +42,6 @@ export default function GalleryPage() {
         subtitle="Real projects across Cedar Falls, Waterloo, and the Cedar Valley. Drag the slider to compare before and after."
       />
       <GalleryFilter />
-      <GallerySections />
       <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />
     </>
   )
