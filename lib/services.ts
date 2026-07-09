@@ -244,21 +244,21 @@ export const hardscapeFeatures = [
     name: 'Retaining Walls',
     shortDesc:
       'Block and stone walls for slopes, erosion, and curb appeal that lasts.',
-    href: '/retaining-wall-in-cedar-falls',
+    href: '/services/retaining-walls',
     oldHref: '/retaining-wall-in-cedar-falls',
   },
   {
     slug: 'paver-patio',
     name: 'Paver Patios',
     shortDesc: 'Custom patios built to handle Iowa weather and daily use.',
-    href: '/paver-patio-installation',
+    href: '/services/paver-patio',
     oldHref: '/paver-patio-installation',
   },
   {
     slug: 'water-features',
     name: 'Water Features',
     shortDesc: 'Ponds and waterfalls that add movement and character to your yard.',
-    href: '/cedar-falls-water-features',
+    href: '/services/ponds-water-features',
     oldHref: '/cedar-falls-water-features',
   },
   {
@@ -270,7 +270,7 @@ export const hardscapeFeatures = [
   },
 ]
 
-/** SEO landing page URLs for hardscape services (separate from /services/* pages). */
+/** Legacy SEO landing page URLs (redirect to /services/*). */
 export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
   'retaining-walls': '/retaining-wall-in-cedar-falls',
   'paver-patio': '/paver-patio-installation',
@@ -281,7 +281,7 @@ export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
 export const legacyServiceHrefs = legacyLandingPageHrefs
 
 export function getServicePageHref(slug: string): string {
-  return legacyLandingPageHrefs[slug] ?? `/services/${slug}`
+  return `/services/${slug}`
 }
 
 export function getLegacyLandingPageHref(slug: string): string | undefined {
@@ -295,11 +295,8 @@ const hardscapeCitySlugMap: Record<string, string> = {
   'outdoor-living': 'outdoor-living',
 }
 
-/** City hub cards: Cedar Falls uses legacy ranking URLs; other cities use /{city}/{service}. */
-export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, legacyHref: string): string {
-  if (citySlug === 'cedar-falls' && legacyHref) {
-    return legacyHref
-  }
+/** City hub cards link to /{city}/{service} for all cities. */
+export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, _legacyHref?: string): string {
   const serviceSlug = hardscapeCitySlugMap[featureSlug] ?? featureSlug
   return `/${citySlug}/${serviceSlug}`
 }

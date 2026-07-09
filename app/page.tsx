@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Check, ChevronRight, MapPin, Phone, Star } from 'lucide-react'
-import { hardscapeFeatures, legacyLandingPageHrefs, services } from '@/lib/services'
+import { hardscapeFeatures, getServicePageHref, services } from '@/lib/services'
 import { CTA_COPY } from '@/lib/cta'
 import { generatePageMetadata, getGoogleMapsEmbedUrl, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
@@ -198,7 +198,7 @@ export default function HomePage() {
             {services.slice(0, 8).map((service) => (
               <StaggerItem key={service.slug}>
                 <Link
-                  href={legacyLandingPageHrefs[service.slug] ?? `/services/${service.slug}`}
+                  href={getServicePageHref(service.slug)}
                   className="card group flex h-full flex-col gap-4 p-6"
                 >
                   <ServiceIcon name={service.icon} />

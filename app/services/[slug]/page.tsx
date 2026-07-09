@@ -6,7 +6,6 @@ import {
   allServices,
   getServiceBySlug,
   getServicePageHref,
-  legacyLandingPageHrefs,
   serviceBenefits,
   serviceExtendedContent,
   serviceFaqs,
@@ -45,19 +44,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(params.slug)
   if (!service) return {}
 
-  const legacyCanonical = legacyLandingPageHrefs[service.slug]
   const seo = serviceSeoOverrides[service.slug]
   if (seo) {
     return generatePageMetadata({
       title: seo.title,
       description: seo.description,
       path: `/services/${service.slug}`,
-      canonicalPath: legacyCanonical ?? `/services/${service.slug}`,
       keywords: seo.keywords,
       ogImage: seo.ogImage,
       ogImageAlt: seo.ogImageAlt,
       absoluteTitle: true,
-      noIndex: !!legacyCanonical,
     })
   }
 

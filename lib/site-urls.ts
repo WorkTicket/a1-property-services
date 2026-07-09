@@ -1,18 +1,12 @@
 import { blogPosts } from '@/lib/blog'
 import { learnArticles } from '@/lib/learn'
 import { siteConfig } from '@/lib/metadata'
-import { allServices, legacyLandingPageHrefs } from '@/lib/services'
+import { allServices } from '@/lib/services'
 import { cities } from '@/lib/cities'
 
 /** URLs that should appear in sitemap.xml (excludes non-canonical duplicates). */
 export function getSitemapUrls(): string[] {
-  return getAllSiteUrls().filter((url) => {
-    const path = url.replace(siteConfig.url, '')
-    const legacyMatch = Object.entries(legacyLandingPageHrefs).find(
-      ([slug]) => path === `/services/${slug}`,
-    )
-    return !legacyMatch
-  })
+  return getAllSiteUrls()
 }
 
 export function getAllSiteUrls(): string[] {
@@ -28,9 +22,6 @@ export function getAllSiteUrls(): string[] {
     '/faqs',
     '/resources',
     '/learn',
-    '/retaining-wall-in-cedar-falls',
-    '/paver-patio-installation',
-    '/cedar-falls-water-features',
     '/landscaping-services-in-cedar-falls',
   ]
   const staticUrls = staticPaths.map((path) => `${base}${path}`)

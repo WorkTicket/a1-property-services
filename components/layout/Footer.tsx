@@ -25,9 +25,9 @@ const quickLinks = [
 
 const rankingServiceLinks = [
   { label: 'Landscaping Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
-  { label: 'Paver Patios', href: '/paver-patio-installation' },
-  { label: 'Retaining Walls', href: '/retaining-wall-in-cedar-falls' },
-  { label: 'Water Features', href: '/cedar-falls-water-features' },
+  { label: 'Paver Patios', href: '/services/paver-patio' },
+  { label: 'Retaining Walls', href: '/services/retaining-walls' },
+  { label: 'Water Features', href: '/services/ponds-water-features' },
 ]
 
 const serviceCities = [

@@ -92,12 +92,24 @@
 /snow-removal/ /services/snow-removal 301
 
 # WordPress ponds & water gardens slug
-/ponds-and-water-gardens /cedar-falls-water-features 301
-/ponds-and-water-gardens/ /cedar-falls-water-features 301
+/ponds-and-water-gardens /services/ponds-water-features 301
+/ponds-and-water-gardens/ /services/ponds-water-features 301
 
 # WordPress short ponds slug
-/ponds /cedar-falls-water-features 301
-/ponds/ /cedar-falls-water-features 301
+/ponds /services/ponds-water-features 301
+/ponds/ /services/ponds-water-features 301
+
+# Legacy hardscape landing page
+/retaining-wall-in-cedar-falls /services/retaining-walls 301
+/retaining-wall-in-cedar-falls/ /services/retaining-walls 301
+
+# Legacy hardscape landing page
+/paver-patio-installation /services/paver-patio 301
+/paver-patio-installation/ /services/paver-patio 301
+
+# Legacy hardscape landing page
+/cedar-falls-water-features /services/ponds-water-features 301
+/cedar-falls-water-features/ /services/ponds-water-features 301
 
 # Legacy landscaping hub slug variant
 /landscaping-property-maintenance-cedar-falls /landscaping-services-in-cedar-falls 301
