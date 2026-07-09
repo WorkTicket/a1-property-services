@@ -5240,5 +5240,773 @@
         "2560": "/images/generated/water-pond-before-2560.jpeg"
       }
     }
+  },
+  "/images/city-content-intro-cedar-falls.webp": {
+    "originalPath": "/images/city-content-intro-cedar-falls.webp",
+    "altBase": "city-content-intro-cedar-falls",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQAwCdASoUAA8APzmGuVOvKSWisAgB4CcJZjzt4GoVJIGsOwAMB0AA/tg//Bb5Cs+/plSxw0lMLX5b8IOmtik/EnCwFbmwvaKiIUlZn8t/Xm+BFRziwwUkXBSN3Ry8PoQt8/jsbeaBD5n7UThnpCj8XtrACvkAb91dAqAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-cedar-falls-480.avif",
+        "640": "/images/generated/city-content-intro-cedar-falls-640.avif",
+        "768": "/images/generated/city-content-intro-cedar-falls-768.avif",
+        "1024": "/images/generated/city-content-intro-cedar-falls-1024.avif",
+        "1280": "/images/generated/city-content-intro-cedar-falls-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-cedar-falls-480.webp",
+        "640": "/images/generated/city-content-intro-cedar-falls-640.webp",
+        "768": "/images/generated/city-content-intro-cedar-falls-768.webp",
+        "1024": "/images/generated/city-content-intro-cedar-falls-1024.webp",
+        "1280": "/images/generated/city-content-intro-cedar-falls-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-cedar-falls-480.jpeg",
+        "640": "/images/generated/city-content-intro-cedar-falls-640.jpeg",
+        "768": "/images/generated/city-content-intro-cedar-falls-768.jpeg",
+        "1024": "/images/generated/city-content-intro-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-cedar-falls-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-denver.webp": {
+    "originalPath": "/images/city-content-intro-denver.webp",
+    "altBase": "city-content-intro-denver",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQBACdASoUAA8APzmIvlSvKSajMAgB4CcJZC0ghADWgJcB/QAwfgABfmgAAP7dDjku/JdmPqvAap+nfemvH2zSpNadJTcWHEqfWs87NPK+Es5mWX//bTq3/89lDQX/y/jrNYhLZvlPlcOeVw55XLQv6R757v1w/rh/ckW7zx/T61CmC6qv49CA2x6EBtk+XZ0g18LznDLQnNUyIIw6i4lYl2TwAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-denver-480.avif",
+        "640": "/images/generated/city-content-intro-denver-640.avif",
+        "768": "/images/generated/city-content-intro-denver-768.avif",
+        "1024": "/images/generated/city-content-intro-denver-1024.avif",
+        "1280": "/images/generated/city-content-intro-denver-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-denver-480.webp",
+        "640": "/images/generated/city-content-intro-denver-640.webp",
+        "768": "/images/generated/city-content-intro-denver-768.webp",
+        "1024": "/images/generated/city-content-intro-denver-1024.webp",
+        "1280": "/images/generated/city-content-intro-denver-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-denver-480.jpeg",
+        "640": "/images/generated/city-content-intro-denver-640.jpeg",
+        "768": "/images/generated/city-content-intro-denver-768.jpeg",
+        "1024": "/images/generated/city-content-intro-denver-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-denver-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-dike.webp": {
+    "originalPath": "/images/city-content-intro-dike.webp",
+    "altBase": "city-content-intro-dike",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoUAA8APzmGvFQvKSYjMAgB4CcJbGAKRnbAf24M6Cp0yD2UAAD+tP1j7e/+4/6/LPq3dCr0zw5jtQHhRV18OftZn8qTEu7/XB+8ddq64da8Sj7Sp6ldR2PG31JTG3wEi7fw3eDvMYkcNPVVfo/YuhBY/GV+zLIqViwAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-dike-480.avif",
+        "640": "/images/generated/city-content-intro-dike-640.avif",
+        "768": "/images/generated/city-content-intro-dike-768.avif",
+        "1024": "/images/generated/city-content-intro-dike-1024.avif",
+        "1280": "/images/generated/city-content-intro-dike-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-dike-480.webp",
+        "640": "/images/generated/city-content-intro-dike-640.webp",
+        "768": "/images/generated/city-content-intro-dike-768.webp",
+        "1024": "/images/generated/city-content-intro-dike-1024.webp",
+        "1280": "/images/generated/city-content-intro-dike-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-dike-480.jpeg",
+        "640": "/images/generated/city-content-intro-dike-640.jpeg",
+        "768": "/images/generated/city-content-intro-dike-768.jpeg",
+        "1024": "/images/generated/city-content-intro-dike-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-dike-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-dunkerton.webp": {
+    "originalPath": "/images/city-content-intro-dunkerton.webp",
+    "altBase": "city-content-intro-dunkerton",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoUAA8APzmIulQvKSWjMAgB4CcJZDzTvd+kFYH4ADa4DP2gAMz/B8t+Tmf/977PO0Jv/65CuP7LrMrOIdtC3/g6aLARb+kyjvo9W/aUoGuSahSYYFX5aT+xf/ddpQ+aMeBLA+b/0MK79OKytCo8P75GzQDbgKiu7P0Y+qQ5K1hDKrCGVZR83pdAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-dunkerton-480.avif",
+        "640": "/images/generated/city-content-intro-dunkerton-640.avif",
+        "768": "/images/generated/city-content-intro-dunkerton-768.avif",
+        "1024": "/images/generated/city-content-intro-dunkerton-1024.avif",
+        "1280": "/images/generated/city-content-intro-dunkerton-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-dunkerton-480.webp",
+        "640": "/images/generated/city-content-intro-dunkerton-640.webp",
+        "768": "/images/generated/city-content-intro-dunkerton-768.webp",
+        "1024": "/images/generated/city-content-intro-dunkerton-1024.webp",
+        "1280": "/images/generated/city-content-intro-dunkerton-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-dunkerton-480.jpeg",
+        "640": "/images/generated/city-content-intro-dunkerton-640.jpeg",
+        "768": "/images/generated/city-content-intro-dunkerton-768.jpeg",
+        "1024": "/images/generated/city-content-intro-dunkerton-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-dunkerton-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-elk-run-heights.webp": {
+    "originalPath": "/images/city-content-intro-elk-run-heights.webp",
+    "altBase": "city-content-intro-elk-run-heights",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADwAwCdASoUAA8APzmGulQvKSWjMAgB4CcJbDzTuX/gPuA5gBjn58yAAP6h1HsFvtmrWbU6DlzJC1n90CYChPmjyUKsA7+aPeXyFo2PGuZAiIEyS7zSjx/QPfJ/D04YpVfveVPbRR0yvjVUh/jVUh/jVFavuz3AyWebpnMju/nDNSDYQwAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-elk-run-heights-480.avif",
+        "640": "/images/generated/city-content-intro-elk-run-heights-640.avif",
+        "768": "/images/generated/city-content-intro-elk-run-heights-768.avif",
+        "1024": "/images/generated/city-content-intro-elk-run-heights-1024.avif",
+        "1280": "/images/generated/city-content-intro-elk-run-heights-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-elk-run-heights-480.webp",
+        "640": "/images/generated/city-content-intro-elk-run-heights-640.webp",
+        "768": "/images/generated/city-content-intro-elk-run-heights-768.webp",
+        "1024": "/images/generated/city-content-intro-elk-run-heights-1024.webp",
+        "1280": "/images/generated/city-content-intro-elk-run-heights-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-elk-run-heights-480.jpeg",
+        "640": "/images/generated/city-content-intro-elk-run-heights-640.jpeg",
+        "768": "/images/generated/city-content-intro-elk-run-heights-768.jpeg",
+        "1024": "/images/generated/city-content-intro-elk-run-heights-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-elk-run-heights-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-evansdale.webp": {
+    "originalPath": "/images/city-content-intro-evansdale.webp",
+    "altBase": "city-content-intro-evansdale",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBACdASoUAA8APzmKulQvKaWjMAgB4CcJZle6ztQYr3CH6X6S+5ghAAn7fgD+2w29p5be65K5J+VpE4HBYK+v8INHWMSQw89x1gy+YVwU6IZpJvbPyTLUf/8Fhpw+83oUkv9IkiTULFA0NniZfS4cPS4cPS4mVMu9jIU2MQ5N2MOTdi+9yaPiisM1BZX/AAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-evansdale-480.avif",
+        "640": "/images/generated/city-content-intro-evansdale-640.avif",
+        "768": "/images/generated/city-content-intro-evansdale-768.avif",
+        "1024": "/images/generated/city-content-intro-evansdale-1024.avif",
+        "1280": "/images/generated/city-content-intro-evansdale-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-evansdale-480.webp",
+        "640": "/images/generated/city-content-intro-evansdale-640.webp",
+        "768": "/images/generated/city-content-intro-evansdale-768.webp",
+        "1024": "/images/generated/city-content-intro-evansdale-1024.webp",
+        "1280": "/images/generated/city-content-intro-evansdale-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-evansdale-480.jpeg",
+        "640": "/images/generated/city-content-intro-evansdale-640.jpeg",
+        "768": "/images/generated/city-content-intro-evansdale-768.jpeg",
+        "1024": "/images/generated/city-content-intro-evansdale-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-evansdale-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-hudson.webp": {
+    "originalPath": "/images/city-content-intro-hudson.webp",
+    "altBase": "city-content-intro-hudson",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQAwCdASoUAA8APzmMvlUvKaajMAgB4CcJYmD/UAGbAHfdIAD+gyvl6a7uZbcIbDC0ty6qQpk9T+K9prVF7Fol7/n/8+AfRM0Wf/7W15Z/UinUqZ+H0kgsJGh5vfoLVzgYm6aPj9NHx+mj7eP7I/Z9Qj2v58cqoAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-hudson-480.avif",
+        "640": "/images/generated/city-content-intro-hudson-640.avif",
+        "768": "/images/generated/city-content-intro-hudson-768.avif",
+        "1024": "/images/generated/city-content-intro-hudson-1024.avif",
+        "1280": "/images/generated/city-content-intro-hudson-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-hudson-480.webp",
+        "640": "/images/generated/city-content-intro-hudson-640.webp",
+        "768": "/images/generated/city-content-intro-hudson-768.webp",
+        "1024": "/images/generated/city-content-intro-hudson-1024.webp",
+        "1280": "/images/generated/city-content-intro-hudson-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-hudson-480.jpeg",
+        "640": "/images/generated/city-content-intro-hudson-640.jpeg",
+        "768": "/images/generated/city-content-intro-hudson-768.jpeg",
+        "1024": "/images/generated/city-content-intro-hudson-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-hudson-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-jesup.webp": {
+    "originalPath": "/images/city-content-intro-jesup.webp",
+    "altBase": "city-content-intro-jesup",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQAwCdASoUAA8APzmMu1SvKaYjMAgB4CcJbACsMoAFYxIA/qJ9BL712cwJB9Tuhj7LfwX5X177LMlfNyvDhWRT+xCGryPWz+Qt+MA/+zG/9I0wxwxIyBv/rZy0h9d/7815+OGSPYzr4XXuEC/MFcJU3o4C/ewkTPWD+FeIgAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-jesup-480.avif",
+        "640": "/images/generated/city-content-intro-jesup-640.avif",
+        "768": "/images/generated/city-content-intro-jesup-768.avif",
+        "1024": "/images/generated/city-content-intro-jesup-1024.avif",
+        "1280": "/images/generated/city-content-intro-jesup-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-jesup-480.webp",
+        "640": "/images/generated/city-content-intro-jesup-640.webp",
+        "768": "/images/generated/city-content-intro-jesup-768.webp",
+        "1024": "/images/generated/city-content-intro-jesup-1024.webp",
+        "1280": "/images/generated/city-content-intro-jesup-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-jesup-480.jpeg",
+        "640": "/images/generated/city-content-intro-jesup-640.jpeg",
+        "768": "/images/generated/city-content-intro-jesup-768.jpeg",
+        "1024": "/images/generated/city-content-intro-jesup-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-jesup-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-la-porte-city.webp": {
+    "originalPath": "/images/city-content-intro-la-porte-city.webp",
+    "altBase": "city-content-intro-la-porte-city",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoUAA8APzmGu1QvKSYjMAgB4CcJbDzu0Fdb2QCaAAvsH+gYz9gAAP52E/f3n/3iHqO9W/+S18aUyTkwOlhJ8kDBRQpxWfNcGdS2aVUxfJo3s8n/y9rgC7D0wBqDUmUqhFf8SfUn6CAT6N96qxvvVWN1u33pBZEx5M1e7ktxe3KgV9aszTAiTYAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-la-porte-city-480.avif",
+        "640": "/images/generated/city-content-intro-la-porte-city-640.avif",
+        "768": "/images/generated/city-content-intro-la-porte-city-768.avif",
+        "1024": "/images/generated/city-content-intro-la-porte-city-1024.avif",
+        "1280": "/images/generated/city-content-intro-la-porte-city-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-la-porte-city-480.webp",
+        "640": "/images/generated/city-content-intro-la-porte-city-640.webp",
+        "768": "/images/generated/city-content-intro-la-porte-city-768.webp",
+        "1024": "/images/generated/city-content-intro-la-porte-city-1024.webp",
+        "1280": "/images/generated/city-content-intro-la-porte-city-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-la-porte-city-480.jpeg",
+        "640": "/images/generated/city-content-intro-la-porte-city-640.jpeg",
+        "768": "/images/generated/city-content-intro-la-porte-city-768.jpeg",
+        "1024": "/images/generated/city-content-intro-la-porte-city-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-la-porte-city-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-parkersburg.webp": {
+    "originalPath": "/images/city-content-intro-parkersburg.webp",
+    "altBase": "city-content-intro-parkersburg",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAwCdASoUAA8APzmIulQvKSWjMAgB4CcJTD6QI6qAAnkPAAD+g+2dNYPnKYz/euFDXMc0QQ5DxlBzoNFK1Xqv2GPF2KwSgvxJ+/yfxmZEWCeYriuQAFVpqKOjmypHM4svSb7lZKr5hSNaofwAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-parkersburg-480.avif",
+        "640": "/images/generated/city-content-intro-parkersburg-640.avif",
+        "768": "/images/generated/city-content-intro-parkersburg-768.avif",
+        "1024": "/images/generated/city-content-intro-parkersburg-1024.avif",
+        "1280": "/images/generated/city-content-intro-parkersburg-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-parkersburg-480.webp",
+        "640": "/images/generated/city-content-intro-parkersburg-640.webp",
+        "768": "/images/generated/city-content-intro-parkersburg-768.webp",
+        "1024": "/images/generated/city-content-intro-parkersburg-1024.webp",
+        "1280": "/images/generated/city-content-intro-parkersburg-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-parkersburg-480.jpeg",
+        "640": "/images/generated/city-content-intro-parkersburg-640.jpeg",
+        "768": "/images/generated/city-content-intro-parkersburg-768.jpeg",
+        "1024": "/images/generated/city-content-intro-parkersburg-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-parkersburg-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-waterloo.webp": {
+    "originalPath": "/images/city-content-intro-waterloo.webp",
+    "altBase": "city-content-intro-waterloo",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACwAwCdASoUAA8APzmGu1OvKSYisAgB4CcJSYOBBM34AVYAAIbcgAD+2wrKc3QL+TF5HxtUQHBtP/EjEZph5lVC8OnsH5Yr2Kb/9fd83fuklwf3pOVlyjpR1t3KKO7juBTKn1ljYl6Fc8svIlh6AIBJCapAwLv71uJcS4J0NqsKAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-waterloo-480.avif",
+        "640": "/images/generated/city-content-intro-waterloo-640.avif",
+        "768": "/images/generated/city-content-intro-waterloo-768.avif",
+        "1024": "/images/generated/city-content-intro-waterloo-1024.avif",
+        "1280": "/images/generated/city-content-intro-waterloo-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-waterloo-480.webp",
+        "640": "/images/generated/city-content-intro-waterloo-640.webp",
+        "768": "/images/generated/city-content-intro-waterloo-768.webp",
+        "1024": "/images/generated/city-content-intro-waterloo-1024.webp",
+        "1280": "/images/generated/city-content-intro-waterloo-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-waterloo-480.jpeg",
+        "640": "/images/generated/city-content-intro-waterloo-640.jpeg",
+        "768": "/images/generated/city-content-intro-waterloo-768.jpeg",
+        "1024": "/images/generated/city-content-intro-waterloo-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-waterloo-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-intro-waverly.webp": {
+    "originalPath": "/images/city-content-intro-waverly.webp",
+    "altBase": "city-content-intro-waverly",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABQAwCdASoUAA8APzmIulQvKSWjMAgB4CcJZGEG+K0oA/TMAAD+SxPwHvViWPffRa/1Ydt6Cu98W3+eevc+Wq5fi9VfoOiFYgTF279xejF1pzrEoOcURzGSM9dHgv8DbHZAhsjGlz2m4iaTOKl5YaAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-intro-waverly-480.avif",
+        "640": "/images/generated/city-content-intro-waverly-640.avif",
+        "768": "/images/generated/city-content-intro-waverly-768.avif",
+        "1024": "/images/generated/city-content-intro-waverly-1024.avif",
+        "1280": "/images/generated/city-content-intro-waverly-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-intro-waverly-480.webp",
+        "640": "/images/generated/city-content-intro-waverly-640.webp",
+        "768": "/images/generated/city-content-intro-waverly-768.webp",
+        "1024": "/images/generated/city-content-intro-waverly-1024.webp",
+        "1280": "/images/generated/city-content-intro-waverly-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-intro-waverly-480.jpeg",
+        "640": "/images/generated/city-content-intro-waverly-640.jpeg",
+        "768": "/images/generated/city-content-intro-waverly-768.jpeg",
+        "1024": "/images/generated/city-content-intro-waverly-1024.jpeg",
+        "1280": "/images/generated/city-content-intro-waverly-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-cedar-falls.webp": {
+    "originalPath": "/images/city-content-why-cedar-falls.webp",
+    "altBase": "city-content-why-cedar-falls",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwAwCdASoUAA8APzmMu1SvKaYjMAgB4CcJS0DJk+AL+qCmADwdAAD+tOuHsP0n7mt9Aef2/ev38cu/HDnHVvtzBOPY6lXJg1Brsp3t/2Uk2QVWH9qTBp9eDRBzj0VdfoeQj2ZBl6ZyyX9mL9wyX4LZAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-cedar-falls-480.avif",
+        "640": "/images/generated/city-content-why-cedar-falls-640.avif",
+        "768": "/images/generated/city-content-why-cedar-falls-768.avif",
+        "1024": "/images/generated/city-content-why-cedar-falls-1024.avif",
+        "1280": "/images/generated/city-content-why-cedar-falls-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-cedar-falls-480.webp",
+        "640": "/images/generated/city-content-why-cedar-falls-640.webp",
+        "768": "/images/generated/city-content-why-cedar-falls-768.webp",
+        "1024": "/images/generated/city-content-why-cedar-falls-1024.webp",
+        "1280": "/images/generated/city-content-why-cedar-falls-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-cedar-falls-480.jpeg",
+        "640": "/images/generated/city-content-why-cedar-falls-640.jpeg",
+        "768": "/images/generated/city-content-why-cedar-falls-768.jpeg",
+        "1024": "/images/generated/city-content-why-cedar-falls-1024.jpeg",
+        "1280": "/images/generated/city-content-why-cedar-falls-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-denver.webp": {
+    "originalPath": "/images/city-content-why-denver.webp",
+    "altBase": "city-content-why-denver",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADQAgCdASoUAA8ALvmczmclLy8vDwD4Siz5wyQB5QwAAPs6FCSV68ojv88RSAC6eSPLqUT+TNKz4R4712dOvVKO2wEd8zNUx/oLcZg/pkg0VlB1iW3dDXy0b4Q9inhXyRzl8od2p+DbmmROiuhN8ii2rDtAAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-denver-480.avif",
+        "640": "/images/generated/city-content-why-denver-640.avif",
+        "768": "/images/generated/city-content-why-denver-768.avif",
+        "1024": "/images/generated/city-content-why-denver-1024.avif",
+        "1280": "/images/generated/city-content-why-denver-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-denver-480.webp",
+        "640": "/images/generated/city-content-why-denver-640.webp",
+        "768": "/images/generated/city-content-why-denver-768.webp",
+        "1024": "/images/generated/city-content-why-denver-1024.webp",
+        "1280": "/images/generated/city-content-why-denver-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-denver-480.jpeg",
+        "640": "/images/generated/city-content-why-denver-640.jpeg",
+        "768": "/images/generated/city-content-why-denver-768.jpeg",
+        "1024": "/images/generated/city-content-why-denver-1024.jpeg",
+        "1280": "/images/generated/city-content-why-denver-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-dike.webp": {
+    "originalPath": "/images/city-content-why-dike.webp",
+    "altBase": "city-content-why-dike",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwAwCdASoUAA8APzmIulQvKSWjMAgB4CcJR4mYA4QAAU7IAP7bD8+97S7TtIMKZzf/ZiGO01cwvONVPxTawrwTd9/Qwn+Lmj6Ke85UoYh+pev/5//rh1e9W//y9YLwTUelGFaHaR8od2rag1V5n9/zJbL/zJbL/zJd3mnP5PwHgJfpwPr1reyDp4E4AA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-dike-480.avif",
+        "640": "/images/generated/city-content-why-dike-640.avif",
+        "768": "/images/generated/city-content-why-dike-768.avif",
+        "1024": "/images/generated/city-content-why-dike-1024.avif",
+        "1280": "/images/generated/city-content-why-dike-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-dike-480.webp",
+        "640": "/images/generated/city-content-why-dike-640.webp",
+        "768": "/images/generated/city-content-why-dike-768.webp",
+        "1024": "/images/generated/city-content-why-dike-1024.webp",
+        "1280": "/images/generated/city-content-why-dike-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-dike-480.jpeg",
+        "640": "/images/generated/city-content-why-dike-640.jpeg",
+        "768": "/images/generated/city-content-why-dike-768.jpeg",
+        "1024": "/images/generated/city-content-why-dike-1024.jpeg",
+        "1280": "/images/generated/city-content-why-dike-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-dunkerton.webp": {
+    "originalPath": "/images/city-content-why-dunkerton.webp",
+    "altBase": "city-content-why-dunkerton",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAACQBACdASoUAA8APzmGulOvKSWisAgB4CcJYl2bY5QYcv+qvgDzM/QAYOAfMgAA/t/9DFgj6nf+QqznMxjahKL503fSO1pqGTBkgxWMyek4Y3YBp7c28NGEW0ovhwRpol5J/3//Ljy2A6tlwXM/ZzMzDtTk8I7Kd6rbTR5Fmjgc5xd1a3DIaMMIKvSacBhMtZ48fsU8+M3sh5CoAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-dunkerton-480.avif",
+        "640": "/images/generated/city-content-why-dunkerton-640.avif",
+        "768": "/images/generated/city-content-why-dunkerton-768.avif",
+        "1024": "/images/generated/city-content-why-dunkerton-1024.avif",
+        "1280": "/images/generated/city-content-why-dunkerton-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-dunkerton-480.webp",
+        "640": "/images/generated/city-content-why-dunkerton-640.webp",
+        "768": "/images/generated/city-content-why-dunkerton-768.webp",
+        "1024": "/images/generated/city-content-why-dunkerton-1024.webp",
+        "1280": "/images/generated/city-content-why-dunkerton-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-dunkerton-480.jpeg",
+        "640": "/images/generated/city-content-why-dunkerton-640.jpeg",
+        "768": "/images/generated/city-content-why-dunkerton-768.jpeg",
+        "1024": "/images/generated/city-content-why-dunkerton-1024.jpeg",
+        "1280": "/images/generated/city-content-why-dunkerton-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-elk-run-heights.webp": {
+    "originalPath": "/images/city-content-why-elk-run-heights.webp",
+    "altBase": "city-content-why-elk-run-heights",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABwAwCdASoUAA8APzmIvlSvKSajMAgB4CcJYkwOSrlfJwaiGKAA+xs/n1OTj/wZ1OXMhbmrgOfjin8GE+6n1Nbol/UXLlRcj4xC/+r0/6PtkYP/8RLQpv2fDT1fEXs4+LbTX3h+QfFta71nrco1rbQ0LmEBCRK4pt2KbdleZGEAWAAB7mK367gAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-elk-run-heights-480.avif",
+        "640": "/images/generated/city-content-why-elk-run-heights-640.avif",
+        "768": "/images/generated/city-content-why-elk-run-heights-768.avif",
+        "1024": "/images/generated/city-content-why-elk-run-heights-1024.avif",
+        "1280": "/images/generated/city-content-why-elk-run-heights-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-elk-run-heights-480.webp",
+        "640": "/images/generated/city-content-why-elk-run-heights-640.webp",
+        "768": "/images/generated/city-content-why-elk-run-heights-768.webp",
+        "1024": "/images/generated/city-content-why-elk-run-heights-1024.webp",
+        "1280": "/images/generated/city-content-why-elk-run-heights-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-elk-run-heights-480.jpeg",
+        "640": "/images/generated/city-content-why-elk-run-heights-640.jpeg",
+        "768": "/images/generated/city-content-why-elk-run-heights-768.jpeg",
+        "1024": "/images/generated/city-content-why-elk-run-heights-1024.jpeg",
+        "1280": "/images/generated/city-content-why-elk-run-heights-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-evansdale.webp": {
+    "originalPath": "/images/city-content-why-evansdale.webp",
+    "altBase": "city-content-why-evansdale",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwAwCdASoUAA8APzmGulQvKSWjMAgB4CcJaD11vX+kq2WyaYC00AD+x/MWpgPPy1pcr/1UckHbJHvGYsQfwQ2VEDj6gmv4b+IvHRIpmLzg8RtsaD+LQ/8NdVEkP+L2ealoj5cGPK+0nsn5ruS1H83LWr9L8ah+blKxnwf+cAoYUIsLaWzHIxcZiAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-evansdale-480.avif",
+        "640": "/images/generated/city-content-why-evansdale-640.avif",
+        "768": "/images/generated/city-content-why-evansdale-768.avif",
+        "1024": "/images/generated/city-content-why-evansdale-1024.avif",
+        "1280": "/images/generated/city-content-why-evansdale-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-evansdale-480.webp",
+        "640": "/images/generated/city-content-why-evansdale-640.webp",
+        "768": "/images/generated/city-content-why-evansdale-768.webp",
+        "1024": "/images/generated/city-content-why-evansdale-1024.webp",
+        "1280": "/images/generated/city-content-why-evansdale-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-evansdale-480.jpeg",
+        "640": "/images/generated/city-content-why-evansdale-640.jpeg",
+        "768": "/images/generated/city-content-why-evansdale-768.jpeg",
+        "1024": "/images/generated/city-content-why-evansdale-1024.jpeg",
+        "1280": "/images/generated/city-content-why-evansdale-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-hudson.webp": {
+    "originalPath": "/images/city-content-why-hudson.webp",
+    "altBase": "city-content-why-hudson",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACwAwCdASoUAA8ALvmczmclLy8vDwD4SjzuuB/qqkHwB6nSHAE01gDM7zz//BqLR6D7Dl+ydVXm8o1BcPxw1xQBVPXrBX3aZ4dhclT8/E4+VGVF92Y84ZZoroIAc78af/8m1Xb1n9q74mn6xpwK+u/rRutqcV0b62MaS53u0BP2I4GQjv0YrUvUmHfo6bkrUOt7i14t/XF0+0tgGAOKWAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-hudson-480.avif",
+        "640": "/images/generated/city-content-why-hudson-640.avif",
+        "768": "/images/generated/city-content-why-hudson-768.avif",
+        "1024": "/images/generated/city-content-why-hudson-1024.avif",
+        "1280": "/images/generated/city-content-why-hudson-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-hudson-480.webp",
+        "640": "/images/generated/city-content-why-hudson-640.webp",
+        "768": "/images/generated/city-content-why-hudson-768.webp",
+        "1024": "/images/generated/city-content-why-hudson-1024.webp",
+        "1280": "/images/generated/city-content-why-hudson-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-hudson-480.jpeg",
+        "640": "/images/generated/city-content-why-hudson-640.jpeg",
+        "768": "/images/generated/city-content-why-hudson-768.jpeg",
+        "1024": "/images/generated/city-content-why-hudson-1024.jpeg",
+        "1280": "/images/generated/city-content-why-hudson-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-jesup.webp": {
+    "originalPath": "/images/city-content-why-jesup.webp",
+    "altBase": "city-content-why-jesup",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQAwCdASoUAA8APzmQvlWvKqajMAgB4CcJYz2cH95IoRwAyZ/o//zHfnb+6/NXEJA4bVWY4bUOQwUf/iRZ4s2vwE8srdQhvPFvhtY0vzOqV7Nr/Prjjllf/dtKsnqf/6qv51pVrp598DMhrotf/ANGAXiW12vDtEOS4ekPS0QAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-jesup-480.avif",
+        "640": "/images/generated/city-content-why-jesup-640.avif",
+        "768": "/images/generated/city-content-why-jesup-768.avif",
+        "1024": "/images/generated/city-content-why-jesup-1024.avif",
+        "1280": "/images/generated/city-content-why-jesup-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-jesup-480.webp",
+        "640": "/images/generated/city-content-why-jesup-640.webp",
+        "768": "/images/generated/city-content-why-jesup-768.webp",
+        "1024": "/images/generated/city-content-why-jesup-1024.webp",
+        "1280": "/images/generated/city-content-why-jesup-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-jesup-480.jpeg",
+        "640": "/images/generated/city-content-why-jesup-640.jpeg",
+        "768": "/images/generated/city-content-why-jesup-768.jpeg",
+        "1024": "/images/generated/city-content-why-jesup-1024.jpeg",
+        "1280": "/images/generated/city-content-why-jesup-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-la-porte-city.webp": {
+    "originalPath": "/images/city-content-why-la-porte-city.webp",
+    "altBase": "city-content-why-la-porte-city",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAADQAwCdASoUAA8APzmIulQvKSWjMAgB4CcJZFe6YyS/05aYAAFNvAAA/tHg56cNm4gwhk/gEv6KvRoQtyv5TgZcCww9GpEmf+8GPTOi3FwAWj0CY8/VBBOIX/8pn/xLtkmeZM/6c2xA3t4u8cLiPe1F5h65h65i2P1PZeiLfPltfS3mddEB35dVLTCq/JD/u8/5lHncM/5gBQGAHKpp9cHgKwAAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-la-porte-city-480.avif",
+        "640": "/images/generated/city-content-why-la-porte-city-640.avif",
+        "768": "/images/generated/city-content-why-la-porte-city-768.avif",
+        "1024": "/images/generated/city-content-why-la-porte-city-1024.avif",
+        "1280": "/images/generated/city-content-why-la-porte-city-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-la-porte-city-480.webp",
+        "640": "/images/generated/city-content-why-la-porte-city-640.webp",
+        "768": "/images/generated/city-content-why-la-porte-city-768.webp",
+        "1024": "/images/generated/city-content-why-la-porte-city-1024.webp",
+        "1280": "/images/generated/city-content-why-la-porte-city-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-la-porte-city-480.jpeg",
+        "640": "/images/generated/city-content-why-la-porte-city-640.jpeg",
+        "768": "/images/generated/city-content-why-la-porte-city-768.jpeg",
+        "1024": "/images/generated/city-content-why-la-porte-city-1024.jpeg",
+        "1280": "/images/generated/city-content-why-la-porte-city-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-parkersburg.webp": {
+    "originalPath": "/images/city-content-why-parkersburg.webp",
+    "altBase": "city-content-why-parkersburg",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwAwCdASoUAA8APzmKulOvKaWisAgB4CcJYxwpx/AAYTsAAP6gn9sXqfPvG8E1MTFzGAH6keR5ihyjhEPURsQuP2O3yQZEVqJbsiJwlkvPvpZJhLIqQXOYZYH+ODX+wboci/QAAAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-parkersburg-480.avif",
+        "640": "/images/generated/city-content-why-parkersburg-640.avif",
+        "768": "/images/generated/city-content-why-parkersburg-768.avif",
+        "1024": "/images/generated/city-content-why-parkersburg-1024.avif",
+        "1280": "/images/generated/city-content-why-parkersburg-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-parkersburg-480.webp",
+        "640": "/images/generated/city-content-why-parkersburg-640.webp",
+        "768": "/images/generated/city-content-why-parkersburg-768.webp",
+        "1024": "/images/generated/city-content-why-parkersburg-1024.webp",
+        "1280": "/images/generated/city-content-why-parkersburg-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-parkersburg-480.jpeg",
+        "640": "/images/generated/city-content-why-parkersburg-640.jpeg",
+        "768": "/images/generated/city-content-why-parkersburg-768.jpeg",
+        "1024": "/images/generated/city-content-why-parkersburg-1024.jpeg",
+        "1280": "/images/generated/city-content-why-parkersburg-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-waterloo.webp": {
+    "originalPath": "/images/city-content-why-waterloo.webp",
+    "altBase": "city-content-why-waterloo",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQAwCdASoUAA8APzmGulQvKSWjMAgB4CcJajw6qAAj4Ap9dAD+sR+1bbsx19rZTeVi9f/3YkbIzvHlVml+rxc8u78Ez731Azsd/yjBSdYkHn6qKPQ1QyPzUf0QZH7W9nHJM+VWVBvOQ8WJKr3pnczXHAA=",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-waterloo-480.avif",
+        "640": "/images/generated/city-content-why-waterloo-640.avif",
+        "768": "/images/generated/city-content-why-waterloo-768.avif",
+        "1024": "/images/generated/city-content-why-waterloo-1024.avif",
+        "1280": "/images/generated/city-content-why-waterloo-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-waterloo-480.webp",
+        "640": "/images/generated/city-content-why-waterloo-640.webp",
+        "768": "/images/generated/city-content-why-waterloo-768.webp",
+        "1024": "/images/generated/city-content-why-waterloo-1024.webp",
+        "1280": "/images/generated/city-content-why-waterloo-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-waterloo-480.jpeg",
+        "640": "/images/generated/city-content-why-waterloo-640.jpeg",
+        "768": "/images/generated/city-content-why-waterloo-768.jpeg",
+        "1024": "/images/generated/city-content-why-waterloo-1024.jpeg",
+        "1280": "/images/generated/city-content-why-waterloo-1280.jpeg"
+      }
+    }
+  },
+  "/images/city-content-why-waverly.webp": {
+    "originalPath": "/images/city-content-why-waverly.webp",
+    "altBase": "city-content-why-waverly",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQAwCdASoUAA8APzleyV8vI6qmGAHgJwljTBwIJypAAMgBsQCCQAAA/uRh/BMz+Z6yyox51xXZjyd2PaeEkSNSyzDdoNnZqzwuubvzR2s+JkwjU2J3wRhkdtiuNK2YfeYGskJ0EzcZ7ocFwV3h5w84e+cikLnt5QDmAAAA",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/city-content-why-waverly-480.avif",
+        "640": "/images/generated/city-content-why-waverly-640.avif",
+        "768": "/images/generated/city-content-why-waverly-768.avif",
+        "1024": "/images/generated/city-content-why-waverly-1024.avif",
+        "1280": "/images/generated/city-content-why-waverly-1280.avif"
+      },
+      "webp": {
+        "480": "/images/generated/city-content-why-waverly-480.webp",
+        "640": "/images/generated/city-content-why-waverly-640.webp",
+        "768": "/images/generated/city-content-why-waverly-768.webp",
+        "1024": "/images/generated/city-content-why-waverly-1024.webp",
+        "1280": "/images/generated/city-content-why-waverly-1280.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/city-content-why-waverly-480.jpeg",
+        "640": "/images/generated/city-content-why-waverly-640.jpeg",
+        "768": "/images/generated/city-content-why-waverly-768.jpeg",
+        "1024": "/images/generated/city-content-why-waverly-1024.jpeg",
+        "1280": "/images/generated/city-content-why-waverly-1280.jpeg"
+      }
+    }
   }
 }
