@@ -39,7 +39,8 @@
     "link:health": "node scripts/link-health-check.mjs",
     "analyze": "ANALYZE=true next build",
     "preview": "npm run build:deploy && wrangler dev",
-    "deploy": "npm run build:deploy && wrangler deploy",
+    "indexnow:submit": "node --env-file=.env.local scripts/submit-indexnow.mjs",
+    "deploy": "npm run build:deploy && wrangler deploy && npm run indexnow:submit",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {

@@ -37,10 +37,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'retaining-wall-in-cedar-falls': {
     path: '/retaining-wall-in-cedar-falls',
     serviceSlug: 'retaining-walls',
-    title:
-      '#1 Retaining Wall Cedar Falls Installation for Strong, Long Lasting Results',
+    title: 'Retaining Wall Installation in Cedar Falls',
     description:
-      'Custom retaining wall installation in Cedar Falls, IA. Stone, brick, and concrete walls built for erosion control, slope management, and long-lasting curb appeal. Free estimates from A1 Property Services.',
+      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates. Licensed and insured.',
     keywords: [
       'retaining wall cedar falls',
       'retaining wall installation cedar falls',
@@ -84,9 +83,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'paver-patio-installation': {
     path: '/paver-patio-installation',
     serviceSlug: 'paver-patio',
-    title: 'Professional Paver Patio Installation Cedar Falls | A1 Property Services',
+    title: 'Paver Patio Installation in Cedar Falls',
     description:
-      'Professional paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles, drainage, and long-term outdoor living. Serving Cedar Falls, Waterloo, and the Cedar Valley.',
+      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates. Licensed and insured.',
     keywords: [
       'paver patio cedar falls',
       'paver patio installation cedar falls',
@@ -156,9 +155,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'cedar-falls-water-features': {
     path: '/cedar-falls-water-features',
     serviceSlug: 'ponds-water-features',
-    title: 'Professional Water Features in Cedar Falls | A1 Property Services',
+    title: 'Water Features Installation in Cedar Falls',
     description:
-      'Custom water feature installation in Cedar Falls, IA. Ponds, waterfalls, fountains, and streams designed for beauty, tranquility, and year-round enjoyment. Free estimates from A1 Property Services.',
+      'Water features installation in Cedar Falls, IA. Custom ponds, waterfalls, and pondless water gardens. Free estimates. Licensed and insured.',
     keywords: [
       'water features cedar falls',
       'water feature cedar falls',

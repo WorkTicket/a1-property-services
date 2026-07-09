@@ -65,24 +65,7 @@ export default function CityServicePage({ params }: Props) {
     '@type': 'Service',
     name: pageTitle,
     serviceType: service.name,
-    provider: {
-      '@type': 'LandscapingBusiness',
-      name: `${siteConfig.name} - ${city.name}`,
-      telephone: siteConfig.phone,
-      url: siteConfig.url,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: siteConfig.address.street,
-        addressLocality: city.name,
-        addressRegion: 'IA',
-        postalCode: siteConfig.address.zip,
-        addressCountry: 'US',
-      },
-      areaServed: [
-        { '@type': 'City', name: city.name },
-        ...nearbyCities.map((c) => ({ '@type': 'City', name: c.name })),
-      ],
-    },
+    provider: { '@id': `${siteConfig.url}/#organization` },
     areaServed: {
       '@type': 'City',
       name: city.name,

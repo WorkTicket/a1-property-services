@@ -24,11 +24,24 @@ export default function QuoteForm({ variant = 'light' }: QuoteFormProps) {
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    const payload = {
+      name: String(formData.get('name') ?? '').trim(),
+      phone: String(formData.get('phone') ?? '').trim(),
+      city: String(formData.get('city') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      service: String(formData.get('service') ?? '').trim(),
+      details: String(formData.get('details') ?? '').trim(),
+      _honey: String(formData.get('_honey') ?? '').trim(),
+    }
+
     try {
       const response = await fetch(contactFormEndpoint, {
         method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
       })
 
       const result = await response.json().catch(() => null)
@@ -61,10 +74,6 @@ export default function QuoteForm({ variant = 'light' }: QuoteFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input type="hidden" name="_subject" value="New Quote Request - A1 Property Services" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value={`${siteConfig.url}${thankYouPath}`} />
       <input
         type="text"
         name="_honey"

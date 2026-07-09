@@ -23,7 +23,8 @@ type BeforeAfterSliderProps = {
 
 const SLIDER_SIZES = IMAGE_SIZES.galleryGrid
 const DRAG_THRESHOLD = 10
-const SLIDER_FALLBACK_WIDTH = 768
+const SLIDER_FALLBACK_WIDTH = 640
+const SLIDER_PRIORITY_WIDTH = 768
 
 function SliderPicture({
   src,
@@ -49,7 +50,7 @@ function SliderPicture({
       <source srcSet={buildSrcset(src, 'avif')} sizes={SLIDER_SIZES} type="image/avif" />
       <source srcSet={buildSrcset(src, 'webp')} sizes={SLIDER_SIZES} type="image/webp" />
       <img
-        src={getVariantUrl(src, 'webp', priority ? 1280 : SLIDER_FALLBACK_WIDTH)}
+        src={getVariantUrl(src, 'webp', priority ? SLIDER_PRIORITY_WIDTH : SLIDER_FALLBACK_WIDTH)}
         srcSet={buildSrcset(src, 'webp')}
         sizes={SLIDER_SIZES}
         alt={alt}
@@ -57,7 +58,7 @@ function SliderPicture({
         height={dimensions?.height}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        fetchPriority={priority ? 'high' : 'auto'}
+        fetchPriority="auto"
         className={cn('absolute inset-0 h-full w-full object-cover [transform:translateZ(0)]', className)}
         style={style}
       />

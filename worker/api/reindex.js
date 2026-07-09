@@ -4,24 +4,53 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 }
 
-async function getAllSiteUrls() {
-  const base = 'https://a1pslandscape.com'
-  const slugs = [
-    '', 'about', 'gallery', 'contact', 'services',
-    'blog', 'thank-you',
-    'services/retaining-walls', 'services/paver-patio',
-    'services/ponds-water-features', 'services/landscape-installation',
-    'services/lawn-care', 'services/hydroseeding',
-    'services/preservation-restoration', 'services/tree-service',
-    'services/landscape-maintenance', 'services/snow-removal',
-    'services/landscape-design', 'services/drainage',
-    'services/excavation', 'services/sod-installation',
-    'services/mulching', 'services/rock-landscaping',
-    'services/tree-planting', 'services/shrub-installation',
-    'services/commercial-landscaping', 'services/residential-landscaping',
-    'services/grading', 'services/outdoor-living',
-  ]
-  return slugs.map(s => `${base}/${s}`)
+async function getSitemapUrls(env) {
+  const res = await env.ASSETS.fetch(new Request('https://a1pslandscape.com/sitemap.xml'))
+  if (!res.ok) {
+    throw new Error(`Failed to read sitemap.xml from assets: HTTP ${res.status}`)
+  }
+  const xml = await res.text()
+  const urls = []
+  for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+    urls.push(m[1])
+  }
+  if (urls.length === 0) {
+    throw new Error('sitemap.xml contained no <loc> URLs')
+  }
+  return urls
+}
+
+async function submitToIndexNow(host, key, urlList) {
+  const BATCH_SIZE = 100
+  const BATCH_DELAY_MS = 1500
+  const keyLocation = `https://${host}/${key}.txt`
+  const batches = []
+  for (let i = 0; i < urlList.length; i += BATCH_SIZE) {
+    batches.push(urlList.slice(i, i + BATCH_SIZE))
+  }
+
+  const results = []
+  for (let i = 0; i < batches.length; i++) {
+    if (i > 0) {
+      await new Promise((resolve) => setTimeout(resolve, BATCH_DELAY_MS))
+    }
+    const batch = batches[i]
+    const res = await fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({ host, key, keyLocation, urlList: batch }),
+    })
+    const text = await res.text()
+    results.push({ batch: i + 1, status: res.status, ok: res.ok, count: batch.length, message: text })
+    if (!res.ok && res.status === 429) {
+      return { ok: false, status: res.status, results, rateLimited: true }
+    }
+    if (!res.ok) {
+      return { ok: false, status: res.status, results }
+    }
+  }
+
+  return { ok: true, status: 200, results, batchCount: batches.length }
 }
 
 export async function handleReindex(request, env) {
@@ -53,24 +82,21 @@ export async function handleReindex(request, env) {
   } catch {}
 
   const host = 'a1pslandscape.com'
-  const urlList = urls ?? await getAllSiteUrls()
+  const urlList = urls ?? await getSitemapUrls(env)
 
-  const res = await fetch('https://api.indexnow.org/indexnow', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    body: JSON.stringify({ host, key, keyLocation: `https://${host}/${key}.txt`, urlList }),
-  })
-
-  const text = await res.text()
+  const submission = await submitToIndexNow(host, key, urlList)
+  const lastResult = submission.results?.at(-1)
 
   return Response.json(
     {
-      ok: res.ok,
-      status: res.status,
+      ok: submission.ok,
+      status: submission.status,
       engine: 'indexnow',
-      urlCount: urls?.length ?? 'all',
-      message: text || (res.ok ? 'URLs submitted to IndexNow' : 'IndexNow rejected the request'),
+      urlCount: urlList.length,
+      batchCount: submission.batchCount ?? submission.results?.length ?? 1,
+      rateLimited: submission.rateLimited ?? false,
+      message: lastResult?.message || (submission.ok ? 'URLs submitted to IndexNow' : 'IndexNow rejected the request'),
     },
-    { status: res.ok ? 200 : 502, headers: CORS_HEADERS },
+    { status: submission.ok ? 200 : 502, headers: CORS_HEADERS },
   )
 }

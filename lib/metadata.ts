@@ -392,6 +392,48 @@ export const defaultTwitter: NonNullable<Metadata['twitter']> = {
   images: [defaultOgImage.url],
 }
 
+const SERP_TITLE_MAX = 60
+const META_DESC_MIN = 120
+const META_DESC_MAX = 155
+const BRAND_SUFFIX = ' | A1 Property Services'
+const META_DESC_PAD =
+  ' Professional landscaping in Cedar Falls and the Cedar Valley. Licensed, insured, free estimates.'
+
+function truncateAtWord(text: string, maxLen: number): string {
+  if (text.length <= maxLen) return text
+  const truncated = text.slice(0, maxLen - 3)
+  const lastSpace = truncated.lastIndexOf(' ')
+  const cut = lastSpace > maxLen * 0.5 ? truncated.slice(0, lastSpace) : truncated
+  return `${cut.trimEnd()}...`
+}
+
+/** Pad short descriptions and trim long ones for SERP/Ahrefs limits. */
+export function normalizeMetaDescription(desc: string): string {
+  let result = desc.trim()
+  if (result.length > META_DESC_MAX) {
+    return truncateAtWord(result, META_DESC_MAX)
+  }
+  if (result.length < META_DESC_MIN) {
+    if (!result.endsWith('.')) result += '.'
+    result += META_DESC_PAD
+    if (result.length > META_DESC_MAX) {
+      return truncateAtWord(result, META_DESC_MAX)
+    }
+  }
+  return result
+}
+
+/** Build a title that fits within SERP display limits. */
+export function buildSeoTitle(title: string, absoluteTitle = false): string {
+  if (absoluteTitle) {
+    return title.length > SERP_TITLE_MAX ? truncateAtWord(title, SERP_TITLE_MAX) : title
+  }
+  const withBrand = `${title}${BRAND_SUFFIX}`
+  if (withBrand.length <= SERP_TITLE_MAX) return withBrand
+  if (title.length <= SERP_TITLE_MAX) return title
+  return truncateAtWord(title, SERP_TITLE_MAX)
+}
+
 type PageMetadataOptions = {
   title: string
   description?: string
@@ -421,11 +463,9 @@ export function generatePageMetadata({
   publishedTime,
   modifiedTime,
 }: PageMetadataOptions): Metadata {
-  const fullTitle = absoluteTitle
-    ? title
-    : `${title} | A1 Property Services`
+  const fullTitle = buildSeoTitle(title, absoluteTitle)
   const url = `${siteConfig.url}${canonicalPath ?? path}`
-  const desc = description ?? siteConfig.description
+  const desc = normalizeMetaDescription(description ?? siteConfig.description)
   const imageUrl = ogImage ?? defaultOgImage.url
   const imageAlt = ogImageAlt ?? defaultOgImage.alt
 
@@ -528,14 +568,6 @@ export function websiteJsonLd() {
     description: siteConfig.description,
     publisher: { '@id': `${siteConfig.url}/#organization` },
     inLanguage: 'en-US',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${siteConfig.url}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   }
 }
 
@@ -631,89 +663,103 @@ export function speakableJsonLd(cssSelector: string[]) {
   }
 }
 
-export const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LandscapingBusiness',
-  '@id': `${siteConfig.url}/#organization`,
-  name: siteConfig.name,
-  image: `${siteConfig.url}/og-image.jpg`,
-  logo: `${siteConfig.url}/images/icon.webp`,
-  url: siteConfig.url,
-  telephone: siteConfig.phone,
-  email: siteConfig.email,
-  foundingDate: String(FOUNDING_YEAR),
-  sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness],
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: siteConfig.address.street,
-    addressLocality: siteConfig.address.city,
-    addressRegion: siteConfig.address.state,
-    postalCode: siteConfig.address.zip,
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 42.5364,
-    longitude: -92.4455,
-  },
-  areaServed: [
-    { '@type': 'City', name: 'Cedar Falls' },
-    { '@type': 'City', name: 'Waterloo' },
-    { '@type': 'City', name: 'Hudson' },
-    { '@type': 'City', name: 'Evansdale' },
-    { '@type': 'City', name: 'Waverly' },
-    { '@type': 'City', name: 'Denver' },
-    { '@type': 'City', name: 'Jesup' },
-    { '@type': 'City', name: 'Parkersburg' },
-    { '@type': 'City', name: 'La Porte City' },
-    { '@type': 'City', name: 'Dike' },
-    { '@type': 'Place', name: 'Cedar Valley' },
-    { '@type': 'Place', name: 'Black Hawk County' },
-    { '@type': 'Place', name: 'Bremer County' },
-    { '@type': 'Place', name: 'Grundy County' },
-    { '@type': 'Place', name: 'Butler County' },
-    { '@type': 'Place', name: 'Buchanan County' },
-  ],
-  priceRange: '$$',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:00',
-      closes: '18:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '08:00',
-      closes: '13:00',
-    },
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
+export function buildLocalBusinessJsonLd(reviewStats?: { rating: number; totalCount: number }) {
+  const rating = reviewStats?.rating ?? 5.0
+  const reviewCount = reviewStats?.totalCount ?? 5
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LandscapingBusiness',
+    '@id': `${siteConfig.url}/#organization`,
+    name: siteConfig.name,
+    image: `${siteConfig.url}/og-image.jpg`,
+    logo: `${siteConfig.url}/images/icon.webp`,
+    url: siteConfig.url,
     telephone: siteConfig.phone,
-    contactType: 'customer service',
     email: siteConfig.email,
-    areaServed: ['US'],
-    availableLanguage: ['English'],
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Landscaping and Hardscaping Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscaping in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retaining Wall Installation in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paver Patio Installation in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Features Installation in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Care in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Snow Removal in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drainage Solutions in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape Design in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outdoor Living Spaces in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Landscaping in Cedar Falls' } },
+    foundingDate: String(FOUNDING_YEAR),
+    sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      postalCode: siteConfig.address.zip,
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 42.5364,
+      longitude: -92.4455,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Cedar Falls' },
+      { '@type': 'City', name: 'Waterloo' },
+      { '@type': 'City', name: 'Hudson' },
+      { '@type': 'City', name: 'Evansdale' },
+      { '@type': 'City', name: 'Waverly' },
+      { '@type': 'City', name: 'Denver' },
+      { '@type': 'City', name: 'Jesup' },
+      { '@type': 'City', name: 'Parkersburg' },
+      { '@type': 'City', name: 'La Porte City' },
+      { '@type': 'City', name: 'Dike' },
+      { '@type': 'Place', name: 'Cedar Valley' },
+      { '@type': 'Place', name: 'Black Hawk County' },
+      { '@type': 'Place', name: 'Bremer County' },
+      { '@type': 'Place', name: 'Grundy County' },
+      { '@type': 'Place', name: 'Butler County' },
+      { '@type': 'Place', name: 'Buchanan County' },
     ],
-  },
+    priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: rating.toFixed(1),
+      reviewCount: String(reviewCount),
+      bestRating: '5',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '07:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '08:00',
+        closes: '13:00',
+      },
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: siteConfig.phone,
+      contactType: 'customer service',
+      email: siteConfig.email,
+      areaServed: ['US'],
+      availableLanguage: ['English'],
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Landscaping and Hardscaping Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscaping in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retaining Wall Installation in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paver Patio Installation in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Features Installation in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Care in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Snow Removal in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drainage Solutions in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape Design in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outdoor Living Spaces in Cedar Falls' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Landscaping in Cedar Falls' } },
+      ],
+    },
+  }
 }
+
+/** @deprecated Use buildLocalBusinessJsonLd() with live review stats instead. */
+export const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
 export function webPageJsonLd(options: {
   name: string

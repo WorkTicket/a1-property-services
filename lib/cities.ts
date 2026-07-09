@@ -35,11 +35,10 @@ export const cities: City[] = [
     heroTitle: 'Cedar Falls Landscaping|Local Crew',
     heroSubtitle:
       'Full-service landscaping, hardscaping, and lawn care for Cedar Falls homeowners since 2014.',
-    metaTitle: 'Landscaping in Cedar Falls, IA | A1 Property Services',
+    metaTitle: 'Cedar Falls Landscaping Crew | A1 Property Services',
     metaDescription:
-      'Cedar Falls landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates.',
+      'Local Cedar Falls landscaping crew for retaining walls, paver patios, lawn care, and tree service. Licensed and insured. Free estimates.',
     metaKeywords: [
-      'landscaping cedar falls',
       'cedar falls landscaping',
       'landscaper cedar falls ia',
       'retaining wall cedar falls',

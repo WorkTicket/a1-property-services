@@ -10,19 +10,28 @@
   },
   "routes": [
     {
-      "pattern": "preview.a1pslandscape.com",
-      "custom_domain": true
+      "pattern": "a1pslandscape.com/*",
+      "zone_name": "a1pslandscape.com"
     },
     {
-      "pattern": "a1pslandscape.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "www.a1pslandscape.com",
-      "custom_domain": true
+      "pattern": "www.a1pslandscape.com/*",
+      "zone_name": "a1pslandscape.com"
     }
   ],
   "observability": {
     "enabled": true
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_destination_addresses": [
+        "a1propertyservices0219@gmail.com",
+        "coltondwehr@icloud.com"
+      ]
+    }
+  ],
+  "vars": {
+    "CONTACT_TO_EMAIL": "a1propertyservices0219@gmail.com,coltondwehr@icloud.com",
+    "CONTACT_FROM_EMAIL": "quotes@a1pslandscape.com"
   }
 }

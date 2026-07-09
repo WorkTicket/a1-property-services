@@ -4,11 +4,14 @@ import { ChevronRight } from 'lucide-react'
 import { generatePageMetadata, servicesHubKeywords, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { services, hardscapeFeatures, hardscapeServices, servicesHubFaqs } from '@/lib/services'
+import { landscapingHubAnchor, landscapingHubPath } from '@/lib/internal-linking'
+import { cities } from '@/lib/cities'
 import { siteImages } from '@/lib/images'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
+import HubPagePromo from '@/components/sections/HubPagePromo'
 import FaqSectionCta from '@/components/sections/FaqSectionCta'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FaqAccordion from '@/components/ui/FaqAccordion'
@@ -17,9 +20,9 @@ import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Landscaping Services in Cedar Falls',
+  title: 'All Landscaping & Hardscaping Services',
   description:
-    'Landscaping services in Cedar Falls, IA. Retaining walls, paver patios, water features, lawn care, tree service, snow removal, and more. Free estimates.',
+    'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, IA — retaining walls, patios, lawn care, tree service, snow removal, and more.',
   path: '/services',
   keywords: servicesHubKeywords,
   ogImage: '/images/services-hero.webp',
@@ -49,7 +52,7 @@ export default function ServicesPage() {
           name: f.name,
           url: `${siteConfig.url}${f.href}`,
           description: f.shortDesc,
-          provider: { '@type': 'LandscapingBusiness', name: siteConfig.name },
+          provider: { '@id': `${siteConfig.url}/#organization` },
           areaServed: 'Cedar Falls, IA',
         },
       })),
@@ -61,7 +64,7 @@ export default function ServicesPage() {
           name: s.name,
           url: `${siteConfig.url}/services/${s.slug}`,
           description: s.shortDesc,
-          provider: { '@type': 'LandscapingBusiness', name: siteConfig.name },
+          provider: { '@id': `${siteConfig.url}/#organization` },
           areaServed: 'Cedar Falls, IA',
         },
       })),
@@ -93,11 +96,11 @@ export default function ServicesPage() {
   }
 
   const pageSchema = webPageJsonLd({
-    name: 'Landscaping Services in Cedar Falls',
-    description: 'Full landscaping and hardscaping services by A1 Property Services in Cedar Falls, IA.',
+    name: 'All Landscaping & Hardscaping Services',
+    description: 'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, IA.',
     path: '/services',
     image: '/images/services-hero.webp',
-    about: 'Landscaping Services',
+    about: 'Landscaping and Hardscaping Services',
   })
 
   const hardscapeImages: Record<string, string> = {
@@ -129,8 +132,8 @@ export default function ServicesPage() {
         imageSrc={siteImages.servicesHero}
         imageAlt="Landscaping services in Cedar Falls, Iowa"
         eyebrow="What We Offer"
-        title="Landscaping Services|in Cedar Falls"
-        subtitle="Full yard installs, hardscape, mowing, snow removal, and everything in between. Built for Iowa."
+        title="All Services|Cedar Falls & Cedar Valley"
+        subtitle="Browse every service we offer — hardscape, lawn care, tree service, snow removal, and full installs."
       />
 
       <section className="section bg-white">
@@ -145,14 +148,23 @@ export default function ServicesPage() {
             <p>
               Whether you need a single project or year-round landscape maintenance, our licensed and
               insured crew builds for Iowa weather with proper drainage, compacted bases, and materials
-              rated for freeze-thaw cycles across the Cedar Valley.
+              rated for freeze-thaw cycles across the Cedar Valley. For our complete{' '}
+              <Link
+                href={landscapingHubPath}
+                className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
+              >
+                {landscapingHubAnchor}
+              </Link>
+              {' '}guide, visit our dedicated Cedar Falls landscaping page.
             </p>
           </div>
         </FadeIn>
       </section>
 
       <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
-        <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+        <div className="absolute inset-0" aria-hidden="true">
+          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+        </div>
         <div className="absolute inset-0 bg-brand-green-800/85" />
         <div className="section-inner relative">
           <FadeIn className="mb-6 text-center">
@@ -279,6 +291,32 @@ export default function ServicesPage() {
           />
         </FadeIn>
       </section>
+
+      <section className="section bg-white">
+        <div className="section-inner">
+          <FadeIn className="mb-8 text-center">
+            <h2 className="section-heading">Service Areas</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-brand-body">
+              We serve homeowners across the Cedar Valley. Select your city to see local landscaping services.
+            </p>
+          </FadeIn>
+          <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {cities.map((city) => (
+              <li key={city.slug}>
+                <Link
+                  href={`/${city.slug}`}
+                  className="flex items-center justify-between rounded-lg border border-brand-stone bg-brand-stone/30 px-4 py-3 text-sm font-medium text-brand-dark transition-colors hover:border-brand-green-800/30 hover:bg-brand-green-100/50"
+                >
+                  <span>{city.name}, IA</span>
+                  <ChevronRight className="h-4 w-4 shrink-0 text-brand-muted" aria-hidden />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <HubPagePromo className="section bg-white py-10" />
 
       <CtaBanner
         title="Not sure what you need?"

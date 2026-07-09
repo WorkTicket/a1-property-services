@@ -281,7 +281,7 @@ export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
 export const legacyServiceHrefs = legacyLandingPageHrefs
 
 export function getServicePageHref(slug: string): string {
-  return `/services/${slug}`
+  return legacyLandingPageHrefs[slug] ?? `/services/${slug}`
 }
 
 export function getLegacyLandingPageHref(slug: string): string | undefined {

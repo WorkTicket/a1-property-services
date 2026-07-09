@@ -6,13 +6,15 @@ import { cities, getCityBySlug } from '@/lib/cities'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages, getCityHeroImage, getCityIntroImage, getCityWhyImage } from '@/lib/images'
-import { services, hardscapeFeatures, hardscapeServices, getHardscapeFeatureHref } from '@/lib/services'
+import { services, hardscapeFeatures, hardscapeServices, getHardscapeFeatureHref, allServices } from '@/lib/services'
 import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
+import HubPagePromo from '@/components/sections/HubPagePromo'
+import { landscapingHubAnchor, landscapingHubPath } from '@/lib/internal-linking'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -78,25 +80,18 @@ export default function CityPage({ params }: Props) {
 
   const cityJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LandscapingBusiness',
-    name: `A1 Property Services - ${city.name}`,
+    '@type': 'Service',
+    '@id': `${siteConfig.url}/${city.slug}#service`,
+    name: `Landscaping in ${city.name}, IA`,
+    serviceType: 'Landscaping',
+    provider: { '@id': `${siteConfig.url}/#organization` },
     description: city.description,
     url: `${siteConfig.url}/${city.slug}`,
-    telephone: siteConfig.phone,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: siteConfig.address.street,
-      addressLocality: city.name,
-      addressRegion: 'IA',
-      postalCode: siteConfig.address.zip,
-      addressCountry: 'US',
-    },
     areaServed: {
       '@type': 'City',
       name: city.name,
       containedInPlace: { '@type': 'State', name: 'Iowa' },
     },
-    priceRange: '$$',
   }
 
   const faqJsonLd = faqPageJsonLd(
@@ -148,6 +143,18 @@ export default function CityPage({ params }: Props) {
                   {p}
                 </p>
               ))}
+              {city.slug === 'cedar-falls' ? (
+                <p className="mt-4 leading-relaxed text-brand-body">
+                  Explore our complete{' '}
+                  <Link
+                    href={landscapingHubPath}
+                    className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
+                  >
+                    {landscapingHubAnchor}
+                  </Link>
+                  {' '}services — retaining walls, patios, lawn care, and full landscape installation.
+                </p>
+              ) : null}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/contact">
                   {CTA_COPY.quote}
@@ -172,9 +179,13 @@ export default function CityPage({ params }: Props) {
         </div>
       </section>
 
+      {city.slug === 'cedar-falls' ? <HubPagePromo /> : null}
+
       {/* Signature Work */}
       <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
-        <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+        <div className="absolute inset-0" aria-hidden="true">
+          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+        </div>
         <div className="absolute inset-0 bg-brand-green-800/85" />
         <div className="section-inner relative">
           <FadeIn className="mb-6 text-center">
@@ -247,6 +258,32 @@ export default function CityPage({ params }: Props) {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* All Services in City */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <FadeIn className="text-center">
+            <p className="section-eyebrow">Full Service List</p>
+            <h2 className="section-heading">All Landscaping Services in {city.name}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-brand-body">
+              Browse every service we offer in {city.name}, from lawn care and tree work to hardscaping and seasonal maintenance.
+            </p>
+          </FadeIn>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {allServices.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  href={`/${city.slug}/${service.slug}`}
+                  className="flex items-center justify-between rounded-lg border border-brand-stone bg-brand-stone/30 px-4 py-3 text-sm font-medium text-brand-dark transition-colors hover:border-brand-green-800/30 hover:bg-brand-green-100/50"
+                >
+                  <span>{service.name}</span>
+                  <ChevronRight className="h-4 w-4 shrink-0 text-brand-muted" aria-hidden />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

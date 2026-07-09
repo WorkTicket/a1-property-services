@@ -9,7 +9,7 @@ import GalleryFilter from '@/components/sections/GalleryFilter'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Project Gallery',
   description:
-    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, driveways, water features, lawn care, and landscape installation.',
+    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley. Retaining walls, paver patios, water features, lawn care, and more.',
   path: '/gallery',
   ogImage: siteImages.galleryHero,
   ogImageAlt: 'Landscaping project gallery in Cedar Falls',

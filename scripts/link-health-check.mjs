@@ -5,7 +5,13 @@ const OUT_DIR = path.resolve('out')
 const REPORT_DIR = path.resolve('reports')
 
 /** Utility pages that are intentionally excluded from sitemap.xml */
-const SITEMAP_EXCLUDED_PAGES = new Set(['/404', '/thank-you'])
+const SITEMAP_EXCLUDED_PAGES = new Set([
+  '/404',
+  '/thank-you',
+  '/services/retaining-walls',
+  '/services/paver-patio',
+  '/services/ponds-water-features',
+])
 
 let errors = 0
 let warnings = 0

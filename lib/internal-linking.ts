@@ -5,6 +5,9 @@ import { learnArticles, type LearnArticle } from '@/lib/learn'
 import { galleryProjects, type GalleryProject } from '@/lib/images'
 import { siteConfig } from '@/lib/metadata'
 
+export const landscapingHubPath = '/landscaping-services-in-cedar-falls'
+export const landscapingHubAnchor = 'landscaping in Cedar Falls'
+
 export type ContentType = 'service' | 'blog' | 'city' | 'learn' | 'faq' | 'project'
 
 export type LinkedContent = {

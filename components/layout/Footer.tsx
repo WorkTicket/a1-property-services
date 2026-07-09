@@ -17,6 +17,9 @@ const quickLinks = [
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Learn', href: '/learn' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'FAQs', href: '/faqs' },
   { label: 'Contact', href: '/contact' },
 ]
 

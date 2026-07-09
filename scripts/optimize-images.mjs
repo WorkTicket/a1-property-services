@@ -16,7 +16,7 @@ const FORMAT_CONFIG = {
 }
 
 const HERO_FORMAT_CONFIG = {
-  avif: { quality: 68, effort: 6, lossless: false },
+  avif: { quality: 62, effort: 6, lossless: false },
   webp: { quality: 82, effort: 6 },
   jpeg: { quality: 88, mozjpeg: true },
 }
@@ -24,9 +24,9 @@ const HERO_FORMAT_CONFIG = {
 const HERO_MOBILE_WEBP_CONFIG = { quality: 76, effort: 6 }
 
 const GALLERY_FORMAT_CONFIG = {
-  avif: { quality: 78, effort: 7, lossless: false },
-  webp: { quality: 92, effort: 6 },
-  jpeg: { quality: 90, mozjpeg: true },
+  avif: { quality: 68, effort: 7, lossless: false },
+  webp: { quality: 88, effort: 6 },
+  jpeg: { quality: 85, mozjpeg: true },
 }
 
 const HERO_MAX_WIDTH = 2560

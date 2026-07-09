@@ -62,3 +62,47 @@
 # WordPress category sitemap
 /category-sitemap.xml /sitemap.xml 301
 /category-sitemap.xml/ /sitemap.xml 301
+
+# WordPress service page slug
+/landscape-installation /services/landscape-installation 301
+/landscape-installation/ /services/landscape-installation 301
+
+# WordPress service page slug
+/lawn-care /services/lawn-care 301
+/lawn-care/ /services/lawn-care 301
+
+# WordPress service page slug
+/tree-service /services/tree-service 301
+/tree-service/ /services/tree-service 301
+
+# WordPress service page slug
+/landscape-maintenance /services/landscape-maintenance 301
+/landscape-maintenance/ /services/landscape-maintenance 301
+
+# WordPress preservation service slug
+/landscape-preservation /services/preservation-restoration 301
+/landscape-preservation/ /services/preservation-restoration 301
+
+# WordPress service page slug
+/sod-installation /services/sod-installation 301
+/sod-installation/ /services/sod-installation 301
+
+# WordPress service page slug
+/snow-removal /services/snow-removal 301
+/snow-removal/ /services/snow-removal 301
+
+# WordPress ponds & water gardens slug
+/ponds-and-water-gardens /cedar-falls-water-features 301
+/ponds-and-water-gardens/ /cedar-falls-water-features 301
+
+# WordPress short ponds slug
+/ponds /cedar-falls-water-features 301
+/ponds/ /cedar-falls-water-features 301
+
+# Legacy landscaping hub slug variant
+/landscaping-property-maintenance-cedar-falls /landscaping-services-in-cedar-falls 301
+/landscaping-property-maintenance-cedar-falls/ /landscaping-services-in-cedar-falls 301
+
+# WordPress AMP suffix on any path
+/:path/amp /:path 301
+/:path/amp/ /:path 301

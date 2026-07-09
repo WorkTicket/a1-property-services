@@ -331,12 +331,10 @@ const galleryProjects: GalleryProject[] = [
     before: {
       src: img('wall-before-4.webp'),
       alt: 'Sloped front yard before retaining wall installation',
-      priority: true,
     },
     after: {
       src: img('wall-after-4.webp'),
       alt: 'New L-shaped retaining wall with leveled front yard',
-      priority: true,
     },
   },
   {
@@ -374,12 +372,10 @@ const galleryProjects: GalleryProject[] = [
     before: {
       src: img('patio-before-2.webp'),
       alt: 'Damaged patio before paver patio replacement',
-      priority: true,
     },
     after: {
       src: img('patio-after-2.webp'),
       alt: 'New paver patio after installation with clean edging',
-      priority: true,
     },
   },
   {
@@ -391,14 +387,12 @@ const galleryProjects: GalleryProject[] = [
       alt: 'Hillside yard before stone waterfall and pond installation',
       objectPosition: '30% 25%',
       quality: 80,
-      priority: true,
     },
     after: {
       src: img('water-feature-image-3.webp'),
       alt: 'Multi-tiered stone waterfall with retaining wall and garden steps',
       objectPosition: '32% 24%',
       quality: 80,
-      priority: true,
     },
   },
   {
@@ -724,6 +718,11 @@ export { siteImages, galleryProjects }
 export const homepageGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.filter(
   (p): p is GalleryBeforeAfterProject =>
     !p.showcase && Boolean(p.before) && ['patio-2', 'wall-4'].includes(p.id),
+)
+
+export const hubGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.filter(
+  (p): p is GalleryBeforeAfterProject =>
+    !p.showcase && Boolean(p.before) && ['wall-1', 'patio-2', 'water-1'].includes(p.id),
 )
 
 export function getServiceHeroImage(slug: string): string | undefined {

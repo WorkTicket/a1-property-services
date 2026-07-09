@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
 import { learnArticles } from '@/lib/learn'
 import { siteConfig } from '@/lib/metadata'
-import { getAllSiteUrls } from '@/lib/site-urls'
+import { getSitemapUrls } from '@/lib/site-urls'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const allUrls = getAllSiteUrls()
+  const allUrls = getSitemapUrls()
 
   return allUrls.map((url) => {
     const path = url.replace(siteConfig.url, '') || '/'

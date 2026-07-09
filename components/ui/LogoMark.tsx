@@ -26,7 +26,7 @@ export default function LogoMark({ size = 'md', className }: LogoMarkProps) {
     >
       <Image
         src={siteImages.icon}
-        alt=""
+        alt="A1 Property Services logo"
         width={img}
         height={img}
         className="rounded-full object-cover"

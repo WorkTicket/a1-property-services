@@ -5,9 +5,13 @@ module.exports = {
       url: [
         'http://localhost:3000/',
         'http://localhost:3000/services',
+        'http://localhost:3000/services/retaining-walls',
         'http://localhost:3000/gallery',
         'http://localhost:3000/contact',
         'http://localhost:3000/about',
+        'http://localhost:3000/blog',
+        'http://localhost:3000/retaining-wall-in-cedar-falls',
+        'http://localhost:3000/paver-patio-installation',
       ],
       numberOfRuns: 3,
     },

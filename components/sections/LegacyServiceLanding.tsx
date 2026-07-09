@@ -11,6 +11,7 @@ import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
+import HubPagePromo from '@/components/sections/HubPagePromo'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroOverlay from '@/components/ui/HeroOverlay'
@@ -40,21 +41,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
     '@type': 'Service',
     serviceType: page.h1,
     name: page.h1,
-    provider: {
-      '@type': 'LandscapingBusiness',
-      name: siteConfig.name,
-      telephone: siteConfig.phone,
-      url: siteConfig.url,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: siteConfig.address.street,
-        addressLocality: siteConfig.address.city,
-        addressRegion: siteConfig.address.state,
-        postalCode: siteConfig.address.zip,
-        addressCountry: 'US',
-      },
-      areaServed: ['Cedar Falls', 'Waterloo', 'Cedar Valley'],
-    },
+    provider: { '@id': `${siteConfig.url}/#organization` },
     areaServed: {
       '@type': 'City',
       name: 'Cedar Falls',
@@ -101,7 +88,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         <HeroOverlay imageSrc={page.heroImage} variant="center" />
 
         <div className="relative z-10 mx-auto w-full max-w-3xl px-4 text-center sm:px-6">
-          <div className="hero-copy-reveal">
+          <div>
             <p className="hero-eyebrow">{page.eyebrow}</p>
             <h1 className="hero-title mt-4">{page.h1}</h1>
             <h2 className="hero-subtitle mx-auto mt-4 max-w-2xl md:mt-6">{page.heroHeading}</h2>
@@ -226,6 +213,8 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
           </div>
         </FadeIn>
       </section>
+
+      <HubPagePromo />
 
       <CtaBanner
         title="Get Your Free Estimate"

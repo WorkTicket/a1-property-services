@@ -5,6 +5,8 @@ import { Phone, Check } from 'lucide-react'
 import {
   allServices,
   getServiceBySlug,
+  getServicePageHref,
+  legacyLandingPageHrefs,
   serviceBenefits,
   serviceExtendedContent,
   serviceFaqs,
@@ -20,6 +22,7 @@ import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt, getServiceContentImage, getServiceContentImageAlt } from '@/lib/images'
 import { getComplementaryServices, getServiceRelatedContentGroups, getContentSegments } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
+import HubPagePromo from '@/components/sections/HubPagePromo'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
 import ServiceIntroSection from '@/components/sections/ServiceIntroSection'
@@ -42,15 +45,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(params.slug)
   if (!service) return {}
 
+  const legacyCanonical = legacyLandingPageHrefs[service.slug]
   const seo = serviceSeoOverrides[service.slug]
   if (seo) {
     return generatePageMetadata({
       title: seo.title,
       description: seo.description,
       path: `/services/${service.slug}`,
+      canonicalPath: legacyCanonical ?? `/services/${service.slug}`,
       keywords: seo.keywords,
       ogImage: seo.ogImage,
       ogImageAlt: seo.ogImageAlt,
+      absoluteTitle: true,
+      noIndex: !!legacyCanonical,
     })
   }
 
@@ -125,21 +132,7 @@ export default function ServicePage({ params }: Props) {
     '@type': 'Service',
     serviceType: seo?.title ?? service.name,
     name: serviceName,
-    provider: {
-      '@type': 'LandscapingBusiness',
-      name: siteConfig.name,
-      telephone: siteConfig.phone,
-      url: siteConfig.url,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: siteConfig.address.street,
-        addressLocality: siteConfig.address.city,
-        addressRegion: siteConfig.address.state,
-        postalCode: siteConfig.address.zip,
-        addressCountry: 'US',
-      },
-      areaServed: ['Cedar Falls', 'Waterloo', 'Cedar Valley'],
-    },
+    provider: { '@id': `${siteConfig.url}/#organization` },
     areaServed: {
       '@type': 'City',
       name: 'Cedar Falls',
@@ -426,6 +419,8 @@ export default function ServicePage({ params }: Props) {
         </section>
       )}
 
+      <HubPagePromo />
+
       <CtaBanner
         title="Ready to get started?"
         description="Call us today or request a free quote online."
@@ -440,7 +435,7 @@ export default function ServicePage({ params }: Props) {
             <StaggerContainer className="grid gap-6 sm:grid-cols-3">
               {complementaryServices.map((s) => (
                 <StaggerItem key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="card block h-full p-6">
+                  <Link href={getServicePageHref(s.slug)} className="card block h-full p-6">
                     <ServiceIcon name={s.icon} size={22} />
                     <h3 className="mt-3 font-bold text-brand-dark">{s.name}</h3>
                     <p className="mt-1 text-sm text-brand-body">{s.shortDesc}</p>
