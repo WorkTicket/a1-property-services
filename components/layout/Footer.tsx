@@ -1,10 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Star, Shield, ChevronRight } from 'lucide-react'
+import { Phone, Mail, MapPin, Star, Shield, ChevronRight, Facebook } from 'lucide-react'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
+import { trackPhoneCall, trackCtaClick, trackOutboundClick } from '@/lib/analytics'
 import FooterSignature from '@/components/FooterSignature'
 import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
@@ -13,12 +13,18 @@ import { projectsCompletedLabel } from '@/lib/projects-completed'
 
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Landscaping Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
   { label: 'Services', href: '/services' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
+]
+
+const rankingServiceLinks = [
+  { label: 'Landscaping Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
+  { label: 'Paver Patios', href: '/paver-patio-installation' },
+  { label: 'Retaining Walls', href: '/retaining-wall-in-cedar-falls' },
+  { label: 'Water Features', href: '/cedar-falls-water-features' },
 ]
 
 const serviceCities = [
@@ -93,6 +99,19 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white">Cedar Falls Services</p>
+            <ul className="mt-4 space-y-2.5">
+              {rankingServiceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-400 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="lg:col-span-3">
@@ -144,6 +163,30 @@ export default function Footer() {
                 >
                   <Mail size={16} className="shrink-0 text-brand-gold" />
                   {email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackOutboundClick('Footer Facebook')}
+                  className="flex items-center gap-3 text-sm text-neutral-400 transition-colors hover:text-white"
+                >
+                  <Facebook size={16} className="shrink-0 text-brand-gold" />
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.social.googleBusiness}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackOutboundClick('Footer Google Business')}
+                  className="flex items-center gap-3 text-sm text-neutral-400 transition-colors hover:text-white"
+                >
+                  <Star size={16} className="shrink-0 text-brand-gold" />
+                  Google Business Profile
                 </a>
               </li>
             </ul>

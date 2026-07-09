@@ -17,6 +17,7 @@ export const siteConfig = {
   },
   social: {
     facebook: 'https://www.facebook.com/A1PropertyServicesCedarValley/',
+    googleBusiness: 'https://share.google/d5uiWqfUIkso3hlj2',
   },
   googlePlaceId: 'ChIJx1yIuk9V5YcRMqQd-z4_YIE',
   googleReviewUrl:
@@ -641,7 +642,7 @@ export const localBusinessJsonLd = {
   telephone: siteConfig.phone,
   email: siteConfig.email,
   foundingDate: String(FOUNDING_YEAR),
-  sameAs: [siteConfig.social.facebook],
+  sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness],
   address: {
     '@type': 'PostalAddress',
     streetAddress: siteConfig.address.street,
@@ -711,12 +712,6 @@ export const localBusinessJsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outdoor Living Spaces in Cedar Falls' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Landscaping in Cedar Falls' } },
     ],
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '5',
-    bestRating: '5',
   },
 }
 
@@ -812,7 +807,7 @@ export function organizationJsonLd() {
       areaServed: ['US'],
       availableLanguage: ['English'],
     },
-    sameAs: [siteConfig.social.facebook],
+    sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness],
   }
 }
 
