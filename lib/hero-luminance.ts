@@ -1,4 +1,4 @@
-/** Precomputed average luminance (0–1) for hero images — darker images get a lighter overlay. */
+/** Precomputed average luminance (0–1) for hero images: darker images get a lighter overlay. */
 export const heroLuminance: Record<string, number> = {
   '/images/hero-background-image.webp': 0.315,
   '/images/services-hero.webp': 0.557,

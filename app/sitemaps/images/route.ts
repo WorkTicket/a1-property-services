@@ -17,6 +17,11 @@ const imageUrls = [
   '/images/about-secondary.webp',
   '/images/city-intro.webp',
   '/images/city-why.webp',
+  '/images/content-landscaping-cedar-falls.webp',
+  '/images/content-retaining-wall-cedar-falls.webp',
+  '/images/content-water-features-cedar-falls.webp',
+  '/images/content-landscape-installation.webp',
+  '/images/content-paver-patio-cedar-falls.webp',
 
   // Service hero images (one per service)
   '/images/retaining-wall.webp',
@@ -64,10 +69,11 @@ const imageUrls = [
   '/images/patio-after-2.webp',
 
   // Gallery water features
-  '/images/water-feature-image-2.webp',
+  '/images/water-feature-image-1.webp',
+  '/images/water-pond-after.webp',
   '/images/water-feature-image-3.webp',
   '/images/water-feature-image-4.webp',
-  '/images/water-before-1.webp',
+  '/images/water-pond-before.webp',
   '/images/water-before-2.webp',
   '/images/water-before-3.webp',
 ]

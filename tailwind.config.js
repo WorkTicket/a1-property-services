@@ -20,6 +20,9 @@ module.exports = {
           'gold-hover': '#7A1519',
           dark: '#0D0D0D',
           body: '#3D3D3A',
+          muted: '#565652',
+          subtle: '#6B7280',
+          'gold-light': '#F87171',
         },
       },
       fontFamily: {

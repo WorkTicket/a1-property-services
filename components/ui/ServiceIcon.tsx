@@ -49,18 +49,33 @@ type ServiceIconProps = {
   name: ServiceIconName
   className?: string
   size?: number
+  variant?: 'default' | 'compact'
 }
 
-export default function ServiceIcon({ name, className, size = 28 }: ServiceIconProps) {
+const variantStyles = {
+  default: 'rounded-lg bg-brand-green-100 p-2.5 text-brand-green-800',
+  compact: 'h-8 w-8 rounded-lg bg-brand-green-100 p-0 text-brand-green-800',
+} as const
+
+export default function ServiceIcon({
+  name,
+  className,
+  size,
+  variant = 'default',
+}: ServiceIconProps) {
   const Icon = iconMap[name] ?? Trees
+  const iconSize = size ?? (variant === 'compact' ? 15 : 28)
+  const strokeWidth = variant === 'compact' ? 2 : 1.75
+
   return (
     <span
       className={cn(
-        'inline-flex items-center justify-center rounded-lg bg-brand-green-100 p-2.5 text-brand-green-800',
+        'inline-flex shrink-0 items-center justify-center transition-colors',
+        variantStyles[variant],
         className,
       )}
     >
-      <Icon size={size} strokeWidth={1.75} aria-hidden />
+      <Icon size={iconSize} strokeWidth={strokeWidth} aria-hidden />
     </span>
   )
 }

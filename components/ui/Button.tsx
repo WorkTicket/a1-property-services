@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-type ButtonVariant = 'primary' | 'ghost' | 'ghost-dark' | 'outline' | 'white'
+type ButtonVariant = 'primary' | 'ghost' | 'ghost-dark' | 'outline' | 'outline-on-dark' | 'white'
 type ButtonSize = 'default' | 'sm' | 'lg' | 'xs'
 
 type BaseProps = {
@@ -24,6 +24,7 @@ const variants: Record<ButtonVariant, string> = {
   ghost: 'btn-ghost',
   'ghost-dark': 'btn-ghost-dark',
   outline: 'btn-outline',
+  'outline-on-dark': 'btn-outline-on-dark',
   white: 'btn-white',
 }
 

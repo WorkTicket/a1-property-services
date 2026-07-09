@@ -1,5 +1,5 @@
 /**
- * Upscale a source photo to hero size — no AI, just Lanczos resize + light sharpen.
+ * Upscale a source photo to hero size: no AI, just Lanczos resize + light sharpen.
  * Usage: node scripts/process-hero.mjs [path-to-source-image]
  */
 import sharp from 'sharp'

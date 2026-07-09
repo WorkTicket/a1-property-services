@@ -9,6 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allUrls.map((url) => {
     const path = url.replace(siteConfig.url, '') || '/'
+    const isLegacyLanding =
+      path === '/retaining-wall-in-cedar-falls' ||
+      path === '/paver-patio-installation' ||
+      path === '/cedar-falls-water-features' ||
+      path === '/landscaping-services-in-cedar-falls'
     const isBlog = path.startsWith('/blog/') && path !== '/blog'
     const isLearn = path.startsWith('/learn/') && path !== '/learn'
     const isService = path.startsWith('/services/') && path !== '/services'
@@ -22,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (path === '/') {
       priority = 1.0
       changeFrequency = 'weekly'
+    } else if (isLegacyLanding) {
+      priority = 0.95
+      changeFrequency = 'monthly'
     } else if (isBlog) {
       const blogPost = blogPosts.find((p) => `/blog/${p.slug}` === path)
       if (blogPost) lastModified = new Date(blogPost.date)

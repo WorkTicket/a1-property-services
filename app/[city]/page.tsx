@@ -5,8 +5,8 @@ import { Phone, MapPin, Check, Star, ChevronRight } from 'lucide-react'
 import { cities, getCityBySlug } from '@/lib/cities'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { siteImages } from '@/lib/images'
-import { allServices } from '@/lib/services'
+import { siteImages, getCityHeroImage, getCityIntroImage, getCityWhyImage } from '@/lib/images'
+import { services, hardscapeFeatures, hardscapeServices, getHardscapeFeatureHref } from '@/lib/services'
 import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
@@ -16,7 +16,6 @@ import CtaBanner from '@/components/sections/CtaBanner'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
-import ServiceIcon from '@/components/ui/ServiceIcon'
 import FaqAccordion from '@/components/ui/FaqAccordion'
 import GoogleReviews from '@/components/ui/GoogleReviews'
 
@@ -36,9 +35,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/${city.slug}`,
     keywords: city.metaKeywords,
     absoluteTitle: true,
-    ogImage: '/images/local-hero-image.webp',
-    ogImageAlt: `Landscaping services in ${city.name}, Iowa`,
+    ogImage: getCityHeroImage(city.slug) ?? '/images/local-hero-image.webp',
+    ogImageAlt: `Downtown ${city.name}, Iowa`,
   })
+}
+
+const hardscapeDetailServices = [
+  ...hardscapeServices,
+  services.find((s) => s.slug === 'ponds-water-features')!,
+]
+
+const hardscapeImages: Record<string, string> = {
+  'retaining-walls': siteImages.hardscapeRetainingWalls,
+  'paver-patio': siteImages.hardscapePaverPatio,
+  'ponds-water-features': siteImages.hardscapePondsWaterFeatures,
 }
 
 const trustPoints = [
@@ -62,6 +72,9 @@ const trustPoints = [
 export default function CityPage({ params }: Props) {
   const city = getCityBySlug(params.city)
   if (!city) notFound()
+
+  const introImage = getCityIntroImage(city.slug)
+  const whyImage = getCityWhyImage(city.slug)
 
   const cityJsonLd = {
     '@context': 'https://schema.org',
@@ -117,6 +130,8 @@ export default function CityPage({ params }: Props) {
       />
 
       <PageHero
+        imageSrc={getCityHeroImage(city.slug)}
+        imageAlt={`Downtown ${city.name}, Iowa`}
         eyebrow={city.heroEyebrow}
         title={city.heroTitle}
         subtitle={city.heroSubtitle}
@@ -146,8 +161,8 @@ export default function CityPage({ params }: Props) {
             <FadeIn direction="right" delay={0.1}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <ResponsiveImage
-                  src={siteImages.cityIntro}
-                  alt={`Landscaping project in ${city.name}, Iowa`}
+                  src={introImage.src}
+                  alt={`${introImage.desc} in ${city.name}, Iowa`}
                   fill
                   sizes={IMAGE_SIZES.halfCol}
                 />
@@ -157,35 +172,78 @@ export default function CityPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Signature Work */}
+      <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
+        <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+        <div className="absolute inset-0 bg-brand-green-800/85" />
+        <div className="section-inner relative">
+          <FadeIn className="mb-6 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/80">Signature Work</p>
+            <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
+              Hardscaping in {city.name}
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="grid gap-4 md:grid-cols-4">
+            {hardscapeFeatures.map((f) => (
+              <StaggerItem key={f.slug}>
+                <Link
+                  href={getHardscapeFeatureHref(city.slug, f.slug, f.href)}
+                  className="group block rounded-xl border border-white/20 bg-white/10 p-5 text-white transition-all duration-200 hover:-translate-y-1 hover:bg-white/20"
+                >
+                  <h3 className="text-lg font-bold">{f.name}</h3>
+                  <p className="mt-1 text-sm text-white/70">{f.shortDesc}</p>
+                  <span className="mt-3 flex items-center gap-1 text-xs font-semibold text-white transition-transform duration-300 group-hover:translate-x-1">
+                    View Service <ChevronRight size={12} />
+                  </span>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Specialty Hardscaping */}
       <section className="section bg-brand-stone">
         <div className="section-inner">
           <FadeIn className="text-center">
-            <p className="section-eyebrow">What We Offer in {city.name}</p>
-            <h2 className="section-heading mt-3">Our Services</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-brand-body">{city.servicesIntro}</p>
+            <h2 className="section-heading">Specialty Hardscaping</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-brand-body">
+              Retaining walls, paver patios, and water features built for Iowa winters.
+            </p>
           </FadeIn>
-
-          <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {allServices.slice(0, 9).map((service) => (
+          <StaggerContainer className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {hardscapeDetailServices.map((service) => (
               <StaggerItem key={service.slug}>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="card group flex h-full flex-col gap-4 p-6"
-                >
-                  <ServiceIcon name={service.icon} />
-                  <div>
-                    <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
-                      {service.name}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-brand-body/70">
-                      {service.shortDesc}
-                    </p>
+                <div className="card overflow-hidden">
+                  <div className="card-image relative h-48">
+                    <ResponsiveImage
+                      src={hardscapeImages[service.slug] ?? siteImages.servicesHero}
+                      alt={`${service.name} in ${city.name}, Iowa`}
+                      fill
+                      sizes={IMAGE_SIZES.thirdCol}
+                    />
                   </div>
-                  <span className="mt-auto flex items-center gap-1 text-xs font-semibold text-brand-gold transition-transform duration-300 group-hover:translate-x-1">
-                    Learn More →
-                  </span>
-                </Link>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-brand-dark">{service.name}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-brand-body">
+                      {service.longDesc.slice(0, 180)}&hellip;
+                    </p>
+                    <div className="mt-6 grid gap-2 sm:flex sm:gap-3">
+                      <Button
+                        href={`/${city.slug}/${service.slug}`}
+                        variant="outline"
+                        size="xs"
+                        fullWidth
+                        className="sm:w-auto"
+                      >
+                        {CTA_COPY.learnMore}
+                      </Button>
+                      <Button href="/contact" size="xs" fullWidth className="sm:w-auto">
+                        {CTA_COPY.quote}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -211,8 +269,8 @@ export default function CityPage({ params }: Props) {
             <FadeIn direction="right" delay={0.1}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <ResponsiveImage
-                  src={siteImages.cityWhy}
-                  alt={`A1 Property Services landscaping in ${city.name}`}
+                  src={whyImage.src}
+                  alt={`${whyImage.desc} in ${city.name}, Iowa`}
                   fill
                   sizes={IMAGE_SIZES.halfCol}
                 />
@@ -234,7 +292,7 @@ export default function CityPage({ params }: Props) {
                   </div>
                   <div>
                     <h3 className="font-semibold text-brand-dark">{point.title}</h3>
-                    <p className="mt-1 text-sm text-brand-body/70">{point.desc}</p>
+                    <p className="mt-1 text-sm text-brand-muted">{point.desc}</p>
                   </div>
                 </div>
               </StaggerItem>

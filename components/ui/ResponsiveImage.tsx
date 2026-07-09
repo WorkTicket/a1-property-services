@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
-import { FORMATS, buildSrcset, getImageDimensions } from '@/lib/responsive-image'
+import { FORMATS, buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
 
 type ResponsiveImageProps = {
   src: string
@@ -51,7 +51,7 @@ export default function ResponsiveImage({
         return <source key={format} srcSet={srcset} sizes={sizes} type={type} />
       })}
       <img
-        src={src}
+        src={getVariantUrl(src, 'webp', priority ? 1280 : 768)}
         alt={alt}
         width={fill ? dimensions?.width : width}
         height={fill ? dimensions?.height : height}

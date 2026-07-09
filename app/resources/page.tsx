@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FileText, ChevronRight } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig } from '@/lib/metadata'
 import { blogPosts } from '@/lib/blog'
+import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -100,6 +101,8 @@ export default function ResourcesPage() {
       />
 
       <PageHero
+        imageSrc={siteImages.resourcesHero}
+        imageAlt="Landscaped Cedar Valley front yard with paver walkway and garden beds"
         eyebrow="Helpful Guides"
         title="Landscaping|Resources"
         subtitle="Expert guides, checklists, and articles for Cedar Valley homeowners working on landscape projects."

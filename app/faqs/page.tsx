@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, webPageJsonLd } from '@/lib/metadata'
 import { getFaqPageServices, serviceFaqs, servicesHubFaqs } from '@/lib/services'
 import { getServiceLinksForFaq } from '@/lib/internal-linking'
+import { siteImages } from '@/lib/images'
 import RelatedContent from '@/components/sections/RelatedContent'
 import FaqSectionCta from '@/components/sections/FaqSectionCta'
 import PageHero from '@/components/motion/PageHero'
@@ -46,6 +47,8 @@ export default function FaqsPage() {
       />
 
       <PageHero
+        imageSrc={siteImages.faqsHero}
+        imageAlt="Manicured Cedar Valley backyard with stone patio and garden beds"
         eyebrow="Questions & Answers"
         title="Landscaping|FAQs"
         subtitle="Common questions about our services, processes, and what to expect when you work with A1 Property Services."

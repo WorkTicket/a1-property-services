@@ -55,7 +55,7 @@ export default function QuoteForm({ variant = 'light' }: QuoteFormProps) {
 
   const inputClass = isDark
     ? 'w-full rounded-md border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/40 transition-all duration-200 focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30'
-    : 'w-full rounded-md border border-black/10 bg-neutral-50 px-4 py-3 text-sm text-brand-dark placeholder-brand-body/40 transition-all duration-200 focus:border-brand-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-gold/20'
+    : 'w-full rounded-md border border-black/10 bg-neutral-50 px-4 py-3 text-sm text-brand-dark placeholder-brand-subtle/80 transition-all duration-200 focus:border-brand-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-gold/20'
 
   const labelClass = isDark ? 'text-white/80' : 'text-brand-dark'
 
@@ -168,7 +168,7 @@ export default function QuoteForm({ variant = 'light' }: QuoteFormProps) {
           name="details"
           rows={4}
           placeholder="Briefly describe your project..."
-          className={inputClass}
+          className={`${inputClass} min-h-[120px]`}
           disabled={isSubmitting}
         />
       </div>
@@ -187,7 +187,7 @@ export default function QuoteForm({ variant = 'light' }: QuoteFormProps) {
         {isSubmitting ? 'Sending...' : CTA_COPY.quote}
       </Button>
 
-      <p className={`text-center text-xs ${isDark ? 'text-white/40' : 'text-brand-body/50'}`}>
+      <p className={`text-center text-xs ${isDark ? 'text-white/60' : 'text-brand-subtle'}`}>
         No spam. We&rsquo;ll respond within 1 business day.
       </p>
     </form>

@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
+import { FOUNDING_YEAR } from '@/lib/years-in-business'
 
 export const siteConfig = {
   name: 'A1 Property Services',
   url: 'https://a1pslandscape.com',
   description:
-    'Landscaping in Cedar Falls, IA. Retaining walls, paver patios, lawn care and more. Licensed, insured, free estimates since 2010.',
+    `Landscaping in Cedar Falls, IA. Retaining walls, paver patios, lawn care and more. Licensed, insured, free estimates since ${FOUNDING_YEAR}.`,
   phone: '+13194641889',
   phoneDisplay: '+1 (319) 464-1889',
   email: 'a1propertyservices0219@gmail.com',
@@ -394,6 +395,7 @@ type PageMetadataOptions = {
   title: string
   description?: string
   path?: string
+  canonicalPath?: string
   keywords?: string[]
   ogImage?: string
   ogImageAlt?: string
@@ -408,6 +410,7 @@ export function generatePageMetadata({
   title,
   description,
   path = '',
+  canonicalPath,
   keywords,
   ogImage,
   ogImageAlt,
@@ -420,7 +423,7 @@ export function generatePageMetadata({
   const fullTitle = absoluteTitle
     ? title
     : `${title} | A1 Property Services`
-  const url = `${siteConfig.url}${path}`
+  const url = `${siteConfig.url}${canonicalPath ?? path}`
   const desc = description ?? siteConfig.description
   const imageUrl = ogImage ?? defaultOgImage.url
   const imageAlt = ogImageAlt ?? defaultOgImage.alt
@@ -637,7 +640,7 @@ export const localBusinessJsonLd = {
   url: siteConfig.url,
   telephone: siteConfig.phone,
   email: siteConfig.email,
-  foundingDate: '2009',
+  foundingDate: String(FOUNDING_YEAR),
   sameAs: [siteConfig.social.facebook],
   address: {
     '@type': 'PostalAddress',

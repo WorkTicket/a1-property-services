@@ -6,6 +6,7 @@ import { cities, getCityBySlug } from '@/lib/cities'
 import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
+import { sinceYearPhrase } from '@/lib/years-in-business'
 import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
@@ -164,7 +165,7 @@ export default function CityServicePage({ params }: Props) {
           <h2 className="section-heading">Why {city.name} Homeowners Choose A1 {service.name}</h2>
           <div className="mt-6 space-y-4 leading-relaxed text-brand-body">
             <p>
-              We have been serving {city.name} and the Cedar Valley since 2009. Our {service.name.toLowerCase()} 
+              We have been serving {city.name} and the Cedar Valley {sinceYearPhrase()}. Our {service.name.toLowerCase()} 
               services are built on proper techniques and quality materials that hold up through Iowa winters.
               We provide free on-site estimates, clear timelines, and honest communication from start to finish.
             </p>

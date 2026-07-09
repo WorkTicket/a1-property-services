@@ -55,7 +55,7 @@ export default function ContactPage() {
                 Fill out the form and we&rsquo;ll get back to you within 24 hours with a free quote.
               </p>
 
-              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-brand-body/70">
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-brand-muted">
                 <span className="flex items-center gap-1.5">
                   <Shield size={14} className="text-brand-green-700" /> Licensed &amp; Insured
                 </span>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                     <Phone size={18} className="mt-0.5 shrink-0 text-brand-gold" />
                     <span>
                       <strong>Phone</strong><br />
-                      <a href={`tel:${siteConfig.phone}`} className="text-brand-green-800 transition-colors hover:underline">
+                      <a href={`tel:${siteConfig.phone}`} className="link-touch text-brand-green-800 transition-colors hover:underline">
                         {siteConfig.phoneDisplay}
                       </a>
                     </span>
@@ -103,7 +103,7 @@ export default function ContactPage() {
                     </span>
                   </p>
                 </div>
-                <p className="mt-6 text-xs text-brand-body/50">
+                <p className="mt-6 text-xs text-brand-subtle">
                   <strong>Service Area:</strong> Cedar Falls &middot; Waterloo &middot; Hudson &middot; Cedar Valley, Iowa
                 </p>
               </div>

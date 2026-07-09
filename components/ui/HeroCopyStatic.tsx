@@ -1,6 +1,6 @@
 import { splitHeroTitle } from '@/lib/hero'
 
-/** System-font hero copy — avoids web-font reflow stealing LCP from the hero image. */
+/** System-font hero copy: avoids web-font reflow stealing LCP from the hero image. */
 const SYSTEM_SANS = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
 const SYSTEM_SERIF = 'Georgia, "Times New Roman", serif'
 
