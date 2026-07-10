@@ -611,6 +611,7 @@ export function howToJsonLd(steps: { title: string; description: string }[]) {
   }
 }
 
+/** @deprecated Self-serving AggregateRating/Review on LocalBusiness is ineligible for Google review snippets. Do not emit on this site. */
 export function reviewJsonLd(reviews: { author: string; reviewBody: string; ratingValue: string; datePublished: string }[]) {
   return {
     '@context': 'https://schema.org',
@@ -663,10 +664,13 @@ export function speakableJsonLd(cssSelector: string[]) {
   }
 }
 
-export function buildLocalBusinessJsonLd(reviewStats?: { rating: number; totalCount: number }) {
-  const rating = reviewStats?.rating ?? 5.0
-  const reviewCount = reviewStats?.totalCount ?? 5
-
+/**
+ * LocalBusiness JSON-LD for this site.
+ * Do not include aggregateRating/review: Google disallows self-serving review
+ * markup on a business's own pages (Review snippets → "Invalid object type").
+ * Stars come from Google Business Profile, not on-site schema.
+ */
+export function buildLocalBusinessJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'LandscapingBusiness',
@@ -711,12 +715,6 @@ export function buildLocalBusinessJsonLd(reviewStats?: { rating: number; totalCo
       { '@type': 'Place', name: 'Buchanan County' },
     ],
     priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: rating.toFixed(1),
-      reviewCount: String(reviewCount),
-      bestRating: '5',
-    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -758,7 +756,7 @@ export function buildLocalBusinessJsonLd(reviewStats?: { rating: number; totalCo
   }
 }
 
-/** @deprecated Use buildLocalBusinessJsonLd() with live review stats instead. */
+/** @deprecated Prefer buildLocalBusinessJsonLd() — same payload, no review markup. */
 export const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
 export function webPageJsonLd(options: {

@@ -22,6 +22,9 @@ export function getAllSiteUrls(): string[] {
     '/faqs',
     '/resources',
     '/learn',
+    '/retaining-wall-in-cedar-falls',
+    '/paver-patio-installation',
+    '/cedar-falls-water-features',
     '/landscaping-services-in-cedar-falls',
   ]
   const staticUrls = staticPaths.map((path) => `${base}${path}`)

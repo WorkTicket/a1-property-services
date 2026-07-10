@@ -198,7 +198,7 @@ export default function CityPage({ params }: Props) {
             {hardscapeFeatures.map((f) => (
               <StaggerItem key={f.slug}>
                 <Link
-                  href={getHardscapeFeatureHref(city.slug, f.slug, f.href)}
+                  href={getHardscapeFeatureHref(city.slug, f.slug, f.oldHref)}
                   className="group block rounded-xl border border-white/20 bg-white/10 p-5 text-white transition-all duration-200 hover:-translate-y-1 hover:bg-white/20"
                 >
                   <h3 className="text-lg font-bold">{f.name}</h3>

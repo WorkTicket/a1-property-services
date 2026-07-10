@@ -270,7 +270,7 @@ export const hardscapeFeatures = [
   },
 ]
 
-/** Legacy SEO landing page URLs (redirect to /services/*). */
+/** Legacy SEO landing page URLs (preserved; linked from home/footer). */
 export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
   'retaining-walls': '/retaining-wall-in-cedar-falls',
   'paver-patio': '/paver-patio-installation',
@@ -295,8 +295,11 @@ const hardscapeCitySlugMap: Record<string, string> = {
   'outdoor-living': 'outdoor-living',
 }
 
-/** City hub cards link to /{city}/{service} for all cities. */
-export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, _legacyHref?: string): string {
+/** City hub cards: Cedar Falls hardscape uses legacy ranking URLs; other cities use /{city}/{service}. */
+export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, legacyHref?: string): string {
+  if (citySlug === 'cedar-falls' && legacyHref) {
+    return legacyHref
+  }
   const serviceSlug = hardscapeCitySlugMap[featureSlug] ?? featureSlug
   return `/${citySlug}/${serviceSlug}`
 }

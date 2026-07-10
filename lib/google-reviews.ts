@@ -8,7 +8,7 @@ const staticFallback: GoogleReviewStats = {
   totalCount: 5,
 }
 
-/** Fetches live Google review stats for schema markup. Falls back to static values. */
+/** Fetches live Google review stats. Prefer the /api/reviews UI path for display; do not put these in LocalBusiness JSON-LD (self-serving reviews are ineligible). */
 export async function getGoogleReviewStats(): Promise<GoogleReviewStats> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
   if (!apiKey) return staticFallback

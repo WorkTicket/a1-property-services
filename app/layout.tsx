@@ -7,7 +7,6 @@ import Footer from '@/components/layout/Footer'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
-import { getGoogleReviewStats } from '@/lib/google-reviews'
 
 const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
 const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
@@ -86,13 +85,12 @@ export const viewport: Viewport = {
   themeColor: '#2D5016',
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const reviewStats = await getGoogleReviewStats()
-  const localBusinessJsonLd = buildLocalBusinessJsonLd(reviewStats)
+  const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>

@@ -238,7 +238,7 @@ export default function HomePage() {
           <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3">
             {hardscapeFeatures.slice(0, 3).map((feature) => (
               <StaggerItem key={feature.slug}>
-                <Link href={feature.href} className="card group flex h-full flex-col gap-4 p-6">
+                <Link href={feature.oldHref || feature.href} className="card group flex h-full flex-col gap-4 p-6">
                   <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
                     {feature.name} in Cedar Falls
                   </h3>
