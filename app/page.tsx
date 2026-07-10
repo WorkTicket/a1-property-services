@@ -31,18 +31,19 @@ const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'A1 Property Services | Cedar Falls Hardscaping & Lawn Care',
+  title: 'Landscaping & Hardscaping Cedar Falls | A1 Property Services',
   description:
-    'Cedar Falls hardscaping specialists. Retaining walls, paver patios, water features, lawn care, and full landscape installs. Licensed & insured since 2014. Free estimates.',
+    'Landscaping and hardscaping in Cedar Falls, IA. Retaining walls, paver patios, water features, lawn care, and full landscape installs. Licensed since 2014. Free estimates.',
   path: '/',
   absoluteTitle: true,
   keywords: [
+    'landscaping cedar falls',
+    'cedar falls landscaping',
     'retaining wall cedar falls',
     'paver patio cedar falls',
     'water features cedar falls',
     'hardscaping cedar falls ia',
     'lawn care cedar falls',
-    'snow removal cedar falls',
     'a1 property services',
   ],
   ogImage: '/images/hero-background-image.webp',
@@ -103,11 +104,11 @@ export default function HomePage() {
   const stats = getStats()
 
   const pageSchema = webPageJsonLd({
-    name: 'A1 Property Services | Cedar Falls Hardscaping & Lawn Care',
+    name: 'Landscaping & Hardscaping Cedar Falls | A1 Property Services',
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',
-    about: 'Hardscaping and Lawn Care in Cedar Falls',
+    about: 'Landscaping and Hardscaping in Cedar Falls',
   })
 
   return (
@@ -138,16 +139,16 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'Outdoor Spaces|Cedar Valley Homeowners Are Proud\u00a0Of'}
-              subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
+              title={'Cedar Falls Landscaping|Built to Last'}
+              subtitle="We design, build, and maintain yards you'll actually use — landscaping, paver patios, retaining walls, and full installs for Cedar Valley homeowners."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact">
                 {CTA_COPY.quote}
                 <ChevronRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href="/gallery" variant="ghost">
-                {CTA_COPY.gallery}
+              <Button href="/landscaping-services-in-cedar-falls" variant="ghost">
+                Landscaping Services
               </Button>
             </div>
           </div>
@@ -217,7 +218,10 @@ export default function HomePage() {
             ))}
           </StaggerContainer>
 
-          <FadeIn className="mt-10 text-center" delay={0.15}>
+          <FadeIn className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row" delay={0.15}>
+            <Button href="/landscaping-services-in-cedar-falls" variant="outline">
+              Landscaping in Cedar Falls &rarr;
+            </Button>
             <Button href="/services" variant="outline">
               View All Services &rarr;
             </Button>
@@ -303,12 +307,11 @@ export default function HomePage() {
                 We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button href="/landscaping-services-in-cedar-falls" variant="ghost-dark">
+                  Landscaping Cedar Falls
+                </Button>
                 <Button href="/about" variant="ghost-dark">
                   Our Story
-                </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
-                  <Phone size={16} />
-                  {siteConfig.phoneDisplay}
                 </Button>
               </div>
             </FadeIn>

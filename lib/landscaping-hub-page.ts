@@ -34,26 +34,26 @@ export const landscapingHubPage = {
     'paver patio cedar falls',
     'water features cedar falls',
   ],
-  ogImage: '/images/services-hero.webp',
-  ogImageAlt: 'Landscaping Cedar Falls by A1 Property Services',
-  heroImage: '/images/services-hero.webp',
-  heroImageAlt: 'Landscaping Cedar Falls with professional landscape and hardscape work',
+  ogImage: '/images/content-landscaping-cedar-falls.webp',
+  ogImageAlt: 'Professional landscape installation in Cedar Falls by A1 Property Services',
+  heroImage: '/images/content-landscaping-cedar-falls.webp',
+  heroImageAlt: 'Completed landscaping and hardscape work for a Cedar Falls home',
   contentImage: '/images/content-landscaping-cedar-falls.webp',
   contentImageAlt:
     'Professional landscaping installation in Cedar Falls, Iowa by A1 Property Services',
-  eyebrow: 'Landscaping Cedar Falls',
+  eyebrow: 'Cedar Falls, Iowa',
   h1: 'Landscaping Cedar Falls: Lawn Care, Patios & Retaining Walls',
   heroHeading:
     'Your local landscaping company in Cedar Falls, IA. Serving Waterloo and the Cedar Valley with lawn care, hardscaping, and full landscape installation.',
-  introHeading: 'Landscaping Cedar Falls',
+  introHeading: 'A Local Crew That Knows Cedar Falls Yards',
   introParagraphs: [
     'A1 Property Services is a locally owned landscaping company based in Cedar Falls, Iowa. We help homeowners and businesses across the Cedar Valley with everything from weekly lawn care and seasonal cleanups to retaining walls, paver patios, ponds, and complete landscape installation.',
-    'When you search for landscaping Cedar Falls, you want a contractor who knows Iowa soil, freeze-thaw cycles, and drainage, not a one-size-fits-all approach. Our team plans every project around your property, your budget, and how you actually use your outdoor space.',
-    'Whether you need a single service or a full property transformation, we deliver landscaping in Cedar Falls that looks great on day one and holds up for years. Licensed, insured, and rated 5 stars by local customers.',
+    'When you search for landscaping Cedar Falls, you want a contractor who knows Iowa clay soil, freeze-thaw cycles, and how water moves across Black Hawk County lots — not a one-size-fits-all approach. Our team plans every project around your property, your budget, and how you actually use your outdoor space.',
+    'We regularly work in College Hill, North Cedar, South Cedar Falls, and newer builds on the north end. Whether you need a single service or a full property transformation, we deliver work that looks great on day one and holds up through Iowa winters. Licensed, insured, and rated 5 stars by local customers.',
   ],
-  coreServicesHeading: 'Landscaping Cedar Falls: Core Services',
+  coreServicesHeading: 'Core Services We Provide',
   coreServicesIntro:
-    'Our landscaping Cedar Falls team provides professional installation and maintenance focused on long-term performance, visual appeal, and real property value. From expertly constructed retaining walls to complete landscape installations, we approach every project with careful planning, quality materials, and proven methods built for Iowa\u2019s climate.',
+    'Our Cedar Falls crew focuses on installation and maintenance that lasts — visual appeal, drainage that works, and real property value. From retaining walls built for freeze-thaw to complete landscape installs, every project uses careful planning, quality materials, and methods proven in Iowa\u2019s climate.',
   featuredServices: [
     { label: 'Retaining Wall', href: '/retaining-wall-in-cedar-falls' },
     { label: 'Water Features', href: '/cedar-falls-water-features' },
@@ -62,14 +62,16 @@ export const landscapingHubPage = {
   recentProjects: [
     {
       title: 'Retaining Wall — Cedar Falls Hillside',
-      description: 'Block retaining wall with proper drainage on a sloped Cedar Falls lot.',
+      description:
+        'Block retaining wall with gravel backfill and drain tile on a sloped College Hill–area lot that was washing out after spring thaws.',
       href: '/retaining-wall-in-cedar-falls',
       image: '/images/wall-after-1.webp',
       imageAlt: 'Retaining wall installation on a Cedar Falls hillside',
     },
     {
       title: 'Paver Patio — Cedar Falls Backyard',
-      description: 'Custom paver patio with steps and outdoor living space.',
+      description:
+        'Custom paver patio with steps and outdoor living space — compacted base and edge restraint built for Iowa freeze-thaw.',
       href: '/paver-patio-installation',
       image: '/images/patio-after-2.webp',
       imageAlt: 'Paver patio installation in a Cedar Falls backyard',
@@ -83,15 +85,16 @@ export const landscapingHubPage = {
     },
     {
       title: 'Full Landscape Install — Cedar Valley',
-      description: 'Complete yard transformation with grading, planting, and hardscape.',
+      description:
+        'Complete yard transformation with regrading for clay drainage, planting, and hardscape that ties the whole property together.',
       href: '/gallery',
       image: '/images/landscape-after-1.webp',
       imageAlt: 'Landscape installation project in the Cedar Valley',
     },
   ] satisfies HubRecentProject[],
-  allServicesHeading: 'Full-Service Landscaping in Cedar Falls',
+  allServicesHeading: 'Full-Service Landscape Work for Cedar Falls Homes',
   allServicesIntro:
-    'We offer a full range of landscaping Cedar Falls homeowners and businesses rely on: installation, maintenance, restoration, and seasonal services. Every project uses careful planning, quality materials, and proven methods. Whether residential or commercial, our work is built to perform in Iowa\u2019s climate while delivering lasting visual appeal.',
+    'Homeowners and businesses across the Cedar Valley rely on us for installation, maintenance, restoration, and seasonal work. Every project uses careful planning, quality materials, and proven methods. Whether residential or commercial, our work is built to perform in Iowa\u2019s climate while delivering lasting curb appeal.',
   serviceSections: [
     {
       heading: 'Landscape Installation',
@@ -220,27 +223,27 @@ export const landscapingHubPage = {
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
       answer:
-        'We provide full-service landscaping in Cedar Falls including lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance. Residential and commercial properties throughout the Cedar Valley.',
+        'We provide full-service landscaping including lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance. Residential and commercial properties throughout the Cedar Valley.',
     },
     {
       question: 'How much does landscaping cost in Cedar Falls?',
       answer:
-        'Landscaping costs in Cedar Falls depend on project size, materials, and scope. We provide free on-site estimates with clear, written pricing and no surprises. Contact us to schedule a consultation for your property.',
+        'Costs depend on project size, materials, and scope. We provide free on-site estimates with clear, written pricing and no surprises. Contact us to schedule a consultation for your property.',
     },
     {
       question: 'Do you serve Cedar Falls and the surrounding Cedar Valley?',
       answer:
-        'Yes. We are based in Cedar Falls and serve Waterloo, Hudson, Evansdale, Waverly, and communities across Black Hawk and Bremer counties. Most landscaping Cedar Falls projects are scheduled within a few days of your estimate.',
+        'Yes. We are based in Cedar Falls and serve Waterloo, Hudson, Evansdale, Waverly, and communities across Black Hawk and Bremer counties. Most local projects are scheduled within a few days of your estimate.',
     },
     {
       question: 'What types of properties do you service?',
       answer:
-        'We provide landscaping Cedar Falls services for both residential and commercial properties, including homes, office buildings, retail spaces, and large estates.',
+        'We work on both residential and commercial properties, including homes, office buildings, retail spaces, and large estates throughout Cedar Falls and the Cedar Valley.',
     },
     {
       question: 'Do you offer ongoing maintenance or only one-time services?',
       answer:
-        'We offer both. Schedule routine landscaping maintenance like lawn care and seasonal cleanups, or request one-time projects such as landscape installation, hardscaping, or pond creation.',
+        'We offer both. Schedule routine maintenance like lawn care and seasonal cleanups, or request one-time projects such as landscape installation, hardscaping, or pond creation.',
     },
     {
       question: 'How do I get a quote for my project or maintenance plan?',
@@ -248,10 +251,10 @@ export const landscapingHubPage = {
         'Contact us online or by phone. We\u2019ll assess your Cedar Falls property and provide a detailed, transparent estimate tailored to your needs.',
     },
   ],
-  faqHeading: 'Landscaping Cedar Falls FAQs',
+  faqHeading: 'Frequently Asked Questions',
   contactHeading: 'Contact Your Cedar Falls Landscaper',
   contactIntro:
-    'Ready to start your landscaping Cedar Falls project? Fill out our contact form, send us an email, or call our Cedar Falls office. We respond quickly and provide free estimates.',
+    'Ready to start your project? Fill out our contact form, send us an email, or call our Cedar Falls office. We respond quickly and provide free estimates.',
   closingCopy:
-    'Ready to transform your outdoor space with professional landscaping in Cedar Falls? Our team is here to bring your landscaping dreams to life.',
+    'Ready to transform your outdoor space? Our Cedar Falls team is here to bring your landscape plans to life — from lawn care to full hardscape installs.',
 }

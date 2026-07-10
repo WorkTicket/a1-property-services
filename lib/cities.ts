@@ -29,43 +29,43 @@ export const cities: City[] = [
     county: 'Black Hawk',
     population: '40,000+',
     description:
-      'Professional landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, IA.',
+      'Retaining walls, paver patios, lawn care, and hardscaping services for Cedar Falls, IA homeowners.',
     isCedarValley: true,
     heroEyebrow: 'Cedar Falls \u00b7 Iowa',
-    heroTitle: 'Cedar Falls Landscaping|Local Crew',
+    heroTitle: 'Services in Cedar Falls|Walls, Patios & Lawns',
     heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care for Cedar Falls homeowners since 2014.',
-    metaTitle: 'Cedar Falls Landscaping Crew | A1 Property Services',
+      'Browse the landscaping and hardscaping services we offer Cedar Falls homeowners — then see our full company page for the complete picture.',
+    metaTitle: 'Services in Cedar Falls, IA | A1 Property Services',
     metaDescription:
-      'Local Cedar Falls landscaping crew for retaining walls, paver patios, lawn care, and tree service. Licensed and insured. Free estimates.',
+      'See the retaining walls, paver patios, lawn care, and hardscaping services we offer in Cedar Falls. Local crew, licensed and insured. Free estimates.',
     metaKeywords: [
-      'cedar falls landscaping',
-      'landscaper cedar falls ia',
+      'cedar falls services',
       'retaining wall cedar falls',
       'paver patio cedar falls',
       'lawn care cedar falls',
       'hardscaping cedar falls',
+      'tree service cedar falls',
     ],
-    introHeading: 'Cedar Falls Landscaping for the Cedar Valley',
+    introHeading: 'What We Offer Cedar Falls Homeowners',
     introBody: [
-      'Cedar Falls homeowners hire A1 Property Services for work that holds up through Iowa winters and still looks good every season. Retaining walls on sloped lots, paver patios for the backyard, and everything in between.',
+      'From this page you can jump into the specific services Cedar Falls homeowners hire us for most — retaining walls on sloped lots, paver patios for the backyard, weekly lawn care, and more. Each service page covers how we build for Iowa winters and Black Hawk County soil.',
     ],
     introBody2: [
-      'We\u2019re based here in Cedar Falls, so we know the soil, the drainage, and what grows in Black Hawk County. Weekly mowing, a full yard install, or emergency snow removal. We\u2019re your local crew.',
+      'We\u2019re based here in Cedar Falls, so we know the clay, the drainage, and what grows in College Hill, North Cedar, and South Cedar Falls. For the full overview of our landscaping company — process, projects, and FAQs — visit our dedicated landscaping hub.',
     ],
     servicesIntro:
-      'We offer a full range of landscaping, hardscaping, and property services for Cedar Falls homeowners and businesses.',
+      'Pick a service below to learn how we handle it in Cedar Falls, or open our full landscaping hub for the complete company overview.',
     uniqueContent: {
       heading: 'Why Cedar Falls Homeowners Choose A1',
       body: 'Cedar Falls has its own character, from the historic neighborhoods near the college to the newer builds on the north end. We\u2019ve worked in all of them. Our crews show up on time, talk straight, and don\u2019t leave until the job is done right. That\u2019s kept us busy here for over 15 years.',
     },
     faqs: [
       {
-        q: 'What landscaping services do you offer in Cedar Falls?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, ponds and water features, and snow removal for Cedar Falls residential and commercial properties.',
+        q: 'What services do you offer in Cedar Falls?',
+        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, ponds and water features, and snow removal for Cedar Falls residential and commercial properties. See our landscaping hub for the full company overview.',
       },
       {
-        q: 'How much does landscaping cost in Cedar Falls?',
+        q: 'How much does a project cost in Cedar Falls?',
         a: 'Every project is different. We provide free on-site estimates for Cedar Falls properties. Call us or fill out our quote form and we will give you honest, upfront pricing within 24 hours.',
       },
       {

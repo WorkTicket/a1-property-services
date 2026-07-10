@@ -156,13 +156,26 @@ export default function CityPage({ params }: Props) {
                 </p>
               ) : null}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/contact">
-                  {CTA_COPY.quote}
-                </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
-                  <Phone size={16} />
-                  {siteConfig.phoneDisplay}
-                </Button>
+                {city.slug === 'cedar-falls' ? (
+                  <>
+                    <Button href={landscapingHubPath}>
+                      View Landscaping Cedar Falls
+                    </Button>
+                    <Button href="/contact" variant="ghost-dark">
+                      {CTA_COPY.quote}
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button href="/contact">
+                      {CTA_COPY.quote}
+                    </Button>
+                    <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
+                      <Phone size={16} />
+                      {siteConfig.phoneDisplay}
+                    </Button>
+                  </>
+                )}
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>

@@ -77,7 +77,8 @@ export default function Navbar() {
   const [headerHeight, setHeaderHeight] = useState(72)
 
   const isCompact = scrolled
-  const isServicesActive = pathname.startsWith('/services')
+  const isServicesActive =
+    pathname.startsWith('/services') || pathname === '/landscaping-services-in-cedar-falls'
   const isLearnActive = learnLinks.some((link) => pathname === link.href)
   const activeCategoryMeta = serviceCategories.find((c) => c.key === activeServiceCategory)
   const activeCategoryServices = getCategoryServices(activeServiceCategory)
@@ -237,6 +238,18 @@ export default function Navbar() {
             )}
           >
             <div className="overflow-hidden border-l-2 border-brand-gold/30 pl-4">
+              <Link
+                href="/landscaping-services-in-cedar-falls"
+                className={cn(
+                  'block py-2 text-base font-semibold',
+                  pathname === '/landscaping-services-in-cedar-falls'
+                    ? 'text-brand-gold'
+                    : 'text-brand-dark',
+                )}
+                onClick={() => { setMobileOpen(false); trackNavigation('Mobile Landscaping Hub') }}
+              >
+                Landscaping
+              </Link>
               <Link
                 href="/services"
                 className="block py-2 text-base font-semibold text-brand-gold"
@@ -454,6 +467,19 @@ export default function Navbar() {
                   </div>
                   <div className="flex shrink-0 items-center gap-2">
                     <Link
+                      href="/landscaping-services-in-cedar-falls"
+                      className={cn(
+                        'group inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-colors hover:bg-brand-green-100',
+                        pathname === '/landscaping-services-in-cedar-falls'
+                          ? 'text-brand-gold'
+                          : 'text-brand-dark hover:text-brand-gold',
+                      )}
+                      onClick={() => { setServicesOpen(false); trackNavigation('Nav Landscaping Hub') }}
+                    >
+                      Landscaping
+                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <Link
                       href="/services"
                       className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-brand-gold transition-colors hover:bg-brand-green-100"
                       onClick={() => setServicesOpen(false)}
@@ -530,6 +556,41 @@ export default function Navbar() {
                         activeCategoryServices.length > 8 && 'max-h-[280px] overflow-y-auto overscroll-contain pr-0.5',
                       )}
                     >
+                      {activeServiceCategory === 'landscaping' ? (
+                        <li className="sm:col-span-2">
+                          <Link
+                            href="/landscaping-services-in-cedar-falls"
+                            className={cn(
+                              'group flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition-all duration-200',
+                              pathname === '/landscaping-services-in-cedar-falls'
+                                ? 'border-brand-gold/30 bg-brand-green-50 shadow-sm'
+                                : 'border-transparent hover:border-black/[0.06] hover:bg-white hover:shadow-sm',
+                            )}
+                            onClick={() => { setServicesOpen(false); trackNavigation('Nav Landscaping Hub List') }}
+                          >
+                            <span
+                              className={cn(
+                                'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors',
+                                pathname === '/landscaping-services-in-cedar-falls'
+                                  ? 'border-brand-gold/30 bg-white text-brand-gold'
+                                  : 'border-brand-green-200/80 text-brand-gold group-hover:border-brand-gold/25 group-hover:bg-white',
+                              )}
+                            >
+                              <Trees size={15} strokeWidth={2} aria-hidden />
+                            </span>
+                            <span
+                              className={cn(
+                                'text-sm leading-snug transition-colors',
+                                pathname === '/landscaping-services-in-cedar-falls'
+                                  ? 'font-semibold text-brand-gold'
+                                  : 'font-semibold text-brand-dark group-hover:text-brand-gold',
+                              )}
+                            >
+                              Full Landscaping Services in Cedar Falls
+                            </span>
+                          </Link>
+                        </li>
+                      ) : null}
                       {activeCategoryServices.map((service: Service) => {
                         const isServiceActive =
                           pathname === `/services/${service.slug}` ||
