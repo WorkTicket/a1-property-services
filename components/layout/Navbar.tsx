@@ -556,41 +556,6 @@ export default function Navbar() {
                         activeCategoryServices.length > 8 && 'max-h-[280px] overflow-y-auto overscroll-contain pr-0.5',
                       )}
                     >
-                      {activeServiceCategory === 'landscaping' ? (
-                        <li className="sm:col-span-2">
-                          <Link
-                            href="/landscaping-services-in-cedar-falls"
-                            className={cn(
-                              'group flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition-all duration-200',
-                              pathname === '/landscaping-services-in-cedar-falls'
-                                ? 'border-brand-gold/30 bg-brand-green-50 shadow-sm'
-                                : 'border-transparent hover:border-black/[0.06] hover:bg-white hover:shadow-sm',
-                            )}
-                            onClick={() => { setServicesOpen(false); trackNavigation('Nav Landscaping Hub List') }}
-                          >
-                            <span
-                              className={cn(
-                                'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors',
-                                pathname === '/landscaping-services-in-cedar-falls'
-                                  ? 'border-brand-gold/30 bg-white text-brand-gold'
-                                  : 'border-brand-green-200/80 text-brand-gold group-hover:border-brand-gold/25 group-hover:bg-white',
-                              )}
-                            >
-                              <Trees size={15} strokeWidth={2} aria-hidden />
-                            </span>
-                            <span
-                              className={cn(
-                                'text-sm leading-snug transition-colors',
-                                pathname === '/landscaping-services-in-cedar-falls'
-                                  ? 'font-semibold text-brand-gold'
-                                  : 'font-semibold text-brand-dark group-hover:text-brand-gold',
-                              )}
-                            >
-                              Full Landscaping Services in Cedar Falls
-                            </span>
-                          </Link>
-                        </li>
-                      ) : null}
                       {activeCategoryServices.map((service: Service) => {
                         const isServiceActive =
                           pathname === `/services/${service.slug}` ||
