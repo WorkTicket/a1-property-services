@@ -508,7 +508,15 @@ export function breadcrumbJsonLd(items: { name: string; path?: string }[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      ...(item.path ? { item: `${siteConfig.url}${item.path}` } : {}),
+      ...(item.path
+        ? {
+            item: {
+              '@type': 'WebPage',
+              '@id': `${siteConfig.url}${item.path === '/' ? '' : item.path}`,
+              name: item.name,
+            },
+          }
+        : {}),
     })),
   }
 }
@@ -578,8 +586,12 @@ export function itemListJsonLd(items: { name: string; url: string }[]) {
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: item.name,
-      url: item.url,
+      item: {
+        '@type': 'WebPage',
+        '@id': item.url,
+        name: item.name,
+        url: item.url,
+      },
     })),
   }
 }
@@ -587,21 +599,28 @@ export function itemListJsonLd(items: { name: string; url: string }[]) {
 export function jsonLdGraph(...schemas: object[]) {
   return {
     '@context': 'https://schema.org',
-    '@graph': schemas.map((schema) => {
-      const { '@context': _, ...rest } = schema as Record<string, unknown> & {
-        '@context'?: string
-      }
-      return rest
-    }),
+    '@graph': schemas
+      .map((schema) => {
+        const { '@context': _, ...rest } = schema as Record<string, unknown> & {
+          '@context'?: string
+        }
+        return rest
+      })
+      .filter((schema) => Boolean(schema['@type'])),
   }
 }
 
-export function howToJsonLd(steps: { title: string; description: string }[]) {
+export function howToJsonLd(
+  steps: { title: string; description: string }[],
+  options?: { name?: string; description?: string },
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'How to Plan Your Landscaping Project',
-    description: 'Steps to plan and execute your landscaping or hardscaping project.',
+    name: options?.name ?? 'How to Plan Your Landscaping Project',
+    description:
+      options?.description ??
+      'Steps to plan and execute your landscaping or hardscaping project.',
     step: steps.map((step, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
@@ -671,18 +690,38 @@ export function speakableJsonLd(cssSelector: string[]) {
  * Stars come from Google Business Profile, not on-site schema.
  */
 export function buildLocalBusinessJsonLd() {
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${siteConfig.googlePlaceId}`
+  const offerServices: { name: string; path: string }[] = [
+    { name: 'Landscaping in Cedar Falls', path: '/landscaping-services-in-cedar-falls' },
+    { name: 'Retaining Wall Installation in Cedar Falls', path: '/retaining-wall-in-cedar-falls' },
+    { name: 'Paver Patio Installation in Cedar Falls', path: '/paver-patio-installation' },
+    { name: 'Water Features Installation in Cedar Falls', path: '/cedar-falls-water-features' },
+    { name: 'Lawn Care in Cedar Falls', path: '/services/lawn-care' },
+    { name: 'Snow Removal in Cedar Falls', path: '/services/snow-removal' },
+    { name: 'Drainage Solutions in Cedar Falls', path: '/services/drainage' },
+    { name: 'Landscape Design in Cedar Falls', path: '/services/landscape-design' },
+    { name: 'Outdoor Living Spaces in Cedar Falls', path: '/services/outdoor-living' },
+    { name: 'Commercial Landscaping in Cedar Falls', path: '/services/commercial-landscaping' },
+  ]
+
   return {
     '@context': 'https://schema.org',
     '@type': 'LandscapingBusiness',
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
-    image: `${siteConfig.url}/og-image.jpg`,
-    logo: `${siteConfig.url}/images/icon.webp`,
+    image: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/og-image.jpg`,
+    },
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/icon.webp`,
+    },
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     foundingDate: String(FOUNDING_YEAR),
-    sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness],
+    sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
@@ -697,34 +736,39 @@ export function buildLocalBusinessJsonLd() {
       longitude: -92.4455,
     },
     areaServed: [
-      { '@type': 'City', name: 'Cedar Falls' },
-      { '@type': 'City', name: 'Waterloo' },
-      { '@type': 'City', name: 'Hudson' },
-      { '@type': 'City', name: 'Evansdale' },
-      { '@type': 'City', name: 'Waverly' },
-      { '@type': 'City', name: 'Denver' },
-      { '@type': 'City', name: 'Jesup' },
-      { '@type': 'City', name: 'Parkersburg' },
-      { '@type': 'City', name: 'La Porte City' },
-      { '@type': 'City', name: 'Dike' },
-      { '@type': 'Place', name: 'Cedar Valley' },
-      { '@type': 'Place', name: 'Black Hawk County' },
-      { '@type': 'Place', name: 'Bremer County' },
-      { '@type': 'Place', name: 'Grundy County' },
-      { '@type': 'Place', name: 'Butler County' },
-      { '@type': 'Place', name: 'Buchanan County' },
+      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Hudson', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Evansdale', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Waverly', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Denver', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Jesup', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Parkersburg', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'La Porte City', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Dike', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'AdministrativeArea', name: 'Black Hawk County' },
+      { '@type': 'AdministrativeArea', name: 'Bremer County' },
+      { '@type': 'AdministrativeArea', name: 'Grundy County' },
+      { '@type': 'AdministrativeArea', name: 'Butler County' },
+      { '@type': 'AdministrativeArea', name: 'Buchanan County' },
     ],
     priceRange: '$$',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: [
+          'https://schema.org/Monday',
+          'https://schema.org/Tuesday',
+          'https://schema.org/Wednesday',
+          'https://schema.org/Thursday',
+          'https://schema.org/Friday',
+        ],
         opens: '07:00',
         closes: '18:00',
       },
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
+        dayOfWeek: 'https://schema.org/Saturday',
         opens: '08:00',
         closes: '13:00',
       },
@@ -734,24 +778,29 @@ export function buildLocalBusinessJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: ['US'],
-      availableLanguage: ['English'],
+      areaServed: { '@type': 'Country', name: 'US' },
+      availableLanguage: 'English',
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Landscaping and Hardscaping Services',
-      itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscaping in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retaining Wall Installation in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paver Patio Installation in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Features Installation in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Care in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Snow Removal in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drainage Solutions in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape Design in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outdoor Living Spaces in Cedar Falls' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Landscaping in Cedar Falls' } },
-      ],
+      // Use ListItem → Service (not bare Offer) so validators don't flag
+      // missing Offer.price / priceCurrency on every page.
+      itemListElement: offerServices.map((service, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Service',
+          name: service.name,
+          url: `${siteConfig.url}${service.path}`,
+          provider: { '@id': `${siteConfig.url}/#organization` },
+          areaServed: {
+            '@type': 'City',
+            name: 'Cedar Falls',
+            containedInPlace: { '@type': 'State', name: 'Iowa' },
+          },
+        },
+      })),
     },
   }
 }
@@ -827,13 +876,17 @@ export function blogPostingJsonLd(post: {
 }
 
 export function organizationJsonLd() {
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${siteConfig.googlePlaceId}`
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${siteConfig.url}/#organization`,
+    '@id': `${siteConfig.url}/#brand`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/icon.webp`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/icon.webp`,
+    },
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
@@ -848,10 +901,10 @@ export function organizationJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: ['US'],
-      availableLanguage: ['English'],
+      areaServed: { '@type': 'Country', name: 'US' },
+      availableLanguage: 'English',
     },
-    sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness],
+    sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],
   }
 }
 

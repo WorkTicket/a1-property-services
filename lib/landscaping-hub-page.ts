@@ -17,7 +17,7 @@ export type HubRecentProject = {
 
 export const landscapingHubPage = {
   path: '/landscaping-services-in-cedar-falls',
-  title: 'Landscaping Cedar Falls IA | 5-Star Rated | Free Estimates',
+  title: 'Landscaping Cedar Falls | Lawn Care & Patios',
   description:
     'Top-rated landscaping in Cedar Falls, IA. Retaining walls, patios, lawn care & full installs. Licensed since 2014. 5-star Google rating. Free estimates — call (319) 464-1889.',
   keywords: [

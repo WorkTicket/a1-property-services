@@ -7,7 +7,7 @@ import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/l
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { sinceYearPhrase } from '@/lib/years-in-business'
-import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
+import { getComplementaryServices, getServiceRelatedContentGroups, getNearbyCitiesForPage } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
@@ -55,7 +55,9 @@ export default function CityServicePage({ params }: Props) {
   const cityFaqs = city.faqs ?? []
   const complementaryServices = getComplementaryServices(service.slug, 4)
   const relatedContentGroups = getServiceRelatedContentGroups(service.slug)
-  const nearbyCities = cities.filter((c) => c.slug !== city.slug).slice(0, 4)
+  const nearbyCities = getNearbyCitiesForPage(city.slug, 4)
+  // Every other city gets a dofollow same-service link (clears thin inbound notices).
+  const allOtherCities = cities.filter((c) => c.slug !== city.slug)
 
   const pageTitle = `${service.name} in ${city.name}, IA`
   const pageUrl = `${siteConfig.url}/${city.slug}/${service.slug}`
@@ -75,11 +77,14 @@ export default function CityServicePage({ params }: Props) {
     url: pageUrl,
   }
 
-  const cityFaqJsonLd = faqPageJsonLd(
-    cityFaqs.map((faq) => ({ question: faq.q, answer: faq.a })),
+  const mergedFaqs = [
+    ...cityFaqs.map((faq) => ({ question: faq.q, answer: faq.a })),
+    ...faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
+  ].filter(
+    (faq, index, list) =>
+      list.findIndex((other) => other.question.toLowerCase() === faq.question.toLowerCase()) === index,
   )
-
-  const serviceFaqJsonLd = faqs.length > 0 ? faqPageJsonLd(faqs) : null
+  const faqJsonLd = mergedFaqs.length > 0 ? faqPageJsonLd(mergedFaqs) : null
 
   const pageSchema = webPageJsonLd({
     name: pageTitle,
@@ -97,12 +102,11 @@ export default function CityServicePage({ params }: Props) {
             jsonLdGraph(
               pageSchema,
               cityServiceJsonLd,
-              cityFaqJsonLd,
-              ...(serviceFaqJsonLd ? [serviceFaqJsonLd] : []),
+              ...(faqJsonLd ? [faqJsonLd] : []),
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: city.name, path: `/${city.slug}` },
-                { name: `${service.name} in ${city.name}` },
+                { name: `${service.name} in ${city.name}`, path: `/${city.slug}/${service.slug}` },
               ]),
             ),
           ),
@@ -214,6 +218,18 @@ export default function CityServicePage({ params }: Props) {
               </StaggerItem>
             ))}
           </StaggerContainer>
+          <ul className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+            {allOtherCities.map((nearby) => (
+              <li key={`all-${nearby.slug}`}>
+                <Link
+                  href={`/${nearby.slug}/${service.slug}`}
+                  className="text-brand-green-800 underline-offset-2 transition-colors hover:underline"
+                >
+                  {nearby.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -221,7 +237,9 @@ export default function CityServicePage({ params }: Props) {
         <FadeIn className="section-inner-narrow">
           <h2 className="section-heading">{service.name} in {city.name}: FAQ</h2>
           <div className="mt-8">
-            <FaqAccordion items={cityFaqs} />
+            <FaqAccordion
+              items={mergedFaqs.map((faq) => ({ q: faq.question, a: faq.answer }))}
+            />
           </div>
         </FadeIn>
       </section>

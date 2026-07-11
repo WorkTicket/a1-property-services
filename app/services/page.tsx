@@ -20,7 +20,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'All Landscaping & Hardscaping Services',
+  title: 'Landscaping & Hardscaping Services',
   description:
     'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, IA — retaining walls, patios, lawn care, tree service, snow removal, and more.',
   path: '/services',
@@ -96,7 +96,7 @@ export default function ServicesPage() {
   }
 
   const pageSchema = webPageJsonLd({
-    name: 'All Landscaping & Hardscaping Services',
+    name: 'Landscaping & Hardscaping Services | A1 Property Services',
     description: 'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, IA.',
     path: '/services',
     image: '/images/services-hero.webp',
@@ -163,7 +163,7 @@ export default function ServicesPage() {
 
       <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
         <div className="absolute inset-0" aria-hidden="true">
-          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="Landscape installation work by A1 Property Services in Cedar Falls" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
         </div>
         <div className="absolute inset-0 bg-brand-green-800/85" />
         <div className="section-inner relative">

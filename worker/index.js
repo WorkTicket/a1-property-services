@@ -33,6 +33,23 @@ export default {
       })
     }
 
+    // Canonical host: www → apex (avoids duplicate crawl + 3XX noise)
+    if (url.hostname === 'www.a1pslandscape.com') {
+      const destination = `https://a1pslandscape.com${path}${url.search}${url.hash}`
+      return Response.redirect(destination, 301)
+    }
+
+    // Prefer HTTPS if a request somehow arrives over HTTP at the worker
+    if (url.protocol === 'http:') {
+      return Response.redirect(`https://a1pslandscape.com${path}${url.search}${url.hash}`, 301)
+    }
+
+    // Drop trailing slashes (except homepage) so internal links never land on a redirect
+    if (path.length > 1 && path.endsWith('/')) {
+      const destination = `https://a1pslandscape.com${path.replace(/\/+$/, '')}${url.search}${url.hash}`
+      return Response.redirect(destination, 301)
+    }
+
     // Drop legacy WordPress AMP query variants (?amp, ?amp=1)
     if (url.searchParams.has('amp')) {
       url.searchParams.delete('amp')

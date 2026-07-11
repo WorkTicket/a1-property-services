@@ -84,7 +84,7 @@ export default function LandscapingHubLanding() {
               localBusinessServiceJsonLd,
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
-                { name: 'Landscaping Cedar Falls' },
+                { name: 'Landscaping Cedar Falls', path: page.path },
               ]),
               faqPageJsonLd(page.faqs),
             ),

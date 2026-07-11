@@ -37,7 +37,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'retaining-wall-in-cedar-falls': {
     path: '/retaining-wall-in-cedar-falls',
     serviceSlug: 'retaining-walls',
-    title: 'Retaining Wall Installation in Cedar Falls',
+    title: 'Retaining Wall Installation Cedar Falls, IA | Free Quote',
     description:
       'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates. Licensed and insured.',
     keywords: [
@@ -83,7 +83,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'paver-patio-installation': {
     path: '/paver-patio-installation',
     serviceSlug: 'paver-patio',
-    title: 'Paver Patio Installation in Cedar Falls',
+    title: 'Paver Patio Installation Cedar Falls, IA | 5-Star Rated',
     description:
       'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates. Licensed and insured.',
     keywords: [

@@ -72,7 +72,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Services', path: '/services' },
-                { name: page.h1 },
+                { name: page.h1, path: page.path },
               ]),
             ),
           ),

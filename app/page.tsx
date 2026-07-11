@@ -31,9 +31,9 @@ const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Landscaping & Hardscaping Cedar Falls | A1 Property Services',
+  title: 'Cedar Falls Landscaping | A1 Property Services',
   description:
-    'Landscaping and hardscaping in Cedar Falls, IA. Retaining walls, paver patios, water features, lawn care, and full landscape installs. Licensed since 2014. Free estimates.',
+    'Cedar Falls landscaping & hardscaping: retaining walls, paver patios, water features & lawn care. 5-star rated, licensed & insured. Free quotes.',
   path: '/',
   absoluteTitle: true,
   keywords: [
@@ -104,7 +104,7 @@ export default function HomePage() {
   const stats = getStats()
 
   const pageSchema = webPageJsonLd({
-    name: 'Landscaping & Hardscaping Cedar Falls | A1 Property Services',
+    name: 'Cedar Falls Landscaping | A1 Property Services',
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',

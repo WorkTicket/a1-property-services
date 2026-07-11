@@ -71,7 +71,7 @@ export default function BlogPostPage({ params }: Props) {
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Blog', path: '/blog' },
-                { name: post.title },
+                { name: post.title, path: `/blog/${post.slug}` },
               ]),
             ),
           ),

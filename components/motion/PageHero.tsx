@@ -25,7 +25,7 @@ type PageHeroProps = {
 
 export default function PageHero({
   imageSrc,
-  imageAlt = '',
+  imageAlt,
   eyebrow,
   title,
   subtitle,
@@ -33,6 +33,9 @@ export default function PageHero({
   align = 'center',
 }: PageHeroProps) {
   const usePhoto = Boolean(imageSrc)
+  const resolvedAlt =
+    imageAlt?.trim() ||
+    (usePhoto ? 'Landscaping and hardscaping work in Cedar Falls, Iowa' : '')
   const isLeft = align === 'center' ? false : align === 'left'
 
   return (
@@ -44,7 +47,7 @@ export default function PageHero({
           <HeroImagePreload src={imageSrc} />
           <LcpHeroImage
             src={imageSrc}
-            alt={imageAlt}
+            alt={resolvedAlt}
           />
           <HeroOverlay
             imageSrc={imageSrc}

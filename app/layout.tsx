@@ -34,7 +34,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    default: 'Cedar Falls Landscaping | A1 Property Services',
     template: '%s | A1 Property Services',
   },
   description: siteConfig.description,
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     ...defaultOpenGraph,
-    title: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    title: 'Cedar Falls Landscaping | A1 Property Services',
     description: siteConfig.description,
     url: siteConfig.url,
   },
   twitter: {
     ...defaultTwitter,
-    title: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    title: 'Cedar Falls Landscaping | A1 Property Services',
     description: siteConfig.description,
   },
   ...(googleSiteVerification || bingSiteVerification

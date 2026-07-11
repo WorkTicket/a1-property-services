@@ -117,7 +117,7 @@ export default function CityPage({ params }: Props) {
               faqJsonLd,
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
-                { name: city.name },
+                { name: city.name, path: `/${city.slug}` },
               ]),
             ),
           ),
@@ -197,7 +197,7 @@ export default function CityPage({ params }: Props) {
       {/* Signature Work */}
       <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
         <div className="absolute inset-0" aria-hidden="true">
-          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="Landscape installation work by A1 Property Services" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
         </div>
         <div className="absolute inset-0 bg-brand-green-800/85" />
         <div className="section-inner relative">

@@ -27,7 +27,7 @@ export type RelatedContentGroup = {
 /** Curated services that pair well together: shown as "Other Landscaping Services" on service pages. */
 const complementaryServiceSlugs: Record<string, string[]> = {
   'landscape-maintenance': ['landscape-installation', 'lawn-care', 'preservation-restoration'],
-  'landscape-installation': ['landscape-design', 'mulching', 'shrub-installation'],
+  'landscape-installation': ['landscape-design', 'mulching', 'rock-landscaping', 'shrub-installation'],
   'lawn-care': ['landscape-maintenance', 'hydroseeding', 'sod-installation'],
   'preservation-restoration': ['landscape-installation', 'landscape-maintenance', 'tree-service'],
   'tree-service': ['tree-planting', 'shrub-installation', 'landscape-maintenance'],
@@ -35,7 +35,7 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'hydroseeding': ['sod-installation', 'lawn-care', 'grading'],
   'snow-removal': ['landscape-maintenance', 'commercial-landscaping', 'lawn-care'],
   'landscape-design': ['landscape-installation', 'outdoor-living', 'residential-landscaping'],
-  'drainage': ['excavation', 'grading', 'retaining-walls'],
+  'drainage': ['excavation', 'grading', 'rock-landscaping', 'retaining-walls'],
   'excavation': ['grading', 'drainage', 'sod-installation'],
   'sod-installation': ['lawn-care', 'hydroseeding', 'landscape-installation'],
   'mulching': ['landscape-maintenance', 'shrub-installation', 'landscape-installation'],
@@ -46,7 +46,7 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'residential-landscaping': ['landscape-design', 'landscape-installation', 'landscape-maintenance'],
   'grading': ['excavation', 'drainage', 'sod-installation'],
   'outdoor-living': ['paver-patio', 'ponds-water-features', 'landscape-design'],
-  'retaining-walls': ['drainage', 'excavation', 'paver-patio'],
+  'retaining-walls': ['drainage', 'excavation', 'rock-landscaping', 'paver-patio'],
   'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
 }
 
@@ -108,6 +108,15 @@ export function getComplementaryServices(serviceSlug: string, limit = 3): Servic
   return [...sameCategory, ...others].slice(0, limit)
 }
 
+/** Rotate nearby cities so every city receives inbound city×service links. */
+export function getNearbyCitiesForPage(citySlug: string, limit = 4) {
+  const others = cities.filter((c) => c.slug !== citySlug)
+  if (others.length === 0) return []
+  const start = Math.max(0, cities.findIndex((c) => c.slug === citySlug))
+  const rotated = [...others.slice(start % others.length), ...others.slice(0, start % others.length)]
+  return rotated.slice(0, limit)
+}
+
 export function getRelatedServices(serviceSlug: string, limit = 4): LinkedContent[] {
   return getComplementaryServices(serviceSlug, limit).map(s => toLinked({
     type: 'service',
@@ -150,11 +159,14 @@ export function getBlogsForService(serviceSlug: string, limit = 3): LinkedConten
 }
 
 export function getCitiesForService(serviceSlug: string): LinkedContent[] {
+  const service = allServices.find(s => s.slug === serviceSlug)
+  const serviceLabel = service?.name ?? serviceSlug.replace(/-/g, ' ')
+
   return cities.map(c => toLinked({
     type: 'city',
     slug: c.slug,
-    title: c.name,
-    excerpt: `${serviceSlug.replace(/-/g, ' ')} in ${c.name}`,
+    title: `${serviceLabel} in ${c.name}`,
+    excerpt: `${serviceLabel} for homes and businesses in ${c.name}, Iowa`,
     url: cityServiceUrl(c.slug, serviceSlug),
     relevance: 5,
   }))
@@ -207,6 +219,11 @@ export function getServiceRelatedContentGroups(serviceSlug: string): RelatedCont
 
   const learn = getLearnForService(serviceSlug)
   if (learn.length > 0) groups.push({ heading: 'Knowledge Center', items: learn })
+
+  const cityPages = getCitiesForService(serviceSlug).slice(0, 6)
+  if (cityPages.length > 0) {
+    groups.push({ heading: 'Service Areas', items: cityPages })
+  }
 
   return groups
 }

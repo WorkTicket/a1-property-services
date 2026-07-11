@@ -80,11 +80,18 @@ export default function LearnArticlePage({ params }: Props) {
           __html: JSON.stringify(
             jsonLdGraph(
               pageSchema,
-              article.category === 'educational' || article.category === 'buying-guide' ? howToJsonLd(howToSteps) : {},
+              ...(article.category === 'educational' || article.category === 'buying-guide'
+                ? [
+                    howToJsonLd(howToSteps, {
+                      name: article.title,
+                      description: article.excerpt,
+                    }),
+                  ]
+                : []),
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Learn', path: '/learn' },
-                { name: article.title },
+                { name: article.title, path: `/learn/${article.slug}` },
               ]),
             ),
           ),
@@ -154,7 +161,6 @@ export default function LearnArticlePage({ params }: Props) {
           <StaggerContainer className="grid gap-8 lg:grid-cols-2">
             {learnArticles
               .filter((a) => a.slug !== article.slug)
-              .slice(0, 6)
               .map((a) => {
                 const RelatedIcon = categoryIcons[a.category] || FileText
                 return (

@@ -161,10 +161,17 @@ export default function ServicePage({ params }: Props) {
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Services', path: '/services' },
-                { name: serviceName },
+                { name: serviceName, path: `/services/${params.slug}` },
               ]),
               ...(faqJsonLd ? [faqJsonLd] : []),
-              howToJsonLd(processSteps),
+              ...(processSteps.length > 0
+                ? [
+                    howToJsonLd(processSteps, {
+                      name: `How We Deliver ${service.name} in Cedar Falls`,
+                      description: `Our step-by-step process for ${service.name.toLowerCase()} projects in Cedar Falls and the Cedar Valley.`,
+                    }),
+                  ]
+                : []),
             ),
           ),
         }}
