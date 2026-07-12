@@ -83,9 +83,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'paver-patio-installation': {
     path: '/paver-patio-installation',
     serviceSlug: 'paver-patio',
-    title: 'Paver Patio Installation Cedar Falls, IA | 5-Star Rated',
+    title: 'Paver Patio Installation Cedar Falls | Free Quote',
     description:
-      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates. Licensed and insured.',
+      'Custom paver patio installation in Cedar Falls, IA. Built for Iowa freeze-thaw. Call (319) 464-1889 for a free estimate.',
     keywords: [
       'paver patio cedar falls',
       'paver patio installation cedar falls',

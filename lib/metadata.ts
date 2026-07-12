@@ -91,9 +91,9 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ogImageAlt: 'Retaining wall installation in Cedar Falls, Iowa',
   },
   'paver-patio': {
-    title: 'Paver Patio Installation in Cedar Falls',
+    title: 'Paver Patio Installation Cedar Falls | Free Quote',
     description:
-      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates. Licensed and insured.',
+      'Custom paver patio installation in Cedar Falls, IA. Built for Iowa freeze-thaw. Call (319) 464-1889 for a free estimate.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -109,12 +109,14 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ogImageAlt: 'Paver patio installation in Cedar Falls, Iowa',
   },
   'landscape-installation': {
-    title: 'Landscape Installation in Cedar Falls',
+    title: 'Landscape Plantings Cedar Falls, IA | Free Estimate',
     description:
-      'Professional landscape installation in Cedar Falls, IA. Custom design, grading, planting, and hardscape integration. Licensed and insured, with free estimates.',
+      'Professional landscape plantings in Cedar Falls, IA. Beds, shrubs & trees for Iowa yards. Call (319) 464-1889 for a free estimate.',
     h1: 'Landscape Installation in Cedar Falls',
     keywords: [
       'landscape installation cedar falls',
+      'plantings cedar falls ia',
+      'landscape plantings cedar falls',
       'landscaping cedar falls ia',
       'landscape contractor cedar falls',
       'landscape design cedar falls',
