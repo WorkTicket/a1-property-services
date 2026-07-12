@@ -138,8 +138,8 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'A1 Property Services|Cedar Falls Landscaping'}
-              subtitle="We design, build, and maintain yards you'll actually use — landscaping, paver patios, retaining walls, and full installs for Cedar Valley homeowners."
+              title={'Outdoor Spaces|Cedar Valley Homeowners Are Proud\u00a0Of'}
+              subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact">
