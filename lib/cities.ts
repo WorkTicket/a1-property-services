@@ -35,10 +35,12 @@ export const cities: City[] = [
     heroTitle: 'Services in Cedar Falls|Walls, Patios & Lawns',
     heroSubtitle:
       'Browse the landscaping and hardscaping services we offer Cedar Falls homeowners — then see our full company page for the complete picture.',
-    metaTitle: 'Services in Cedar Falls, IA | A1 Property Services',
+    metaTitle: 'Cedar Falls Landscaping Services | Walls & Patios',
     metaDescription:
-      'See the retaining walls, paver patios, lawn care, and hardscaping services we offer in Cedar Falls. Local crew, licensed and insured. Free estimates.',
+      'Browse Cedar Falls landscaping services — retaining walls, paver patios, lawn care & hardscaping. Local licensed crew. Free estimates: (319) 464-1889.',
     metaKeywords: [
+      'cedar falls landscaping',
+      'cedar falls landscaping services',
       'cedar falls services',
       'retaining wall cedar falls',
       'paver patio cedar falls',

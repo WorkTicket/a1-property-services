@@ -2,12 +2,14 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import {
   breadcrumbJsonLd,
+  faqPageJsonLd,
   generatePageMetadata,
   jsonLdGraph,
   siteConfig,
   webPageJsonLd,
 } from '@/lib/metadata'
 import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
+import { serviceFaqs } from '@/lib/services'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
@@ -60,6 +62,9 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
     about: page.h1,
   })
 
+  const faqs = serviceFaqs[page.serviceSlug] ?? []
+  const faqSchema = faqs.length > 0 ? faqPageJsonLd(faqs) : null
+
   return (
     <>
       <script
@@ -74,6 +79,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                 { name: 'Services', path: '/services' },
                 { name: page.h1, path: page.path },
               ]),
+              ...(faqSchema ? [faqSchema] : []),
             ),
           ),
         }}

@@ -1,9 +1,13 @@
 /**
- * Post-deploy: submit all sitemap URLs to IndexNow via the Cloudflare Worker.
+ * Post-deploy: submit sitemap URLs to IndexNow via the Cloudflare Worker.
  * Requires REINDEX_WEBHOOK_SECRET (and INDEXNOW_KEY on the worker) in .env.local.
+ *
+ * Default: priority pages only (home, hubs, legacy landings, /services/*, city hubs).
+ * Full site: npm run indexnow:submit -- --all
  *
  * Usage:
  *   npm run indexnow:submit
+ *   npm run indexnow:submit -- --all
  *   node --env-file=.env.local scripts/submit-indexnow.mjs
  */
 import { readFileSync, existsSync } from 'fs'
@@ -12,12 +16,53 @@ import path from 'path'
 const SITE = process.env.SITE_URL || 'https://a1pslandscape.com'
 const API_URL = process.env.REINDEX_API_URL || `${SITE}/api/reindex`
 const SECRET = process.env.REINDEX_WEBHOOK_SECRET
+const SUBMIT_ALL = process.argv.includes('--all')
 
-function countSitemapUrls() {
+const HUB_PATHS = new Set([
+  '/',
+  '/about',
+  '/services',
+  '/gallery',
+  '/contact',
+  '/blog',
+  '/faqs',
+  '/resources',
+  '/learn',
+  '/retaining-wall-in-cedar-falls',
+  '/paver-patio-installation',
+  '/cedar-falls-water-features',
+  '/landscaping-services-in-cedar-falls',
+])
+
+function readSitemapUrls() {
   const sitemapPath = path.resolve('out/sitemap.xml')
   if (!existsSync(sitemapPath)) return null
   const xml = readFileSync(sitemapPath, 'utf8')
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].length
+  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+}
+
+function pathFromUrl(url) {
+  try {
+    const u = new URL(url)
+    return u.pathname.replace(/\/$/, '') || '/'
+  } catch {
+    return url.replace(SITE, '').replace(/\/$/, '') || '/'
+  }
+}
+
+/**
+ * Priority = hubs + legacy landings + service detail pages + city hubs.
+ * Skips programmatic city×service pages and individual blog/learn articles
+ * so IndexNow stays under rate limits after deploy.
+ */
+function isPriorityUrl(url) {
+  const p = pathFromUrl(url)
+  if (HUB_PATHS.has(p)) return true
+  if (p.startsWith('/services/') && p !== '/services') return true
+  // City hub: single segment, not a known static hub
+  const parts = p.split('/').filter(Boolean)
+  if (parts.length === 1 && !HUB_PATHS.has(`/${parts[0]}`)) return true
+  return false
 }
 
 async function main() {
@@ -26,11 +71,16 @@ async function main() {
     process.exit(1)
   }
 
-  const localCount = countSitemapUrls()
-  if (localCount != null) {
-    console.log(`Local sitemap: ${localCount} URLs`)
+  const allUrls = readSitemapUrls()
+  if (!allUrls?.length) {
+    console.error('No out/sitemap.xml found. Run a build first (npm run build or build:deploy:fast).')
+    process.exit(1)
   }
 
+  const urls = SUBMIT_ALL ? allUrls : allUrls.filter(isPriorityUrl)
+  const mode = SUBMIT_ALL ? 'all' : 'priority'
+
+  console.log(`Sitemap: ${allUrls.length} URLs → submitting ${urls.length} (${mode})`)
   console.log(`Calling ${API_URL} …`)
 
   const maxAttempts = 4
@@ -43,7 +93,7 @@ async function main() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${SECRET}`,
       },
-      body: JSON.stringify({}),
+      body: JSON.stringify({ urls }),
     })
 
     try {
@@ -54,7 +104,7 @@ async function main() {
 
     if (res.ok) {
       console.log(
-        `IndexNow: ${lastData.urlCount ?? localCount ?? '?'} URLs in ${lastData.batchCount ?? 1} batch(es) (HTTP ${lastData.status ?? 200})`,
+        `IndexNow: ${lastData.urlCount ?? urls.length} URLs in ${lastData.batchCount ?? 1} batch(es) (HTTP ${lastData.status ?? 200})`,
       )
       if (lastData.message) console.log(lastData.message)
       return
@@ -68,7 +118,9 @@ async function main() {
     }
 
     if (lastData.rateLimited) {
-      console.warn('IndexNow rate limited after retries. Configuration is correct — retry later with: npm run indexnow:submit')
+      console.warn(
+        'IndexNow rate limited after retries. Try again later with: npm run indexnow:submit',
+      )
       process.exit(0)
     }
 

@@ -37,9 +37,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'retaining-wall-in-cedar-falls': {
     path: '/retaining-wall-in-cedar-falls',
     serviceSlug: 'retaining-walls',
-    title: 'Retaining Wall Installation Cedar Falls, IA | Free Quote',
+    title: 'Retaining Wall Installation Cedar Falls | Free Quote',
     description:
-      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates. Licensed and insured.',
+      'Block & stone retaining walls in Cedar Falls, IA — drainage built for Iowa freeze-thaw. Licensed since 2014. Call (319) 464-1889 for a free quote.',
     keywords: [
       'retaining wall cedar falls',
       'retaining wall installation cedar falls',
@@ -58,34 +58,41 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     contentImageAlt: 'Block retaining wall installation with tiered garden beds in Cedar Falls, Iowa',
     eyebrow: 'Service',
     h1: 'Custom Retaining Wall Installation in Cedar Falls, IA',
-    heroHeading: 'Durable Materials for Long-Lasting Results',
+    heroHeading:
+      'Block and natural stone walls with proper drainage for Cedar Falls slopes — built to stop erosion and create flat, usable yard space.',
     sections: [
       {
         heading: 'Retaining Wall Installation In Cedar Falls',
         paragraphs: [
-          'We provide custom-built solutions designed to improve the beauty, safety, and functionality of your property. From durable stone, brick, and concrete construction to engineered landscape support systems, our team delivers long-lasting results tailored to your site. Each project is designed around your property\u2019s specific slope, soil conditions, drainage needs, and overall visual goals.',
-          'These structures do more than enhance curb appeal. They help control erosion, manage elevation changes, and protect surrounding landscaping. Whether you\u2019re stabilizing a hillside, creating tiered garden areas, or defining outdoor living spaces, our solutions balance structural strength with clean, attractive design that blends naturally into your property.',
+          'Sloped Cedar Falls yards need retaining walls that handle runoff and freeze-thaw — not decorative stacks that bulge after the first hard winter. We build segmental block and natural stone walls with compacted bases, gravel backfill, and drain pipe so soil stays put and water moves away from your foundation.',
+          'Whether you are stabilizing a hillside, terracing a garden, or reclaiming flat space for a patio, every wall is sized to your slope, soil, and height requirements. We pull permits when Cedar Falls code requires them and leave a finished look that matches your home.',
         ],
         showCta: true,
       },
       {
+        heading: 'Why Cedar Falls Homeowners Choose Us',
+        paragraphs: [
+          'Searching for a retaining wall contractor in Cedar Falls usually comes down to drainage experience. Walls without gravel backfill and outlet drains fail in Iowa clay. Our crew builds for the Cedar Valley climate first, then finishes the face so the wall looks intentional on your property.',
+          'You get a free on-site quote, clear written pricing, and walls that turn steep ground into usable yard. Browse our gallery for recent installs, then call (319) 464-1889 to schedule a walkthrough.',
+        ],
+      },
+      {
         heading: 'Professional Design and Installation',
         paragraphs: [
-          'Every project begins with a detailed site evaluation and design plan to ensure the finished structure meets both functional and aesthetic objectives. Using high-quality materials and proven construction methods, we build systems that stand up to Iowa\u2019s changing weather conditions. Precision installation and attention to detail ensure dependable performance and a polished final result.',
-          'To complete the look, we can incorporate complementary elements such as planting beds, decorative stone features, and integrated hardscaping. These additions allow your new landscape support system to enhance both usability and visual appeal.',
-          'We focus on durability and long-term value. Our solutions are built to require minimal maintenance while improving property stability and appearance. Whether for residential or commercial properties in the Cedar Falls area, we deliver reliable, well-crafted results that add lasting value and confidence to your outdoor space.',
+          'Every project starts with a site evaluation: wall height, soil conditions, drainage paths, and how the finished grades will tie into your lawn or hardscape. We plan geogrid reinforcement when taller walls need it and set courses level so the face stays clean.',
+          'Complementary planting beds, steps, and hardscape can be added so the wall reads as part of the landscape — not a standalone barrier. Residential and commercial properties across Cedar Falls, Waterloo, and the Cedar Valley are welcome.',
         ],
       },
     ],
     closingCopy:
-      'Ready to transform your outdoor space? Our team is here to bring your landscaping dreams to life.',
+      'Ready for a retaining wall that holds through Iowa winters? Request a free on-site quote and we will walk your slope with you.',
   },
   'paver-patio-installation': {
     path: '/paver-patio-installation',
     serviceSlug: 'paver-patio',
     title: 'Paver Patio Installation Cedar Falls | Free Quote',
     description:
-      'Custom paver patio installation in Cedar Falls, IA. Built for Iowa freeze-thaw. Call (319) 464-1889 for a free estimate.',
+      'Custom paver patio installation in Cedar Falls, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
     keywords: [
       'paver patio cedar falls',
       'paver patio installation cedar falls',
@@ -113,6 +120,13 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
           'We focus on creating functional and visually appealing outdoor living spaces tailored to your property.',
           'We work with premium stone, brick, and concrete pavers that are selected for durability, appearance, and long-term performance in Iowa\u2019s climate.',
           'Every project is designed around your yard layout, drainage needs, and how you plan to use your outdoor space.',
+        ],
+      },
+      {
+        heading: 'Why Cedar Falls Homeowners Choose Us',
+        paragraphs: [
+          'Searching for a paver patio in Cedar Falls usually comes down to who builds for Iowa winters — not just who lays stone. Our crew excavates, compacts the base in lifts, sets edge restraint, and finishes joints so the patio stays level through freeze-thaw.',
+          'Homeowners hire us for clear written estimates, local jobsite experience across College Hill and North Cedar, and patios that drain away from the house. Browse our gallery for recent Cedar Falls installs, then request a free on-site quote.',
         ],
       },
       {

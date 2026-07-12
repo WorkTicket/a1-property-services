@@ -17,9 +17,9 @@ export type HubRecentProject = {
 
 export const landscapingHubPage = {
   path: '/landscaping-services-in-cedar-falls',
-  title: 'Landscaping Cedar Falls | Lawn Care & Patios',
+  title: 'Cedar Falls Landscaping | Free Estimates | A1',
   description:
-    'Top-rated landscaping in Cedar Falls, IA. Retaining walls, patios, lawn care & full installs. Licensed since 2014. 5-star Google rating. Free estimates — call (319) 464-1889.',
+    'Get Cedar Falls landscaping from a local crew — retaining walls, paver patios, lawn care & installs. Licensed since 2014. Free on-site estimate. Call (319) 464-1889.',
   keywords: [
     'landscaping cedar falls',
     'cedar falls landscaping',
@@ -223,12 +223,17 @@ export const landscapingHubPage = {
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
       answer:
-        'We provide full-service landscaping including lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance. Residential and commercial properties throughout the Cedar Valley.',
+        'A1 Property Services offers full-service Cedar Falls landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses across the Cedar Valley.',
     },
     {
       question: 'How much does landscaping cost in Cedar Falls?',
       answer:
-        'Costs depend on project size, materials, and scope. We provide free on-site estimates with clear, written pricing and no surprises. Contact us to schedule a consultation for your property.',
+        'Landscaping cost in Cedar Falls depends on project size, materials, and scope — small plantings start lower, while walls, patios, and full installs are quoted after a site visit. We give free on-site estimates with clear written pricing and no surprises.',
+    },
+    {
+      question: 'Who is the best landscaper near me in Cedar Falls?',
+      answer:
+        'Look for a licensed local crew with Iowa freeze-thaw experience, clear written estimates, and strong Google reviews. A1 Property Services is based in Cedar Falls, licensed and insured since 2014, and serves Waterloo and the Cedar Valley.',
     },
     {
       question: 'Do you serve Cedar Falls and the surrounding Cedar Valley?',
@@ -248,7 +253,7 @@ export const landscapingHubPage = {
     {
       question: 'How do I get a quote for my project or maintenance plan?',
       answer:
-        'Contact us online or by phone. We\u2019ll assess your Cedar Falls property and provide a detailed, transparent estimate tailored to your needs.',
+        'Call (319) 464-1889 or request a quote online. We assess your Cedar Falls property and provide a detailed, transparent estimate — usually within 24 hours.',
     },
   ],
   faqHeading: 'Frequently Asked Questions',

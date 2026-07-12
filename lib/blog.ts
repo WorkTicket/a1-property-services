@@ -1199,8 +1199,9 @@ category: 'Hardscaping',
 },
 {
   slug: 'landscaping-near-me-cedar-falls',
-  title: 'Landscaping Near Me: Finding the Best in Cedar Falls',
-  excerpt: 'What to look for when searching for landscaping companies in Cedar Falls.',
+  title: 'Landscaping Near Me in Cedar Falls | How to Choose',
+  excerpt:
+    'Searching landscaping near me in Cedar Falls? Compare local experience, licensing, reviews, and full-service crews — then get a free A1 estimate.',
   date: '2025-05-15',
   category: 'Landscaping',
   content: [

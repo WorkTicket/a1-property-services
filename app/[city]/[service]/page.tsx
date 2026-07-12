@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Phone, MapPin } from 'lucide-react'
 import { cities, getCityBySlug } from '@/lib/cities'
 import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
-import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { sinceYearPhrase } from '@/lib/years-in-business'
 import { getComplementaryServices, getServiceRelatedContentGroups, getNearbyCitiesForPage } from '@/lib/internal-linking'
@@ -34,14 +34,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(params.service)
   if (!city || !service) return {}
 
-  const title = `${service.name} in ${city.name}, IA`
-  const description = `${service.name} in ${city.name}, IA. ${service.shortDesc} Free estimates. Licensed and insured.`
+  // Keep city×service titles distinct from /services/[slug] and legacy landings (avoid SERP cannibalization).
+  const seo = serviceSeoOverrides[service.slug]
+  const title = `${service.name} in ${city.name}, IA | Free Quote`
+  const description =
+    city.slug === 'cedar-falls' && seo?.description
+      ? seo.description
+      : `${service.name} in ${city.name}, IA. ${service.shortDesc} Free estimates. Licensed and insured.`
 
   return generatePageMetadata({
     title,
     description,
     path: `/${city.slug}/${service.slug}`,
     absoluteTitle: true,
+    keywords: seo?.keywords,
   })
 }
 

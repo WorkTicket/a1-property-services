@@ -3,11 +3,11 @@ import { FOUNDING_YEAR } from '@/lib/years-in-business'
 
 export const siteConfig = {
   name: 'A1 Property Services',
-  /** Homepage `<title>` / og:title — brand-first so Google prefers it over bare site name. */
-  homeTitle: 'A1 Property Services | Cedar Falls Landscaping',
+  /** Homepage `<title>` / og:title — keyword-led for SERP CTR; brand still clear. */
+  homeTitle: 'Cedar Falls Landscaping | A1 Property Services',
   url: 'https://a1pslandscape.com',
   description:
-    `Landscaping in Cedar Falls, IA. Retaining walls, paver patios, lawn care and more. Licensed, insured, free estimates since ${FOUNDING_YEAR}.`,
+    `Need Cedar Falls landscaping? Retaining walls, paver patios & lawn care from a local crew since ${FOUNDING_YEAR}. Free quote: (319) 464-1889.`,
   phone: '+13194641889',
   phoneDisplay: '+1 (319) 464-1889',
   email: 'a1propertyservices0219@gmail.com',
@@ -73,9 +73,9 @@ export const servicesHubKeywords = [
 
 export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'retaining-walls': {
-    title: 'Retaining Wall Installation in Cedar Falls',
+    title: 'Retaining Wall Installation Cedar Falls | Free Quote',
     description:
-      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates. Licensed and insured.',
+      'Block & stone retaining walls in Cedar Falls, IA — drainage built for Iowa freeze-thaw. Licensed since 2014. Call (319) 464-1889 for a free quote.',
     h1: 'Retaining Wall Installation in Cedar Falls',
     keywords: [
       'retaining wall installation cedar falls',
@@ -93,7 +93,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'paver-patio': {
     title: 'Paver Patio Installation Cedar Falls | Free Quote',
     description:
-      'Custom paver patio installation in Cedar Falls, IA. Built for Iowa freeze-thaw. Call (319) 464-1889 for a free estimate.',
+      'Custom paver patio installation in Cedar Falls, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -207,12 +207,13 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ],
   },
   'snow-removal': {
-    title: 'Snow Removal in Cedar Falls',
+    title: 'Cedar Falls Snow Removal | Seasonal Contracts',
     description:
-      'Reliable snow removal in Cedar Falls, IA. Driveway plowing, sidewalk shoveling, de-icing, and commercial accounts. Licensed and insured.',
+      'Cedar Falls snow removal with driveway plowing, walkway clearing & ice treatment. Seasonal contracts for homes & businesses. Call (319) 464-1889.',
     h1: 'Snow Removal in Cedar Falls',
     keywords: [
       'snow removal cedar falls',
+      'cedar falls snow removal',
       'snow plowing cedar falls',
       'driveway plowing cedar falls',
       'snow removal cedar falls ia',

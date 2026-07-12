@@ -32,8 +32,7 @@ const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
   title: siteConfig.homeTitle,
-  description:
-    'Cedar Falls landscaping & hardscaping: retaining walls, paver patios, water features & lawn care. 5-star rated, licensed & insured. Free quotes.',
+  description: siteConfig.description,
   path: '/',
   absoluteTitle: true,
   keywords: [
@@ -80,7 +79,7 @@ function getStats() {
 const faqItems = [
   {
     q: 'How much does landscaping cost in Cedar Falls?',
-    a: 'Every yard is different. We come to your property, discuss what you need, and provide a free written estimate. No surprises, no pressure.',
+    a: 'Landscaping cost in Cedar Falls depends on scope — plantings and lawn care cost less than retaining walls or paver patios. We visit your property and give a free written estimate with clear pricing and no surprises.',
   },
   {
     q: 'Are you licensed and insured?',
@@ -88,7 +87,7 @@ const faqItems = [
   },
   {
     q: 'How quickly can you start my project?',
-    a: 'Spring and fall fill up fast. The best way to get on the schedule is to call us or request a quote online. We typically respond within 24 hours.',
+    a: 'Spring and fall fill up fast. Call (319) 464-1889 or request a quote online — we typically respond within 24 hours and get you on the schedule.',
   },
   {
     q: 'Do you serve Waterloo and surrounding areas?',
