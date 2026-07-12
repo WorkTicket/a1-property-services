@@ -77,7 +77,8 @@ export default function Navbar() {
   const [headerHeight, setHeaderHeight] = useState(72)
 
   const isCompact = scrolled
-  const isServicesActive = pathname.startsWith('/services')
+  const isServicesActive =
+    pathname.startsWith('/services') || pathname === '/landscaping-services-in-cedar-falls'
   const isLearnActive = learnLinks.some((link) => pathname === link.href)
   const activeCategoryMeta = serviceCategories.find((c) => c.key === activeServiceCategory)
   const activeCategoryServices = getCategoryServices(activeServiceCategory)
@@ -237,6 +238,18 @@ export default function Navbar() {
             )}
           >
             <div className="overflow-hidden border-l-2 border-brand-gold/30 pl-4">
+              <Link
+                href="/landscaping-services-in-cedar-falls"
+                className={cn(
+                  'block py-2 text-base font-semibold',
+                  pathname === '/landscaping-services-in-cedar-falls'
+                    ? 'text-brand-gold'
+                    : 'text-brand-dark',
+                )}
+                onClick={() => { setMobileOpen(false); trackNavigation('Mobile Landscaping Hub') }}
+              >
+                Landscaping
+              </Link>
               <Link
                 href="/services"
                 className="block py-2 text-base font-semibold text-brand-gold"
@@ -453,6 +466,19 @@ export default function Navbar() {
                     </h3>
                   </div>
                   <div className="flex shrink-0 items-center gap-2">
+                    <Link
+                      href="/landscaping-services-in-cedar-falls"
+                      className={cn(
+                        'group inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-colors hover:bg-brand-green-100',
+                        pathname === '/landscaping-services-in-cedar-falls'
+                          ? 'text-brand-gold'
+                          : 'text-brand-dark hover:text-brand-gold',
+                      )}
+                      onClick={() => { setServicesOpen(false); trackNavigation('Nav Landscaping Hub') }}
+                    >
+                      Landscaping
+                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                    </Link>
                     <Link
                       href="/services"
                       className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-brand-gold transition-colors hover:bg-brand-green-100"

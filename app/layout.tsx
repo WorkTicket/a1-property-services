@@ -6,7 +6,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
-import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, localBusinessJsonLd } from '@/lib/metadata'
+import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
 
 const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
 const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
@@ -34,7 +34,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    default: siteConfig.homeTitle,
     template: '%s | A1 Property Services',
   },
   description: siteConfig.description,
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     ...defaultOpenGraph,
-    title: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    title: siteConfig.homeTitle,
     description: siteConfig.description,
     url: siteConfig.url,
   },
   twitter: {
     ...defaultTwitter,
-    title: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    title: siteConfig.homeTitle,
     description: siteConfig.description,
   },
   ...(googleSiteVerification || bingSiteVerification
@@ -90,6 +90,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const localBusinessJsonLd = buildLocalBusinessJsonLd()
+
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>

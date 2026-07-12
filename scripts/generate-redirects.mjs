@@ -37,5 +37,15 @@ for (const { from, to, reason } of migrationRedirects) {
   lines.push('')
 }
 
+// WordPress AMP URLs — canonical non-AMP pages are the index targets
+lines.push('# WordPress AMP suffix on any path')
+lines.push('/:path/amp /:path 301')
+lines.push('/:path/amp/ /:path 301')
+lines.push('')
+
 writeFileSync(OUTPUT, lines.join('\n').trimEnd() + '\n', 'utf-8')
-console.log(`Wrote ${migrationRedirects.length} redirects (${migrationRedirects.length * 2 - 1} rules) to public/_redirects`)
+const ampRules = 2
+const pathRules = migrationRedirects.length * 2 - 1
+console.log(
+  `Wrote ${migrationRedirects.length} redirects (${pathRules + ampRules} rules) to public/_redirects`,
+)

@@ -5,7 +5,7 @@ import { generatePageMetadata, siteConfig, webPageJsonLd, jsonLdGraph } from '@/
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Thank You',
+  title: 'We Got It!',
   description: 'Your free quote request has been submitted. We will contact you within 24 hours.',
   path: '/thank-you',
   noIndex: true,
@@ -13,7 +13,7 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function ThankYouPage() {
   const pageSchema = webPageJsonLd({
-    name: 'Thank You | A1 Property Services',
+    name: 'We Got It! | A1 Property Services',
     description: 'Your free quote request has been submitted. We will contact you within 24 hours.',
     path: '/thank-you',
     about: 'Thank You',

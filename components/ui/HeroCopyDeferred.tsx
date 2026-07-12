@@ -9,11 +9,7 @@ type HeroCopyDeferredProps = {
   subtitleMaxWidth?: string
 }
 
-/** Brief CSS reveal keeps hero image as LCP candidate without hiding copy from users. */
+/** System-font hero copy; visible on first paint (see HeroCopyStatic). */
 export default function HeroCopyDeferred(props: HeroCopyDeferredProps) {
-  return (
-    <div className="hero-copy-reveal">
-      <HeroCopyStatic {...props} />
-    </div>
-  )
+  return <HeroCopyStatic {...props} />
 }

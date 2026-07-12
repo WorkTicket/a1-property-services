@@ -18,13 +18,13 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build:deploy
+      - run: npm run build:deploy:fast
         env:
           NODE_ENV: production
 
-      - name: Deploy to preview.a1pslandscape.com
+      - name: Deploy to a1pslandscape.com
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy out --project-name=a1-property-services --branch=main
+          command: deploy

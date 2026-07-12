@@ -4,6 +4,11 @@ import { siteConfig } from '@/lib/metadata'
 import { allServices } from '@/lib/services'
 import { cities } from '@/lib/cities'
 
+/** URLs that should appear in sitemap.xml (excludes non-canonical duplicates). */
+export function getSitemapUrls(): string[] {
+  return getAllSiteUrls()
+}
+
 export function getAllSiteUrls(): string[] {
   const base = siteConfig.url
 

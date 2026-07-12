@@ -244,21 +244,21 @@ export const hardscapeFeatures = [
     name: 'Retaining Walls',
     shortDesc:
       'Block and stone walls for slopes, erosion, and curb appeal that lasts.',
-    href: '/retaining-wall-in-cedar-falls',
+    href: '/services/retaining-walls',
     oldHref: '/retaining-wall-in-cedar-falls',
   },
   {
     slug: 'paver-patio',
     name: 'Paver Patios',
     shortDesc: 'Custom patios built to handle Iowa weather and daily use.',
-    href: '/paver-patio-installation',
+    href: '/services/paver-patio',
     oldHref: '/paver-patio-installation',
   },
   {
     slug: 'water-features',
     name: 'Water Features',
     shortDesc: 'Ponds and waterfalls that add movement and character to your yard.',
-    href: '/cedar-falls-water-features',
+    href: '/services/ponds-water-features',
     oldHref: '/cedar-falls-water-features',
   },
   {
@@ -270,7 +270,7 @@ export const hardscapeFeatures = [
   },
 ]
 
-/** SEO landing page URLs for hardscape services (separate from /services/* pages). */
+/** Legacy SEO landing page URLs (preserved; linked from home/footer). */
 export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
   'retaining-walls': '/retaining-wall-in-cedar-falls',
   'paver-patio': '/paver-patio-installation',
@@ -295,8 +295,8 @@ const hardscapeCitySlugMap: Record<string, string> = {
   'outdoor-living': 'outdoor-living',
 }
 
-/** City hub cards: Cedar Falls uses legacy ranking URLs; other cities use /{city}/{service}. */
-export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, legacyHref: string): string {
+/** City hub cards: Cedar Falls hardscape uses legacy ranking URLs; other cities use /{city}/{service}. */
+export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, legacyHref?: string): string {
   if (citySlug === 'cedar-falls' && legacyHref) {
     return legacyHref
   }
@@ -1040,8 +1040,8 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'snow-removal': {
     heading: 'Reliable Snow Removal for Cedar Valley Properties',
     paragraphs: [
-      'Iowa storms do not wait for a convenient time. Our contracted snow removal service covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
-      'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm.',
+      'Iowa storms do not wait for a convenient time. Our contracted Cedar Falls snow removal covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
+      'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm. Seasonal contracts lock in pricing before winter starts — call (319) 464-1889 to reserve your route.',
     ],
   },
   'landscape-design': {
@@ -1461,6 +1461,16 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'snow-removal': [
     {
+      question: 'Do you offer snow removal in Cedar Falls?',
+      answer:
+        'Yes. A1 Property Services provides Cedar Falls snow removal for driveways, walkways, steps, and commercial lots — including plowing, shoveling, and ice treatment under seasonal contracts.',
+    },
+    {
+      question: 'How much does snow removal cost in Cedar Falls?',
+      answer:
+        'Snow removal cost depends on driveway size, service frequency, and whether you want residential or commercial priority. We quote seasonal contracts up front so you know the price before winter starts.',
+    },
+    {
       question: 'How do I sign up for snow removal services?',
       answer: 'Contact us to set up a seasonal contract. We offer residential and commercial accounts and prioritize established customers when storms are forecasted.',
     },
@@ -1536,6 +1546,11 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
   ],
   'paver-patio': [
+    {
+      question: 'How much does a paver patio cost in Cedar Falls?',
+      answer:
+        'Paver patio cost in Cedar Falls depends on size, paver style, site prep, and add-ons like steps or seat walls. Most residential projects are quoted after a free on-site visit so pricing matches your yard and design.',
+    },
     {
       question: 'How long does paver patio installation take in Cedar Falls?',
       answer: 'Most residential paver patio projects take several days to two weeks depending on size, pattern complexity, and add-ons like seat walls or fire pits. We give you a clear timeline during your free estimate.',

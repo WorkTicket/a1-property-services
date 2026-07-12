@@ -23,7 +23,7 @@ export default function HomeHero() {
       <div className="relative z-10 mx-auto max-w-4xl px-4 pb-8 pt-24 text-center text-white sm:px-6">
         <p className="hero-eyebrow mb-4">Cedar Falls, Iowa</p>
         <h1 className="hero-title">
-          <HeroTitle>Cedar Falls Landscaping|For the Cedar Valley</HeroTitle>
+          <HeroTitle>A1 Property Services|Cedar Falls Landscaping</HeroTitle>
         </h1>
         <p className="hero-subtitle mx-auto mt-6 max-w-xl">
           Retaining walls, paver patios, lawn care, and full outdoor installations for homes and businesses across the Cedar Valley.

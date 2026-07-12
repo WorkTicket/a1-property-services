@@ -45,10 +45,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                 </Link>
               </h2>
               <p className="mt-3 leading-relaxed text-brand-body">{post.excerpt}</p>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="link-cta-md group mt-4"
-              >
+              <Link href={`/blog/${post.slug}`} className="link-cta-md group mt-4">
                 {CTA_COPY.readMore}
                 <ChevronRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>

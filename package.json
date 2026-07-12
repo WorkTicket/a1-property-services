@@ -26,8 +26,11 @@
     "validate:redirects": "node scripts/validate-migration-redirects.mjs",
     "audit:migration": "node scripts/audit-migration-ready.mjs",
     "audit:ranking": "node scripts/audit-ranking-pages.mjs",
+    "audit:lighthouse": "node scripts/lighthouse-audit.mjs",
+    "audit:lighthouse:preview": "node scripts/lighthouse-audit.mjs --url https://preview.a1pslandscape.com",
     "build:all": "npm run generate:redirects && npm run build:images && npm run build && npm run build:feed && npm run postbuild:validate && npm run validate:redirects && npm run link:health",
     "build:deploy": "npm run generate:redirects && npm run build:images && npm run build && npm run build:feed && npm run postbuild:validate && npm run validate:redirects",
+    "build:deploy:fast": "npm run generate:redirects && npm run build && npm run build:feed && npm run postbuild:validate && npm run validate:redirects",
     "start": "npx serve out",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
@@ -36,7 +39,8 @@
     "link:health": "node scripts/link-health-check.mjs",
     "analyze": "ANALYZE=true next build",
     "preview": "npm run build:deploy && wrangler dev",
-    "deploy": "npm run build:deploy && wrangler deploy",
+    "indexnow:submit": "node --env-file=.env.local scripts/submit-indexnow.mjs",
+    "deploy": "npm run build:deploy && wrangler deploy && npm run indexnow:submit",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {

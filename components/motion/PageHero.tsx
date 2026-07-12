@@ -5,7 +5,12 @@ import HeroOverlay from '@/components/ui/HeroOverlay'
 
 const heroSizeClasses = {
   default: 'h-[50vh] min-h-[360px] md:h-[55vh] md:min-h-[420px]',
-  compact: 'h-[32vh] min-h-[240px] md:h-[38vh] md:min-h-[280px]',
+  compact: 'min-h-[22rem] md:min-h-[26rem]',
+} as const
+
+const heroLayoutClasses = {
+  default: 'items-center justify-center pt-24 pb-12',
+  compact: 'items-start justify-center pt-28 pb-10 md:pt-32',
 } as const
 
 type PageHeroProps = {
@@ -20,7 +25,7 @@ type PageHeroProps = {
 
 export default function PageHero({
   imageSrc,
-  imageAlt = '',
+  imageAlt,
   eyebrow,
   title,
   subtitle,
@@ -28,18 +33,21 @@ export default function PageHero({
   align = 'center',
 }: PageHeroProps) {
   const usePhoto = Boolean(imageSrc)
+  const resolvedAlt =
+    imageAlt?.trim() ||
+    (usePhoto ? 'Landscaping and hardscaping work in Cedar Falls, Iowa' : '')
   const isLeft = align === 'center' ? false : align === 'left'
 
   return (
     <section
-      className={`relative overflow-hidden flex items-center justify-center pt-24 pb-12 ${heroSizeClasses[size]} text-white ${usePhoto ? '' : 'bg-hero-gradient'}`}
+      className={`relative overflow-hidden flex ${heroLayoutClasses[size]} ${heroSizeClasses[size]} text-white ${usePhoto ? '' : 'bg-hero-gradient'}`}
     >
       {usePhoto && imageSrc && (
         <>
           <HeroImagePreload src={imageSrc} />
           <LcpHeroImage
             src={imageSrc}
-            alt={imageAlt}
+            alt={resolvedAlt}
           />
           <HeroOverlay
             imageSrc={imageSrc}

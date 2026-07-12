@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Check, ChevronRight, MapPin, Phone, Star } from 'lucide-react'
-import { services } from '@/lib/services'
+import { hardscapeFeatures, getServicePageHref, services } from '@/lib/services'
 import { CTA_COPY } from '@/lib/cta'
-import { generatePageMetadata, getGoogleMapsEmbedUrl, localBusinessJsonLd, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, getGoogleMapsEmbedUrl, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
 import { blogPosts } from '@/lib/blog'
@@ -23,6 +23,7 @@ import { projectsCompletedValue } from '@/lib/projects-completed'
 
 const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
   loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
+  ssr: false,
 })
 
 const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
@@ -30,17 +31,19 @@ const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Landscaping Contractor in Cedar Falls, IA',
-  description:
-    "Cedar Falls landscaping company. Retaining walls, paver patios, lawn care and more. Licensed and insured. Get your free quote today.",
+  title: siteConfig.homeTitle,
+  description: siteConfig.description,
   path: '/',
+  absoluteTitle: true,
   keywords: [
     'landscaping cedar falls',
+    'cedar falls landscaping',
     'retaining wall cedar falls',
     'paver patio cedar falls',
+    'water features cedar falls',
     'hardscaping cedar falls ia',
     'lawn care cedar falls',
-    'snow removal cedar falls',
+    'a1 property services',
   ],
   ogImage: '/images/hero-background-image.webp',
   ogImageAlt: 'Aerial drone view of Cedar Falls, Iowa',
@@ -76,7 +79,7 @@ function getStats() {
 const faqItems = [
   {
     q: 'How much does landscaping cost in Cedar Falls?',
-    a: 'Every yard is different. We come to your property, discuss what you need, and provide a free written estimate. No surprises, no pressure.',
+    a: 'Landscaping cost in Cedar Falls depends on scope — plantings and lawn care cost less than retaining walls or paver patios. We visit your property and give a free written estimate with clear pricing and no surprises.',
   },
   {
     q: 'Are you licensed and insured?',
@@ -84,7 +87,7 @@ const faqItems = [
   },
   {
     q: 'How quickly can you start my project?',
-    a: 'Spring and fall fill up fast. The best way to get on the schedule is to call us or request a quote online. We typically respond within 24 hours.',
+    a: 'Spring and fall fill up fast. Call (319) 464-1889 or request a quote online — we typically respond within 24 hours and get you on the schedule.',
   },
   {
     q: 'Do you serve Waterloo and surrounding areas?',
@@ -100,11 +103,11 @@ export default function HomePage() {
   const stats = getStats()
 
   const pageSchema = webPageJsonLd({
-    name: 'A1 Property Services | Landscaping in Cedar Falls, IA',
+    name: siteConfig.homeTitle,
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',
-    about: 'Landscaping Services',
+    about: 'Landscaping and Hardscaping in Cedar Falls',
   })
 
   return (
@@ -143,8 +146,8 @@ export default function HomePage() {
                 {CTA_COPY.quote}
                 <ChevronRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href="/gallery" variant="ghost">
-                {CTA_COPY.gallery}
+              <Button href="/landscaping-services-in-cedar-falls" variant="ghost">
+                Landscaping Services
               </Button>
             </div>
           </div>
@@ -195,7 +198,7 @@ export default function HomePage() {
             {services.slice(0, 8).map((service) => (
               <StaggerItem key={service.slug}>
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={getServicePageHref(service.slug)}
                   className="card group flex h-full flex-col gap-4 p-6"
                 >
                   <ServiceIcon name={service.icon} />
@@ -214,11 +217,43 @@ export default function HomePage() {
             ))}
           </StaggerContainer>
 
-          <FadeIn className="mt-10 text-center" delay={0.15}>
+          <FadeIn className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row" delay={0.15}>
+            <Button href="/landscaping-services-in-cedar-falls" variant="outline">
+              Landscaping in Cedar Falls &rarr;
+            </Button>
             <Button href="/services" variant="outline">
               View All Services &rarr;
             </Button>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* HARDSCAPE RANKING PAGES — same targets as live site footer/CTAs */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <FadeIn className="text-center">
+            <p className="section-eyebrow">Hardscaping Cedar Falls</p>
+            <h2 className="section-heading mt-3">Retaining Walls, Patios &amp; Water Features</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-brand-body">
+              Dedicated pages for our most-requested Cedar Falls hardscape services — the same URLs ranking on Google today.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3">
+            {hardscapeFeatures.slice(0, 3).map((feature) => (
+              <StaggerItem key={feature.slug}>
+                <Link href={feature.oldHref || feature.href} className="card group flex h-full flex-col gap-4 p-6">
+                  <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
+                    {feature.name} in Cedar Falls
+                  </h3>
+                  <p className="text-sm leading-relaxed text-brand-muted">{feature.shortDesc}</p>
+                  <span className="link-cta-sm mt-auto">
+                    View {feature.name}{' '}
+                    <ChevronRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
@@ -243,8 +278,8 @@ export default function HomePage() {
               <BeforeAfterSlider
                 key={project.id}
                 title={project.title}
-                before={project.before}
-                after={project.after}
+                before={{ ...project.before, priority: false }}
+                after={{ ...project.after, priority: false }}
               />
             ))}
           </div>
@@ -271,12 +306,11 @@ export default function HomePage() {
                 We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button href="/landscaping-services-in-cedar-falls" variant="ghost-dark">
+                  Landscaping Cedar Falls
+                </Button>
                 <Button href="/about" variant="ghost-dark">
                   Our Story
-                </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
-                  <Phone size={16} />
-                  {siteConfig.phoneDisplay}
                 </Button>
               </div>
             </FadeIn>

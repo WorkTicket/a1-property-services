@@ -3,9 +3,11 @@ import { FOUNDING_YEAR } from '@/lib/years-in-business'
 
 export const siteConfig = {
   name: 'A1 Property Services',
+  /** Homepage `<title>` / og:title — keyword-led for SERP CTR; brand still clear. */
+  homeTitle: 'Cedar Falls Landscaping | A1 Property Services',
   url: 'https://a1pslandscape.com',
   description:
-    `Landscaping in Cedar Falls, IA. Retaining walls, paver patios, lawn care and more. Licensed, insured, free estimates since ${FOUNDING_YEAR}.`,
+    `Need Cedar Falls landscaping? Retaining walls, paver patios & lawn care from a local crew since ${FOUNDING_YEAR}. Free quote: (319) 464-1889.`,
   phone: '+13194641889',
   phoneDisplay: '+1 (319) 464-1889',
   email: 'a1propertyservices0219@gmail.com',
@@ -17,6 +19,7 @@ export const siteConfig = {
   },
   social: {
     facebook: 'https://www.facebook.com/A1PropertyServicesCedarValley/',
+    googleBusiness: 'https://share.google/d5uiWqfUIkso3hlj2',
   },
   googlePlaceId: 'ChIJx1yIuk9V5YcRMqQd-z4_YIE',
   googleReviewUrl:
@@ -70,9 +73,9 @@ export const servicesHubKeywords = [
 
 export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'retaining-walls': {
-    title: 'Retaining Wall Installation in Cedar Falls',
+    title: 'Retaining Wall Installation Cedar Falls | Free Quote',
     description:
-      'Retaining wall installation in Cedar Falls, IA. Block and natural stone walls with proper drainage for Iowa slopes. Free estimates. Licensed and insured.',
+      'Block & stone retaining walls in Cedar Falls, IA — drainage built for Iowa freeze-thaw. Licensed since 2014. Call (319) 464-1889 for a free quote.',
     h1: 'Retaining Wall Installation in Cedar Falls',
     keywords: [
       'retaining wall installation cedar falls',
@@ -88,9 +91,9 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ogImageAlt: 'Retaining wall installation in Cedar Falls, Iowa',
   },
   'paver-patio': {
-    title: 'Paver Patio Installation in Cedar Falls',
+    title: 'Paver Patio Installation Cedar Falls | Free Quote',
     description:
-      'Paver patio installation in Cedar Falls, IA. Custom patios built for Iowa freeze-thaw cycles and daily use. Free estimates. Licensed and insured.',
+      'Custom paver patio installation in Cedar Falls, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -106,12 +109,14 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ogImageAlt: 'Paver patio installation in Cedar Falls, Iowa',
   },
   'landscape-installation': {
-    title: 'Landscape Installation in Cedar Falls',
+    title: 'Landscape Plantings Cedar Falls, IA | Free Estimate',
     description:
-      'Professional landscape installation in Cedar Falls, IA. Custom design, grading, planting, and hardscape integration. Licensed and insured, with free estimates.',
+      'Professional landscape plantings in Cedar Falls, IA. Beds, shrubs & trees for Iowa yards. Call (319) 464-1889 for a free estimate.',
     h1: 'Landscape Installation in Cedar Falls',
     keywords: [
       'landscape installation cedar falls',
+      'plantings cedar falls ia',
+      'landscape plantings cedar falls',
       'landscaping cedar falls ia',
       'landscape contractor cedar falls',
       'landscape design cedar falls',
@@ -202,12 +207,13 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ],
   },
   'snow-removal': {
-    title: 'Snow Removal in Cedar Falls',
+    title: 'Cedar Falls Snow Removal | Seasonal Contracts',
     description:
-      'Reliable snow removal in Cedar Falls, IA. Driveway plowing, sidewalk shoveling, de-icing, and commercial accounts. Licensed and insured.',
+      'Cedar Falls snow removal with driveway plowing, walkway clearing & ice treatment. Seasonal contracts for homes & businesses. Call (319) 464-1889.',
     h1: 'Snow Removal in Cedar Falls',
     keywords: [
       'snow removal cedar falls',
+      'cedar falls snow removal',
       'snow plowing cedar falls',
       'driveway plowing cedar falls',
       'snow removal cedar falls ia',
@@ -391,6 +397,48 @@ export const defaultTwitter: NonNullable<Metadata['twitter']> = {
   images: [defaultOgImage.url],
 }
 
+const SERP_TITLE_MAX = 60
+const META_DESC_MIN = 120
+const META_DESC_MAX = 155
+const BRAND_SUFFIX = ' | A1 Property Services'
+const META_DESC_PAD =
+  ' Professional landscaping in Cedar Falls and the Cedar Valley. Licensed, insured, free estimates.'
+
+function truncateAtWord(text: string, maxLen: number): string {
+  if (text.length <= maxLen) return text
+  const truncated = text.slice(0, maxLen - 3)
+  const lastSpace = truncated.lastIndexOf(' ')
+  const cut = lastSpace > maxLen * 0.5 ? truncated.slice(0, lastSpace) : truncated
+  return `${cut.trimEnd()}...`
+}
+
+/** Pad short descriptions and trim long ones for SERP/Ahrefs limits. */
+export function normalizeMetaDescription(desc: string): string {
+  let result = desc.trim()
+  if (result.length > META_DESC_MAX) {
+    return truncateAtWord(result, META_DESC_MAX)
+  }
+  if (result.length < META_DESC_MIN) {
+    if (!result.endsWith('.')) result += '.'
+    result += META_DESC_PAD
+    if (result.length > META_DESC_MAX) {
+      return truncateAtWord(result, META_DESC_MAX)
+    }
+  }
+  return result
+}
+
+/** Build a title that fits within SERP display limits. */
+export function buildSeoTitle(title: string, absoluteTitle = false): string {
+  if (absoluteTitle) {
+    return title.length > SERP_TITLE_MAX ? truncateAtWord(title, SERP_TITLE_MAX) : title
+  }
+  const withBrand = `${title}${BRAND_SUFFIX}`
+  if (withBrand.length <= SERP_TITLE_MAX) return withBrand
+  if (title.length <= SERP_TITLE_MAX) return title
+  return truncateAtWord(title, SERP_TITLE_MAX)
+}
+
 type PageMetadataOptions = {
   title: string
   description?: string
@@ -420,11 +468,9 @@ export function generatePageMetadata({
   publishedTime,
   modifiedTime,
 }: PageMetadataOptions): Metadata {
-  const fullTitle = absoluteTitle
-    ? title
-    : `${title} | A1 Property Services`
+  const fullTitle = buildSeoTitle(title, absoluteTitle)
   const url = `${siteConfig.url}${canonicalPath ?? path}`
-  const desc = description ?? siteConfig.description
+  const desc = normalizeMetaDescription(description ?? siteConfig.description)
   const imageUrl = ogImage ?? defaultOgImage.url
   const imageAlt = ogImageAlt ?? defaultOgImage.alt
 
@@ -467,7 +513,10 @@ export function breadcrumbJsonLd(items: { name: string; path?: string }[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      ...(item.path ? { item: `${siteConfig.url}${item.path}` } : {}),
+      // URL string is the schema.org / Google-preferred ListItem.item form.
+      ...(item.path
+        ? { item: `${siteConfig.url}${item.path === '/' ? '' : item.path}` }
+        : {}),
     })),
   }
 }
@@ -522,19 +571,13 @@ export function websiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${siteConfig.url}/#website`,
-    name: siteConfig.name,
+    // Prefer the full homepage title so Google does not fall back to bare brand name in SERPs.
+    name: siteConfig.homeTitle,
+    alternateName: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: { '@id': `${siteConfig.url}/#organization` },
     inLanguage: 'en-US',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${siteConfig.url}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   }
 }
 
@@ -545,8 +588,12 @@ export function itemListJsonLd(items: { name: string; url: string }[]) {
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: item.name,
-      url: item.url,
+      item: {
+        '@type': 'WebPage',
+        '@id': item.url,
+        name: item.name,
+        url: item.url,
+      },
     })),
   }
 }
@@ -554,21 +601,28 @@ export function itemListJsonLd(items: { name: string; url: string }[]) {
 export function jsonLdGraph(...schemas: object[]) {
   return {
     '@context': 'https://schema.org',
-    '@graph': schemas.map((schema) => {
-      const { '@context': _, ...rest } = schema as Record<string, unknown> & {
-        '@context'?: string
-      }
-      return rest
-    }),
+    '@graph': schemas
+      .map((schema) => {
+        const { '@context': _, ...rest } = schema as Record<string, unknown> & {
+          '@context'?: string
+        }
+        return rest
+      })
+      .filter((schema) => Boolean(schema['@type'])),
   }
 }
 
-export function howToJsonLd(steps: { title: string; description: string }[]) {
+export function howToJsonLd(
+  steps: { title: string; description: string }[],
+  options?: { name?: string; description?: string },
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'How to Plan Your Landscaping Project',
-    description: 'Steps to plan and execute your landscaping or hardscaping project.',
+    name: options?.name ?? 'How to Plan Your Landscaping Project',
+    description:
+      options?.description ??
+      'Steps to plan and execute your landscaping or hardscaping project.',
     step: steps.map((step, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
@@ -578,6 +632,7 @@ export function howToJsonLd(steps: { title: string; description: string }[]) {
   }
 }
 
+/** @deprecated Self-serving AggregateRating/Review on LocalBusiness is ineligible for Google review snippets. Do not emit on this site. */
 export function reviewJsonLd(reviews: { author: string; reviewBody: string; ratingValue: string; datePublished: string }[]) {
   return {
     '@context': 'https://schema.org',
@@ -630,95 +685,108 @@ export function speakableJsonLd(cssSelector: string[]) {
   }
 }
 
-export const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LandscapingBusiness',
-  '@id': `${siteConfig.url}/#organization`,
-  name: siteConfig.name,
-  image: `${siteConfig.url}/og-image.jpg`,
-  logo: `${siteConfig.url}/images/icon.webp`,
-  url: siteConfig.url,
-  telephone: siteConfig.phone,
-  email: siteConfig.email,
-  foundingDate: String(FOUNDING_YEAR),
-  sameAs: [siteConfig.social.facebook],
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: siteConfig.address.street,
-    addressLocality: siteConfig.address.city,
-    addressRegion: siteConfig.address.state,
-    postalCode: siteConfig.address.zip,
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 42.5364,
-    longitude: -92.4455,
-  },
-  areaServed: [
-    { '@type': 'City', name: 'Cedar Falls' },
-    { '@type': 'City', name: 'Waterloo' },
-    { '@type': 'City', name: 'Hudson' },
-    { '@type': 'City', name: 'Evansdale' },
-    { '@type': 'City', name: 'Waverly' },
-    { '@type': 'City', name: 'Denver' },
-    { '@type': 'City', name: 'Jesup' },
-    { '@type': 'City', name: 'Parkersburg' },
-    { '@type': 'City', name: 'La Porte City' },
-    { '@type': 'City', name: 'Dike' },
-    { '@type': 'Place', name: 'Cedar Valley' },
-    { '@type': 'Place', name: 'Black Hawk County' },
-    { '@type': 'Place', name: 'Bremer County' },
-    { '@type': 'Place', name: 'Grundy County' },
-    { '@type': 'Place', name: 'Butler County' },
-    { '@type': 'Place', name: 'Buchanan County' },
-  ],
-  priceRange: '$$',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:00',
-      closes: '18:00',
+/**
+ * LocalBusiness JSON-LD for this site.
+ * Do not include aggregateRating/review: Google disallows self-serving review
+ * markup on a business's own pages (Review snippets → "Invalid object type").
+ * Stars come from Google Business Profile, not on-site schema.
+ */
+export function buildLocalBusinessJsonLd() {
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${siteConfig.googlePlaceId}`
+  // Service entities live on their own pages (Service JSON-LD). Do not nest
+  // Service inside OfferCatalog — schema.org defines OfferCatalog as Offer /
+  // OfferCatalog only, and bare Offers without price also fail Ahrefs.
+  const knownServices = [
+    'Landscaping',
+    'Retaining wall installation',
+    'Paver patio installation',
+    'Water features',
+    'Lawn care',
+    'Snow removal',
+    'Drainage solutions',
+    'Landscape design',
+    'Outdoor living spaces',
+    'Commercial landscaping',
+  ]
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LandscapingBusiness',
+    '@id': `${siteConfig.url}/#organization`,
+    name: siteConfig.name,
+    alternateName: 'Cedar Falls Landscaping',
+    image: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/og-image.jpg`,
     },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '08:00',
-      closes: '13:00',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/icon.webp`,
     },
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
+    url: siteConfig.url,
     telephone: siteConfig.phone,
-    contactType: 'customer service',
     email: siteConfig.email,
-    areaServed: ['US'],
-    availableLanguage: ['English'],
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Landscaping and Hardscaping Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscaping in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retaining Wall Installation in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Paver Patio Installation in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Features Installation in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lawn Care in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Snow Removal in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drainage Solutions in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape Design in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outdoor Living Spaces in Cedar Falls' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Landscaping in Cedar Falls' } },
+    foundingDate: String(FOUNDING_YEAR),
+    sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      postalCode: siteConfig.address.zip,
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 42.5364,
+      longitude: -92.4455,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Hudson', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Evansdale', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Waverly', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Denver', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Jesup', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Parkersburg', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'La Porte City', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Dike', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'AdministrativeArea', name: 'Black Hawk County' },
+      { '@type': 'AdministrativeArea', name: 'Bremer County' },
+      { '@type': 'AdministrativeArea', name: 'Grundy County' },
+      { '@type': 'AdministrativeArea', name: 'Butler County' },
+      { '@type': 'AdministrativeArea', name: 'Buchanan County' },
     ],
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '5',
-    bestRating: '5',
-  },
+    knowsAbout: knownServices,
+    priceRange: '$$',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '07:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '08:00',
+        closes: '13:00',
+      },
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: siteConfig.phone,
+      contactType: 'customer service',
+      email: siteConfig.email,
+      areaServed: 'US',
+      availableLanguage: 'English',
+    },
+  }
 }
+
+/** @deprecated Prefer buildLocalBusinessJsonLd() — same payload, no review markup. */
+export const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
 export function webPageJsonLd(options: {
   name: string
@@ -766,6 +834,11 @@ export function blogPostingJsonLd(post: {
   image?: string
 }) {
   const url = `${siteConfig.url}/blog/${post.slug}`
+  const imageUrl = post.image
+    ? post.image.startsWith('http')
+      ? post.image
+      : `${siteConfig.url}${post.image}`
+    : `${siteConfig.url}/og-image.jpg`
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -780,21 +853,23 @@ export function blogPostingJsonLd(post: {
       name: siteConfig.name,
       logo: { '@type': 'ImageObject', url: `${siteConfig.url}/images/icon.webp` },
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    image: post.image
-      ? `${siteConfig.url}${post.image}`
-      : `${siteConfig.url}/og-image.jpg`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url, url },
+    image: { '@type': 'ImageObject', url: imageUrl },
   }
 }
 
 export function organizationJsonLd() {
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${siteConfig.googlePlaceId}`
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${siteConfig.url}/#organization`,
+    '@id': `${siteConfig.url}/#brand`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/icon.webp`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/icon.webp`,
+    },
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
@@ -809,10 +884,10 @@ export function organizationJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: ['US'],
-      availableLanguage: ['English'],
+      areaServed: 'US',
+      availableLanguage: 'English',
     },
-    sameAs: [siteConfig.social.facebook],
+    sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],
   }
 }
 
