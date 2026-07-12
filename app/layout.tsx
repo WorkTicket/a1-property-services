@@ -34,7 +34,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Cedar Falls Landscaping | A1 Property Services',
+    default: siteConfig.homeTitle,
     template: '%s | A1 Property Services',
   },
   description: siteConfig.description,
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     ...defaultOpenGraph,
-    title: 'Cedar Falls Landscaping | A1 Property Services',
+    title: siteConfig.homeTitle,
     description: siteConfig.description,
     url: siteConfig.url,
   },
   twitter: {
     ...defaultTwitter,
-    title: 'Cedar Falls Landscaping | A1 Property Services',
+    title: siteConfig.homeTitle,
     description: siteConfig.description,
   },
   ...(googleSiteVerification || bingSiteVerification

@@ -31,7 +31,7 @@ const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Cedar Falls Landscaping | A1 Property Services',
+  title: siteConfig.homeTitle,
   description:
     'Cedar Falls landscaping & hardscaping: retaining walls, paver patios, water features & lawn care. 5-star rated, licensed & insured. Free quotes.',
   path: '/',
@@ -104,7 +104,7 @@ export default function HomePage() {
   const stats = getStats()
 
   const pageSchema = webPageJsonLd({
-    name: 'Cedar Falls Landscaping | A1 Property Services',
+    name: siteConfig.homeTitle,
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',
@@ -139,7 +139,7 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'Cedar Falls Landscaping|Built to Last'}
+              title={'A1 Property Services|Cedar Falls Landscaping'}
               subtitle="We design, build, and maintain yards you'll actually use — landscaping, paver patios, retaining walls, and full installs for Cedar Valley homeowners."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

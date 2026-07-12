@@ -3,6 +3,8 @@ import { FOUNDING_YEAR } from '@/lib/years-in-business'
 
 export const siteConfig = {
   name: 'A1 Property Services',
+  /** Homepage `<title>` / og:title — brand-first so Google prefers it over bare site name. */
+  homeTitle: 'A1 Property Services | Cedar Falls Landscaping',
   url: 'https://a1pslandscape.com',
   description:
     `Landscaping in Cedar Falls, IA. Retaining walls, paver patios, lawn care and more. Licensed, insured, free estimates since ${FOUNDING_YEAR}.`,
@@ -508,14 +510,9 @@ export function breadcrumbJsonLd(items: { name: string; path?: string }[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
+      // URL string is the schema.org / Google-preferred ListItem.item form.
       ...(item.path
-        ? {
-            item: {
-              '@type': 'WebPage',
-              '@id': `${siteConfig.url}${item.path === '/' ? '' : item.path}`,
-              name: item.name,
-            },
-          }
+        ? { item: `${siteConfig.url}${item.path === '/' ? '' : item.path}` }
         : {}),
     })),
   }
@@ -571,7 +568,9 @@ export function websiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${siteConfig.url}/#website`,
-    name: siteConfig.name,
+    // Prefer the full homepage title so Google does not fall back to bare brand name in SERPs.
+    name: siteConfig.homeTitle,
+    alternateName: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: { '@id': `${siteConfig.url}/#organization` },
@@ -691,17 +690,20 @@ export function speakableJsonLd(cssSelector: string[]) {
  */
 export function buildLocalBusinessJsonLd() {
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${siteConfig.googlePlaceId}`
-  const offerServices: { name: string; path: string }[] = [
-    { name: 'Landscaping in Cedar Falls', path: '/landscaping-services-in-cedar-falls' },
-    { name: 'Retaining Wall Installation in Cedar Falls', path: '/retaining-wall-in-cedar-falls' },
-    { name: 'Paver Patio Installation in Cedar Falls', path: '/paver-patio-installation' },
-    { name: 'Water Features Installation in Cedar Falls', path: '/cedar-falls-water-features' },
-    { name: 'Lawn Care in Cedar Falls', path: '/services/lawn-care' },
-    { name: 'Snow Removal in Cedar Falls', path: '/services/snow-removal' },
-    { name: 'Drainage Solutions in Cedar Falls', path: '/services/drainage' },
-    { name: 'Landscape Design in Cedar Falls', path: '/services/landscape-design' },
-    { name: 'Outdoor Living Spaces in Cedar Falls', path: '/services/outdoor-living' },
-    { name: 'Commercial Landscaping in Cedar Falls', path: '/services/commercial-landscaping' },
+  // Service entities live on their own pages (Service JSON-LD). Do not nest
+  // Service inside OfferCatalog — schema.org defines OfferCatalog as Offer /
+  // OfferCatalog only, and bare Offers without price also fail Ahrefs.
+  const knownServices = [
+    'Landscaping',
+    'Retaining wall installation',
+    'Paver patio installation',
+    'Water features',
+    'Lawn care',
+    'Snow removal',
+    'Drainage solutions',
+    'Landscape design',
+    'Outdoor living spaces',
+    'Commercial landscaping',
   ]
 
   return {
@@ -709,6 +711,7 @@ export function buildLocalBusinessJsonLd() {
     '@type': 'LandscapingBusiness',
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
+    alternateName: 'Cedar Falls Landscaping',
     image: {
       '@type': 'ImageObject',
       url: `${siteConfig.url}/og-image.jpg`,
@@ -752,23 +755,18 @@ export function buildLocalBusinessJsonLd() {
       { '@type': 'AdministrativeArea', name: 'Butler County' },
       { '@type': 'AdministrativeArea', name: 'Buchanan County' },
     ],
+    knowsAbout: knownServices,
     priceRange: '$$',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'https://schema.org/Monday',
-          'https://schema.org/Tuesday',
-          'https://schema.org/Wednesday',
-          'https://schema.org/Thursday',
-          'https://schema.org/Friday',
-        ],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '07:00',
         closes: '18:00',
       },
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'https://schema.org/Saturday',
+        dayOfWeek: 'Saturday',
         opens: '08:00',
         closes: '13:00',
       },
@@ -778,29 +776,8 @@ export function buildLocalBusinessJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: { '@type': 'Country', name: 'US' },
+      areaServed: 'US',
       availableLanguage: 'English',
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Landscaping and Hardscaping Services',
-      // Use ListItem → Service (not bare Offer) so validators don't flag
-      // missing Offer.price / priceCurrency on every page.
-      itemListElement: offerServices.map((service, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'Service',
-          name: service.name,
-          url: `${siteConfig.url}${service.path}`,
-          provider: { '@id': `${siteConfig.url}/#organization` },
-          areaServed: {
-            '@type': 'City',
-            name: 'Cedar Falls',
-            containedInPlace: { '@type': 'State', name: 'Iowa' },
-          },
-        },
-      })),
     },
   }
 }
@@ -854,6 +831,11 @@ export function blogPostingJsonLd(post: {
   image?: string
 }) {
   const url = `${siteConfig.url}/blog/${post.slug}`
+  const imageUrl = post.image
+    ? post.image.startsWith('http')
+      ? post.image
+      : `${siteConfig.url}${post.image}`
+    : `${siteConfig.url}/og-image.jpg`
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -868,10 +850,8 @@ export function blogPostingJsonLd(post: {
       name: siteConfig.name,
       logo: { '@type': 'ImageObject', url: `${siteConfig.url}/images/icon.webp` },
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    image: post.image
-      ? `${siteConfig.url}${post.image}`
-      : `${siteConfig.url}/og-image.jpg`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url, url },
+    image: { '@type': 'ImageObject', url: imageUrl },
   }
 }
 
@@ -901,7 +881,7 @@ export function organizationJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: { '@type': 'Country', name: 'US' },
+      areaServed: 'US',
       availableLanguage: 'English',
     },
     sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],
