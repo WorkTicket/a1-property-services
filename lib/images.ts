@@ -532,19 +532,6 @@ const galleryProjects: GalleryProject[] = [
     },
   },
   {
-    id: 'mowing-ba-1',
-    title: 'Lawn Mowing',
-    category: 'lawn-mowing',
-    before: {
-      src: img('mowing-before-1.webp'),
-      alt: 'Overgrown backyard lawn before professional mowing in Cedar Falls',
-    },
-    after: {
-      src: img('mowing-after-1.webp'),
-      alt: 'Freshly mowed backyard lawn with clean mowing stripes in Cedar Falls',
-    },
-  },
-  {
     id: 'mowing-ba-2',
     title: 'Lawn Mowing',
     category: 'lawn-mowing',
