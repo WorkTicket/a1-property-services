@@ -1,3 +1,5 @@
+import { sendGAEvent } from '@next/third-parties/google'
+
 type GtagEvent = {
   action: string
   category: string
@@ -7,20 +9,17 @@ type GtagEvent = {
 
 declare global {
   interface Window {
-    dataLayer?: unknown[]
-    gtag?: (...args: unknown[]) => void
     clarity?: (command: string, action: string, params?: string) => void
   }
 }
 
 export function trackEvent({ action, category, label, value }: GtagEvent) {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value,
-    })
-  }
+  if (typeof window === 'undefined') return
+  sendGAEvent('event', action, {
+    event_category: category,
+    event_label: label,
+    value,
+  })
 }
 
 export function trackPhoneCall(location = 'Header') {
