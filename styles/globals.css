@@ -83,7 +83,7 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-brand-gold/35 bg-transparent px-7 py-3.5 text-[0.9375rem] font-semibold text-brand-gold transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:border-brand-gold hover:bg-brand-gold hover:text-white hover:shadow-[0_4px_14px_rgba(158,27,36,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-brand-gold bg-transparent px-7 py-3.5 text-[0.9375rem] font-semibold text-brand-gold transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:bg-brand-gold hover:text-white hover:shadow-[0_4px_14px_rgba(158,27,36,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 active:translate-y-0;
   }
 
   .btn-outline-on-dark {

@@ -161,7 +161,7 @@ export default function CityPage({ params }: Props) {
                     <Button href={landscapingHubPath}>
                       View Landscaping Cedar Falls
                     </Button>
-                    <Button href="/contact" variant="ghost-dark">
+                    <Button href="/contact" variant="outline">
                       {CTA_COPY.quote}
                     </Button>
                   </>
@@ -170,7 +170,7 @@ export default function CityPage({ params }: Props) {
                     <Button href="/contact">
                       {CTA_COPY.quote}
                     </Button>
-                    <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
+                    <Button href={`tel:${siteConfig.phone}`} variant="outline">
                       <Phone size={16} />
                       {siteConfig.phoneDisplay}
                     </Button>

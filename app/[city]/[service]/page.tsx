@@ -145,7 +145,7 @@ export default function CityServicePage({ params }: Props) {
             <Button href="/contact" fullWidth className="sm:w-auto">
               Free Estimate in {city.name}
             </Button>
-            <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark" fullWidth className="sm:w-auto">
+            <Button href={`tel:${siteConfig.phone}`} variant="outline" fullWidth className="sm:w-auto">
               <Phone size={16} />
               {siteConfig.phoneDisplay}
             </Button>

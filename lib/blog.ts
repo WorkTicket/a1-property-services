@@ -1431,7 +1431,9 @@ content: [
 },
 ]
 
-export const blogCategories = [...new Set(blogPosts.map((p) => p.category))]
+export const blogCategories = [...new Set(blogPosts.map((p) => p.category))].sort((a, b) =>
+  a.localeCompare(b),
+)
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug)
@@ -1441,10 +1443,33 @@ export function getPostsByCategory(category: string): BlogPost[] {
   return blogPosts.filter((p) => p.category === category)
 }
 
+/** Newest first — use for index, archives, and related lists. */
+export function getSortedPosts(posts: BlogPost[] = blogPosts): BlogPost[] {
+  return [...posts].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+}
+
+export function getReadingTime(post: BlogPost): number {
+  const words = [post.excerpt, ...post.content].join(' ').trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.ceil(words / 200))
+}
+
+export function formatBlogDate(dateStr: string, style: 'long' | 'short' = 'long'): string {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: style === 'long' ? 'long' : 'short',
+    day: 'numeric',
+  })
+}
+
 export function getRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
   const current = getPostBySlug(currentSlug)
   if (!current) return []
-  return blogPosts
-    .filter((p) => p.slug !== currentSlug && p.category === current.category)
-    .slice(0, limit)
+  const sameCategory = getSortedPosts(
+    blogPosts.filter((p) => p.slug !== currentSlug && p.category === current.category),
+  )
+  if (sameCategory.length >= limit) return sameCategory.slice(0, limit)
+  const extras = getSortedPosts(blogPosts.filter((p) => p.slug !== currentSlug)).filter(
+    (p) => !sameCategory.some((s) => s.slug === p.slug),
+  )
+  return [...sameCategory, ...extras].slice(0, limit)
 }

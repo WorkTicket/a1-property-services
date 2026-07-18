@@ -122,7 +122,7 @@ export default function AboutPage() {
                 <Button href="/contact">
                   {CTA_COPY.quote}
                 </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
+                <Button href={`tel:${siteConfig.phone}`} variant="outline">
                   <Phone size={16} />
                   {siteConfig.phoneDisplay}
                 </Button>

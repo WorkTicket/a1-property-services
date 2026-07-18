@@ -218,7 +218,7 @@ export default function HomePage() {
           </StaggerContainer>
 
           <FadeIn className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row" delay={0.15}>
-            <Button href="/landscaping-services-in-cedar-falls" variant="outline">
+            <Button href="/landscaping-services-in-cedar-falls">
               Landscaping in Cedar Falls &rarr;
             </Button>
             <Button href="/services" variant="outline">
@@ -306,10 +306,10 @@ export default function HomePage() {
                 We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/landscaping-services-in-cedar-falls" variant="ghost-dark">
+                <Button href="/landscaping-services-in-cedar-falls">
                   Landscaping Cedar Falls
                 </Button>
-                <Button href="/about" variant="ghost-dark">
+                <Button href="/about" variant="outline">
                   Our Story
                 </Button>
               </div>
