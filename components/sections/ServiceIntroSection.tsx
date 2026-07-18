@@ -62,9 +62,6 @@ export default function ServiceIntroSection({
                 <Phone size={16} />
                 {siteConfig.phoneDisplay}
               </Button>
-              <Button href="/gallery" variant="ghost-dark" fullWidth className="sm:w-auto">
-                {CTA_COPY.gallery}
-              </Button>
             </div>
           </FadeIn>
 

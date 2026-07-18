@@ -232,14 +232,21 @@
   }
 
   .sticky-cta-bar {
-    @apply fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-2 bg-brand-green-800 px-3 py-2 sm:gap-3 sm:px-4 sm:py-3;
-    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    @apply fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 border-t border-white/10 shadow-[0_-4px_24px_rgba(0,0,0,0.18)] md:hidden;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
-  @media (min-width: 768px) {
-    .sticky-cta-bar {
-      display: none;
-    }
+  .sticky-cta-bar__call,
+  .sticky-cta-bar__quote {
+    @apply flex min-h-[52px] items-center justify-center gap-2 py-3.5 text-sm font-bold text-white transition-colors duration-200;
+  }
+
+  .sticky-cta-bar__call {
+    @apply bg-brand-dark active:bg-neutral-900;
+  }
+
+  .sticky-cta-bar__quote {
+    @apply bg-brand-gold active:bg-brand-gold-hover;
   }
 
   .touch-target {

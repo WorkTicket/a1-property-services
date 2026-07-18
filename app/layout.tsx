@@ -134,7 +134,11 @@ export default function RootLayout({
         <ScrollTracker />
         <MicrosoftClarity />
         <Navbar />
-        <main id="main-content" role="main" className="min-w-0 overflow-x-clip">
+        <main
+          id="main-content"
+          role="main"
+          className="min-w-0 overflow-x-clip pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:pb-0"
+        >
           {children}
         </main>
         <Footer />

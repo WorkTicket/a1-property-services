@@ -118,7 +118,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                 {CTA_COPY.quote}
                 <ChevronRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href={serviceHref} variant="outline-on-dark" size="lg">
+              <Button href={serviceHref} variant="ghost" size="lg">
                 View Full Service Details
               </Button>
             </div>

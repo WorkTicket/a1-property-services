@@ -82,7 +82,7 @@ export default function Footer() {
                 {CTA_COPY.estimate}
                 <ChevronRight className="h-3 w-3" aria-hidden />
               </Button>
-              <Button href="/gallery" size="sm" variant="outline-on-dark" onClick={() => trackCtaClick('Footer Gallery')}>
+              <Button href="/gallery" size="sm" variant="ghost" onClick={() => trackCtaClick('Footer Gallery')}>
                 {CTA_COPY.viewGallery}
               </Button>
             </div>

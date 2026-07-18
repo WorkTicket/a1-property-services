@@ -14,7 +14,6 @@ type CtaBannerProps = {
   eyebrow?: string
   animated?: boolean
   titleClassName?: string
-  showGallery?: boolean
 }
 
 function CtaBannerContent({
@@ -22,7 +21,6 @@ function CtaBannerContent({
   description,
   eyebrow,
   titleClassName,
-  showGallery,
 }: Omit<CtaBannerProps, 'animated'>) {
   return (
     <>
@@ -46,11 +44,6 @@ function CtaBannerContent({
           <Phone size={18} />
           {siteConfig.phoneDisplay}
         </Button>
-        {showGallery && (
-          <Button href="/gallery" variant="ghost" size="lg" onClick={() => trackCtaClick('Banner Gallery')}>
-            {CTA_COPY.viewGallery}
-          </Button>
-        )}
       </div>
     </>
   )
@@ -62,7 +55,6 @@ export default function CtaBanner({
   eyebrow,
   animated = false,
   titleClassName,
-  showGallery,
 }: CtaBannerProps) {
   return (
     <section className="section bg-brand-green-800">
@@ -74,7 +66,6 @@ export default function CtaBanner({
               description={description}
               eyebrow={eyebrow}
               titleClassName={titleClassName}
-              showGallery={showGallery}
             />
           </FadeIn>
         ) : (
@@ -83,7 +74,6 @@ export default function CtaBanner({
             description={description}
             eyebrow={eyebrow}
             titleClassName={titleClassName}
-            showGallery={showGallery}
           />
         )}
       </div>
