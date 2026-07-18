@@ -19,3 +19,8 @@
 
 /robots.txt
   Cache-Control: public, max-age=3600, must-revalidate
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin

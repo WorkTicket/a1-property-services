@@ -4,7 +4,6 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
 
@@ -95,6 +94,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+            `,
+          }}
+        />
         <link rel="icon" href="/images/icon.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/images/icon.webp" />
         <link rel="manifest" href="/manifest.json" />
@@ -121,7 +132,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <ScrollTracker />
-        <GoogleAnalytics />
         <MicrosoftClarity />
         <Navbar />
         <main id="main-content" role="main" className="min-w-0 overflow-x-clip">

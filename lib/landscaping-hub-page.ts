@@ -162,8 +162,8 @@ export const landscapingHubPage = {
     },
     {
       heading: 'Ponds & Water Features',
-      serviceHref: '/cedar-falls-water-features',
-      serviceLinkLabel: 'water features in Cedar Falls',
+      serviceHref: '/services/ponds-water-features',
+      serviceLinkLabel: 'ponds and water features in Cedar Falls',
       paragraphs: [
         'At A1 Property Services, we design, build, and maintain pond and water garden features that enhance the beauty, balance, and overall functionality of outdoor spaces. Serving both residential and commercial properties, our focus is on creating water features that remain healthy, visually striking, and fully operational throughout the year.',
         'We begin with custom pond design and installation, developing water features that are tailored to your landscape and vision. From simple, natural-looking backyard ponds to more detailed water garden systems, each installation is carefully planned to integrate seamlessly into your property while ensuring long-term durability and performance.',

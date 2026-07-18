@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Check, Star, Shield } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, getGoogleMapsEmbedUrl, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
 import QuoteForm from '@/components/ui/QuoteForm'
+import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 import FadeIn from '@/components/motion/FadeIn'
 import PageHero from '@/components/motion/PageHero'
 
@@ -22,6 +23,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <TrackPageEvent event="contact_page_view" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -68,7 +70,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8">
-                <QuoteForm variant="light" />
+                <QuoteForm variant="light" formLocation="Contact Page" />
               </div>
             </FadeIn>
 

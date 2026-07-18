@@ -73,7 +73,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Why Cedar Falls Homeowners Choose Us',
         paragraphs: [
           'Searching for a retaining wall contractor in Cedar Falls usually comes down to drainage experience. Walls without gravel backfill and outlet drains fail in Iowa clay. Our crew builds for the Cedar Valley climate first, then finishes the face so the wall looks intentional on your property.',
-          'You get a free on-site quote, clear written pricing, and walls that turn steep ground into usable yard. Browse our gallery for recent installs, then call (319) 464-1889 to schedule a walkthrough.',
+          'You get a free on-site quote, clear written pricing, and walls that turn steep ground into usable yard. See process steps and project photos on our full retaining walls page, or call (319) 464-1889 to schedule a walkthrough.',
         ],
       },
       {
@@ -112,59 +112,51 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     eyebrow: 'Service',
     h1: 'Custom Paver Patio Installation in Cedar Falls',
     heroHeading:
-      'We design and install high-quality patios built for durability, drainage performance, and long-term outdoor living. Serving Cedar Falls, Waterloo, and the surrounding Cedar Valley areas, we create outdoor spaces that improve both function and property value.',
+      'Durable paver patios built for Iowa freeze-thaw, drainage, and everyday outdoor living — serving Cedar Falls, Waterloo, and the Cedar Valley.',
     sections: [
       {
         heading: 'Custom Design & Installation',
         paragraphs: [
-          'We focus on creating functional and visually appealing outdoor living spaces tailored to your property.',
-          'We work with premium stone, brick, and concrete pavers that are selected for durability, appearance, and long-term performance in Iowa\u2019s climate.',
-          'Every project is designed around your yard layout, drainage needs, and how you plan to use your outdoor space.',
+          'We design and install paver patios around how you use your yard — dining, entertaining, or a quiet sit area — with stone, brick, or concrete pavers chosen for Iowa weather and the look of your home.',
+          'Every layout accounts for grading, runoff away from the house, and clean edges that stay tight through freeze-thaw. You get a patio that looks finished on day one and stays level for years.',
         ],
+        showCta: true,
       },
       {
         heading: 'Why Cedar Falls Homeowners Choose Us',
         paragraphs: [
           'Searching for a paver patio in Cedar Falls usually comes down to who builds for Iowa winters — not just who lays stone. Our crew excavates, compacts the base in lifts, sets edge restraint, and finishes joints so the patio stays level through freeze-thaw.',
-          'Homeowners hire us for clear written estimates, local jobsite experience across College Hill and North Cedar, and patios that drain away from the house. Browse our gallery for recent Cedar Falls installs, then request a free on-site quote.',
+          'Homeowners hire us for clear written estimates, local jobsite experience across College Hill and North Cedar, and patios that drain away from the house. Browse project photos and materials on our full paver patio page, then request a free on-site quote.',
         ],
       },
       {
         heading: 'Our Process',
         paragraphs: [
-          'Our process begins with a detailed site assessment and thoughtful design plan to ensure the finished structure meets both functional and visual goals. We evaluate grading, soil conditions, drainage patterns, and surrounding landscape features to create a solution that fits your property and performs reliably over time. Careful planning at this stage allows us to address potential challenges before construction begins.',
+          'We start with a site assessment and simple design plan: grade, soil, drainage, and how the patio ties into your lawn or hardscape. Planning first keeps surprises off the jobsite.',
         ],
-        bulletsIntro: 'Every patio is built using a proven step-by-step process:',
+        bulletsIntro: 'Every patio is built with a proven sequence:',
         bullets: [
           'Site evaluation and layout planning',
-          'Excavation and proper grading for drainage',
-          'Compacted aggregate base installation',
+          'Excavation and grading for drainage',
+          'Compacted aggregate base',
           'Precise paver placement and leveling',
           'Edge restraints for long-term stability',
-          'Joint sand finishing for durability',
+          'Joint sand finishing',
         ],
         paragraphsAfter: [
-          'This process ensures your patio stays level, stable, and long-lasting.',
-          'We use high-quality materials and proven construction techniques to build durable landscape structures that can withstand Iowa\u2019s weather, including freeze-thaw cycles and seasonal moisture changes. Each project is built with long-term stability in mind, ensuring strength, proper water management, and consistent performance throughout the year.',
+          'That base-first approach is what keeps Cedar Falls patios from shifting after spring thaws and heavy rain.',
         ],
       },
       {
-        heading: 'Built for Iowa Weather Conditions',
+        heading: 'Built for Iowa Weather',
         paragraphs: [
-          'Our patios are engineered specifically for Cedar Falls weather conditions, including freeze-thaw cycles, heavy rain, and seasonal soil movement.',
-          'Proper base preparation and drainage design are the key to preventing shifting, sinking, or long-term damage.',
-        ],
-      },
-      {
-        heading: 'Cedar Falls & Cedar Valley',
-        paragraphs: [
-          'We proudly serve Cedar Falls, Waterloo, and surrounding Cedar Valley communities.',
-          'Our goal is to create outdoor living spaces that improve usability, increase property value, and provide a long-lasting area for entertaining, relaxing, and enjoying your home.',
+          'Cedar Falls patios need more than pretty pavers. Proper excavation, compacted base, and drainage design prevent sinking, heaving, and joint failure through freeze-thaw cycles.',
+          'We serve Cedar Falls, Waterloo, and nearby Cedar Valley communities with outdoor living spaces that add usable square footage and lasting curb appeal.',
         ],
       },
     ],
     closingCopy:
-      'Ready to transform your outdoor space? Our team is here to bring your landscaping dreams to life.',
+      'Ready for a patio built for Iowa weather? Request a free on-site quote and we will map the best layout for your yard.',
   },
   'cedar-falls-water-features': {
     path: '/cedar-falls-water-features',
@@ -190,29 +182,29 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     contentImageAlt: 'Custom stone pondless waterfall installation in Cedar Falls, Iowa',
     eyebrow: 'Service',
     h1: 'Custom Water Feature Installation in Cedar Falls, IA',
-    heroHeading: 'Durable Materials for Long-Lasting Results',
+    heroHeading:
+      'Custom ponds, waterfalls, and pondless water gardens designed for Cedar Falls yards — built to look natural and run clean through the seasons.',
     sections: [
       {
         heading: 'Water Features',
         paragraphs: [
-          'We provide custom water feature solutions designed to enhance the beauty, tranquility, and functionality of your outdoor space. From elegant ponds and cascading waterfalls to fully engineered fountains and streams, our team delivers stunning, long-lasting results you can enjoy year-round. Every feature is tailored to your property\u2019s unique characteristics, including terrain, water flow, plantings, and aesthetic preferences.',
-          'Water features do more than create a visual focal point. They promote relaxation, improve air quality, and support local wildlife. Whether you\u2019re adding a serene pond, a dynamic waterfall, or a flowing stream, our designs combine artistry with precision, seamlessly integrating into your landscape for both beauty and function.',
+          'We design and install custom water features that add sound, movement, and a natural focal point to your outdoor space — from backyard ponds and cascading waterfalls to pondless streams and engineered fountains.',
+          'Every feature is planned around your slope, sight lines, and how you use the yard. The goal is a system that looks intentional, circulates cleanly, and fits the rest of your landscape.',
         ],
         showCta: true,
         subsections: [
           {
             heading: 'Professional Design and Installation',
             paragraphs: [
-              'Every project begins with a detailed site evaluation and design plan to ensure your water feature meets both functional and aesthetic goals. We assess slope, soil, drainage, and sight lines to place ponds, waterfalls, and streams where they perform reliably and look natural on your property. Using quality liners, pumps, and filtration matched to Iowa conditions, we build systems that run cleanly through the seasons.',
-              'We also incorporate complementary landscaping around your water feature, including aquatic plantings, decorative stone, lighting, and integrated hardscaping. These elements help your pond or waterfall blend into the surrounding yard while improving usability and visual appeal.',
-              'At A1 Property Services, we focus on long-term durability and minimal upkeep. Our water features are designed with winterization, proper circulation, and easy maintenance in mind, whether for residential or commercial properties in the Cedar Falls area. The result is a striking outdoor focal point that adds lasting value and enjoyment to your property.',
+              'Projects start with a site evaluation: soil, drainage, power access, and the best place for water to look and perform. We use quality liners, pumps, and filtration matched to Iowa conditions so the feature stays clear and manageable.',
+              'Complementary stone, plantings, lighting, and hardscape help the pond or waterfall blend into the yard instead of sitting as a standalone add-on. Systems are planned with winterization and routine maintenance in mind for Cedar Falls homes and businesses.',
             ],
           },
         ],
       },
     ],
     closingCopy:
-      'Ready to transform your outdoor space? Our team is here to bring your landscaping dreams to life.',
+      'Ready for a pond or waterfall that fits your Cedar Falls yard? Request a free estimate and we will walk the site with you.',
     ctaEyebrow: 'Cedar Falls Water Features',
   },
 }

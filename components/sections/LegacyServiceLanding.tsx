@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
+import dynamic from 'next/dynamic'
+import { Check, ChevronRight, Phone } from 'lucide-react'
 import {
   breadcrumbJsonLd,
   faqPageJsonLd,
@@ -9,17 +10,24 @@ import {
   webPageJsonLd,
 } from '@/lib/metadata'
 import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
-import { serviceFaqs } from '@/lib/services'
+import { getServiceBySlug, getServicePageHref, serviceFaqs } from '@/lib/services'
+import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
 import HubPagePromo from '@/components/sections/HubPagePromo'
+import RelatedContent from '@/components/sections/RelatedContent'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroOverlay from '@/components/ui/HeroOverlay'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import FaqAccordion from '@/components/ui/FaqAccordion'
+import ServiceIcon from '@/components/ui/ServiceIcon'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import FadeIn from '@/components/motion/FadeIn'
+import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
+
+const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 type LegacyServiceLandingProps = {
   page: LegacyLandingPage
@@ -38,6 +46,14 @@ export function legacyLandingMetadata(page: LegacyLandingPage) {
 }
 
 export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps) {
+  const service = getServiceBySlug(page.serviceSlug)
+  const serviceHref = getServicePageHref(page.serviceSlug)
+  const serviceName = service?.name ?? page.h1
+  const complementaryServices = getComplementaryServices(page.serviceSlug, 3)
+  const relatedContentGroups = getServiceRelatedContentGroups(page.serviceSlug)
+  const faqs = serviceFaqs[page.serviceSlug] ?? []
+  const formLocation = `Legacy ${serviceName}`
+
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -62,7 +78,6 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
     about: page.h1,
   })
 
-  const faqs = serviceFaqs[page.serviceSlug] ?? []
   const faqSchema = faqs.length > 0 ? faqPageJsonLd(faqs) : null
 
   return (
@@ -98,10 +113,13 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
             <p className="hero-eyebrow">{page.eyebrow}</p>
             <h1 className="hero-title mt-4">{page.h1}</h1>
             <h2 className="hero-subtitle mx-auto mt-4 max-w-2xl md:mt-6">{page.heroHeading}</h2>
-            <div className="mt-8">
-              <Button href="/contact" size="lg">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button href="#estimate" size="lg">
                 {CTA_COPY.quote}
                 <ChevronRight className="h-4 w-4" aria-hidden />
+              </Button>
+              <Button href={serviceHref} variant="outline-on-dark" size="lg">
+                View Full Service Details
               </Button>
             </div>
           </div>
@@ -124,10 +142,13 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                     ))}
                   </div>
                   {section.showCta ? (
-                    <div className="mt-8">
-                      <Button href="/contact">
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                      <Button href="#estimate">
                         {CTA_COPY.quote}
                         <ChevronRight className="h-4 w-4" aria-hidden />
+                      </Button>
+                      <Button href={serviceHref} variant="outline">
+                        Process, Materials &amp; Gallery
                       </Button>
                     </div>
                   ) : null}
@@ -181,10 +202,13 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               </div>
             ) : null}
             {section.showCta ? (
-              <div className="mt-8">
-                <Button href="/contact">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button href="#estimate">
                   {CTA_COPY.quote}
                   <ChevronRight className="h-4 w-4" aria-hidden />
+                </Button>
+                <Button href={serviceHref} variant="outline">
+                  Process, Materials &amp; Gallery
                 </Button>
               </div>
             ) : null}
@@ -203,24 +227,145 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         </section>
       ))}
 
+      <section className="section bg-brand-stone">
+        <FadeIn className="section-inner-narrow text-center">
+          <p className="section-eyebrow">Next Step</p>
+          <h2 className="section-heading mt-3">See How We Build {serviceName}</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-brand-body leading-relaxed">
+            Want process steps, materials, and project photos before you request a quote? Open the full{' '}
+            {serviceName.toLowerCase()} service page, then come back here or jump straight to a free estimate.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href={serviceHref} size="lg">
+              View {serviceName} Details
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+            <Button href="#estimate" variant="outline" size="lg">
+              {CTA_COPY.quote}
+            </Button>
+          </div>
+        </FadeIn>
+      </section>
+
+      {faqs.length > 0 ? (
+        <section className="section bg-white">
+          <FadeIn className="section-inner-narrow">
+            <h2 className="section-heading">{serviceName} in Cedar Falls: FAQ</h2>
+            <div className="mt-8">
+              <FaqAccordion
+                items={faqs.map((faq) => ({
+                  q: faq.question,
+                  a: faq.answer,
+                }))}
+              />
+            </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Button href="#estimate" size="sm">
+                {CTA_COPY.estimate}
+              </Button>
+              <Button href={`tel:${siteConfig.phone}`} variant="outline" size="sm">
+                <Phone size={14} />
+                {siteConfig.phoneDisplay}
+              </Button>
+            </div>
+          </FadeIn>
+        </section>
+      ) : null}
+
+      <section id="estimate" className="section bg-neutral-50">
+        <div className="section-inner relative">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <FadeIn>
+              <p className="section-eyebrow">Get Started</p>
+              <h2 className="section-heading mt-3">Request Your Free Estimate</h2>
+              <p className="mt-4 leading-relaxed text-brand-body">
+                Tell us about your {serviceName.toLowerCase()} project in Cedar Falls or the Cedar Valley.
+                We follow up with a clear on-site quote — no pressure.
+              </p>
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-start gap-3 text-sm text-brand-body">
+                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                  Free on-site estimates for local homeowners
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-body">
+                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                  Licensed &amp; insured Iowa contractor
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-body">
+                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                  Built for Iowa freeze-thaw and drainage
+                </li>
+              </ul>
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-gold"
+              >
+                <Phone size={16} className="text-brand-gold" />
+                Or call {siteConfig.phoneDisplay}
+              </a>
+              <p className="mt-6 text-sm text-brand-body">
+                Prefer more detail first?{' '}
+                <Link
+                  href={serviceHref}
+                  className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
+                >
+                  Browse the full {serviceName.toLowerCase()} page
+                </Link>
+                .
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <div className="form-card">
+                <QuoteForm variant="light" formLocation={formLocation} />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow text-center">
           <p className="text-lg text-brand-body leading-relaxed">{page.closingCopy}</p>
-          <p className="mt-4 text-lg font-semibold text-brand-dark">
-            <Link href="/contact" className="text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline">
-              Contact us today!
-            </Link>
-          </p>
-          <div className="mt-8">
-            <Button href="/contact" size="lg">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="#estimate" size="lg">
               {CTA_COPY.quote}
               <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+            <Button href={serviceHref} variant="outline" size="lg">
+              View Full Service Details
             </Button>
           </div>
         </FadeIn>
       </section>
 
       <HubPagePromo />
+
+      {complementaryServices.length > 0 ? (
+        <section className="section bg-white">
+          <div className="section-inner">
+            <FadeIn className="mb-10 text-center">
+              <h2 className="section-heading">Other Landscaping Services in Cedar Falls</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-brand-body">
+                Planning a bigger outdoor project? These services often pair with {serviceName.toLowerCase()}.
+              </p>
+            </FadeIn>
+            <StaggerContainer className="grid gap-6 sm:grid-cols-3">
+              {complementaryServices.map((s) => (
+                <StaggerItem key={s.slug}>
+                  <Link href={getServicePageHref(s.slug)} className="card block h-full p-6">
+                    <ServiceIcon name={s.icon} size={22} />
+                    <h3 className="mt-3 font-bold text-brand-dark">{s.name}</h3>
+                    <p className="mt-1 text-sm text-brand-body">{s.shortDesc}</p>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+      ) : null}
+
+      <RelatedContent groups={relatedContentGroups} />
 
       <CtaBanner
         title="Get Your Free Estimate"

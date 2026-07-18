@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { CheckCircle, Star, Phone } from 'lucide-react'
 import { generatePageMetadata, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
+import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'We Got It!',
@@ -21,6 +22,7 @@ export default function ThankYouPage() {
 
   return (
     <>
+      <TrackPageEvent event="thank_you_lead" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

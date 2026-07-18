@@ -178,6 +178,15 @@ export default function LandscapingHubLanding() {
               </li>
             ))}
           </ul>
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="#estimate">
+              {CTA_COPY.quote}
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+            <Button href="/services" variant="outline">
+              Browse All Services
+            </Button>
+          </div>
         </FadeIn>
       </section>
 
@@ -282,28 +291,33 @@ export default function LandscapingHubLanding() {
                 ))}
               </ul>
             ) : null}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button href="#estimate">
+                {CTA_COPY.quote}
+                <ChevronRight className="h-4 w-4" aria-hidden />
+              </Button>
+              {section.serviceHref ? (
+                <Button href={section.serviceHref} variant="outline">
+                  {CTA_COPY.learnMore}
+                  <ChevronRight className="h-4 w-4" aria-hidden />
+                </Button>
+              ) : null}
+              <Button href={`tel:${siteConfig.phone}`} variant="outline">
+                <Phone className="h-4 w-4" aria-hidden />
+                Call Now
+              </Button>
+            </div>
             {section.serviceHref ? (
-              <p className="mt-6 text-brand-body">
-                Learn more about our{' '}
+              <p className="mt-4 text-sm text-brand-body">
+                Full details:{' '}
                 <Link
                   href={section.serviceHref}
                   className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
                 >
                   {section.serviceLinkLabel ?? section.heading.toLowerCase()}
                 </Link>
-                .
               </p>
             ) : null}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="#estimate">
-                {CTA_COPY.quote}
-                <ChevronRight className="h-4 w-4" aria-hidden />
-              </Button>
-              <Button href={`tel:${siteConfig.phone}`} variant="outline">
-                <Phone className="h-4 w-4" aria-hidden />
-                Call Now
-              </Button>
-            </div>
           </FadeIn>
         </section>
       ))}
@@ -349,7 +363,7 @@ export default function LandscapingHubLanding() {
 
             <FadeIn delay={0.1}>
               <div className="form-card">
-                <QuoteForm variant="light" />
+                <QuoteForm variant="light" formLocation="Landscaping Hub" />
               </div>
             </FadeIn>
           </div>

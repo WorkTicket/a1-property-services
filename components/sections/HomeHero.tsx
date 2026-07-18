@@ -4,6 +4,7 @@ import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroOverlay from '@/components/ui/HeroOverlay'
 import { Phone } from 'lucide-react'
+import { trackPhoneCall } from '@/lib/analytics'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages } from '@/lib/images'
@@ -39,6 +40,7 @@ export default function HomeHero() {
         <div className="mt-8">
           <a
             href={`tel:${siteConfig.phone}`}
+            onClick={() => trackPhoneCall('Home Hero')}
             className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
           >
             <Phone size={14} />

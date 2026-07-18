@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useRef, useState, type MutableRefObject } from 'react'
-import { cn } from '@/lib/utils'
+import { cn, ANIMATION_DURATION, ANIMATION_EASING, STAGGER_BASE_DELAY, STAGGER_STEP } from '@/lib/utils'
 
 const StaggerVisibleContext = createContext(false)
 const StaggerIndexContext = createContext<MutableRefObject<number> | null>(null)
@@ -64,13 +64,13 @@ export function StaggerItem({ children, className, as = 'div' }: StaggerItemProp
   return (
     <Tag
       className={cn(
-        'transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[opacity,transform]',
+        `transition-all duration-[${ANIMATION_DURATION}ms] ease-[${ANIMATION_EASING}] will-change-[opacity,transform]`,
         visible ? 'translate-y-0 opacity-100' : 'translate-y-7 opacity-0',
         className,
       )}
       style={{
         transitionDelay: visible
-          ? `calc(var(--stagger-delay, 0s) + ${0.08 + index * 0.1}s)`
+          ? `calc(var(--stagger-delay, 0s) + ${STAGGER_BASE_DELAY + index * STAGGER_STEP}s)`
           : '0s',
       }}
     >
