@@ -17,7 +17,7 @@ export default function HomeHero() {
       <HeroImagePreload src={siteImages.homeHero} />
       <LcpHeroImage
         src={siteImages.homeHero}
-        alt="Professional landscaping project in Cedar Falls, Iowa"
+        alt="Professional landscaping and hardscape project by A1 Property Services"
       />
       <HeroOverlay imageSrc={siteImages.homeHero} variant="center" />
 

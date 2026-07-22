@@ -39,7 +39,7 @@ export default function GalleryPage() {
         imageAlt="Landscaping project gallery in Cedar Falls"
         eyebrow="Our Work"
         title="Our Project|Gallery"
-        subtitle="Real projects across Cedar Falls, Waterloo, and the Cedar Valley. Drag the slider to compare before and after."
+        subtitle="Real projects across the Cedar Valley. Drag the slider to compare before and after."
       />
       <GalleryFilter />
       <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />

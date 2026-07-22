@@ -17,9 +17,9 @@ export type HubRecentProject = {
 
 export const landscapingHubPage = {
   path: '/landscaping-services-in-cedar-falls',
-  title: 'Cedar Falls Landscaping | Free Estimates | A1',
+  title: 'Landscaping in Cedar Falls, IA | Local Crew · Free Estimate',
   description:
-    'Get Cedar Falls landscaping from a local crew — retaining walls, paver patios, lawn care & installs. Licensed since 2014. Free on-site estimate. Call (319) 464-1889.',
+    'Landscaping in Cedar Falls, IA — retaining walls, paver patios, lawn care & installs from a local crew. Free on-site estimate. Call (319) 464-1889.',
   keywords: [
     'landscaping cedar falls',
     'cedar falls landscaping',
@@ -35,25 +35,24 @@ export const landscapingHubPage = {
     'water features cedar falls',
   ],
   ogImage: '/images/content-landscaping-cedar-falls.webp',
-  ogImageAlt: 'Professional landscape installation in Cedar Falls by A1 Property Services',
+  ogImageAlt: 'Professional landscape installation by A1 Property Services',
   heroImage: '/images/content-landscaping-cedar-falls.webp',
-  heroImageAlt: 'Completed landscaping and hardscape work for a Cedar Falls home',
+  heroImageAlt: 'Completed landscaping and hardscape work for a local home',
   contentImage: '/images/content-landscaping-cedar-falls.webp',
   contentImageAlt:
-    'Professional landscaping installation in Cedar Falls, Iowa by A1 Property Services',
+    'Professional landscaping installation by A1 Property Services',
   eyebrow: 'Cedar Falls, Iowa',
-  h1: 'Landscaping Cedar Falls: Lawn Care, Patios & Retaining Walls',
+  h1: 'Landscaping in Cedar Falls, IA',
   heroHeading:
-    'Your local landscaping company in Cedar Falls, IA. Serving Waterloo and the Cedar Valley with lawn care, hardscaping, and full landscape installation.',
-  introHeading: 'A Local Crew That Knows Cedar Falls Yards',
+    'Local lawn care, hardscaping, and full landscape installs across the Cedar Valley.',
+  introHeading: 'A Local Crew That Knows Cedar Valley Yards',
   introParagraphs: [
-    'A1 Property Services is a locally owned landscaping company based in Cedar Falls, Iowa. We help homeowners and businesses across the Cedar Valley with everything from weekly lawn care and seasonal cleanups to retaining walls, paver patios, ponds, and complete landscape installation.',
-    'When you search for landscaping Cedar Falls, you want a contractor who knows Iowa clay soil, freeze-thaw cycles, and how water moves across Black Hawk County lots — not a one-size-fits-all approach. Our team plans every project around your property, your budget, and how you actually use your outdoor space.',
-    'We regularly work in College Hill, North Cedar, South Cedar Falls, and newer builds on the north end. Whether you need a single service or a full property transformation, we deliver work that looks great on day one and holds up through Iowa winters. Licensed, insured, and rated 5 stars by local customers.',
+    'A1 Property Services is a locally owned landscaping company based in Cedar Falls, Iowa. We help homeowners and businesses across the Cedar Valley with lawn care, retaining walls, paver patios, ponds, and complete landscape installation.',
+    'We plan every project around Iowa clay, freeze-thaw, and how water moves across Cedar Valley lots — from College Hill and North Cedar to newer builds on the north end. Licensed, insured, and rated 5 stars by local customers.',
   ],
-  coreServicesHeading: 'Core Services We Provide',
+  coreServicesHeading: 'Hardscape & Landscape Services',
   coreServicesIntro:
-    'Our Cedar Falls crew focuses on installation and maintenance that lasts — visual appeal, drainage that works, and real property value. From retaining walls built for freeze-thaw to complete landscape installs, every project uses careful planning, quality materials, and methods proven in Iowa\u2019s climate.',
+    'From retaining walls built for freeze-thaw to paver patios and water features, our crew focuses on work that lasts — drainage that works, quality materials, and clear written estimates.',
   featuredServices: [
     { label: 'Retaining Wall', href: '/retaining-wall-in-cedar-falls' },
     { label: 'Water Features', href: '/cedar-falls-water-features' },
@@ -61,27 +60,27 @@ export const landscapingHubPage = {
   ],
   recentProjects: [
     {
-      title: 'Retaining Wall — Cedar Falls Hillside',
+      title: 'Retaining Wall — Hillside',
       description:
-        'Block retaining wall with gravel backfill and drain tile on a sloped College Hill–area lot that was washing out after spring thaws.',
+        'Block retaining wall with gravel backfill and drain tile on a sloped lot that was washing out after spring thaws.',
       href: '/retaining-wall-in-cedar-falls',
       image: '/images/wall-after-1.webp',
-      imageAlt: 'Retaining wall installation on a Cedar Falls hillside',
+      imageAlt: 'Retaining wall installation on a hillside',
     },
     {
-      title: 'Paver Patio — Cedar Falls Backyard',
+      title: 'Paver Patio — Backyard',
       description:
         'Custom paver patio with steps and outdoor living space — compacted base and edge restraint built for Iowa freeze-thaw.',
       href: '/paver-patio-installation',
       image: '/images/patio-after-2.webp',
-      imageAlt: 'Paver patio installation in a Cedar Falls backyard',
+      imageAlt: 'Paver patio installation in a backyard',
     },
     {
-      title: 'Water Feature — Cedar Falls Garden',
+      title: 'Water Feature — Garden',
       description: 'Backyard pond with aquatic plants and natural stone edging.',
       href: '/cedar-falls-water-features',
       image: '/images/water-feature-image-3.webp',
-      imageAlt: 'Water feature installation in Cedar Falls, Iowa',
+      imageAlt: 'Water feature installation with natural stone',
     },
     {
       title: 'Full Landscape Install — Cedar Valley',
@@ -92,130 +91,87 @@ export const landscapingHubPage = {
       imageAlt: 'Landscape installation project in the Cedar Valley',
     },
   ] satisfies HubRecentProject[],
-  allServicesHeading: 'Full-Service Landscape Work for Cedar Falls Homes',
+  allServicesHeading: 'Full-Service Landscape Work for the Cedar Valley',
   allServicesIntro:
-    'Homeowners and businesses across the Cedar Valley rely on us for installation, maintenance, restoration, and seasonal work. Every project uses careful planning, quality materials, and proven methods. Whether residential or commercial, our work is built to perform in Iowa\u2019s climate while delivering lasting curb appeal.',
+    'Installation, maintenance, restoration, and seasonal work for homes and businesses across the Cedar Valley — built for Iowa climate and lasting curb appeal.',
   serviceSections: [
     {
       heading: 'Landscape Installation',
       serviceHref: '/services/landscape-installation',
-      serviceLinkLabel: 'landscape installation in Cedar Falls',
+      serviceLinkLabel: 'landscape installation',
       paragraphs: [
-        'At A1 Property Services, we don\u2019t just install landscapes we craft outdoor environments that are built to inspire, function, and endure. Every yard, garden, and commercial property holds unique potential, and our team works closely with you to transform that potential into a finished space that feels intentional and well-balanced.',
-        'From the very beginning, our process is rooted in thoughtful planning. We take time to understand how you want your space to look, feel, and function, then evaluate the property itself to develop a design that fits both your vision and the land. The result is a tailored plan that blends visual appeal with practical structure, ensuring your landscape works just as well as it looks.',
-        'Our installation work brings that design to life with precision and craftsmanship. We install healthy, long-lasting material, shape grading for proper drainage, and construct durable hardscape features such as patios, walkways, and retaining walls. Every element is placed with purpose, creating a natural flow between structure and open space. Finishing touches like decorative accents and custom outdoor features help complete the environment without overwhelming it.',
-        'We build with longevity in mind. Soil preparation, plant selection, and material quality are all carefully considered to ensure your landscape doesn\u2019t just look good at completion it continues to perform year after year. The goal is simple: a space that stays healthy, stable, and visually strong long after the project is finished.',
+        'Full landscape installs for local homes and businesses — grading for drainage, healthy plantings, and hardscape that ties the yard together. We plan around how you use the space and Iowa freeze-thaw so the work holds up.',
       ],
     },
     {
       heading: 'Lawn Care & Mowing',
       serviceHref: '/services/lawn-care',
-      serviceLinkLabel: 'lawn care in Cedar Falls',
+      serviceLinkLabel: 'lawn care',
       paragraphs: [
-        'At A1 Property Services, we don\u2019t just mow lawns we maintain vibrant, healthy, and consistently attractive outdoor spaces. Serving both residential and commercial properties, our mowing services are designed to keep your lawn looking sharp year-round while also supporting long-term turf health.',
-        'Our approach focuses on precision and consistency. Regular mowing is performed at the optimal height for your grass type, helping create a clean, uniform appearance across your entire property. We also take care of detailed edging and trimming along driveways, walkways, and landscape beds so every boundary looks intentional and professionally maintained.',
-        'Because no two lawns are the same, we adjust our mowing schedules and techniques based on seasonal conditions. This ensures your grass isn\u2019t just being cut it\u2019s being managed in a way that supports steady, healthy growth throughout the year, even as weather patterns shift.',
-        'Lawn care goes beyond mowing alone. We integrate broader turf health practices such as fertilization, weed control support, and general maintenance strategies that strengthen root systems and improve overall resilience. The goal is not just appearance, but long-term performance and durability.',
-        'To provide complete property care, we also offer services like aeration, dethatching, leaf removal, and seasonal cleanups. These services work together to keep your lawn clean, breathable, and prepared for each new season.',
+        'Reliable mowing, edging, and turf care for residential and commercial properties. We cut at the right height for Iowa grass types and can add aeration, fertilization support, and seasonal cleanups.',
       ],
     },
     {
       heading: 'Landscape Preservation & Restoration',
       serviceHref: '/services/preservation-restoration',
-      serviceLinkLabel: 'landscape restoration in Cedar Falls',
+      serviceLinkLabel: 'landscape restoration',
       paragraphs: [
-        'At A1 Property Services, we help existing landscapes thrive while also restoring outdoor spaces that have become neglected or worn over time. Serving both residential and commercial properties, our preservation and restoration services are designed to bring balance back to your property improving health, function, and overall visual appeal throughout every season.',
-        'Every restoration project begins with a detailed landscape assessment. We take time to evaluate plant health, soil conditions, drainage patterns, and the overall performance of your outdoor space. This allows us to identify what\u2019s working, what\u2019s struggling, and what needs to be improved to restore long-term stability and appearance.',
-        'From there, we focus on precision care that strengthens the foundation of your landscape. This includes expert pruning and tree maintenance to encourage healthy growth, improve structure, and enhance safety across your property. Proper trimming isn\u2019t just cosmetic it plays a major role in the long-term vitality of your trees, shrubs, and plant beds.',
-        'Soil and turf health are also a core part of restoration. We revitalize tired or compacted ground through aeration, fertilization support, and targeted soil improvements. These steps help restore nutrient balance, encourage stronger root systems, and bring grass and planting areas back to life.',
-        'When necessary, we also replace or rejuvenate aging plant material. This helps restore color, texture, and depth throughout your landscape, ensuring your property feels fresh, balanced, and visually consistent rather than patchy or uneven.',
-        'For properties dealing with uneven terrain or drainage issues, we implement grading adjustments and erosion control solutions that protect both structure and soil integrity. These improvements are designed not only to fix immediate issues but to prevent long-term damage and instability.',
-        'Ultimately, our approach is proactive rather than reactive. We focus on maintaining long-term landscape health through thoughtful planning and consistent care strategies, ensuring your outdoor space remains functional, attractive, and sustainable well into the future.',
+        'Restore tired or neglected yards with pruning, soil improvements, plant replacement, and grading fixes. We start with a site assessment so repairs target what is actually failing.',
       ],
     },
     {
       heading: 'Tree Service',
       serviceHref: '/services/tree-service',
-      serviceLinkLabel: 'tree service in Cedar Falls',
+      serviceLinkLabel: 'tree service',
       paragraphs: [
-        'At A1 Property Services, we provide comprehensive tree care for both residential and commercial properties. Whether it\u2019s routine maintenance or urgent intervention, our focus is on keeping your trees healthy, structurally sound, and visually balanced throughout the year.',
-        'Proper tree trimming and pruning play a key role in long-term growth and safety. We carefully remove excess or damaged branches to improve structure, encourage healthy development, and maintain a clean, natural appearance. This process not only enhances the look of your trees but also helps prevent potential hazards before they become serious issues.',
-        'When a tree becomes dead, diseased, or no longer fits the layout of your property, we provide safe and efficient removal services. Every removal is carried out with precision and care to ensure surrounding structures, landscaping, and hardscapes are fully protected throughout the process.',
-        'We also offer stump grinding and removal to fully clear out unwanted remnants. Stumps can take up valuable space, create obstacles, and affect the overall appearance of your yard. Removing them restores both usability and visual cleanliness to your outdoor space.',
-        'To support long-term tree health, we conduct detailed assessments that identify early signs of disease, stress, or structural issues. This allows us to recommend the right care solutions before problems develop further, helping preserve strong, thriving trees across your property.',
-        'In emergency situations such as storm damage or hazardous tree conditions, our team responds quickly to protect your property and reduce further risk. These services are focused on safety, stabilization, and fast resolution when it matters most.',
-        'We also provide professional planting and transplanting services for new or existing trees. Each installation is handled with care to ensure proper placement, healthy root development, and long-term growth, enhancing both the beauty and environmental value of your landscape.',
+        'Trimming, removal, stump grinding, and storm response for the Cedar Valley. Safe work around structures, with planting and transplanting when you need new trees.',
       ],
     },
     {
       heading: 'Landscape Maintenance',
       serviceHref: '/services/landscape-maintenance',
-      serviceLinkLabel: 'landscape maintenance in Cedar Falls',
+      serviceLinkLabel: 'landscape maintenance',
       paragraphs: [
-        'At A1 Property Services, we provide comprehensive landscape maintenance designed to keep your outdoor spaces healthy, attractive, and consistently well-kept throughout the year. Serving both residential and commercial properties, our team ensures your landscape continues to thrive no matter the season.',
-        'Our routine lawn care services focus on maintaining dense, healthy, and visually consistent turf. Through regular mowing, fertilization support, and overall turf management practices, we help promote strong growth while keeping your lawn clean, even, and well-maintained.',
-        'We also provide detailed plant and garden care to keep your landscape vibrant and balanced. This includes pruning, weeding, and seasonal planting tailored to the specific needs of your garden beds. The goal is to encourage strong plant growth, improve structure, and maintain color and visual appeal throughout the year.',
-        'Soil health is a key part of long-term landscape success. We improve soil conditions and support plant vitality through mulching and targeted care techniques that help retain moisture, regulate temperature, and strengthen root systems. These practices create a healthier foundation for everything growing on your property.',
-        'As seasons change, your landscape requires additional attention. Our seasonal cleanup services include leaf removal, debris clearing, and general property preparation to keep your outdoor spaces clean, organized, and protected from seasonal stress and buildup.',
-        'To further protect your investment, we provide proactive pest and disease management. By identifying potential issues early and addressing them effectively, we help safeguard your trees, shrubs, and flowers, ensuring they remain healthy, resilient, and visually strong year-round.',
+        'Ongoing bed care, mulching, pruning, and seasonal cleanup so established landscapes stay healthy and neat year-round.',
       ],
     },
     {
       heading: 'Ponds & Water Features',
-      serviceHref: '/services/ponds-water-features',
-      serviceLinkLabel: 'ponds and water features in Cedar Falls',
+      serviceHref: '/cedar-falls-water-features',
+      serviceLinkLabel: 'ponds and water features',
       paragraphs: [
-        'At A1 Property Services, we design, build, and maintain pond and water garden features that enhance the beauty, balance, and overall functionality of outdoor spaces. Serving both residential and commercial properties, our focus is on creating water features that remain healthy, visually striking, and fully operational throughout the year.',
-        'We begin with custom pond design and installation, developing water features that are tailored to your landscape and vision. From simple, natural-looking backyard ponds to more detailed water garden systems, each installation is carefully planned to integrate seamlessly into your property while ensuring long-term durability and performance.',
-        'Aquatic planting plays an important role in both appearance and ecosystem stability. We select and install a variety of aquatic plants that enhance visual appeal while supporting natural balance within the water system. These plantings contribute to healthier water conditions and create a more vibrant, living feature.',
-        'Maintaining proper water quality is essential for a successful pond or water garden. We monitor and manage conditions to keep water clean, clear, and balanced while preventing common issues such as algae growth and stagnation. This helps ensure your feature remains visually appealing and ecologically stable.',
-        'We also install and maintain essential equipment such as pumps, filtration systems, and aeration units. These systems are critical for proper water circulation, oxygen levels, and overall pond health, while also reducing long-term maintenance demands.',
-        'Ongoing maintenance is provided to keep your water feature performing at its best. This includes seasonal cleaning, debris removal, and algae control to ensure your pond remains functional, attractive, and easy to enjoy throughout the year.',
-        'Finally, we support fish and aquatic wildlife health by helping maintain a balanced and sustainable ecosystem. With proper care and environmental management, your pond becomes a thriving habitat that enhances both natural beauty and long-term stability.',
+        'Custom ponds, pondless waterfalls, and water gardens sized for your yard — with pumps, filtration, and winterization planned for Iowa seasons.',
       ],
     },
     {
       heading: 'Hydroseeding',
       serviceHref: '/services/hydroseeding',
-      serviceLinkLabel: 'hydroseeding in Cedar Falls',
+      serviceLinkLabel: 'hydroseeding',
       paragraphs: [
-        'At A1 Property Services, we provide professional hydroseeding solutions designed to establish thick, healthy, and evenly distributed grass growth across residential and commercial properties. This method offers a fast, cost-effective way to restore bare soil, repair damaged lawns, and create new turf areas with strong, long-term results.',
-        'We begin with careful site preparation to ensure proper seed-to-soil contact and optimal germination conditions. Our hydroseeding process combines high-quality seed blends, mulch, fertilizer, and soil amendments into a specialized slurry that is evenly applied across the targeted area. This creates a nutrient-rich environment that encourages rapid and consistent grass growth.',
-        'We use carefully selected grass seed blends tailored to your property\u2019s conditions and climate. Whether you need a durable turf for high-traffic areas or a lush, fine-textured lawn for residential spaces, we match the seed mix to achieve the best possible performance and appearance.',
-        'Hydroseeding is an effective solution for erosion-prone areas, slopes, and large open spaces. The protective mulch layer helps hold soil in place, retain moisture, and shield seeds during germination, ensuring even coverage and reducing the risk of washout or patchy growth.',
-        'After application, we provide guidance and support to ensure optimal germination conditions. Proper watering schedules, maintenance practices, and early-stage care are essential to achieving strong, uniform grass establishment and long-term lawn health.',
-        'As the lawn begins to mature, we help ensure continued growth through proper maintenance recommendations. Over time, the hydroseeded area develops into a dense, resilient turf that enhances the beauty, usability, and value of your property.',
-        'Our approach goes beyond initial application. We focus on creating sustainable lawn systems that continue to thrive with proper care, ensuring your hydroseeded areas remain green, healthy, and visually appealing for years to come.',
+        'Fast, even grass establishment for new lawns, repairs, and slopes. We match seed blends to your site and give clear watering guidance for strong germination.',
       ],
     },
     {
       heading: 'Snow Removal',
       serviceHref: '/services/snow-removal',
-      serviceLinkLabel: 'snow removal in Cedar Falls',
+      serviceLinkLabel: 'snow removal',
       paragraphs: [
-        'At A1 Property Services, we provide professional commercial snow removal services designed to keep your business properties safe, accessible, and fully operational throughout the winter season. We understand that even minor snow or ice buildup can disrupt operations, create safety risks, and impact customer access, which is why our team delivers fast, reliable service when it matters most.',
-        'Our commercial snow plowing services are tailored specifically for parking lots, business complexes, retail centers, and industrial properties. Using commercial-grade equipment, we efficiently clear snow while maintaining the integrity of your pavement, curbs, and surrounding landscape features. Each site is handled with precision to ensure consistent, thorough results.',
-        'We also provide detailed clearing of sidewalks, entryways, loading zones, and high-traffic pedestrian areas. These spaces are critical for both employee and customer safety, so we ensure they remain clear, accessible, and compliant with winter safety expectations throughout each snowfall event.',
-        'Ice management is a key part of our commercial winter services. We apply salt and de-icing materials strategically to reduce slippery conditions and prevent ice buildup in high-risk areas. This proactive approach helps minimize liability risks while improving overall site safety.',
-        'For commercial clients, we offer scheduled snow management and priority response plans. This means your property is monitored throughout winter storms and serviced promptly based on accumulation levels, ensuring minimal disruption to your operations.',
-        'Our focus is simple dependable service, quick response times, and consistent results that keep your business running smoothly all winter long.',
+        'Commercial plowing, sidewalk clearing, and ice management with priority response plans for Cedar Valley businesses.',
       ],
     },
     {
       heading: 'Other Services',
       serviceHref: '/services',
-      serviceLinkLabel: 'all landscaping services in Cedar Falls',
+      serviceLinkLabel: 'all landscaping services',
       paragraphs: [
-        'In addition to our core landscaping and hardscaping services, A1 Property Services provides a range of supporting solutions designed to complete, enhance, and protect your outdoor space. These services are focused on improving overall functionality, strengthening long-term performance, and ensuring your property maintains a clean, polished appearance year-round.',
-        'Every project is completed with careful planning, quality materials, and skilled workmanship to ensure lasting results. Whether you\u2019re enhancing an existing landscape or adding functional outdoor features, we deliver dependable solutions built to stand the test of time.',
+        'Planting, mulching, grading, drainage, and outdoor living add-ons that finish or protect your landscape.',
       ],
       bulletsHeading: 'Additional Landscaping & Hardscaping Services',
       bullets: [
-        'Planting & Mulching: Improve soil health, retain moisture, and enhance curb appeal with carefully selected plantings and high-quality mulch for healthier, longer-lasting landscapes.',
-        'Grading & Drainage Solutions: Correct drainage issues, prevent water damage, and improve overall land usability with professional grading and water management solutions.',
-        'Outdoor Feature Integration: Add character and functionality with custom fire pits, planters, decorative stone, edging, and accent features that blend naturally into your landscape design.',
-        'Landscape Maintenance & Restoration: Maintain established landscapes or restore worn and aging outdoor spaces to improve health, appearance, and long-term performance.',
-        'Property Enhancements & Site Improvements: Complete your outdoor space with finishing touches that improve usability, durability, and overall visual appeal.',
+        'Planting & mulching for healthier beds and curb appeal',
+        'Grading & drainage to move water away from foundations',
+        'Fire pits, edging, and outdoor living accents',
+        'Maintenance and restoration for aging landscapes',
       ],
     },
   ] satisfies LandscapingServiceSection[],
@@ -223,27 +179,27 @@ export const landscapingHubPage = {
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
       answer:
-        'A1 Property Services offers full-service Cedar Falls landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses across the Cedar Valley.',
+        'A1 Property Services offers full-service landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses across the Cedar Valley.',
     },
     {
       question: 'How much does landscaping cost in Cedar Falls?',
       answer:
-        'Landscaping cost in Cedar Falls depends on project size, materials, and scope — small plantings start lower, while walls, patios, and full installs are quoted after a site visit. We give free on-site estimates with clear written pricing and no surprises.',
+        'Cost depends on project size, materials, and scope — small plantings start lower, while walls, patios, and full installs are quoted after a site visit. We give free on-site estimates with clear written pricing and no surprises.',
     },
     {
       question: 'Who is the best landscaper near me in Cedar Falls?',
       answer:
-        'Look for a licensed local crew with Iowa freeze-thaw experience, clear written estimates, and strong Google reviews. A1 Property Services is based in Cedar Falls, licensed and insured since 2014, and serves Waterloo and the Cedar Valley.',
+        'Look for a licensed local crew with Iowa freeze-thaw experience, clear written estimates, and strong Google reviews. A1 Property Services is based in Cedar Falls, licensed and insured since 2014, and serves the Cedar Valley.',
     },
     {
       question: 'Do you serve Cedar Falls and the surrounding Cedar Valley?',
       answer:
-        'Yes. We are based in Cedar Falls and serve Waterloo, Hudson, Evansdale, Waverly, and communities across Black Hawk and Bremer counties. Most local projects are scheduled within a few days of your estimate.',
+        'Yes. We are based in Cedar Falls and serve communities across the Cedar Valley. Most local projects are scheduled within a few days of your estimate.',
     },
     {
       question: 'What types of properties do you service?',
       answer:
-        'We work on both residential and commercial properties, including homes, office buildings, retail spaces, and large estates throughout Cedar Falls and the Cedar Valley.',
+        'We work on both residential and commercial properties, including homes, office buildings, retail spaces, and large estates throughout the Cedar Valley.',
     },
     {
       question: 'Do you offer ongoing maintenance or only one-time services?',
@@ -253,13 +209,13 @@ export const landscapingHubPage = {
     {
       question: 'How do I get a quote for my project or maintenance plan?',
       answer:
-        'Call (319) 464-1889 or request a quote online. We assess your Cedar Falls property and provide a detailed, transparent estimate — usually within 24 hours.',
+        'Call (319) 464-1889 or request a quote online. We assess your property and provide a detailed, transparent estimate — usually within 24 hours.',
     },
   ],
   faqHeading: 'Frequently Asked Questions',
-  contactHeading: 'Contact Your Cedar Falls Landscaper',
+  contactHeading: 'Contact Your Local Landscaper',
   contactIntro:
-    'Ready to start your project? Fill out our contact form, send us an email, or call our Cedar Falls office. We respond quickly and provide free estimates.',
+    'Ready to start your project? Fill out the form or call our office. We respond quickly and provide free estimates.',
   closingCopy:
-    'Ready to transform your outdoor space? Our Cedar Falls team is here to bring your landscape plans to life — from lawn care to full hardscape installs.',
+    'Ready to transform your outdoor space? Our Cedar Valley team is here for lawn care, hardscape installs, and full landscape projects.',
 }

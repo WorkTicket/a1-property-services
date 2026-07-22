@@ -22,11 +22,11 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping & Hardscaping Services',
   description:
-    'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, IA — retaining walls, patios, lawn care, tree service, snow removal, and more.',
+    'Browse every landscaping and hardscaping service A1 Property Services offers — retaining walls, patios, lawn care, tree service, snow removal, and more across the Cedar Valley.',
   path: '/services',
   keywords: servicesHubKeywords,
   ogImage: '/images/services-hero.webp',
-  ogImageAlt: 'Landscaping services in Cedar Falls, Iowa',
+  ogImageAlt: 'Landscaping and hardscaping services by A1 Property Services',
 })
 
 const hardscapeDetailServices = [
@@ -38,9 +38,9 @@ export default function ServicesPage() {
   const servicesJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Landscaping Services in Cedar Falls',
+    name: 'Landscaping & Hardscaping Services',
     description:
-      'Full landscaping and hardscaping services offered by A1 Property Services in Cedar Falls, Iowa.',
+      'Full landscaping and hardscaping services offered by A1 Property Services across the Cedar Valley.',
     url: `${siteConfig.url}/services`,
     numberOfItems: hardscapeFeatures.length + services.length,
     itemListElement: [
@@ -53,7 +53,7 @@ export default function ServicesPage() {
           url: `${siteConfig.url}${f.href}`,
           description: f.shortDesc,
           provider: { '@id': `${siteConfig.url}/#organization` },
-          areaServed: 'Cedar Falls, IA',
+          areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Cedar Valley, IA'],
         },
       })),
       ...services.map((s, i) => ({
@@ -65,7 +65,7 @@ export default function ServicesPage() {
           url: `${siteConfig.url}/services/${s.slug}`,
           description: s.shortDesc,
           provider: { '@id': `${siteConfig.url}/#organization` },
-          areaServed: 'Cedar Falls, IA',
+          areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Cedar Valley, IA'],
         },
       })),
     ],
@@ -89,7 +89,7 @@ export default function ServicesPage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Landscaping Services in Cedar Falls',
+        name: 'Services',
         item: `${siteConfig.url}/services`,
       },
     ],
@@ -97,7 +97,7 @@ export default function ServicesPage() {
 
   const pageSchema = webPageJsonLd({
     name: 'Landscaping & Hardscaping Services | A1 Property Services',
-    description: 'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, IA.',
+    description: 'Browse every landscaping and hardscaping service A1 Property Services offers across the Cedar Valley.',
     path: '/services',
     image: '/images/services-hero.webp',
     about: 'Landscaping and Hardscaping Services',
@@ -130,18 +130,18 @@ export default function ServicesPage() {
 
       <PageHero
         imageSrc={siteImages.servicesHero}
-        imageAlt="Landscaping services in Cedar Falls, Iowa"
+        imageAlt="Landscaping and hardscaping services by A1 Property Services"
         eyebrow="What We Offer"
-        title="All Services|Cedar Falls & Cedar Valley"
+        title="All Services|Cedar Valley"
         subtitle="Browse every service we offer — hardscape, lawn care, tree service, snow removal, and full installs."
       />
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
-          <h2 className="section-heading">Your Cedar Falls Landscaping Contractor</h2>
+          <h2 className="section-heading">Your Local Landscaping Contractor</h2>
           <div className="mt-6 space-y-4 text-brand-body leading-relaxed">
             <p>
-              A1 Property Services is a full-service landscaping company in Cedar Falls, Iowa. We
+              A1 Property Services is a full-service landscaping company based in Cedar Falls, Iowa. We
               handle everything from retaining wall installation and paver patio installation to
               water features, lawn care, tree service, and snow removal.
             </p>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
               >
                 {landscapingHubAnchor}
               </Link>
-              {' '}guide, visit our dedicated Cedar Falls landscaping page.
+              {' '}guide, visit the landscaping hub.
             </p>
           </div>
         </FadeIn>
@@ -163,14 +163,14 @@ export default function ServicesPage() {
 
       <section className="relative overflow-hidden bg-brand-green-800 py-12 md:py-16">
         <div className="absolute inset-0" aria-hidden="true">
-          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="Landscape installation work by A1 Property Services in Cedar Falls" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
+          <ResponsiveImage src={siteImages.serviceLandscapeInstallation} alt="Landscape installation work by A1 Property Services" fill className="opacity-20" sizes={IMAGE_SIZES.fullWidth} />
         </div>
         <div className="absolute inset-0 bg-brand-green-800/85" />
         <div className="section-inner relative">
           <FadeIn className="mb-6 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/80">Signature Work</p>
             <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
-              Hardscaping in Cedar Falls
+              Hardscaping Services
             </h2>
           </FadeIn>
           <StaggerContainer className="grid gap-4 md:grid-cols-4">
@@ -207,7 +207,7 @@ export default function ServicesPage() {
                   <div className="card-image relative h-48">
                     <ResponsiveImage
                       src={hardscapeImages[service.slug] ?? siteImages.servicesHero}
-                      alt={`${service.name} in Cedar Falls, Iowa`}
+                      alt={service.name}
                       fill
                       sizes={IMAGE_SIZES.thirdCol}
                     />
@@ -244,7 +244,7 @@ export default function ServicesPage() {
           <FadeIn className="mb-10 text-center">
             <h2 className="section-heading">All Landscaping Services</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Everything your Cedar Falls property needs, all year.
+              Everything your property needs, all year.
             </p>
           </FadeIn>
           <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -279,7 +279,7 @@ export default function ServicesPage() {
 
       <section className="section bg-brand-stone">
         <FadeIn className="section-inner-narrow">
-          <h2 className="section-heading">Landscaping Services in Cedar Falls: FAQ</h2>
+          <h2 className="section-heading">Landscaping Services: FAQ</h2>
           <div className="mt-10">
             <FaqAccordion
               items={servicesHubFaqs.map((faq) => ({ q: faq.question, a: faq.answer }))}

@@ -187,28 +187,28 @@ const serviceHeroMap: Record<string, string> = {
 }
 
 const serviceHeroAltMap: Record<string, string> = {
-  'retaining-walls': 'Retaining wall installation in Cedar Falls, Iowa',
-  'paver-patio': 'Paver patio installation in Cedar Falls, Iowa',
-  'ponds-water-features': 'Water features installation in Cedar Falls, Iowa',
-  'landscape-installation': 'Landscape installation in Cedar Falls, Iowa',
-  'landscape-maintenance': 'Landscape maintenance in Cedar Falls, Iowa',
-  'lawn-care': 'Lawn care services in Cedar Falls, Iowa',
-  'hydroseeding': 'Hydroseeding services in Cedar Falls, Iowa',
-  'preservation-restoration': 'Landscape restoration in Cedar Falls, Iowa',
-  'tree-service': 'Tree service in Cedar Falls, Iowa',
-  'snow-removal': 'Snow removal in Cedar Falls, Iowa',
-  'landscape-design': 'Landscape design in Cedar Falls, Iowa',
-  'drainage': 'Drainage solutions in Cedar Falls, Iowa',
-  'excavation': 'Excavation services in Cedar Falls, Iowa',
-  'sod-installation': 'Sod installation in Cedar Falls, Iowa',
-  'mulching': 'Mulching services in Cedar Falls, Iowa',
-  'rock-landscaping': 'Rock landscaping in Cedar Falls, Iowa',
-  'tree-planting': 'Tree planting in Cedar Falls, Iowa',
-  'shrub-installation': 'Shrub installation in Cedar Falls, Iowa',
-  'commercial-landscaping': 'Commercial landscaping in Cedar Falls, Iowa',
-  'residential-landscaping': 'Residential landscaping in Cedar Falls, Iowa',
-  'grading': 'Grading and leveling in Cedar Falls, Iowa',
-  'outdoor-living': 'Outdoor kitchen and fireplace patio in Cedar Falls, Iowa',
+  'retaining-walls': 'Retaining wall installation',
+  'paver-patio': 'Paver patio installation',
+  'ponds-water-features': 'Water features installation',
+  'landscape-installation': 'Landscape installation',
+  'landscape-maintenance': 'Landscape maintenance',
+  'lawn-care': 'Lawn care services',
+  'hydroseeding': 'Hydroseeding services',
+  'preservation-restoration': 'Landscape restoration',
+  'tree-service': 'Tree service',
+  'snow-removal': 'Snow removal',
+  'landscape-design': 'Landscape design',
+  'drainage': 'Drainage solutions',
+  'excavation': 'Excavation services',
+  'sod-installation': 'Sod installation',
+  'mulching': 'Mulching services',
+  'rock-landscaping': 'Rock landscaping',
+  'tree-planting': 'Tree planting',
+  'shrub-installation': 'Shrub installation',
+  'commercial-landscaping': 'Commercial landscaping',
+  'residential-landscaping': 'Residential landscaping',
+  'grading': 'Grading and leveling',
+  'outdoor-living': 'Outdoor kitchen and fireplace patio',
 }
 
 const serviceContentImageMap: Record<string, string> = {
@@ -238,49 +238,49 @@ const serviceContentImageMap: Record<string, string> = {
 
 const serviceContentImageAltMap: Record<string, string> = {
   'landscape-installation':
-    'New landscape installation with mulch beds, plantings, and walkway in Cedar Falls, Iowa',
+    'New landscape installation with mulch beds, plantings, and walkway',
   'lawn-care':
-    'Professionally maintained green lawn with crisp edging in Cedar Falls, Iowa',
+    'Professionally maintained green lawn with crisp edging',
   'preservation-restoration':
-    'Restored residential landscape with replanted beds and healthy lawn in Cedar Falls, Iowa',
+    'Restored residential landscape with replanted beds and healthy lawn',
   'tree-service':
-    'Professional tree pruning and care on mature trees in Cedar Falls, Iowa',
+    'Professional tree pruning and care on mature trees',
   'landscape-maintenance':
-    'Landscape maintenance with pruned shrubs, fresh mulch, and bed edging in Cedar Falls, Iowa',
+    'Landscape maintenance with pruned shrubs, fresh mulch, and bed edging',
   'ponds-water-features':
-    'Custom backyard pond and stone waterfall installation in Cedar Falls, Iowa',
+    'Custom backyard pond and stone waterfall installation',
   'hydroseeding':
-    'Hydroseeding application for new lawn establishment in Cedar Falls, Iowa',
+    'Hydroseeding application for new lawn establishment',
   'snow-removal':
-    'Cleared residential driveway and sidewalk after snow removal in Cedar Falls, Iowa',
+    'Cleared residential driveway and sidewalk after snow removal',
   'landscape-design':
-    'Custom landscape design plan with completed garden installation in Cedar Falls, Iowa',
+    'Custom landscape design plan with completed garden installation',
   'drainage':
-    'Yard drainage solution with French drain and regraded lawn in Cedar Falls, Iowa',
+    'Yard drainage solution with French drain and regraded lawn',
   'excavation':
-    'Residential excavation and site grading for landscaping in Cedar Falls, Iowa',
+    'Residential excavation and site grading for landscaping',
   'sod-installation':
-    'Fresh sod installation with instant green lawn in Cedar Falls, Iowa',
+    'Fresh sod installation with instant green lawn',
   'mulching':
-    'Fresh mulch installation in garden beds with clean edging in Cedar Falls, Iowa',
+    'Fresh mulch installation in garden beds with clean edging',
   'rock-landscaping':
-    'Decorative river rock and boulder landscaping in Cedar Falls, Iowa',
+    'Decorative river rock and boulder landscaping',
   'tree-planting':
-    'Newly planted shade trees with mulch rings in Cedar Falls, Iowa',
+    'Newly planted shade trees with mulch rings',
   'shrub-installation':
-    'Foundation shrub plantings with fresh mulch beds in Cedar Falls, Iowa',
+    'Foundation shrub plantings with fresh mulch beds',
   'commercial-landscaping':
-    'Professional commercial property landscaping and maintenance in Cedar Falls, Iowa',
+    'Professional commercial property landscaping and maintenance',
   'residential-landscaping':
-    'Complete residential backyard landscaping in Cedar Falls, Iowa',
+    'Complete residential backyard landscaping',
   'grading':
-    'Yard grading and leveling for proper drainage in Cedar Falls, Iowa',
+    'Yard grading and leveling for proper drainage',
   'outdoor-living':
-    'Outdoor living space with paver patio and fire pit in Cedar Falls, Iowa',
+    'Outdoor living space with paver patio and fire pit',
   'retaining-walls':
-    'Segmental block retaining wall with terraced garden beds in Cedar Falls, Iowa',
+    'Segmental block retaining wall with terraced garden beds',
   'paver-patio':
-    'Custom paver patio installation in Cedar Falls, Iowa',
+    'Custom paver patio installation',
 }
 
 // Gallery projects
@@ -291,7 +291,7 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('wall-before-1.webp'),
-      alt: 'Excavated hillside before retaining wall construction in Cedar Falls',
+      alt: 'Excavated hillside before retaining wall construction',
     },
     after: {
       src: img('wall-after-1.webp'),
@@ -304,7 +304,7 @@ const galleryProjects: GalleryProject[] = [
     category: 'hardscape',
     before: {
       src: img('wall-before-2.webp'),
-      alt: 'Aged wooden retaining wall before replacement in Cedar Falls',
+      alt: 'Aged wooden retaining wall before replacement',
     },
     after: {
       src: img('wall-after-2.webp'),
@@ -433,11 +433,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-patios',
     before: {
       src: img('patio-before-3.webp'),
-      alt: 'Backyard with worn grass before paver patio installation in Cedar Falls',
+      alt: 'Backyard with worn grass before paver patio installation',
     },
     after: {
       src: img('patio-after-3.webp'),
-      alt: 'Completed paver patio with fire pit and seating area in Cedar Falls',
+      alt: 'Completed paver patio with fire pit and seating area',
     },
   },
   {
@@ -446,11 +446,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-patios',
     before: {
       src: img('patio-before-4.webp'),
-      alt: 'Bare backyard before paver patio and fire pit installation in Cedar Falls',
+      alt: 'Bare backyard before paver patio and fire pit installation',
     },
     after: {
       src: img('patio-after-4.webp'),
-      alt: 'New paver patio with stone fire pit and Adirondack chairs in Cedar Falls',
+      alt: 'New paver patio with stone fire pit and Adirondack chairs',
     },
   },
   {
@@ -459,11 +459,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-patios',
     before: {
       src: img('patio-before-5.webp'),
-      alt: 'Backyard lawn before paver patio installation in Cedar Falls',
+      alt: 'Backyard lawn before paver patio installation',
     },
     after: {
       src: img('patio-after-5.webp'),
-      alt: 'New paver patio with pergola and outdoor lounge seating in Cedar Falls',
+      alt: 'New paver patio with pergola and outdoor lounge seating',
     },
   },
   {
@@ -472,11 +472,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-driveways',
     before: {
       src: img('driveway-before-1.webp'),
-      alt: 'Cracked concrete driveway before paver replacement in Cedar Falls',
+      alt: 'Cracked concrete driveway before paver replacement',
     },
     after: {
       src: img('driveway-after-1.webp'),
-      alt: 'New paver driveway with contrasting border in Cedar Falls',
+      alt: 'New paver driveway with contrasting border',
     },
   },
   {
@@ -485,11 +485,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-driveways',
     before: {
       src: img('driveway-before-2.webp'),
-      alt: 'Old asphalt driveway before paver installation in Cedar Falls',
+      alt: 'Old asphalt driveway before paver installation',
     },
     after: {
       src: img('driveway-after-2.webp'),
-      alt: 'New brick paver driveway with herringbone pattern in Cedar Falls',
+      alt: 'New brick paver driveway with herringbone pattern',
     },
   },
   {
@@ -498,11 +498,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-driveways',
     before: {
       src: img('driveway-before-3.webp'),
-      alt: 'Plain concrete driveway before paver overlay in Cedar Falls',
+      alt: 'Plain concrete driveway before paver overlay',
     },
     after: {
       src: img('driveway-after-3.webp'),
-      alt: 'New gray paver driveway at a modern farmhouse in Cedar Falls',
+      alt: 'New gray paver driveway at a modern farmhouse',
     },
   },
   {
@@ -511,11 +511,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-driveways',
     before: {
       src: img('driveway-before-4.webp'),
-      alt: 'Worn concrete driveway before paver upgrade in Cedar Falls',
+      alt: 'Worn concrete driveway before paver upgrade',
     },
     after: {
       src: img('driveway-after-4.webp'),
-      alt: 'New paver driveway with a decorative border in Cedar Falls',
+      alt: 'New paver driveway with a decorative border',
     },
   },
   {
@@ -524,11 +524,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'paver-driveways',
     before: {
       src: img('driveway-before-5.webp'),
-      alt: 'Cracked asphalt driveway before paver replacement in Cedar Falls',
+      alt: 'Cracked asphalt driveway before paver replacement',
     },
     after: {
       src: img('driveway-after-5.webp'),
-      alt: 'New paver driveway leading to an attached garage in Cedar Falls',
+      alt: 'New paver driveway leading to an attached garage',
     },
   },
   {
@@ -537,11 +537,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'lawn-mowing',
     before: {
       src: img('mowing-before-1.webp'),
-      alt: 'Overgrown backyard lawn before professional mowing in Cedar Falls',
+      alt: 'Overgrown backyard lawn before professional mowing',
     },
     after: {
       src: img('mowing-after-1.webp'),
-      alt: 'Freshly mowed backyard lawn with clean mowing stripes in Cedar Falls',
+      alt: 'Freshly mowed backyard lawn with clean mowing stripes',
     },
   },
   {
@@ -550,11 +550,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'lawn-mowing',
     before: {
       src: img('mowing-before-3.webp'),
-      alt: 'Overgrown acreage lawn before mowing in Cedar Falls',
+      alt: 'Overgrown acreage lawn before mowing',
     },
     after: {
       src: img('mowing-after-3.webp'),
-      alt: 'Large mowed lawn with clean stripes around mature trees in Cedar Falls',
+      alt: 'Large mowed lawn with clean stripes around mature trees',
     },
   },
   {
@@ -563,11 +563,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'lawn-mowing',
     before: {
       src: img('mowing-before-5.webp'),
-      alt: 'Weedy front yard before professional lawn mowing in Cedar Falls',
+      alt: 'Weedy front yard before professional lawn mowing',
     },
     after: {
       src: img('mowing-after-5.webp'),
-      alt: 'Freshly mowed front yard with striped finish in Cedar Falls',
+      alt: 'Freshly mowed front yard with striped finish',
     },
   },
   {
@@ -576,11 +576,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'landscape-installation',
     before: {
       src: img('landscape-before-1.webp'),
-      alt: 'Bare foundation strip before landscape bed installation in Cedar Falls',
+      alt: 'Bare foundation strip before landscape bed installation',
     },
     after: {
       src: img('landscape-after-1.webp'),
-      alt: 'New foundation planting bed with shrubs, flowers, and mulch in Cedar Falls',
+      alt: 'New foundation planting bed with shrubs, flowers, and mulch',
     },
   },
   {
@@ -589,11 +589,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'landscape-installation',
     before: {
       src: img('landscape-before-2.webp'),
-      alt: 'Plain front lawn before island planting bed installation in Cedar Falls',
+      alt: 'Plain front lawn before island planting bed installation',
     },
     after: {
       src: img('landscape-after-2.webp'),
-      alt: 'New island bed with a tree, perennials, and mulch in Cedar Falls',
+      alt: 'New island bed with a tree, perennials, and mulch',
     },
   },
   {
@@ -602,11 +602,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'landscape-installation',
     before: {
       src: img('landscape-before-3.webp'),
-      alt: 'Plain grass at house corner before landscape bed installation in Cedar Falls',
+      alt: 'Plain grass at house corner before landscape bed installation',
     },
     after: {
       src: img('landscape-after-3.webp'),
-      alt: 'New corner bed with arborvitae, boulders, and river rock in Cedar Falls',
+      alt: 'New corner bed with arborvitae, boulders, and river rock',
     },
   },
   {
@@ -615,11 +615,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'landscape-installation',
     before: {
       src: img('landscape-before-4.webp'),
-      alt: 'Plain lawn along front walkway before landscape bed installation in Cedar Falls',
+      alt: 'Plain lawn along front walkway before landscape bed installation',
     },
     after: {
       src: img('landscape-after-4.webp'),
-      alt: 'New planting beds lining the front walkway with hostas and flowers in Cedar Falls',
+      alt: 'New planting beds lining the front walkway with hostas and flowers',
     },
   },
   {
@@ -628,11 +628,11 @@ const galleryProjects: GalleryProject[] = [
     category: 'landscape-installation',
     before: {
       src: img('landscape-before-5.webp'),
-      alt: 'Plain grass along privacy fence before landscape bed installation in Cedar Falls',
+      alt: 'Plain grass along privacy fence before landscape bed installation',
     },
     after: {
       src: img('landscape-after-5.webp'),
-      alt: 'New border bed along the fence with hydrangeas and perennials in Cedar Falls',
+      alt: 'New border bed along the fence with hydrangeas and perennials',
     },
   },
 ]
@@ -712,12 +712,28 @@ export const hubGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.fi
     !p.showcase && Boolean(p.before) && ['wall-1', 'patio-2', 'water-1'].includes(p.id),
 )
 
+const landingProofIds: Record<string, string[]> = {
+  'retaining-walls': ['wall-1', 'wall-4', 'wall-2'],
+  'paver-patio': ['patio-2', 'patio-1', 'patio-3'],
+  'ponds-water-features': ['water-1', 'water-2', 'water-3'],
+}
+
+/** Before/after projects for legacy service landing proof sections. */
+export function getLandingProofProjects(serviceSlug: string): GalleryBeforeAfterProject[] {
+  const ids = landingProofIds[serviceSlug]
+  if (!ids) return []
+  return galleryProjects.filter(
+    (p): p is GalleryBeforeAfterProject =>
+      !p.showcase && Boolean(p.before) && ids.includes(p.id),
+  )
+}
+
 export function getServiceHeroImage(slug: string): string | undefined {
   return serviceHeroMap[slug]
 }
 
 export function getServiceHeroImageAlt(slug: string): string {
-  return serviceHeroAltMap[slug] ?? 'A1 Property Services landscaping in Cedar Falls, Iowa'
+  return serviceHeroAltMap[slug] ?? 'A1 Property Services landscaping'
 }
 
 export function getServiceContentImage(slug: string): string | undefined {

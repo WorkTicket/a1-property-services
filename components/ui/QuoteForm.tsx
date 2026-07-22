@@ -27,6 +27,17 @@ type QuoteFormProps = {
   variant?: 'light' | 'dark'
   /** Where this form is embedded — used for GA4 form_location. */
   formLocation?: string
+  /** Prefill Service Needed (service slug). */
+  defaultService?: string
+  /** Prefill City (defaults to empty unless provided). */
+  defaultCity?: string
+  /** Hide the service dropdown when a defaultService is set. */
+  lockService?: boolean
+  /**
+   * Short path for landing pages: name + phone required;
+   * city/service hidden when defaulted; email/details behind a toggle.
+   */
+  compact?: boolean
 }
 
 const serviceOptions = allServices
@@ -36,9 +47,18 @@ const serviceOptions = allServices
 export default function QuoteForm({
   variant = 'light',
   formLocation = 'Unknown',
+  defaultService = '',
+  defaultCity = '',
+  lockService = Boolean(defaultService),
+  compact = false,
 }: QuoteFormProps) {
   const isDark = variant === 'dark'
   const [serverError, setServerError] = useState('')
+  const [showMore, setShowMore] = useState(!compact)
+  const hideCity = compact && Boolean(defaultCity)
+  const lockedServiceLabel =
+    serviceOptions.find((s) => s.slug === defaultService)?.name ??
+    (defaultService === 'other' ? 'Other' : null)
 
   const {
     register,
@@ -49,9 +69,9 @@ export default function QuoteForm({
     defaultValues: {
       name: '',
       phone: '',
-      city: '',
+      city: defaultCity || (compact ? 'Cedar Falls' : ''),
       email: '',
-      service: '',
+      service: defaultService,
       details: '',
       _honey: '',
     },
@@ -106,6 +126,7 @@ export default function QuoteForm({
     : 'w-full rounded-md border border-black/10 bg-neutral-50 px-4 py-3 text-sm text-brand-dark placeholder-brand-subtle/80 transition-all duration-200 focus:border-brand-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-gold/20'
 
   const labelClass = isDark ? 'text-white/80' : 'text-brand-dark'
+  const mutedClass = isDark ? 'text-white/50' : 'text-brand-subtle'
   const errorClass = 'text-xs text-red-500 mt-1'
 
   return (
@@ -119,6 +140,16 @@ export default function QuoteForm({
         aria-hidden="true"
       />
 
+      {compact && lockService && lockedServiceLabel ? (
+        <p className={`text-sm ${isDark ? 'text-white/70' : 'text-brand-body'}`}>
+          Requesting a quote for{' '}
+          <span className={`font-semibold ${isDark ? 'text-white' : 'text-brand-dark'}`}>
+            {lockedServiceLabel}
+          </span>
+          {defaultCity ? <> in {defaultCity}</> : null}
+        </p>
+      ) : null}
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
@@ -128,6 +159,7 @@ export default function QuoteForm({
             id="name"
             type="text"
             placeholder="Your name"
+            autoComplete="name"
             className={inputClass}
             disabled={isSubmitting}
             {...register('name')}
@@ -143,6 +175,7 @@ export default function QuoteForm({
             id="phone"
             type="tel"
             placeholder="(319) 555-1234"
+            autoComplete="tel"
             className={inputClass}
             disabled={isSubmitting}
             {...register('phone')}
@@ -151,70 +184,203 @@ export default function QuoteForm({
         </div>
       </div>
 
-      <div>
-        <label htmlFor="city" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
-          City <span className="text-brand-gold">*</span>
-        </label>
-        <input
-          id="city"
-          type="text"
-          placeholder="Cedar Falls"
-          className={inputClass}
-          disabled={isSubmitting}
-          {...register('city')}
-        />
-        {errors.city && <p className={errorClass}>{errors.city.message}</p>}
-      </div>
+      {hideCity ? <input type="hidden" {...register('city')} /> : null}
+      {lockService && defaultService ? <input type="hidden" {...register('service')} /> : null}
 
-      <div>
-        <label htmlFor="email" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
-          Email Address
-        </label>
-        <input
-          id="email"
-          type="email"
-          placeholder="your@email.com"
-          className={inputClass}
-          disabled={isSubmitting}
-          {...register('email')}
-        />
-        {errors.email && <p className={errorClass}>{errors.email.message}</p>}
-      </div>
+      {compact && !lockService ? (
+        <div>
+          <label
+            htmlFor="service"
+            className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
+          >
+            Service Needed <span className="text-brand-gold">*</span>
+          </label>
+          <select
+            id="service"
+            className={inputClass}
+            disabled={isSubmitting}
+            {...register('service')}
+          >
+            <option value="">Select a service</option>
+            {serviceOptions.map((s) => (
+              <option key={s.slug} value={s.slug}>
+                {s.name}
+              </option>
+            ))}
+            <option value="other">Other</option>
+          </select>
+          {errors.service && <p className={errorClass}>{errors.service.message}</p>}
+        </div>
+      ) : null}
 
-      <div>
-        <label htmlFor="service" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
-          Service Needed <span className="text-brand-gold">*</span>
-        </label>
-        <select
-          id="service"
-          className={inputClass}
-          disabled={isSubmitting}
-          {...register('service')}
-        >
-          <option value="">Select a service</option>
-          {serviceOptions.map((s) => (
-            <option key={s.slug} value={s.slug}>
-              {s.name}
-            </option>
-          ))}
-          <option value="other">Other</option>
-        </select>
-        {errors.service && <p className={errorClass}>{errors.service.message}</p>}
-      </div>
+      {!compact ? (
+        <>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label htmlFor="city" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+                City <span className="text-brand-gold">*</span>
+              </label>
+              <input
+                id="city"
+                type="text"
+                placeholder="Cedar Falls"
+                autoComplete="address-level2"
+                className={inputClass}
+                disabled={isSubmitting}
+                {...register('city')}
+              />
+              {errors.city && <p className={errorClass}>{errors.city.message}</p>}
+            </div>
 
-      <div>
-        <label htmlFor="details" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
-          Project Details
-        </label>
-        <textarea
-          id="details"
-          rows={4}
-          placeholder="Briefly describe your project..."
-          className={`${inputClass} min-h-[120px]`}
-          disabled={isSubmitting}
-          {...register('details')}
-        />
-      </div>
+            <div>
+              <label htmlFor="email" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+                Email Address
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="your@email.com"
+                autoComplete="email"
+                className={inputClass}
+                disabled={isSubmitting}
+                {...register('email')}
+              />
+              {errors.email && <p className={errorClass}>{errors.email.message}</p>}
+            </div>
+          </div>
+
+          {lockService && defaultService ? (
+            <div>
+              <p className={`mb-1.5 text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+                Service Needed
+              </p>
+              <p
+                className={`rounded-md border px-4 py-3 text-sm ${
+                  isDark
+                    ? 'border-white/20 bg-white/10 text-white'
+                    : 'border-black/10 bg-neutral-50 text-brand-dark'
+                }`}
+              >
+                {lockedServiceLabel ?? defaultService}
+              </p>
+            </div>
+          ) : (
+            <div>
+              <label
+                htmlFor="service-full"
+                className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
+              >
+                Service Needed <span className="text-brand-gold">*</span>
+              </label>
+              <select
+                id="service-full"
+                className={inputClass}
+                disabled={isSubmitting}
+                {...register('service')}
+              >
+                <option value="">Select a service</option>
+                {serviceOptions.map((s) => (
+                  <option key={s.slug} value={s.slug}>
+                    {s.name}
+                  </option>
+                ))}
+                <option value="other">Other</option>
+              </select>
+              {errors.service && <p className={errorClass}>{errors.service.message}</p>}
+            </div>
+          )}
+
+          <div>
+            <label
+              htmlFor="details"
+              className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
+            >
+              Project Details <span className={mutedClass}>(optional)</span>
+            </label>
+            <textarea
+              id="details"
+              rows={3}
+              placeholder="Briefly describe your project..."
+              className={`${inputClass} min-h-[96px]`}
+              disabled={isSubmitting}
+              {...register('details')}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          {!showMore ? (
+            <button
+              type="button"
+              className={`text-sm font-semibold underline-offset-2 hover:underline ${
+                isDark ? 'text-white/80' : 'text-brand-green-800'
+              }`}
+              onClick={() => setShowMore(true)}
+            >
+              Add email or project details (optional)
+            </button>
+          ) : (
+            <div className="space-y-4">
+              {!hideCity ? (
+                <div>
+                  <label
+                    htmlFor="city"
+                    className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
+                  >
+                    City <span className="text-brand-gold">*</span>
+                  </label>
+                  <input
+                    id="city"
+                    type="text"
+                    placeholder="Cedar Falls"
+                    autoComplete="address-level2"
+                    className={inputClass}
+                    disabled={isSubmitting}
+                    {...register('city')}
+                  />
+                  {errors.city && <p className={errorClass}>{errors.city.message}</p>}
+                </div>
+              ) : null}
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
+                >
+                  Email Address <span className={mutedClass}>(optional)</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  autoComplete="email"
+                  className={inputClass}
+                  disabled={isSubmitting}
+                  {...register('email')}
+                />
+                {errors.email && <p className={errorClass}>{errors.email.message}</p>}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="details"
+                  className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
+                >
+                  Project Details <span className={mutedClass}>(optional)</span>
+                </label>
+                <textarea
+                  id="details"
+                  rows={3}
+                  placeholder="Briefly describe your project..."
+                  className={`${inputClass} min-h-[96px]`}
+                  disabled={isSubmitting}
+                  {...register('details')}
+                />
+              </div>
+            </div>
+          )}
+        </>
+      )}
 
       {serverError ? (
         <p className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">

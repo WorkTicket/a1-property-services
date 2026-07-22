@@ -54,19 +54,19 @@ export default function LandscapingHubLanding() {
     description: page.description,
     path: page.path,
     image: page.heroImage,
-    about: 'Landscaping Cedar Falls',
+    about: 'Landscaping services in Iowa',
   })
 
   const localBusinessServiceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Landscaping Cedar Falls',
-    name: 'Landscaping Cedar Falls',
+    serviceType: 'Landscaping',
+    name: 'Landscaping in Cedar Falls, IA',
     provider: { '@id': `${siteConfig.url}/#organization` },
     areaServed: [
       { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'City', name: 'Waterloo' },
-      { '@type': 'Place', name: 'Cedar Valley' },
+      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'Place', name: 'Cedar Valley, Iowa' },
     ],
     description: page.description,
     url: `${siteConfig.url}${page.path}`,
@@ -84,7 +84,7 @@ export default function LandscapingHubLanding() {
               localBusinessServiceJsonLd,
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
-                { name: 'Landscaping Cedar Falls', path: page.path },
+                { name: 'Landscaping Services', path: page.path },
               ]),
               faqPageJsonLd(page.faqs),
             ),
@@ -104,7 +104,7 @@ export default function LandscapingHubLanding() {
           <div>
             <p className="hero-eyebrow">{page.eyebrow}</p>
             <h1 className="hero-title mt-4">{page.h1}</h1>
-            <h2 className="hero-subtitle mx-auto mt-4 max-w-3xl md:mt-6">{page.heroHeading}</h2>
+            <p className="hero-subtitle mx-auto mt-4 max-w-3xl md:mt-6">{page.heroHeading}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href="#estimate" size="lg">
                 {CTA_COPY.quote}
@@ -121,14 +121,132 @@ export default function LandscapingHubLanding() {
         <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/50 backdrop-blur-sm">
           <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-4 text-sm text-white/90 sm:gap-10">
             <span className="flex items-center gap-1.5">
-              <Star size={14} className="fill-brand-gold text-brand-gold" /> 5-Star Rated
+              <Star size={14} className="fill-brand-gold text-brand-gold" aria-hidden /> 5-Star Rated
             </span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
             <span>Licensed &amp; Insured</span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
             <span>{yearsInBusinessLabel()}</span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
             <span>Free Estimates</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-brand-stone">
+        <FadeIn className="section-inner-narrow">
+          <h2 className="section-heading">{page.coreServicesHeading}</h2>
+          <p className="mt-6 text-brand-body leading-relaxed">{page.coreServicesIntro}</p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+            {page.featuredServices.map((service) => (
+              <li key={service.href}>
+                <Link
+                  href={service.href}
+                  className="flex items-center justify-between rounded-xl border border-black/10 bg-white px-5 py-4 text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
+                >
+                  <span className="font-display text-lg font-semibold">{service.label}</span>
+                  <ChevronRight className="h-4 w-4 shrink-0" aria-hidden />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="#estimate">
+              {CTA_COPY.quote}
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+            <Button href="/services" variant="outline">
+              Browse All Services
+            </Button>
+          </div>
+        </FadeIn>
+      </section>
+
+      <GoogleReviews />
+
+      <section className="section bg-white">
+        <div className="section-inner">
+          <FadeIn className="flex items-end justify-between">
+            <div>
+              <p className="section-eyebrow">Recent Work</p>
+              <h2 className="section-heading mt-3">Before &amp; After</h2>
+              <p className="mt-2 max-w-xl text-brand-body">
+                Drag the slider to compare before and after on recent landscaping projects.
+              </p>
+            </div>
+            <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
+              View Full Gallery
+            </Button>
+          </FadeIn>
+
+          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {hubGalleryPreview.map((project) => (
+              <BeforeAfterSlider
+                key={project.id}
+                title={project.title}
+                before={{ ...project.before, priority: false }}
+                after={{ ...project.after, priority: false }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-brand-stone">
+        <FadeIn className="section-inner-narrow">
+          <h2 className="section-heading">{page.faqHeading}</h2>
+          <FaqAccordion
+            items={page.faqs.map((faq) => ({ q: faq.question, a: faq.answer }))}
+          />
+          <div className="mt-8 flex justify-center">
+            <Button href="#estimate">
+              {CTA_COPY.quote}
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+          </div>
+        </FadeIn>
+      </section>
+
+      <section id="estimate" className="section bg-neutral-50">
+        <div className="section-inner relative">
+          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <FadeIn>
+              <p className="section-eyebrow">Get Started</p>
+              <h2 className="section-heading mt-3">{page.contactHeading}</h2>
+              <p className="mt-4 leading-relaxed text-brand-body">{page.contactIntro}</p>
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-start gap-3 text-sm text-brand-body">
+                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                  Free on-site estimates for Cedar Valley homeowners
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-body">
+                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                  Licensed &amp; insured Iowa contractor
+                </li>
+                <li className="flex items-start gap-3 text-sm text-brand-body">
+                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                  5-star Google rating from local customers
+                </li>
+              </ul>
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-gold"
+              >
+                <Phone size={16} className="text-brand-gold" />
+                Or call {siteConfig.phoneDisplay}
+              </a>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <div className="form-card">
+                <QuoteForm
+                  variant="light"
+                  formLocation="Landscaping Hub"
+                  defaultCity="Cedar Falls"
+                  compact
+                />
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -159,45 +277,14 @@ export default function LandscapingHubLanding() {
         </div>
       </section>
 
-      <GoogleReviews />
-
       <section className="section bg-brand-stone">
-        <FadeIn className="section-inner-narrow">
-          <h2 className="section-heading">{page.coreServicesHeading}</h2>
-          <p className="mt-6 text-brand-body leading-relaxed">{page.coreServicesIntro}</p>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-            {page.featuredServices.map((service) => (
-              <li key={service.href}>
-                <Link
-                  href={service.href}
-                  className="flex items-center justify-between rounded-xl border border-black/10 bg-brand-stone px-5 py-4 text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
-                >
-                  <span className="font-display text-lg font-semibold">{service.label}</span>
-                  <ChevronRight className="h-4 w-4 shrink-0" aria-hidden />
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="#estimate">
-              {CTA_COPY.quote}
-              <ChevronRight className="h-4 w-4" aria-hidden />
-            </Button>
-            <Button href="/services" variant="outline">
-              Browse All Services
-            </Button>
-          </div>
-        </FadeIn>
-      </section>
-
-      <section className="section bg-white">
         <div className="section-inner">
           <FadeIn className="flex items-end justify-between">
             <div>
-              <p className="section-eyebrow">Cedar Falls Projects</p>
-              <h2 className="section-heading mt-3">Recent Cedar Falls Projects</h2>
+              <p className="section-eyebrow">Recent Projects</p>
+              <h2 className="section-heading mt-3">Work Across the Cedar Valley</h2>
               <p className="mt-2 max-w-xl text-brand-body">
-                Real work from Cedar Falls and the Cedar Valley — retaining walls, patios, water features, and full installs.
+                Real work from homes we serve — retaining walls, patios, water features, and full installs.
               </p>
             </div>
             <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
@@ -234,157 +321,57 @@ export default function LandscapingHubLanding() {
         </div>
       </section>
 
-      <section className="section bg-brand-stone">
+      <section className="section bg-white">
         <div className="section-inner">
-          <FadeIn className="flex items-end justify-between">
-            <div>
-              <p className="section-eyebrow">Our Work</p>
-              <h2 className="section-heading mt-3">Before &amp; After</h2>
-              <p className="mt-2 max-w-xl text-brand-body">
-                Drag the slider to compare before and after on recent Cedar Falls landscaping projects.
-              </p>
-            </div>
-            <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
-              View Full Gallery
-            </Button>
+          <FadeIn className="mb-10 text-center">
+            <h2 className="section-heading">{page.allServicesHeading}</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-brand-body">{page.allServicesIntro}</p>
           </FadeIn>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {hubGalleryPreview.map((project) => (
-              <BeforeAfterSlider
-                key={project.id}
-                title={project.title}
-                before={{ ...project.before, priority: false }}
-                after={{ ...project.after, priority: false }}
-              />
+          <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {page.serviceSections.map((section) => (
+              <StaggerItem key={section.heading}>
+                <div className="card flex h-full flex-col p-6">
+                  <h3 className="font-display text-xl font-bold text-brand-dark">{section.heading}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-body">
+                    {section.paragraphs[0]}
+                  </p>
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <Button href="#estimate" size="sm">
+                      {CTA_COPY.quote}
+                    </Button>
+                    {section.serviceHref ? (
+                      <Link
+                        href={section.serviceHref}
+                        className="text-sm font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
+                      >
+                        Details
+                      </Link>
+                    ) : null}
+                  </div>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      <section className="section bg-white">
-        <FadeIn className="section-inner-narrow">
-          <h2 className="section-heading">{page.allServicesHeading}</h2>
-          <p className="mt-6 text-brand-body leading-relaxed">{page.allServicesIntro}</p>
-        </FadeIn>
-      </section>
-
-      {page.serviceSections.map((section, index) => (
-        <section
-          key={section.heading}
-          className={`section ${index % 2 === 0 ? 'bg-white' : 'bg-brand-stone'}`}
-        >
-          <FadeIn className="section-inner-narrow">
-            <h2 className="section-heading">{section.heading}</h2>
-            <div className="mt-6 space-y-4 text-brand-body leading-relaxed">
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-              ))}
-            </div>
-            {section.bulletsHeading ? (
-              <h3 className="mt-8 font-display text-xl font-bold text-brand-dark">{section.bulletsHeading}</h3>
-            ) : null}
-            {section.bullets && section.bullets.length > 0 ? (
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-brand-body">
-                {section.bullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            ) : null}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button href="#estimate">
-                {CTA_COPY.quote}
-                <ChevronRight className="h-4 w-4" aria-hidden />
-              </Button>
-              {section.serviceHref ? (
-                <Button href={section.serviceHref} variant="outline">
-                  {CTA_COPY.learnMore}
-                  <ChevronRight className="h-4 w-4" aria-hidden />
-                </Button>
-              ) : null}
-              <Button href={`tel:${siteConfig.phone}`} variant="outline">
-                <Phone className="h-4 w-4" aria-hidden />
-                Call Now
-              </Button>
-            </div>
-            {section.serviceHref ? (
-              <p className="mt-4 text-sm text-brand-body">
-                Full details:{' '}
-                <Link
-                  href={section.serviceHref}
-                  className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
-                >
-                  {section.serviceLinkLabel ?? section.heading.toLowerCase()}
-                </Link>
-              </p>
-            ) : null}
-          </FadeIn>
-        </section>
-      ))}
-
-      <section className="section bg-white">
-        <FadeIn className="section-inner-narrow">
-          <h2 className="section-heading">{page.faqHeading}</h2>
-          <FaqAccordion
-            items={page.faqs.map((faq) => ({ q: faq.question, a: faq.answer }))}
-          />
-        </FadeIn>
-      </section>
-
-      <section id="estimate" className="section bg-neutral-50">
-        <div className="section-inner relative">
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-            <FadeIn>
-              <p className="section-eyebrow">Get Started</p>
-              <h2 className="section-heading mt-3">{page.contactHeading}</h2>
-              <p className="mt-4 leading-relaxed text-brand-body">{page.contactIntro}</p>
-              <ul className="mt-8 space-y-4">
-                <li className="flex items-start gap-3 text-sm text-brand-body">
-                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
-                  Free on-site estimates for Cedar Falls homeowners
-                </li>
-                <li className="flex items-start gap-3 text-sm text-brand-body">
-                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
-                  Licensed &amp; insured Iowa contractor
-                </li>
-                <li className="flex items-start gap-3 text-sm text-brand-body">
-                  <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
-                  5-star Google rating from local customers
-                </li>
-              </ul>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-gold"
-              >
-                <Phone size={16} className="text-brand-gold" />
-                Or call {siteConfig.phoneDisplay}
-              </a>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <div className="form-card">
-                <QuoteForm variant="light" formLocation="Landscaping Hub" />
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      <section className="section bg-white">
+      <section className="section bg-brand-stone">
         <FadeIn className="section-inner-narrow text-center">
           <p className="text-lg text-brand-body leading-relaxed">{page.closingCopy}</p>
-          <p className="mt-4 text-lg font-semibold text-brand-dark">
-            <Link href="#estimate" className="text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline">
-              Get your free estimate today!
-            </Link>
-          </p>
+          <div className="mt-8">
+            <Button href="#estimate" size="lg">
+              {CTA_COPY.quote}
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+          </div>
         </FadeIn>
       </section>
 
       <CtaBanner
         title="Get Your Free Landscaping Estimate"
-        description="Tell us about your landscaping Cedar Falls project. We serve Cedar Falls, Waterloo, and the full Cedar Valley."
-        eyebrow="Landscaping Cedar Falls"
+        description="Tell us about your landscaping project. We serve homes across the Cedar Valley."
+        eyebrow="Free Estimate"
       />
     </>
   )

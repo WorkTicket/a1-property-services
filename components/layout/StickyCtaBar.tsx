@@ -1,12 +1,25 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { MessageSquare, Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
 
+const INLINE_ESTIMATE_PATHS = new Set([
+  '/',
+  '/contact',
+  '/landscaping-services-in-cedar-falls',
+  '/retaining-wall-in-cedar-falls',
+  '/paver-patio-installation',
+  '/cedar-falls-water-features',
+])
+
 export default function StickyCtaBar() {
+  const pathname = usePathname()
+  const quoteHref = INLINE_ESTIMATE_PATHS.has(pathname) ? '#estimate' : '/contact'
+
   return (
     <div className="sticky-cta-bar">
       <a
@@ -18,7 +31,7 @@ export default function StickyCtaBar() {
         <span>{CTA_COPY.callNow}</span>
       </a>
       <Link
-        href="/contact"
+        href={quoteHref}
         onClick={() => trackCtaClick('Sticky Quote')}
         className="sticky-cta-bar__quote"
       >

@@ -24,7 +24,7 @@ const quickLinks = [
 ]
 
 const rankingServiceLinks = [
-  { label: 'Landscaping Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
+  { label: 'Full Landscaping Services', href: '/landscaping-services-in-cedar-falls' },
   { label: 'Paver Patios', href: '/paver-patio-installation' },
   { label: 'Retaining Walls', href: '/retaining-wall-in-cedar-falls' },
   { label: 'Water Features', href: '/cedar-falls-water-features' },
@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-neutral-400">
-              Professional landscaping and hardscaping for Cedar Falls, Waterloo, and the Cedar Valley.
+              Professional landscaping and hardscaping for the Cedar Valley.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400">
@@ -102,7 +102,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white">Cedar Falls Services</p>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white">Popular Services</p>
             <ul className="mt-4 space-y-2.5">
               {rankingServiceLinks.map((link) => (
                 <li key={link.href}>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { Check, ChevronRight, Phone } from 'lucide-react'
+import { Check, ChevronRight, Phone, Star } from 'lucide-react'
 import {
   breadcrumbJsonLd,
   faqPageJsonLd,
@@ -12,7 +12,9 @@ import {
 import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
 import { getServiceBySlug, getServicePageHref, serviceFaqs } from '@/lib/services'
 import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
+import { getLandingProofProjects } from '@/lib/images'
 import { CTA_COPY } from '@/lib/cta'
+import { yearsInBusinessLabel } from '@/lib/years-in-business'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
 import HubPagePromo from '@/components/sections/HubPagePromo'
@@ -26,6 +28,11 @@ import ServiceIcon from '@/components/ui/ServiceIcon'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
+
+const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
+  loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
+  ssr: false,
+})
 
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
@@ -52,6 +59,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
   const complementaryServices = getComplementaryServices(page.serviceSlug, 3)
   const relatedContentGroups = getServiceRelatedContentGroups(page.serviceSlug)
   const faqs = serviceFaqs[page.serviceSlug] ?? []
+  const proofProjects = getLandingProofProjects(page.serviceSlug)
   const formLocation = `Legacy ${serviceName}`
 
   const serviceJsonLd = {
@@ -60,11 +68,11 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
     serviceType: page.h1,
     name: page.h1,
     provider: { '@id': `${siteConfig.url}/#organization` },
-    areaServed: {
-      '@type': 'City',
-      name: 'Cedar Falls',
-      containedInPlace: { '@type': 'State', name: 'Iowa' },
-    },
+    areaServed: [
+      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'Place', name: 'Cedar Valley, Iowa' },
+    ],
     description: page.description,
     url: `${siteConfig.url}${page.path}`,
     image: `${siteConfig.url}${page.heroImage}`,
@@ -101,35 +109,86 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
       />
 
       <section
-        className="relative flex min-h-[50vh] items-center justify-center overflow-hidden pt-24 pb-12 text-white md:min-h-[55vh]"
+        className="relative flex min-h-[50vh] flex-col overflow-hidden pt-24 pb-0 text-white md:min-h-[55vh]"
         style={{ position: 'relative' }}
       >
         <HeroImagePreload src={page.heroImage} />
         <LcpHeroImage src={page.heroImage} alt={page.heroImageAlt} />
         <HeroOverlay imageSrc={page.heroImage} variant="center" />
 
-        <div className="relative z-10 mx-auto w-full max-w-3xl px-4 text-center sm:px-6">
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-4 pb-8 text-center sm:px-6">
           <div>
             <p className="hero-eyebrow">{page.eyebrow}</p>
             <h1 className="hero-title mt-4">{page.h1}</h1>
-            <h2 className="hero-subtitle mx-auto mt-4 max-w-2xl md:mt-6">{page.heroHeading}</h2>
+            <p className="hero-subtitle mx-auto mt-4 max-w-2xl md:mt-6">{page.heroHeading}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button href="#estimate" size="lg">
                 {CTA_COPY.quote}
                 <ChevronRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href={serviceHref} variant="ghost" size="lg">
-                View Full Service Details
+              <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg">
+                <Phone className="h-4 w-4" aria-hidden />
+                {siteConfig.phoneDisplay}
               </Button>
             </div>
           </div>
         </div>
+
+        <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/50 backdrop-blur-sm">
+          <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-4 text-sm text-white/90 sm:gap-10">
+            <span className="flex items-center gap-1.5">
+              <Star size={14} className="fill-brand-gold text-brand-gold" aria-hidden />
+              5-Star Rated
+            </span>
+            <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
+            <span>Licensed &amp; Insured</span>
+            <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
+            <span>{yearsInBusinessLabel()}</span>
+            <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden />
+            <span>Free On-Site Quotes</span>
+          </div>
+        </div>
       </section>
+
+      {proofProjects.length > 0 ? (
+        <section className="section bg-white">
+          <div className="section-inner">
+            <FadeIn className="flex items-end justify-between gap-4">
+              <div>
+                <p className="section-eyebrow">Recent Work</p>
+                <h2 className="section-heading mt-3">Before &amp; After</h2>
+                <p className="mt-2 max-w-xl text-brand-body">
+                  Real {serviceName.toLowerCase()} projects from the Cedar Valley — drag to compare.
+                </p>
+              </div>
+              <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
+                View Gallery
+              </Button>
+            </FadeIn>
+            <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+              {proofProjects.map((project) => (
+                <BeforeAfterSlider
+                  key={project.id}
+                  title={project.title}
+                  before={{ ...project.before, priority: false }}
+                  after={{ ...project.after, priority: false }}
+                />
+              ))}
+            </div>
+            <div className="mt-10 flex justify-center">
+              <Button href="#estimate">
+                {CTA_COPY.quote}
+                <ChevronRight className="h-4 w-4" aria-hidden />
+              </Button>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {page.sections.map((section, index) => (
         <section
           key={section.heading}
-          className={`section ${index % 2 === 0 ? 'bg-white' : 'bg-brand-stone'}`}
+          className={`section ${index % 2 === 0 ? 'bg-brand-stone' : 'bg-white'}`}
         >
           {index === 0 ? (
             <div className="section-inner">
@@ -142,14 +201,17 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                     ))}
                   </div>
                   {section.showCta ? (
-                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                       <Button href="#estimate">
                         {CTA_COPY.quote}
                         <ChevronRight className="h-4 w-4" aria-hidden />
                       </Button>
-                      <Button href={serviceHref} variant="outline">
-                        Process, Materials &amp; Gallery
-                      </Button>
+                      <Link
+                        href={serviceHref}
+                        className="text-sm font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
+                      >
+                        Process, materials &amp; gallery
+                      </Link>
                     </div>
                   ) : null}
                 </FadeIn>
@@ -177,80 +239,57 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               ))}
             </div>
           ) : (
-          <FadeIn className="section-inner-narrow">
-            <h2 className="section-heading">{section.heading}</h2>
-            <div className="mt-6 space-y-4 text-brand-body leading-relaxed">
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-              ))}
-            </div>
-            {section.bulletsIntro ? (
-              <p className="mt-6 text-brand-body leading-relaxed">{section.bulletsIntro}</p>
-            ) : null}
-            {section.bullets && section.bullets.length > 0 ? (
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-brand-body">
-                {section.bullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            ) : null}
-            {section.paragraphsAfter && section.paragraphsAfter.length > 0 ? (
+            <FadeIn className="section-inner-narrow">
+              <h2 className="section-heading">{section.heading}</h2>
               <div className="mt-6 space-y-4 text-brand-body leading-relaxed">
-                {section.paragraphsAfter.map((paragraph) => (
+                {section.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 48)}>{paragraph}</p>
                 ))}
               </div>
-            ) : null}
-            {section.showCta ? (
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="#estimate">
-                  {CTA_COPY.quote}
-                  <ChevronRight className="h-4 w-4" aria-hidden />
-                </Button>
-                <Button href={serviceHref} variant="outline">
-                  Process, Materials &amp; Gallery
-                </Button>
-              </div>
-            ) : null}
-            {section.subsections?.map((subsection) => (
-              <div key={subsection.heading} className="mt-10">
-                <h3 className="font-display text-2xl font-bold text-brand-dark">{subsection.heading}</h3>
-                <div className="mt-4 space-y-4 text-brand-body leading-relaxed">
-                  {subsection.paragraphs.map((paragraph) => (
+              {section.bulletsIntro ? (
+                <p className="mt-6 text-brand-body leading-relaxed">{section.bulletsIntro}</p>
+              ) : null}
+              {section.bullets && section.bullets.length > 0 ? (
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-brand-body">
+                  {section.bullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {section.paragraphsAfter && section.paragraphsAfter.length > 0 ? (
+                <div className="mt-6 space-y-4 text-brand-body leading-relaxed">
+                  {section.paragraphsAfter.map((paragraph) => (
                     <p key={paragraph.slice(0, 48)}>{paragraph}</p>
                   ))}
                 </div>
-              </div>
-            ))}
-          </FadeIn>
+              ) : null}
+              {section.showCta ? (
+                <div className="mt-8">
+                  <Button href="#estimate">
+                    {CTA_COPY.quote}
+                    <ChevronRight className="h-4 w-4" aria-hidden />
+                  </Button>
+                </div>
+              ) : null}
+              {section.subsections?.map((subsection) => (
+                <div key={subsection.heading} className="mt-10">
+                  <h3 className="font-display text-2xl font-bold text-brand-dark">{subsection.heading}</h3>
+                  <div className="mt-4 space-y-4 text-brand-body leading-relaxed">
+                    {subsection.paragraphs.map((paragraph) => (
+                      <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </FadeIn>
           )}
         </section>
       ))}
 
-      <section className="section bg-brand-stone">
-        <FadeIn className="section-inner-narrow text-center">
-          <p className="section-eyebrow">Next Step</p>
-          <h2 className="section-heading mt-3">See How We Build {serviceName}</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-brand-body leading-relaxed">
-            Want process steps, materials, and project photos before you request a quote? Open the full{' '}
-            {serviceName.toLowerCase()} service page, then come back here or jump straight to a free estimate.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href={serviceHref} size="lg">
-              View {serviceName} Details
-              <ChevronRight className="h-4 w-4" aria-hidden />
-            </Button>
-            <Button href="#estimate" variant="outline" size="lg">
-              {CTA_COPY.quote}
-            </Button>
-          </div>
-        </FadeIn>
-      </section>
-
       {faqs.length > 0 ? (
         <section className="section bg-white">
           <FadeIn className="section-inner-narrow">
-            <h2 className="section-heading">{serviceName} in Cedar Falls: FAQ</h2>
+            <h2 className="section-heading">{serviceName}: FAQ</h2>
             <div className="mt-8">
               <FaqAccordion
                 items={faqs.map((faq) => ({
@@ -279,8 +318,8 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               <p className="section-eyebrow">Get Started</p>
               <h2 className="section-heading mt-3">Request Your Free Estimate</h2>
               <p className="mt-4 leading-relaxed text-brand-body">
-                Tell us about your {serviceName.toLowerCase()} project in Cedar Falls or the Cedar Valley.
-                We follow up with a clear on-site quote — no pressure.
+                Tell us about your {serviceName.toLowerCase()} project. We follow up with a clear on-site
+                quote for homes across the Cedar Valley — no pressure.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-brand-body">
@@ -317,7 +356,13 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
 
             <FadeIn delay={0.1}>
               <div className="form-card">
-                <QuoteForm variant="light" formLocation={formLocation} />
+                <QuoteForm
+                  variant="light"
+                  formLocation={formLocation}
+                  defaultService={page.serviceSlug}
+                  defaultCity="Cedar Falls"
+                  compact
+                />
               </div>
             </FadeIn>
           </div>
@@ -332,8 +377,9 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               {CTA_COPY.quote}
               <ChevronRight className="h-4 w-4" aria-hidden />
             </Button>
-            <Button href={serviceHref} variant="outline" size="lg">
-              View Full Service Details
+            <Button href={`tel:${siteConfig.phone}`} variant="outline" size="lg">
+              <Phone className="h-4 w-4" aria-hidden />
+              {siteConfig.phoneDisplay}
             </Button>
           </div>
         </FadeIn>
@@ -345,7 +391,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         <section className="section bg-white">
           <div className="section-inner">
             <FadeIn className="mb-10 text-center">
-              <h2 className="section-heading">Other Landscaping Services in Cedar Falls</h2>
+              <h2 className="section-heading">Related Landscaping Services</h2>
               <p className="mx-auto mt-3 max-w-2xl text-brand-body">
                 Planning a bigger outdoor project? These services often pair with {serviceName.toLowerCase()}.
               </p>
@@ -369,8 +415,8 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
 
       <CtaBanner
         title="Get Your Free Estimate"
-        description="Tell us about your project and we will follow up with a clear quote for Cedar Falls and the Cedar Valley."
-        eyebrow={page.ctaEyebrow ?? 'Cedar Falls Hardscaping'}
+        description="Tell us about your project and we will follow up with a clear quote for the Cedar Valley."
+        eyebrow={page.ctaEyebrow ?? 'Cedar Valley Hardscaping'}
       />
     </>
   )

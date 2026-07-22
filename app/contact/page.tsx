@@ -41,7 +41,7 @@ export default function ContactPage() {
       <PageHero
         size="compact"
         imageSrc={siteImages.contactHero}
-        imageAlt="Contact A1 Property Services in Cedar Falls"
+        imageAlt="Contact A1 Property Services"
         eyebrow="Get in Touch"
         title="Request Your|Free Quote"
         subtitle="Tell us about your project. We'll look it over and get back to you with a straight answer on price."
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <p className="mt-6 text-xs text-brand-subtle">
-                  <strong>Service Area:</strong> Cedar Falls &middot; Waterloo &middot; Hudson &middot; Cedar Valley, Iowa
+                  <strong>Service Area:</strong> Cedar Valley, Iowa
                 </p>
               </div>
 

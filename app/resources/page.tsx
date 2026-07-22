@@ -25,7 +25,7 @@ const resources = [
   },
   {
     title: 'Best Plants for Iowa Landscapes',
-    description: 'Top-performing perennials, shrubs, and trees for Black Hawk County gardens and landscapes.',
+    description: 'Top-performing perennials, shrubs, and trees for Cedar Valley gardens and landscapes.',
     href: '/blog/best-plants-for-iowa-landscapes',
     category: 'Planting',
   },
@@ -55,7 +55,7 @@ const resources = [
   },
   {
     title: 'Tree Planting Guide for Cedar Falls',
-    description: 'How to plant trees that thrive in Black Hawk County soil and climate.',
+    description: 'How to plant trees that thrive in Cedar Valley soil and climate.',
     href: '/blog/tree-planting-guide-cedar-falls',
     category: 'Planting',
   },

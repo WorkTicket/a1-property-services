@@ -90,8 +90,8 @@ const faqItems = [
     a: 'Spring and fall fill up fast. Call (319) 464-1889 or request a quote online — we typically respond within 24 hours and get you on the schedule.',
   },
   {
-    q: 'Do you serve Waterloo and surrounding areas?',
-    a: 'Yes. We serve Cedar Falls, Waterloo, Hudson, Evansdale, and the entire Cedar Valley area.',
+    q: 'Do you serve the Cedar Valley?',
+    a: 'Yes. We serve homeowners and businesses across the entire Cedar Valley.',
   },
 ]
 
@@ -107,7 +107,7 @@ export default function HomePage() {
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',
-    about: 'Landscaping and Hardscaping in Cedar Falls',
+    about: 'Landscaping and Hardscaping in the Cedar Valley',
   })
 
   return (
@@ -164,7 +164,7 @@ export default function HomePage() {
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <span>{yearsInBusinessLabel()}</span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
-            <span>Cedar Falls &amp; Waterloo</span>
+            <span>Cedar Valley</span>
           </div>
         </div>
       </section>
@@ -219,7 +219,7 @@ export default function HomePage() {
 
           <FadeIn className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row" delay={0.15}>
             <Button href="/landscaping-services-in-cedar-falls">
-              Landscaping in Cedar Falls &rarr;
+              Full Landscaping Services &rarr;
             </Button>
             <Button href="/services" variant="outline">
               View All Services &rarr;
@@ -232,10 +232,10 @@ export default function HomePage() {
       <section className="section bg-white">
         <div className="section-inner">
           <FadeIn className="text-center">
-            <p className="section-eyebrow">Hardscaping Cedar Falls</p>
+            <p className="section-eyebrow">Hardscaping</p>
             <h2 className="section-heading mt-3">Retaining Walls, Patios &amp; Water Features</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Dedicated pages for our most-requested Cedar Falls hardscape services — the same URLs ranking on Google today.
+              Dedicated pages for our most-requested hardscape services — retaining walls, paver patios, and water features.
             </p>
           </FadeIn>
           <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3">
@@ -243,7 +243,7 @@ export default function HomePage() {
               <StaggerItem key={feature.slug}>
                 <Link href={feature.oldHref || feature.href} className="card group flex h-full flex-col gap-4 p-6">
                   <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
-                    {feature.name} in Cedar Falls
+                    {feature.name}
                   </h3>
                   <p className="text-sm leading-relaxed text-brand-muted">{feature.shortDesc}</p>
                   <span className="link-cta-sm mt-auto">
@@ -303,11 +303,11 @@ export default function HomePage() {
                 A1 Property Services {startedInYearPhrase()} with one goal: do good work and keep showing up. Retaining walls, paver patios, full yard installs, seasonal maintenance. Big jobs and small ones.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We&rsquo;ve served Cedar Falls, Waterloo, and towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
+                We&rsquo;ve served towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/landscaping-services-in-cedar-falls">
-                  Landscaping Cedar Falls
+                  Landscaping Services
                 </Button>
                 <Button href="/about" variant="outline">
                   Our Story
@@ -318,7 +318,7 @@ export default function HomePage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <ResponsiveImage
                   src={siteImages.aboutSecondary}
-                  alt="A1 Property Services landscape project in Cedar Falls"
+                  alt="A1 Property Services landscape project"
                   fill
                   sizes={IMAGE_SIZES.halfCol}
                 />
@@ -453,9 +453,9 @@ export default function HomePage() {
                   href="/landscaping-services-in-cedar-falls"
                   className="text-brand-green-800 underline underline-offset-2 transition-colors hover:text-brand-gold"
                 >
-                  landscaping Cedar Falls
+                  landscaping company
                 </Link>{' '}
-                company based in Cedar Falls, Iowa. We serve homeowners throughout the Cedar Valley.
+                based in Cedar Falls, Iowa. We serve homeowners throughout the Cedar Valley.
               </p>
               <div className="mt-8 space-y-3 text-sm text-brand-body">
                 <p className="flex items-center gap-2">
