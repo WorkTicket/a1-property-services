@@ -4,11 +4,12 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
 
 const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
 const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
+const CookieConsentBanner = dynamic(() => import('@/components/layout/CookieConsentBanner'), { ssr: false })
+const ConsentAwareAnalytics = dynamic(() => import('@/components/analytics/ConsentAwareAnalytics'), { ssr: false })
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
@@ -94,23 +95,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              window.gtag = gtag;
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-            `,
-          }}
-        />
         <link rel="icon" href="/images/icon.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/images/icon.webp" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://clarity.microsoft.com" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://maps.google.com" />
         <link rel="dns-prefetch" href="https://maps.gstatic.com" />
@@ -131,8 +119,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
+        <ConsentAwareAnalytics />
         <ScrollTracker />
-        <MicrosoftClarity />
         <Navbar />
         <main
           id="main-content"
@@ -143,6 +131,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <StickyCtaBar />
+        <CookieConsentBanner />
       </body>
     </html>
   )

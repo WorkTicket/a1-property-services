@@ -200,9 +200,20 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} A1 Property Services. All rights reserved.
           </p>
-          <p className="text-center sm:text-right">
-            Licensed &amp; Insured &middot; State of Iowa Contractor
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:justify-end">
+            <Link href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-white">
+              Terms &amp; Conditions
+            </Link>
+            <span className="hidden sm:inline" aria-hidden>
+              &middot;
+            </span>
+            <span className="text-center sm:text-right">
+              Licensed &amp; Insured &middot; State of Iowa Contractor
+            </span>
+          </div>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs text-neutral-400">
           <span>{projectsCompletedLabel()}</span>

@@ -4,7 +4,6 @@ declare global {
   interface Window {
     dataLayer: unknown[]
     gtag?: (...args: unknown[]) => void
-    clarity?: (command: string, action: string, params?: string) => void
   }
 }
 
@@ -61,9 +60,6 @@ export function trackPhoneCall(location = 'Header') {
     link_text: location,
     outbound: false,
   })
-  if (typeof window.clarity === 'function') {
-    window.clarity('set', 'phone_click', location)
-  }
 }
 
 /** Mark that a lead was just submitted so /thank-you can fire generate_lead once. */
@@ -101,9 +97,6 @@ export function trackGenerateLead(params: {
     currency: 'USD',
     value: 1,
   })
-  if (typeof window.clarity === 'function') {
-    window.clarity('set', 'generate_lead', params.form_location ?? 'unknown')
-  }
 }
 
 export function trackFormSubmit(
@@ -121,9 +114,6 @@ export function trackFormSubmit(
     },
     options,
   )
-  if (typeof window.clarity === 'function') {
-    window.clarity('set', 'form_submit', `${formName}:${formLocation}`)
-  }
 }
 
 /** Funnel step: user opened /contact (mark as Key Event in GA4 if desired). */

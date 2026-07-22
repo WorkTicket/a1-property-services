@@ -2,6 +2,7 @@ import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
 import HeroOverlay from '@/components/ui/HeroOverlay'
+import HeroTitle from '@/components/ui/HeroTitle'
 
 const heroSizeClasses = {
   default: 'h-[50vh] min-h-[360px] md:h-[55vh] md:min-h-[420px]',
@@ -70,7 +71,9 @@ export default function PageHero({
         ) : (
           <>
             <p className="hero-eyebrow">{eyebrow}</p>
-            <h1 className="hero-title mt-4">{title}</h1>
+            <h1 className="hero-title mt-4">
+              <HeroTitle>{title}</HeroTitle>
+            </h1>
             {subtitle && (
               <p className={`hero-subtitle mt-4 md:mt-6 ${isLeft ? 'max-w-xl' : 'mx-auto max-w-xl'}`}>
                 {subtitle}
