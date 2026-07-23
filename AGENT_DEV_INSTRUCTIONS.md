@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Modern redesign of **a1pslandscape.com** — a landscaping & hardscaping company based in Cedar Falls, Iowa. The existing site is built on WordPress/Elementor. The new site is **Next.js 14 (App Router) + Tailwind CSS**, deployed to Vercel.
+Modern redesign of **a1pslandscape.com** — a landscaping & hardscaping company based in Cedar Falls, Iowa. The existing site is built on WordPress/Elementor. The new site is **Next.js 14 (App Router) + Tailwind CSS**, deployed to **Cloudflare Workers + Pages** (static export).
 
 **Business:** A1 Property Services  
 **Phone:** +1 319 464 1889  
@@ -20,11 +20,11 @@ Modern redesign of **a1pslandscape.com** — a landscaping & hardscaping company
 | Framework | Next.js 14 (App Router) |
 | Styling | Tailwind CSS v3 |
 | Fonts | `next/font/google` — see Design Tokens |
-| Images | `next/image` with `sharp` |
-| Forms | React Hook Form + server actions |
-| Animations | Framer Motion (use sparingly) |
+| Images | `next/image` with `sharp` + custom build pipeline (WebP/AVIF) |
+| Forms | React Hook Form + Zod (QuoteForm), HubSpot embed (ContactForm) |
+| Animations | Custom `requestAnimationFrame`-based animations (FadeIn, Stagger) |
 | Icons | Lucide React |
-| Deployment | Vercel |
+| Deployment | Cloudflare Workers + Pages (static export via `wrangler`) |
 
 **Node version:** 20+  
 **Package manager:** npm
@@ -321,8 +321,9 @@ async redirects() {
 - Images: always use `next/image` with `alt`, `width`, `height` or `fill` + `sizes`
 - No inline styles — Tailwind utility classes only
 - Server components by default; add `'use client'` only when needed (forms, lightbox, mobile menu)
-- Framer Motion: use `motion.div` with `initial/animate/whileInView` — wrap in `<AnimatePresence>` where needed
-- Forms: React Hook Form with Zod validation schema
+- Animations: use `FadeIn` (fade + translate) and `StaggerContainer`/`StaggerItem` for scroll-triggered reveals. Both respect `prefers-reduced-motion`.
+- Forms: React Hook Form with Zod validation schema (QuoteForm); HubSpot embed (ContactForm)
+- Client components: only add `'use client'` where interactivity is needed (forms, nav, animations, analytics)
 
 ---
 
@@ -330,9 +331,11 @@ async redirects() {
 
 ```bash
 # .env.local.example
-RESEND_API_KEY=           # For contact form email delivery
-NEXT_PUBLIC_GA_ID=        # Google Analytics 4
-NEXT_PUBLIC_MAPS_KEY=     # Google Maps embed (optional — can use iframe embed)
+RESEND_API_KEY=                    # For contact form email delivery (Cloudflare Worker)
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=  # Google Search Console
+NEXT_PUBLIC_BING_SITE_VERIFICATION=    # Bing Webmaster Tools
+INDEXNOW_KEY=                      # IndexNow submission key
+CLOUDFLARE_API_TOKEN=              # For wrangler deploy
 ```
 
 ---

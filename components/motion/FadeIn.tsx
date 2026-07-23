@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
+import { cn, ANIMATION_DURATION, ANIMATION_EASING } from '@/lib/utils'
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none' | 'scale'
 
@@ -48,7 +48,7 @@ export default function FadeIn({
     <Tag
       ref={ref as never}
       className={cn(
-        'transition-all duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[opacity,transform]',
+        `transition-all duration-[${ANIMATION_DURATION}ms] ease-[${ANIMATION_EASING}] will-change-[opacity,transform]`,
         visible
           ? 'translate-x-0 translate-y-0 scale-100 opacity-100'
           : cn('opacity-0', hiddenOffset[direction]),

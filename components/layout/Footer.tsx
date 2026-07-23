@@ -24,7 +24,7 @@ const quickLinks = [
 ]
 
 const rankingServiceLinks = [
-  { label: 'Landscaping Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
+  { label: 'Full Landscaping Services', href: '/landscaping-services-in-cedar-falls' },
   { label: 'Paver Patios', href: '/paver-patio-installation' },
   { label: 'Retaining Walls', href: '/retaining-wall-in-cedar-falls' },
   { label: 'Water Features', href: '/cedar-falls-water-features' },
@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-neutral-400">
-              Professional landscaping and hardscaping for Cedar Falls, Waterloo, and the Cedar Valley.
+              Professional landscaping and hardscaping for the Cedar Valley.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400">
@@ -82,7 +82,7 @@ export default function Footer() {
                 {CTA_COPY.estimate}
                 <ChevronRight className="h-3 w-3" aria-hidden />
               </Button>
-              <Button href="/gallery" size="sm" variant="outline-on-dark" onClick={() => trackCtaClick('Footer Gallery')}>
+              <Button href="/gallery" size="sm" variant="ghost" onClick={() => trackCtaClick('Footer Gallery')}>
                 {CTA_COPY.viewGallery}
               </Button>
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white">Cedar Falls Services</p>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white">Popular Services</p>
             <ul className="mt-4 space-y-2.5">
               {rankingServiceLinks.map((link) => (
                 <li key={link.href}>
@@ -200,9 +200,20 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} A1 Property Services. All rights reserved.
           </p>
-          <p className="text-center sm:text-right">
-            Licensed &amp; Insured &middot; State of Iowa Contractor
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:justify-end">
+            <Link href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-white">
+              Terms &amp; Conditions
+            </Link>
+            <span className="hidden sm:inline" aria-hidden>
+              &middot;
+            </span>
+            <span className="text-center sm:text-right">
+              Licensed &amp; Insured &middot; State of Iowa Contractor
+            </span>
+          </div>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs text-neutral-400">
           <span>{projectsCompletedLabel()}</span>

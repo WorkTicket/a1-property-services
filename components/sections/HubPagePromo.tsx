@@ -25,7 +25,7 @@ export default function HubPagePromo({ className = 'section bg-brand-stone py-10
           href={landscapingHubPath}
           className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-green-700 hover:text-brand-gold"
         >
-          View Landscaping Cedar Falls <ChevronRight size={14} />
+          View landscaping services <ChevronRight size={14} />
         </Link>
       </FadeIn>
     </section>

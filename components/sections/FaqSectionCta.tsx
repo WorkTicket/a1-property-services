@@ -17,7 +17,7 @@ export default function FaqSectionCta({ learnMoreHref, learnMoreLabel }: FaqSect
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Button href="/contact">{CTA_COPY.contactTeam}</Button>
-        <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark">
+        <Button href={`tel:${siteConfig.phone}`} variant="outline">
           <Phone size={14} />
           {siteConfig.phoneDisplay}
         </Button>

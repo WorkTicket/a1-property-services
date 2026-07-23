@@ -4,12 +4,12 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
-import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
 
 const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
 const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
+const CookieConsentBanner = dynamic(() => import('@/components/layout/CookieConsentBanner'), { ssr: false })
+const ConsentAwareAnalytics = dynamic(() => import('@/components/analytics/ConsentAwareAnalytics'), { ssr: false })
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
@@ -99,7 +99,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/icon.webp" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://clarity.microsoft.com" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://maps.google.com" />
         <link rel="dns-prefetch" href="https://maps.gstatic.com" />
@@ -120,15 +119,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
+        <ConsentAwareAnalytics />
         <ScrollTracker />
-        <GoogleAnalytics />
-        <MicrosoftClarity />
         <Navbar />
-        <main id="main-content" role="main" className="min-w-0 overflow-x-clip">
+        <main
+          id="main-content"
+          role="main"
+          className="min-w-0 overflow-x-clip pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:pb-0"
+        >
           {children}
         </main>
         <Footer />
         <StickyCtaBar />
+        <CookieConsentBanner />
       </body>
     </html>
   )

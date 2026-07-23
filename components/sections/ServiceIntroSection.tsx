@@ -58,12 +58,9 @@ export default function ServiceIntroSection({
               <Button href="/contact" fullWidth className="sm:w-auto">
                 {CTA_COPY.quote}
               </Button>
-              <Button href={`tel:${siteConfig.phone}`} variant="ghost-dark" fullWidth className="sm:w-auto">
+              <Button href={`tel:${siteConfig.phone}`} variant="outline" fullWidth className="sm:w-auto">
                 <Phone size={16} />
                 {siteConfig.phoneDisplay}
-              </Button>
-              <Button href="/gallery" variant="ghost-dark" fullWidth className="sm:w-auto">
-                {CTA_COPY.gallery}
               </Button>
             </div>
           </FadeIn>

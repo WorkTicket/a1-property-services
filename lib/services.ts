@@ -236,6 +236,17 @@ export const services: Service[] = [
     featured: true,
     category: 'outdoor-living',
   },
+  {
+    slug: 'paver-driveway',
+    icon: 'layout-grid',
+    name: 'Paver Driveways',
+    shortDesc: 'Heavy-duty paver driveways built for vehicles and Iowa freeze-thaw.',
+    longDesc:
+      'A paver driveway upgrades curb appeal and outlasts cracked concrete or worn asphalt. We excavate deeper for vehicle loads, compact a thick aggregate base in lifts, set edge restraint, and lay interlocking patterns so your driveway stays level through Iowa freeze-thaw.',
+    anchorId: 'paverdriveway',
+    featured: true,
+    category: 'hardscaping',
+  },
 ]
 
 export const hardscapeFeatures = [
@@ -346,6 +357,11 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
     { problem: 'Rainwater pools on your current patio and runs toward the house', solution: 'We install every paver patio with a precise slope away from your foundation. The base layers are graded for drainage before the first paver goes down.' },
     { problem: 'You want an outdoor space but need it to match your home and budget', solution: 'Pavers come in dozens of colors, shapes, and patterns at various price points. We design a patio that fits your style and budget without compromising quality.' },
   ],
+  'paver-driveway': [
+    { problem: 'Your concrete or asphalt driveway is cracked, heaved, and looks worn out', solution: 'Interlocking pavers flex through Iowa freeze-thaw without the slab cracks that ruin concrete and asphalt. Individual units can be reset or replaced if anything settles later.' },
+    { problem: 'You want a driveway that can handle daily vehicle traffic without sinking', solution: 'We excavate deeper than a patio and compact crushed aggregate in lifts to create a base rated for vehicle loads. Proper depth and compaction keep the surface level under cars and trucks.' },
+    { problem: 'Your current driveway drains poorly or sends water toward the garage', solution: 'Every paver driveway is graded with the right slope so water sheds away from the garage and foundation. Edge restraint and polymeric joint sand keep the surface locked in place.' },
+  ],
   'ponds-water-features': [
     { problem: 'Your backyard feels flat and lacks a centerpiece or visual interest', solution: 'A custom water feature adds movement, sound, and something worth building the rest of the yard around. Even a small pondless waterfall changes how the whole space feels.' },
     { problem: 'You want a pond but worry about Iowa winter damage', solution: 'We design every water feature with winterization in mind. Pumps are removable, liners are rated for freeze-thaw, and we offer seasonal opening and closing services.' },
@@ -353,7 +369,7 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
   ],
   'landscape-installation': [
     { problem: 'Your yard has bare patches, overgrown areas, and no clear plan', solution: 'We start fresh with a complete plan: grading, soil prep, plant selection, and installation. The result is a yard where everything fits together and works with your property.' },
-    { problem: 'You bought plants that looked good at the nursery but died in Iowa clay', solution: 'We select plants proven to thrive in Black Hawk County soil and climate. Proper soil preparation and planting technique give them the best start.' },
+    { problem: 'You bought plants that looked good at the nursery but died in Iowa clay', solution: 'We select plants proven to thrive in Cedar Valley soil and climate. Proper soil preparation and planting technique give them the best start.' },
     { problem: 'DIY landscaping projects never look as polished as professional work', solution: 'Professional installation means proper spacing, clean edges, correct planting depth, and materials that hold up. The finished look is night and day from DIY.' },
   ],
   'lawn-care': [
@@ -463,7 +479,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Site Assessment & Design',
       description:
-        'We evaluate slope, soil conditions, drainage, and wall height to plan a retaining wall that meets Cedar Falls code and handles Iowa weather.',
+        'We evaluate slope, soil conditions, drainage, and wall height to plan a retaining wall that meets local code and handles Iowa weather.',
     },
     {
       title: 'Excavation & Base Prep',
@@ -503,11 +519,33 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
         'The surface is compacted, edges are finished, and the area is cleaned up so your new paver patio is ready to use.',
     },
   ],
+  'paver-driveway': [
+    {
+      title: 'Layout & Excavation',
+      description:
+        'We mark the driveway footprint, excavate 12 to 18 inches for vehicle loads, and grade for drainage away from the garage and foundation.',
+    },
+    {
+      title: 'Base & Compaction',
+      description:
+        'Crushed aggregate is placed and compacted in lifts to create a deep, stable base engineered for cars, trucks, and Iowa freeze-thaw.',
+    },
+    {
+      title: 'Edge Restraint & Pavers',
+      description:
+        'Edge restraint locks the perimeter, then pavers are laid in a load-bearing pattern like herringbone and joints are filled with polymeric sand.',
+    },
+    {
+      title: 'Final Compaction & Cleanup',
+      description:
+        'The surface is compacted, borders are finished, and the driveway is cleaned so it is ready for daily vehicle use.',
+    },
+  ],
   'ponds-water-features': [
     {
       title: 'Design Consultation',
       description:
-        'We discuss your vision, whether that is a koi pond, pondless waterfall, or stream, and design a water feature that fits your Cedar Falls yard and budget.',
+        'We discuss your vision, whether that is a koi pond, pondless waterfall, or stream, and design a water feature that fits your yard and budget.',
     },
     {
       title: 'Excavation & Basin Setup',
@@ -987,7 +1025,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'preservation-restoration': {
-    heading: 'Restoring Neglected Landscapes in Cedar Falls',
+    heading: 'Restoring Neglected Landscapes',
     paragraphs: [
       'Yards fall behind for many reasons, including overgrown plantings, compacted soil, erosion, or damage from storms and pests. We assess what is salvageable, what needs removal, and what it takes to get the landscape healthy again.',
       'Our restoration work includes selective pruning and removal, soil amendment and grading repairs, replanting with Iowa-hardy varieties, and plant health treatments for trees and shrubs under stress. We focus on practical fixes that restore curb appeal and long-term performance.',
@@ -1008,26 +1046,34 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'retaining-walls': {
-    heading: 'Why Cedar Falls Homeowners Choose Our Retaining Walls',
+    heading: 'Why Local Homeowners Choose Our Retaining Walls',
     paragraphs: [
       'Retaining walls are one of the most practical upgrades for sloped Cedar Valley properties. A properly installed wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
-      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install in Cedar Falls includes gravel backfill, drain pipe, and proper base compaction, whether block, stone, or concrete, for walls that stand for decades.',
+      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install includes gravel backfill, drain pipe, and proper base compaction, whether block, stone, or concrete, for walls that stand for decades.',
     ],
     relatedBlogSlug: 'retaining-wall-benefits-cedar-falls',
   },
   'paver-patio': {
-    heading: 'Paver Patios Built for Cedar Falls Weather',
+    heading: 'Paver Patios Built for Iowa Weather',
     paragraphs: [
       'A paver patio is one of the best investments you can make in outdoor living. Unlike poured concrete, pavers flex through Iowa freeze-thaw without cracking, and individual units can be replaced if needed.',
       'We excavate to the right depth, compact the aggregate base in lifts, set edge restraint, and finish with polymeric joint sand. Natural stone, fire pits, and outdoor kitchen integration are available for complete outdoor living spaces that drain well and hold up through years of use.',
     ],
     relatedBlogSlug: 'paver-patio-planning-guide',
   },
+  'paver-driveway': {
+    heading: 'Paver Driveways Built for Vehicle Loads',
+    paragraphs: [
+      'A paver driveway is one of the strongest curb appeal upgrades you can make. Unlike asphalt that softens in summer and concrete that cracks in winter, interlocking pavers flex through Iowa freeze-thaw and can be repaired one unit at a time.',
+      'Driveways need a deeper base than patios. We excavate 12 to 18 inches, compact crushed aggregate in lifts, set rigid edge restraint, and lay interlocking patterns like herringbone so the surface stays level under daily vehicle traffic for decades.',
+    ],
+    relatedBlogSlug: 'driveway-paver-installation',
+  },
   'ponds-water-features': {
-    heading: 'Custom Water Features for Cedar Falls Properties',
+    heading: 'Custom Water Features for Cedar Valley Properties',
     paragraphs: [
       'Water features add movement, sound, and a natural centerpiece to any landscape. From compact pondless waterfalls for smaller yards to full koi ponds with streams and bridges, we design and install water features that fit what is already in your yard.',
-      'Every water features installation in Cedar Falls includes proper pump sizing, filtration, and winterization planning. We work with natural stone and boulders to create features that look like they belong on your property, not a kit dropped in the yard.',
+      'Every water feature installation includes proper pump sizing, filtration, and winterization planning. We work with natural stone and boulders to create features that look like they belong on your property, not a kit dropped in the yard.',
     ],
   },
   'hydroseeding': {
@@ -1040,7 +1086,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'snow-removal': {
     heading: 'Reliable Snow Removal for Cedar Valley Properties',
     paragraphs: [
-      'Iowa storms do not wait for a convenient time. Our contracted Cedar Falls snow removal covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
+      'Iowa storms do not wait for a convenient time. Our contracted snow removal covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
       'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm. Seasonal contracts lock in pricing before winter starts — call (319) 464-1889 to reserve your route.',
     ],
   },
@@ -1066,7 +1112,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'excavation': {
-    heading: 'Professional Excavation for Cedar Falls Projects',
+    heading: 'Professional Excavation for Local Projects',
     paragraphs: [
       'Excavation is the first step in most big landscape jobs. We handle site clearing, rough and finish grading, trenching for drainage and utilities, and dig-outs for patios, retaining walls, and water features. Our equipment fleet includes skid steers and mini excavators sized for residential access.',
       'Proper excavation prevents future problems. Correct base preparation prevents hardscape settling. Proper grading prevents water damage. We take the time to get the foundation right on every job.',
@@ -1122,7 +1168,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'grading': {
-    heading: 'Yard Grading and Leveling for Cedar Falls Properties',
+    heading: 'Yard Grading and Leveling for Local Properties',
     paragraphs: [
       'Water pooling near your foundation, soggy low spots, and uneven surfaces are grading problems. We cut and fill to direct runoff away from structures, level areas for patios and lawns, and prepare sites for sod, seed, or hardscape installation.',
       'Our grading work uses laser-level equipment and compacted fill where needed so finished surfaces hold their shape through Iowa freeze-thaw cycles. Proper grading is the foundation for healthy lawns, dry basements, and hardscape that does not settle.',
@@ -1132,19 +1178,19 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
 
 export const servicesHubFaqs: ServiceFAQ[] = [
   {
-    question: 'What landscaping services do you offer in Cedar Falls?',
+    question: 'What landscaping services do you offer?',
     answer:
-      'We offer full landscaping services in Cedar Falls including retaining wall installation, paver patio installation, water features, landscape installation, lawn care, tree service, landscape maintenance, hydroseeding, and snow removal.',
+      'We offer full landscaping services including retaining wall installation, paver patio installation, water features, landscape installation, lawn care, tree service, landscape maintenance, hydroseeding, and snow removal.',
   },
   {
     question: 'Do you serve areas outside Cedar Falls?',
     answer:
-      'Yes. We serve Cedar Falls, Waterloo, Hudson, Evansdale, and the greater Cedar Valley. Contact us to confirm service availability for your property.',
+      'Yes. We serve the greater Cedar Valley. Contact us to confirm service availability for your property.',
   },
   {
     question: 'Do you offer free estimates?',
     answer:
-      'Yes. We provide free on-site estimates for landscaping and hardscaping projects in Cedar Falls. Call us or request a quote online.',
+      'Yes. We provide free on-site estimates for landscaping and hardscaping projects. Call us or request a quote online.',
   },
   {
     question: 'Are you licensed and insured?',
@@ -1213,6 +1259,12 @@ export const serviceBenefits: Record<string, string[]> = {
     'Wide range of paver colors, textures, and patterns',
     'Edge restraint and joint sand so pavers stay level',
     'Fire pits, seat walls, and lighting if you want them',
+  ],
+  'paver-driveway': [
+    'Deep excavated base compacted for vehicle loads',
+    'Interlocking patterns built for driveways and daily traffic',
+    'Edge restraint and polymeric sand so pavers stay locked',
+    'Colors, borders, and patterns that match your home',
   ],
   'landscape-design': [
     'Custom scaled plans for your property and budget',
@@ -1291,7 +1343,7 @@ export const serviceBenefits: Record<string, string[]> = {
 export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   'landscape-installation': [
     {
-      question: 'How much does a full landscape installation cost in Cedar Falls?',
+      question: 'How much does a full landscape installation cost?',
       answer: 'Cost depends on property size, design complexity, plant selection, and any hardscape features. We provide free on-site estimates with a detailed written quote before any work begins.',
     },
     {
@@ -1303,8 +1355,8 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Yes. We handle design, plant selection, grading, planting, and hardscape. Bring your own plans if you have them.',
     },
     {
-      question: 'What kind of plants work best in Cedar Falls?',
-      answer: 'We select plants proven to thrive in Black Hawk County\'s clay soil and climate. Native perennials, Iowa-hardy shrubs, and cool-season grasses perform best and require less water and maintenance.',
+      question: 'What kind of plants work best?',
+      answer: 'We select plants proven to thrive in Cedar Valley clay soil and climate. Native perennials, Iowa-hardy shrubs, and cool-season grasses perform best and require less water and maintenance.',
     },
     {
       question: 'Do you remove existing landscaping before installing new?',
@@ -1337,7 +1389,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'lawn-care': [
     {
-      question: 'How often do you mow lawns in Cedar Falls?',
+      question: 'How often do you mow lawns?',
       answer: 'We typically mow weekly during the growing season, adjusting frequency based on growth rate, rainfall, and seasonal conditions across the Cedar Valley.',
     },
     {
@@ -1401,7 +1453,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Yes. Our crew is experienced with tight-access removals near structures. We use rigging techniques to safely lower branches and sections without damaging your property.',
     },
     {
-      question: 'How much does tree removal cost in Cedar Falls?',
+      question: 'How much does tree removal cost?',
       answer: 'Cost depends on tree size, location, condition, and accessibility. We provide free estimates and can assess the job accurately once we see the tree on your property.',
     },
     {
@@ -1425,9 +1477,9 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'ponds-water-features': [
     {
-      question: 'How much does water features installation cost in Cedar Falls?',
+      question: 'How much does a water feature cost?',
       answer:
-        'Cost varies based on size, type (pondless waterfall, koi pond, or stream), pump system, and landscaping. We design to your budget and provide a detailed quote before installation begins.',
+        'Most residential pondless waterfalls and small ponds start in the low thousands and scale with size, stonework, and filtration. We provide a free on-site estimate so pricing matches your yard and design before work begins.',
     },
     {
       question: 'Do you maintain water features?',
@@ -1442,7 +1494,22 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'What types of water features do you install?',
       answer:
-        'We install koi ponds, pondless waterfalls, bubbling boulders, streams, and multi-tiered stone waterfalls. Each water features installation is custom designed for your Cedar Falls property.',
+        'We install koi ponds, pondless waterfalls, bubbling boulders, streams, and multi-tiered stone waterfalls. Each installation is custom designed for your property.',
+    },
+    {
+      question: 'Will a pond or waterfall survive Iowa winters?',
+      answer:
+        'Yes when designed for freeze-thaw. We use cold-rated liners, removable pumps, and winterization plans so features shut down cleanly and reopen each spring without cracked edges or failed equipment.',
+    },
+    {
+      question: 'What is a pondless waterfall?',
+      answer:
+        'A pondless waterfall recirculates water over stone into a hidden underground reservoir — you get the sound and look of a waterfall without an open pond. It is a popular low-maintenance option for smaller yards.',
+    },
+    {
+      question: 'How long does water feature installation take?',
+      answer:
+        'Most residential water features take several days to about two weeks depending on excavation, stonework, plumbing, and planting. We give a clear timeline during your free estimate.',
     },
   ],
   'hydroseeding': [
@@ -1461,12 +1528,12 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'snow-removal': [
     {
-      question: 'Do you offer snow removal in Cedar Falls?',
+      question: 'Do you offer snow removal?',
       answer:
-        'Yes. A1 Property Services provides Cedar Falls snow removal for driveways, walkways, steps, and commercial lots — including plowing, shoveling, and ice treatment under seasonal contracts.',
+        'Yes. A1 Property Services provides snow removal for driveways, walkways, steps, and commercial lots — including plowing, shoveling, and ice treatment under seasonal contracts.',
     },
     {
-      question: 'How much does snow removal cost in Cedar Falls?',
+      question: 'How much does snow removal cost?',
       answer:
         'Snow removal cost depends on driveway size, service frequency, and whether you want residential or commercial priority. We quote seasonal contracts up front so you know the price before winter starts.',
     },
@@ -1485,12 +1552,12 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'retaining-walls': [
     {
-      question: 'How much does retaining wall installation cost in Cedar Falls?',
+      question: 'How much does retaining wall installation cost?',
       answer:
-        'Cost depends on wall height, length, materials, and site access. We provide free on-site estimates so you get an accurate price for your Cedar Falls property before work begins.',
+        'Most residential retaining walls are quoted by height, length, materials, and site access — smaller garden walls cost less than tall engineered walls. We provide free on-site estimates so you get an accurate price before work begins.',
     },
     {
-      question: 'Do I need a permit for a retaining wall in Cedar Falls?',
+      question: 'Do I need a permit for a retaining wall?',
       answer:
         'Taller walls and walls near property lines may require permits. We help you understand local requirements and build to code so your retaining wall installation is done right the first time.',
     },
@@ -1502,7 +1569,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'How long does retaining wall installation take?',
       answer:
-        'Most residential retaining wall projects in Cedar Falls take several days to two weeks depending on wall length, height, and site conditions. We provide a clear timeline during your free estimate.',
+        'Most residential retaining wall projects take several days to two weeks depending on wall length, height, and site conditions. We provide a clear timeline during your free estimate.',
     },
     {
       question: 'How do retaining walls handle Iowa freeze-thaw?',
@@ -1547,12 +1614,12 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'paver-patio': [
     {
-      question: 'How much does a paver patio cost in Cedar Falls?',
+      question: 'How much does a paver patio cost?',
       answer:
-        'Paver patio cost in Cedar Falls depends on size, paver style, site prep, and add-ons like steps or seat walls. Most residential projects are quoted after a free on-site visit so pricing matches your yard and design.',
+        'Paver patio cost depends on size, paver style, site prep, and add-ons like steps or seat walls. Many residential patios are quoted per square foot after a free on-site visit so pricing matches your yard and design.',
     },
     {
-      question: 'How long does paver patio installation take in Cedar Falls?',
+      question: 'How long does paver patio installation take?',
       answer: 'Most residential paver patio projects take several days to two weeks depending on size, pattern complexity, and add-ons like seat walls or fire pits. We give you a clear timeline during your free estimate.',
     },
     {
@@ -1596,13 +1663,65 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Yes. Curved patios require more cutting and labor but create beautiful, organic shapes. We can design circular, oval, or freeform patios in any paver style.',
     },
   ],
+  'paver-driveway': [
+    {
+      question: 'How much does a paver driveway cost?',
+      answer:
+        'Paver driveway cost depends on square footage, paver style, excavation depth, and site access. Most residential driveways are quoted per square foot after a free on-site visit so pricing matches your property and design.',
+    },
+    {
+      question: 'How long does paver driveway installation take?',
+      answer:
+        'Most residential paver driveway projects take one to three weeks depending on size, pattern complexity, and whether demolition of existing concrete or asphalt is required. We give you a clear timeline during your free estimate.',
+    },
+    {
+      question: 'Will a paver driveway hold up to Iowa winters and vehicle traffic?',
+      answer:
+        'Yes. We build driveways with a deeper compacted base than patios, quality edge restraint, and interlocking patterns designed for freeze-thaw and daily vehicle loads.',
+    },
+    {
+      question: 'What is the best paver pattern for a driveway?',
+      answer:
+        'Herringbone is our top recommendation for driveways because it interlocks under load and resists shifting. Running bond can work for light-use areas, but herringbone is stronger for cars and trucks.',
+    },
+    {
+      question: 'How deep does the base need to be for a paver driveway?',
+      answer:
+        'We typically excavate 12 to 18 inches depending on soil conditions. Crushed aggregate is compacted in lifts, then a sand screed layer levels the surface before pavers go down.',
+    },
+    {
+      question: 'Can you replace my cracked concrete or asphalt driveway with pavers?',
+      answer:
+        'Yes. We remove the existing surface, excavate and rebuild the base to driveway specs, then install pavers. You get a fresh driveway engineered for Iowa weather instead of patching a failing slab.',
+    },
+    {
+      question: 'Do paver driveways need to be sealed?',
+      answer:
+        'Sealing is optional. It can enhance color and add stain resistance from oil or tire marks, but a well-installed paver driveway performs well without sealer. We can seal during installation or later.',
+    },
+    {
+      question: 'How do you prevent weeds between driveway pavers?',
+      answer:
+        'Polymeric joint sand is swept into the joints and activated with water. It hardens into a weed-resistant barrier while still allowing drainage and slight movement.',
+    },
+    {
+      question: 'What is the difference between a paver driveway and poured concrete?',
+      answer:
+        'Pavers are individual units that flex through freeze-thaw without cracking. Concrete is a single slab that tends to crack in Iowa climates and is harder to repair cleanly. Pavers can also be lifted and reset if utilities need access.',
+    },
+    {
+      question: 'Can you match my driveway pavers to a patio or walkway?',
+      answer:
+        'Yes. We work with major paver brands and can coordinate colors, textures, and borders so your driveway, patio, and walks look like one hardscape system.',
+    },
+  ],
   'landscape-design': [
     {
       question: 'What does the landscape design process include?',
       answer: 'We start with a site consultation to understand your needs, sun exposure, drainage, and existing features. Then we create a scaled plan with plant selection, hardscape placement, and phased implementation options.',
     },
     {
-      question: 'How much does landscape design cost in Cedar Falls?',
+      question: 'How much does landscape design cost?',
       answer: 'Design fees vary by project scope and property size. We provide a design fee quote during our initial consultation and typically credit a portion of the design fee toward installation if you choose us to build it.',
     },
     {
@@ -1620,7 +1739,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Common signs include standing water after rain, soggy areas that never dry out, water in the basement, soil erosion, and grass dying in low spots. We offer free on-site assessments to diagnose drainage problems.',
     },
     {
-      question: 'How much does a French drain cost in Cedar Falls?',
+      question: 'How much does a French drain cost?',
       answer: 'French drain costs depend on length, depth, soil conditions, and whether downspout connections are included. We provide free estimates after evaluating your property.',
     },
     {
@@ -1670,13 +1789,13 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Yes. We coordinate with Iowa One Call (811) to locate buried utilities before any excavation work begins, ensuring safety and compliance.',
     },
     {
-      question: 'How much does excavation cost in Cedar Falls?',
+      question: 'How much does excavation cost?',
       answer: 'Excavation costs vary by scope, access, and material type. We provide free on-site estimates after evaluating your project requirements.',
     },
   ],
   'sod-installation': [
     {
-      question: 'How much does sod installation cost in Cedar Falls?',
+      question: 'How much does sod installation cost?',
       answer: 'Sod costs vary by turf type, square footage, and soil preparation needed. We provide free estimates with a detailed breakdown of materials and labor.',
     },
     {
@@ -1722,8 +1841,8 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'tree-planting': [
     {
-      question: 'What trees grow best in Cedar Falls?',
-      answer: 'Native Iowa trees like oaks, maples, hackberry, and serviceberry perform well in Black Hawk County soil. We also recommend disease-resistant elm and linden varieties for longevity.',
+      question: 'What trees grow best?',
+      answer: 'Native Iowa trees like oaks, maples, hackberry, and serviceberry perform well in Cedar Valley soil. We also recommend disease-resistant elm and linden varieties for longevity.',
     },
     {
       question: 'How far from my house should I plant a tree?',
@@ -1782,7 +1901,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Signs your yard needs grading include water pooling after rain, water seeping into the basement, erosion gullies in the yard, and uneven or bumpy lawn surfaces.',
     },
     {
-      question: 'How much does yard grading cost in Cedar Falls?',
+      question: 'How much does yard grading cost?',
       answer: 'Grading costs depend on property size, amount of fill or cut needed, and access for equipment. We provide free on-site estimates.',
     },
     {
@@ -1792,7 +1911,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'outdoor-living': [
     {
-      question: 'How much does an outdoor kitchen cost in Cedar Falls?',
+      question: 'How much does an outdoor kitchen cost?',
       answer: 'Outdoor kitchen costs vary widely based on size, appliances, countertop materials, and whether a roof or pergola is included. We design to your budget and provide detailed quotes.',
     },
     {
@@ -2057,6 +2176,77 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Seal every 2-3 years to protect color and surface. Clean stains promptly. Fill hairline cracks before water freezes in them. Avoid de-icing salts on the surface.',
       durability: '20-30 years in Iowa. Proper control joints and sealing extend life; cracking is the primary long-term concern.',
+    },
+  ],
+  'paver-driveway': [
+    {
+      name: 'Concrete Pavers',
+      recommended: true,
+      pros: [
+        'Wide range of colors, shapes, and interlocking patterns',
+        'Individual pavers can be replaced if damaged or stained',
+        'Flexible system handles freeze-thaw and vehicle loads well',
+        'Lower cost than natural stone for full driveways',
+      ],
+      cons: [
+        'Joint sand needs occasional reapplication',
+        'Requires a deep, well-compacted base for vehicles',
+        'Color can fade in direct sun over many years',
+        'Oil stains should be cleaned promptly',
+      ],
+      maintenance: 'Reapply polymeric joint sand every 2-3 years. Power wash annually. Seal every 3-5 years if desired for stain resistance. Reset any settled pavers promptly.',
+      durability: '25-50+ years with proper driveway-depth base. Individual paver replacement extends overall life indefinitely.',
+    },
+    {
+      name: 'Clay Brick Pavers',
+      pros: [
+        'Classic look that complements brick homes',
+        'Fired clay holds color longer than concrete in Iowa sun',
+        'Excellent freeze-thaw resistance when properly installed',
+        'Strong interlocking options for driveway traffic',
+      ],
+      cons: [
+        'Higher cost than standard concrete pavers',
+        'Limited size and pattern options compared to concrete',
+        'Can chip if struck by heavy objects or plow blades',
+        'Requires the same deep base prep as concrete pavers',
+      ],
+      maintenance: 'Sweep joints and refill sand as needed. Power wash annually. Reset any settled pavers. Seal every 3-5 years if desired.',
+      durability: '50+ years. Fired clay is extremely durable and weathers gracefully in Iowa climates.',
+    },
+    {
+      name: 'Asphalt',
+      pros: [
+        'Lower upfront cost for large driveways',
+        'Fast installation with minimal curing wait',
+        'Smooth continuous surface for plowing and driving',
+        'Easy to patch small cracks in the short term',
+      ],
+      cons: [
+        'Softens in summer heat and cracks in winter cold',
+        'Needs resealing every few years to slow deterioration',
+        'Limited decorative options compared to pavers',
+        'Full replacement is usually required once failure advances',
+      ],
+      maintenance: 'Seal every 2-3 years. Fill cracks promptly. Avoid heavy point loads in hot weather. Plan for full overlay or replacement as the surface ages.',
+      durability: '15-25 years in Iowa with regular sealing. Freeze-thaw and UV exposure shorten life without maintenance.',
+    },
+    {
+      name: 'Poured Concrete',
+      pros: [
+        'Lower cost than pavers for many residential driveways',
+        'Smooth continuous surface with no joints for weeds',
+        'Can be stamped or colored for a decorative finish',
+        'Familiar look that matches many neighborhood streets',
+      ],
+      cons: [
+        'Cracks are difficult to repair invisibly',
+        'Monolithic slabs heave and crack in Iowa freeze-thaw',
+        'Entire sections often need replacement when damaged',
+        'De-icing salts can damage the surface over time',
+      ],
+      maintenance: 'Seal every 2-3 years. Fill control joints and cracks before freeze season. Avoid aggressive de-icers. Monitor for heaving each spring.',
+      durability: '20-30 years in Iowa. Proper joints and sealing help, but cracking remains the primary long-term concern.',
     },
   ],
   'ponds-water-features': [
@@ -3365,6 +3555,7 @@ export const faqPageServiceOrder: string[] = [
   'rock-landscaping',
   'retaining-walls',
   'paver-patio',
+  'paver-driveway',
   'outdoor-living',
   'ponds-water-features',
   'commercial-landscaping',
@@ -3382,8 +3573,8 @@ export function getServiceBySlug(slug: string): Service | undefined {
 }
 
 export function getHardscapeServiceDetail(slug: string): Service | undefined {
-  if (slug === 'ponds-water-features') {
-    return services.find((s) => s.slug === 'ponds-water-features')
+  if (slug === 'ponds-water-features' || slug === 'paver-driveway') {
+    return services.find((s) => s.slug === slug)
   }
   return hardscapeServices.find((s) => s.slug === slug)
 }

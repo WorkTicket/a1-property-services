@@ -22,6 +22,8 @@ export function getAllSiteUrls(): string[] {
     '/faqs',
     '/resources',
     '/learn',
+    '/privacy',
+    '/terms',
     '/retaining-wall-in-cedar-falls',
     '/paver-patio-installation',
     '/cedar-falls-water-features',

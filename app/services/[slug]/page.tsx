@@ -129,12 +129,12 @@ export default function ServicePage({ params }: Props) {
     serviceType: seo?.title ?? service.name,
     name: serviceName,
     provider: { '@id': `${siteConfig.url}/#organization` },
-    areaServed: {
-      '@type': 'City',
-      name: 'Cedar Falls',
-      containedInPlace: { '@type': 'State', name: 'Iowa' },
-    },
-    description: seo?.description ?? `${service.shortDesc} Serving Cedar Falls and surrounding Cedar Valley communities.`,
+    areaServed: [
+      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'Place', name: 'Cedar Valley, Iowa' },
+    ],
+    description: seo?.description ?? `${service.shortDesc} Serving the Cedar Valley.`,
     url: pageUrl,
     ...(heroImage ? { image: `${siteConfig.url}${heroImage}` } : {}),
   }
@@ -167,8 +167,8 @@ export default function ServicePage({ params }: Props) {
               ...(processSteps.length > 0
                 ? [
                     howToJsonLd(processSteps, {
-                      name: `How We Deliver ${service.name} in Cedar Falls`,
-                      description: `Our step-by-step process for ${service.name.toLowerCase()} projects in Cedar Falls and the Cedar Valley.`,
+                      name: `How We Deliver ${service.name}`,
+                      description: `Our step-by-step process for ${service.name.toLowerCase()} projects across the Cedar Valley.`,
                     }),
                   ]
                 : []),
@@ -180,7 +180,7 @@ export default function ServicePage({ params }: Props) {
       <PageHero
         imageSrc={heroImage}
         imageAlt={heroImageAlt}
-        eyebrow="Cedar Falls, Iowa"
+        eyebrow="Cedar Valley, Iowa"
         title={serviceName}
         subtitle={service.shortDesc}
       />
@@ -370,7 +370,7 @@ export default function ServicePage({ params }: Props) {
               {service.name} Projects in the Cedar Valley
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              See real {service.name.toLowerCase()} work completed across Cedar Falls and surrounding communities.
+              See real {service.name.toLowerCase()} work completed for homes across the Cedar Valley.
             </p>
             <div className="mt-10">
               <GalleryGrid projects={galleryProjects} />
@@ -388,7 +388,7 @@ export default function ServicePage({ params }: Props) {
         <section className="section bg-white">
           <FadeIn className="section-inner-narrow">
             <h2 className="section-heading">
-              {service.name} in Cedar Falls: FAQ
+              {service.name}: FAQ
             </h2>
             <div className="mt-8">
               <FaqAccordion
@@ -433,7 +433,7 @@ export default function ServicePage({ params }: Props) {
         <section className="section bg-white">
           <div className="section-inner">
             <FadeIn className="mb-10 text-center">
-              <h2 className="section-heading">Other Landscaping Services in Cedar Falls</h2>
+              <h2 className="section-heading">Related Landscaping Services</h2>
             </FadeIn>
             <StaggerContainer className="grid gap-6 sm:grid-cols-3">
               {complementaryServices.map((s) => (

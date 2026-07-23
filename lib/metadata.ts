@@ -22,8 +22,7 @@ export const siteConfig = {
     googleBusiness: 'https://share.google/d5uiWqfUIkso3hlj2',
   },
   googlePlaceId: 'ChIJx1yIuk9V5YcRMqQd-z4_YIE',
-  googleReviewUrl:
-    'https://www.google.com/search?hl=en-CO&gl=co&q=A1+Property+Services,+503+Bergstrom+Blvd,+Cedar+Falls,+IA+50613,+United+States&ludocid=9322520768390472754&lsig=AB86z5WppuXPH3aGGXjSTH_nw8_j#lrd=0x87e5554fba885cc7:0x81603f3efb1da432,3',
+  googleReviewUrl: 'https://g.page/r/CTKkHfs-P2CBEBM/review',
 }
 
 export function getGoogleMapsEmbedUrl(): string {
@@ -35,18 +34,10 @@ export function getGoogleMapsEmbedUrl(): string {
 export const localSeoKeywords = [
   'landscaping cedar falls',
   'cedar falls landscaping',
-  'landscaper cedar falls ia',
   'retaining wall cedar falls',
-  'retaining walls cedar falls',
-  'retaining wall installation cedar falls',
   'paver patio cedar falls',
-  'paver patio installation cedar falls',
-  'paver patios cedar falls',
-  'hardscaping cedar falls',
-  'landscape contractor cedar falls',
-  'outdoor living cedar falls',
   'lawn care cedar falls',
-  'snow removal cedar falls ia',
+  'hardscaping cedar falls',
 ]
 
 export type ServiceSeo = {
@@ -61,14 +52,10 @@ export type ServiceSeo = {
 export const servicesHubKeywords = [
   'landscaping services cedar falls',
   'landscaping cedar falls ia',
-  'landscaper cedar falls',
-  'landscape contractor cedar falls',
   'hardscaping cedar falls',
   'retaining wall cedar falls',
   'paver patio cedar falls',
-  'water features cedar falls',
   'lawn care cedar falls',
-  'snow removal cedar falls',
 ]
 
 export const serviceSeoOverrides: Record<string, ServiceSeo> = {
@@ -82,13 +69,9 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'retaining wall cedar falls',
       'retaining walls cedar falls',
       'retaining walls cedar falls ia',
-      'stone retaining wall cedar falls',
-      'block retaining wall cedar falls',
-      'retaining wall contractor cedar falls',
-      'erosion control cedar falls',
     ],
     ogImage: '/images/retaining-wall.webp',
-    ogImageAlt: 'Retaining wall installation in Cedar Falls, Iowa',
+    ogImageAlt: 'Retaining wall installation',
   },
   'paver-patio': {
     title: 'Paver Patio Installation Cedar Falls | Free Quote',
@@ -100,13 +83,23 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'paver patio cedar falls',
       'paver patios cedar falls',
       'paver patio cedar falls ia',
-      'patio installation cedar falls',
-      'backyard patio cedar falls',
-      'hardscape patio cedar falls',
-      'paver patio contractor cedar falls',
     ],
     ogImage: '/images/paver-patio-hero.webp',
-    ogImageAlt: 'Paver patio installation in Cedar Falls, Iowa',
+    ogImageAlt: 'Paver patio installation',
+  },
+  'paver-driveway': {
+    title: 'Paver Driveway Installation Cedar Falls | Free Quote',
+    description:
+      'Custom paver driveway installation in Cedar Falls, IA. Deep base built for vehicles and Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
+    h1: 'Paver Driveway Installation in Cedar Falls',
+    keywords: [
+      'paver driveway installation cedar falls',
+      'paver driveway cedar falls',
+      'paver driveways cedar falls',
+      'paver driveway cedar falls ia',
+    ],
+    ogImage: '/images/driveway-after-2.webp',
+    ogImageAlt: 'Paver driveway installation',
   },
   'landscape-installation': {
     title: 'Landscape Plantings Cedar Falls, IA | Free Estimate',
@@ -118,9 +111,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'plantings cedar falls ia',
       'landscape plantings cedar falls',
       'landscaping cedar falls ia',
-      'landscape contractor cedar falls',
-      'landscape design cedar falls',
-      'outdoor living cedar falls',
     ],
   },
   'lawn-care': {
@@ -133,7 +123,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'lawn mowing cedar falls',
       'lawn service cedar falls ia',
       'lawn aeration cedar falls',
-      'fertilization cedar falls',
     ],
   },
   'preservation-restoration': {
@@ -146,7 +135,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'landscape preservation cedar falls',
       'soil repair cedar falls',
       'erosion control cedar falls ia',
-      'plant health care cedar falls',
     ],
   },
   'tree-service': {
@@ -159,7 +147,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'tree removal cedar falls',
       'tree pruning cedar falls',
       'stump grinding cedar falls',
-      'tree care cedar falls ia',
     ],
   },
   'landscape-maintenance': {
@@ -172,7 +159,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'lawn maintenance cedar falls',
       'yard maintenance cedar falls',
       'seasonal cleanup cedar falls',
-      'mulching cedar falls',
     ],
   },
   'ponds-water-features': {
@@ -185,13 +171,9 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'water features cedar falls',
       'water feature installation cedar falls',
       'ponds cedar falls',
-      'waterfall installation cedar falls',
-      'koi pond cedar falls',
-      'pondless waterfall cedar falls',
-      'backyard water features cedar falls',
     ],
     ogImage: '/images/water-feature-image-1.webp',
-    ogImageAlt: 'Water features installation in Cedar Falls, Iowa',
+    ogImageAlt: 'Water features installation',
   },
   'hydroseeding': {
     title: 'Hydroseeding in Cedar Falls',
@@ -203,7 +185,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'hydroseed cedar falls',
       'lawn establishment cedar falls',
       'erosion control hydroseeding cedar falls',
-      'new lawn cedar falls',
     ],
   },
   'snow-removal': {
@@ -216,8 +197,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'cedar falls snow removal',
       'snow plowing cedar falls',
       'driveway plowing cedar falls',
-      'snow removal cedar falls ia',
-      'winter services cedar falls',
     ],
   },
   'landscape-design': {
@@ -230,7 +209,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'landscape designer cedar falls ia',
       'landscape design cedar valley',
       'yard design cedar falls',
-      'garden design cedar falls',
     ],
   },
   'drainage': {
@@ -243,7 +221,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'french drain cedar falls',
       'yard drainage cedar falls',
       'grading cedar falls',
-      'drainage contractor cedar falls',
     ],
   },
   'excavation': {
@@ -256,7 +233,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'land clearing cedar falls',
       'grading contractor cedar falls',
       'site preparation cedar falls',
-      'excavation contractor cedar valley',
     ],
   },
   'sod-installation': {
@@ -269,7 +245,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'sod cedar falls',
       'new lawn cedar falls',
       'sod delivery cedar falls ia',
-      'turf installation cedar falls',
     ],
   },
   'mulching': {
@@ -282,7 +257,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'mulch delivery cedar falls',
       'mulch installation cedar falls',
       'landscape mulch cedar falls',
-      'mulching service cedar falls ia',
     ],
   },
   'rock-landscaping': {
@@ -295,7 +269,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'river rock cedar falls',
       'landscape boulders cedar falls',
       'rock garden cedar falls',
-      'decorative stone cedar falls',
     ],
   },
   'tree-planting': {
@@ -308,7 +281,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'tree planting service cedar falls',
       'shade trees cedar falls',
       'ornamental trees cedar falls',
-      'tree planting contractor cedar falls',
     ],
   },
   'shrub-installation': {
@@ -321,7 +293,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'shrub planting cedar falls',
       'foundation planting cedar falls',
       'hedge installation cedar falls',
-      'shrubs cedar falls ia',
     ],
   },
   'commercial-landscaping': {
@@ -334,7 +305,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'commercial lawn care cedar falls',
       'commercial snow removal cedar falls',
       'business landscaping cedar falls',
-      'property management landscaping cedar falls',
     ],
   },
   'residential-landscaping': {
@@ -347,7 +317,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'home landscaping cedar falls',
       'residential lawn care cedar falls',
       'yard landscaping cedar falls',
-      'home landscaping services cedar falls',
     ],
   },
   'grading': {
@@ -360,7 +329,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'lawn leveling cedar falls',
       'grading contractor cedar falls',
       'land grading cedar falls',
-      'site grading cedar falls ia',
     ],
   },
   'outdoor-living': {
@@ -373,7 +341,6 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
       'outdoor kitchen cedar falls',
       'fire pit cedar falls',
       'outdoor entertaining cedar falls',
-      'backyard living cedar falls',
     ],
   },
 }

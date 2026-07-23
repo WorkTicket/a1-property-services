@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Check, Star, Shield } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, getGoogleMapsEmbedUrl, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
 import QuoteForm from '@/components/ui/QuoteForm'
+import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 import FadeIn from '@/components/motion/FadeIn'
 import PageHero from '@/components/motion/PageHero'
 
@@ -22,6 +23,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <TrackPageEvent event="contact_page_view" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -39,7 +41,7 @@ export default function ContactPage() {
       <PageHero
         size="compact"
         imageSrc={siteImages.contactHero}
-        imageAlt="Contact A1 Property Services in Cedar Falls"
+        imageAlt="Contact A1 Property Services"
         eyebrow="Get in Touch"
         title="Request Your|Free Quote"
         subtitle="Tell us about your project. We'll look it over and get back to you with a straight answer on price."
@@ -68,7 +70,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8">
-                <QuoteForm variant="light" />
+                <QuoteForm variant="light" formLocation="Contact Page" />
               </div>
             </FadeIn>
 
@@ -104,7 +106,7 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <p className="mt-6 text-xs text-brand-subtle">
-                  <strong>Service Area:</strong> Cedar Falls &middot; Waterloo &middot; Hudson &middot; Cedar Valley, Iowa
+                  <strong>Service Area:</strong> Cedar Valley, Iowa
                 </p>
               </div>
 

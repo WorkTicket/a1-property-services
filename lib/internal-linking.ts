@@ -6,7 +6,7 @@ import { galleryProjects, type GalleryProject } from '@/lib/images'
 import { siteConfig } from '@/lib/metadata'
 
 export const landscapingHubPath = '/landscaping-services-in-cedar-falls'
-export const landscapingHubAnchor = 'landscaping in Cedar Falls'
+export const landscapingHubAnchor = 'landscaping services'
 
 export type ContentType = 'service' | 'blog' | 'city' | 'learn' | 'faq' | 'project'
 
@@ -45,9 +45,10 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'commercial-landscaping': ['landscape-maintenance', 'snow-removal', 'lawn-care'],
   'residential-landscaping': ['landscape-design', 'landscape-installation', 'landscape-maintenance'],
   'grading': ['excavation', 'drainage', 'sod-installation'],
-  'outdoor-living': ['paver-patio', 'ponds-water-features', 'landscape-design'],
-  'retaining-walls': ['drainage', 'excavation', 'rock-landscaping', 'paver-patio'],
-  'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
+  'outdoor-living': ['paver-patio', 'paver-driveway', 'ponds-water-features', 'landscape-design'],
+  'retaining-walls': ['drainage', 'excavation', 'rock-landscaping', 'paver-patio', 'paver-driveway'],
+  'paver-patio': ['paver-driveway', 'outdoor-living', 'retaining-walls', 'landscape-design'],
+  'paver-driveway': ['paver-patio', 'retaining-walls', 'grading', 'landscape-design'],
 }
 
 function serviceUrl(slug: string) { return getServicePageHref(slug) }
@@ -58,7 +59,15 @@ function learnUrl(slug: string) { return `/learn/${slug}` }
 function faqUrl() { return `/faqs` }
 function projectUrl() { return `/gallery` }
 
-function toLinked(item: { type: ContentType; slug: string; title: string; excerpt: string; url: string; relevance: number }): LinkedContent {
+const galleryCategoryMap: Record<string, string> = {
+  'retaining-walls': 'Retaining Wall',
+  'paver-patio': 'Paver Patio',
+  'paver-driveway': 'Paver Driveway',
+  'ponds-water-features': 'Water Feature',
+  'outdoor-living': 'Outdoor Living',
+}
+
+function toLinked(item: LinkedContent): LinkedContent {
   return item
 }
 
@@ -173,14 +182,7 @@ export function getCitiesForService(serviceSlug: string): LinkedContent[] {
 }
 
 export function getProjectsForService(serviceSlug: string, limit = 4): LinkedContent[] {
-  const categoryMap: Record<string, string> = {
-    'retaining-walls': 'Retaining Wall',
-    'paver-patio': 'Paver Patio',
-    'ponds-water-features': 'Water Feature',
-    'outdoor-living': 'Outdoor Living',
-  }
-
-  const category = categoryMap[serviceSlug]
+  const category = galleryCategoryMap[serviceSlug]
   if (!category) return []
 
   const matching = galleryProjects
@@ -445,13 +447,7 @@ export function getRelatedContent(serviceSlug: string): {
   const relatedCities = cities.map(c => ({ slug: c.slug, name: c.name }))
 
   const galleryCount = galleryProjects.filter(p => {
-    const categoryMap: Record<string, string> = {
-      'retaining-walls': 'Retaining Wall',
-      'paver-patio': 'Paver Patio',
-      'ponds-water-features': 'Water Feature',
-      'outdoor-living': 'Outdoor Living',
-    }
-    const title = categoryMap[serviceSlug]
+    const title = galleryCategoryMap[serviceSlug]
     return title ? p.title === title || (title === 'Water Feature' && p.category === 'water') : false
   }).length
 
@@ -533,7 +529,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     }
 
     case 'project': {
-      const galleryServices = ['retaining-walls', 'paver-patio', 'ponds-water-features']
+      const galleryServices = ['retaining-walls', 'paver-patio', 'paver-driveway', 'ponds-water-features']
       const services = allServices
         .filter(s => galleryServices.includes(s.slug))
         .map(s => toLinked({
