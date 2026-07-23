@@ -45,9 +45,10 @@ const complementaryServiceSlugs: Record<string, string[]> = {
   'commercial-landscaping': ['landscape-maintenance', 'snow-removal', 'lawn-care'],
   'residential-landscaping': ['landscape-design', 'landscape-installation', 'landscape-maintenance'],
   'grading': ['excavation', 'drainage', 'sod-installation'],
-  'outdoor-living': ['paver-patio', 'ponds-water-features', 'landscape-design'],
-  'retaining-walls': ['drainage', 'excavation', 'rock-landscaping', 'paver-patio'],
-  'paver-patio': ['outdoor-living', 'retaining-walls', 'landscape-design'],
+  'outdoor-living': ['paver-patio', 'paver-driveway', 'ponds-water-features', 'landscape-design'],
+  'retaining-walls': ['drainage', 'excavation', 'rock-landscaping', 'paver-patio', 'paver-driveway'],
+  'paver-patio': ['paver-driveway', 'outdoor-living', 'retaining-walls', 'landscape-design'],
+  'paver-driveway': ['paver-patio', 'retaining-walls', 'grading', 'landscape-design'],
 }
 
 function serviceUrl(slug: string) { return getServicePageHref(slug) }
@@ -61,6 +62,7 @@ function projectUrl() { return `/gallery` }
 const galleryCategoryMap: Record<string, string> = {
   'retaining-walls': 'Retaining Wall',
   'paver-patio': 'Paver Patio',
+  'paver-driveway': 'Paver Driveway',
   'ponds-water-features': 'Water Feature',
   'outdoor-living': 'Outdoor Living',
 }
@@ -527,7 +529,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     }
 
     case 'project': {
-      const galleryServices = ['retaining-walls', 'paver-patio', 'ponds-water-features']
+      const galleryServices = ['retaining-walls', 'paver-patio', 'paver-driveway', 'ponds-water-features']
       const services = allServices
         .filter(s => galleryServices.includes(s.slug))
         .map(s => toLinked({

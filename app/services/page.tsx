@@ -249,7 +249,10 @@ export default function ServicesPage() {
           </FadeIn>
           <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services
-              .filter((service) => service.slug !== 'ponds-water-features')
+              .filter(
+                (service) =>
+                  service.slug !== 'ponds-water-features' && service.slug !== 'paver-driveway',
+              )
               .map((service) => (
               <StaggerItem key={service.slug}>
                 <div className="card h-full p-6">

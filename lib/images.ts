@@ -109,6 +109,7 @@ const siteImages = {
   // Service hero images: one per service, zero repetition
   serviceRetainingWalls: img('retaining-wall.webp'),
   servicePaverPatio: img('paver-patio-hero.webp'),
+  servicePaverDriveway: img('driveway-after-2.webp'),
   servicePondsWaterFeatures: img('water-feature-image-1.webp'),
   serviceLandscapeInstallation: img('service-landscape-installation.webp'),
   serviceLandscapeMaintenance: img('patio-wall.webp'),
@@ -153,10 +154,12 @@ const siteImages = {
   serviceContentOutdoorLiving: img('service-content-outdoor-living.webp'),
   serviceContentRetainingWalls: img('service-content-retaining-walls.webp'),
   serviceContentPaverPatio: img('service-content-paver-patio.webp'),
+  serviceContentPaverDriveway: img('driveway-after-1.webp'),
 
   // Hardscape card images for services hub
   hardscapeRetainingWalls: img('wall-after-4.webp'),
   hardscapePaverPatio: img('patio-after-2.webp'),
+  hardscapePaverDriveway: img('driveway-after-2.webp'),
   hardscapePondsWaterFeatures: img('water-pond-after.webp'),
 }
 
@@ -164,6 +167,7 @@ const siteImages = {
 const serviceHeroMap: Record<string, string> = {
   'retaining-walls': siteImages.serviceRetainingWalls,
   'paver-patio': siteImages.servicePaverPatio,
+  'paver-driveway': siteImages.servicePaverDriveway,
   'ponds-water-features': siteImages.servicePondsWaterFeatures,
   'landscape-installation': siteImages.serviceLandscapeInstallation,
   'landscape-maintenance': siteImages.serviceLandscapeMaintenance,
@@ -189,6 +193,7 @@ const serviceHeroMap: Record<string, string> = {
 const serviceHeroAltMap: Record<string, string> = {
   'retaining-walls': 'Retaining wall installation',
   'paver-patio': 'Paver patio installation',
+  'paver-driveway': 'Paver driveway installation',
   'ponds-water-features': 'Water features installation',
   'landscape-installation': 'Landscape installation',
   'landscape-maintenance': 'Landscape maintenance',
@@ -234,6 +239,7 @@ const serviceContentImageMap: Record<string, string> = {
   'outdoor-living': siteImages.serviceContentOutdoorLiving,
   'retaining-walls': siteImages.serviceContentRetainingWalls,
   'paver-patio': siteImages.serviceContentPaverPatio,
+  'paver-driveway': siteImages.serviceContentPaverDriveway,
 }
 
 const serviceContentImageAltMap: Record<string, string> = {
@@ -281,6 +287,8 @@ const serviceContentImageAltMap: Record<string, string> = {
     'Segmental block retaining wall with terraced garden beds',
   'paver-patio':
     'Custom paver patio installation',
+  'paver-driveway':
+    'Custom paver driveway with interlocking pattern',
 }
 
 // Gallery projects
@@ -715,6 +723,7 @@ export const hubGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.fi
 const landingProofIds: Record<string, string[]> = {
   'retaining-walls': ['wall-1', 'wall-4', 'wall-2'],
   'paver-patio': ['patio-2', 'patio-1', 'patio-3'],
+  'paver-driveway': ['driveway-ba-2', 'driveway-ba-1', 'driveway-ba-3'],
   'ponds-water-features': ['water-1', 'water-2', 'water-3'],
 }
 
@@ -748,6 +757,7 @@ export function getGalleryProjectsForService(slug: string, limit = 4): GalleryPr
   const categoryMap: Record<string, Exclude<GalleryCategory, 'all'>> = {
     'retaining-walls': 'hardscape',
     'paver-patio': 'paver-patios',
+    'paver-driveway': 'paver-driveways',
     'ponds-water-features': 'water',
     'lawn-care': 'lawn-mowing',
     'landscape-installation': 'landscape-installation',

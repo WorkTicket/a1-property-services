@@ -22,8 +22,7 @@ export const siteConfig = {
     googleBusiness: 'https://share.google/d5uiWqfUIkso3hlj2',
   },
   googlePlaceId: 'ChIJx1yIuk9V5YcRMqQd-z4_YIE',
-  googleReviewUrl:
-    'https://www.google.com/search?hl=en-CO&gl=co&q=A1+Property+Services,+503+Bergstrom+Blvd,+Cedar+Falls,+IA+50613,+United+States&ludocid=9322520768390472754&lsig=AB86z5WppuXPH3aGGXjSTH_nw8_j#lrd=0x87e5554fba885cc7:0x81603f3efb1da432,3',
+  googleReviewUrl: 'https://g.page/r/CTKkHfs-P2CBEBM/review',
 }
 
 export function getGoogleMapsEmbedUrl(): string {
@@ -87,6 +86,20 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ],
     ogImage: '/images/paver-patio-hero.webp',
     ogImageAlt: 'Paver patio installation',
+  },
+  'paver-driveway': {
+    title: 'Paver Driveway Installation Cedar Falls | Free Quote',
+    description:
+      'Custom paver driveway installation in Cedar Falls, IA. Deep base built for vehicles and Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
+    h1: 'Paver Driveway Installation in Cedar Falls',
+    keywords: [
+      'paver driveway installation cedar falls',
+      'paver driveway cedar falls',
+      'paver driveways cedar falls',
+      'paver driveway cedar falls ia',
+    ],
+    ogImage: '/images/driveway-after-2.webp',
+    ogImageAlt: 'Paver driveway installation',
   },
   'landscape-installation': {
     title: 'Landscape Plantings Cedar Falls, IA | Free Estimate',

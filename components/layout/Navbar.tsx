@@ -28,7 +28,7 @@ import { trackPhoneCall, trackNavigation } from '@/lib/analytics'
 
 const serviceCategories = [
   { key: 'landscaping' as const, label: 'Landscaping', desc: 'Lawns, beds & tree care', icon: Trees },
-  { key: 'hardscaping' as const, label: 'Hardscaping', desc: 'Patios, walls & pavers', icon: Layers },
+  { key: 'hardscaping' as const, label: 'Hardscaping', desc: 'Patios, driveways & walls', icon: Layers },
   { key: 'drainage' as const, label: 'Drainage', desc: 'Water management solutions', icon: Droplets },
   { key: 'outdoor-living' as const, label: 'Outdoor Living', desc: 'Fire pits & outdoor kitchens', icon: Home },
   { key: 'commercial' as const, label: 'Commercial', desc: 'Business & HOA properties', icon: Building },
@@ -41,7 +41,7 @@ const serviceResourceLinks = [
   { label: 'FAQs', href: '/faqs' },
 ]
 
-const hardscapeSlugs = new Set(['retaining-walls', 'paver-patio'])
+const hardscapeSlugs = new Set(['retaining-walls', 'paver-patio', 'paver-driveway'])
 
 type ServiceCategoryKey = (typeof serviceCategories)[number]['key']
 

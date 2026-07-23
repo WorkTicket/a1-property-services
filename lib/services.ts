@@ -236,6 +236,17 @@ export const services: Service[] = [
     featured: true,
     category: 'outdoor-living',
   },
+  {
+    slug: 'paver-driveway',
+    icon: 'layout-grid',
+    name: 'Paver Driveways',
+    shortDesc: 'Heavy-duty paver driveways built for vehicles and Iowa freeze-thaw.',
+    longDesc:
+      'A paver driveway upgrades curb appeal and outlasts cracked concrete or worn asphalt. We excavate deeper for vehicle loads, compact a thick aggregate base in lifts, set edge restraint, and lay interlocking patterns so your driveway stays level through Iowa freeze-thaw.',
+    anchorId: 'paverdriveway',
+    featured: true,
+    category: 'hardscaping',
+  },
 ]
 
 export const hardscapeFeatures = [
@@ -345,6 +356,11 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
     { problem: 'Your concrete patio cracked and settled after a few Iowa winters', solution: 'Pavers flex through freeze-thaw cycles without cracking. The compacted aggregate base and edge restraint keep the surface level and stable year after year.' },
     { problem: 'Rainwater pools on your current patio and runs toward the house', solution: 'We install every paver patio with a precise slope away from your foundation. The base layers are graded for drainage before the first paver goes down.' },
     { problem: 'You want an outdoor space but need it to match your home and budget', solution: 'Pavers come in dozens of colors, shapes, and patterns at various price points. We design a patio that fits your style and budget without compromising quality.' },
+  ],
+  'paver-driveway': [
+    { problem: 'Your concrete or asphalt driveway is cracked, heaved, and looks worn out', solution: 'Interlocking pavers flex through Iowa freeze-thaw without the slab cracks that ruin concrete and asphalt. Individual units can be reset or replaced if anything settles later.' },
+    { problem: 'You want a driveway that can handle daily vehicle traffic without sinking', solution: 'We excavate deeper than a patio and compact crushed aggregate in lifts to create a base rated for vehicle loads. Proper depth and compaction keep the surface level under cars and trucks.' },
+    { problem: 'Your current driveway drains poorly or sends water toward the garage', solution: 'Every paver driveway is graded with the right slope so water sheds away from the garage and foundation. Edge restraint and polymeric joint sand keep the surface locked in place.' },
   ],
   'ponds-water-features': [
     { problem: 'Your backyard feels flat and lacks a centerpiece or visual interest', solution: 'A custom water feature adds movement, sound, and something worth building the rest of the yard around. Even a small pondless waterfall changes how the whole space feels.' },
@@ -501,6 +517,28 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
       title: 'Final Compaction & Cleanup',
       description:
         'The surface is compacted, edges are finished, and the area is cleaned up so your new paver patio is ready to use.',
+    },
+  ],
+  'paver-driveway': [
+    {
+      title: 'Layout & Excavation',
+      description:
+        'We mark the driveway footprint, excavate 12 to 18 inches for vehicle loads, and grade for drainage away from the garage and foundation.',
+    },
+    {
+      title: 'Base & Compaction',
+      description:
+        'Crushed aggregate is placed and compacted in lifts to create a deep, stable base engineered for cars, trucks, and Iowa freeze-thaw.',
+    },
+    {
+      title: 'Edge Restraint & Pavers',
+      description:
+        'Edge restraint locks the perimeter, then pavers are laid in a load-bearing pattern like herringbone and joints are filled with polymeric sand.',
+    },
+    {
+      title: 'Final Compaction & Cleanup',
+      description:
+        'The surface is compacted, borders are finished, and the driveway is cleaned so it is ready for daily vehicle use.',
     },
   ],
   'ponds-water-features': [
@@ -1023,6 +1061,14 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
     relatedBlogSlug: 'paver-patio-planning-guide',
   },
+  'paver-driveway': {
+    heading: 'Paver Driveways Built for Vehicle Loads',
+    paragraphs: [
+      'A paver driveway is one of the strongest curb appeal upgrades you can make. Unlike asphalt that softens in summer and concrete that cracks in winter, interlocking pavers flex through Iowa freeze-thaw and can be repaired one unit at a time.',
+      'Driveways need a deeper base than patios. We excavate 12 to 18 inches, compact crushed aggregate in lifts, set rigid edge restraint, and lay interlocking patterns like herringbone so the surface stays level under daily vehicle traffic for decades.',
+    ],
+    relatedBlogSlug: 'driveway-paver-installation',
+  },
   'ponds-water-features': {
     heading: 'Custom Water Features for Cedar Valley Properties',
     paragraphs: [
@@ -1213,6 +1259,12 @@ export const serviceBenefits: Record<string, string[]> = {
     'Wide range of paver colors, textures, and patterns',
     'Edge restraint and joint sand so pavers stay level',
     'Fire pits, seat walls, and lighting if you want them',
+  ],
+  'paver-driveway': [
+    'Deep excavated base compacted for vehicle loads',
+    'Interlocking patterns built for driveways and daily traffic',
+    'Edge restraint and polymeric sand so pavers stay locked',
+    'Colors, borders, and patterns that match your home',
   ],
   'landscape-design': [
     'Custom scaled plans for your property and budget',
@@ -1609,6 +1661,58 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'Do you offer curved or circular paver patios?',
       answer: 'Yes. Curved patios require more cutting and labor but create beautiful, organic shapes. We can design circular, oval, or freeform patios in any paver style.',
+    },
+  ],
+  'paver-driveway': [
+    {
+      question: 'How much does a paver driveway cost?',
+      answer:
+        'Paver driveway cost depends on square footage, paver style, excavation depth, and site access. Most residential driveways are quoted per square foot after a free on-site visit so pricing matches your property and design.',
+    },
+    {
+      question: 'How long does paver driveway installation take?',
+      answer:
+        'Most residential paver driveway projects take one to three weeks depending on size, pattern complexity, and whether demolition of existing concrete or asphalt is required. We give you a clear timeline during your free estimate.',
+    },
+    {
+      question: 'Will a paver driveway hold up to Iowa winters and vehicle traffic?',
+      answer:
+        'Yes. We build driveways with a deeper compacted base than patios, quality edge restraint, and interlocking patterns designed for freeze-thaw and daily vehicle loads.',
+    },
+    {
+      question: 'What is the best paver pattern for a driveway?',
+      answer:
+        'Herringbone is our top recommendation for driveways because it interlocks under load and resists shifting. Running bond can work for light-use areas, but herringbone is stronger for cars and trucks.',
+    },
+    {
+      question: 'How deep does the base need to be for a paver driveway?',
+      answer:
+        'We typically excavate 12 to 18 inches depending on soil conditions. Crushed aggregate is compacted in lifts, then a sand screed layer levels the surface before pavers go down.',
+    },
+    {
+      question: 'Can you replace my cracked concrete or asphalt driveway with pavers?',
+      answer:
+        'Yes. We remove the existing surface, excavate and rebuild the base to driveway specs, then install pavers. You get a fresh driveway engineered for Iowa weather instead of patching a failing slab.',
+    },
+    {
+      question: 'Do paver driveways need to be sealed?',
+      answer:
+        'Sealing is optional. It can enhance color and add stain resistance from oil or tire marks, but a well-installed paver driveway performs well without sealer. We can seal during installation or later.',
+    },
+    {
+      question: 'How do you prevent weeds between driveway pavers?',
+      answer:
+        'Polymeric joint sand is swept into the joints and activated with water. It hardens into a weed-resistant barrier while still allowing drainage and slight movement.',
+    },
+    {
+      question: 'What is the difference between a paver driveway and poured concrete?',
+      answer:
+        'Pavers are individual units that flex through freeze-thaw without cracking. Concrete is a single slab that tends to crack in Iowa climates and is harder to repair cleanly. Pavers can also be lifted and reset if utilities need access.',
+    },
+    {
+      question: 'Can you match my driveway pavers to a patio or walkway?',
+      answer:
+        'Yes. We work with major paver brands and can coordinate colors, textures, and borders so your driveway, patio, and walks look like one hardscape system.',
     },
   ],
   'landscape-design': [
@@ -2072,6 +2176,77 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Seal every 2-3 years to protect color and surface. Clean stains promptly. Fill hairline cracks before water freezes in them. Avoid de-icing salts on the surface.',
       durability: '20-30 years in Iowa. Proper control joints and sealing extend life; cracking is the primary long-term concern.',
+    },
+  ],
+  'paver-driveway': [
+    {
+      name: 'Concrete Pavers',
+      recommended: true,
+      pros: [
+        'Wide range of colors, shapes, and interlocking patterns',
+        'Individual pavers can be replaced if damaged or stained',
+        'Flexible system handles freeze-thaw and vehicle loads well',
+        'Lower cost than natural stone for full driveways',
+      ],
+      cons: [
+        'Joint sand needs occasional reapplication',
+        'Requires a deep, well-compacted base for vehicles',
+        'Color can fade in direct sun over many years',
+        'Oil stains should be cleaned promptly',
+      ],
+      maintenance: 'Reapply polymeric joint sand every 2-3 years. Power wash annually. Seal every 3-5 years if desired for stain resistance. Reset any settled pavers promptly.',
+      durability: '25-50+ years with proper driveway-depth base. Individual paver replacement extends overall life indefinitely.',
+    },
+    {
+      name: 'Clay Brick Pavers',
+      pros: [
+        'Classic look that complements brick homes',
+        'Fired clay holds color longer than concrete in Iowa sun',
+        'Excellent freeze-thaw resistance when properly installed',
+        'Strong interlocking options for driveway traffic',
+      ],
+      cons: [
+        'Higher cost than standard concrete pavers',
+        'Limited size and pattern options compared to concrete',
+        'Can chip if struck by heavy objects or plow blades',
+        'Requires the same deep base prep as concrete pavers',
+      ],
+      maintenance: 'Sweep joints and refill sand as needed. Power wash annually. Reset any settled pavers. Seal every 3-5 years if desired.',
+      durability: '50+ years. Fired clay is extremely durable and weathers gracefully in Iowa climates.',
+    },
+    {
+      name: 'Asphalt',
+      pros: [
+        'Lower upfront cost for large driveways',
+        'Fast installation with minimal curing wait',
+        'Smooth continuous surface for plowing and driving',
+        'Easy to patch small cracks in the short term',
+      ],
+      cons: [
+        'Softens in summer heat and cracks in winter cold',
+        'Needs resealing every few years to slow deterioration',
+        'Limited decorative options compared to pavers',
+        'Full replacement is usually required once failure advances',
+      ],
+      maintenance: 'Seal every 2-3 years. Fill cracks promptly. Avoid heavy point loads in hot weather. Plan for full overlay or replacement as the surface ages.',
+      durability: '15-25 years in Iowa with regular sealing. Freeze-thaw and UV exposure shorten life without maintenance.',
+    },
+    {
+      name: 'Poured Concrete',
+      pros: [
+        'Lower cost than pavers for many residential driveways',
+        'Smooth continuous surface with no joints for weeds',
+        'Can be stamped or colored for a decorative finish',
+        'Familiar look that matches many neighborhood streets',
+      ],
+      cons: [
+        'Cracks are difficult to repair invisibly',
+        'Monolithic slabs heave and crack in Iowa freeze-thaw',
+        'Entire sections often need replacement when damaged',
+        'De-icing salts can damage the surface over time',
+      ],
+      maintenance: 'Seal every 2-3 years. Fill control joints and cracks before freeze season. Avoid aggressive de-icers. Monitor for heaving each spring.',
+      durability: '20-30 years in Iowa. Proper joints and sealing help, but cracking remains the primary long-term concern.',
     },
   ],
   'ponds-water-features': [
@@ -3380,6 +3555,7 @@ export const faqPageServiceOrder: string[] = [
   'rock-landscaping',
   'retaining-walls',
   'paver-patio',
+  'paver-driveway',
   'outdoor-living',
   'ponds-water-features',
   'commercial-landscaping',
@@ -3397,8 +3573,8 @@ export function getServiceBySlug(slug: string): Service | undefined {
 }
 
 export function getHardscapeServiceDetail(slug: string): Service | undefined {
-  if (slug === 'ponds-water-features') {
-    return services.find((s) => s.slug === 'ponds-water-features')
+  if (slug === 'ponds-water-features' || slug === 'paver-driveway') {
+    return services.find((s) => s.slug === slug)
   }
   return hardscapeServices.find((s) => s.slug === slug)
 }
