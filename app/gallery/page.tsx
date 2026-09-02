@@ -3,13 +3,14 @@ import { generatePageMetadata, webPageJsonLd, jsonLdGraph, siteConfig } from '@/
 import { siteImages } from '@/lib/images'
 import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
+import EstimateSection from '@/components/sections/EstimateSection'
 import PageHero from '@/components/motion/PageHero'
 import GalleryFilter from '@/components/sections/GalleryFilter'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Project Gallery',
   description:
-    'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley. Retaining walls, paver patios, water features, lawn care, and more.',
+    'Browse before and after landscaping projects in Cedar Falls, Waterloo, and Black Hawk County. Retaining walls, paver patios, water features, lawn care, and more.',
   path: '/gallery',
   ogImage: siteImages.galleryHero,
   ogImageAlt: 'Landscaping project gallery in Cedar Falls',
@@ -18,7 +19,7 @@ export const metadata: Metadata = generatePageMetadata({
 export default function GalleryPage() {
   const pageSchema = webPageJsonLd({
     name: 'Project Gallery | A1 Property Services',
-    description: 'Browse before and after landscaping projects in Cedar Falls and the Cedar Valley: retaining walls, paver patios, driveways, water features, lawn care, and landscape installation.',
+    description: 'Browse before and after landscaping projects in Cedar Falls, Waterloo, and Black Hawk County: retaining walls, paver patios, driveways, water features, lawn care, and landscape installation.',
     path: '/gallery',
     image: siteImages.galleryHero,
     about: 'Project Gallery',
@@ -39,10 +40,16 @@ export default function GalleryPage() {
         imageAlt="Landscaping project gallery in Cedar Falls"
         eyebrow="Our Work"
         title="Our Project|Gallery"
-        subtitle="Real projects across the Cedar Valley. Drag the slider to compare before and after."
+        subtitle="Real projects in Cedar Falls, Waterloo, and Black Hawk County. Drag the slider to compare before and after."
       />
       <GalleryFilter />
       <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />
+      <EstimateSection
+        formLocation="Gallery"
+        heading="Like What You See?"
+        description="Tell us about your project and we'll get back with a free estimate for your Cedar Falls or Waterloo property."
+        defaultCity="Cedar Falls"
+      />
     </>
   )
 }

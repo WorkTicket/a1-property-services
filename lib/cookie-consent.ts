@@ -20,9 +20,23 @@ export function setCookieConsent(value: CookieConsent) {
   } catch {
     /* ignore */
   }
+  applyGtagConsent(value)
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent(COOKIE_CONSENT_EVENT, { detail: value }))
   }
+}
+
+/** Sync Google Consent Mode after the banner choice (tags already load in <head>). */
+export function applyGtagConsent(value: CookieConsent) {
+  if (typeof window === 'undefined') return
+  if (typeof window.gtag !== 'function') return
+  const state = value === 'accepted' ? 'granted' : 'denied'
+  window.gtag('consent', 'update', {
+    ad_storage: state,
+    ad_user_data: state,
+    ad_personalization: state,
+    analytics_storage: state,
+  })
 }
 
 export function hasAnalyticsConsent(): boolean {

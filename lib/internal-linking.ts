@@ -193,7 +193,7 @@ export function getProjectsForService(serviceSlug: string, limit = 4): LinkedCon
     type: 'project',
     slug: p.id,
     title: p.title,
-    excerpt: `${p.title} project in the Cedar Valley`,
+    excerpt: `${p.title} project in Cedar Falls and Waterloo`,
     url: projectUrl(),
     relevance: 8,
   }))

@@ -20,12 +20,14 @@ import { getPostBySlug } from '@/lib/blog'
 import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd } from '@/lib/metadata'
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt, getServiceContentImage, getServiceContentImageAlt } from '@/lib/images'
 import { getComplementaryServices, getServiceRelatedContentGroups, getContentSegments } from '@/lib/internal-linking'
+import { primaryAreaServedSchema } from '@/lib/service-area'
 import RelatedContent from '@/components/sections/RelatedContent'
 import HubPagePromo from '@/components/sections/HubPagePromo'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
 import ServiceIntroSection from '@/components/sections/ServiceIntroSection'
 import CtaBanner from '@/components/sections/CtaBanner'
+import EstimateSection from '@/components/sections/EstimateSection'
 import GalleryGrid from '@/components/sections/GalleryGrid'
 import PageHero from '@/components/motion/PageHero'
 import ServiceIcon from '@/components/ui/ServiceIcon'
@@ -129,12 +131,8 @@ export default function ServicePage({ params }: Props) {
     serviceType: seo?.title ?? service.name,
     name: serviceName,
     provider: { '@id': `${siteConfig.url}/#organization` },
-    areaServed: [
-      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'Place', name: 'Cedar Valley, Iowa' },
-    ],
-    description: seo?.description ?? `${service.shortDesc} Serving the Cedar Valley.`,
+    areaServed: [...primaryAreaServedSchema],
+    description: seo?.description ?? `${service.shortDesc} Serving Cedar Falls, Waterloo, and Black Hawk County, Iowa.`,
     url: pageUrl,
     ...(heroImage ? { image: `${siteConfig.url}${heroImage}` } : {}),
   }
@@ -168,7 +166,7 @@ export default function ServicePage({ params }: Props) {
                 ? [
                     howToJsonLd(processSteps, {
                       name: `How We Deliver ${service.name}`,
-                      description: `Our step-by-step process for ${service.name.toLowerCase()} projects across the Cedar Valley.`,
+                      description: `Our step-by-step process for ${service.name.toLowerCase()} projects in Cedar Falls, Waterloo, and Black Hawk County.`,
                     }),
                   ]
                 : []),
@@ -180,7 +178,7 @@ export default function ServicePage({ params }: Props) {
       <PageHero
         imageSrc={heroImage}
         imageAlt={heroImageAlt}
-        eyebrow="Cedar Valley, Iowa"
+        eyebrow="Cedar Falls & Waterloo, Iowa"
         title={serviceName}
         subtitle={service.shortDesc}
       />
@@ -198,7 +196,7 @@ export default function ServicePage({ params }: Props) {
           <FadeIn className="section-inner">
             <h2 className="section-heading text-center">Common Problems We Solve</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              Every property is different, but these are the most common challenges we help Cedar Valley homeowners overcome.
+              Every property is different, but these are the most common challenges we help Cedar Falls and Waterloo homeowners overcome.
             </p>
             <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {problems.map((item) => (
@@ -367,10 +365,10 @@ export default function ServicePage({ params }: Props) {
         <section className="section bg-brand-stone">
           <FadeIn className="section-inner">
             <h2 className="section-heading text-center">
-              {service.name} Projects in the Cedar Valley
+              {service.name} Projects in Cedar Falls &amp; Waterloo
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              See real {service.name.toLowerCase()} work completed for homes across the Cedar Valley.
+              See real {service.name.toLowerCase()} work completed for homes in Cedar Falls, Waterloo, and Black Hawk County.
             </p>
             <div className="mt-10">
               <GalleryGrid projects={galleryProjects} />
@@ -401,10 +399,15 @@ export default function ServicePage({ params }: Props) {
             <FadeIn className="mt-8 text-center" delay={0.05}>
               <p className="text-sm text-brand-body mb-4">Have more questions? We are happy to help.</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Button href="/contact" size="sm">
+                <Button href="#estimate" size="sm" trackLabel={`${service.name} FAQ Quote`}>
                   {CTA_COPY.estimate}
                 </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="outline" size="sm">
+                <Button
+                  href={`tel:${siteConfig.phone}`}
+                  variant="outline"
+                  size="sm"
+                  trackLabel={`${service.name} FAQ Phone`}
+                >
                   <Phone size={14} />
                   {siteConfig.phoneDisplay}
                 </Button>
@@ -424,9 +427,18 @@ export default function ServicePage({ params }: Props) {
 
       <HubPagePromo />
 
+      <EstimateSection
+        formLocation={`Service ${service.name}`}
+        heading={`Get a Free ${service.name} Quote`}
+        description={`Tell us about your ${service.name.toLowerCase()} project. We'll follow up with a clear on-site estimate — no pressure.`}
+        defaultService={service.slug}
+        defaultCity="Cedar Falls"
+      />
+
       <CtaBanner
         title="Ready to get started?"
         description="Call us today or request a free quote online."
+        quoteHref="#estimate"
       />
 
       {complementaryServices.length > 0 && (

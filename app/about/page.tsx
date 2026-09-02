@@ -8,6 +8,7 @@ import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
+import EstimateSection from '@/components/sections/EstimateSection'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -27,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const years = getYearsInBusiness()
   return generatePageMetadata({
     title: 'About Us',
-    description: `Meet A1 Property Services, Cedar Falls landscaping and hardscaping experts with ${years} years serving the Cedar Valley.`,
+    description: `Meet A1 Property Services — Cedar Falls and Waterloo landscaping and hardscaping experts with ${years} years serving Black Hawk County, Iowa.`,
     path: '/about',
   })
 }
@@ -56,14 +57,14 @@ const baseValues = [
 
 export default function AboutPage() {
   const yearsLabel = yearsInBusinessLabel()
-  const localExpertiseDesc = `${yearsInBusinessPhrase()} serving the Cedar Valley. We know Iowa soil, seasons, and what works here.`
+  const localExpertiseDesc = `${yearsInBusinessPhrase()} serving Cedar Falls, Waterloo, and Black Hawk County. We know Iowa soil, seasons, and what works here.`
   const values = baseValues.map((v) =>
     v.title === 'Local Expertise' ? { ...v, desc: localExpertiseDesc } : v,
   )
 
   const pageSchema = webPageJsonLd({
     name: 'About Us | A1 Property Services',
-    description: `Meet A1 Property Services, Cedar Falls landscaping and hardscaping experts with ${yearsInBusinessPhrase()} serving the Cedar Valley.`,
+    description: `Meet A1 Property Services — Cedar Falls and Waterloo landscaping and hardscaping experts with ${yearsInBusinessPhrase()} serving Black Hawk County, Iowa.`,
     path: '/about',
     about: 'Landscaping Company',
   })
@@ -86,10 +87,10 @@ export default function AboutPage() {
       />
       <PageHero
         imageSrc={siteImages.aboutHero}
-        imageAlt="A1 Property Services team in the Cedar Valley"
+        imageAlt="A1 Property Services team in Cedar Falls, Iowa"
         eyebrow="Our Story"
-        title="Cedar Valley Landscaping|Built on Trust"
-        subtitle={`For ${yearsInBusinessOverPhrase()}, A1 Property Services has been building and maintaining yards across Cedar Falls and the Cedar Valley.`}
+        title="Cedar Falls Landscaping|Built on Trust"
+        subtitle={`For ${yearsInBusinessOverPhrase()}, A1 Property Services has been building and maintaining yards across Cedar Falls, Waterloo, and Black Hawk County.`}
       />
 
       <section className="section bg-white">
@@ -110,19 +111,19 @@ export default function AboutPage() {
               <p className="section-eyebrow">Who We Are</p>
               <h2 className="section-heading mt-3">Your Local Landscaping Partner</h2>
               <p className="mt-6 leading-relaxed text-brand-body">
-                A1 Property Services {startedInYearPhrase()} because Cedar Valley homeowners needed a crew they could count on. We&apos;re still here, still doing the work.
+                A1 Property Services {startedInYearPhrase()} because Cedar Falls and Waterloo homeowners needed a crew they could count on. We&apos;re still here, still doing the work.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
                 Retaining walls, paver patios, full yard installs, seasonal maintenance. We have the equipment and the experience to get it done right the first time.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We have served towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you are hiring neighbors who care how your yard looks when we drive past it.
+                We have served Cedar Falls, Waterloo, and Black Hawk County {sinceYearPhrase()}. When you hire us, you are hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/contact">
+                <Button href="#estimate" trackLabel="About Quote">
                   {CTA_COPY.quote}
                 </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="outline">
+                <Button href={`tel:${siteConfig.phone}`} variant="outline" trackLabel="About Phone">
                   <Phone size={16} />
                   {siteConfig.phoneDisplay}
                 </Button>
@@ -161,8 +162,8 @@ export default function AboutPage() {
             {[
               { icon: <Star className="h-6 w-6" />, title: '5-Star Rated', desc: 'Average rating across all Google reviews' },
               { icon: <Shield className="h-6 w-6" />, title: 'Licensed & Insured', desc: 'State of Iowa contractor with full liability insurance' },
-              { icon: <Check className="h-6 w-6" />, title: projectsCompletedTitle(), desc: `Completed across the Cedar Valley ${sinceYearPhrase()}` },
-              { icon: <Users className="h-6 w-6" />, title: yearsLabel, desc: 'Serving the Cedar Valley' },
+              { icon: <Check className="h-6 w-6" />, title: projectsCompletedTitle(), desc: `Completed in Cedar Falls, Waterloo & Black Hawk County ${sinceYearPhrase()}` },
+              { icon: <Users className="h-6 w-6" />, title: yearsLabel, desc: 'Serving Cedar Falls & Waterloo' },
             ].map((item) => (
               <StaggerItem key={item.title}>
                 <div className="flex flex-col items-center text-center">
@@ -180,9 +181,17 @@ export default function AboutPage() {
 
       <GoogleReviews />
 
+      <EstimateSection
+        formLocation="About"
+        heading="Ready to Talk About Your Yard?"
+        description="Tell us what you're working on and we'll take it from there — free estimate, no pressure."
+        defaultCity="Cedar Falls"
+      />
+
       <CtaBanner
-        title="Ready to talk about your yard?"
-        description="Call us today or request a free quote online. Tell us what you are working on and we will take it from there."
+        title="Prefer to call?"
+        description="We're happy to talk through your project over the phone."
+        quoteHref="#estimate"
       />
     </>
   )

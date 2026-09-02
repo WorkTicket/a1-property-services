@@ -4,10 +4,10 @@ import { FOUNDING_YEAR } from '@/lib/years-in-business'
 export const siteConfig = {
   name: 'A1 Property Services',
   /** Homepage `<title>` / og:title — keyword-led for SERP CTR; brand still clear. */
-  homeTitle: 'Cedar Falls Landscaping | A1 Property Services',
+  homeTitle: 'Cedar Falls, IA Landscaping | A1 Property Services',
   url: 'https://a1pslandscape.com',
   description:
-    `Need Cedar Falls landscaping? Retaining walls, paver patios & lawn care from a local crew since ${FOUNDING_YEAR}. Free quote: (319) 464-1889.`,
+    `Cedar Falls & Waterloo landscaping in Black Hawk County, IA. Retaining walls, paver patios & lawn care since ${FOUNDING_YEAR}. Free quote: (319) 464-1889.`,
   phone: '+13194641889',
   phoneDisplay: '+1 (319) 464-1889',
   email: 'a1propertyservices0219@gmail.com',
@@ -34,6 +34,10 @@ export function getGoogleMapsEmbedUrl(): string {
 export const localSeoKeywords = [
   'landscaping cedar falls',
   'cedar falls landscaping',
+  'cedar falls iowa landscaping',
+  'waterloo landscaping',
+  'landscaping waterloo ia',
+  'black hawk county landscaping',
   'retaining wall cedar falls',
   'paver patio cedar falls',
   'lawn care cedar falls',
@@ -52,6 +56,8 @@ export type ServiceSeo = {
 export const servicesHubKeywords = [
   'landscaping services cedar falls',
   'landscaping cedar falls ia',
+  'landscaping waterloo ia',
+  'black hawk county landscaping',
   'hardscaping cedar falls',
   'retaining wall cedar falls',
   'paver patio cedar falls',
@@ -60,23 +66,25 @@ export const servicesHubKeywords = [
 
 export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'retaining-walls': {
-    title: 'Retaining Wall Installation Cedar Falls | Free Quote',
+    title: 'Retaining Wall Installation Cedar Falls, IA',
     description:
-      'Block & stone retaining walls in Cedar Falls, IA — drainage built for Iowa freeze-thaw. Licensed since 2014. Call (319) 464-1889 for a free quote.',
+      'Block & stone retaining walls in Cedar Falls & Waterloo, IA — drainage built for Iowa freeze-thaw. Free quote: (319) 464-1889.',
     h1: 'Retaining Wall Installation in Cedar Falls',
     keywords: [
       'retaining wall installation cedar falls',
       'retaining wall cedar falls',
       'retaining walls cedar falls',
       'retaining walls cedar falls ia',
+      'retaining wall waterloo ia',
+      'retaining wall contractors waterloo ia',
     ],
     ogImage: '/images/retaining-wall.webp',
     ogImageAlt: 'Retaining wall installation',
   },
   'paver-patio': {
-    title: 'Paver Patio Installation Cedar Falls | Free Quote',
+    title: 'Paver Patio Installation Cedar Falls, IA',
     description:
-      'Custom paver patio installation in Cedar Falls, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
+      'Custom paver patio installation in Cedar Falls & Waterloo, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -114,15 +122,17 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ],
   },
   'lawn-care': {
-    title: 'Lawn Care & Mowing in Cedar Falls',
+    title: 'Lawn Care in Cedar Falls, IA | Mowing',
     description:
-      'Professional lawn care and mowing in Cedar Falls, IA. Aeration, fertilization, weed control, and precision mowing. Licensed and insured, with free estimates.',
-    h1: 'Lawn Care & Mowing in Cedar Falls',
+      'Professional lawn care and mowing in Cedar Falls and Waterloo, IA. Aeration, fertilization, weed control, and precision mowing. Free estimates.',
+    h1: 'Lawn Care & Mowing in Cedar Falls, IA',
     keywords: [
       'lawn care cedar falls',
+      'lawn care cedar falls iowa',
+      'lawn care cedar falls ia',
       'lawn mowing cedar falls',
       'lawn service cedar falls ia',
-      'lawn aeration cedar falls',
+      'lawn care waterloo iowa',
     ],
   },
   'preservation-restoration': {
@@ -138,10 +148,10 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ],
   },
   'tree-service': {
-    title: 'Tree Service in Cedar Falls',
+    title: 'Tree Service in Cedar Falls, IA',
     description:
-      'Professional tree service in Cedar Falls, IA. Pruning, removal, stump grinding, and disease management. Licensed and insured, with free estimates.',
-    h1: 'Tree Service in Cedar Falls',
+      'Professional tree service in Cedar Falls and Waterloo, IA. Pruning, removal, stump grinding, and disease management. Licensed and insured, with free estimates.',
+    h1: 'Tree Service in Cedar Falls, IA',
     keywords: [
       'tree service cedar falls',
       'tree removal cedar falls',
@@ -310,7 +320,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'residential-landscaping': {
     title: 'Residential Landscaping in Cedar Falls',
     description:
-      'Residential landscaping in Cedar Falls, IA. Full-service landscaping for Cedar Valley homes. Free estimates.',
+      'Residential landscaping in Cedar Falls, IA. Full-service landscaping for Cedar Falls and Waterloo homes. Free estimates.',
     h1: 'Residential Landscaping in Cedar Falls',
     keywords: [
       'residential landscaping cedar falls',
@@ -349,7 +359,7 @@ const defaultOgImage = {
   url: '/og-image.jpg',
   width: 1200,
   height: 630,
-  alt: 'A1 Property Services landscaping and hardscaping in Cedar Falls, Iowa',
+  alt: 'A1 Property Services landscaping in Cedar Falls and Waterloo, Iowa',
 } as const
 
 export const defaultOpenGraph: NonNullable<Metadata['openGraph']> = {
@@ -369,7 +379,7 @@ const META_DESC_MIN = 120
 const META_DESC_MAX = 155
 const BRAND_SUFFIX = ' | A1 Property Services'
 const META_DESC_PAD =
-  ' Professional landscaping in Cedar Falls and the Cedar Valley. Licensed, insured, free estimates.'
+  ' Serving Cedar Falls, Waterloo & Black Hawk County, Iowa. Licensed, insured, free estimates.'
 
 function truncateAtWord(text: string, maxLen: number): string {
   if (text.length <= maxLen) return text
@@ -681,7 +691,7 @@ export function buildLocalBusinessJsonLd() {
     '@type': 'LandscapingBusiness',
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
-    alternateName: 'Cedar Falls Landscaping',
+    alternateName: ['Cedar Falls Landscaping', 'A1 Landscaping Cedar Falls'],
     image: {
       '@type': 'ImageObject',
       url: `${siteConfig.url}/og-image.jpg`,
@@ -709,21 +719,43 @@ export function buildLocalBusinessJsonLd() {
       longitude: -92.4455,
     },
     areaServed: [
-      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: 42.5106,
+          longitude: -92.394,
+        },
+        geoRadius: '28000',
+      },
+      {
+        '@type': 'City',
+        name: 'Cedar Falls',
+        containedInPlace: { '@type': 'State', name: 'Iowa' },
+        sameAs: 'https://en.wikipedia.org/wiki/Cedar_Falls,_Iowa',
+      },
+      {
+        '@type': 'City',
+        name: 'Waterloo',
+        containedInPlace: { '@type': 'State', name: 'Iowa' },
+        sameAs: 'https://en.wikipedia.org/wiki/Waterloo,_Iowa',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Black Hawk County',
+        containedInPlace: { '@type': 'State', name: 'Iowa' },
+        sameAs: 'https://en.wikipedia.org/wiki/Black_Hawk_County,_Iowa',
+      },
       { '@type': 'City', name: 'Hudson', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Evansdale', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Elk Run Heights', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'Dunkerton', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+      { '@type': 'City', name: 'La Porte City', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Waverly', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Denver', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Jesup', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Parkersburg', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'City', name: 'La Porte City', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Dike', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'AdministrativeArea', name: 'Black Hawk County' },
-      { '@type': 'AdministrativeArea', name: 'Bremer County' },
-      { '@type': 'AdministrativeArea', name: 'Grundy County' },
-      { '@type': 'AdministrativeArea', name: 'Butler County' },
-      { '@type': 'AdministrativeArea', name: 'Buchanan County' },
     ],
     knowsAbout: knownServices,
     priceRange: '$$',
@@ -746,7 +778,7 @@ export function buildLocalBusinessJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: 'US',
+      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'IA'],
       availableLanguage: 'English',
     },
   }
@@ -851,7 +883,7 @@ export function organizationJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: 'US',
+      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'IA'],
       availableLanguage: 'English',
     },
     sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],

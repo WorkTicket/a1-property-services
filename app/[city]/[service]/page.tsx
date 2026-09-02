@@ -11,6 +11,7 @@ import { getComplementaryServices, getServiceRelatedContentGroups, getNearbyCiti
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
+import EstimateSection from '@/components/sections/EstimateSection'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -77,7 +78,11 @@ export default function CityServicePage({ params }: Props) {
     areaServed: {
       '@type': 'City',
       name: city.name,
-      containedInPlace: { '@type': 'State', name: 'Iowa' },
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: `${city.county} County`,
+        containedInPlace: { '@type': 'State', name: 'Iowa' },
+      },
     },
     description: `${service.name} in ${city.name}, ${city.county} County, Iowa. ${service.shortDesc}`,
     url: pageUrl,
@@ -142,10 +147,16 @@ export default function CityServicePage({ params }: Props) {
             project includes proper materials and installation methods rated for Iowa freeze-thaw cycles.
           </p>
           <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
-            <Button href="/contact" fullWidth className="sm:w-auto">
+            <Button href="#estimate" fullWidth className="sm:w-auto" trackLabel={`${city.name} ${service.name} Quote`}>
               Free Estimate in {city.name}
             </Button>
-            <Button href={`tel:${siteConfig.phone}`} variant="outline" fullWidth className="sm:w-auto">
+            <Button
+              href={`tel:${siteConfig.phone}`}
+              variant="outline"
+              fullWidth
+              className="sm:w-auto"
+              trackLabel={`${city.name} ${service.name} Phone`}
+            >
               <Phone size={16} />
               {siteConfig.phoneDisplay}
             </Button>
@@ -158,7 +169,7 @@ export default function CityServicePage({ params }: Props) {
           <h2 className="section-heading">Why {city.name} Homeowners Choose A1 {service.name}</h2>
           <div className="mt-6 space-y-4 leading-relaxed text-brand-body">
             <p>
-              We have been serving {city.name} and the Cedar Valley {sinceYearPhrase()}. Our {service.name.toLowerCase()} 
+              We have been serving {city.name}, Iowa {sinceYearPhrase()}. Our {service.name.toLowerCase()} 
               services are built on proper techniques and quality materials that hold up through Iowa winters.
               We provide free on-site estimates, clear timelines, and honest communication from start to finish.
             </p>
@@ -188,15 +199,14 @@ export default function CityServicePage({ params }: Props) {
             <MapPin className="mt-0.5 h-6 w-6 shrink-0 text-brand-gold" />
             <div>
               <p className="leading-relaxed text-brand-body">
-                A1 Property Services provides {service.name.toLowerCase()} throughout {city.name}, {city.county} County, 
-                and the greater Cedar Valley area. We serve all residential neighborhoods and commercial 
-                properties in and around {city.name}.
+                A1 Property Services provides {service.name.toLowerCase()} throughout {city.name}, {city.county} County, Iowa.
+                We serve all residential neighborhoods and commercial properties in and around {city.name}.
               </p>
               <p className="mt-3 leading-relaxed text-brand-body">
                 Contact us to check availability for your specific location. We typically respond within 24 hours.
               </p>
               <div className="mt-4">
-                <Button href="/contact" size="sm">
+                <Button href="#estimate" size="sm" trackLabel={`${city.name} Areas Quote`}>
                   {CTA_COPY.quote}
                 </Button>
               </div>
@@ -279,9 +289,23 @@ export default function CityServicePage({ params }: Props) {
 
       <RelatedContent groups={relatedContentGroups} />
 
+      <EstimateSection
+        formLocation={`${city.name} ${service.name}`}
+        heading={`${service.name} Quote in ${city.name}`}
+        description={`Tell us about your ${service.name.toLowerCase()} project in ${city.name}. We'll get back within 24 hours with clear pricing.`}
+        defaultService={service.slug}
+        defaultCity={city.name}
+        bulletPoints={[
+          `Free on-site estimates in ${city.name}`,
+          'Licensed & insured Iowa contractor',
+          'Response within one business day',
+        ]}
+      />
+
       <CtaBanner
         title={`Ready for ${service.name} in ${city.name}?`}
         description="Call us or request a free quote online. We will get back to you within 24 hours."
+        quoteHref="#estimate"
       />
     </>
   )

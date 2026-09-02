@@ -169,8 +169,25 @@ export default function Navbar() {
   }, [mobileOpen])
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    const header = headerRef.current
+    if (!mobileOpen) {
+      document.body.style.removeProperty('overflow')
+      document.body.style.removeProperty('padding-right')
+      header?.style.removeProperty('padding-right')
+      return
+    }
+
+    const gap = Math.max(0, window.innerWidth - document.documentElement.clientWidth)
+    const gapPx = gap ? `${gap}px` : ''
+    document.body.style.paddingRight = gapPx
+    document.body.style.overflow = 'hidden'
+    if (header) header.style.paddingRight = gapPx
+
+    return () => {
+      document.body.style.removeProperty('overflow')
+      document.body.style.removeProperty('padding-right')
+      header?.style.removeProperty('padding-right')
+    }
   }, [mobileOpen])
 
   useEffect(() => {
@@ -379,7 +396,7 @@ export default function Navbar() {
     <>
     <header
       ref={headerRef}
-      className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/85 shadow-md backdrop-blur-md transition-all duration-300 ease-premium"
+      className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/85 shadow-md backdrop-blur-md"
     >
       <nav
         className={cn(
@@ -732,13 +749,28 @@ export default function Navbar() {
           </a>
           <button
             type="button"
-            className="touch-target flex shrink-0 items-center justify-center rounded-md p-2 text-brand-dark transition-colors"
+            className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-brand-dark"
             onClick={() => setMobileOpen((open) => !open)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-menu"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="relative block h-6 w-6" aria-hidden>
+              <Menu
+                size={24}
+                className={cn(
+                  'absolute inset-0 transition-opacity duration-150',
+                  mobileOpen ? 'opacity-0' : 'opacity-100',
+                )}
+              />
+              <X
+                size={24}
+                className={cn(
+                  'absolute inset-0 transition-opacity duration-150',
+                  mobileOpen ? 'opacity-100' : 'opacity-0',
+                )}
+              />
+            </span>
           </button>
         </div>
       </nav>

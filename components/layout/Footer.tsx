@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-neutral-400">
-              Professional landscaping and hardscaping for the Cedar Valley.
+              Professional landscaping and hardscaping for Cedar Falls, Waterloo, and Black Hawk County, Iowa.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400">
@@ -119,7 +119,9 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <p className="text-xs font-semibold uppercase tracking-widest text-white">Service Area</p>
-            <p className="mt-2 text-xs text-neutral-400">Serving the entire Cedar Valley</p>
+            <p className="mt-2 text-xs text-neutral-400">
+              Cedar Falls, Waterloo &amp; Black Hawk County, Iowa
+            </p>
             <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-2">
               {serviceCities.map((city) => (
                 <li key={city.name}>

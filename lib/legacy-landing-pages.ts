@@ -39,12 +39,14 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     serviceSlug: 'retaining-walls',
     title: 'Retaining Walls in Cedar Falls, IA | Free On-Site Quote',
     description:
-      'Retaining wall contractors in Cedar Falls, IA — block & stone with drainage for Iowa freeze-thaw. Free on-site quote. Call (319) 464-1889.',
+      'Retaining wall contractors in Cedar Falls & Waterloo, IA — block & stone with drainage for Iowa freeze-thaw. Call (319) 464-1889.',
     keywords: [
       'retaining wall cedar falls',
       'retaining wall installation cedar falls',
       'retaining walls cedar falls',
       'retaining walls cedar falls ia',
+      'retaining wall waterloo ia',
+      'retaining wall contractors waterloo ia',
       'stone retaining wall cedar falls',
       'block retaining wall cedar falls',
       'retaining wall contractor cedar falls',
@@ -72,15 +74,15 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
       {
         heading: 'Why Local Homeowners Choose Us',
         paragraphs: [
-          'Searching for a retaining wall contractor usually comes down to drainage experience. Walls without gravel backfill and outlet drains fail in Iowa clay. Our crew builds for the Cedar Valley climate first, then finishes the face so the wall looks intentional on your property.',
-          'You get a free on-site quote, clear written pricing, and walls that turn steep ground into usable yard. Call (319) 464-1889 to schedule a walkthrough.',
+          'Searching for a retaining wall contractor usually comes down to drainage experience. Walls without gravel backfill and outlet drains fail in Iowa clay. Our crew builds for Black Hawk County freeze-thaw first, then finishes the face so the wall looks intentional on your property.',
+          'You get a free on-site quote, clear written pricing, and walls that turn steep ground into usable yard. We serve Cedar Falls, Waterloo, and Black Hawk County. Call (319) 464-1889 to schedule a walkthrough.',
         ],
       },
       {
         heading: 'Professional Design and Installation',
         paragraphs: [
           'Every project starts with a site evaluation: wall height, soil conditions, drainage paths, and how the finished grades will tie into your lawn or hardscape. We plan geogrid reinforcement when taller walls need it and set courses level so the face stays clean.',
-          'Complementary planting beds, steps, and hardscape can be added so the wall reads as part of the landscape — not a standalone barrier. Residential and commercial properties across the Cedar Valley are welcome.',
+          'Complementary planting beds, steps, and hardscape can be added so the wall reads as part of the landscape — not a standalone barrier. Residential and commercial properties in Cedar Falls, Waterloo, and Black Hawk County are welcome.',
         ],
       },
     ],
@@ -92,12 +94,13 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     serviceSlug: 'paver-patio',
     title: 'Paver Patio Cedar Falls, IA | Free On-Site Quote',
     description:
-      'Paver patio installation in Cedar Falls, IA — compacted base built for Iowa freeze-thaw. Free on-site quote. Call (319) 464-1889.',
+      'Paver patio installation in Cedar Falls & Waterloo, IA — compacted base built for Iowa freeze-thaw. Free on-site quote. Call (319) 464-1889.',
     keywords: [
       'paver patio cedar falls',
       'paver patio installation cedar falls',
       'paver patios cedar falls',
       'paver patio cedar falls ia',
+      'paver patio waterloo ia',
       'patio installation cedar falls',
       'backyard patio cedar falls',
       'hardscape patio cedar falls',
@@ -112,7 +115,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     eyebrow: 'Cedar Falls, Iowa',
     h1: 'Paver Patio Installation in Cedar Falls, IA',
     heroHeading:
-      'Durable paver patios built for Iowa freeze-thaw, drainage, and everyday outdoor living across the Cedar Valley.',
+      'Durable paver patios built for Iowa freeze-thaw, drainage, and everyday outdoor living in Cedar Falls, Waterloo, and Black Hawk County.',
     sections: [
       {
         heading: 'Custom Paver Patio Design & Installation',
@@ -151,7 +154,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Built for Iowa Weather',
         paragraphs: [
           'Local patios need more than pretty pavers. Proper excavation, compacted base, and drainage design prevent sinking, heaving, and joint failure through freeze-thaw cycles.',
-          'We serve homes across the Cedar Valley with outdoor living spaces that add usable square footage and lasting curb appeal.',
+          'We serve homes in Cedar Falls, Waterloo, and Black Hawk County with outdoor living spaces that add usable square footage and lasting curb appeal.',
         ],
       },
     ],
@@ -186,9 +189,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
       'Custom ponds, waterfalls, and pondless water gardens for local yards — built to look natural and run clean through Iowa seasons.',
     sections: [
       {
-        heading: 'Water Features for Cedar Valley Yards',
+        heading: 'Water Features for Cedar Falls & Waterloo Yards',
         paragraphs: [
-          'We design and install custom water features that add sound, movement, and a natural focal point — from backyard ponds and cascading waterfalls to pondless streams and bubbling boulders across the Cedar Valley.',
+          'We design and install custom water features that add sound, movement, and a natural focal point — from backyard ponds and cascading waterfalls to pondless streams and bubbling boulders in Cedar Falls, Waterloo, and Black Hawk County.',
           'Every feature is planned around your slope, sight lines, and how you use the yard. The goal is a system that looks intentional, circulates cleanly, and fits the rest of your landscape.',
         ],
         showCta: true,
@@ -199,7 +202,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
           'Not every yard needs a full pond. Pondless waterfalls give you the sight and sound of moving water with less maintenance — ideal for smaller lots. Koi ponds and water gardens suit homeowners who want plants, fish, and a living ecosystem.',
           'We size pumps, filtration, and stonework to your space and budget, then integrate plantings and lighting so the feature feels like part of the yard — not a bolted-on add-on.',
         ],
-        bulletsIntro: 'Popular installs across the Cedar Valley:',
+        bulletsIntro: 'Popular installs in Cedar Falls and Waterloo:',
         bullets: [
           'Pondless waterfalls and streams',
           'Koi ponds and water gardens',
@@ -235,7 +238,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
       {
         heading: 'Water Feature Maintenance',
         paragraphs: [
-          'A beautiful water feature only stays that way with simple seasonal care. We offer opening and closing, cleaning, debris removal, and filter checks so ponds and waterfalls keep running clear through Cedar Valley summers and shut down safely for winter.',
+          'A beautiful water feature only stays that way with simple seasonal care. We offer opening and closing, cleaning, debris removal, and filter checks so ponds and waterfalls keep running clear through Iowa summers and shut down safely for winter.',
           'Whether we installed your feature or you inherited one with the house, request a free quote and tell us what you need — one-time cleanup or a seasonal plan.',
         ],
         showCta: true,
@@ -243,7 +246,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     ],
     closingCopy:
       'Ready for a pond or waterfall that fits your yard? Request a free estimate and we will walk the site with you.',
-    ctaEyebrow: 'Cedar Valley Water Features',
+    ctaEyebrow: 'Cedar Falls Water Features',
   },
 }
 

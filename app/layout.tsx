@@ -5,6 +5,11 @@ import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
+import {
+  buildGoogleTagsBootstrap,
+  isValidAdsId,
+  isValidGaId,
+} from '@/lib/google-tags'
 
 const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
 const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
@@ -13,6 +18,14 @@ const ConsentAwareAnalytics = dynamic(() => import('@/components/analytics/Conse
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+
+const gaId = isValidGaId(process.env.NEXT_PUBLIC_GA_ID) ? process.env.NEXT_PUBLIC_GA_ID : undefined
+const adsId = isValidAdsId(process.env.NEXT_PUBLIC_GOOGLE_ADS_ID)
+  ? process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
+  : undefined
+/** Prefer Ads ID in the script URL so Google Ads scanners find AW-… in page source. */
+const googleTagId = adsId || gaId
+const googleTagsBootstrap = buildGoogleTagsBootstrap(gaId, adsId)
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -108,6 +121,16 @@ export default function RootLayout({
         <meta name="geo.position" content="42.5364;-92.4455" />
         <meta name="ICBM" content="42.5364, -92.4455" />
         <meta name="language" content="English" />
+        {googleTagId && googleTagsBootstrap ? (
+          <>
+            {/* Google tag (gtag.js) — GA4 + Google Ads; AW- in src for Ads tag verification */}
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
+            <script
+              id="google-tags-bootstrap"
+              dangerouslySetInnerHTML={{ __html: googleTagsBootstrap }}
+            />
+          </>
+        ) : null}
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>

@@ -37,7 +37,7 @@ export default function ServiceIntroSection({
               </div>
               <div className="flex items-center gap-2 text-brand-body">
                 <MapPin size={16} className="text-brand-green-700" aria-hidden />
-                <span>Serving the Cedar Valley</span>
+                <span>Serving Cedar Falls &amp; Waterloo</span>
               </div>
             </div>
 
@@ -55,10 +55,16 @@ export default function ServiceIntroSection({
             ) : null}
 
             <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
-              <Button href="/contact" fullWidth className="sm:w-auto">
+              <Button href="#estimate" fullWidth className="sm:w-auto" trackLabel="Service Intro Quote">
                 {CTA_COPY.quote}
               </Button>
-              <Button href={`tel:${siteConfig.phone}`} variant="outline" fullWidth className="sm:w-auto">
+              <Button
+                href={`tel:${siteConfig.phone}`}
+                variant="outline"
+                fullWidth
+                className="sm:w-auto"
+                trackLabel="Service Intro Phone"
+              >
                 <Phone size={16} />
                 {siteConfig.phoneDisplay}
               </Button>

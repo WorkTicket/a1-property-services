@@ -11,6 +11,7 @@ import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
+import EstimateSection from '@/components/sections/EstimateSection'
 import HubPagePromo from '@/components/sections/HubPagePromo'
 import FaqSectionCta from '@/components/sections/FaqSectionCta'
 import ServiceIcon from '@/components/ui/ServiceIcon'
@@ -22,7 +23,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping & Hardscaping Services',
   description:
-    'Browse every landscaping and hardscaping service A1 Property Services offers — retaining walls, patios, lawn care, tree service, snow removal, and more across the Cedar Valley.',
+    'Browse every landscaping and hardscaping service we offer in Cedar Falls, Waterloo, and Black Hawk County — walls, patios, lawn care, and more.',
   path: '/services',
   keywords: servicesHubKeywords,
   ogImage: '/images/services-hero.webp',
@@ -40,7 +41,7 @@ export default function ServicesPage() {
     '@type': 'ItemList',
     name: 'Landscaping & Hardscaping Services',
     description:
-      'Full landscaping and hardscaping services offered by A1 Property Services across the Cedar Valley.',
+      'Full landscaping and hardscaping services offered by A1 Property Services in Cedar Falls, Waterloo, and Black Hawk County, Iowa.',
     url: `${siteConfig.url}/services`,
     numberOfItems: hardscapeFeatures.length + services.length,
     itemListElement: [
@@ -53,7 +54,7 @@ export default function ServicesPage() {
           url: `${siteConfig.url}${f.href}`,
           description: f.shortDesc,
           provider: { '@id': `${siteConfig.url}/#organization` },
-          areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Cedar Valley, IA'],
+          areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Black Hawk County, IA'],
         },
       })),
       ...services.map((s, i) => ({
@@ -65,7 +66,7 @@ export default function ServicesPage() {
           url: `${siteConfig.url}/services/${s.slug}`,
           description: s.shortDesc,
           provider: { '@id': `${siteConfig.url}/#organization` },
-          areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Cedar Valley, IA'],
+          areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Black Hawk County, IA'],
         },
       })),
     ],
@@ -97,7 +98,7 @@ export default function ServicesPage() {
 
   const pageSchema = webPageJsonLd({
     name: 'Landscaping & Hardscaping Services | A1 Property Services',
-    description: 'Browse every landscaping and hardscaping service A1 Property Services offers across the Cedar Valley.',
+    description: 'Browse every landscaping and hardscaping service A1 Property Services offers in Cedar Falls, Waterloo, and Black Hawk County, Iowa.',
     path: '/services',
     image: '/images/services-hero.webp',
     about: 'Landscaping and Hardscaping Services',
@@ -132,8 +133,8 @@ export default function ServicesPage() {
         imageSrc={siteImages.servicesHero}
         imageAlt="Landscaping and hardscaping services by A1 Property Services"
         eyebrow="What We Offer"
-        title="All Services|Cedar Valley"
-        subtitle="Browse every service we offer — hardscape, lawn care, tree service, snow removal, and full installs."
+        title="All Services|Cedar Falls & Waterloo"
+        subtitle="Browse every service we offer in Cedar Falls, Waterloo, and Black Hawk County — hardscape, lawn care, tree service, snow removal, and full installs."
       />
 
       <section className="section bg-white">
@@ -148,7 +149,7 @@ export default function ServicesPage() {
             <p>
               Whether you need a single project or year-round landscape maintenance, our licensed and
               insured crew builds for Iowa weather with proper drainage, compacted bases, and materials
-              rated for freeze-thaw cycles across the Cedar Valley. For our complete{' '}
+              rated for freeze-thaw cycles in Cedar Falls, Waterloo, and Black Hawk County. For our complete{' '}
               <Link
                 href={landscapingHubPath}
                 className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
@@ -227,7 +228,7 @@ export default function ServicesPage() {
                       >
                         {CTA_COPY.learnMore}
                       </Button>
-                      <Button href="/contact" size="xs" fullWidth className="sm:w-auto">
+                      <Button href="#estimate" size="xs" fullWidth className="sm:w-auto" trackLabel="Services Hub Quote">
                         {CTA_COPY.quote}
                       </Button>
                     </div>
@@ -269,7 +270,7 @@ export default function ServicesPage() {
                     >
                       {CTA_COPY.learnMore}
                     </Button>
-                    <Button href="/contact" size="xs" fullWidth className="sm:w-auto">
+                    <Button href="#estimate" size="xs" fullWidth className="sm:w-auto" trackLabel="Services Hub Quote">
                       {CTA_COPY.quote}
                     </Button>
                   </div>
@@ -300,7 +301,7 @@ export default function ServicesPage() {
           <FadeIn className="mb-8 text-center">
             <h2 className="section-heading">Service Areas</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              We serve homeowners across the Cedar Valley. Select your city to see local landscaping services.
+              We serve homeowners in Cedar Falls, Waterloo, and Black Hawk County. Select your city to see local landscaping services.
             </p>
           </FadeIn>
           <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -321,9 +322,17 @@ export default function ServicesPage() {
 
       <HubPagePromo className="section bg-white py-10" />
 
+      <EstimateSection
+        formLocation="Services Hub"
+        heading="Not Sure What You Need?"
+        description="Tell us about your property and we'll recommend the right services — free estimate, no pressure."
+        defaultCity="Cedar Falls"
+      />
+
       <CtaBanner
-        title="Not sure what you need?"
+        title="Prefer to talk it through?"
         description="Call us. We'll help you figure it out over the phone or come take a look."
+        quoteHref="#estimate"
       />
     </>
   )

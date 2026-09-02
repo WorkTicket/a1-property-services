@@ -31,26 +31,27 @@ export const cities: City[] = [
     description:
       'Retaining walls, paver patios, lawn care, and hardscaping services for Cedar Falls, IA homeowners.',
     isCedarValley: true,
-    heroEyebrow: 'Cedar Falls \u00b7 Iowa',
+    heroEyebrow: 'Cedar Falls, Iowa · 50613',
     heroTitle: 'Services in Cedar Falls|Walls, Patios & Lawns',
     heroSubtitle:
-      'Browse the landscaping and hardscaping services we offer Cedar Falls homeowners — then see our full company page for the complete picture.',
-    metaTitle: 'Cedar Falls Landscaping Services | Walls & Patios',
+      'Browse the landscaping and hardscaping services we offer Cedar Falls, IA homeowners — then see our full company page for the complete picture.',
+    metaTitle: 'Cedar Falls, IA Landscaping | Walls & Patios',
     metaDescription:
-      'Browse Cedar Falls landscaping services — retaining walls, paver patios, lawn care & hardscaping. Local licensed crew. Free estimates: (319) 464-1889.',
+      'Cedar Falls, Iowa landscaping — retaining walls, paver patios, lawn care & hardscaping in Black Hawk County. Call (319) 464-1889.',
     metaKeywords: [
       'cedar falls landscaping',
+      'cedar falls iowa landscaping',
       'cedar falls landscaping services',
-      'cedar falls services',
       'retaining wall cedar falls',
       'paver patio cedar falls',
-      'lawn care cedar falls',
+      'lawn care cedar falls iowa',
       'hardscaping cedar falls',
       'tree service cedar falls',
+      'black hawk county landscaping',
     ],
     introHeading: 'What We Offer Cedar Falls Homeowners',
     introBody: [
-      'From this page you can jump into the specific services Cedar Falls homeowners hire us for most — retaining walls on sloped lots, paver patios for the backyard, weekly lawn care, and more. Each service page covers how we build for Iowa winters and Black Hawk County soil.',
+      'From this page you can jump into the specific services Cedar Falls, Iowa homeowners hire us for most — retaining walls on sloped lots, paver patios for the backyard, weekly lawn care, and more. Each service page covers how we build for Iowa winters and Black Hawk County soil.',
     ],
     introBody2: [
       'We\u2019re based here in Cedar Falls, so we know the clay, the drainage, and what grows in College Hill, North Cedar, and South Cedar Falls. For the full overview of our landscaping company — process, projects, and FAQs — visit our dedicated landscaping hub.',
@@ -88,51 +89,57 @@ export const cities: City[] = [
     description:
       'Professional landscaping, retaining walls, paver patios, and lawn care in Waterloo, IA.',
     isCedarValley: true,
-    heroEyebrow: 'Waterloo \u00b7 Iowa',
-    heroTitle: 'Waterloo Landscaping|Local Crew',
+    heroEyebrow: 'Waterloo, Iowa · Black Hawk County',
+    heroTitle: 'Waterloo, IA Landscaping|Local Crew',
     heroSubtitle:
-      'Full-service landscaping, hardscaping, and lawn care for Waterloo homes and businesses.',
+      'Full-service landscaping, hardscaping, and lawn care for Waterloo, Iowa homes and businesses.',
     metaTitle: 'Landscaping in Waterloo, IA | A1 Property Services',
     metaDescription:
-      'Waterloo landscaping company. Retaining walls, paver patios, lawn care, tree service and more. Licensed and insured. Free estimates for Waterloo properties.',
+      'Waterloo, IA landscaping — retaining walls, paver patios & lawn care in Black Hawk County. Free estimates: (319) 464-1889.',
     metaKeywords: [
       'landscaping waterloo ia',
       'waterloo landscaping',
+      'waterloo landscaper',
       'landscaper waterloo iowa',
-      'retaining wall waterloo',
+      'lawn care waterloo iowa',
+      'retaining wall waterloo ia',
+      'retaining wall contractors waterloo ia',
       'paver patio waterloo',
-      'lawn care waterloo',
-      'hardscaping waterloo',
+      'black hawk county landscaping',
     ],
     introHeading: 'Waterloo Landscaping for Your Property',
     introBody: [
-      'Waterloo yards come in all shapes. Older neighborhoods have big mature trees that need careful pruning. Newer developments need fresh plantings and layout. We handle both the same way we always have: show up, do the work, do it right.',
+      'Waterloo, Iowa yards come in all shapes. Older neighborhoods have big mature trees that need careful pruning. Newer developments need fresh plantings and layout. We handle both the same way we always have: show up, do the work, do it right — across downtown Waterloo, the Crossroads area, and residential streets throughout Black Hawk County.',
     ],
     introBody2: [
-      'Residential lawns, commercial properties, retaining walls, paver patios, full yard installs, and seasonal maintenance across Waterloo. Our crews know the area and show up ready to work.',
+      'Residential lawns, commercial properties, retaining walls, paver patios, full yard installs, and seasonal lawn care in Waterloo, IA. Our crews are based a few minutes away in Cedar Falls, so we can get eyes on your Waterloo property fast.',
     ],
     servicesIntro:
-      'Full landscaping and hardscaping services for Waterloo homeowners and commercial properties.',
+      'Full landscaping and hardscaping services for Waterloo, Iowa homeowners and commercial properties.',
     uniqueContent: {
-      heading: 'Reliable Landscaping Across Waterloo',
-      body: 'Waterloo has real variety in its properties, and we like that. Tight lots near downtown, big suburban yards on the outskirts. Every job gets the same standard: proper base prep on hardscape, clean bed edges, and we keep you in the loop.',
+      heading: 'Reliable Landscaping Across Waterloo, Iowa',
+      body: 'Waterloo has real variety in its properties, and we like that. Tight lots near downtown, bigger suburban yards on the outskirts, commercial sites along the Crossroads corridor. Every job gets the same standard: proper base prep on hardscape, clean bed edges, and we keep you in the loop. If you searched for a Waterloo landscaper or lawn care in Waterloo, Iowa, you are in the right place.',
     },
     faqs: [
       {
-        q: 'Do you serve all of Waterloo?',
-        a: 'Yes. We serve all Waterloo neighborhoods and commercial areas including downtown Waterloo, the Crossroads area, and residential developments throughout the city.',
+        q: 'Do you serve all of Waterloo, Iowa?',
+        a: 'Yes. We serve all Waterloo neighborhoods and commercial areas including downtown Waterloo, the Crossroads area, and residential developments throughout the city and Black Hawk County.',
+      },
+      {
+        q: 'Do you offer lawn care in Waterloo, Iowa?',
+        a: 'Yes. Weekly and seasonal lawn care for Waterloo, IA homes and businesses — mowing, trimming, aeration, and weed control. Call (319) 464-1889 for a free estimate.',
+      },
+      {
+        q: 'Do you install retaining walls in Waterloo?',
+        a: 'Yes. We build retaining walls for Waterloo, IA properties with drainage and base prep for Black Hawk County clay and freeze-thaw. Free on-site quotes.',
       },
       {
         q: 'Can you handle commercial landscaping in Waterloo?',
         a: 'Yes. We provide landscape maintenance, snow removal, and hardscaping for commercial properties in Waterloo. Contact us for a commercial quote.',
       },
       {
-        q: 'How quickly can you start my landscaping project in Waterloo?',
-        a: 'Spring and fall fill up fast. We recommend contacting us early to get on the schedule. We typically begin projects within 1-2 weeks of signing.',
-      },
-      {
         q: 'Do you offer free estimates for Waterloo properties?',
-        a: 'Yes. We provide free, no-obligation estimates for all Waterloo properties. Call (319) 464-1889 or fill out our online form to schedule yours.',
+        a: 'Yes. We provide free, no-obligation estimates for all Waterloo, Iowa properties. Call (319) 464-1889 or fill out our online form to schedule yours.',
       },
     ],
   },
@@ -211,7 +218,7 @@ export const cities: City[] = [
     ],
     introHeading: 'Evansdale Landscaping That Fits',
     introBody: [
-      'Evansdale sits right in the middle of everything, and we serve it like we serve our closest neighbors. Mowing, trimming, tree work, hardscaping. Whatever your property needs, we bring the same equipment and crew standards that work across the Cedar Valley.',
+      'Evansdale sits right in the middle of everything, and we serve it like we serve our closest neighbors. Mowing, trimming, tree work, hardscaping. Whatever your property needs, we bring the same equipment and crew standards that work across Black Hawk County.',
     ],
     introBody2: [
       'Busy schedule and just need someone to keep the lawn in shape through the summer? We handle weekly mowing for a lot of Evansdale homeowners. Need a full yard redesign? We do that too.',
@@ -320,7 +327,7 @@ export const cities: City[] = [
     servicesIntro:
       'Professional landscaping and hardscaping services for Denver homeowners.',
     uniqueContent: {
-      heading: 'Bringing Cedar Valley Quality to Denver',
+      heading: 'Bringing Black Hawk County Quality to Denver',
       body: 'Denver may be small, but the work we do there is held to the same standard as our biggest Cedar Falls projects. Good materials, proper installation, crews that care about the finished look. Word travels fast in a small town, and we want the word to be good.',
     },
     faqs: [
@@ -363,7 +370,7 @@ export const cities: City[] = [
     ],
     introHeading: 'Jesup Landscaping, Buchanan County',
     introBody: [
-      'Jesup sits right on the Black Hawk-Buchanan county line, and we serve it the same way we serve the rest of the Cedar Valley. Retaining walls, paver patios, lawn care, and tree service. Jesup homeowners get the same quality, same pricing, and same crew.',
+      'Jesup sits right on the Black Hawk-Buchanan county line, and we serve it the same way we serve nearby Black Hawk County communities. Retaining walls, paver patios, lawn care, and tree service. Jesup homeowners get the same quality, same pricing, and same crew.',
     ],
     introBody2: [
       'We have done everything in Jesup from full yard installations to simple weekly mowing. If your property needs work, we can handle it.',

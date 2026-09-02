@@ -8,30 +8,58 @@ import Button from '@/components/ui/Button'
 import { siteConfig } from '@/lib/metadata'
 import type { GoogleReviewData } from '@/lib/types'
 
+const FALLBACK_REVIEWS: GoogleReviewData = {
+  rating: 5.0,
+  totalCount: 5,
+  source: 'config',
+  reviews: [
+    {
+      author: 'Ashley K.',
+      rating: 5,
+      text: 'We got multiple estimates from different companies and settled on A1, and we could not have been happier with our decision!',
+      relativeTime: '3 weeks ago',
+    },
+    {
+      author: 'Peggy G.',
+      rating: 5,
+      text: 'Mac has been a valuable resource over the years. Everything from demolition of a basement, planting trees, roofing and lawn care.',
+      relativeTime: '2 years ago',
+    },
+    {
+      author: 'John D.',
+      rating: 5,
+      text: 'Mac and his team did an outstanding job on my retaining wall. I was very pleased with his fast and reliable services.',
+      relativeTime: '3 years ago',
+    },
+  ],
+}
+
 export default function GoogleReviews() {
-  const [data, setData] = useState<GoogleReviewData | null>(null)
+  const [data, setData] = useState<GoogleReviewData>(FALLBACK_REVIEWS)
 
   useEffect(() => {
     const controller = new AbortController()
     fetch('/api/reviews', { signal: controller.signal })
       .then((r) => r.json())
-      .then(setData)
-      .catch(() => {})
+      .then((payload: GoogleReviewData) => {
+        if (payload?.reviews?.length) setData(payload)
+      })
+      .catch(() => {
+        /* keep fallback */
+      })
     return () => controller.abort()
   }, [])
 
-  const reviews = data?.reviews?.slice(0, 3) ?? []
-
-  if (reviews.length === 0) return null
+  const reviews = data.reviews.slice(0, 3)
 
   return (
     <section className="section bg-white">
       <div className="section-inner">
         <FadeIn className="text-center">
-          <p className="section-eyebrow">From Cedar Valley Homeowners</p>
+          <p className="section-eyebrow">From Cedar Falls &amp; Waterloo Homeowners</p>
           <h2 className="section-heading mt-3">What Our Customers Say</h2>
           <p className="mx-auto mt-2 text-sm text-brand-subtle">
-            Based on {data?.totalCount} Google Review{data?.totalCount !== 1 ? 's' : ''}
+            Based on {data.totalCount} Google Review{data.totalCount !== 1 ? 's' : ''}
           </p>
         </FadeIn>
 

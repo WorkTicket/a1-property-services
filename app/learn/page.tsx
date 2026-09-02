@@ -12,7 +12,7 @@ import CtaBanner from '@/components/sections/CtaBanner'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Resources & Guides',
   description:
-    'Educational guides, buying tips, and comparison resources for Cedar Valley homeowners planning landscape work.',
+    'Educational guides, buying tips, and comparison resources for Cedar Falls and Waterloo homeowners planning landscape work.',
   path: '/learn',
 })
 
@@ -31,7 +31,7 @@ const categoryColors: Record<string, string> = {
 export default function LearnPage() {
   const pageSchema = webPageJsonLd({
     name: 'Landscaping Resources & Guides | A1 Property Services',
-    description: 'Educational guides, buying tips, and comparison resources for Cedar Valley homeowners.',
+    description: 'Educational guides, buying tips, and comparison resources for Cedar Falls and Waterloo homeowners.',
     path: '/learn',
     about: 'Landscaping Resources',
   })
@@ -63,16 +63,16 @@ export default function LearnPage() {
 
       <PageHero
         imageSrc={siteImages.learnHero}
-        imageAlt="Professionally designed Cedar Valley garden with stone path and perennials"
+        imageAlt="Professionally designed Cedar Falls garden with stone path and perennials"
         eyebrow="Educational Resources"
         title="Landscaping|Knowledge Center"
-        subtitle="Guides, comparisons, and buying tips for Cedar Valley homeowners planning a landscape project."
+        subtitle="Guides, comparisons, and buying tips for Cedar Falls and Waterloo homeowners planning a landscape project."
       />
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <p className="text-lg leading-relaxed text-brand-body">
-            Whether you are planning your first landscaping project or looking to maintain a mature landscape, our educational resources give you the information you need to make confident decisions. Every guide is written with Iowa homeowners in mind and focuses on what matters most for Cedar Valley properties.
+            Whether you are planning your first landscaping project or looking to maintain a mature landscape, our educational resources give you the information you need to make confident decisions. Every guide is written with Iowa homeowners in mind and focuses on what matters most for Cedar Falls and Waterloo properties.
           </p>
         </FadeIn>
       </section>

@@ -7,17 +7,24 @@ import { siteConfig } from '@/lib/metadata'
 type FaqSectionCtaProps = {
   learnMoreHref: string
   learnMoreLabel: string
+  quoteHref?: string
 }
 
-export default function FaqSectionCta({ learnMoreHref, learnMoreLabel }: FaqSectionCtaProps) {
+export default function FaqSectionCta({
+  learnMoreHref,
+  learnMoreLabel,
+  quoteHref = '#estimate',
+}: FaqSectionCtaProps) {
   return (
     <div className="mt-10 text-center">
       <p className="text-lg font-medium text-brand-green-900">
         Still have questions? We are here to help.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
-        <Button href="/contact">{CTA_COPY.contactTeam}</Button>
-        <Button href={`tel:${siteConfig.phone}`} variant="outline">
+        <Button href={quoteHref} trackLabel="FAQ Section Quote">
+          {CTA_COPY.contactTeam}
+        </Button>
+        <Button href={`tel:${siteConfig.phone}`} variant="outline" trackLabel="FAQ Section Phone">
           <Phone size={14} />
           {siteConfig.phoneDisplay}
         </Button>

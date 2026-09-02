@@ -83,6 +83,31 @@ async function main() {
 
   console.log(`\nValidating ${htmlFiles.length} pages...\n`)
 
+  // Google Ads / GA4 tag must be in HTML source for Tag Assistant & Ads scanners
+  const homeHtmlPath = path.join(OUT_DIR, 'index.html')
+  if (existsSync(homeHtmlPath)) {
+    const homeHtml = readFileSync(homeHtmlPath, 'utf-8')
+    const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-16919310135'
+    const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-1Z3THZSWP8'
+    if (homeHtml.includes(`googletagmanager.com/gtag/js?id=${adsId}`) || homeHtml.includes(`googletagmanager.com/gtag/js?id=${gaId}`)) {
+      ok(`Google tag script present (gtag/js)`)
+    } else {
+      error(`Homepage missing googletagmanager.com/gtag/js — Google Ads cannot verify the tag`)
+    }
+    if (homeHtml.includes(adsId) && homeHtml.includes(`gtag('config','${adsId}')`)) {
+      ok(`Google Ads config present (${adsId})`)
+    } else if (homeHtml.includes(adsId)) {
+      warn(`Ads ID ${adsId} found but gtag('config') may be missing or reformatted`)
+    } else {
+      error(`Homepage missing Google Ads ID ${adsId} — set NEXT_PUBLIC_GOOGLE_ADS_ID and rebuild`)
+    }
+    if (homeHtml.includes(gaId)) {
+      ok(`GA4 ID present (${gaId})`)
+    } else {
+      warn(`Homepage missing GA4 ID ${gaId}`)
+    }
+  }
+
   const titles = {}
   const descriptions = {}
   const allInternalLinks = {}

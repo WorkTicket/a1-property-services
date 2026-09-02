@@ -9,7 +9,7 @@ const lastUpdated = 'July 22, 2026'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Terms & Conditions',
   description:
-    'Terms and Conditions for using the A1 Property Services website and requesting landscaping services in Cedar Falls and the Cedar Valley.',
+    'Terms and Conditions for using the A1 Property Services website and requesting landscaping services in Cedar Falls, Waterloo, and Black Hawk County, Iowa.',
   path: '/terms',
 })
 
@@ -20,7 +20,7 @@ export default function TermsPage() {
   const pageSchema = webPageJsonLd({
     name: 'Terms & Conditions | A1 Property Services',
     description:
-      'Terms and Conditions for using the A1 Property Services website and requesting landscaping services in Cedar Falls and the Cedar Valley.',
+      'Terms and Conditions for using the A1 Property Services website and requesting landscaping services in Cedar Falls, Waterloo, and Black Hawk County, Iowa.',
     path: '/terms',
     about: 'Terms and Conditions',
   })

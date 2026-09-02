@@ -51,7 +51,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Questions to ask before you decide',
         paragraphs: [
-          'When you have the estimates in hand, ask each contractor a few follow-up questions. How long have they been working in the Cedar Valley specifically? Do they carry general liability and workers compensation insurance? Who will be on site managing the crew each day? How do they handle unexpected conditions like buried debris or utility lines? What does the cleanup process look like after the work is done?',
+          'When you have the estimates in hand, ask each contractor a few follow-up questions. How long have they been working in Cedar Falls, Waterloo, and Black Hawk County? Do they carry general liability and workers compensation insurance? Who will be on site managing the crew each day? How do they handle unexpected conditions like buried debris or utility lines? What does the cleanup process look like after the work is done?',
           'The answers will tell you as much as the numbers on the page. A contractor who communicates clearly and confidently about these details is more likely to deliver a smooth project experience. And in landscaping, the experience matters as much as the final result.',
         ],
       },
@@ -76,9 +76,9 @@ export const learnArticles: LearnArticle[] = [
         ],
       },
       {
-        heading: 'How long have you been serving the Cedar Valley?',
+        heading: 'How long have you been serving the Cedar Falls, Waterloo, and Black Hawk County?',
         paragraphs: [
-          'Experience in a specific region matters. A contractor who has worked in the Cedar Valley for years understands the local soil conditions, climate patterns, and common challenges that come with Iowa landscapes. They know how clay soil behaves, what freeze-thaw cycles do to hardscape, and which plants thrive in Black Hawk County. That local knowledge translates to better recommendations and longer-lasting results.',
+          'Experience in a specific region matters. A contractor who has worked in the Cedar Falls, Waterloo, and Black Hawk County for years understands the local soil conditions, climate patterns, and common challenges that come with Iowa landscapes. They know how clay soil behaves, what freeze-thaw cycles do to hardscape, and which plants thrive in Black Hawk County. That local knowledge translates to better recommendations and longer-lasting results.',
           'A newer company may still do excellent work, but you want to confirm they have experience with projects similar to yours. Ask for examples of work they have completed in the area, not just photos from other regions.',
         ],
       },
@@ -140,7 +140,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Assess your site conditions',
         paragraphs: [
-          'The success of a retaining wall depends on what is happening below ground. Soil type, drainage patterns, frost depth, and the height of the wall all determine the engineering requirements. In the Cedar Valley, heavy clay soil is common, and it expands significantly when wet and frozen. A wall built on clay without proper base preparation and drainage will fail over time.',
+          'The success of a retaining wall depends on what is happening below ground. Soil type, drainage patterns, frost depth, and the height of the wall all determine the engineering requirements. In the Cedar Falls, Waterloo, and Black Hawk County, heavy clay soil is common, and it expands significantly when wet and frozen. A wall built on clay without proper base preparation and drainage will fail over time.',
           'A professional site assessment includes evaluating the slope, testing the soil, checking for underground utilities, and determining the frost line depth. For walls over four feet tall, engineered plans are typically required, and those plans start with a thorough understanding of the site conditions.',
         ],
       },
@@ -195,7 +195,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Paver patios: the most popular choice',
         paragraphs: [
-          'Concrete pavers are the most common patio material in the Cedar Valley, and for good reason. They offer excellent durability in freeze-thaw conditions because individual pavers can shift slightly without cracking. If a paver does get damaged, you can replace it without affecting the rest of the patio. Pavers come in a wide range of colors, shapes, and patterns, giving you plenty of design flexibility.',
+          'Concrete pavers are the most common patio material in the Cedar Falls, Waterloo, and Black Hawk County, and for good reason. They offer excellent durability in freeze-thaw conditions because individual pavers can shift slightly without cracking. If a paver does get damaged, you can replace it without affecting the rest of the patio. Pavers come in a wide range of colors, shapes, and patterns, giving you plenty of design flexibility.',
           'The installation process for pavers is labor-intensive but critical to performance. A proper base of compacted aggregate, a leveling sand layer, edge restraints, and polymeric joint sand all work together to create a stable surface that drains well and stays level. The quality of the base preparation matters more than the pavers themselves.',
         ],
       },
@@ -285,7 +285,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Spring: cleanup and preparation',
         paragraphs: [
           'Spring in Iowa is unpredictable, but the work that needs doing is consistent every year. Start with a thorough cleanup of landscape beds. Rake out leaves, pull early weeds, and remove debris that accumulated over winter. Edge your beds to create clean lines between lawn and planting areas. Once the beds are clean, assess what survived winter and what needs replacing.',
-          'Prune summer-blooming shrubs before new growth starts. Leave spring-blooming shrubs like lilacs until after they flower. Apply pre-emergent weed control to the lawn before soil temperatures reach 55 degrees. Wait until the soil has warmed up before applying fresh mulch, typically late April or early May in the Cedar Valley.',
+          'Prune summer-blooming shrubs before new growth starts. Leave spring-blooming shrubs like lilacs until after they flower. Apply pre-emergent weed control to the lawn before soil temperatures reach 55 degrees. Wait until the soil has warmed up before applying fresh mulch, typically late April or early May in the Cedar Falls, Waterloo, and Black Hawk County.',
         ],
       },
       {
@@ -461,7 +461,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'landscape-maintenance-expectations',
     title: 'Landscape Maintenance Expectations: What to Plan For',
-    excerpt: 'A realistic overview of what it takes to maintain a healthy, attractive landscape in the Cedar Valley throughout the year.',
+    excerpt: 'A realistic overview of what it takes to maintain a healthy, attractive landscape in the Cedar Falls, Waterloo, and Black Hawk County throughout the year.',
     category: 'buying-guide',
     categoryLabel: 'Maintenance Guide',
     readingTime: '6 min',
@@ -525,7 +525,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Choosing materials based on looks alone',
         paragraphs: [
           'It is natural to choose materials based on appearance. But looks are only part of the equation. Every material has performance characteristics that affect how it holds up in Iowa climate. A material that looks beautiful in a showroom may crack, fade, or shift after a few freeze-thaw cycles if it is not suited to local conditions.',
-          'Ask about how materials perform in Iowa specifically. Check with contractors who have experience with local conditions. Look at how materials age by visiting completed projects in your area. The best choice combines good looks with proven performance in the Cedar Valley climate.',
+          'Ask about how materials perform in Iowa specifically. Check with contractors who have experience with local conditions. Look at how materials age by visiting completed projects in your area. The best choice combines good looks with proven performance in the Cedar Falls, Waterloo, and Black Hawk County climate.',
         ],
       },
       {

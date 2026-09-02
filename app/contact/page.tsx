@@ -6,17 +6,18 @@ import QuoteForm from '@/components/ui/QuoteForm'
 import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 import FadeIn from '@/components/motion/FadeIn'
 import PageHero from '@/components/motion/PageHero'
+import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Request a Free Landscaping Quote',
-  description: 'Request a free landscaping quote from A1 Property Services in Cedar Falls. We usually respond within 24 hours.',
+    title: 'Request a Free Landscaping Quote',
+    description: 'Request a free landscaping quote from A1 Property Services in Cedar Falls and Waterloo, Iowa. We usually respond within 24 hours.',
   path: '/contact',
 })
 
 export default function ContactPage() {
   const pageSchema = webPageJsonLd({
     name: 'Request a Free Landscaping Quote | A1 Property Services',
-    description: 'Request a free landscaping quote from A1 Property Services in Cedar Falls. We usually respond within 24 hours.',
+    description: 'Request a free landscaping quote from A1 Property Services in Cedar Falls and Waterloo, Iowa. We usually respond within 24 hours.',
     path: '/contact',
     about: 'Contact Us',
   })
@@ -70,7 +71,9 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8">
-                <QuoteForm variant="light" formLocation="Contact Page" />
+                <div id="estimate">
+                  <QuoteForm variant="light" formLocation="Contact Page" compact />
+                </div>
               </div>
             </FadeIn>
 
@@ -83,9 +86,12 @@ export default function ContactPage() {
                     <Phone size={18} className="mt-0.5 shrink-0 text-brand-gold" />
                     <span>
                       <strong>Phone</strong><br />
-                      <a href={`tel:${siteConfig.phone}`} className="link-touch text-brand-green-800 transition-colors hover:underline">
+                      <TrackPhoneLink
+                        location="Contact Page"
+                        className="link-touch text-brand-green-800 transition-colors hover:underline"
+                      >
                         {siteConfig.phoneDisplay}
-                      </a>
+                      </TrackPhoneLink>
                     </span>
                   </p>
                   <p className="flex items-start gap-3">
@@ -106,7 +112,7 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <p className="mt-6 text-xs text-brand-subtle">
-                  <strong>Service Area:</strong> Cedar Valley, Iowa
+                  <strong>Service Area:</strong> Cedar Falls, Waterloo &amp; Black Hawk County, Iowa
                 </p>
               </div>
 

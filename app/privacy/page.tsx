@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
             This Privacy Policy describes how {name} (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
             collects, uses, and shares information when you visit {url}, request a quote, call or
             email us, or otherwise interact with our landscaping and property services business serving
-            Cedar Falls, Waterloo, and the Cedar Valley area of Iowa.
+            Cedar Falls, Waterloo, and Black Hawk County, Iowa.
           </p>
 
           <h2 className="section-heading mt-12">1. Who We Are</h2>

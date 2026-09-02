@@ -43,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority = 0.7
     } else if (isCity) {
       changeFrequency = 'monthly'
-      priority = 0.7
+      priority = path === '/cedar-falls' || path === '/waterloo' ? 0.9 : 0.7
     } else if (isProgrammatic) {
       changeFrequency = 'monthly'
       priority = 0.6

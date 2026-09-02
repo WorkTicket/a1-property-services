@@ -27,7 +27,7 @@ export default function HomeHero() {
           <HeroTitle>A1 Property Services|Cedar Falls Landscaping</HeroTitle>
         </h1>
         <p className="hero-subtitle mx-auto mt-6 max-w-xl">
-          Retaining walls, paver patios, lawn care, and full outdoor installations for homes and businesses across the Cedar Valley.
+          Retaining walls, paver patios, lawn care, and full outdoor installations for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
           <Button href="/contact" size="lg" fullWidth className="sm:w-auto">

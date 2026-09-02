@@ -6,7 +6,6 @@ import FadeIn from '@/components/motion/FadeIn'
 import { CTA_COPY } from '@/lib/cta'
 import { siteConfig } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
-import { trackCtaClick } from '@/lib/analytics'
 
 type CtaBannerProps = {
   title: string
@@ -14,6 +13,8 @@ type CtaBannerProps = {
   eyebrow?: string
   animated?: boolean
   titleClassName?: string
+  /** Prefer #estimate when the page has an inline QuoteForm. */
+  quoteHref?: string
 }
 
 function CtaBannerContent({
@@ -21,6 +22,7 @@ function CtaBannerContent({
   description,
   eyebrow,
   titleClassName,
+  quoteHref = '/contact',
 }: Omit<CtaBannerProps, 'animated'>) {
   return (
     <>
@@ -36,11 +38,11 @@ function CtaBannerContent({
       </h2>
       <p className="mt-4 text-white/60">{description}</p>
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <Button href="/contact" size="lg" onClick={() => trackCtaClick('Banner Quote')}>
+        <Button href={quoteHref} size="lg" trackLabel="Banner Quote">
           {CTA_COPY.quote}
           <ChevronRight className="h-4 w-4" aria-hidden />
         </Button>
-        <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg" onClick={() => trackCtaClick('Banner Phone')}>
+        <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg" trackLabel="Banner Phone">
           <Phone size={18} />
           {siteConfig.phoneDisplay}
         </Button>
@@ -55,6 +57,7 @@ export default function CtaBanner({
   eyebrow,
   animated = false,
   titleClassName,
+  quoteHref = '/contact',
 }: CtaBannerProps) {
   return (
     <section className="section bg-brand-green-800">
@@ -66,6 +69,7 @@ export default function CtaBanner({
               description={description}
               eyebrow={eyebrow}
               titleClassName={titleClassName}
+              quoteHref={quoteHref}
             />
           </FadeIn>
         ) : (
@@ -74,6 +78,7 @@ export default function CtaBanner({
             description={description}
             eyebrow={eyebrow}
             titleClassName={titleClassName}
+            quoteHref={quoteHref}
           />
         )}
       </div>

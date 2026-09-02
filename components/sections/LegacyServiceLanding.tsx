@@ -10,6 +10,7 @@ import {
   webPageJsonLd,
 } from '@/lib/metadata'
 import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
+import { primaryAreaServedSchema } from '@/lib/service-area'
 import { getServiceBySlug, getServicePageHref, serviceFaqs } from '@/lib/services'
 import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
 import { getLandingProofProjects } from '@/lib/images'
@@ -68,11 +69,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
     serviceType: page.h1,
     name: page.h1,
     provider: { '@id': `${siteConfig.url}/#organization` },
-    areaServed: [
-      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'Place', name: 'Cedar Valley, Iowa' },
-    ],
+    areaServed: [...primaryAreaServedSchema],
     description: page.description,
     url: `${siteConfig.url}${page.path}`,
     image: `${siteConfig.url}${page.heroImage}`,
@@ -158,7 +155,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                 <p className="section-eyebrow">Recent Work</p>
                 <h2 className="section-heading mt-3">Before &amp; After</h2>
                 <p className="mt-2 max-w-xl text-brand-body">
-                  Real {serviceName.toLowerCase()} projects from the Cedar Valley — drag to compare.
+                  Real {serviceName.toLowerCase()} projects in Cedar Falls and Waterloo — drag to compare.
                 </p>
               </div>
               <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
@@ -319,7 +316,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               <h2 className="section-heading mt-3">Request Your Free Estimate</h2>
               <p className="mt-4 leading-relaxed text-brand-body">
                 Tell us about your {serviceName.toLowerCase()} project. We follow up with a clear on-site
-                quote for homes across the Cedar Valley — no pressure.
+                quote for homes in Cedar Falls, Waterloo, and Black Hawk County — no pressure.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-brand-body">
@@ -415,8 +412,9 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
 
       <CtaBanner
         title="Get Your Free Estimate"
-        description="Tell us about your project and we will follow up with a clear quote for the Cedar Valley."
-        eyebrow={page.ctaEyebrow ?? 'Cedar Valley Hardscaping'}
+        description="Tell us about your project and we will follow up with a clear quote for Cedar Falls, Waterloo, and Black Hawk County."
+        eyebrow={page.ctaEyebrow ?? 'Black Hawk County Hardscaping'}
+        quoteHref="#estimate"
       />
     </>
   )

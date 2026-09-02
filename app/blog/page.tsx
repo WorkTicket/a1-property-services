@@ -11,7 +11,7 @@ import FadeIn from '@/components/motion/FadeIn'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Blog',
   description:
-    'Landscaping tips, hardscaping how-tos, and seasonal yard notes from A1 Property Services in Cedar Falls.',
+    'Landscaping tips, hardscaping how-tos, and seasonal yard notes for Cedar Falls and Waterloo homeowners.',
   path: '/blog',
 })
 
@@ -20,7 +20,7 @@ export default function BlogPage() {
 
   const pageSchema = webPageJsonLd({
     name: 'Landscaping Blog | A1 Property Services',
-    description: 'Landscaping tips, hardscaping how-tos, and seasonal yard notes from A1 Property Services in Cedar Falls.',
+    description: 'Landscaping tips, hardscaping how-tos, and seasonal yard notes for Cedar Falls and Waterloo homeowners.',
     path: '/blog',
     about: 'Landscaping Blog',
   })
@@ -51,16 +51,16 @@ export default function BlogPage() {
     />
     <PageHero
       imageSrc={siteImages.blogHero}
-      imageAlt="Tree-lined Cedar Valley residential street in autumn color"
+      imageAlt="Tree-lined Cedar Falls residential street in autumn color"
       eyebrow="Tips & Notes"
-      title="Cedar Valley|Landscaping Blog"
+      title="Cedar Falls & Waterloo|Landscaping Blog"
       subtitle="Hardscaping tips, lawn care advice, and seasonal notes from your local Cedar Falls crew."
     />
 
     <section className="border-b border-black/5 bg-white py-10 md:py-12">
       <FadeIn className="section-inner">
         <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-brand-body">
-          Practical guides written for Cedar Falls and Cedar Valley homeowners — from patio planning
+          Practical guides written for Cedar Falls and Waterloo homeowners — from patio planning
           and retaining walls to spring cleanup and lawn care that holds up in Iowa weather.
         </p>
       </FadeIn>
@@ -80,7 +80,7 @@ export default function BlogPage() {
           <p className="section-eyebrow">Archive</p>
           <h2 className="section-heading mt-3">All Articles</h2>
           <p className="mt-3 text-brand-body">
-            Browse every landscaping guide we have published for Cedar Falls and the Cedar Valley.
+            Browse every landscaping guide we have published for Cedar Falls, Waterloo, and Black Hawk County.
           </p>
         </div>
         <ul className="mt-10 divide-y divide-black/10 border-y border-black/10">

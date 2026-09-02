@@ -41,6 +41,7 @@
     "preview": "npm run build:deploy && wrangler dev",
     "indexnow:submit": "node --env-file=.env.local scripts/submit-indexnow.mjs",
     "deploy": "npm run build:deploy && wrangler deploy && npm run indexnow:submit",
+    "cf:sync-redirects": "node scripts/sync-cloudflare-redirects.mjs",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {

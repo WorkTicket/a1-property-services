@@ -5,6 +5,10 @@ import { handleReviews } from './api/reviews.js'
 const CACHE_IMMUTABLE = 'public, max-age=31536000, immutable'
 const CACHE_HTML = 'public, max-age=3600, must-revalidate'
 
+const APEX_HOST = 'a1pslandscape.com'
+const WWW_HOST = 'www.a1pslandscape.com'
+const CANONICAL_ORIGIN = `https://${APEX_HOST}`
+
 function cacheControlForPath(pathname) {
   if (
     pathname.startsWith('/_next/static/') ||
@@ -21,6 +25,19 @@ function cacheControlForPath(pathname) {
   return null
 }
 
+function isHttpRequest(request, url) {
+  if (url.protocol === 'http:') return true
+  const forwardedProto = request.headers.get('x-forwarded-proto')?.split(',')[0]?.trim()
+  if (forwardedProto === 'http') return true
+  try {
+    const cf = request.headers.get('cf-visitor')
+    if (cf) return JSON.parse(cf).scheme === 'http'
+  } catch {
+    /* ignore */
+  }
+  return false
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url)
@@ -33,20 +50,18 @@ export default {
       })
     }
 
-    // Canonical host: www → apex (avoids duplicate crawl + 3XX noise)
-    if (url.hostname === 'www.a1pslandscape.com') {
-      const destination = `https://a1pslandscape.com${path}${url.search}${url.hash}`
-      return Response.redirect(destination, 301)
-    }
-
-    // Prefer HTTPS if a request somehow arrives over HTTP at the worker
-    if (url.protocol === 'http:') {
-      return Response.redirect(`https://a1pslandscape.com${path}${url.search}${url.hash}`, 301)
+    // Safety net: one 301 to https://apex when www/HTTP reaches the Worker.
+    // Primary path is Cloudflare Single Redirect + Always Use HTTPS OFF
+    // (see redirects/README.md).
+    const needsApex = url.hostname === WWW_HOST
+    const needsHttps = isHttpRequest(request, url)
+    if (needsApex || needsHttps) {
+      return Response.redirect(`${CANONICAL_ORIGIN}${path}${url.search}${url.hash}`, 301)
     }
 
     // Drop trailing slashes (except homepage) so internal links never land on a redirect
     if (path.length > 1 && path.endsWith('/')) {
-      const destination = `https://a1pslandscape.com${path.replace(/\/+$/, '')}${url.search}${url.hash}`
+      const destination = `${CANONICAL_ORIGIN}${path.replace(/\/+$/, '')}${url.search}${url.hash}`
       return Response.redirect(destination, 301)
     }
 

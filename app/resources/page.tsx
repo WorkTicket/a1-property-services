@@ -11,7 +11,7 @@ import CtaBanner from '@/components/sections/CtaBanner'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Resources',
   description:
-    'Helpful landscaping resources for Cedar Valley homeowners. Guides, checklists, and expert tips for maintaining your property.',
+    'Helpful landscaping resources for Cedar Falls and Waterloo homeowners. Guides, checklists, and expert tips for maintaining your property.',
   path: '/resources',
 })
 
@@ -47,13 +47,13 @@ const resources = [
   // Planting
   {
     title: 'Best Plants for Iowa Landscapes',
-    description: 'Top-performing perennials, shrubs, and trees for Cedar Valley gardens and landscapes.',
+    description: 'Top-performing perennials, shrubs, and trees for Cedar Falls and Waterloo gardens and landscapes.',
     href: '/blog/best-plants-for-iowa-landscapes',
     category: 'Planting',
   },
   {
     title: 'Tree Planting Guide for Cedar Falls',
-    description: 'How to plant trees that thrive in Cedar Valley soil and climate.',
+    description: 'How to plant trees that thrive in Black Hawk County soil and climate.',
     href: '/blog/tree-planting-guide-cedar-falls',
     category: 'Planting',
   },
@@ -78,7 +78,7 @@ const resources = [
   },
   {
     title: 'French Drain Cost Guide for Iowa',
-    description: 'What a French drain costs in the Cedar Valley and when it is the right fix.',
+    description: 'What a French drain costs in Cedar Falls and Waterloo and when it is the right fix.',
     href: '/blog/french-drain-cost-iowa',
     category: 'Drainage',
   },
@@ -104,7 +104,7 @@ const resources = [
   // Lawn Care
   {
     title: 'Lawn Aeration Guide for Iowa Lawns',
-    description: 'How core aeration helps your lawn grow thicker and handle Cedar Valley summers.',
+    description: 'How core aeration helps your lawn grow thicker and handle Iowa summers.',
     href: '/blog/lawn-aeration-importance-iowa',
     category: 'Lawn Care',
   },
@@ -123,7 +123,7 @@ const resources = [
   // Design
   {
     title: 'Landscape Design Principles for Iowa',
-    description: 'How to plan a landscape that looks great and works for your Cedar Valley property.',
+    description: 'How to plan a landscape that looks great and works for your Cedar Falls or Waterloo property.',
     href: '/blog/landscape-design-principles-iowa',
     category: 'Design',
   },
@@ -173,7 +173,7 @@ const cedarValleyLinks = [
   {
     title: 'USDA Plant Hardiness Zone Map',
     description:
-      'Confirm your hardiness zone so trees, shrubs, and perennials can survive Cedar Valley winters.',
+      'Confirm your hardiness zone so trees, shrubs, and perennials can survive Iowa winters.',
     href: 'https://planthardiness.ars.usda.gov/',
     source: 'USDA',
   },
@@ -189,7 +189,7 @@ const cedarValleyLinks = [
 export default function ResourcesPage() {
   const pageSchema = webPageJsonLd({
     name: 'Landscaping Resources | A1 Property Services',
-    description: 'Helpful landscaping resources for Cedar Valley homeowners. Guides, checklists, and expert tips for maintaining your property.',
+    description: 'Helpful landscaping resources for Cedar Falls and Waterloo homeowners. Guides, checklists, and expert tips for maintaining your property.',
     path: '/resources',
     about: 'Landscaping Resources',
   })
@@ -213,10 +213,10 @@ export default function ResourcesPage() {
 
       <PageHero
         imageSrc={siteImages.resourcesHero}
-        imageAlt="Landscaped Cedar Valley front yard with paver walkway and garden beds"
+        imageAlt="Landscaped Cedar Falls front yard with paver walkway and garden beds"
         eyebrow="Helpful Guides"
         title="Landscaping|Resources"
-        subtitle="Expert guides, checklists, and articles for Cedar Valley homeowners working on landscape projects."
+        subtitle="Expert guides, checklists, and articles for Cedar Falls and Waterloo homeowners working on landscape projects."
       />
 
       <section className="section bg-white">
@@ -231,7 +231,7 @@ export default function ResourcesPage() {
         <div className="section-inner">
           <FadeIn>
             <p className="section-eyebrow">Before You Dig</p>
-            <h2 className="section-heading">For Cedar Valley Homeowners</h2>
+            <h2 className="section-heading">For Cedar Falls &amp; Waterloo Homeowners</h2>
             <p className="mt-3 max-w-2xl text-brand-body">
               Useful official links to review before a landscaping project — permits, utility locates, soil, and plant hardiness for Cedar Falls, Waterloo, and nearby towns.
             </p>

@@ -10,15 +10,46 @@ import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
 const INLINE_ESTIMATE_PATHS = new Set([
   '/',
   '/contact',
+  '/about',
+  '/faqs',
+  '/gallery',
   '/landscaping-services-in-cedar-falls',
   '/retaining-wall-in-cedar-falls',
   '/paver-patio-installation',
   '/cedar-falls-water-features',
+  '/services',
 ])
+
+/** Non-city first path segments — everything else with 1–2 segments is a city or city×service page. */
+const NON_CITY_ROOTS = new Set([
+  'about',
+  'gallery',
+  'blog',
+  'contact',
+  'faqs',
+  'resources',
+  'learn',
+  'privacy',
+  'terms',
+  'thank-you',
+  'services',
+  'landscaping-services-in-cedar-falls',
+  'retaining-wall-in-cedar-falls',
+  'paver-patio-installation',
+  'cedar-falls-water-features',
+])
+
+function hasInlineEstimate(pathname: string): boolean {
+  if (INLINE_ESTIMATE_PATHS.has(pathname)) return true
+  if (pathname.startsWith('/services/')) return true
+  const parts = pathname.split('/').filter(Boolean)
+  if (parts.length >= 1 && parts.length <= 2 && !NON_CITY_ROOTS.has(parts[0])) return true
+  return false
+}
 
 export default function StickyCtaBar() {
   const pathname = usePathname()
-  const quoteHref = INLINE_ESTIMATE_PATHS.has(pathname) ? '#estimate' : '/contact'
+  const quoteHref = hasInlineEstimate(pathname) ? '#estimate' : '/contact'
 
   return (
     <div className="sticky-cta-bar">

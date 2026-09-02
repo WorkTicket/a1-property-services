@@ -19,13 +19,14 @@ export const landscapingHubPage = {
   path: '/landscaping-services-in-cedar-falls',
   title: 'Landscaping in Cedar Falls, IA | Local Crew · Free Estimate',
   description:
-    'Landscaping in Cedar Falls, IA — retaining walls, paver patios, lawn care & installs from a local crew. Free on-site estimate. Call (319) 464-1889.',
+    'Landscaping in Cedar Falls & Waterloo, IA — retaining walls, paver patios, lawn care & installs. Free on-site estimate. Call (319) 464-1889.',
   keywords: [
     'landscaping cedar falls',
     'cedar falls landscaping',
     'landscaper cedar falls',
     'landscaping cedar falls ia',
-    'landscaping company cedar falls',
+    'landscaping waterloo ia',
+    'black hawk county landscaping',
     'landscape contractor cedar falls',
     'landscaping services cedar falls',
     'lawn care cedar falls',
@@ -44,11 +45,11 @@ export const landscapingHubPage = {
   eyebrow: 'Cedar Falls, Iowa',
   h1: 'Landscaping in Cedar Falls, IA',
   heroHeading:
-    'Local lawn care, hardscaping, and full landscape installs across the Cedar Valley.',
-  introHeading: 'A Local Crew That Knows Cedar Valley Yards',
+    'Local lawn care, hardscaping, and full landscape installs in Cedar Falls, Waterloo, and Black Hawk County.',
+  introHeading: 'A Local Crew That Knows Cedar Falls & Waterloo Yards',
   introParagraphs: [
-    'A1 Property Services is a locally owned landscaping company based in Cedar Falls, Iowa. We help homeowners and businesses across the Cedar Valley with lawn care, retaining walls, paver patios, ponds, and complete landscape installation.',
-    'We plan every project around Iowa clay, freeze-thaw, and how water moves across Cedar Valley lots — from College Hill and North Cedar to newer builds on the north end. Licensed, insured, and rated 5 stars by local customers.',
+    'A1 Property Services is a locally owned landscaping company based in Cedar Falls, Iowa (50613). We help homeowners and businesses in Cedar Falls, Waterloo, and Black Hawk County with lawn care, retaining walls, paver patios, ponds, and complete landscape installation.',
+    'We plan every project around Iowa clay, freeze-thaw, and how water moves across Black Hawk County lots — from College Hill and North Cedar in Cedar Falls to downtown Waterloo and the Crossroads area. Licensed, insured, and rated 5 stars by local customers.',
   ],
   coreServicesHeading: 'Hardscape & Landscape Services',
   coreServicesIntro:
@@ -83,17 +84,17 @@ export const landscapingHubPage = {
       imageAlt: 'Water feature installation with natural stone',
     },
     {
-      title: 'Full Landscape Install — Cedar Valley',
+      title: 'Full Landscape Install — Cedar Falls & Waterloo',
       description:
         'Complete yard transformation with regrading for clay drainage, planting, and hardscape that ties the whole property together.',
       href: '/gallery',
       image: '/images/landscape-after-1.webp',
-      imageAlt: 'Landscape installation project in the Cedar Valley',
+      imageAlt: 'Landscape installation project in Cedar Falls, Iowa',
     },
   ] satisfies HubRecentProject[],
-  allServicesHeading: 'Full-Service Landscape Work for the Cedar Valley',
+  allServicesHeading: 'Full-Service Landscape Work in Cedar Falls & Waterloo',
   allServicesIntro:
-    'Installation, maintenance, restoration, and seasonal work for homes and businesses across the Cedar Valley — built for Iowa climate and lasting curb appeal.',
+    'Installation, maintenance, restoration, and seasonal work for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County — built for Iowa climate and lasting curb appeal.',
   serviceSections: [
     {
       heading: 'Landscape Installation',
@@ -124,7 +125,7 @@ export const landscapingHubPage = {
       serviceHref: '/services/tree-service',
       serviceLinkLabel: 'tree service',
       paragraphs: [
-        'Trimming, removal, stump grinding, and storm response for the Cedar Valley. Safe work around structures, with planting and transplanting when you need new trees.',
+        'Trimming, removal, stump grinding, and storm response for Cedar Falls and Waterloo. Safe work around structures, with planting and transplanting when you need new trees.',
       ],
     },
     {
@@ -156,7 +157,7 @@ export const landscapingHubPage = {
       serviceHref: '/services/snow-removal',
       serviceLinkLabel: 'snow removal',
       paragraphs: [
-        'Commercial plowing, sidewalk clearing, and ice management with priority response plans for Cedar Valley businesses.',
+        'Commercial plowing, sidewalk clearing, and ice management with priority response plans for Cedar Falls and Waterloo businesses.',
       ],
     },
     {
@@ -179,7 +180,7 @@ export const landscapingHubPage = {
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
       answer:
-        'A1 Property Services offers full-service landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses across the Cedar Valley.',
+        'A1 Property Services offers full-service landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'How much does landscaping cost in Cedar Falls?',
@@ -189,17 +190,17 @@ export const landscapingHubPage = {
     {
       question: 'Who is the best landscaper near me in Cedar Falls?',
       answer:
-        'Look for a licensed local crew with Iowa freeze-thaw experience, clear written estimates, and strong Google reviews. A1 Property Services is based in Cedar Falls, licensed and insured since 2014, and serves the Cedar Valley.',
+        'Look for a licensed local crew with Iowa freeze-thaw experience, clear written estimates, and strong Google reviews. A1 Property Services is based in Cedar Falls, licensed and insured since 2014, and serves Waterloo and Black Hawk County.',
     },
     {
-      question: 'Do you serve Cedar Falls and the surrounding Cedar Valley?',
+      question: 'Do you serve Cedar Falls, Waterloo, and Black Hawk County?',
       answer:
-        'Yes. We are based in Cedar Falls and serve communities across the Cedar Valley. Most local projects are scheduled within a few days of your estimate.',
+        'Yes. We are based at 503 Bergstrom Blvd in Cedar Falls, Iowa and serve Waterloo and Black Hawk County — including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City.',
     },
     {
       question: 'What types of properties do you service?',
       answer:
-        'We work on both residential and commercial properties, including homes, office buildings, retail spaces, and large estates throughout the Cedar Valley.',
+        'We work on both residential and commercial properties, including homes, office buildings, retail spaces, and large estates in Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'Do you offer ongoing maintenance or only one-time services?',
@@ -217,5 +218,5 @@ export const landscapingHubPage = {
   contactIntro:
     'Ready to start your project? Fill out the form or call our office. We respond quickly and provide free estimates.',
   closingCopy:
-    'Ready to transform your outdoor space? Our Cedar Valley team is here for lawn care, hardscape installs, and full landscape projects.',
+    'Ready to transform your outdoor space? Our Cedar Falls and Waterloo team is here for lawn care, hardscape installs, and full landscape projects.',
 }

@@ -20,6 +20,7 @@ import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { getYearsInBusiness, yearsInBusinessLabel, establishedEyebrow, sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
 import { projectsCompletedValue } from '@/lib/projects-completed'
+import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
 
 const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
   loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
@@ -37,12 +38,13 @@ export const metadata: Metadata = generatePageMetadata({
   absoluteTitle: true,
   keywords: [
     'landscaping cedar falls',
-    'cedar falls landscaping',
+    'cedar falls iowa landscaping',
+    'waterloo landscaping',
+    'landscaping waterloo ia',
+    'black hawk county landscaping',
     'retaining wall cedar falls',
     'paver patio cedar falls',
-    'water features cedar falls',
-    'hardscaping cedar falls ia',
-    'lawn care cedar falls',
+    'lawn care cedar falls iowa',
     'a1 property services',
   ],
   ogImage: '/images/hero-background-image.webp',
@@ -53,7 +55,7 @@ const trustPoints = [
   {
     icon: <MapPin className="h-6 w-6" />,
     title: 'Local & Based in Cedar Falls',
-    desc: 'We live and work in the Cedar Valley. We know the soil, the seasons, and what works here.',
+    desc: 'We live and work in Cedar Falls and Waterloo. We know Black Hawk County soil, seasons, and what lasts here.',
   },
   {
     icon: <Check className="h-6 w-6" />,
@@ -70,7 +72,7 @@ const trustPoints = [
 function getStats() {
   return [
     { value: projectsCompletedValue(), label: 'Projects Completed' },
-    { value: String(getYearsInBusiness()), label: 'Years in Cedar Valley' },
+    { value: String(getYearsInBusiness()), label: 'Years in Cedar Falls' },
     { value: '5.0', label: 'Average Rating' },
     { value: 'Licensed', label: '& Insured Iowa Contractor' },
   ]
@@ -90,8 +92,8 @@ const faqItems = [
     a: 'Spring and fall fill up fast. Call (319) 464-1889 or request a quote online — we typically respond within 24 hours and get you on the schedule.',
   },
   {
-    q: 'Do you serve the Cedar Valley?',
-    a: 'Yes. We serve homeowners and businesses across the entire Cedar Valley.',
+    q: 'Do you serve Waterloo and Black Hawk County?',
+    a: 'Yes. We are based in Cedar Falls, Iowa (50613) and serve Waterloo, Hudson, Evansdale, Elk Run Heights, Dunkerton, La Porte City, and the rest of Black Hawk County. Call (319) 464-1889 for a free estimate.',
   },
 ]
 
@@ -107,7 +109,7 @@ export default function HomePage() {
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',
-    about: 'Landscaping and Hardscaping in the Cedar Valley',
+    about: 'Landscaping in Cedar Falls, Waterloo, and Black Hawk County, Iowa',
   })
 
   return (
@@ -138,16 +140,17 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'Outdoor Spaces|Cedar Valley Homeowners Are Proud\u00a0Of'}
-              subtitle="We design, build, and maintain yards you'll actually use. Paver patios, retaining walls, full installs. Whatever your property needs."
+              title={'Outdoor Spaces|Cedar Falls & Waterloo Homeowners Are Proud\u00a0Of'}
+              subtitle="We design, build, and maintain yards you'll actually use in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, full installs."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="/contact">
+              <Button href="#estimate" trackLabel="Home Hero Quote">
                 {CTA_COPY.quote}
                 <ChevronRight className="h-4 w-4" aria-hidden />
               </Button>
-              <Button href="/landscaping-services-in-cedar-falls" variant="ghost">
-                Landscaping Services
+              <Button href={`tel:${siteConfig.phone}`} variant="ghost" trackLabel="Home Hero Phone">
+                <Phone className="h-4 w-4" aria-hidden />
+                {CTA_COPY.callNow}
               </Button>
             </div>
           </div>
@@ -164,7 +167,7 @@ export default function HomePage() {
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <span>{yearsInBusinessLabel()}</span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
-            <span>Cedar Valley</span>
+            <span>Cedar Falls &amp; Waterloo</span>
           </div>
         </div>
       </section>
@@ -190,7 +193,7 @@ export default function HomePage() {
             <p className="section-eyebrow">What We Do</p>
             <h2 className="section-heading mt-3">Our Services</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Weekly mowing, retaining walls, a new patio, a full yard redo. We handle it for Cedar Valley homeowners.
+              Weekly mowing, retaining walls, a new patio, a full yard redo. We handle it for Cedar Falls, Waterloo, and Black Hawk County homeowners.
             </p>
           </FadeIn>
 
@@ -297,13 +300,13 @@ export default function HomePage() {
             <FadeIn direction="left">
               <p className="section-eyebrow">Who We Are</p>
               <h2 className="section-heading mt-3">
-                A Local Landscaping Crew in the Cedar Valley
+                A Local Landscaping Crew in Cedar Falls &amp; Waterloo
               </h2>
               <p className="mt-6 leading-relaxed text-brand-body">
                 A1 Property Services {startedInYearPhrase()} with one goal: do good work and keep showing up. Retaining walls, paver patios, full yard installs, seasonal maintenance. Big jobs and small ones.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We&rsquo;ve served towns across the Cedar Valley {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
+                We&rsquo;ve served Cedar Falls, Waterloo, and Black Hawk County {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/landscaping-services-in-cedar-falls">
@@ -407,7 +410,7 @@ export default function HomePage() {
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-brand-body">
                   <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
-                  Free on-site estimates for Cedar Valley homeowners
+                  Free on-site estimates in Cedar Falls, Waterloo &amp; Black Hawk County
                 </li>
                 <li className="flex items-start gap-3 text-sm text-brand-body">
                   <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
@@ -418,21 +421,23 @@ export default function HomePage() {
                   Response within one business day
                 </li>
               </ul>
-              <a
-                href={`tel:${siteConfig.phone}`}
+              <TrackPhoneLink
+                location="Homepage Estimate"
                 className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-gold"
               >
                 <Phone size={16} className="text-brand-gold" />
                 Or call {siteConfig.phoneDisplay}
-              </a>
+              </TrackPhoneLink>
             </FadeIn>
 
             <FadeIn delay={0.1}>
               <div className="form-card">
                 <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
-                <p className="mt-1 text-sm text-brand-muted">Fill out the form and we&rsquo;ll be in touch shortly.</p>
+                <p className="mt-1 text-sm text-brand-muted">
+                  Name and phone are enough — we&rsquo;ll take it from there.
+                </p>
                 <div className="mt-6">
-                  <QuoteForm variant="light" formLocation="Homepage" />
+                  <QuoteForm variant="light" formLocation="Homepage" compact />
                 </div>
               </div>
             </FadeIn>
@@ -446,7 +451,7 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2">
             <FadeIn direction="left">
               <p className="section-eyebrow">Find Us</p>
-              <h2 className="section-heading mt-3">Serving the Cedar Valley</h2>
+              <h2 className="section-heading mt-3">Serving Cedar Falls, Waterloo &amp; Black Hawk County</h2>
               <p className="mt-4 text-brand-body">
                 A1 Property Services is a locally owned and operated{' '}
                 <Link
@@ -455,7 +460,7 @@ export default function HomePage() {
                 >
                   landscaping company
                 </Link>{' '}
-                based in Cedar Falls, Iowa. We serve homeowners throughout the Cedar Valley.
+                based in Cedar Falls, Iowa (50613). We serve Waterloo and Black Hawk County homeowners — Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City included.
               </p>
               <div className="mt-8 space-y-3 text-sm text-brand-body">
                 <p className="flex items-center gap-2">
@@ -464,9 +469,12 @@ export default function HomePage() {
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone size={16} className="text-brand-gold shrink-0" />
-                  <a href={`tel:${siteConfig.phone}`} className="link-touch text-brand-green-800 transition-colors hover:underline">
+                  <TrackPhoneLink
+                    location="Homepage Map"
+                    className="link-touch text-brand-green-800 transition-colors hover:underline"
+                  >
                     {siteConfig.phoneDisplay}
-                  </a>
+                  </TrackPhoneLink>
                 </p>
               </div>
             </FadeIn>

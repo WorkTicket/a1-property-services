@@ -209,7 +209,7 @@ export const services: Service[] = [
     slug: 'residential-landscaping',
     icon: 'home',
     name: 'Residential Landscaping',
-    shortDesc: 'Full-service landscaping for Cedar Valley homes.',
+    shortDesc: 'Full-service landscaping for Cedar Falls and Waterloo homes.',
     longDesc:
       'Your yard should be a place you actually use. From full yard overhauls to weekly mowing and seasonal cleanups, we handle design, installation, and maintenance that fits your budget and how your family lives.',
     anchorId: 'residential',
@@ -369,7 +369,7 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
   ],
   'landscape-installation': [
     { problem: 'Your yard has bare patches, overgrown areas, and no clear plan', solution: 'We start fresh with a complete plan: grading, soil prep, plant selection, and installation. The result is a yard where everything fits together and works with your property.' },
-    { problem: 'You bought plants that looked good at the nursery but died in Iowa clay', solution: 'We select plants proven to thrive in Cedar Valley soil and climate. Proper soil preparation and planting technique give them the best start.' },
+    { problem: 'You bought plants that looked good at the nursery but died in Iowa clay', solution: 'We select plants proven to thrive in Black Hawk County soil and climate. Proper soil preparation and planting technique give them the best start.' },
     { problem: 'DIY landscaping projects never look as polished as professional work', solution: 'Professional installation means proper spacing, clean edges, correct planting depth, and materials that hold up. The finished look is night and day from DIY.' },
   ],
   'lawn-care': [
@@ -484,7 +484,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Excavation & Base Prep',
       description:
-        'A compacted gravel base and proper footing depth give your retaining wall the stability it needs on Cedar Valley slopes.',
+        'A compacted gravel base and proper footing depth give your retaining wall the stability it needs on local slopes.',
     },
     {
       title: 'Drainage & Backfill',
@@ -736,7 +736,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Customized Care Program',
       description:
-        'We build a mowing, fertilization, aeration, and weed control schedule matched to your lawn and the Cedar Valley growing season.',
+        'We build a mowing, fertilization, aeration, and weed control schedule matched to your lawn and the Cedar Falls, Waterloo, and Black Hawk County growing season.',
     },
     {
       title: 'Regular Service Visits',
@@ -1011,7 +1011,7 @@ export type ServiceExtendedContent = {
 
 export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'landscape-installation': {
-    heading: 'Complete Landscape Installation for Cedar Valley Homes',
+    heading: 'Complete Landscape Installation for Cedar Falls and Waterloo Homes',
     paragraphs: [
       'A full landscape installation transforms your yard from the ground up. We handle grading, soil preparation, bed layout, hardscape integration, and planting in the right order so every layer performs the way it should.',
       'Our installation process starts with a site assessment and plant selection for Iowa growing conditions. We prep soil, install drainage where needed, lay mulch and edging, and plant at the right depth and spacing. The result is a landscape that looks finished from day one and gets better as plants mature.',
@@ -1020,7 +1020,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'lawn-care': {
     heading: 'Professional Lawn Care Built for Iowa Grass',
     paragraphs: [
-      'Healthy lawns in the Cedar Valley need more than weekly mowing. We combine proper mowing height, seasonal aeration, timed fertilization, and targeted weed control to keep your grass thick and resilient through Iowa heat and cold.',
+      'Healthy lawns in the Cedar Falls, Waterloo, and Black Hawk County need more than weekly mowing. We combine proper mowing height, seasonal aeration, timed fertilization, and targeted weed control to keep your grass thick and resilient through Iowa heat and cold.',
       'Our lawn care program is adjusted for your turf type, soil, and sun exposure. We aerate compacted soil in fall, fertilize at key growth stages, and treat weeds before they spread. You get a lawn that looks good all season without managing the schedule yourself.',
     ],
   },
@@ -1032,7 +1032,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'tree-service': {
-    heading: 'Safe, Professional Tree Service in the Cedar Valley',
+    heading: 'Safe, Professional Tree Service in the Cedar Falls, Waterloo, and Black Hawk County',
     paragraphs: [
       'Mature trees add shade, privacy, and property value, but they also need skilled care. We provide pruning, hazard removal, stump grinding, and disease management with equipment sized for residential properties and crews trained for safe work around structures.',
       'Our tree service includes crown thinning and deadwood removal to reduce storm risk, stump grinding after removals, and diagnosis of common Iowa tree pests and diseases. We recommend the right treatment or removal before small problems become expensive emergencies.',
@@ -1048,7 +1048,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'retaining-walls': {
     heading: 'Why Local Homeowners Choose Our Retaining Walls',
     paragraphs: [
-      'Retaining walls are one of the most practical upgrades for sloped Cedar Valley properties. A properly installed wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
+      'Retaining walls are one of the most practical upgrades for sloped Cedar Falls and Waterloo properties. A properly installed wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
       'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install includes gravel backfill, drain pipe, and proper base compaction, whether block, stone, or concrete, for walls that stand for decades.',
     ],
     relatedBlogSlug: 'retaining-wall-benefits-cedar-falls',
@@ -1070,7 +1070,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     relatedBlogSlug: 'driveway-paver-installation',
   },
   'ponds-water-features': {
-    heading: 'Custom Water Features for Cedar Valley Properties',
+    heading: 'Custom Water Features for Cedar Falls and Waterloo Properties',
     paragraphs: [
       'Water features add movement, sound, and a natural centerpiece to any landscape. From compact pondless waterfalls for smaller yards to full koi ponds with streams and bridges, we design and install water features that fit what is already in your yard.',
       'Every water feature installation includes proper pump sizing, filtration, and winterization planning. We work with natural stone and boulders to create features that look like they belong on your property, not a kit dropped in the yard.',
@@ -1084,21 +1084,21 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'snow-removal': {
-    heading: 'Reliable Snow Removal for Cedar Valley Properties',
+    heading: 'Reliable Snow Removal for Cedar Falls and Waterloo Properties',
     paragraphs: [
       'Iowa storms do not wait for a convenient time. Our contracted snow removal covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
       'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm. Seasonal contracts lock in pricing before winter starts — call (319) 464-1889 to reserve your route.',
     ],
   },
   'landscape-design': {
-    heading: 'Thoughtful Landscape Design for Cedar Valley Homes',
+    heading: 'Thoughtful Landscape Design for Cedar Falls and Waterloo Homes',
     paragraphs: [
       'Good landscape design starts with how you actually use your yard. We create scaled site plans that account for sun patterns, existing trees, drainage, views, and traffic flow. Formal garden, native plantings, or a backyard built for hosting: we design around what matters to you.',
       'Our design process includes plant selection for Iowa hardiness zones, hardscape placement for practical use, and lighting plans to extend enjoyment into the evening. We provide printed plans, plant lists, and phased implementation timelines so you can build your landscape at your pace.',
     ],
   },
   'drainage': {
-    heading: 'Solving Drainage Problems on Cedar Valley Properties',
+    heading: 'Solving Drainage Problems on Cedar Falls and Waterloo Properties',
     paragraphs: [
       'Standing water, soggy lawns, and basement moisture are signs your yard needs better drainage. We diagnose the root cause, whether that is poor grading, compacted soil, inadequate downspout routing, or a high water table, and install targeted solutions.',
       'French drains collect and redirect subsurface water through perforated pipe in gravel trenches. Surface drainage systems use catch basins and channel drains to move water from low spots. Grading recontours the yard surface to direct runoff away from your foundation. We combine these approaches when needed for complete drainage solutions on Iowa properties.',
@@ -1140,7 +1140,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'tree-planting': {
-    heading: 'Strategic Tree Planting for Cedar Valley Properties',
+    heading: 'Strategic Tree Planting for Cedar Falls and Waterloo Properties',
     paragraphs: [
       'The right tree in the right spot provides decades of shade, privacy, and curb appeal. We select Iowa-hardy species matched to your soil, sun exposure, and space, then plant at the correct depth with amended backfill.',
       'Our tree planting service includes site evaluation, species recommendations for your goals, proper planting technique, mulch rings, and initial watering guidance. Trees planted correctly establish faster and avoid common problems like girdling roots and depth issues.',
@@ -1154,17 +1154,17 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'commercial-landscaping': {
-    heading: 'Commercial Landscape Services Across the Cedar Valley',
+    heading: 'Commercial Landscape Services Across the Cedar Falls, Waterloo, and Black Hawk County',
     paragraphs: [
       'Commercial properties require consistent, professional landscaping that maintains curb appeal year-round. We provide scheduled maintenance, seasonal enhancements, and hardscape construction for office parks, retail centers, HOAs, and industrial properties.',
       'Our commercial clients value reliable scheduling, clear communication, and single-invoice simplicity. We handle everything from weekly mowing and pruning to snow removal and full hardscape installations, so property managers have one less thing to worry about.',
     ],
   },
   'residential-landscaping': {
-    heading: 'Full-Service Residential Landscaping in the Cedar Valley',
+    heading: 'Full-Service Residential Landscaping in the Cedar Falls, Waterloo, and Black Hawk County',
     paragraphs: [
       'Residential landscaping should match how you actually live in your yard. We handle design, installation, and ongoing maintenance, from complete yard overhauls to weekly mowing and seasonal cleanups, scoped to your budget and priorities.',
-      'Whether you need a new patio and plantings, drainage fixes, or a maintenance plan that keeps things handled, we coordinate the full job under one contractor. Cedar Valley homeowners get one team for design through install and seasonal care.',
+      'Whether you need a new patio and plantings, drainage fixes, or a maintenance plan that keeps things handled, we coordinate the full job under one contractor. Cedar Falls and Waterloo homeowners get one team for design through install and seasonal care.',
     ],
   },
   'grading': {
@@ -1185,7 +1185,7 @@ export const servicesHubFaqs: ServiceFAQ[] = [
   {
     question: 'Do you serve areas outside Cedar Falls?',
     answer:
-      'Yes. We serve the greater Cedar Valley. Contact us to confirm service availability for your property.',
+      'Yes. We serve Waterloo and Black Hawk County, Iowa — including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City. We are based in Cedar Falls at 503 Bergstrom Blvd.',
   },
   {
     question: 'Do you offer free estimates?',
@@ -1209,7 +1209,7 @@ export const serviceBenefits: Record<string, string[]> = {
   'lawn-care': [
     'Mowing at the right height for Iowa grass',
     'Core aeration to loosen compacted soil',
-    'Fertilizer timed for the Cedar Valley growing season',
+    'Fertilizer timed for the Cedar Falls, Waterloo, and Black Hawk County growing season',
     'Weed control for the weeds actually in your lawn',
   ],
   'preservation-restoration': [
@@ -1222,7 +1222,7 @@ export const serviceBenefits: Record<string, string[]> = {
     'Pruning and thinning for tree health and storm safety',
     'Tree removal with stump grinding when you need a clean slate',
     'Diagnosis and treatment for common Iowa tree problems',
-    'Storm damage cleanup across the Cedar Valley',
+    'Storm damage cleanup across the Cedar Falls, Waterloo, and Black Hawk County',
   ],
   'landscape-maintenance': [
     'Pruning, edging, and bed work through the year',
@@ -1356,7 +1356,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'What kind of plants work best?',
-      answer: 'We select plants proven to thrive in Cedar Valley clay soil and climate. Native perennials, Iowa-hardy shrubs, and cool-season grasses perform best and require less water and maintenance.',
+      answer: 'We select plants proven to thrive in Cedar Falls and Waterloo clay soil and climate. Native perennials, Iowa-hardy shrubs, and cool-season grasses perform best and require less water and maintenance.',
     },
     {
       question: 'Do you remove existing landscaping before installing new?',
@@ -1390,7 +1390,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   'lawn-care': [
     {
       question: 'How often do you mow lawns?',
-      answer: 'We typically mow weekly during the growing season, adjusting frequency based on growth rate, rainfall, and seasonal conditions across the Cedar Valley.',
+      answer: 'We typically mow weekly during the growing season, adjusting frequency based on growth rate, rainfall, and seasonal conditions across the Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'Do you offer lawn fertilization programs?',
@@ -1401,8 +1401,8 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       answer: 'Yes. We handle residential and commercial properties of all sizes. Contact us for a quote based on your specific property.',
     },
     {
-      question: 'What type of grass works best for Cedar Valley lawns?',
-      answer: 'Kentucky bluegrass and tall fescue are the top choices for Cedar Valley lawns. Bluegrass provides a dense, dark green turf while fescue offers better drought tolerance.',
+      question: 'What type of grass works best for Cedar Falls and Waterloo lawns?',
+      answer: 'Kentucky bluegrass and tall fescue are the top choices for Cedar Falls and Waterloo lawns. Bluegrass provides a dense, dark green turf while fescue offers better drought tolerance.',
     },
     {
       question: 'How do you handle weed control in lawns?',
@@ -1472,7 +1472,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'Do you offer commercial landscape maintenance?',
-      answer: 'Yes. We provide maintenance services for commercial properties including HOA common areas, office parks, and retail centers across the Cedar Valley.',
+      answer: 'Yes. We provide maintenance services for commercial properties including HOA common areas, office parks, and retail centers across the Cedar Falls, Waterloo, and Black Hawk County.',
     },
   ],
   'ponds-water-features': [
@@ -1564,7 +1564,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'What materials do you use for retaining walls?',
       answer:
-        'We install segmental concrete block and natural stone retaining walls, selected for durability, drainage performance, and appearance on Cedar Valley properties.',
+        'We install segmental concrete block and natural stone retaining walls, selected for durability, drainage performance, and appearance on Cedar Falls and Waterloo properties.',
     },
     {
       question: 'How long does retaining wall installation take?',
@@ -1584,7 +1584,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'Do retaining walls add property value?',
       answer:
-        'Yes. A well-built retaining wall adds usable yard space, prevents erosion, and improves curb appeal. Real estate agents in the Cedar Valley consider retaining walls a valuable feature.',
+        'Yes. A well-built retaining wall adds usable yard space, prevents erosion, and improves curb appeal. Real estate agents in the Cedar Falls, Waterloo, and Black Hawk County consider retaining walls a valuable feature.',
     },
     {
       question: 'Can a retaining wall fix my drainage problem?',
@@ -1842,7 +1842,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   'tree-planting': [
     {
       question: 'What trees grow best?',
-      answer: 'Native Iowa trees like oaks, maples, hackberry, and serviceberry perform well in Cedar Valley soil. We also recommend disease-resistant elm and linden varieties for longevity.',
+      answer: 'Native Iowa trees like oaks, maples, hackberry, and serviceberry perform well in Black Hawk County soil. We also recommend disease-resistant elm and linden varieties for longevity.',
     },
     {
       question: 'How far from my house should I plant a tree?',
@@ -1878,7 +1878,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'What size commercial properties do you serve?',
-      answer: 'We serve properties of all sizes, from small retail centers and office parks to large HOA communities and industrial facilities across the Cedar Valley.',
+      answer: 'We serve properties of all sizes, from small retail centers and office parks to large HOA communities and industrial facilities across the Cedar Falls, Waterloo, and Black Hawk County.',
     },
   ],
   'residential-landscaping': [
@@ -1936,7 +1936,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'Can I use my outdoor kitchen in the spring and fall?',
-      answer: 'Yes. Fire pits, patio heaters, and overhead infrared heaters extend your outdoor living season from early spring through late fall in the Cedar Valley.',
+      answer: 'Yes. Fire pits, patio heaters, and overhead infrared heaters extend your outdoor living season from early spring through late fall in the Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'What appliances work best in outdoor kitchens?',
@@ -2327,7 +2327,7 @@ export const serviceMaterials: Record<string, Material[]> = {
         'Rich color and natural appearance',
         'Adds organic matter to soil as it decomposes',
         'Holds moisture and suppresses weeds effectively',
-        'Affordable and widely available in the Cedar Valley',
+        'Affordable and widely available in the Cedar Falls, Waterloo, and Black Hawk County',
       ],
       cons: [
         'Needs annual refresh as it breaks down',
@@ -2851,7 +2851,7 @@ export const serviceMaterials: Record<string, Material[]> = {
       name: 'Bluegrass / Fescue Blend Sod',
       pros: [
         'Combines bluegrass beauty with fescue drought tolerance',
-        'Most popular sod choice for Cedar Valley residential lawns',
+        'Most popular sod choice for Cedar Falls and Waterloo residential lawns',
         'Balanced performance in Iowa sun and partial shade',
         'Good traffic tolerance once established',
       ],
@@ -3082,7 +3082,7 @@ export const serviceMaterials: Record<string, Material[]> = {
         'Adapted to Iowa soil, climate, and rainfall patterns',
         'Support local pollinators and wildlife',
         'Lower water needs once established',
-        'Natural appearance that fits Cedar Valley landscapes',
+        'Natural appearance that fits Cedar Falls and Waterloo landscapes',
       ],
       cons: [
         'Less formal appearance than cultivated varieties',

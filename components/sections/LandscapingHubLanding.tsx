@@ -10,6 +10,7 @@ import {
   webPageJsonLd,
 } from '@/lib/metadata'
 import { landscapingHubPage } from '@/lib/landscaping-hub-page'
+import { primaryAreaServedSchema } from '@/lib/service-area'
 import { hubGalleryPreview } from '@/lib/images'
 import { CTA_COPY } from '@/lib/cta'
 import { yearsInBusinessLabel } from '@/lib/years-in-business'
@@ -63,11 +64,7 @@ export default function LandscapingHubLanding() {
     serviceType: 'Landscaping',
     name: 'Landscaping in Cedar Falls, IA',
     provider: { '@id': `${siteConfig.url}/#organization` },
-    areaServed: [
-      { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
-      { '@type': 'Place', name: 'Cedar Valley, Iowa' },
-    ],
+    areaServed: [...primaryAreaServedSchema],
     description: page.description,
     url: `${siteConfig.url}${page.path}`,
     image: `${siteConfig.url}${page.heroImage}`,
@@ -217,7 +214,7 @@ export default function LandscapingHubLanding() {
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-brand-body">
                   <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
-                  Free on-site estimates for Cedar Valley homeowners
+                  Free on-site estimates in Cedar Falls, Waterloo &amp; Black Hawk County
                 </li>
                 <li className="flex items-start gap-3 text-sm text-brand-body">
                   <Check size={18} className="mt-0.5 shrink-0 text-brand-gold" />
@@ -282,7 +279,7 @@ export default function LandscapingHubLanding() {
           <FadeIn className="flex items-end justify-between">
             <div>
               <p className="section-eyebrow">Recent Projects</p>
-              <h2 className="section-heading mt-3">Work Across the Cedar Valley</h2>
+              <h2 className="section-heading mt-3">Work in Cedar Falls, Waterloo &amp; Black Hawk County</h2>
               <p className="mt-2 max-w-xl text-brand-body">
                 Real work from homes we serve — retaining walls, patios, water features, and full installs.
               </p>
@@ -370,8 +367,9 @@ export default function LandscapingHubLanding() {
 
       <CtaBanner
         title="Get Your Free Landscaping Estimate"
-        description="Tell us about your landscaping project. We serve homes across the Cedar Valley."
+        description="Tell us about your landscaping project. We serve homes in Cedar Falls, Waterloo, and Black Hawk County, Iowa."
         eyebrow="Free Estimate"
+        quoteHref="#estimate"
       />
     </>
   )

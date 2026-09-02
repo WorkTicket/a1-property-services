@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { markLeadSubmitted, trackFormSubmit, trackQuoteFormView } from '@/lib/analytics'
+import { markLeadSubmitted, trackFormSubmit, trackQuoteFormView, trackPhoneCall } from '@/lib/analytics'
 import { contactFormEndpoint, thankYouPath } from '@/lib/contact'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
@@ -385,7 +385,11 @@ export default function QuoteForm({
       {serverError ? (
         <p className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
           {serverError}{' '}
-          <a href={`tel:${siteConfig.phone}`} className="font-semibold underline">
+          <a
+            href={`tel:${siteConfig.phone}`}
+            className="font-semibold underline"
+            onClick={() => trackPhoneCall('Quote Form Error')}
+          >
             Call {siteConfig.phoneDisplay}
           </a>{' '}
           instead.

@@ -177,7 +177,7 @@ export default function BlogPostPage({ params }: Props) {
 
       <CtaBanner
         title="Ready to start your project?"
-        description="Contact A1 Property Services for a free quote on landscaping and hardscaping in the Cedar Valley."
+        description="Contact A1 Property Services for a free quote on landscaping and hardscaping in Cedar Falls, Waterloo, and Black Hawk County."
       />
 
       <RelatedContent groups={relatedGroups} />

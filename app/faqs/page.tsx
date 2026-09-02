@@ -6,6 +6,7 @@ import { getServiceLinksForFaq } from '@/lib/internal-linking'
 import { siteImages } from '@/lib/images'
 import RelatedContent from '@/components/sections/RelatedContent'
 import FaqSectionCta from '@/components/sections/FaqSectionCta'
+import EstimateSection from '@/components/sections/EstimateSection'
 import PageHero from '@/components/motion/PageHero'
 import FaqAccordion from '@/components/ui/FaqAccordion'
 import FadeIn from '@/components/motion/FadeIn'
@@ -13,7 +14,7 @@ import FadeIn from '@/components/motion/FadeIn'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping FAQs',
   description:
-    'Frequently asked questions about landscaping, hardscaping, lawn care, and property services in Cedar Falls and the Cedar Valley.',
+    'Frequently asked questions about landscaping, hardscaping, lawn care, and property services in Cedar Falls, Waterloo, and Black Hawk County, Iowa.',
   path: '/faqs',
 })
 
@@ -23,7 +24,7 @@ export default function FaqsPage() {
 
   const pageSchema = webPageJsonLd({
     name: 'Landscaping FAQs | A1 Property Services',
-    description: 'Frequently asked questions about landscaping, hardscaping, lawn care, and property services in Cedar Falls and the Cedar Valley.',
+    description: 'Frequently asked questions about landscaping, hardscaping, lawn care, and property services in Cedar Falls, Waterloo, and Black Hawk County, Iowa.',
     path: '/faqs',
     about: 'Landscaping FAQs',
   })
@@ -48,7 +49,7 @@ export default function FaqsPage() {
 
       <PageHero
         imageSrc={siteImages.faqsHero}
-        imageAlt="Manicured Cedar Valley backyard with stone patio and garden beds"
+        imageAlt="Manicured Cedar Falls backyard with stone patio and garden beds"
         eyebrow="Questions & Answers"
         title="Landscaping|FAQs"
         subtitle="Common questions about our services, processes, and what to expect when you work with A1 Property Services."
@@ -57,7 +58,7 @@ export default function FaqsPage() {
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <p className="text-lg leading-relaxed text-brand-body">
-            Browse frequently asked questions about our landscaping and hardscaping services in Cedar Falls and the Cedar Valley. Click a service below to jump to specific answers, or scroll through our general FAQs.
+            Browse frequently asked questions about our landscaping and hardscaping services in Cedar Falls, Waterloo, and Black Hawk County. Click a service below to jump to specific answers, or scroll through our general FAQs.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {faqPageServices.map((s) => (
@@ -70,7 +71,7 @@ export default function FaqsPage() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="#estimate"
               className="rounded-full border border-brand-green-700 bg-brand-green-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-green-800"
             >
               Ask a Question
@@ -97,7 +98,7 @@ export default function FaqsPage() {
           <FadeIn className="section-inner-narrow">
             <h2 className="section-heading">{service.name} FAQs</h2>
             <p className="mt-3 text-brand-body">
-              Common questions about {service.name.toLowerCase()} in Cedar Falls and the Cedar Valley.
+              Common questions about {service.name.toLowerCase()} in Cedar Falls, Waterloo, and Black Hawk County.
             </p>
             <div className="mt-8">
               <FaqAccordion
@@ -119,6 +120,13 @@ export default function FaqsPage() {
         heading: 'Our Services',
         items: getServiceLinksForFaq(6),
       }]} />
+
+      <EstimateSection
+        formLocation="FAQs"
+        heading="Still Have Questions?"
+        description="Send us your project details and we'll follow up with answers and a free estimate."
+        defaultCity="Cedar Falls"
+      />
     </>
   )
 }

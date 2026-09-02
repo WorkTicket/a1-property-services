@@ -13,6 +13,7 @@ import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
+import EstimateSection from '@/components/sections/EstimateSection'
 import HubPagePromo from '@/components/sections/HubPagePromo'
 import { landscapingHubAnchor, landscapingHubPath } from '@/lib/internal-linking'
 import PageHero from '@/components/motion/PageHero'
@@ -57,7 +58,7 @@ const trustPoints = [
   {
     icon: <MapPin className="h-6 w-6" />,
     title: 'Locally Owned & Operated',
-    desc: 'Based in the Cedar Valley. We know the soil, the seasons, and what works here.',
+    desc: 'Based in Cedar Falls, Iowa. We know Black Hawk County soil, seasons, and what lasts here.',
   },
   {
     icon: <Check className="h-6 w-6" />,
@@ -67,7 +68,7 @@ const trustPoints = [
   {
     icon: <Star className="h-6 w-6" />,
     title: '5-Star Rated',
-    desc: 'Built on quality work and reliable service across the Cedar Valley.',
+    desc: 'Built on quality work and reliable service in Cedar Falls, Waterloo, and Black Hawk County.',
   },
 ]
 
@@ -90,7 +91,11 @@ export default function CityPage({ params }: Props) {
     areaServed: {
       '@type': 'City',
       name: city.name,
-      containedInPlace: { '@type': 'State', name: 'Iowa' },
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: `${city.county} County`,
+        containedInPlace: { '@type': 'State', name: 'Iowa' },
+      },
     },
   }
 
@@ -102,7 +107,7 @@ export default function CityPage({ params }: Props) {
     name: city.metaTitle,
     description: city.metaDescription,
     path: `/${city.slug}`,
-    about: `Landscaping in ${city.name}`,
+    about: `Landscaping in ${city.name}, Iowa`,
   })
 
   return (
@@ -161,16 +166,20 @@ export default function CityPage({ params }: Props) {
                     <Button href={landscapingHubPath}>
                       View Landscaping Cedar Falls
                     </Button>
-                    <Button href="/contact" variant="outline">
+                    <Button href="#estimate" variant="outline" trackLabel={`${city.name} Intro Quote`}>
                       {CTA_COPY.quote}
                     </Button>
                   </>
                 ) : (
                   <>
-                    <Button href="/contact">
+                    <Button href="#estimate" trackLabel={`${city.name} Intro Quote`}>
                       {CTA_COPY.quote}
                     </Button>
-                    <Button href={`tel:${siteConfig.phone}`} variant="outline">
+                    <Button
+                      href={`tel:${siteConfig.phone}`}
+                      variant="outline"
+                      trackLabel={`${city.name} Intro Phone`}
+                    >
                       <Phone size={16} />
                       {siteConfig.phoneDisplay}
                     </Button>
@@ -262,7 +271,7 @@ export default function CityPage({ params }: Props) {
                       >
                         {CTA_COPY.learnMore}
                       </Button>
-                      <Button href="/contact" size="xs" fullWidth className="sm:w-auto">
+                      <Button href="#estimate" size="xs" fullWidth className="sm:w-auto" trackLabel={`${city.name} Hardscape Quote`}>
                         {CTA_COPY.quote}
                       </Button>
                     </div>
@@ -360,12 +369,12 @@ export default function CityPage({ params }: Props) {
           <p className="section-eyebrow">See Our Work</p>
           <h2 className="section-heading mt-3">
             {city.isCedarValley
-              ? 'Completed Projects in the Cedar Valley'
+              ? 'Completed Projects in Cedar Falls & Waterloo'
               : 'View Our Completed Projects'}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-brand-body">
             {city.isCedarValley
-              ? `Browse before and after photos of real projects in ${city.name} and across the Cedar Valley.`
+              ? `Browse before and after photos of real projects in ${city.name} and across Black Hawk County.`
               : 'Browse before and after photos of our landscaping and hardscaping projects.'}
           </p>
           <Button href="/gallery" className="mt-8">
@@ -390,12 +399,25 @@ export default function CityPage({ params }: Props) {
 
       <RelatedContent groups={getAllRelatedGroups('city', params.city)} />
 
+      <EstimateSection
+        formLocation={`City ${city.name}`}
+        heading={`Free Landscaping Quote in ${city.name}`}
+        description={`Tell us about your ${city.name} project. We'll get back within 24 hours with honest pricing.`}
+        defaultCity={city.name}
+        bulletPoints={[
+          `Free on-site estimates in ${city.name}`,
+          'Licensed & insured Iowa contractor',
+          'Response within one business day',
+        ]}
+      />
+
       <CtaBanner
         eyebrow="Get Started"
         title={`Ready to Start Your ${city.name} Project?`}
         description="Call us today or request a free quote online. We will get back to you within 24 hours."
         animated
         titleClassName="section-heading text-white"
+        quoteHref="#estimate"
       />
     </>
   )

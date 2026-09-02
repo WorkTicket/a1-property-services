@@ -3,12 +3,12 @@ import path from 'path'
 
 const SITE_URL = 'https://a1pslandscape.com'
 const SITE_NAME = 'A1 Property Services'
-const SITE_DESC = 'Landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, IA and the Cedar Valley.'
+const SITE_DESC = 'Landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, Waterloo, and Black Hawk County, Iowa.'
 
 const blogPosts = [
   {
     slug: 'outdoor-living-trends-2025',
-    title: 'Outdoor Living Trends in the Cedar Valley',
+    title: 'Outdoor Living Trends in Cedar Falls & Waterloo',
     excerpt: 'Popular outdoor living features Cedar Falls homeowners are adding this year.',
     date: '2025-07-01',
     category: 'Outdoor Living',
@@ -30,14 +30,14 @@ const blogPosts = [
   {
     slug: 'french-drain-cost-iowa',
     title: 'French Drain Cost in Iowa: What to Expect',
-    excerpt: 'Average pricing for French drain installation in Cedar Falls and the Cedar Valley.',
+    excerpt: 'Average pricing for French drain installation in Cedar Falls and Waterloo.',
     date: '2025-06-01',
     category: 'Drainage',
   },
   {
     slug: 'common-drainage-problems-iowa',
     title: 'Common Drainage Problems on Iowa Properties',
-    excerpt: 'Identify and fix the most common yard drainage issues in the Cedar Valley.',
+    excerpt: 'Identify and fix the most common yard drainage issues in Black Hawk County.',
     date: '2025-05-20',
     category: 'Drainage',
   },
@@ -51,7 +51,7 @@ const blogPosts = [
   {
     slug: 'landscaping-costs-cedar-falls',
     title: 'Landscaping Costs in Cedar Falls: What to Expect',
-    excerpt: 'Average pricing for landscaping services in Cedar Falls and the Cedar Valley area.',
+    excerpt: 'Average pricing for landscaping services in Cedar Falls, Waterloo, and Black Hawk County.',
     date: '2025-05-01',
     category: 'Pricing',
   },
@@ -78,8 +78,8 @@ const blogPosts = [
   },
   {
     slug: 'spring-landscape-maintenance-checklist',
-    title: 'Spring Landscape Maintenance Checklist for Cedar Valley Homeowners',
-    excerpt: 'A practical spring cleanup checklist from local landscaping pros in the Cedar Valley.',
+    title: 'Spring Landscape Maintenance Checklist for Cedar Falls & Waterloo Homeowners',
+    excerpt: 'A practical spring cleanup checklist from local landscaping pros in Black Hawk County.',
     date: '2025-04-01',
     category: 'Maintenance',
   },
@@ -93,14 +93,14 @@ const blogPosts = [
   {
     slug: 'retaining-wall-benefits-cedar-falls',
     title: 'Why Retaining Walls Are Essential for Iowa Sloped Yards',
-    excerpt: 'How a properly built retaining wall stops erosion, adds usable space, and holds up on Cedar Valley slopes.',
+    excerpt: 'How a properly built retaining wall stops erosion, adds usable space, and holds up on Iowa slopes.',
     date: '2025-03-12',
     category: 'Hardscaping',
   },
   {
     slug: 'paver-patio-planning-guide',
     title: 'Planning Your Paver Patio: Size, Pattern & Drainage',
-    excerpt: 'A few things to think about before you break ground on a new patio in the Cedar Valley.',
+    excerpt: 'A few things to think about before you break ground on a new patio in Cedar Falls or Waterloo.',
     date: '2025-02-08',
     category: 'Patios & Hardscape',
   },

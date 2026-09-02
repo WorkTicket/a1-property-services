@@ -27,7 +27,7 @@ export const galleryCategoryMeta: Record<
   },
   water: {
     heading: 'Water Features',
-    description: 'Custom ponds, waterfalls, and water gardens built across the Cedar Valley.',
+    description: 'Custom ponds, waterfalls, and water gardens built in Cedar Falls, Waterloo, and Black Hawk County.',
   },
   'paver-patios': {
     heading: 'Paver Patios',

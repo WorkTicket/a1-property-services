@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
 
 type ButtonVariant = 'primary' | 'ghost' | 'ghost-dark' | 'outline' | 'outline-on-dark' | 'white'
 type ButtonSize = 'default' | 'sm' | 'lg' | 'xs'
@@ -12,6 +13,8 @@ type BaseProps = {
   fullWidth?: boolean
   className?: string
   children: React.ReactNode
+  /** Optional analytics label for phone/CTA tracking */
+  trackLabel?: string
 }
 
 type ButtonAsButton = BaseProps & React.ButtonHTMLAttributes<HTMLButtonElement> & { href?: never }
@@ -40,20 +43,37 @@ function isExternalHref(href: string) {
 }
 
 export default function Button(props: ButtonAsButton | ButtonAsLink) {
-  const { variant = 'primary', size = 'default', fullWidth, className, children, ...rest } = props
+  const {
+    variant = 'primary',
+    size = 'default',
+    fullWidth,
+    className,
+    children,
+    trackLabel,
+    ...rest
+  } = props
   const classes = cn(variants[variant], sizes[size], fullWidth && 'w-full', className)
 
   if ('href' in rest && rest.href) {
-    const { href, ...linkRest } = rest
+    const { href, onClick, ...linkRest } = rest
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (href.startsWith('tel:')) {
+        trackPhoneCall(trackLabel ?? 'Button Phone')
+      } else if (trackLabel) {
+        trackCtaClick(trackLabel)
+      }
+      onClick?.(e)
+    }
+
     if (isExternalHref(href)) {
       return (
-        <a href={href} className={classes} {...linkRest}>
+        <a href={href} className={classes} onClick={handleClick} {...linkRest}>
           {children}
         </a>
       )
     }
     return (
-      <Link href={href} className={classes} {...linkRest}>
+      <Link href={href} className={classes} onClick={handleClick} {...linkRest}>
         {children}
       </Link>
     )
