@@ -33,6 +33,15 @@ public/images/.*
 public/images/generated/.*
 reports/
 *.tmp
+.image-backups/
+.tmp-*/
+.tmp_*/
+*.log
+dep.json
+live.html
+live-headers.txt
+preview.html
+preview-headers.txt
 
 
 # Cloudflare Workers
