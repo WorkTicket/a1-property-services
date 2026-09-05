@@ -13,27 +13,15 @@ import {
   Trees,
   Layers,
   Droplets,
-  Home,
-  Building,
-  Snowflake,
+  TreeDeciduous,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
-import ServiceIcon from '@/components/ui/ServiceIcon'
 import { allServices, type Service, getServicePageHref, getLegacyLandingPageHref } from '@/lib/services'
 import { trackPhoneCall, trackNavigation } from '@/lib/analytics'
-
-const serviceCategories = [
-  { key: 'landscaping' as const, label: 'Landscaping', desc: 'Lawns, beds & tree care', icon: Trees },
-  { key: 'hardscaping' as const, label: 'Hardscaping', desc: 'Patios, driveways & walls', icon: Layers },
-  { key: 'drainage' as const, label: 'Drainage', desc: 'Water management solutions', icon: Droplets },
-  { key: 'outdoor-living' as const, label: 'Outdoor Living', desc: 'Fire pits & outdoor kitchens', icon: Home },
-  { key: 'commercial' as const, label: 'Commercial', desc: 'Business & HOA properties', icon: Building },
-  { key: 'seasonal' as const, label: 'Seasonal', desc: 'Snow removal & lighting', icon: Snowflake },
-]
 
 const serviceResourceLinks = [
   { label: 'Knowledge Center', href: '/learn' },
@@ -41,16 +29,75 @@ const serviceResourceLinks = [
   { label: 'FAQs', href: '/faqs' },
 ]
 
-const hardscapeSlugs = new Set(['retaining-walls', 'paver-patio', 'paver-driveway'])
+const megaMenuColumnDefs = [
+  {
+    key: 'landscaping',
+    label: 'Landscaping',
+    desc: 'Design, install & upkeep',
+    icon: Trees,
+    slugs: [
+      'landscape-design',
+      'landscape-installation',
+      'residential-landscaping',
+      'landscape-maintenance',
+      'preservation-restoration',
+      'mulching',
+    ],
+  },
+  {
+    key: 'lawn-trees',
+    label: 'Lawn & Trees',
+    desc: 'Turf, trees & plantings',
+    icon: TreeDeciduous,
+    slugs: [
+      'lawn-care',
+      'sod-installation',
+      'hydroseeding',
+      'tree-service',
+      'tree-planting',
+      'shrub-installation',
+    ],
+  },
+  {
+    key: 'hardscaping',
+    label: 'Hardscaping',
+    desc: 'Patios, walls & features',
+    icon: Layers,
+    slugs: [
+      'paver-patio',
+      'paver-driveway',
+      'retaining-walls',
+      'outdoor-living',
+      'ponds-water-features',
+      'rock-landscaping',
+    ],
+  },
+  {
+    key: 'site-work',
+    label: 'Site Work',
+    desc: 'Drainage, commercial & snow',
+    icon: Droplets,
+    slugs: [
+      'drainage',
+      'grading',
+      'excavation',
+      'commercial-landscaping',
+      'snow-removal',
+    ],
+  },
+] as const
 
-type ServiceCategoryKey = (typeof serviceCategories)[number]['key']
-
-function getCategoryServices(key: ServiceCategoryKey): Service[] {
-  if (key === 'hardscaping') {
-    return allServices.filter((s) => s.category === 'hardscaping' || hardscapeSlugs.has(s.slug))
-  }
-  return allServices.filter((s) => s.category === key)
+function servicesForSlugs(slugs: readonly string[]): Service[] {
+  return slugs.flatMap((slug) => {
+    const match = allServices.find((service) => service.slug === slug)
+    return match ? [match] : []
+  })
 }
+
+const megaMenuColumns = megaMenuColumnDefs.map((column) => ({
+  ...column,
+  services: servicesForSlugs(column.slugs),
+}))
 
 const learnLinks = [
   { label: 'Knowledge Center', href: '/learn' },
@@ -66,34 +113,34 @@ export default function Navbar() {
   const [learnOpen, setLearnOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobileLearnOpen, setMobileLearnOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [activeServiceCategory, setActiveServiceCategory] = useState<ServiceCategoryKey>('landscaping')
   const headerRef = useRef<HTMLElement>(null)
   const servicesRef = useRef<HTMLLIElement>(null)
+  const servicesMenuRef = useRef<HTMLDivElement>(null)
   const learnRef = useRef<HTMLLIElement>(null)
   const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const learnCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [mounted, setMounted] = useState(false)
-  const [headerHeight, setHeaderHeight] = useState(72)
+  const [headerHeight, setHeaderHeight] = useState(84)
 
-  const isCompact = scrolled
   const isServicesActive =
     pathname.startsWith('/services') || pathname === '/landscaping-services-in-cedar-falls'
   const isLearnActive = learnLinks.some((link) => pathname === link.href)
-  const activeCategoryMeta = serviceCategories.find((c) => c.key === activeServiceCategory)
-  const activeCategoryServices = getCategoryServices(activeServiceCategory)
 
   const openServicesMenu = () => {
     if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
+    if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
+    setLearnOpen(false)
     setServicesOpen(true)
   }
 
   const closeServicesMenu = () => {
-    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 150)
+    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 180)
   }
 
   const openLearnMenu = () => {
     if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
+    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
+    setServicesOpen(false)
     setLearnOpen(true)
   }
 
@@ -105,19 +152,8 @@ export default function Navbar() {
     setMobileOpen(false)
     setMobileServicesOpen(false)
     setMobileLearnOpen(false)
-  }, [pathname])
-
-  useEffect(() => {
-    const match = allServices.find(
-      (s) =>
-        pathname === `/services/${s.slug}` ||
-        pathname === getLegacyLandingPageHref(s.slug),
-    )
-    if (match?.category) {
-      setActiveServiceCategory(match.category)
-    } else if (match && hardscapeSlugs.has(match.slug)) {
-      setActiveServiceCategory('hardscaping')
-    }
+    setServicesOpen(false)
+    setLearnOpen(false)
   }, [pathname])
 
   useEffect(() => {
@@ -129,13 +165,6 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
@@ -155,13 +184,14 @@ export default function Navbar() {
       observer.disconnect()
       window.removeEventListener('resize', updateHeight)
     }
-  }, [isCompact])
+  }, [])
 
   useEffect(() => {
-    if (!mobileOpen) return
-
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMobileOpen(false)
+      if (event.key !== 'Escape') return
+      if (mobileOpen) setMobileOpen(false)
+      setServicesOpen(false)
+      setLearnOpen(false)
     }
 
     document.addEventListener('keydown', onKeyDown)
@@ -192,11 +222,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+      const target = e.target as Node
+      const inServicesTrigger = servicesRef.current?.contains(target)
+      const inServicesMenu = servicesMenuRef.current?.contains(target)
+      if (!inServicesTrigger && !inServicesMenu) {
         if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
         setServicesOpen(false)
       }
-      if (learnRef.current && !learnRef.current.contains(e.target as Node)) {
+      if (learnRef.current && !learnRef.current.contains(target)) {
         if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
         setLearnOpen(false)
       }
@@ -207,8 +240,7 @@ export default function Navbar() {
 
   const linkClass = (active: boolean) =>
     cn(
-      'relative whitespace-nowrap font-medium transition-colors duration-300',
-      isCompact ? 'text-sm' : 'text-sm lg:text-[0.9375rem]',
+      'relative whitespace-nowrap text-sm font-medium transition-colors duration-300 lg:text-[0.9375rem]',
       active ? 'text-brand-gold' : 'text-brand-dark hover:text-brand-gold',
     )
 
@@ -256,39 +288,37 @@ export default function Navbar() {
           >
             <div className="overflow-hidden border-l-2 border-brand-gold/30 pl-4">
               <Link
-                href="/landscaping-services-in-cedar-falls"
+                href="/services"
                 className={cn(
                   'block py-2 text-base font-semibold',
-                  pathname === '/landscaping-services-in-cedar-falls'
-                    ? 'text-brand-gold'
-                    : 'text-brand-dark',
+                  pathname === '/services' ? 'text-brand-gold' : 'text-brand-dark',
                 )}
-                onClick={() => { setMobileOpen(false); trackNavigation('Mobile Landscaping Hub') }}
-              >
-                Landscaping
-              </Link>
-              <Link
-                href="/services"
-                className="block py-2 text-base font-semibold text-brand-gold"
                 onClick={() => { setMobileOpen(false); trackNavigation('Mobile All Services') }}
               >
                 All Services
               </Link>
-              {allServices.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={getServicePageHref(service.slug)}
-                  className={cn(
-                    'block py-2 text-base',
-                    pathname === `/services/${service.slug}` ||
-                    pathname === getLegacyLandingPageHref(service.slug)
-                      ? 'font-semibold text-brand-gold'
-                      : 'text-brand-body',
-                  )}
-                  onClick={() => { setMobileOpen(false); trackNavigation(`Mobile ${service.name}`) }}
-                >
-                  {service.name}
-                </Link>
+              {megaMenuColumns.map((column) => (
+                <div key={column.key} className="pt-3">
+                  <p className="pb-1 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-brand-body/45">
+                    {column.label}
+                  </p>
+                  {column.services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={getServicePageHref(service.slug)}
+                      className={cn(
+                        'block py-2 text-base',
+                        pathname === `/services/${service.slug}` ||
+                        pathname === getLegacyLandingPageHref(service.slug)
+                          ? 'font-semibold text-brand-gold'
+                          : 'text-brand-body',
+                      )}
+                      onClick={() => { setMobileOpen(false); trackNavigation(`Mobile ${service.name}`) }}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
@@ -392,6 +422,138 @@ export default function Navbar() {
     </div>
   )
 
+  const desktopServicesMenu = (
+    <div
+      ref={servicesMenuRef}
+      id="desktop-services-menu"
+      className={cn(
+        'fixed inset-x-0 z-40 hidden lg:block',
+        servicesOpen ? 'pointer-events-auto' : 'pointer-events-none',
+      )}
+      style={{ top: headerHeight }}
+      onMouseEnter={openServicesMenu}
+      onMouseLeave={closeServicesMenu}
+      aria-hidden={!servicesOpen}
+    >
+      <div
+        className={cn(
+          'border-b border-black/[0.06] bg-white shadow-[0_24px_48px_-16px_rgba(0,0,0,0.18)] transition-all duration-300 ease-premium',
+          servicesOpen ? 'visible translate-y-0 opacity-100' : 'invisible translate-y-1 opacity-0',
+        )}
+      >
+        <div className="h-px bg-gradient-to-r from-transparent via-brand-gold/70 to-transparent" />
+
+        <div className="mx-auto grid max-w-7xl grid-cols-4 px-4 py-6 sm:px-6 lg:px-8">
+          {megaMenuColumns.map((column, index) => {
+            const ColumnIcon = column.icon
+            return (
+              <div
+                key={column.key}
+                className={cn(
+                  'min-w-0 px-3 lg:px-5',
+                  index > 0 && 'border-l border-black/[0.06]',
+                )}
+              >
+                <div className="mb-3 flex items-center gap-2.5 border-b border-black/[0.06] pb-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-green-100 text-brand-gold">
+                    <ColumnIcon size={15} strokeWidth={2} aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="font-display text-sm font-bold leading-tight text-brand-dark">
+                      {column.label}
+                    </p>
+                    <p className="mt-0.5 text-[0.6875rem] leading-snug text-brand-body/50">
+                      {column.desc}
+                    </p>
+                  </div>
+                </div>
+                <ul>
+                  {column.services.map((service) => {
+                    const isServiceActive =
+                      pathname === `/services/${service.slug}` ||
+                      pathname === getLegacyLandingPageHref(service.slug)
+
+                    return (
+                      <li key={service.slug}>
+                        <Link
+                          href={getServicePageHref(service.slug)}
+                          tabIndex={servicesOpen ? undefined : -1}
+                          className={cn(
+                            'group flex items-center justify-between gap-2 rounded-md px-1.5 py-1.5 text-[0.8125rem] leading-snug transition-colors',
+                            isServiceActive
+                              ? 'bg-brand-green-100 font-semibold text-brand-gold'
+                              : 'text-brand-body hover:bg-brand-green-100/70 hover:text-brand-gold',
+                          )}
+                          onClick={() => setServicesOpen(false)}
+                        >
+                          <span>{service.name}</span>
+                          <ArrowRight
+                            size={12}
+                            className={cn(
+                              'shrink-0 opacity-0 transition-all',
+                              isServiceActive
+                                ? 'opacity-100'
+                                : 'group-hover:translate-x-0.5 group-hover:opacity-60',
+                            )}
+                            aria-hidden
+                          />
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="border-t border-black/[0.06] bg-neutral-50/90">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-3 lg:px-8">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
+              <Link
+                href="/services"
+                tabIndex={servicesOpen ? undefined : -1}
+                className={cn(
+                  'font-semibold transition-colors hover:text-brand-gold',
+                  pathname === '/services'
+                    ? 'text-brand-gold'
+                    : 'text-brand-dark',
+                )}
+                onClick={() => { setServicesOpen(false); trackNavigation('Nav All Services') }}
+              >
+                View all services
+              </Link>
+              {serviceResourceLinks.map((link) => (
+                <span key={link.href} className="flex items-center gap-3">
+                  <span className="text-brand-body/25" aria-hidden>
+                    ·
+                  </span>
+                  <Link
+                    href={link.href}
+                    tabIndex={servicesOpen ? undefined : -1}
+                    className="font-medium text-brand-body transition-colors hover:text-brand-gold"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </span>
+              ))}
+            </div>
+            <Link
+              href="/contact"
+              tabIndex={servicesOpen ? undefined : -1}
+              className="group inline-flex items-center gap-1.5 text-xs font-semibold text-brand-gold"
+              onClick={() => setServicesOpen(false)}
+            >
+              {CTA_COPY.quote}
+              <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <>
     <header
@@ -399,18 +561,12 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/85 shadow-md backdrop-blur-md"
     >
       <nav
-        className={cn(
-          'mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 transition-all duration-300 ease-premium sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:px-8',
-          isCompact ? 'py-2.5' : 'py-4 lg:py-5',
-        )}
+        className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:gap-6 lg:px-8 lg:py-5"
       >
         <Link href="/" className="flex min-w-0 items-center gap-2 lg:col-start-1 lg:row-start-1" aria-label="A1 Property Services home">
-          <LogoMark size={isCompact ? 'sm' : 'md'} />
+          <LogoMark size="md" />
           <span
-            className={cn(
-              'truncate font-bold leading-tight tracking-tight text-brand-dark transition-all duration-300',
-              isCompact ? 'text-sm sm:text-base lg:text-lg' : 'text-base sm:text-lg lg:text-xl',
-            )}
+            className="truncate text-base font-bold leading-tight tracking-tight text-brand-dark sm:text-lg lg:text-xl"
             style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           >
             A1 Property Services
@@ -442,8 +598,10 @@ export default function Navbar() {
                 className={cn(linkClass(isServicesActive), 'inline-flex items-center gap-1')}
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
+                aria-controls="desktop-services-menu"
                 onClick={() => {
                   if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
+                  setLearnOpen(false)
                   setServicesOpen((open) => !open)
                 }}
               >
@@ -457,186 +615,13 @@ export default function Navbar() {
                 )}
               </button>
 
-              {/* Padding bridge: unlike margin, padding keeps pointer events while moving into the panel */}
               <div
                 className={cn(
-                  'absolute left-1/2 top-full z-50 w-[min(760px,calc(100vw-2rem))] -translate-x-1/2 pt-4',
+                  'absolute left-1/2 top-full z-50 h-10 w-screen -translate-x-1/2',
                   servicesOpen ? 'pointer-events-auto' : 'pointer-events-none',
                 )}
-                onMouseEnter={openServicesMenu}
-              >
-              <div
-                className={cn(
-                  'overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-[0_20px_60px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/[0.04] transition-all duration-300 ease-premium',
-                  servicesOpen ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
-                )}
-              >
-                <div className="h-1 bg-gradient-to-r from-brand-gold via-brand-green-700 to-brand-gold" />
-
-                <div className="flex items-center justify-between gap-4 border-b border-black/[0.06] px-5 py-4">
-                  <div>
-                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-brand-body/45">
-                      Browse by category
-                    </p>
-                    <h3 className="mt-0.5 font-display text-lg font-bold text-brand-dark">
-                      Our Services
-                    </h3>
-                  </div>
-                  <div className="flex shrink-0 items-center gap-2">
-                    <Link
-                      href="/landscaping-services-in-cedar-falls"
-                      className={cn(
-                        'group inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-colors hover:bg-brand-green-100',
-                        pathname === '/landscaping-services-in-cedar-falls'
-                          ? 'text-brand-gold'
-                          : 'text-brand-dark hover:text-brand-gold',
-                      )}
-                      onClick={() => { setServicesOpen(false); trackNavigation('Nav Landscaping Hub') }}
-                    >
-                      Landscaping
-                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-                    </Link>
-                    <Link
-                      href="/services"
-                      className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-brand-gold transition-colors hover:bg-brand-green-100"
-                      onClick={() => setServicesOpen(false)}
-                    >
-                      View All
-                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-                    </Link>
-                    <Button href="/contact" size="sm" onClick={() => setServicesOpen(false)}>
-                      {CTA_COPY.quote}
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-[200px_1fr]">
-                  <div className="border-r border-black/[0.06] bg-neutral-50/70 p-3">
-                    <ul className="space-y-1">
-                      {serviceCategories.map((category) => {
-                        const count = getCategoryServices(category.key).length
-                        if (count === 0) return null
-                        const CategoryIcon = category.icon
-                        const isActive = activeServiceCategory === category.key
-                        return (
-                          <li key={category.key}>
-                            <button
-                              type="button"
-                              className={cn(
-                                'flex w-full items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left transition-all duration-200',
-                                isActive
-                                  ? 'border-black/[0.08] bg-white text-brand-dark shadow-sm'
-                                  : 'border-transparent text-brand-body hover:border-black/[0.06] hover:bg-white hover:text-brand-dark',
-                              )}
-                              onMouseEnter={() => setActiveServiceCategory(category.key)}
-                              onFocus={() => setActiveServiceCategory(category.key)}
-                              onClick={() => setActiveServiceCategory(category.key)}
-                            >
-                              <span
-                                className={cn(
-                                  'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors',
-                                  isActive
-                                    ? 'border-brand-gold/20 bg-brand-green-100 text-brand-gold'
-                                    : 'border-black/[0.06] bg-white text-brand-body/55',
-                                )}
-                              >
-                                <CategoryIcon size={15} strokeWidth={2} aria-hidden />
-                              </span>
-                              <span className="min-w-0 flex-1">
-                                <span className="block text-sm font-semibold leading-tight">{category.label}</span>
-                                <span className="mt-0.5 block text-[0.6875rem] leading-snug text-brand-subtle">
-                                  {count} service{count === 1 ? '' : 's'}
-                                </span>
-                              </span>
-                            </button>
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-
-                  <div className="flex min-h-[260px] flex-col p-5">
-                    {activeCategoryMeta && (
-                      <div className="mb-4 border-b border-black/[0.06] pb-3">
-                        <p className="font-display text-base font-bold text-brand-dark">
-                          {activeCategoryMeta.label}
-                        </p>
-                        <p className="mt-0.5 text-xs text-brand-body/55">
-                          {activeCategoryMeta.desc}
-                        </p>
-                      </div>
-                    )}
-
-                    <ul
-                      className={cn(
-                        'grid flex-1 gap-1.5 sm:grid-cols-2',
-                        activeCategoryServices.length > 8 && 'max-h-[280px] overflow-y-auto overscroll-contain pr-0.5',
-                      )}
-                    >
-                      {activeCategoryServices.map((service: Service) => {
-                        const isServiceActive =
-                          pathname === `/services/${service.slug}` ||
-                          pathname === getLegacyLandingPageHref(service.slug)
-
-                        return (
-                        <li key={service.slug}>
-                          <Link
-                            href={getServicePageHref(service.slug)}
-                            className={cn(
-                              'group flex items-center gap-2.5 rounded-xl border px-3 py-2.5 transition-all duration-200',
-                              isServiceActive
-                                ? 'border-brand-gold/30 bg-brand-green-50 shadow-sm'
-                                : 'border-transparent hover:border-black/[0.06] hover:bg-white hover:shadow-sm',
-                            )}
-                            onClick={() => setServicesOpen(false)}
-                          >
-                            <ServiceIcon
-                              name={service.icon}
-                              variant="compact"
-                              className={cn(
-                                'border transition-colors',
-                                isServiceActive
-                                  ? 'border-brand-gold/30 bg-white text-brand-gold'
-                                  : 'border-brand-green-200/80 group-hover:border-brand-gold/25 group-hover:bg-white',
-                              )}
-                            />
-                            <span
-                              className={cn(
-                                'text-sm leading-snug transition-colors',
-                                isServiceActive
-                                  ? 'font-semibold text-brand-gold'
-                                  : 'text-brand-body group-hover:text-brand-dark',
-                              )}
-                            >
-                              {service.name}
-                            </span>
-                          </Link>
-                        </li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-between gap-3 border-t border-black/[0.06] bg-neutral-50/90 px-5 py-3">
-                  <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-brand-body/45">
-                    Helpful Resources
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {serviceResourceLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="rounded-full border border-black/[0.08] bg-white px-3 py-1.5 text-xs font-medium text-brand-body transition-all duration-200 hover:border-brand-gold/35 hover:bg-brand-green-50 hover:text-brand-gold"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+                aria-hidden
+              />
             </div>
           </li>
 
@@ -725,10 +710,7 @@ export default function Navbar() {
           <a
             href={`tel:${siteConfig.phone}`}
             onClick={() => trackPhoneCall('Navbar Desktop')}
-            className={cn(
-              'flex items-center gap-1.5 whitespace-nowrap font-medium text-brand-gold transition-colors hover:text-brand-gold-hover',
-              isCompact ? 'text-sm' : 'text-sm xl:text-base',
-            )}
+            className="flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-brand-gold transition-colors hover:text-brand-gold-hover xl:text-base"
           >
             <Phone size={14} className="shrink-0" />
             <span className="hidden xl:inline">{siteConfig.phoneDisplay}</span>
@@ -775,6 +757,9 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
+    {mounted
+      ? createPortal(desktopServicesMenu, document.body)
+      : null}
     {mounted && mobileOpen
       ? createPortal(mobileMenu, document.body)
       : null}

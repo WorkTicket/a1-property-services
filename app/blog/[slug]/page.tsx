@@ -8,7 +8,9 @@ import {
   getPostBySlug,
   getReadingTime,
   getRelatedPosts,
+  getWordCount,
 } from '@/lib/blog'
+import { readingTimeIsoDuration } from '@/lib/reading-time'
 import { generatePageMetadata, blogPostingJsonLd, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig } from '@/lib/metadata'
 import { getAllRelatedGroups, getContentSegments } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
@@ -40,6 +42,7 @@ export default function BlogPostPage({ params }: Props) {
   const relatedGroups = getAllRelatedGroups('blog', params.slug)
   const relatedPosts = getRelatedPosts(params.slug, 3)
   const readingTime = getReadingTime(post)
+  const wordCount = getWordCount(post)
   const [lead, ...body] = post.content
 
   function contentLinks(text: string, max = 3) {
@@ -58,7 +61,11 @@ export default function BlogPostPage({ params }: Props) {
     datePublished: post.date,
   })
 
-  const blogSchema = blogPostingJsonLd(post)
+  const blogSchema = blogPostingJsonLd({
+    ...post,
+    wordCount,
+    timeRequired: readingTimeIsoDuration(readingTime),
+  })
 
   return (
     <>

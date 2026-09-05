@@ -482,6 +482,32 @@ export function generatePageMetadata({
   }
 }
 
+/** Typed LocalBusiness node used as JSON-LD @id references (Ahrefs flags @id-only objects as missing @type). */
+export function organizationRef() {
+  return {
+    '@type': 'LandscapingBusiness' as const,
+    '@id': `${siteConfig.url}/#organization`,
+    name: siteConfig.name,
+  }
+}
+
+export function websiteRef() {
+  return {
+    '@type': 'WebSite' as const,
+    '@id': `${siteConfig.url}/#website`,
+    name: siteConfig.homeTitle,
+    url: siteConfig.url,
+  }
+}
+
+export function schemaImageObject(url: string) {
+  return {
+    '@type': 'ImageObject' as const,
+    url,
+    contentUrl: url,
+  }
+}
+
 export function breadcrumbJsonLd(items: { name: string; path?: string }[]) {
   return {
     '@context': 'https://schema.org',
@@ -531,14 +557,12 @@ export function articleJsonLd(post: {
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteConfig.url}/images/icon.webp`,
-      },
+      logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${siteConfig.url}/blog/${post.slug}`,
+      url: `${siteConfig.url}/blog/${post.slug}`,
     },
   }
 }
@@ -553,7 +577,7 @@ export function websiteJsonLd() {
     alternateName: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    publisher: { '@id': `${siteConfig.url}/#organization` },
+    publisher: organizationRef(),
     inLanguage: 'en-US',
   }
 }
@@ -646,6 +670,7 @@ export function imageObjectJsonLd(image: { url: string; caption: string; descrip
     '@context': 'https://schema.org',
     '@type': 'ImageObject',
     url: image.url,
+    contentUrl: image.url,
     caption: image.caption,
     ...(image.description ? { description: image.description } : {}),
   }
@@ -692,14 +717,8 @@ export function buildLocalBusinessJsonLd() {
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     alternateName: ['Cedar Falls Landscaping', 'A1 Landscaping Cedar Falls'],
-    image: {
-      '@type': 'ImageObject',
-      url: `${siteConfig.url}/og-image.jpg`,
-    },
-    logo: {
-      '@type': 'ImageObject',
-      url: `${siteConfig.url}/images/icon.webp`,
-    },
+    image: schemaImageObject(`${siteConfig.url}/og-image.jpg`),
+    logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
@@ -726,7 +745,7 @@ export function buildLocalBusinessJsonLd() {
           latitude: 42.5106,
           longitude: -92.394,
         },
-        geoRadius: '28000',
+        geoRadius: 28000,
       },
       {
         '@type': 'City',
@@ -778,7 +797,7 @@ export function buildLocalBusinessJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'IA'],
+      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'Iowa'],
       availableLanguage: 'English',
     },
   }
@@ -806,12 +825,11 @@ export function webPageJsonLd(options: {
     description: options.description,
     ...(options.image
       ? {
-          primaryImageOfPage: {
-            '@type': 'ImageObject',
-            url: options.image.startsWith('http')
+          primaryImageOfPage: schemaImageObject(
+            options.image.startsWith('http')
               ? options.image
               : `${siteConfig.url}${options.image}`,
-          },
+          ),
         }
       : {}),
     ...(options.about ? { about: { '@type': 'Thing', name: options.about } } : {}),
@@ -821,7 +839,7 @@ export function webPageJsonLd(options: {
           dateModified: options.dateModified ?? options.datePublished,
         }
       : {}),
-    isPartOf: { '@id': `${siteConfig.url}/#website` },
+    isPartOf: websiteRef(),
   }
 }
 
@@ -831,6 +849,8 @@ export function blogPostingJsonLd(post: {
   date: string
   slug: string
   image?: string
+  wordCount?: number
+  timeRequired?: string
 }) {
   const url = `${siteConfig.url}/blog/${post.slug}`
   const imageUrl = post.image
@@ -850,10 +870,12 @@ export function blogPostingJsonLd(post: {
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
-      logo: { '@type': 'ImageObject', url: `${siteConfig.url}/images/icon.webp` },
+      logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url, url },
-    image: { '@type': 'ImageObject', url: imageUrl },
+    image: schemaImageObject(imageUrl),
+    ...(typeof post.wordCount === 'number' ? { wordCount: post.wordCount } : {}),
+    ...(post.timeRequired ? { timeRequired: post.timeRequired } : {}),
   }
 }
 
@@ -865,10 +887,7 @@ export function organizationJsonLd() {
     '@id': `${siteConfig.url}/#brand`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: {
-      '@type': 'ImageObject',
-      url: `${siteConfig.url}/images/icon.webp`,
-    },
+    logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
@@ -883,7 +902,7 @@ export function organizationJsonLd() {
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'IA'],
+      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'Iowa'],
       availableLanguage: 'English',
     },
     sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],

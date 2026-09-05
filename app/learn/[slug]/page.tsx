@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { ChevronRight, BookOpen, ShoppingCart, Scale, FileText } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig, howToJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { learnArticles } from '@/lib/learn'
+import { learnArticles, getLearnReadingTime } from '@/lib/learn'
 import { allServices } from '@/lib/services'
 import { siteImages } from '@/lib/images'
 import { serviceFaqs } from '@/lib/services'
@@ -112,7 +112,7 @@ export default function LearnArticlePage({ params }: Props) {
               {article.categoryLabel}
             </span>
             <span className="text-brand-body/30">·</span>
-            <span className="text-xs text-brand-body/60">{article.readingTime} read</span>
+            <span className="text-xs text-brand-body/60">{getLearnReadingTime(article)} read</span>
           </div>
           <h1 className="section-heading mt-4">{article.title}</h1>
 
@@ -175,7 +175,7 @@ export default function LearnArticlePage({ params }: Props) {
                             <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[a.category]}`}>
                               {a.categoryLabel}
                             </span>
-                            <span className="text-xs text-brand-body/60">{a.readingTime} read</span>
+                            <span className="text-xs text-brand-body/60">{getLearnReadingTime(a)} read</span>
                           </div>
                           <h3 className="mt-3 text-xl font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
                             {a.title}

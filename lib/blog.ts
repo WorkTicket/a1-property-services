@@ -1,3 +1,6 @@
+import { countWords, minutesFromWords } from './reading-time'
+import { newerBlogPosts } from './blog-posts-new'
+
 export type BlogPost = {
   slug: string
   title: string
@@ -8,6 +11,7 @@ export type BlogPost = {
 }
 
 export const blogPosts: BlogPost[] = [
+  ...newerBlogPosts,
   {
     slug: 'retaining-wall-benefits-cedar-falls',
     title: 'Why Retaining Walls Are Essential for Iowa Sloped Yards',
@@ -1448,13 +1452,23 @@ export function getSortedPosts(posts: BlogPost[] = blogPosts): BlogPost[] {
   return [...posts].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
 }
 
-export function getReadingTime(post: BlogPost): number {
-  const words = [post.excerpt, ...post.content].join(' ').trim().split(/\s+/).filter(Boolean).length
-  return Math.max(1, Math.ceil(words / 200))
+function postPlainText(post: Pick<BlogPost, 'excerpt' | 'content'>): string {
+  return [post.excerpt, ...post.content].join(' ')
+}
+
+export function getWordCount(post: Pick<BlogPost, 'excerpt' | 'content'>): number {
+  return countWords(postPlainText(post))
+}
+
+/** Minutes to read the article at 238 WPM, rounded to the nearest minute. */
+export function getReadingTime(post: Pick<BlogPost, 'excerpt' | 'content'>): number {
+  return minutesFromWords(getWordCount(post))
 }
 
 export function formatBlogDate(dateStr: string, style: 'long' | 'short' = 'long'): string {
-  return new Date(dateStr).toLocaleDateString('en-US', {
+  const [year, month, day] = dateStr.split('-').map(Number)
+  const date = new Date(year, month - 1, day)
+  return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: style === 'long' ? 'long' : 'short',
     day: 'numeric',
@@ -1464,12 +1478,23 @@ export function formatBlogDate(dateStr: string, style: 'long' | 'short' = 'long'
 export function getRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
   const current = getPostBySlug(currentSlug)
   if (!current) return []
+  const sorted = getSortedPosts()
+  const idx = sorted.findIndex((p) => p.slug === currentSlug)
+  const ring: BlogPost[] = []
+  if (idx >= 0 && sorted.length > 1) {
+    ring.push(sorted[(idx + 1) % sorted.length])
+    if (sorted.length > 2) ring.push(sorted[(idx + 2) % sorted.length])
+  }
   const sameCategory = getSortedPosts(
     blogPosts.filter((p) => p.slug !== currentSlug && p.category === current.category),
   )
-  if (sameCategory.length >= limit) return sameCategory.slice(0, limit)
-  const extras = getSortedPosts(blogPosts.filter((p) => p.slug !== currentSlug)).filter(
-    (p) => !sameCategory.some((s) => s.slug === p.slug),
-  )
-  return [...sameCategory, ...extras].slice(0, limit)
+  const seen = new Set<string>()
+  const merged: BlogPost[] = []
+  for (const post of [...ring, ...sameCategory, ...sorted]) {
+    if (post.slug === currentSlug || seen.has(post.slug)) continue
+    seen.add(post.slug)
+    merged.push(post)
+    if (merged.length >= limit) break
+  }
+  return merged
 }

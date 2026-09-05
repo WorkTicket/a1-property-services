@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import { generatePageMetadata, servicesHubKeywords, siteConfig, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, servicesHubKeywords, siteConfig, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { services, hardscapeFeatures, hardscapeServices, servicesHubFaqs } from '@/lib/services'
 import { landscapingHubAnchor, landscapingHubPath } from '@/lib/internal-linking'
@@ -53,7 +53,7 @@ export default function ServicesPage() {
           name: f.name,
           url: `${siteConfig.url}${f.href}`,
           description: f.shortDesc,
-          provider: { '@id': `${siteConfig.url}/#organization` },
+          provider: organizationRef(),
           areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Black Hawk County, IA'],
         },
       })),
@@ -65,7 +65,7 @@ export default function ServicesPage() {
           name: s.name,
           url: `${siteConfig.url}/services/${s.slug}`,
           description: s.shortDesc,
-          provider: { '@id': `${siteConfig.url}/#organization` },
+          provider: organizationRef(),
           areaServed: ['Cedar Falls, IA', 'Waterloo, IA', 'Black Hawk County, IA'],
         },
       })),

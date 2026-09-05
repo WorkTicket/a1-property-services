@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, BookOpen, FileText, ShoppingCart, Scale } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig, itemListJsonLd } from '@/lib/metadata'
-import { learnArticles } from '@/lib/learn'
+import { learnArticles, getLearnReadingTime } from '@/lib/learn'
 import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
@@ -94,7 +94,7 @@ export default function LearnPage() {
                           <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[article.category]}`}>
                             {article.categoryLabel}
                           </span>
-                          <span className="text-xs text-brand-body/60">{article.readingTime} read</span>
+                          <span className="text-xs text-brand-body/60">{getLearnReadingTime(article)} read</span>
                         </div>
                         <h2 className="mt-3 text-xl font-bold text-brand-dark group-hover:text-brand-green-800 transition-colors">
                           {article.title}

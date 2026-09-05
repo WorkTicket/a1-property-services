@@ -4,7 +4,7 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd } from '@/lib/metadata'
+import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
 import {
   buildGoogleTagsBootstrap,
   isValidAdsId,
@@ -136,11 +136,9 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdGraph(websiteJsonLd(), localBusinessJsonLd)),
+          }}
         />
         <ConsentAwareAnalytics />
         <ScrollTracker />

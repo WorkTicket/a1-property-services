@@ -6,6 +6,7 @@ import {
   faqPageJsonLd,
   generatePageMetadata,
   jsonLdGraph,
+  organizationRef,
   siteConfig,
   webPageJsonLd,
 } from '@/lib/metadata'
@@ -68,7 +69,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
     '@type': 'Service',
     serviceType: page.h1,
     name: page.h1,
-    provider: { '@id': `${siteConfig.url}/#organization` },
+    provider: organizationRef(),
     areaServed: [...primaryAreaServedSchema],
     description: page.description,
     url: `${siteConfig.url}${page.path}`,

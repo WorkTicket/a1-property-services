@@ -6,6 +6,7 @@ import {
   faqPageJsonLd,
   generatePageMetadata,
   jsonLdGraph,
+  organizationRef,
   siteConfig,
   webPageJsonLd,
 } from '@/lib/metadata'
@@ -63,7 +64,7 @@ export default function LandscapingHubLanding() {
     '@type': 'Service',
     serviceType: 'Landscaping',
     name: 'Landscaping in Cedar Falls, IA',
-    provider: { '@id': `${siteConfig.url}/#organization` },
+    provider: organizationRef(),
     areaServed: [...primaryAreaServedSchema],
     description: page.description,
     url: `${siteConfig.url}${page.path}`,

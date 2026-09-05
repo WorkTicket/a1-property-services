@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Phone, MapPin, Check, Star, ChevronRight } from 'lucide-react'
 import { cities, getCityBySlug } from '@/lib/cities'
-import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages, getCityHeroImage, getCityIntroImage, getCityWhyImage } from '@/lib/images'
 import { services, hardscapeFeatures, hardscapeServices, getHardscapeFeatureHref, allServices } from '@/lib/services'
@@ -85,7 +85,7 @@ export default function CityPage({ params }: Props) {
     '@id': `${siteConfig.url}/${city.slug}#service`,
     name: `Landscaping in ${city.name}, IA`,
     serviceType: 'Landscaping',
-    provider: { '@id': `${siteConfig.url}/#organization` },
+    provider: organizationRef(),
     description: city.description,
     url: `${siteConfig.url}/${city.slug}`,
     areaServed: {

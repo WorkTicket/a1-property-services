@@ -24,6 +24,7 @@ export function getAllSiteUrls(): string[] {
     '/learn',
     '/privacy',
     '/terms',
+    '/site-map',
     '/retaining-wall-in-cedar-falls',
     '/paver-patio-installation',
     '/cedar-falls-water-features',
@@ -42,4 +43,81 @@ export function getAllSiteUrls(): string[] {
   }
 
   return [...staticUrls, ...serviceUrls, ...blogUrls, ...learnUrls, ...cityUrls, ...programmaticUrls]
+}
+
+export type SiteMapGroup = {
+  heading: string
+  links: { name: string; href: string }[]
+}
+
+/** Grouped internal links for the HTML site map (second inbound link for thin pages). */
+export function getHtmlSitemapGroups(): SiteMapGroup[] {
+  const core: SiteMapGroup = {
+    heading: 'Main Pages',
+    links: [
+      { name: 'Home', href: '/' },
+      { name: 'About', href: '/about' },
+      { name: 'Services', href: '/services' },
+      { name: 'Gallery', href: '/gallery' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Knowledge Center', href: '/learn' },
+      { name: 'Resources', href: '/resources' },
+      { name: 'FAQs', href: '/faqs' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms & Conditions', href: '/terms' },
+    ],
+  }
+
+  const featured: SiteMapGroup = {
+    heading: 'Popular Services',
+    links: [
+      { name: 'Landscaping in Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
+      { name: 'Retaining Walls', href: '/retaining-wall-in-cedar-falls' },
+      { name: 'Paver Patio Installation', href: '/paver-patio-installation' },
+      { name: 'Water Features', href: '/cedar-falls-water-features' },
+    ],
+  }
+
+  const services: SiteMapGroup = {
+    heading: 'All Services',
+    links: allServices.map((service) => ({
+      name: service.name,
+      href: `/services/${service.slug}`,
+    })),
+  }
+
+  const cityHubs: SiteMapGroup = {
+    heading: 'Service Areas',
+    links: cities.map((city) => ({
+      name: `${city.name}, IA`,
+      href: `/${city.slug}`,
+    })),
+  }
+
+  const learn: SiteMapGroup = {
+    heading: 'Guides',
+    links: learnArticles.map((article) => ({
+      name: article.title,
+      href: `/learn/${article.slug}`,
+    })),
+  }
+
+  const blog: SiteMapGroup = {
+    heading: 'Blog',
+    links: blogPosts.map((post) => ({
+      name: post.title,
+      href: `/blog/${post.slug}`,
+    })),
+  }
+
+  const cityServices: SiteMapGroup[] = cities.map((city) => ({
+    heading: `Services in ${city.name}`,
+    links: allServices.map((service) => ({
+      name: `${service.name} in ${city.name}`,
+      href: `/${city.slug}/${service.slug}`,
+    })),
+  }))
+
+  return [core, featured, services, cityHubs, learn, blog, ...cityServices]
 }

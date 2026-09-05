@@ -17,7 +17,7 @@ import {
   serviceProblemSolutions,
 } from '@/lib/services'
 import { getPostBySlug } from '@/lib/blog'
-import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt, getServiceContentImage, getServiceContentImageAlt } from '@/lib/images'
 import { getComplementaryServices, getServiceRelatedContentGroups, getContentSegments } from '@/lib/internal-linking'
 import { primaryAreaServedSchema } from '@/lib/service-area'
@@ -130,7 +130,7 @@ export default function ServicePage({ params }: Props) {
     '@type': 'Service',
     serviceType: seo?.title ?? service.name,
     name: serviceName,
-    provider: { '@id': `${siteConfig.url}/#organization` },
+    provider: organizationRef(),
     areaServed: [...primaryAreaServedSchema],
     description: seo?.description ?? `${service.shortDesc} Serving Cedar Falls, Waterloo, and Black Hawk County, Iowa.`,
     url: pageUrl,

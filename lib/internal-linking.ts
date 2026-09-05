@@ -1,5 +1,5 @@
 import { allServices, getFaqPageServices, type Service, serviceFaqs, getServicePageHref } from '@/lib/services'
-import { blogPosts, type BlogPost } from '@/lib/blog'
+import { blogPosts, getSortedPosts, type BlogPost } from '@/lib/blog'
 import { cities } from '@/lib/cities'
 import { learnArticles, type LearnArticle } from '@/lib/learn'
 import { galleryProjects, type GalleryProject } from '@/lib/images'
@@ -222,7 +222,7 @@ export function getServiceRelatedContentGroups(serviceSlug: string): RelatedCont
   const learn = getLearnForService(serviceSlug)
   if (learn.length > 0) groups.push({ heading: 'Knowledge Center', items: learn })
 
-  const cityPages = getCitiesForService(serviceSlug).slice(0, 6)
+  const cityPages = getCitiesForService(serviceSlug)
   if (cityPages.length > 0) {
     groups.push({ heading: 'Service Areas', items: cityPages })
   }
@@ -538,7 +538,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
         }))
       if (services.length > 0) groups.push({ heading: 'Services', items: services })
 
-      const blogs = blogPosts.slice(0, 3).map(p => toLinked({
+      const blogs = getSortedPosts().slice(0, 3).map(p => toLinked({
         type: 'blog', slug: p.slug, title: p.title, excerpt: p.excerpt,
         url: blogUrl(p.slug), relevance: 4,
       }))

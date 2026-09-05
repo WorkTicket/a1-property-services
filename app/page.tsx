@@ -7,7 +7,7 @@ import { CTA_COPY } from '@/lib/cta'
 import { generatePageMetadata, getGoogleMapsEmbedUrl, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
-import { blogPosts } from '@/lib/blog'
+import { blogPosts, getSortedPosts } from '@/lib/blog'
 import RelatedContent from '@/components/sections/RelatedContent'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
@@ -140,7 +140,7 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'Outdoor Spaces|Cedar Falls & Waterloo Homeowners Are Proud\u00a0Of'}
+              title={'Cedar Falls, IA Landscaping|Patios, Walls & Yards Homeowners Are Proud Of'}
               subtitle="We design, build, and maintain yards you'll actually use in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, full installs."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -384,7 +384,7 @@ export default function HomePage() {
       <RelatedContent groups={[
         ...(blogPosts.length > 0 ? [{
           heading: 'Latest Articles',
-          items: blogPosts.slice(0, 3).map(p => ({
+          items: getSortedPosts().slice(0, 3).map(p => ({
             type: 'blog' as const,
             slug: p.slug,
             title: p.title,

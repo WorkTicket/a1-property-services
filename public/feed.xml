@@ -3,9 +3,9 @@
   <channel>
     <title>A1 Property Services</title>
     <link>https://a1pslandscape.com</link>
-    <description>Landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, IA and the Cedar Valley.</description>
+    <description>Landscaping, retaining walls, paver patios, and lawn care in Cedar Falls, Waterloo, and Black Hawk County, Iowa.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Aug 2026 22:49:05 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 05:12:35 GMT</lastBuildDate>
     <atom:link href="https://a1pslandscape.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://a1pslandscape.com/images/icon.webp</url>
@@ -14,12 +14,408 @@
     </image>
     
     <item>
-      <title>Outdoor Living Trends in the Cedar Valley</title>
+      <title>How Much Does a Retaining Wall Cost in Cedar Falls?</title>
+      <link>https://a1pslandscape.com/blog/retaining-wall-cost-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/retaining-wall-cost-cedar-falls</guid>
+      <description>Real Cedar Falls pricing for block, stone, and timber retaining walls, plus what actually drives the number up or down.</description>
+      <category>Pricing</category>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Tree Removal in Cedar Falls: When to Cut, What It Costs, and How the Job Gets Done</title>
+      <link>https://a1pslandscape.com/blog/tree-removal-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/tree-removal-cedar-falls</guid>
+      <description>How to tell if a tree needs to come down, what tree removal costs in Black Hawk County, and why licensed, insured crews matter.</description>
+      <category>Tree Service</category>
+      <pubDate>Thu, 27 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Paver Patio Installation in Cedar Falls: Process, Timeline, and What Holds Up in Iowa</title>
+      <link>https://a1pslandscape.com/blog/paver-patio-installation-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/paver-patio-installation-cedar-falls</guid>
+      <description>What a professional paver patio installation in Cedar Falls actually includes, how long it takes, and why the base matters more than the paver color.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Thu, 20 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawn Care in Cedar Falls, Iowa: What a Full Season Actually Takes</title>
+      <link>https://a1pslandscape.com/blog/lawn-care-cedar-falls-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-care-cedar-falls-iowa</guid>
+      <description>A practical lawn care plan for Cedar Falls and Waterloo yards: mowing height, weeds, fertilizer timing, and why clay soil changes the program.</description>
+      <category>Maintenance</category>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Pond and Waterfall Installation in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/pond-waterfall-installation-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/pond-waterfall-installation-cedar-falls</guid>
+      <description>How we design and install ponds, waterfalls, and pondless water features that survive Iowa winters and still look like they belong in the yard.</description>
+      <category>Water Features</category>
+      <pubDate>Thu, 06 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Paver Driveway Cost in Cedar Falls: What Iowa Homeowners Should Budget</title>
+      <link>https://a1pslandscape.com/blog/paver-driveway-cost-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/paver-driveway-cost-cedar-falls</guid>
+      <description>Paver driveway pricing in Cedar Falls and Waterloo, why the base is deeper than a patio, and when pavers beat asphalt or concrete.</description>
+      <category>Pricing</category>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Winter Landscaping Tips for Iowa Homeowners</title>
+      <link>https://a1pslandscape.com/blog/winter-landscaping-tips-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/winter-landscaping-tips-iowa</guid>
+      <description>Protect your landscape investment through Iowa winters with these practical tips.</description>
+      <category>Seasonal</category>
+      <pubDate>Wed, 01 Oct 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Winterizing Landscape Beds in Iowa</title>
+      <link>https://a1pslandscape.com/blog/winterizing-landscape-beds</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/winterizing-landscape-beds</guid>
+      <description>Protect your perennial beds and shrubs through Iowa winters.</description>
+      <category>Maintenance</category>
+      <pubDate>Sat, 20 Sep 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Commercial Snow Removal Services in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/commercial-snow-removal-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/commercial-snow-removal-cedar-falls</guid>
+      <description>Reliable snow and ice management for Cedar Falls and Waterloo businesses.</description>
+      <category>Commercial</category>
+      <pubDate>Mon, 15 Sep 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Sprinkler System Winterization in Iowa</title>
+      <link>https://a1pslandscape.com/blog/sprinkler-system-winterization</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/sprinkler-system-winterization</guid>
+      <description>Protect your irrigation system from Iowa winter freeze damage.</description>
+      <category>Maintenance</category>
+      <pubDate>Mon, 15 Sep 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Snow Removal Contracts in Cedar Falls: What to Know</title>
+      <link>https://a1pslandscape.com/blog/snow-removal-contracts-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/snow-removal-contracts-cedar-falls</guid>
+      <description>How seasonal snow removal contracts work for Cedar Falls and Waterloo homeowners and businesses.</description>
+      <category>Seasonal</category>
+      <pubDate>Mon, 01 Sep 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Fall Landscaping Checklist for Iowa Homeowners</title>
+      <link>https://a1pslandscape.com/blog/fall-landscaping-checklist-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/fall-landscaping-checklist-iowa</guid>
+      <description>Prepare your landscape for winter with this fall maintenance checklist.</description>
+      <category>Maintenance</category>
+      <pubDate>Mon, 01 Sep 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Brick Paver Patio Maintenance Guide</title>
+      <link>https://a1pslandscape.com/blog/brick-paver-patio-maintenance</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/brick-paver-patio-maintenance</guid>
+      <description>Keep your brick paver patio looking new with proper maintenance.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Fri, 15 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Garden Walkway Lighting Ideas for Cedar Falls Homes</title>
+      <link>https://a1pslandscape.com/blog/garden-walkway-lighting</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/garden-walkway-lighting</guid>
+      <description>Light your garden paths for safety and visibility in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Sun, 10 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Paver Patio Maintenance Guide for Iowa Winters</title>
+      <link>https://a1pslandscape.com/blog/paver-patio-maintenance-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/paver-patio-maintenance-iowa</guid>
+      <description>How to protect and maintain your paver patio through Iowa freeze-thaw conditions.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Fri, 01 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Outdoor Fireplace Ideas for Cedar Falls Homes</title>
+      <link>https://a1pslandscape.com/blog/outdoor-fireplace-ideas</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/outdoor-fireplace-ideas</guid>
+      <description>Add a custom outdoor fireplace as the centerpiece of your outdoor living space.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Fri, 01 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Pergola Design and Installation in the Cedar Falls, Waterloo, and Black Hawk County</title>
+      <link>https://a1pslandscape.com/blog/pergola-design-installation</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/pergola-design-installation</guid>
+      <description>Add a pergola for shade, structure, and outdoor living space.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Fri, 01 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Tree Stump Removal Cost in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/tree-stump-removal-cost</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/tree-stump-removal-cost</guid>
+      <description>What stump grinding costs and why you should remove stumps from your yard.</description>
+      <category>Tree Service</category>
+      <pubDate>Fri, 01 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Excavation Preparation for Landscaping Projects</title>
+      <link>https://a1pslandscape.com/blog/excavation-prep-landscaping</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/excavation-prep-landscaping</guid>
+      <description>Why proper excavation is the foundation of successful landscaping.</description>
+      <category>Landscaping</category>
+      <pubDate>Fri, 25 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Step Retaining Walls for Terraced Gardens in Iowa</title>
+      <link>https://a1pslandscape.com/blog/step-retaining-walls-garden</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/step-retaining-walls-garden</guid>
+      <description>Multi-level retaining walls create tiered garden spaces on sloped Iowa properties.</description>
+      <category>Hardscaping</category>
+      <pubDate>Fri, 25 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Outdoor Kitchen Ideas for Cedar Falls Homes</title>
+      <link>https://a1pslandscape.com/blog/outdoor-kitchen-ideas-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/outdoor-kitchen-ideas-cedar-falls</guid>
+      <description>Design inspiration for outdoor cooking and dining spaces in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Sun, 20 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Driveway Paver Installation in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/driveway-paver-installation</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/driveway-paver-installation</guid>
+      <description>Why paver driveways are a durable and attractive choice for Iowa homes.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Sun, 20 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Concrete Retaining Walls for Iowa Commercial Applications</title>
+      <link>https://a1pslandscape.com/blog/concrete-retaining-wall-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/concrete-retaining-wall-iowa</guid>
+      <description>When poured concrete retaining walls are the right choice for Iowa properties.</description>
+      <category>Hardscaping</category>
+      <pubDate>Sun, 20 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Fire Pit Ideas for Cedar Falls Backyards</title>
+      <link>https://a1pslandscape.com/blog/fire-pit-ideas-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/fire-pit-ideas-cedar-falls</guid>
+      <description>Inspiration for adding a fire pit to your outdoor living space in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Tue, 15 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Creating Outdoor Living Spaces in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/cedar-falls-outdoor-spaces</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/cedar-falls-outdoor-spaces</guid>
+      <description>Design ideas for patios, fire pits, and outdoor rooms in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Tue, 15 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Natural Stone Walkway Installation in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/natural-stone-walkway-installation</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/natural-stone-walkway-installation</guid>
+      <description>Create beautiful, durable walkways with natural stone for Iowa landscapes.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Tue, 15 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Drought-Tolerant Landscaping for Iowa Summers</title>
+      <link>https://a1pslandscape.com/blog/drought-tolerant-landscaping-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/drought-tolerant-landscaping-iowa</guid>
+      <description>Create a landscape that thrives during Iowa summer dry spells.</description>
+      <category>Landscaping</category>
+      <pubDate>Tue, 15 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>The Importance of Proper Grading and Drainage</title>
+      <link>https://a1pslandscape.com/blog/grading-drainage-importance</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/grading-drainage-importance</guid>
+      <description>Why grading is the foundation of a healthy landscape in Iowa.</description>
+      <category>Drainage</category>
+      <pubDate>Thu, 10 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Rain Garden Installation for Iowa Properties</title>
+      <link>https://a1pslandscape.com/blog/rain-garden-installation-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/rain-garden-installation-iowa</guid>
+      <description>How rain gardens manage stormwater and add beauty to your landscape.</description>
+      <category>Landscaping</category>
+      <pubDate>Thu, 10 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Iowa Hardscape Materials Comparison Guide</title>
+      <link>https://a1pslandscape.com/blog/iowa-hardscape-materials-comparison</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/iowa-hardscape-materials-comparison</guid>
+      <description>Compare concrete pavers, natural stone, brick, and flagstone for Iowa projects.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Thu, 10 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Water Feature Maintenance Through Iowa Seasons</title>
+      <link>https://a1pslandscape.com/blog/water-feature-maintenance-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/water-feature-maintenance-iowa</guid>
+      <description>How to keep your pond or waterfall running cleanly all year.</description>
+      <category>Water Features</category>
+      <pubDate>Sat, 05 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Boulder Landscaping Ideas for Iowa Yards</title>
+      <link>https://a1pslandscape.com/blog/boulder-landscaping-ideas</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/boulder-landscaping-ideas</guid>
+      <description>Using landscape boulders as natural focal points in Cedar Falls and Waterloo gardens.</description>
+      <category>Landscaping</category>
+      <pubDate>Sat, 05 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Yard Drainage Cost in Cedar Falls: What to Budget</title>
+      <link>https://a1pslandscape.com/blog/yard-drainage-cost-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/yard-drainage-cost-cedar-falls</guid>
+      <description>Average pricing for French drains, grading, and drainage solutions.</description>
+      <category>Pricing</category>
+      <pubDate>Sat, 05 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Outdoor Living Trends in the Cedar Falls, Waterloo, and Black Hawk County</title>
       <link>https://a1pslandscape.com/blog/outdoor-living-trends-2025</link>
       <guid isPermaLink="true">https://a1pslandscape.com/blog/outdoor-living-trends-2025</guid>
       <description>Popular outdoor living features Cedar Falls homeowners are adding this year.</description>
       <category>Outdoor Living</category>
-      <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 01 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscaping Project Timeline: What to Expect in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/cedar-falls-landscaping-timeline</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/cedar-falls-landscaping-timeline</guid>
+      <description>How long typical landscaping projects take from consultation to completion.</description>
+      <category>Pricing</category>
+      <pubDate>Tue, 01 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Paver Patio vs. Concrete Patio in Iowa: Which Is Better?</title>
+      <link>https://a1pslandscape.com/blog/paver-patio-vs-concrete-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/paver-patio-vs-concrete-iowa</guid>
+      <description>Compare pavers and concrete for Iowa patios to make the right choice.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Tue, 01 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>How Cedar Falls Weather Affects Your Landscape</title>
+      <link>https://a1pslandscape.com/blog/cedar-falls-weather-landscaping</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/cedar-falls-weather-landscaping</guid>
+      <description>Designing landscapes that handle Iowa temperature extremes and precipitation patterns.</description>
+      <category>Landscaping</category>
+      <pubDate>Tue, 01 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Backyard Patio Design Guide for Iowa Homes</title>
+      <link>https://a1pslandscape.com/blog/backyard-patio-design-guide</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/backyard-patio-design-guide</guid>
+      <description>Design a backyard patio that works for your family and Iowa weather.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Tue, 01 Jul 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscape Lighting Ideas for Cedar Falls Homes</title>
+      <link>https://a1pslandscape.com/blog/landscape-lighting-ideas</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscape-lighting-ideas</guid>
+      <description>How landscape lighting improves safety, security, and curb appeal.</description>
+      <category>Outdoor Living</category>
+      <pubDate>Mon, 30 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Rock Landscaping Ideas for Iowa Properties</title>
+      <link>https://a1pslandscape.com/blog/rock-landscaping-ideas-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/rock-landscaping-ideas-iowa</guid>
+      <description>Creative ways to use river rock, boulders, and flagstone in your landscape.</description>
+      <category>Landscaping</category>
+      <pubDate>Wed, 25 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Common Iowa Landscaping Mistakes to Avoid</title>
+      <link>https://a1pslandscape.com/blog/iowa-landscaping-mistakes</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/iowa-landscaping-mistakes</guid>
+      <description>Learn from the most common landscaping errors made by Cedar Falls and Waterloo homeowners.</description>
+      <category>Landscaping</category>
+      <pubDate>Wed, 25 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Natural Stone vs. Paver Patios: Pros and Cons</title>
+      <link>https://a1pslandscape.com/blog/natural-stone-vs-paver-patio</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/natural-stone-vs-paver-patio</guid>
+      <description>Compare natural stone and paver patios for Iowa homes and landscapes.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Fri, 20 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Drainage Solutions for Wet Yards in the Cedar Falls, Waterloo, and Black Hawk County</title>
+      <link>https://a1pslandscape.com/blog/drainage-solutions-wet-yard</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/drainage-solutions-wet-yard</guid>
+      <description>Fix standing water and soggy lawns with professional drainage solutions.</description>
+      <category>Drainage</category>
+      <pubDate>Fri, 20 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Backyard Privacy Landscaping Ideas for Iowa Homes</title>
+      <link>https://a1pslandscape.com/blog/backyard-privacy-landscaping</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/backyard-privacy-landscaping</guid>
+      <description>Create privacy in your Cedar Falls yard with strategic plantings and hardscape.</description>
+      <category>Landscaping</category>
+      <pubDate>Fri, 20 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscaping in Phases: Building Your Dream Yard Over Time</title>
+      <link>https://a1pslandscape.com/blog/landscape-project-phases</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscape-project-phases</guid>
+      <description>How to plan and execute a multi-phase landscape project in Cedar Falls.</description>
+      <category>Landscaping</category>
+      <pubDate>Fri, 20 Jun 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -28,7 +424,43 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/how-long-does-mulch-last</guid>
       <description>Learn how long different mulch types last in Iowa weather and when to replace them.</description>
       <category>Maintenance</category>
-      <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 15 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscape Design Costs in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/landscape-design-cost-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscape-design-cost-cedar-falls</guid>
+      <description>What professional landscape design costs and what you get for your money.</description>
+      <category>Pricing</category>
+      <pubDate>Sun, 15 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Common Iowa Tree Diseases: Identification and Treatment</title>
+      <link>https://a1pslandscape.com/blog/tree-diseases-iowa-identification</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/tree-diseases-iowa-identification</guid>
+      <description>Spot and treat common tree diseases affecting Cedar Falls and Waterloo trees.</description>
+      <category>Tree Service</category>
+      <pubDate>Sun, 15 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Retaining Wall Drainage: Why It Matters in Iowa</title>
+      <link>https://a1pslandscape.com/blog/retaining-wall-drainage-importance</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/retaining-wall-drainage-importance</guid>
+      <description>Proper drainage is the most important factor in retaining wall longevity.</description>
+      <category>Hardscaping</category>
+      <pubDate>Sun, 15 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Iowa Soil Types and How They Affect Landscaping</title>
+      <link>https://a1pslandscape.com/blog/iowa-soil-types-landscaping</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/iowa-soil-types-landscaping</guid>
+      <description>Understanding Iowa soil helps you choose the right plants and drainage solutions.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 15 Jun 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -37,25 +469,223 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/yard-grading-guide-iowa</guid>
       <description>How proper grading protects your foundation and keeps your yard dry.</description>
       <category>Drainage</category>
-      <pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 10 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Best Paver Patterns for Patios and Walkways</title>
+      <link>https://a1pslandscape.com/blog/best-paver-patterns-patios</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/best-paver-patterns-patios</guid>
+      <description>Popular paver patterns and which one is right for your Cedar Falls patio.</description>
+      <category>Patios &amp; Hardscape</category>
+      <pubDate>Tue, 10 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscape Planning on a Budget in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/landscape-planning-budget</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscape-planning-budget</guid>
+      <description>How to prioritize your landscaping projects when working with a budget.</description>
+      <category>Pricing</category>
+      <pubDate>Tue, 10 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawn Disease Identification and Treatment in Iowa</title>
+      <link>https://a1pslandscape.com/blog/lawn-disease-identification-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-disease-identification-iowa</guid>
+      <description>Spot common Iowa lawn diseases and treat them before they spread.</description>
+      <category>Lawn Care</category>
+      <pubDate>Tue, 10 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Hydroseeding vs. Sod in Cedar Falls: Which Is Better?</title>
+      <link>https://a1pslandscape.com/blog/hydroseeding-vs-sod-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/hydroseeding-vs-sod-cedar-falls</guid>
+      <description>Compare the cost, timeline, and results of hydroseeding and sod installation.</description>
+      <category>Lawn Care</category>
+      <pubDate>Thu, 05 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Block Retaining Walls vs. Poured Concrete: Which Lasts Longer?</title>
+      <link>https://a1pslandscape.com/blog/block-wall-vs-poured-concrete</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/block-wall-vs-poured-concrete</guid>
+      <description>Compare the longevity and durability of block and concrete retaining walls in Iowa.</description>
+      <category>Hardscaping</category>
+      <pubDate>Thu, 05 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Shade Garden Plants for Iowa Landscapes</title>
+      <link>https://a1pslandscape.com/blog/shade-garden-plants-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/shade-garden-plants-iowa</guid>
+      <description>Best plants for shady areas in Cedar Falls and Waterloo gardens and yards.</description>
+      <category>Landscaping</category>
+      <pubDate>Thu, 05 Jun 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>French Drain Cost in Iowa: What to Expect</title>
       <link>https://a1pslandscape.com/blog/french-drain-cost-iowa</link>
       <guid isPermaLink="true">https://a1pslandscape.com/blog/french-drain-cost-iowa</guid>
-      <description>Average pricing for French drain installation in Cedar Falls and the Cedar Valley.</description>
+      <description>Average pricing for French drain installation in the Cedar Falls, Waterloo, and Black Hawk County.</description>
       <category>Drainage</category>
-      <pubDate>Sun, 01 Jun 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>DIY vs. Professional Landscaping: What to Know</title>
+      <link>https://a1pslandscape.com/blog/diy-vs-professional-landscaping</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/diy-vs-professional-landscaping</guid>
+      <description>When to tackle landscaping yourself and when to hire a professional in Cedar Falls.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscaping Return on Investment for Iowa Homes</title>
+      <link>https://a1pslandscape.com/blog/landscaping-roi-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscaping-roi-iowa</guid>
+      <description>How landscaping increases property value in the Cedar Falls, Waterloo, and Black Hawk County real estate market.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Front Yard Landscaping Ideas for Cedar Falls Homes</title>
+      <link>https://a1pslandscape.com/blog/front-yard-landscaping-ideas</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/front-yard-landscaping-ideas</guid>
+      <description>Boost curb appeal with front yard landscaping that makes a statement.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Yard Composting and Natural Fertilization in Iowa</title>
+      <link>https://a1pslandscape.com/blog/yard-composition-fertilization</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/yard-composition-fertilization</guid>
+      <description>Use compost to improve Iowa soil naturally in your landscape beds.</description>
+      <category>Maintenance</category>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscaping FAQ for Cedar Falls Homeowners</title>
+      <link>https://a1pslandscape.com/blog/cedar-falls-landscaping-faq</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/cedar-falls-landscaping-faq</guid>
+      <description>Answers to the most common landscaping questions from Cedar Falls residents.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 01 Jun 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Sod Installation Tips for Iowa Lawns</title>
+      <link>https://a1pslandscape.com/blog/sod-installation-tips-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/sod-installation-tips-iowa</guid>
+      <description>How to ensure your new sod lawn establishes successfully in Iowa conditions.</description>
+      <category>Lawn Care</category>
+      <pubDate>Fri, 30 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Best Evergreen Trees for Privacy Screening in Iowa</title>
+      <link>https://a1pslandscape.com/blog/evergreen-trees-iowa-screening</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/evergreen-trees-iowa-screening</guid>
+      <description>Choose evergreen trees that provide year-round privacy screening in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Landscaping</category>
+      <pubDate>Fri, 30 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Concrete vs. Block Retaining Walls: Which Is Better for Iowa?</title>
+      <link>https://a1pslandscape.com/blog/concrete-vs-block-retaining-walls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/concrete-vs-block-retaining-walls</guid>
+      <description>Compare poured concrete and segmental block retaining walls for Iowa properties.</description>
+      <category>Hardscaping</category>
+      <pubDate>Sun, 25 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscaping Warranties: What Is Covered in Iowa</title>
+      <link>https://a1pslandscape.com/blog/warranty-landscaping-work-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/warranty-landscaping-work-iowa</guid>
+      <description>Understanding warranties on landscaping installation work in Cedar Falls.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 25 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscape Edging Ideas for Clean Garden Beds</title>
+      <link>https://a1pslandscape.com/blog/landscape-edging-ideas</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscape-edging-ideas</guid>
+      <description>Keep your garden beds looking sharp with proper edging materials and techniques.</description>
+      <category>Maintenance</category>
+      <pubDate>Sun, 25 May 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Common Drainage Problems on Iowa Properties</title>
       <link>https://a1pslandscape.com/blog/common-drainage-problems-iowa</link>
       <guid isPermaLink="true">https://a1pslandscape.com/blog/common-drainage-problems-iowa</guid>
-      <description>Identify and fix the most common yard drainage issues in the Cedar Valley.</description>
+      <description>Identify and fix the most common yard drainage issues in the Cedar Falls, Waterloo, and Black Hawk County.</description>
       <category>Drainage</category>
-      <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 20 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Best Perennial Flowers for Iowa Gardens</title>
+      <link>https://a1pslandscape.com/blog/perennial-flowers-iowa-gardens</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/perennial-flowers-iowa-gardens</guid>
+      <description>Reliable perennials that bloom year after year in Black Hawk County.</description>
+      <category>Landscaping</category>
+      <pubDate>Tue, 20 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Mulch Types Comparison for Iowa Landscapes</title>
+      <link>https://a1pslandscape.com/blog/mulch-types-comparison-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/mulch-types-comparison-iowa</guid>
+      <description>Compare shredded hardwood, cedar, dyed, and rubber mulch for your garden.</description>
+      <category>Maintenance</category>
+      <pubDate>Tue, 20 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Comparing Landscaping Companies in the Cedar Falls, Waterloo, and Black Hawk County</title>
+      <link>https://a1pslandscape.com/blog/iowa-landscaping-companies-comparison</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/iowa-landscaping-companies-comparison</guid>
+      <description>How to evaluate and compare landscaping companies in Cedar Falls and Waterloo.</description>
+      <category>Landscaping</category>
+      <pubDate>Tue, 20 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Shrub Installation for Foundation Plantings in Iowa</title>
+      <link>https://a1pslandscape.com/blog/shrub-installation-foundation-plantings</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/shrub-installation-foundation-plantings</guid>
+      <description>How to choose and install shrubs that enhance your home curb appeal.</description>
+      <category>Landscaping</category>
+      <pubDate>Thu, 15 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawn Mowing Tips for Iowa Grasses</title>
+      <link>https://a1pslandscape.com/blog/lawn-mowing-tips-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-mowing-tips-iowa</guid>
+      <description>Mow at the right height and frequency for a healthier Iowa lawn.</description>
+      <category>Lawn Care</category>
+      <pubDate>Thu, 15 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscaping Near Me in Cedar Falls | How to Choose</title>
+      <link>https://a1pslandscape.com/blog/landscaping-near-me-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscaping-near-me-cedar-falls</guid>
+      <description>Searching landscaping near me in Cedar Falls? Compare local experience, licensing, reviews, and full-service crews — then get a free A1 estimate.</description>
+      <category>Landscaping</category>
+      <pubDate>Thu, 15 May 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -64,16 +694,70 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/best-retaining-wall-materials-iowa</guid>
       <description>Compare concrete block, natural stone, and timber retaining walls for Iowa freeze-thaw conditions.</description>
       <category>Hardscaping</category>
-      <pubDate>Sat, 10 May 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sat, 10 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Using Iowa Native Plants in Your Landscape</title>
+      <link>https://a1pslandscape.com/blog/iowa-native-plants-landscaping</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/iowa-native-plants-landscaping</guid>
+      <description>Why native plants perform better and require less maintenance in Cedar Falls and Waterloo gardens.</description>
+      <category>Landscaping</category>
+      <pubDate>Sat, 10 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Flowering Shrubs That Thrive in Iowa</title>
+      <link>https://a1pslandscape.com/blog/flowering-shrubs-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/flowering-shrubs-iowa</guid>
+      <description>Best flowering shrubs for continuous color in Cedar Falls and Waterloo landscapes.</description>
+      <category>Landscaping</category>
+      <pubDate>Sat, 10 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Why Mulching Matters for Your Landscape Beds</title>
+      <link>https://a1pslandscape.com/blog/mulching-benefits-landscape-beds</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/mulching-benefits-landscape-beds</guid>
+      <description>The benefits of annual mulching for Iowa landscape beds and gardens.</description>
+      <category>Maintenance</category>
+      <pubDate>Mon, 05 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Perennial Garden Design for Iowa Conditions</title>
+      <link>https://a1pslandscape.com/blog/perennial-garden-design-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/perennial-garden-design-iowa</guid>
+      <description>How to design a perennial garden that blooms from spring through fall.</description>
+      <category>Landscaping</category>
+      <pubDate>Mon, 05 May 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Landscaping Costs in Cedar Falls: What to Expect</title>
       <link>https://a1pslandscape.com/blog/landscaping-costs-cedar-falls</link>
       <guid isPermaLink="true">https://a1pslandscape.com/blog/landscaping-costs-cedar-falls</guid>
-      <description>Average pricing for landscaping services in Cedar Falls and the Cedar Valley area.</description>
+      <description>Average pricing for landscaping services in the Cedar Falls, Waterloo, and Black Hawk County area.</description>
       <category>Pricing</category>
-      <pubDate>Thu, 01 May 2025 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 01 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>How to Choose a Landscaping Company in Cedar Falls</title>
+      <link>https://a1pslandscape.com/blog/cedar-falls-landscaping-companies</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/cedar-falls-landscaping-companies</guid>
+      <description>What to look for when hiring a landscaper in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Landscaping</category>
+      <pubDate>Thu, 01 May 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawn Weed Control Guide for Iowa Lawns</title>
+      <link>https://a1pslandscape.com/blog/lawn-weed-control-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-weed-control-iowa</guid>
+      <description>Identify and control common Iowa lawn weeds effectively.</description>
+      <category>Lawn Care</category>
+      <pubDate>Thu, 01 May 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -82,7 +766,7 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/retaining-wall-permit-guide-cedar-falls</guid>
       <description>When you need a permit and how to navigate Cedar Falls retaining wall regulations.</description>
       <category>Hardscaping</category>
-      <pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate>
+      <pubDate>Fri, 25 Apr 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -91,7 +775,34 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/patio-cost-guide-cedar-falls</guid>
       <description>Complete pricing guide for paver patios, concrete patios, and natural stone patios in Iowa.</description>
       <category>Pricing</category>
-      <pubDate>Sun, 20 Apr 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 20 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>How to Hire a Landscaper in Iowa</title>
+      <link>https://a1pslandscape.com/blog/how-to-hire-landscaper-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/how-to-hire-landscaper-iowa</guid>
+      <description>Questions to ask and things to check before hiring a landscaping contractor.</description>
+      <category>Landscaping</category>
+      <pubDate>Sun, 20 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Tree Planting Guide for Cedar Falls Homeowners</title>
+      <link>https://a1pslandscape.com/blog/tree-planting-guide-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/tree-planting-guide-cedar-falls</guid>
+      <description>How to plant trees that thrive in Black Hawk County soil and climate.</description>
+      <category>Landscaping</category>
+      <pubDate>Tue, 15 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawn Repair and Overseeding Guide for Iowa Lawns</title>
+      <link>https://a1pslandscape.com/blog/lawn-repair-spring-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-repair-spring-iowa</guid>
+      <description>Fix bare spots and thin lawns with proper overseeding techniques.</description>
+      <category>Lawn Care</category>
+      <pubDate>Tue, 15 Apr 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -100,16 +811,79 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/best-plants-for-iowa-landscapes</guid>
       <description>Top-performing perennials, shrubs, and trees for Black Hawk County gardens.</description>
       <category>Landscaping</category>
-      <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 10 Apr 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
-      <title>Spring Landscape Maintenance Checklist for Cedar Valley Homeowners</title>
+      <title>Landscaping Services in Waterloo, IA</title>
+      <link>https://a1pslandscape.com/blog/waterloo-landscaping-services</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/waterloo-landscaping-services</guid>
+      <description>Professional landscaping, hardscaping, and lawn care in Waterloo.</description>
+      <category>Service Areas</category>
+      <pubDate>Thu, 10 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Benefits of Professional Commercial Landscaping</title>
+      <link>https://a1pslandscape.com/blog/commercial-landscaping-benefits</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/commercial-landscaping-benefits</guid>
+      <description>How commercial landscaping increases property value and tenant satisfaction.</description>
+      <category>Commercial</category>
+      <pubDate>Sat, 05 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Spring Landscape Maintenance for Cedar Falls and Waterloo Homeowners</title>
       <link>https://a1pslandscape.com/blog/spring-landscape-maintenance-checklist</link>
       <guid isPermaLink="true">https://a1pslandscape.com/blog/spring-landscape-maintenance-checklist</guid>
-      <description>A practical spring cleanup checklist from local landscaping pros in the Cedar Valley.</description>
+      <description>A practical spring cleanup checklist from local landscaping pros in the Cedar Falls, Waterloo, and Black Hawk County.</description>
       <category>Maintenance</category>
-      <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 01 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Lawn Fertilization Schedule for Iowa Lawns</title>
+      <link>https://a1pslandscape.com/blog/lawn-fertilization-schedule-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-fertilization-schedule-iowa</guid>
+      <description>When and how to fertilize your Iowa lawn for the best results.</description>
+      <category>Lawn Care</category>
+      <pubDate>Tue, 01 Apr 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Hedge Pruning Tips for Iowa Shrubs</title>
+      <link>https://a1pslandscape.com/blog/hedge-pruning-tips-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/hedge-pruning-tips-iowa</guid>
+      <description>When and how to prune hedges and shrubs in the Cedar Falls, Waterloo, and Black Hawk County.</description>
+      <category>Maintenance</category>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Landscape Design Principles for Iowa Homes</title>
+      <link>https://a1pslandscape.com/blog/landscape-design-principles-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/landscape-design-principles-iowa</guid>
+      <description>How to plan a landscape that looks great and works for your Cedar Falls and Waterloo property.</description>
+      <category>Landscaping</category>
+      <pubDate>Thu, 20 Mar 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Why Lawn Aeration Matters for Iowa Lawns</title>
+      <link>https://a1pslandscape.com/blog/lawn-aeration-importance-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/lawn-aeration-importance-iowa</guid>
+      <description>How core aeration helps your lawn grow thicker and handle Cedar Falls and Waterloo summers.</description>
+      <category>Lawn Care</category>
+      <pubDate>Sat, 15 Mar 2025 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Why Retaining Walls Are Essential for Iowa Sloped Yards</title>
+      <link>https://a1pslandscape.com/blog/retaining-wall-benefits-cedar-falls</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/retaining-wall-benefits-cedar-falls</guid>
+      <description>How a properly built retaining wall stops erosion, adds usable space, and holds up on Iowa slopes.</description>
+      <category>Hardscaping</category>
+      <pubDate>Wed, 12 Mar 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
@@ -118,25 +892,25 @@
       <guid isPermaLink="true">https://a1pslandscape.com/blog/spring-landscaping-checklist-iowa</guid>
       <description>A month-by-month guide to getting your Iowa yard ready for spring and summer.</description>
       <category>Maintenance</category>
-      <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sat, 01 Mar 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
-      <title>Why Retaining Walls Are Essential for Iowa Sloped Yards</title>
-      <link>https://a1pslandscape.com/blog/retaining-wall-benefits-cedar-falls</link>
-      <guid isPermaLink="true">https://a1pslandscape.com/blog/retaining-wall-benefits-cedar-falls</guid>
-      <description>How a properly built retaining wall stops erosion, adds usable space, and holds up on Cedar Valley slopes.</description>
-      <category>Hardscaping</category>
-      <pubDate>Wed, 12 Mar 2025 00:00:00 GMT</pubDate>
+      <title>Seasonal Lawn Care Tips for Iowa Homeowners</title>
+      <link>https://a1pslandscape.com/blog/seasonal-lawn-care-tips-iowa</link>
+      <guid isPermaLink="true">https://a1pslandscape.com/blog/seasonal-lawn-care-tips-iowa</guid>
+      <description>A year-round guide to keeping your Iowa lawn healthy and green.</description>
+      <category>Lawn Care</category>
+      <pubDate>Sat, 01 Mar 2025 12:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Planning Your Paver Patio: Size, Pattern &amp; Drainage</title>
       <link>https://a1pslandscape.com/blog/paver-patio-planning-guide</link>
       <guid isPermaLink="true">https://a1pslandscape.com/blog/paver-patio-planning-guide</guid>
-      <description>A few things to think about before you break ground on a new patio in the Cedar Valley.</description>
+      <description>A few things to think about before you break ground on a new patio in the Cedar Falls, Waterloo, and Black Hawk County.</description>
       <category>Patios &amp; Hardscape</category>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sat, 08 Feb 2025 12:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

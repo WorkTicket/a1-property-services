@@ -1,14 +1,25 @@
+import { countWords, minutesFromWords } from './reading-time'
+
 export type LearnArticle = {
   slug: string
   title: string
   excerpt: string
   category: 'buying-guide' | 'educational' | 'comparison'
   categoryLabel: string
-  readingTime: string
   sections: { heading: string; paragraphs: string[] }[]
   relatedServices: string[]
   relatedCities: string[]
   relatedFaqs: string[]
+}
+
+export function getLearnReadingTime(article: LearnArticle): string {
+  const words = countWords(
+    [
+      article.excerpt,
+      ...article.sections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ].join(' '),
+  )
+  return `${minutesFromWords(words)} min`
 }
 
 export const learnArticles: LearnArticle[] = [
@@ -18,7 +29,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'Learn what to look for when reviewing landscaping bids so you can compare them fairly and choose the best value for your project.',
     category: 'educational',
     categoryLabel: 'Hiring Advice',
-    readingTime: '7 min',
     sections: [
       {
         heading: 'Why estimates can look so different',
@@ -66,7 +76,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'Seven essential questions to ask any landscaping contractor before you sign a contract or hand over a deposit.',
     category: 'educational',
     categoryLabel: 'Hiring Advice',
-    readingTime: '6 min',
     sections: [
       {
         heading: 'Are you licensed and insured?',
@@ -128,7 +137,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'A step-by-step guide to planning a retaining wall, from assessing your slope to choosing materials and navigating permits.',
     category: 'educational',
     categoryLabel: 'Project Planning',
-    readingTime: '8 min',
     sections: [
       {
         heading: 'Start with the goal',
@@ -183,7 +191,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'Compare paver, concrete, and natural stone patios to find the right material for your Iowa landscape and budget.',
     category: 'comparison',
     categoryLabel: 'Material Comparison',
-    readingTime: '7 min',
     sections: [
       {
         heading: 'Start with how you will use the space',
@@ -231,7 +238,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'How to get the most out of your landscaping consultation with practical tips on what to prepare and what to ask.',
     category: 'educational',
     categoryLabel: 'Getting Started',
-    readingTime: '5 min',
     sections: [
       {
         heading: 'Define your vision before the consultation',
@@ -279,7 +285,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'A practical month-by-month guide to keeping your Iowa landscape healthy and attractive through every season.',
     category: 'educational',
     categoryLabel: 'Maintenance',
-    readingTime: '9 min',
     sections: [
       {
         heading: 'Spring: cleanup and preparation',
@@ -320,7 +325,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'Practical guidance on budgeting for landscaping projects, from a small refresh to a full yard redo.',
     category: 'buying-guide',
     categoryLabel: 'Budget Guide',
-    readingTime: '7 min',
     sections: [
       {
         heading: 'Start with priorities, not a number',
@@ -368,7 +372,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'An objective comparison of common hardscape and landscape materials to help you choose the right options for your project.',
     category: 'comparison',
     categoryLabel: 'Material Comparison',
-    readingTime: '8 min',
     sections: [
       {
         heading: 'Comparing hardscape materials',
@@ -416,7 +419,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'How long does a landscaping project take? A realistic guide to timelines for common residential projects.',
     category: 'buying-guide',
     categoryLabel: 'Project Planning',
-    readingTime: '6 min',
     sections: [
       {
         heading: 'Factors that affect project timelines',
@@ -464,7 +466,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'A realistic overview of what it takes to maintain a healthy, attractive landscape in the Cedar Falls, Waterloo, and Black Hawk County throughout the year.',
     category: 'buying-guide',
     categoryLabel: 'Maintenance Guide',
-    readingTime: '6 min',
     sections: [
       {
         heading: 'Weekly maintenance tasks',
@@ -512,7 +513,6 @@ export const learnArticles: LearnArticle[] = [
     excerpt: 'Learn from the most frequent landscaping mistakes homeowners make and how to avoid them in your own yard.',
     category: 'buying-guide',
     categoryLabel: 'Tips & Advice',
-    readingTime: '7 min',
     sections: [
       {
         heading: 'Skipping the planning phase',

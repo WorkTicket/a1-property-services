@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Phone, MapPin } from 'lucide-react'
 import { cities, getCityBySlug } from '@/lib/cities'
 import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
-import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { sinceYearPhrase } from '@/lib/years-in-business'
 import { getComplementaryServices, getServiceRelatedContentGroups, getNearbyCitiesForPage } from '@/lib/internal-linking'
@@ -74,7 +74,7 @@ export default function CityServicePage({ params }: Props) {
     '@type': 'Service',
     name: pageTitle,
     serviceType: service.name,
-    provider: { '@id': `${siteConfig.url}/#organization` },
+    provider: organizationRef(),
     areaServed: {
       '@type': 'City',
       name: city.name,
