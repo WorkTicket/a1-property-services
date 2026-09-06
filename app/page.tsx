@@ -18,14 +18,11 @@ import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
 import HeroOverlay from '@/components/ui/HeroOverlay'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
-import { getYearsInBusiness, yearsInBusinessLabel, establishedEyebrow, sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
+import { getYearsInBusiness, establishedEyebrow, sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
 import { projectsCompletedValue } from '@/lib/projects-completed'
+import { cities } from '@/lib/cities'
 import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
-
-const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
-  loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
-  ssr: false,
-})
+import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
 
 const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 
@@ -73,8 +70,8 @@ function getStats() {
   return [
     { value: projectsCompletedValue(), label: 'Projects Completed' },
     { value: String(getYearsInBusiness()), label: 'Years in Cedar Falls' },
-    { value: '5.0', label: 'Average Rating' },
-    { value: 'Licensed', label: '& Insured Iowa Contractor' },
+    { value: String(cities.length), label: 'Cities Served' },
+    { value: '24-Hr', label: 'Typical Response' },
   ]
 }
 
@@ -125,18 +122,15 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
-      {/* HERO: photo background, left-aligned, trust bar below content */}
-      <section
-        className="relative flex min-h-[100vh] flex-col md:min-h-[105vh]"
-        style={{ minHeight: '100dvh', height: '100dvh', position: 'relative', display: 'flex', flexDirection: 'column' }}
-      >
+      {/* HERO: full first screen on mobile; trust bar is below the fold until scroll */}
+      <section className="relative flex flex-col overflow-hidden md:h-[100dvh]">
         <LcpHeroImage
           src={siteImages.homeHero}
           alt="Aerial view of Cedar Falls, Iowa"
         />
         <HeroOverlay imageSrc={siteImages.homeHero} variant="left" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-8 pt-28 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-24 pt-28 sm:px-6 md:min-h-0 md:pb-8 lg:px-8">
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
@@ -156,7 +150,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Trust bar: flows below hero content, not overlapping CTAs */}
         <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/50 backdrop-blur-sm">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-4 text-sm text-white/90 sm:gap-10">
             <span className="flex items-center gap-1.5">
@@ -165,7 +158,7 @@ export default function HomePage() {
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <span>Licensed &amp; Insured</span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
-            <span>{yearsInBusinessLabel()}</span>
+            <span>Free Estimates</span>
             <span className="hidden h-4 w-px bg-white/20 sm:block" />
             <span>Cedar Falls &amp; Waterloo</span>
           </div>
@@ -268,7 +261,7 @@ export default function HomePage() {
               <p className="section-eyebrow">Our Work</p>
               <h2 className="section-heading mt-3">Before &amp; After</h2>
               <p className="mt-2 text-brand-muted max-w-xl">
-                Drag the slider on each project to compare before and after.
+                Drag the slider to compare, then open a project to see materials and how we built it.
               </p>
             </div>
             <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
@@ -276,15 +269,8 @@ export default function HomePage() {
             </Button>
           </FadeIn>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
-            {homepageGalleryPreview.map((project) => (
-              <BeforeAfterSlider
-                key={project.id}
-                title={project.title}
-                before={{ ...project.before, priority: false }}
-                after={{ ...project.after, priority: false }}
-              />
-            ))}
+          <div className="mt-10">
+            <ProjectPreviewGrid projects={homepageGalleryPreview} />
           </div>
 
           <FadeIn className="mt-8 text-center sm:hidden" delay={0.1}>

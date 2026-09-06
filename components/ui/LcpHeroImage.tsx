@@ -1,12 +1,13 @@
 import type { CSSProperties } from 'react'
 import { cn } from '@/lib/utils'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
-import { buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
+import { buildSrcset, getBlurPlaceholder, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
 
 type LcpHeroImageProps = {
   src: string
   alt: string
   sizes?: string
+  maxWidth?: number
   className?: string
   objectPosition?: string
 }
@@ -16,12 +17,14 @@ export default function LcpHeroImage({
   src,
   alt,
   sizes = IMAGE_SIZES.hero,
+  maxWidth,
   className,
   objectPosition,
 }: LcpHeroImageProps) {
   const dimensions = getImageDimensions(src)
-  const avifSrcset = buildSrcset(src, 'avif')
-  const webpSrcset = buildSrcset(src, 'webp')
+  const avifSrcset = buildSrcset(src, 'avif', maxWidth)
+  const webpSrcset = buildSrcset(src, 'webp', maxWidth)
+  const blurPlaceholder = getBlurPlaceholder(src)
   const imgStyle: CSSProperties = {
     position: 'absolute',
     top: 0,
@@ -31,9 +34,19 @@ export default function LcpHeroImage({
     objectFit: 'cover',
     ...(objectPosition ? { objectPosition } : {}),
   }
+  const pictureStyle: CSSProperties | undefined = blurPlaceholder
+    ? {
+        backgroundImage: `url("${blurPlaceholder}")`,
+        backgroundSize: 'cover',
+        backgroundPosition: objectPosition || 'center',
+      }
+    : undefined
 
   return (
-    <picture className={cn('absolute inset-0 block h-full w-full', className)}>
+    <picture
+      className={cn('absolute inset-0 block h-full w-full bg-neutral-900', className)}
+      style={pictureStyle}
+    >
       <source srcSet={avifSrcset} sizes={sizes} type="image/avif" />
       <source srcSet={webpSrcset} sizes={sizes} type="image/webp" />
       {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import { Award, Shield, Heart, Users, Phone, Check, Star } from 'lucide-react'
+import { Award, Heart, Phone, Check, MapPin } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages } from '@/lib/images'
@@ -14,13 +14,14 @@ import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import {
   getYearsInBusiness,
-  yearsInBusinessLabel,
   yearsInBusinessOverPhrase,
   yearsInBusinessPhrase,
   sinceYearPhrase,
   startedInYearPhrase,
+  FOUNDING_YEAR,
 } from '@/lib/years-in-business'
-import { projectsCompletedTitle } from '@/lib/projects-completed'
+import { projectsCompletedValue } from '@/lib/projects-completed'
+import { cities } from '@/lib/cities'
 
 const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 
@@ -33,16 +34,11 @@ export async function generateMetadata(): Promise<Metadata> {
   })
 }
 
-const baseValues = [
+const values = [
   {
     icon: <Award className="h-6 w-6" />,
     title: 'We Do It Right',
     desc: 'Proper technique, solid materials, and attention to the details that matter in Iowa weather.',
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: 'Licensed & Insured',
-    desc: 'Licensed Iowa contractor, fully insured on every residential and commercial job.',
   },
   {
     icon: <Heart className="h-6 w-6" />,
@@ -50,17 +46,24 @@ const baseValues = [
     desc: 'Straight answers, clear pricing, and realistic timelines. Your trust is what keeps us in business.',
   },
   {
-    icon: <Users className="h-6 w-6" />,
-    title: 'Local Expertise',
+    icon: <Check className="h-6 w-6" />,
+    title: 'Finish What We Start',
+    desc: 'We leave the site graded, cleaned up, and ready to use. A job is not done until you can enjoy the yard.',
+  },
+  {
+    icon: <MapPin className="h-6 w-6" />,
+    title: 'Built for Iowa',
+    desc: 'Clay soil, freeze-thaw, and short growing seasons. We build walls, patios, and plantings that last here.',
   },
 ]
 
 export default function AboutPage() {
-  const yearsLabel = yearsInBusinessLabel()
-  const localExpertiseDesc = `${yearsInBusinessPhrase()} serving Cedar Falls, Waterloo, and Black Hawk County. We know Iowa soil, seasons, and what works here.`
-  const values = baseValues.map((v) =>
-    v.title === 'Local Expertise' ? { ...v, desc: localExpertiseDesc } : v,
-  )
+  const stats = [
+    { value: projectsCompletedValue(), label: 'Projects Completed' },
+    { value: String(cities.length), label: 'Cities Served' },
+    { value: 'Licensed', label: 'Iowa Contractor' },
+    { value: `Est. ${FOUNDING_YEAR}`, label: 'Cedar Falls, Iowa' },
+  ]
 
   const pageSchema = webPageJsonLd({
     name: 'About Us | A1 Property Services',
@@ -155,27 +158,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Trust Features */}
-      <section className="section bg-brand-green-100">
+      <section className="stats-bar">
         <div className="section-inner">
-          <StaggerContainer className="grid gap-8 md:grid-cols-4">
-            {[
-              { icon: <Star className="h-6 w-6" />, title: '5-Star Rated', desc: 'Average rating across all Google reviews' },
-              { icon: <Shield className="h-6 w-6" />, title: 'Licensed & Insured', desc: 'State of Iowa contractor with full liability insurance' },
-              { icon: <Check className="h-6 w-6" />, title: projectsCompletedTitle(), desc: `Completed in Cedar Falls, Waterloo & Black Hawk County ${sinceYearPhrase()}` },
-              { icon: <Users className="h-6 w-6" />, title: yearsLabel, desc: 'Serving Cedar Falls & Waterloo' },
-            ].map((item) => (
-              <StaggerItem key={item.title}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="rounded-full bg-brand-green-800/10 p-3 text-brand-green-800">
-                    {item.icon}
-                  </div>
-                  <h3 className="mt-3 font-bold text-brand-dark">{item.title}</h3>
-                  <p className="mt-1 text-sm text-brand-muted">{item.desc}</p>
-                </div>
-              </StaggerItem>
+          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-4 md:divide-y-0">
+            {stats.map((stat) => (
+              <div key={stat.label} className="px-4 py-8 text-center sm:px-6 md:py-6">
+                <p className="stats-value">{stat.value}</p>
+                <p className="stats-label">{stat.label}</p>
+              </div>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 

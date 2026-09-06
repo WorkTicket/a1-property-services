@@ -40,7 +40,7 @@ export default function GalleryPage() {
         imageAlt="Landscaping project gallery in Cedar Falls"
         eyebrow="Our Work"
         title="Our Project|Gallery"
-        subtitle="Real projects in Cedar Falls, Waterloo, and Black Hawk County. Drag the slider to compare before and after."
+        subtitle="Real projects in Cedar Falls, Waterloo, and Black Hawk County. Open a project to compare before and after."
       />
       <GalleryFilter />
       <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />

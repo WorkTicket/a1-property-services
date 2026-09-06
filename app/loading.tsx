@@ -1,7 +1,10 @@
 export default function Loading() {
   return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand-gold/30 border-t-brand-gold" />
+    <div
+      className="relative h-[50vh] min-h-[360px] overflow-hidden bg-neutral-900 md:h-[55vh] md:min-h-[420px]"
+      aria-hidden
+    >
+      <div className="hero-image-overlay" />
     </div>
   )
 }

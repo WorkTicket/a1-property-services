@@ -7,6 +7,7 @@ export type ImageFormat = (typeof FORMATS)[number]
 type ManifestEntry = {
   width: number
   height: number
+  blurPlaceholder?: string
   variants: Record<ImageFormat, Record<string, string>>
 }
 
@@ -18,16 +19,16 @@ export function imagePathBase(src: string): string {
   return idx >= 0 ? withoutExt.slice(idx + 1) : withoutExt
 }
 
-export function buildSrcset(src: string, format: ImageFormat): string {
+export function buildSrcset(src: string, format: ImageFormat, maxWidth?: number): string {
   const entry = manifest[src]
   const variants = entry?.variants?.[format]
   if (variants) {
     return Object.entries(variants)
+      .filter(([width]) => maxWidth == null || Number(width) <= maxWidth)
       .map(([width, url]) => `${url} ${width}w`)
       .join(', ')
   }
 
-  const base = imagePathBase(src)
   return `${src} ${entry?.width ?? 1920}w`
 }
 
@@ -35,6 +36,10 @@ export function getImageDimensions(src: string): { width: number; height: number
   const entry = manifest[src]
   if (!entry) return undefined
   return { width: entry.width, height: entry.height }
+}
+
+export function getBlurPlaceholder(src: string): string | undefined {
+  return manifest[src]?.blurPlaceholder
 }
 
 export function getVariantUrl(src: string, format: ImageFormat, preferredWidth = 720): string {
@@ -52,13 +57,8 @@ export function getLcpPreloadHref(src: string, preferredWidth = 768): string {
   return getVariantUrl(src, 'avif', preferredWidth)
 }
 
-export function getLcpPreloadSrcset(src: string): string {
-  const avifSrcset = buildSrcset(src, 'avif')
-  const entry = manifest[src]
-  if (entry) {
-    return `${avifSrcset}, ${src} ${entry.width}w`
-  }
-  return avifSrcset
+export function getLcpPreloadSrcset(src: string, maxWidth?: number): string {
+  return buildSrcset(src, 'avif', maxWidth)
 }
 
 export function getHeroBackgroundStyle(src: string, preferredWidth = 640) {

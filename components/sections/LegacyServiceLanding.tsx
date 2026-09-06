@@ -30,11 +30,7 @@ import ServiceIcon from '@/components/ui/ServiceIcon'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
-
-const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
-  loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
-  ssr: false,
-})
+import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
 
 const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
@@ -88,6 +84,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
 
   return (
     <>
+      <HeroImagePreload src={page.heroImage} sizes={IMAGE_SIZES.pageHero} maxWidth={1920} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -110,8 +107,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         className="relative flex min-h-[50vh] flex-col overflow-hidden pt-24 pb-0 text-white md:min-h-[55vh]"
         style={{ position: 'relative' }}
       >
-        <HeroImagePreload src={page.heroImage} />
-        <LcpHeroImage src={page.heroImage} alt={page.heroImageAlt} />
+        <LcpHeroImage src={page.heroImage} alt={page.heroImageAlt} sizes={IMAGE_SIZES.pageHero} maxWidth={1920} />
         <HeroOverlay imageSrc={page.heroImage} variant="center" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-4 pb-8 text-center sm:px-6">
@@ -156,22 +152,15 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                 <p className="section-eyebrow">Recent Work</p>
                 <h2 className="section-heading mt-3">Before &amp; After</h2>
                 <p className="mt-2 max-w-xl text-brand-body">
-                  Real {serviceName.toLowerCase()} projects in Cedar Falls and Waterloo — drag to compare.
+                  Real {serviceName.toLowerCase()} projects in Cedar Falls and Waterloo — drag to compare, then open the project.
                 </p>
               </div>
               <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
                 View Gallery
               </Button>
             </FadeIn>
-            <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-              {proofProjects.map((project) => (
-                <BeforeAfterSlider
-                  key={project.id}
-                  title={project.title}
-                  before={{ ...project.before, priority: false }}
-                  after={{ ...project.after, priority: false }}
-                />
-              ))}
+            <div className="mt-10">
+              <ProjectPreviewGrid projects={proofProjects} columns={3} />
             </div>
             <div className="mt-10 flex justify-center">
               <Button href="#estimate">

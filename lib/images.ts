@@ -1,3 +1,5 @@
+import { DEFAULT_GALLERY_LOCATION, galleryProjectCopy } from '@/lib/gallery-copy'
+
 export type GalleryCategory =
   | 'all'
   | 'hardscape'
@@ -66,6 +68,10 @@ export type GalleryProject = {
   showcase?: boolean
   before?: GalleryImage
   after: GalleryImage
+  location: string
+  description: string
+  scopeOfWork: string
+  materials: string[]
 }
 
 export type GalleryBeforeAfterProject = GalleryProject & {
@@ -291,8 +297,10 @@ const serviceContentImageAltMap: Record<string, string> = {
     'Custom paver driveway with interlocking pattern',
 }
 
+type GalleryProjectRecord = Omit<GalleryProject, 'location' | 'description' | 'scopeOfWork' | 'materials'>
+
 // Gallery projects
-const galleryProjects: GalleryProject[] = [
+const galleryProjectRecords: GalleryProjectRecord[] = [
   {
     id: 'wall-1',
     title: 'Retaining Wall',
@@ -645,6 +653,26 @@ const galleryProjects: GalleryProject[] = [
   },
 ]
 
+function toGalleryProject(project: GalleryProjectRecord): GalleryProject {
+  const copy = galleryProjectCopy[project.id]
+  return {
+    ...project,
+    title: copy?.title ?? project.title,
+    location: copy?.location ?? DEFAULT_GALLERY_LOCATION,
+    description: copy?.description ?? project.after.alt,
+    scopeOfWork: copy?.scopeOfWork ?? '',
+    materials: copy?.materials ?? [],
+  }
+}
+
+const galleryProjects: GalleryProject[] = galleryProjectRecords.map(toGalleryProject)
+
+const galleryProjectById = new Map(galleryProjects.map((project) => [project.id, project]))
+
+export function getGalleryProjectById(id: string): GalleryProject | undefined {
+  return galleryProjectById.get(id)
+}
+
 // City / location page hero images: one authentic downtown scene per city
 const cityHeroMap: Record<string, string> = {
   'cedar-falls': img('city-hero-cedar-falls.webp'),
@@ -722,7 +750,7 @@ export const hubGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.fi
 
 const landingProofIds: Record<string, string[]> = {
   'retaining-walls': ['wall-1', 'wall-4', 'wall-2'],
-  'paver-patio': ['patio-2', 'patio-1', 'patio-3'],
+  'paver-patio': ['patio-2', 'patio-1', 'patio-ba-3'],
   'paver-driveway': ['driveway-ba-2', 'driveway-ba-1', 'driveway-ba-3'],
   'ponds-water-features': ['water-1', 'water-2', 'water-3'],
 }
@@ -765,15 +793,5 @@ export function getGalleryProjectsForService(slug: string, limit = 4): GalleryPr
   const category = categoryMap[slug]
   if (!category) return []
 
-  const titleFilter: Record<string, string> = {
-    'retaining-walls': 'Retaining Wall',
-  }
-
-  let projects = galleryProjects.filter((p) => p.category === category)
-  const titleMatch = titleFilter[slug]
-  if (titleMatch) {
-    projects = projects.filter((p) => p.title === titleMatch)
-  }
-
-  return projects.slice(0, limit)
+  return galleryProjects.filter((p) => p.category === category).slice(0, limit)
 }

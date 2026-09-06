@@ -49,7 +49,7 @@ export default function GalleryFilter() {
           </h2>
           <p className="mt-2 text-brand-muted max-w-xl mx-auto">
             {categoryMeta?.description ??
-              'Drag the slider on each project to compare before and after.'}
+              'Drag the slider to compare, then open a project for photos, materials, and what we built.'}
           </p>
         </FadeIn>
 

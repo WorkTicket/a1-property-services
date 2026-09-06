@@ -1,48 +1,23 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import ProjectCard from '@/components/gallery/ProjectCard'
+import ProjectModal from '@/components/gallery/ProjectModal'
 import type { GalleryProject } from '@/lib/images'
-import { IMAGE_SIZES } from '@/lib/image-sizes'
-import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 
 type GalleryGridProps = {
   projects: GalleryProject[]
 }
 
-function ShowcasePhoto({ project }: { project: GalleryProject }) {
-  return (
-    <div>
-      <h3 className="mb-3 font-display text-xl font-semibold text-brand-dark">{project.title}</h3>
-      <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-        <ResponsiveImage
-          src={project.after.src}
-          alt={project.after.alt}
-          fill
-          style={project.after.objectPosition ? { objectPosition: project.after.objectPosition } : undefined}
-          sizes={IMAGE_SIZES.galleryGrid}
-          priority={project.after.priority}
-        />
-      </div>
-    </div>
-  )
-}
-
-function GalleryItem({ project }: { project: GalleryProject }) {
-  if (project.showcase || !project.before) {
-    return <ShowcasePhoto project={project} />
-  }
-
-  return (
-    <BeforeAfterSlider
-      title={project.title}
-      before={project.before}
-      after={project.after}
-    />
-  )
-}
-
-function LazyGalleryItem({ project, eager }: { project: GalleryProject; eager: boolean }) {
+function LazyProjectCard({
+  project,
+  eager,
+  onSelect,
+}: {
+  project: GalleryProject
+  eager: boolean
+  onSelect: (id: string) => void
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(eager)
 
@@ -69,11 +44,15 @@ function LazyGalleryItem({ project, eager }: { project: GalleryProject; eager: b
   return (
     <div ref={ref}>
       {visible ? (
-        <GalleryItem project={project} />
+        <ProjectCard project={project} onSelect={onSelect} />
       ) : (
-        <div>
-          <div className="mb-3 h-7 w-40 animate-pulse rounded bg-neutral-200" />
-          <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />
+        <div className="overflow-hidden rounded-xl bg-white shadow-card">
+          <div className="aspect-[4/3] animate-pulse bg-neutral-200" />
+          <div className="space-y-2 p-5">
+            <div className="h-3 w-24 animate-pulse rounded bg-neutral-200" />
+            <div className="h-6 w-40 animate-pulse rounded bg-neutral-200" />
+            <div className="h-4 w-full animate-pulse rounded bg-neutral-200" />
+          </div>
         </div>
       )}
     </div>
@@ -81,11 +60,24 @@ function LazyGalleryItem({ project, eager }: { project: GalleryProject; eager: b
 }
 
 export default function GalleryGrid({ projects }: GalleryGridProps) {
+  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const handleSelect = useCallback((id: string) => {
+    setSelectedId(id)
+  }, [])
+
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-      {projects.map((project, index) => (
-        <LazyGalleryItem key={project.id} project={project} eager={index < 4} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
+        {projects.map((project, index) => (
+          <LazyProjectCard
+            key={project.id}
+            project={project}
+            eager={index < 6}
+            onSelect={handleSelect}
+          />
+        ))}
+      </div>
+      {selectedId ? <ProjectModal projectId={selectedId} onClose={() => setSelectedId(null)} /> : null}
+    </>
   )
 }

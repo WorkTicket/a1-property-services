@@ -1,15 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Star, Shield, ChevronRight, Facebook } from 'lucide-react'
+import { Phone, Mail, MapPin, Star, ChevronRight, Facebook } from 'lucide-react'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { trackPhoneCall, trackCtaClick, trackOutboundClick } from '@/lib/analytics'
 import FooterSignature from '@/components/FooterSignature'
 import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
-import { yearsExperienceLabel } from '@/lib/years-in-business'
-import { projectsCompletedLabel } from '@/lib/projects-completed'
+import { cities } from '@/lib/cities'
+import { servingSinceLabel } from '@/lib/years-in-business'
 
 const companyLinks = [
   { label: 'Home', href: '/' },
@@ -41,21 +41,6 @@ const guideLinks = [
   { label: 'Retaining Wall Planning', href: '/learn/planning-retaining-wall-project' },
 ]
 
-const serviceCities = [
-  { name: 'Cedar Falls', href: '/cedar-falls' },
-  { name: 'Waterloo', href: '/waterloo' },
-  { name: 'Hudson', href: '/hudson' },
-  { name: 'Evansdale', href: '/evansdale' },
-  { name: 'Waverly', href: '/waverly' },
-  { name: 'Denver', href: '/denver' },
-  { name: 'Jesup', href: '/jesup' },
-  { name: 'Parkersburg', href: '/parkersburg' },
-  { name: 'La Porte City', href: '/la-porte-city' },
-  { name: 'Dike', href: '/dike' },
-  { name: 'Elk Run Heights', href: '/elk-run-heights' },
-  { name: 'Dunkerton', href: '/dunkerton' },
-]
-
 function FooterNav({
   title,
   links,
@@ -68,7 +53,7 @@ function FooterNav({
       <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white">
         {title}
       </p>
-      <ul className="mt-2.5 space-y-1.5">
+      <ul className="mt-3 space-y-2">
         {links.map((link) => (
           <li key={link.href}>
             <Link
@@ -91,8 +76,8 @@ export default function Footer() {
     <footer className="bg-brand-dark pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] text-neutral-300 md:pb-0">
       <div className="h-1 bg-brand-gold" />
 
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-5 gap-y-5 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-6">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-14 lg:px-8">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-[1.35fr_repeat(4,0.85fr)_1.25fr] lg:gap-x-10">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2.5">
               <LogoMark size="md" />
@@ -105,19 +90,23 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="mt-3 text-sm leading-snug text-neutral-400">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-400">
               Landscaping &amp; hardscaping for Cedar Falls, Waterloo &amp; Black Hawk County.
             </p>
-            <p className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-neutral-400">
-              <span className="inline-flex items-center gap-1">
-                <Star size={12} className="text-brand-gold-light" /> 5-Star Rated
+            <p className="mt-3 text-xs text-neutral-500">
+              {servingSinceLabel()}
+              <span className="px-2 text-white/20" aria-hidden>
+                ·
               </span>
-              <span className="inline-flex items-center gap-1">
-                <Shield size={12} className="text-brand-gold-light" /> Licensed &amp; Insured
-              </span>
+              Residential &amp; commercial
             </p>
-            <div className="mt-4 flex flex-wrap items-center gap-2.5">
-              <Button href="/contact" size="sm" onClick={() => trackCtaClick('Footer Quote')}>
+            <div className="mt-5 flex flex-col items-start gap-2.5">
+              <Button
+                href="/contact"
+                size="xs"
+                onClick={() => trackCtaClick('Footer Quote')}
+                className="h-8 gap-1 whitespace-nowrap rounded-md px-3 py-0 text-[0.6875rem] font-semibold leading-none tracking-wide shadow-none hover:translate-y-0 hover:shadow-none"
+              >
                 {CTA_COPY.estimate}
                 <ChevronRight className="h-3 w-3" aria-hidden />
               </Button>
@@ -140,7 +129,7 @@ export default function Footer() {
             <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white">
               Contact
             </p>
-            <ul className="mt-2.5 space-y-2">
+            <ul className="mt-3 space-y-2.5">
               <li className="flex items-start gap-2.5 text-sm text-neutral-400">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-brand-gold" />
                 <span>
@@ -194,68 +183,35 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 border-t border-white/10 pt-4">
-          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white">
-              Service Area
-            </p>
-            <ul className="flex flex-wrap items-center text-sm text-neutral-400">
-              {serviceCities.map((city, index) => (
-                <li key={city.name} className="inline-flex items-center">
-                  {index > 0 && (
-                    <span className="px-1.5 text-white/20" aria-hidden>
-                      ·
-                    </span>
-                  )}
-                  <Link href={city.href} className="transition-colors hover:text-white">
-                    {city.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <p className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white">
+            Service Area
+          </p>
+          <ul className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-neutral-400">
+            {cities.map((city) => (
+              <li key={city.slug}>
+                <Link href={`/${city.slug}`} className="transition-colors hover:text-white">
+                  {city.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <div className="mt-3 flex flex-col gap-2 text-xs text-neutral-400 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-          <p>
+        <div className="mt-8 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-xs text-neutral-500 sm:flex-row sm:justify-between">
+          <p className="text-center sm:text-left">
             &copy; {new Date().getFullYear()} A1 Property Services. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span>{projectsCompletedLabel()}</span>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
-            <span>{yearsExperienceLabel()}</span>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
-            <span>5.0 Average Rating</span>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
-            <span>Free Estimates</span>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
-            <span>Iowa Contractor</span>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
             <Link href="/privacy" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
             <Link href="/terms" className="transition-colors hover:text-white">
               Terms
             </Link>
-            <span className="text-white/20" aria-hidden>
-              ·
-            </span>
             <FooterSignature />
           </div>
         </div>
-      </div>
       </div>
     </footer>
   )

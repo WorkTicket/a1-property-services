@@ -25,11 +25,7 @@ import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
-
-const BeforeAfterSlider = dynamic(() => import('@/components/ui/BeforeAfterSlider'), {
-  loading: () => <div className="aspect-[4/3] animate-pulse rounded-xl bg-neutral-200" />,
-  ssr: false,
-})
+import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
 
 const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
 
@@ -73,6 +69,7 @@ export default function LandscapingHubLanding() {
 
   return (
     <>
+      <HeroImagePreload src={page.heroImage} sizes={IMAGE_SIZES.pageHero} maxWidth={1920} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -94,8 +91,7 @@ export default function LandscapingHubLanding() {
         className="relative flex min-h-[55vh] flex-col overflow-hidden pt-24 pb-0 text-white md:min-h-[60vh]"
         style={{ position: 'relative' }}
       >
-        <HeroImagePreload src={page.heroImage} />
-        <LcpHeroImage src={page.heroImage} alt={page.heroImageAlt} />
+        <LcpHeroImage src={page.heroImage} alt={page.heroImageAlt} sizes={IMAGE_SIZES.pageHero} maxWidth={1920} />
         <HeroOverlay imageSrc={page.heroImage} variant="center" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-4 pb-8 text-center sm:px-6">
@@ -169,7 +165,7 @@ export default function LandscapingHubLanding() {
               <p className="section-eyebrow">Recent Work</p>
               <h2 className="section-heading mt-3">Before &amp; After</h2>
               <p className="mt-2 max-w-xl text-brand-body">
-                Drag the slider to compare before and after on recent landscaping projects.
+                Drag the slider to compare, then open a project for materials and details.
               </p>
             </div>
             <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
@@ -177,15 +173,8 @@ export default function LandscapingHubLanding() {
             </Button>
           </FadeIn>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {hubGalleryPreview.map((project) => (
-              <BeforeAfterSlider
-                key={project.id}
-                title={project.title}
-                before={{ ...project.before, priority: false }}
-                after={{ ...project.after, priority: false }}
-              />
-            ))}
+          <div className="mt-10">
+            <ProjectPreviewGrid projects={hubGalleryPreview} columns={3} />
           </div>
         </div>
       </section>

@@ -59,12 +59,12 @@ function learnUrl(slug: string) { return `/learn/${slug}` }
 function faqUrl() { return `/faqs` }
 function projectUrl() { return `/gallery` }
 
-const galleryCategoryMap: Record<string, string> = {
-  'retaining-walls': 'Retaining Wall',
-  'paver-patio': 'Paver Patio',
-  'paver-driveway': 'Paver Driveway',
-  'ponds-water-features': 'Water Feature',
-  'outdoor-living': 'Outdoor Living',
+const galleryCategoryByService: Partial<Record<string, Exclude<GalleryProject['category'], never>>> = {
+  'retaining-walls': 'hardscape',
+  'paver-patio': 'paver-patios',
+  'paver-driveway': 'paver-driveways',
+  'ponds-water-features': 'water',
+  'outdoor-living': 'paver-patios',
 }
 
 function toLinked(item: LinkedContent): LinkedContent {
@@ -182,21 +182,21 @@ export function getCitiesForService(serviceSlug: string): LinkedContent[] {
 }
 
 export function getProjectsForService(serviceSlug: string, limit = 4): LinkedContent[] {
-  const category = galleryCategoryMap[serviceSlug]
+  const category = galleryCategoryByService[serviceSlug]
   if (!category) return []
 
-  const matching = galleryProjects
-    .filter(p => p.title === category || (category === 'Water Feature' && p.category === 'water'))
-    .slice(0, limit)
+  const matching = galleryProjects.filter((p) => p.category === category).slice(0, limit)
 
-  return matching.map(p => toLinked({
-    type: 'project',
-    slug: p.id,
-    title: p.title,
-    excerpt: `${p.title} project in Cedar Falls and Waterloo`,
-    url: projectUrl(),
-    relevance: 8,
-  }))
+  return matching.map((p) =>
+    toLinked({
+      type: 'project',
+      slug: p.id,
+      title: p.title,
+      excerpt: p.description,
+      url: projectUrl(),
+      relevance: 8,
+    }),
+  )
 }
 
 export function getLearnForService(serviceSlug: string, limit = 3): LinkedContent[] {
@@ -446,9 +446,9 @@ export function getRelatedContent(serviceSlug: string): {
 
   const relatedCities = cities.map(c => ({ slug: c.slug, name: c.name }))
 
-  const galleryCount = galleryProjects.filter(p => {
-    const title = galleryCategoryMap[serviceSlug]
-    return title ? p.title === title || (title === 'Water Feature' && p.category === 'water') : false
+  const galleryCount = galleryProjects.filter((p) => {
+    const category = galleryCategoryByService[serviceSlug]
+    return category ? p.category === category : false
   }).length
 
   const faqCount = serviceFaqs[serviceSlug]?.length ?? 0

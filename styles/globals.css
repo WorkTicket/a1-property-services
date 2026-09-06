@@ -236,6 +236,10 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
+  body[data-mobile-overlay='true'] .sticky-cta-bar {
+    display: none;
+  }
+
   .sticky-cta-bar__call,
   .sticky-cta-bar__quote {
     @apply flex min-h-[52px] items-center justify-center gap-2 py-3.5 text-sm font-bold text-white transition-colors duration-200;

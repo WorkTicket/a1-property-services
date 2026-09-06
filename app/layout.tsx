@@ -4,6 +4,7 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import HeroNavPrefetch from '@/components/ui/HeroNavPrefetch'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
 import {
   buildGoogleTagsBootstrap,
@@ -142,6 +143,7 @@ export default function RootLayout({
         />
         <ConsentAwareAnalytics />
         <ScrollTracker />
+        <HeroNavPrefetch />
         <Navbar />
         <main
           id="main-content"
