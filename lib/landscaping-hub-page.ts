@@ -17,9 +17,9 @@ export type HubRecentProject = {
 
 export const landscapingHubPage = {
   path: '/landscaping-services-in-cedar-falls',
-  title: 'Landscaping in Cedar Falls, IA | Local Crew · Free Estimate',
+  title: 'Landscaping Cedar Falls, IA | Local Crew · Free Estimate',
   description:
-    'Landscaping in Cedar Falls & Waterloo, IA — retaining walls, paver patios, lawn care & installs. Free on-site estimate. Call (319) 464-1889.',
+    'Cedar Falls landscaping & hardscaping — retaining walls, custom patios, lawn care. Local crew in Cedar Falls & Waterloo, IA. Free estimate: (319) 464-1889.',
   keywords: [
     'landscaping cedar falls',
     'cedar falls landscaping',
@@ -31,6 +31,8 @@ export const landscapingHubPage = {
     'landscaping services cedar falls',
     'lawn care cedar falls',
     'hardscaping cedar falls',
+    'hardscape services cedar falls ia',
+    'cedar falls landscaper',
     'retaining wall cedar falls',
     'paver patio cedar falls',
     'water features cedar falls',
@@ -43,17 +45,17 @@ export const landscapingHubPage = {
   contentImageAlt:
     'Professional landscaping installation by A1 Property Services',
   eyebrow: 'Cedar Falls, Iowa',
-  h1: 'Landscaping in Cedar Falls, IA',
+  h1: 'Landscaping Cedar Falls, IA',
   heroHeading:
-    'Local lawn care, hardscaping, and full landscape installs in Cedar Falls, Waterloo, and Black Hawk County.',
+    'The Cedar Falls landscaper for lawn care, hardscaping, and full landscape installs in Cedar Falls, Waterloo, and Black Hawk County.',
   introHeading: 'A Local Crew That Knows Cedar Falls & Waterloo Yards',
   introParagraphs: [
-    'A1 Property Services is a locally owned landscaping company based in Cedar Falls, Iowa (50613). We help homeowners and businesses in Cedar Falls, Waterloo, and Black Hawk County with lawn care, retaining walls, paver patios, ponds, and complete landscape installation.',
+    'A1 Property Services is the Cedar Falls landscaping company homeowners hire for lawn care, retaining walls, custom patios, and full installs. We are locally owned in Cedar Falls, Iowa (50613) and work across Waterloo and Black Hawk County.',
     'We plan every project around Iowa clay, freeze-thaw, and how water moves across Black Hawk County lots — from College Hill and North Cedar in Cedar Falls to downtown Waterloo and the Crossroads area. Licensed, insured, and rated 5 stars by local customers.',
   ],
   coreServicesHeading: 'Hardscape & Landscape Services',
   coreServicesIntro:
-    'From retaining walls built for freeze-thaw to paver patios and water features, our crew focuses on work that lasts — drainage that works, quality materials, and clear written estimates.',
+    'Hardscaping in Cedar Falls usually means a wall, a patio, or both. From retaining walls built for freeze-thaw to custom paver patios and water features, our crew focuses on work that lasts — drainage that works, quality materials, and clear written estimates.',
   featuredServices: [
     { label: 'Retaining Wall', href: '/retaining-wall-in-cedar-falls' },
     { label: 'Water Features', href: '/cedar-falls-water-features' },
@@ -177,6 +179,11 @@ export const landscapingHubPage = {
     },
   ] satisfies LandscapingServiceSection[],
   faqs: [
+    {
+      question: 'Do you do hardscaping in Cedar Falls?',
+      answer:
+        'Yes. Hardscaping in Cedar Falls is a core part of the work — retaining walls, custom paver patios, and outdoor living built for Iowa freeze-thaw, not as a sideline to mowing.',
+    },
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
       answer:

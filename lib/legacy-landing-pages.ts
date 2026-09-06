@@ -37,9 +37,9 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'retaining-wall-in-cedar-falls': {
     path: '/retaining-wall-in-cedar-falls',
     serviceSlug: 'retaining-walls',
-    title: 'Retaining Walls in Cedar Falls, IA | Free On-Site Quote',
+    title: 'Retaining Walls Cedar Falls, IA | Design & Install',
     description:
-      'Retaining wall contractors in Cedar Falls & Waterloo, IA — block & stone with drainage for Iowa freeze-thaw. Call (319) 464-1889.',
+      'Retaining wall contractors in Cedar Falls, IA — design and install block & stone with drainage for Iowa freeze-thaw. Free quote: (319) 464-1889.',
     keywords: [
       'retaining wall cedar falls',
       'retaining wall installation cedar falls',
@@ -61,12 +61,12 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     eyebrow: 'Cedar Falls, Iowa',
     h1: 'Retaining Walls in Cedar Falls, IA',
     heroHeading:
-      'Block and natural stone walls with proper drainage for local slopes — stop erosion and reclaim flat, usable yard space.',
+      'Retaining wall design and installation for Cedar Falls slopes — block and stone with drainage, so you stop erosion and reclaim flat yard.',
     sections: [
       {
         heading: 'Retaining Wall Installation Built for Iowa',
         paragraphs: [
-          'Sloped yards need retaining walls that handle runoff and freeze-thaw — not decorative stacks that bulge after the first hard winter. We build segmental block and natural stone walls with compacted bases, gravel backfill, and drain pipe so soil stays put and water moves away from your foundation.',
+          'Sloped yards need retaining walls that handle runoff and freeze-thaw — not decorative stacks that bulge after the first hard winter. Local contractors who design the wall for your grade, then build segmental block or natural stone with compacted bases, gravel backfill, and drain pipe, are the ones whose walls still stand.',
           'Whether you are stabilizing a hillside, terracing a garden, or reclaiming flat space for a patio, every wall is sized to your slope, soil, and height requirements. We pull permits when local code requires them and leave a finished look that matches your home.',
         ],
         showCta: true,
@@ -92,10 +92,12 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
   'paver-patio-installation': {
     path: '/paver-patio-installation',
     serviceSlug: 'paver-patio',
-    title: 'Paver Patio Cedar Falls, IA | Free On-Site Quote',
+    title: 'Custom Patio Cedar Falls, IA | Paver Installation',
     description:
-      'Paver patio installation in Cedar Falls & Waterloo, IA — compacted base built for Iowa freeze-thaw. Free on-site quote. Call (319) 464-1889.',
+      'Custom patio installation in Cedar Falls, IA — pavers on a compacted base built for Iowa freeze-thaw. Free on-site quote: (319) 464-1889.',
     keywords: [
+      'custom patio cedar falls ia',
+      'custom patio cedar falls',
       'paver patio cedar falls',
       'paver patio installation cedar falls',
       'paver patios cedar falls',
@@ -113,14 +115,14 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     contentImage: '/images/content-paver-patio-cedar-falls.webp',
     contentImageAlt: 'Custom paver patio installation with herringbone pattern',
     eyebrow: 'Cedar Falls, Iowa',
-    h1: 'Paver Patio Installation in Cedar Falls, IA',
+    h1: 'Custom Paver Patio Installation in Cedar Falls, IA',
     heroHeading:
-      'Durable paver patios built for Iowa freeze-thaw, drainage, and everyday outdoor living in Cedar Falls, Waterloo, and Black Hawk County.',
+      'Custom patios in Cedar Falls, IA — pavers on a compacted base built for freeze-thaw, drainage, and everyday outdoor living.',
     sections: [
       {
         heading: 'Custom Paver Patio Design & Installation',
         paragraphs: [
-          'We design and install paver patios around how you use your yard — dining, entertaining, or a quiet sit area — with stone, brick, or concrete pavers chosen for Iowa weather and the look of your home.',
+          'A custom patio in Cedar Falls should fit how you actually use the yard — dining, entertaining, or a quiet sit area — with stone, brick, or concrete pavers chosen for Iowa weather and the look of your home.',
           'Every layout accounts for grading, runoff away from the house, and clean edges that stay tight through freeze-thaw. You get a patio that looks finished on day one and stays level for years.',
         ],
         showCta: true,

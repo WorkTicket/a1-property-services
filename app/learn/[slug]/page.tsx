@@ -2,15 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ChevronRight, BookOpen, ShoppingCart, Scale, FileText } from 'lucide-react'
-import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig, howToJsonLd } from '@/lib/metadata'
-import { CTA_COPY } from '@/lib/cta'
-import { learnArticles, getLearnReadingTime } from '@/lib/learn'
+import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, howToJsonLd, faqPageJsonLd } from '@/lib/metadata'
+import { learnArticles, getLearnReadingTime, getRelatedLearnArticles } from '@/lib/learn'
 import { allServices } from '@/lib/services'
-import { siteImages } from '@/lib/images'
 import { serviceFaqs } from '@/lib/services'
-import { getBlogsForLearn, getServicesForLearn } from '@/lib/internal-linking'
+import { getBlogsForLearn, getServicesForLearn, getCitiesForLearn } from '@/lib/internal-linking'
+import { cities } from '@/lib/cities'
 import RelatedContent from '@/components/sections/RelatedContent'
-import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import Button from '@/components/ui/Button'
@@ -30,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: article.title,
     description: article.excerpt,
     path: `/learn/${article.slug}`,
+    keywords: article.keywords,
   })
 }
 
@@ -50,13 +49,20 @@ export default function LearnArticlePage({ params }: Props) {
   if (!article) notFound()
 
   const relatedServices = allServices.filter((s) => article.relatedServices.includes(s.slug))
-  const relatedFaqs = article.relatedFaqs.map((question) => {
-    for (const [, faqs] of Object.entries(serviceFaqs)) {
-      const found = faqs.find((f) => f.question === question)
-      if (found) return found
+  const relatedFaqs = (article.faqs ?? []).map((faq) => ({
+    question: faq.question,
+    answer: faq.answer,
+  }))
+  if (relatedFaqs.length === 0) {
+    for (const question of article.relatedFaqs) {
+      for (const [, faqs] of Object.entries(serviceFaqs)) {
+        const found = faqs.find((f) => f.question === question)
+        if (found) relatedFaqs.push(found)
+      }
     }
-    return null
-  }).filter(Boolean)
+  }
+
+  const relatedLearn = getRelatedLearnArticles(article.slug, 4)
 
   const pageSchema = webPageJsonLd({
     name: article.title,
@@ -88,6 +94,7 @@ export default function LearnArticlePage({ params }: Props) {
                     }),
                   ]
                 : []),
+              ...(relatedFaqs.length > 0 ? [faqPageJsonLd(relatedFaqs)] : []),
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Learn', path: '/learn' },
@@ -143,8 +150,8 @@ export default function LearnArticlePage({ params }: Props) {
             <div className="mt-10 space-y-4">
               {relatedFaqs.map((faq, i) => (
                 <div key={i} className="card p-5">
-                  <h3 className="font-semibold text-brand-dark">{faq?.question}</h3>
-                  <p className="mt-2 text-brand-body">{faq?.answer}</p>
+                  <h3 className="font-semibold text-brand-dark">{faq.question}</h3>
+                  <p className="mt-2 text-brand-body">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -159,9 +166,7 @@ export default function LearnArticlePage({ params }: Props) {
             <h2 className="section-heading mt-3">Explore More Resources</h2>
           </FadeIn>
           <StaggerContainer className="grid gap-8 lg:grid-cols-2">
-            {learnArticles
-              .filter((a) => a.slug !== article.slug)
-              .map((a) => {
+            {relatedLearn.map((a) => {
                 const RelatedIcon = categoryIcons[a.category] || FileText
                 return (
                   <StaggerItem key={a.slug}>
@@ -205,16 +210,39 @@ export default function LearnArticlePage({ params }: Props) {
             heading: 'Our Services',
             items: getServicesForLearn(params.slug),
           }] : []),
+          ...(relatedServices[0]
+            ? [{
+                heading: 'Hire this locally',
+                items: article.relatedCities.slice(0, 2).flatMap((citySlug) => {
+                  const city = cities.find((item) => item.slug === citySlug)
+                  const service = relatedServices[0]
+                  if (!city || !service) return []
+                  return [{
+                    type: 'city' as const,
+                    slug: `${citySlug}-${service.slug}`,
+                    title: `${service.name} in ${city.name}`,
+                    excerpt: `${service.name} for homes and businesses in ${city.name}, Iowa`,
+                    url: `/${citySlug}/${service.slug}`,
+                    relevance: 9,
+                  }]
+                }),
+              }]
+            : []),
+          ...(getCitiesForLearn(params.slug).length > 0 ? [{
+            heading: 'Service Areas',
+            items: getCitiesForLearn(params.slug),
+          }] : []),
           ...(getBlogsForLearn(params.slug).length > 0 ? [{
             heading: 'Related Articles',
             items: getBlogsForLearn(params.slug),
           }] : []),
-        ]}
+        ].filter((group) => group.items.length > 0)}
       />
 
       <CtaBanner
         title="Ready to start your project?"
-        description="Contact us for a free consultation. We will help you bring your landscape vision to live."
+        description="Contact us for a free consultation. We will walk your Cedar Falls or Waterloo property and give you a clear next step."
+        quoteHref="/contact"
       />
     </div>
     </>

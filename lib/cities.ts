@@ -68,6 +68,10 @@ export const cities: City[] = [
         a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, ponds and water features, and snow removal for Cedar Falls residential and commercial properties. See our landscaping hub for the full company overview.',
       },
       {
+        q: 'Can you fix drainage and flooding in a Cedar Falls yard?',
+        a: 'Yes. We handle regrading, French drains, catch basins, and downspout drainage for Cedar Falls homes. If your yard ponds after rain or water runs toward the foundation, we will walk the lot and quote the right fix.',
+      },
+      {
         q: 'How much does a project cost in Cedar Falls?',
         a: 'Every project is different. We provide free on-site estimates for Cedar Falls properties. Call us or fill out our quote form and we will give you honest, upfront pricing within 24 hours.',
       },
@@ -93,7 +97,7 @@ export const cities: City[] = [
     heroTitle: 'Waterloo, IA Landscaping|Local Crew',
     heroSubtitle:
       'Full-service landscaping, hardscaping, and lawn care for Waterloo, Iowa homes and businesses.',
-    metaTitle: 'Landscaping in Waterloo, IA | A1 Property Services',
+    metaTitle: 'Landscaping Company in Waterloo, IA | A1 Property Services',
     metaDescription:
       'Waterloo, IA landscaping — retaining walls, paver patios & lawn care in Black Hawk County. Free estimates: (319) 464-1889.',
     metaKeywords: [
@@ -132,6 +136,10 @@ export const cities: City[] = [
       {
         q: 'Do you install retaining walls in Waterloo?',
         a: 'Yes. We build retaining walls for Waterloo, IA properties with drainage and base prep for Black Hawk County clay and freeze-thaw. Free on-site quotes.',
+      },
+      {
+        q: 'Can you fix a yard that floods after rain in Waterloo?',
+        a: 'Yes. Standing water on Waterloo lots is usually clay, grade, or downspouts. We diagnose the cause and install grading, French drains, or catch basins as needed. Call (319) 464-1889 for a free look at the property.',
       },
       {
         q: 'Can you handle commercial landscaping in Waterloo?',
@@ -650,6 +658,38 @@ export const cities: City[] = [
 
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find((c) => c.slug === slug)
+}
+
+export type CityServicePageCopy = {
+  title: string
+  description: string
+  heading: string
+  paragraphs: string[]
+  relatedHref?: string
+  relatedLabel?: string
+}
+
+const cityServicePageCopy: Record<string, CityServicePageCopy> = {
+  'cedar-falls/lawn-care': {
+    title: 'Cedar Falls Lawn Care | College Hill to North Cedar',
+    description:
+      'Weekly lawn care for Cedar Falls neighborhoods — College Hill, North Cedar, and South Cedar Falls. Mowing, aeration, and weed control. Call (319) 464-1889.',
+    heading: 'Lawn Care for Cedar Falls Neighborhoods',
+    relatedHref: '/services/lawn-care',
+    relatedLabel: 'full lawn care program',
+    paragraphs: [
+      'Lawn care in Cedar Falls is neighborhood work. College Hill lots sit under mature trees. North Cedar yards take more sun. South Cedar Falls clay holds water after a storm. We mow at Iowa height, aerate in fall, and time weed control so crabgrass does not own the lawn by July.',
+      'This page is for Cedar Falls homes that want a local crew on a weekly route — not a one-size program copied from another city. Here we cover how we actually run mowing routes in 50613.',
+      'Call (319) 464-1889 or request a quote. We will look at the grass you have, not a brochure mix, and tell you whether you need mowing only or a full-season program.',
+    ],
+  },
+}
+
+export function getCityServicePageCopy(
+  citySlug: string,
+  serviceSlug: string,
+): CityServicePageCopy | undefined {
+  return cityServicePageCopy[`${citySlug}/${serviceSlug}`]
 }
 
 export function getCityServiceFaqs(citySlug: string, serviceSlug: string): { q: string; a: string }[] {

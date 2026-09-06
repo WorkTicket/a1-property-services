@@ -16,9 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       path === '/landscaping-services-in-cedar-falls'
     const isBlog = path.startsWith('/blog/') && path !== '/blog'
     const isLearn = path.startsWith('/learn/') && path !== '/learn'
+    const isProject = path.startsWith('/gallery/') && path !== '/gallery'
     const isService = path.startsWith('/services/') && path !== '/services'
     const isCity = !path.startsWith('/') ? false : path.split('/').filter(Boolean).length === 1 && !['about', 'services', 'gallery', 'contact', 'blog', 'faqs', 'resources', 'learn', 'privacy', 'terms', 'site-map'].includes(path.split('/').filter(Boolean)[0])
-    const isProgrammatic = path.split('/').filter(Boolean).length >= 2 && !path.startsWith('/services/') && !path.startsWith('/blog/') && !path.startsWith('/learn/') && !path.startsWith('/api/')
+    const isProgrammatic = path.split('/').filter(Boolean).length >= 2 && !path.startsWith('/services/') && !path.startsWith('/blog/') && !path.startsWith('/learn/') && !path.startsWith('/gallery/') && !path.startsWith('/api/')
 
     let lastModified: Date = new Date()
     let changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' = 'monthly'
@@ -41,6 +42,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     } else if (isLearn) {
       changeFrequency = 'monthly'
       priority = 0.6
+    } else if (isProject) {
+      changeFrequency = 'monthly'
+      priority = 0.55
     } else if (isService) {
       changeFrequency = 'monthly'
       priority = 0.7

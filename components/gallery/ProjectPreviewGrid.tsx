@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react'
 import ProjectCard from '@/components/gallery/ProjectCard'
 import ProjectModal from '@/components/gallery/ProjectModal'
 import type { GalleryProject } from '@/lib/images'
+import { getCaseStudyHref } from '@/lib/project-case-studies'
 import { cn } from '@/lib/utils'
 
 type ProjectPreviewGridProps = {
@@ -26,13 +27,17 @@ export default function ProjectPreviewGrid({ projects, columns = 2 }: ProjectPre
           columns === 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2',
         )}
       >
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            onSelect={handleSelect}
-          />
-        ))}
+        {projects.map((project) => {
+          const href = getCaseStudyHref(project.id)
+          return (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              href={href}
+              onSelect={href ? undefined : handleSelect}
+            />
+          )
+        })}
       </div>
       {selectedId ? <ProjectModal projectId={selectedId} onClose={() => setSelectedId(null)} /> : null}
     </>

@@ -101,6 +101,8 @@ const megaMenuColumns = megaMenuColumnDefs.map((column) => ({
 
 const learnLinks = [
   { label: 'Knowledge Center', href: '/learn' },
+  { label: 'Why Yards Flood', href: '/learn/why-yard-floods-when-it-rains' },
+  { label: 'Do I Need a Retaining Wall?', href: '/learn/do-i-need-a-retaining-wall' },
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
   { label: 'Blog', href: '/blog' },
@@ -124,7 +126,11 @@ export default function Navbar() {
 
   const isServicesActive =
     pathname.startsWith('/services') || pathname === '/landscaping-services-in-cedar-falls'
-  const isLearnActive = learnLinks.some((link) => pathname === link.href)
+  const isLearnActive =
+    pathname.startsWith('/learn') ||
+    pathname.startsWith('/blog') ||
+    pathname.startsWith('/resources') ||
+    pathname === '/faqs'
 
   const openServicesMenu = () => {
     if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)

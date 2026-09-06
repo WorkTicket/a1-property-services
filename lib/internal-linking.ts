@@ -3,6 +3,7 @@ import { blogPosts, getSortedPosts, type BlogPost } from '@/lib/blog'
 import { cities } from '@/lib/cities'
 import { learnArticles, type LearnArticle } from '@/lib/learn'
 import { galleryProjects, type GalleryProject } from '@/lib/images'
+import { getCaseStudyHref, projectCaseStudies } from '@/lib/project-case-studies'
 import { siteConfig } from '@/lib/metadata'
 
 export const landscapingHubPath = '/landscaping-services-in-cedar-falls'
@@ -193,7 +194,7 @@ export function getProjectsForService(serviceSlug: string, limit = 4): LinkedCon
       slug: p.id,
       title: p.title,
       excerpt: p.description,
-      url: projectUrl(),
+      url: getCaseStudyHref(p.id) ?? projectUrl(),
       relevance: 8,
     }),
   )
@@ -221,6 +222,9 @@ export function getServiceRelatedContentGroups(serviceSlug: string): RelatedCont
 
   const learn = getLearnForService(serviceSlug)
   if (learn.length > 0) groups.push({ heading: 'Knowledge Center', items: learn })
+
+  const projects = getProjectsForService(serviceSlug)
+  if (projects.length > 0) groups.push({ heading: 'Project Examples', items: projects })
 
   const cityPages = getCitiesForService(serviceSlug)
   if (cityPages.length > 0) {
@@ -389,6 +393,22 @@ export function getCitiesForLearn(learnSlug: string): LinkedContent[] {
   })
 }
 
+export function getLearnForCity(citySlug: string, limit = 3): LinkedContent[] {
+  return learnArticles
+    .filter((article) => article.relatedCities.includes(citySlug))
+    .slice(0, limit)
+    .map((article) =>
+      toLinked({
+        type: 'learn',
+        slug: article.slug,
+        title: article.title,
+        excerpt: article.excerpt,
+        url: learnUrl(article.slug),
+        relevance: 7,
+      }),
+    )
+}
+
 export function getServicesForCity(citySlug: string): LinkedContent[] {
   return allServices.map(s => toLinked({
     type: 'service', slug: s.slug, title: s.name, excerpt: `${s.name} in ${citySlug.replace(/-/g, ' ')}`,
@@ -505,6 +525,9 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
       const services = getServicesForCity(slug).slice(0, 6)
       if (services.length > 0) groups.push({ heading: 'Our Services', items: services })
 
+      const learn = getLearnForCity(slug)
+      if (learn.length > 0) groups.push({ heading: 'Local Guides', items: learn })
+
       const blogs = getBlogsForCity(slug)
       if (blogs.length > 0) groups.push({ heading: 'Articles for Your Area', items: blogs })
       break
@@ -529,6 +552,18 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     }
 
     case 'project': {
+      const caseStudies = projectCaseStudies.map((study) =>
+        toLinked({
+          type: 'project',
+          slug: study.slug,
+          title: study.h1,
+          excerpt: study.description,
+          url: `/gallery/${study.slug}`,
+          relevance: 8,
+        }),
+      )
+      if (caseStudies.length > 0) groups.push({ heading: 'Project Case Studies', items: caseStudies })
+
       const galleryServices = ['retaining-walls', 'paver-patio', 'paver-driveway', 'ponds-water-features']
       const services = allServices
         .filter(s => galleryServices.includes(s.slug))

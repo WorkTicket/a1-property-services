@@ -3,11 +3,11 @@ import { FOUNDING_YEAR } from '@/lib/years-in-business'
 
 export const siteConfig = {
   name: 'A1 Property Services',
-  /** Homepage `<title>` / og:title — keyword-led for SERP CTR; brand still clear. */
-  homeTitle: 'Cedar Falls, IA Landscaping | A1 Property Services',
+  /** Homepage `<title>` / og:title — brand people type (“A1 landscaping”) plus official name. */
+  homeTitle: 'A1 Landscaping Cedar Falls, IA | A1 Property Services',
   url: 'https://a1pslandscape.com',
   description:
-    `Cedar Falls & Waterloo landscaping in Black Hawk County, IA. Retaining walls, paver patios & lawn care since ${FOUNDING_YEAR}. Free quote: (319) 464-1889.`,
+    `A1 Landscaping (A1 Property Services) in Cedar Falls & Waterloo, IA. Walls, paver patios & lawn care since ${FOUNDING_YEAR}. Free quote: (319) 464-1889.`,
   phone: '+13194641889',
   phoneDisplay: '+1 (319) 464-1889',
   email: 'a1propertyservices0219@gmail.com',
@@ -122,13 +122,13 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
     ],
   },
   'lawn-care': {
-    title: 'Lawn Care in Cedar Falls, IA | Mowing',
+    title: 'Lawn Care Cedar Falls, Iowa | Weekly Mowing',
     description:
-      'Professional lawn care and mowing in Cedar Falls and Waterloo, IA. Aeration, fertilization, weed control, and precision mowing. Free estimates.',
-    h1: 'Lawn Care & Mowing in Cedar Falls, IA',
+      'Lawn care in Cedar Falls, Iowa — weekly mowing, aeration, fertilization, and weed control. Serving Black Hawk County. Free estimate: (319) 464-1889.',
+    h1: 'Lawn Care in Cedar Falls, Iowa',
     keywords: [
-      'lawn care cedar falls',
       'lawn care cedar falls iowa',
+      'lawn care cedar falls',
       'lawn care cedar falls ia',
       'lawn mowing cedar falls',
       'lawn service cedar falls ia',
@@ -574,7 +574,7 @@ export function websiteJsonLd() {
     '@id': `${siteConfig.url}/#website`,
     // Prefer the full homepage title so Google does not fall back to bare brand name in SERPs.
     name: siteConfig.homeTitle,
-    alternateName: siteConfig.name,
+    alternateName: [siteConfig.name, 'A1 Landscaping', 'A1 Landscaping Cedar Falls'],
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: organizationRef(),
@@ -716,7 +716,12 @@ export function buildLocalBusinessJsonLd() {
     '@type': 'LandscapingBusiness',
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
-    alternateName: ['Cedar Falls Landscaping', 'A1 Landscaping Cedar Falls'],
+    alternateName: [
+      'A1 Landscaping',
+      'A1 Landscaping Cedar Falls',
+      'A1 Property Services Landscaping',
+      'Cedar Falls Landscaping',
+    ],
     image: schemaImageObject(`${siteConfig.url}/og-image.jpg`),
     logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     url: siteConfig.url,

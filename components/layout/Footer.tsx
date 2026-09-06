@@ -35,10 +35,10 @@ const rankingServiceLinks = [
 ]
 
 const guideLinks = [
-  { label: 'Compare Estimates', href: '/learn/comparing-landscaping-estimates' },
+  { label: 'Why Yards Flood', href: '/learn/why-yard-floods-when-it-rains' },
+  { label: 'Do I Need a Retaining Wall?', href: '/learn/do-i-need-a-retaining-wall' },
   { label: 'Hiring a Landscaper', href: '/learn/questions-before-hiring-landscaper' },
-  { label: 'Patio Materials', href: '/learn/choosing-patio-materials' },
-  { label: 'Retaining Wall Planning', href: '/learn/planning-retaining-wall-project' },
+  { label: 'Compare Estimates', href: '/learn/comparing-landscaping-estimates' },
 ]
 
 function FooterNav({

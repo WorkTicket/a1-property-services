@@ -736,7 +736,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Customized Care Program',
       description:
-        'We build a mowing, fertilization, aeration, and weed control schedule matched to your lawn and the Cedar Falls, Waterloo, and Black Hawk County growing season.',
+        'We build a lawn care program for Cedar Falls, Iowa yards: mowing, fertilization, aeration, and weed control timed to the Black Hawk County growing season.',
     },
     {
       title: 'Regular Service Visits',
@@ -1018,10 +1018,10 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'lawn-care': {
-    heading: 'Professional Lawn Care Built for Iowa Grass',
+    heading: 'Lawn Care in Cedar Falls, Iowa',
     paragraphs: [
-      'Healthy lawns in the Cedar Falls, Waterloo, and Black Hawk County need more than weekly mowing. We combine proper mowing height, seasonal aeration, timed fertilization, and targeted weed control to keep your grass thick and resilient through Iowa heat and cold.',
-      'Our lawn care program is adjusted for your turf type, soil, and sun exposure. We aerate compacted soil in fall, fertilize at key growth stages, and treat weeds before they spread. You get a lawn that looks good all season without managing the schedule yourself.',
+      'Lawn care in Cedar Falls, Iowa takes more than a weekly pass with a mower. Black Hawk County clay, hot summers, and freeze-thaw need a program: the right mowing height, seasonal aeration, timed fertilization, and weed control before crabgrass takes the lawn.',
+      'We set the schedule for your turf type, soil, and sun — College Hill lots, North Cedar yards, and Waterloo properties included. Fall aeration, fertilizer at key growth stages, and pre-emergent in spring. You get a thick Iowa lawn without managing the calendar yourself.',
     ],
   },
   'preservation-restoration': {
@@ -1389,6 +1389,11 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'lawn-care': [
     {
+      question: 'Do you offer lawn care in Cedar Falls, Iowa?',
+      answer:
+        'Yes. Lawn care in Cedar Falls, Iowa is a core service — weekly mowing, aeration, fertilization, and weed control for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.',
+    },
+    {
       question: 'How often do you mow lawns?',
       answer: 'We typically mow weekly during the growing season, adjusting frequency based on growth rate, rainfall, and seasonal conditions across the Cedar Falls, Waterloo, and Black Hawk County.',
     },
@@ -1552,6 +1557,11 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
   ],
   'retaining-walls': [
     {
+      question: 'Who designs and installs retaining walls in Cedar Falls?',
+      answer:
+        'A1 Property Services designs and installs retaining walls in Cedar Falls and Waterloo. We size the wall to your slope, specify drainage, and build block or stone on a compacted base rated for Iowa freeze-thaw.',
+    },
+    {
       question: 'How much does retaining wall installation cost?',
       answer:
         'Most residential retaining walls are quoted by height, length, materials, and site access — smaller garden walls cost less than tall engineered walls. We provide free on-site estimates so you get an accurate price before work begins.',
@@ -1613,6 +1623,11 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
   ],
   'paver-patio': [
+    {
+      question: 'Do you build custom patios in Cedar Falls, IA?',
+      answer:
+        'Yes. A custom patio in Cedar Falls is designed around your yard, how you use the space, and Iowa freeze-thaw. We excavate, compact the base, set edge restraint, and install pavers so the patio stays level.',
+    },
     {
       question: 'How much does a paver patio cost?',
       answer:

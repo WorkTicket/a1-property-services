@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { generatePageMetadata, webPageJsonLd, jsonLdGraph, siteConfig } from '@/lib/metadata'
+import { generatePageMetadata, webPageJsonLd, jsonLdGraph, breadcrumbJsonLd } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
 import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
@@ -31,7 +31,13 @@ export default function GalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            jsonLdGraph(pageSchema),
+            jsonLdGraph(
+              pageSchema,
+              breadcrumbJsonLd([
+                { name: 'Home', path: '/' },
+                { name: 'Gallery', path: '/gallery' },
+              ]),
+            ),
           ),
         }}
       />
@@ -40,7 +46,7 @@ export default function GalleryPage() {
         imageAlt="Landscaping project gallery in Cedar Falls"
         eyebrow="Our Work"
         title="Our Project|Gallery"
-        subtitle="Real projects in Cedar Falls, Waterloo, and Black Hawk County. Open a project to compare before and after."
+        subtitle="Real Cedar Falls, Waterloo, and Black Hawk County work. Featured projects open as full case studies; others show before and after in the gallery."
       />
       <GalleryFilter />
       <RelatedContent groups={getAllRelatedGroups('project', 'gallery')} />

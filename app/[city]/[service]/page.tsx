@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Phone, MapPin } from 'lucide-react'
-import { cities, getCityBySlug } from '@/lib/cities'
+import { cities, getCityBySlug, getCityServicePageCopy } from '@/lib/cities'
 import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
@@ -37,11 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Keep city×service titles distinct from /services/[slug] and legacy landings (avoid SERP cannibalization).
   const seo = serviceSeoOverrides[service.slug]
-  const title = `${service.name} in ${city.name}, IA | Free Quote`
+  const pageCopy = getCityServicePageCopy(city.slug, service.slug)
+  const title = pageCopy?.title ?? `${service.name} in ${city.name}, IA | Free Quote`
   const description =
-    city.slug === 'cedar-falls' && seo?.description
+    pageCopy?.description ??
+    (city.slug === 'cedar-falls' && seo?.description
       ? seo.description
-      : `${service.name} in ${city.name}, IA. ${service.shortDesc} Free estimates. Licensed and insured.`
+      : `${service.name} in ${city.name}, IA. ${service.shortDesc} Free estimates. Licensed and insured.`)
 
   return generatePageMetadata({
     title,
@@ -63,6 +65,7 @@ export default function CityServicePage({ params }: Props) {
   const complementaryServices = getComplementaryServices(service.slug, 4)
   const relatedContentGroups = getServiceRelatedContentGroups(service.slug)
   const nearbyCities = getNearbyCitiesForPage(city.slug, 4)
+  const pageCopy = getCityServicePageCopy(city.slug, service.slug)
   // Every other city gets a dofollow same-service link (clears thin inbound notices).
   const allOtherCities = cities.filter((c) => c.slug !== city.slug)
 
@@ -132,20 +135,44 @@ export default function CityServicePage({ params }: Props) {
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
-          <h2 className="section-heading">{pageTitle}</h2>
-          <p className="mt-6 text-lg leading-relaxed text-brand-body">{service.longDesc}</p>
-          <p className="mt-4 leading-relaxed text-brand-body">
-            {city.name} is located in {city.county} County with a population of {city.population}. 
-            A1 Property Services provides professional {service.name.toLowerCase()} services to
-            {city.name} homeowners and businesses, including neighborhoods throughout the city and
-            surrounding {city.county} County areas.
-          </p>
-          <p className="mt-4 leading-relaxed text-brand-body">
-            We are a locally owned landscaping company based in Cedar Falls, just minutes from 
-            {city.name}. Our crews are experienced with the soil conditions, drainage patterns,
-            and plant varieties that perform best in {city.county} County. Every {service.name.toLowerCase()} 
-            project includes proper materials and installation methods rated for Iowa freeze-thaw cycles.
-          </p>
+          <h2 className="section-heading">{pageCopy?.heading ?? pageTitle}</h2>
+          {pageCopy ? (
+            <>
+              {pageCopy.paragraphs.map((paragraph, index) => (
+                <p
+                  key={paragraph.slice(0, 48)}
+                  className={`${index === 0 ? 'mt-6' : 'mt-4'} text-lg leading-relaxed text-brand-body`}
+                >
+                  {paragraph}
+                </p>
+              ))}
+              {pageCopy.relatedHref && pageCopy.relatedLabel ? (
+                <p className="mt-4 leading-relaxed text-brand-body">
+                  See the{' '}
+                  <Link href={pageCopy.relatedHref} className="text-brand-green-800 underline underline-offset-2">
+                    {pageCopy.relatedLabel}
+                  </Link>{' '}
+                  for aeration, fertilization, and season-long weed control.
+                </p>
+              ) : null}
+            </>
+          ) : (
+            <>
+              <p className="mt-6 text-lg leading-relaxed text-brand-body">{service.longDesc}</p>
+              <p className="mt-4 leading-relaxed text-brand-body">
+                {city.name} is located in {city.county} County with a population of {city.population}. 
+                A1 Property Services provides professional {service.name.toLowerCase()} services to
+                {city.name} homeowners and businesses, including neighborhoods throughout the city and
+                surrounding {city.county} County areas.
+              </p>
+              <p className="mt-4 leading-relaxed text-brand-body">
+                We are a locally owned landscaping company based in Cedar Falls, just minutes from 
+                {city.name}. Our crews are experienced with the soil conditions, drainage patterns,
+                and plant varieties that perform best in {city.county} County. Every {service.name.toLowerCase()} 
+                project includes proper materials and installation methods rated for Iowa freeze-thaw cycles.
+              </p>
+            </>
+          )}
           <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap">
             <Button href="#estimate" fullWidth className="sm:w-auto" trackLabel={`${city.name} ${service.name} Quote`}>
               Free Estimate in {city.name}

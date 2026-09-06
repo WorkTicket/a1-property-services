@@ -16,6 +16,9 @@ export const metadata: Metadata = generatePageMetadata({
 })
 
 const resourceCategories = [
+  'Problems',
+  'Costs',
+  'Comparisons',
   'Seasonal',
   'Planting',
   'Drainage',
@@ -25,6 +28,66 @@ const resourceCategories = [
 ] as const
 
 const resources = [
+  {
+    title: 'Why Does My Yard Flood When It Rains?',
+    description: 'Diagnose clay, grade, and downspout problems that pond Cedar Falls and Waterloo yards after a storm.',
+    href: '/learn/why-yard-floods-when-it-rains',
+    category: 'Problems',
+  },
+  {
+    title: 'Do I Need a Retaining Wall?',
+    description: 'Signs a sloped Iowa yard needs a structural wall — and when grading or drainage is the better first move.',
+    href: '/learn/do-i-need-a-retaining-wall',
+    category: 'Problems',
+  },
+  {
+    title: 'Why Won’t Grass Grow in My Yard?',
+    description: 'Why cool-season lawns fail on Black Hawk County clay and which fix actually grows grass.',
+    href: '/learn/why-wont-grass-grow-in-my-yard',
+    category: 'Problems',
+  },
+  {
+    title: 'How Much Does Hydroseeding Cost?',
+    description: 'Typical hydroseeding prices for Cedar Falls and Waterloo yards, plus when sod is still the better spend.',
+    href: '/learn/hydroseeding-cost',
+    category: 'Costs',
+  },
+  {
+    title: 'How Much Does a Retaining Wall Cost in Cedar Falls?',
+    description: 'Real local ranges for block, stone, and timber walls, and what actually drives the number.',
+    href: '/blog/retaining-wall-cost-cedar-falls',
+    category: 'Costs',
+  },
+  {
+    title: 'Yard Drainage Cost in Cedar Falls',
+    description: 'What to budget for French drains, grading, and catch basins on a typical Black Hawk County lot.',
+    href: '/blog/yard-drainage-cost-cedar-falls',
+    category: 'Costs',
+  },
+  {
+    title: 'Mulch vs Rock Landscaping',
+    description: 'Cost, weeds, heat, and maintenance — when hardwood mulch wins and when decorative rock is the better bed.',
+    href: '/learn/mulch-vs-rock-landscaping',
+    category: 'Comparisons',
+  },
+  {
+    title: 'Hydroseeding vs. Sod in Cedar Falls',
+    description: 'Which lawn method fits your timeline, slope, and budget on an Iowa lot.',
+    href: '/blog/hydroseeding-vs-sod-cedar-falls',
+    category: 'Comparisons',
+  },
+  {
+    title: 'Paver Patio vs Concrete in Iowa',
+    description: 'How freeze-thaw changes the patio material decision for Cedar Falls and Waterloo homes.',
+    href: '/blog/paver-patio-vs-concrete-iowa',
+    category: 'Comparisons',
+  },
+  {
+    title: 'Best Grass Seed for Iowa',
+    description: 'Cool-season mixes that actually work in Cedar Falls and Waterloo sun, shade, and clay.',
+    href: '/learn/best-grass-seed-for-iowa',
+    category: 'Planting',
+  },
   // Seasonal
   {
     title: 'Spring Landscape Maintenance Checklist',

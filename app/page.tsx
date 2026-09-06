@@ -42,6 +42,8 @@ export const metadata: Metadata = generatePageMetadata({
     'retaining wall cedar falls',
     'paver patio cedar falls',
     'lawn care cedar falls iowa',
+    'a1 landscaping',
+    'a1 landscaping cedar falls',
     'a1 property services',
   ],
   ogImage: '/images/hero-background-image.webp',
@@ -77,6 +79,10 @@ function getStats() {
 
 const faqItems = [
   {
+    q: 'Is A1 Landscaping the same as A1 Property Services?',
+    a: 'Yes. A1 Property Services is the Cedar Falls landscaping company people search as A1 Landscaping. We are the local crew for patios, retaining walls, lawn care, and full installs in Cedar Falls, Waterloo, and Black Hawk County.',
+  },
+  {
     q: 'How much does landscaping cost in Cedar Falls?',
     a: 'Landscaping cost in Cedar Falls depends on scope — plantings and lawn care cost less than retaining walls or paver patios. We visit your property and give a free written estimate with clear pricing and no surprises.',
   },
@@ -106,7 +112,7 @@ export default function HomePage() {
     description: siteConfig.description,
     path: '/',
     image: '/og-image.jpg',
-    about: 'Landscaping in Cedar Falls, Waterloo, and Black Hawk County, Iowa',
+    about: 'A1 Landscaping and A1 Property Services in Cedar Falls, Waterloo, and Black Hawk County, Iowa',
   })
 
   return (
@@ -134,8 +140,8 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'Cedar Falls, IA Landscaping|Patios, Walls & Yards Homeowners Are Proud Of'}
-              subtitle="We design, build, and maintain yards you'll actually use in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, full installs."
+              title={'A1 Landscaping in Cedar Falls, IA|Patios, Walls & Yards Homeowners Are Proud Of'}
+              subtitle="A1 Property Services designs, builds, and maintains yards you'll actually use in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, full installs."
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="#estimate" trackLabel="Home Hero Quote">

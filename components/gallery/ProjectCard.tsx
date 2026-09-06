@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
@@ -9,13 +10,35 @@ import { IMAGE_SIZES } from '@/lib/image-sizes'
 
 type ProjectCardProps = {
   project: GalleryProject
-  onSelect: (id: string) => void
+  onSelect?: (id: string) => void
+  href?: string
   eager?: boolean
 }
 
-export default function ProjectCard({ project, onSelect, eager = false }: ProjectCardProps) {
+export default function ProjectCard({ project, onSelect, href, eager = false }: ProjectCardProps) {
   const categoryLabel = galleryCategoryLabels[project.category]
   const hasSlider = Boolean(project.before)
+
+  const details = (
+    <>
+      <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brand-gold">
+        {categoryLabel}
+      </span>
+      <p className="mt-1 font-display text-lg font-bold leading-snug text-brand-dark transition-colors group-hover:text-brand-green-800">
+        {project.title}
+      </p>
+      <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-brand-muted">
+        {project.location}
+      </p>
+      <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-brand-body">
+        {project.description}
+      </p>
+      <span className="mt-2.5 inline-flex items-center gap-1 text-sm font-semibold text-brand-green-800">
+        View project
+        <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      </span>
+    </>
+  )
 
   return (
     <article className="card overflow-hidden rounded-xl">
@@ -38,28 +61,19 @@ export default function ProjectCard({ project, onSelect, eager = false }: Projec
         </div>
       )}
 
-      <button
-        type="button"
-        onClick={() => onSelect(project.id)}
-        className="group w-full p-3.5 text-left sm:p-4"
-      >
-        <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-brand-gold">
-          {categoryLabel}
-        </span>
-        <p className="mt-1 font-display text-lg font-bold leading-snug text-brand-dark transition-colors group-hover:text-brand-green-800">
-          {project.title}
-        </p>
-        <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-brand-muted">
-          {project.location}
-        </p>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-brand-body">
-          {project.description}
-        </p>
-        <span className="mt-2.5 inline-flex items-center gap-1 text-sm font-semibold text-brand-green-800">
-          View project
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </span>
-      </button>
+      {href ? (
+        <Link href={href} className="group block w-full p-3.5 text-left sm:p-4">
+          {details}
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={() => onSelect?.(project.id)}
+          className="group w-full p-3.5 text-left sm:p-4"
+        >
+          {details}
+        </button>
+      )}
     </article>
   )
 }

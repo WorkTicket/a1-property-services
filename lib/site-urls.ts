@@ -3,6 +3,7 @@ import { learnArticles } from '@/lib/learn'
 import { siteConfig } from '@/lib/metadata'
 import { allServices } from '@/lib/services'
 import { cities } from '@/lib/cities'
+import { projectCaseStudies } from '@/lib/project-case-studies'
 
 /** URLs that should appear in sitemap.xml (excludes non-canonical duplicates). */
 export function getSitemapUrls(): string[] {
@@ -34,6 +35,7 @@ export function getAllSiteUrls(): string[] {
   const serviceUrls = allServices.map((s) => `${base}/services/${s.slug}`)
   const blogUrls = blogPosts.map((p) => `${base}/blog/${p.slug}`)
   const learnUrls = learnArticles.map((a) => `${base}/learn/${a.slug}`)
+  const projectUrls = projectCaseStudies.map((study) => `${base}/gallery/${study.slug}`)
   const cityUrls = cities.map((c) => `${base}/${c.slug}`)
   const programmaticUrls: string[] = []
   for (const city of cities) {
@@ -42,7 +44,7 @@ export function getAllSiteUrls(): string[] {
     }
   }
 
-  return [...staticUrls, ...serviceUrls, ...blogUrls, ...learnUrls, ...cityUrls, ...programmaticUrls]
+  return [...staticUrls, ...serviceUrls, ...blogUrls, ...learnUrls, ...projectUrls, ...cityUrls, ...programmaticUrls]
 }
 
 export type SiteMapGroup = {
@@ -103,6 +105,14 @@ export function getHtmlSitemapGroups(): SiteMapGroup[] {
     })),
   }
 
+  const projects: SiteMapGroup = {
+    heading: 'Project Case Studies',
+    links: projectCaseStudies.map((study) => ({
+      name: study.h1,
+      href: `/gallery/${study.slug}`,
+    })),
+  }
+
   const blog: SiteMapGroup = {
     heading: 'Blog',
     links: blogPosts.map((post) => ({
@@ -119,5 +129,5 @@ export function getHtmlSitemapGroups(): SiteMapGroup[] {
     })),
   }))
 
-  return [core, featured, services, cityHubs, learn, blog, ...cityServices]
+  return [core, featured, services, cityHubs, learn, projects, blog, ...cityServices]
 }

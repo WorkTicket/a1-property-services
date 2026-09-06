@@ -1,4 +1,5 @@
 import { countWords, minutesFromWords } from './reading-time'
+import { commercialLearnArticles } from './learn-commercial'
 
 export type LearnArticle = {
   slug: string
@@ -10,6 +11,8 @@ export type LearnArticle = {
   relatedServices: string[]
   relatedCities: string[]
   relatedFaqs: string[]
+  keywords?: string[]
+  faqs?: { question: string; answer: string }[]
 }
 
 export function getLearnReadingTime(article: LearnArticle): string {
@@ -22,7 +25,25 @@ export function getLearnReadingTime(article: LearnArticle): string {
   return `${minutesFromWords(words)} min`
 }
 
+export function getRelatedLearnArticles(slug: string, limit = 4): LearnArticle[] {
+  const article = learnArticles.find((item) => item.slug === slug)
+  const others = learnArticles.filter((item) => item.slug !== slug)
+  if (!article) return others.slice(0, limit)
+
+  return others
+    .map((item) => {
+      let score = 0
+      if (item.category === article.category) score += 2
+      score += item.relatedServices.filter((service) => article.relatedServices.includes(service)).length
+      return { item, score }
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((entry) => entry.item)
+}
+
 export const learnArticles: LearnArticle[] = [
+  ...commercialLearnArticles,
   {
     slug: 'comparing-landscaping-estimates',
     title: 'How to Compare Landscaping Estimates',
@@ -561,4 +582,4 @@ export const learnArticles: LearnArticle[] = [
     relatedCities: ['cedar-falls', 'waterloo', 'denver'],
     relatedFaqs: ['Do you offer free estimates?', 'How do I maintain my landscape?'],
   },
-]
+] as LearnArticle[]
