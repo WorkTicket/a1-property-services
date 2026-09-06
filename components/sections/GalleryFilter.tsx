@@ -49,7 +49,7 @@ export default function GalleryFilter() {
           </h2>
           <p className="mt-2 text-brand-muted max-w-xl mx-auto">
             {categoryMeta?.description ??
-              'Drag the slider to compare, then open a project for photos, materials, and what we built.'}
+              'Drag the slider to compare, then click a project to preview it. View more opens the full case study.'}
           </p>
         </FadeIn>
 

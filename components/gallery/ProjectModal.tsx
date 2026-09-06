@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import Link from 'next/link'
 import { MapPin, Phone, X } from 'lucide-react'
 import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 import Button from '@/components/ui/Button'
@@ -11,6 +12,7 @@ import { galleryCategoryLabels } from '@/lib/gallery-copy'
 import { getGalleryProjectById } from '@/lib/images'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { siteConfig } from '@/lib/metadata'
+import { getCaseStudyHref } from '@/lib/project-case-studies'
 
 type ProjectModalProps = {
   projectId: string
@@ -52,6 +54,7 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
   if (typeof document === 'undefined' || !project) return null
 
   const categoryLabel = galleryCategoryLabels[project.category]
+  const caseStudyHref = getCaseStudyHref(project.id)
 
   return createPortal(
     <div
@@ -76,7 +79,7 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
                 before={{ ...project.before, priority: true }}
                 after={{ ...project.after, priority: true }}
                 aspectClassName="aspect-[4/3] h-[min(46dvh,100svw)] max-h-[58dvh] w-full rounded-none max-sm:aspect-auto sm:h-auto lg:h-full lg:max-h-none lg:aspect-auto"
-                sizes={IMAGE_SIZES.galleryGrid}
+                sizes={IMAGE_SIZES.galleryModal}
               />
             ) : (
               <div className="relative aspect-[4/3] h-[min(46dvh,100svw)] max-h-[58dvh] w-full max-sm:aspect-auto sm:h-auto lg:absolute lg:inset-0 lg:max-h-none lg:aspect-auto">
@@ -84,7 +87,7 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
                   src={project.after.src}
                   alt={project.after.alt}
                   fill
-                  sizes={IMAGE_SIZES.galleryGrid}
+                  sizes={IMAGE_SIZES.galleryModal}
                   priority
                   style={
                     project.after.objectPosition
@@ -156,6 +159,18 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
                     ))}
                   </ul>
                 </div>
+              ) : null}
+
+              {caseStudyHref ? (
+                <p className="mt-5">
+                  <Link
+                    href={caseStudyHref}
+                    onClick={onClose}
+                    className="text-sm text-brand-green-800 transition-colors hover:text-brand-gold"
+                  >
+                    View more
+                  </Link>
+                </p>
               ) : null}
             </div>
 

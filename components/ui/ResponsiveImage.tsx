@@ -51,7 +51,7 @@ export default function ResponsiveImage({
         return <source key={format} srcSet={srcset} sizes={sizes} type={type} />
       })}
       <img
-        src={getVariantUrl(src, 'webp', priority ? 1280 : 768)}
+        src={getVariantUrl(src, 'webp', priority ? 1536 : 768)}
         alt={alt}
         width={fill ? dimensions?.width : width}
         height={fill ? dimensions?.height : height}

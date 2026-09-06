@@ -140,8 +140,10 @@ export default function HomePage() {
           <div>
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title={'A1 Landscaping in Cedar Falls, IA|Patios, Walls & Yards Homeowners Are Proud Of'}
-              subtitle="A1 Property Services designs, builds, and maintains yards you'll actually use in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, full installs."
+              title={'A1 Property Services, Landscaping in Cedar Falls, IA|Yards Black Hawk County Homeowners Are Proud Of'}
+              subtitle="We design, build, and maintain outdoor spaces in Cedar Falls, Waterloo, and nearby towns. Paver patios, retaining walls, full installs."
+              evenTitleLines
+              titleMaxWidth="64rem"
             />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="#estimate" trackLabel="Home Hero Quote">

@@ -7,6 +7,7 @@ type HeroCopyDeferredProps = {
   align?: 'left' | 'center'
   titleMaxWidth?: string
   subtitleMaxWidth?: string
+  evenTitleLines?: boolean
 }
 
 /** System-font hero copy; visible on first paint (see HeroCopyStatic). */

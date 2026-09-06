@@ -144,7 +144,7 @@ export default function ProjectCaseStudyPage({ params }: Props) {
         </section>
 
         <section className="section bg-brand-stone pt-0">
-          <FadeIn className="section-inner">
+          <FadeIn className="section-inner-narrow">
             <div className="overflow-hidden rounded-xl bg-neutral-950">
               {hasSlider && project.before ? (
                 <BeforeAfterSlider
@@ -153,7 +153,7 @@ export default function ProjectCaseStudyPage({ params }: Props) {
                   before={{ ...project.before, priority: true }}
                   after={{ ...project.after, priority: true }}
                   aspectClassName="aspect-[4/3] w-full rounded-none"
-                  sizes={IMAGE_SIZES.galleryGrid}
+                  sizes={IMAGE_SIZES.galleryFeatured}
                 />
               ) : (
                 <div className="relative aspect-[4/3]">
@@ -162,7 +162,7 @@ export default function ProjectCaseStudyPage({ params }: Props) {
                     alt={project.after.alt}
                     fill
                     priority
-                    sizes={IMAGE_SIZES.galleryGrid}
+                    sizes={IMAGE_SIZES.galleryFeatured}
                   />
                 </div>
               )}

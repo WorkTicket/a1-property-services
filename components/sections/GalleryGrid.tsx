@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import ProjectCard from '@/components/gallery/ProjectCard'
 import ProjectModal from '@/components/gallery/ProjectModal'
 import type { GalleryProject } from '@/lib/images'
-import { getCaseStudyHref } from '@/lib/project-case-studies'
 
 type GalleryGridProps = {
   projects: GalleryProject[]
@@ -14,12 +13,10 @@ function LazyProjectCard({
   project,
   eager,
   onSelect,
-  href,
 }: {
   project: GalleryProject
   eager: boolean
   onSelect?: (id: string) => void
-  href?: string
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(eager)
@@ -47,7 +44,7 @@ function LazyProjectCard({
   return (
     <div ref={ref}>
       {visible ? (
-          <ProjectCard project={project} onSelect={onSelect} href={href} eager={eager} />
+          <ProjectCard project={project} onSelect={onSelect} eager={eager} />
       ) : (
         <div className="overflow-hidden rounded-xl bg-white shadow-card">
           <div className="aspect-[4/3] animate-pulse bg-neutral-200" />
@@ -71,18 +68,14 @@ export default function GalleryGrid({ projects }: GalleryGridProps) {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
-        {projects.map((project, index) => {
-          const href = getCaseStudyHref(project.id)
-          return (
+        {projects.map((project, index) => (
             <LazyProjectCard
               key={project.id}
               project={project}
               eager={index < 6}
-              href={href}
-              onSelect={href ? undefined : handleSelect}
+              onSelect={handleSelect}
             />
-          )
-        })}
+        ))}
       </div>
       {selectedId ? <ProjectModal projectId={selectedId} onClose={() => setSelectedId(null)} /> : null}
     </>

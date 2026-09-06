@@ -66,6 +66,8 @@ const galleryCategoryByService: Partial<Record<string, Exclude<GalleryProject['c
   'paver-driveway': 'paver-driveways',
   'ponds-water-features': 'water',
   'outdoor-living': 'paver-patios',
+  'lawn-care': 'lawn-mowing',
+  'landscape-installation': 'landscape-installation',
 }
 
 function toLinked(item: LinkedContent): LinkedContent {
@@ -552,7 +554,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
     }
 
     case 'project': {
-      const caseStudies = projectCaseStudies.map((study) =>
+      const caseStudies = projectCaseStudies.slice(0, 6).map((study) =>
         toLinked({
           type: 'project',
           slug: study.slug,
@@ -564,7 +566,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
       )
       if (caseStudies.length > 0) groups.push({ heading: 'Project Case Studies', items: caseStudies })
 
-      const galleryServices = ['retaining-walls', 'paver-patio', 'paver-driveway', 'ponds-water-features']
+      const galleryServices = ['retaining-walls', 'paver-patio', 'paver-driveway', 'ponds-water-features', 'lawn-care', 'landscape-installation']
       const services = allServices
         .filter(s => galleryServices.includes(s.slug))
         .map(s => toLinked({

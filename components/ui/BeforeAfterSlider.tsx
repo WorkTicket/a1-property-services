@@ -24,12 +24,13 @@ type BeforeAfterSliderProps = {
   fallbackWidth?: number
   featured?: boolean
   hint?: string
+  onActivate?: () => void
 }
 
-const SLIDER_SIZES = IMAGE_SIZES.galleryGrid
 const DRAG_THRESHOLD = 10
-const SLIDER_FALLBACK_WIDTH = 640
-const SLIDER_PRIORITY_WIDTH = 768
+const SLIDER_FALLBACK_WIDTH = 768
+const SLIDER_PRIORITY_WIDTH = 1280
+const SLIDER_FEATURED_WIDTH = 1024
 
 function SliderPicture({
   src,
@@ -37,7 +38,7 @@ function SliderPicture({
   className,
   objectPosition,
   priority = false,
-  sizes = SLIDER_SIZES,
+  sizes = IMAGE_SIZES.galleryGrid,
   fallbackWidth,
 }: {
   src: string
@@ -93,11 +94,15 @@ export default function BeforeAfterSlider({
   title,
   className,
   aspectClassName = 'aspect-[4/3]',
-  sizes = SLIDER_SIZES,
+  sizes,
   fallbackWidth,
   featured = false,
   hint,
+  onActivate,
 }: BeforeAfterSliderProps) {
+  const resolvedSizes = sizes ?? (featured ? IMAGE_SIZES.galleryFeatured : IMAGE_SIZES.galleryGrid)
+  const resolvedFallback =
+    fallbackWidth ?? (featured ? SLIDER_FEATURED_WIDTH : undefined)
   const containerRef = useRef<HTMLDivElement>(null)
   const beforeLayerRef = useRef<HTMLDivElement>(null)
   const handleRef = useRef<HTMLDivElement>(null)
@@ -106,6 +111,8 @@ export default function BeforeAfterSlider({
   const rafRef = useRef<number | null>(null)
   const pointerStart = useRef<{ x: number; y: number; id: number } | null>(null)
   const dragIntent = useRef<'none' | 'horizontal' | 'vertical'>('none')
+  const hasMoved = useRef(false)
+  const suppressActivate = useRef(false)
   const [hintVisible, setHintVisible] = useState(Boolean(hint))
 
   const applyPosition = useCallback((pct: number) => {
@@ -163,22 +170,28 @@ export default function BeforeAfterSlider({
   }, [])
 
   const handlePointerDown = (e: React.PointerEvent) => {
-    if (e.pointerType === 'mouse') {
-      beginDrag(e)
-      return
-    }
-
+    hasMoved.current = false
+    suppressActivate.current = false
     pointerStart.current = { x: e.clientX, y: e.clientY, id: e.pointerId }
     dragIntent.current = 'none'
+    containerRef.current?.setPointerCapture(e.pointerId)
   }
 
   const handlePointerMove = (e: React.PointerEvent) => {
+    const start = pointerStart.current
+    if (start && start.id === e.pointerId && !hasMoved.current) {
+      const dx = e.clientX - start.x
+      const dy = e.clientY - start.y
+      if (Math.abs(dx) >= DRAG_THRESHOLD || Math.abs(dy) >= DRAG_THRESHOLD) {
+        hasMoved.current = true
+      }
+    }
+
     if (isDragging.current) {
       updatePosition(e.clientX)
       return
     }
 
-    const start = pointerStart.current
     if (!start || start.id !== e.pointerId) return
 
     const dx = e.clientX - start.x
@@ -189,6 +202,7 @@ export default function BeforeAfterSlider({
 
       if (Math.abs(dy) > Math.abs(dx)) {
         dragIntent.current = 'vertical'
+        suppressActivate.current = true
         resetPointerState()
         return
       }
@@ -199,15 +213,30 @@ export default function BeforeAfterSlider({
   }
 
   const endDrag = (e: React.PointerEvent) => {
+    const shouldActivate =
+      Boolean(onActivate) && !suppressActivate.current && !hasMoved.current && Boolean(pointerStart.current)
+
     resetPointerState()
 
-    if (!isDragging.current) return
-    isDragging.current = false
-    containerRef.current?.releasePointerCapture(e.pointerId)
-    containerRef.current?.classList.remove('ba-slider-active')
+    if (isDragging.current) {
+      isDragging.current = false
+      containerRef.current?.classList.remove('ba-slider-active')
+    }
+
+    if (containerRef.current?.hasPointerCapture(e.pointerId)) {
+      containerRef.current.releasePointerCapture(e.pointerId)
+    }
+
+    if (shouldActivate) onActivate?.()
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' && onActivate) {
+      e.preventDefault()
+      onActivate()
+      return
+    }
+
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
       e.preventDefault()
       setHintVisible(false)
@@ -244,8 +273,8 @@ export default function BeforeAfterSlider({
           alt={after.alt}
           objectPosition={after.objectPosition}
           priority={after.priority}
-          sizes={sizes}
-          fallbackWidth={fallbackWidth}
+          sizes={resolvedSizes}
+          fallbackWidth={resolvedFallback}
         />
 
         <div
@@ -259,8 +288,8 @@ export default function BeforeAfterSlider({
             className="saturate-[0.75]"
             objectPosition={before.objectPosition}
             priority={before.priority}
-            sizes={sizes}
-            fallbackWidth={fallbackWidth}
+            sizes={resolvedSizes}
+            fallbackWidth={resolvedFallback}
           />
         </div>
 

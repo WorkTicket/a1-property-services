@@ -39,6 +39,7 @@ type HeroCopyStaticProps = {
   align?: 'left' | 'center'
   titleMaxWidth?: string
   subtitleMaxWidth?: string
+  evenTitleLines?: boolean
 }
 
 export default function HeroCopyStatic({
@@ -48,22 +49,41 @@ export default function HeroCopyStatic({
   align = 'left',
   titleMaxWidth = '56rem',
   subtitleMaxWidth = '640px',
+  evenTitleLines = false,
 }: HeroCopyStaticProps) {
   const [line1, line2] = splitHeroTitle(title)
-  const line2Long = (line2?.length ?? 0) > 20
+  const shrinkLine2 = evenTitleLines || (line2?.length ?? 0) > 20
   const textAlign = align === 'center' ? 'center' : 'left'
 
   return (
     <>
       <div style={{ ...eyebrowStyle, textAlign, display: 'block' }}>{eyebrow}</div>
-      <h1 style={{ ...titleStyle, textAlign, maxWidth: titleMaxWidth, margin: 0 }}>
-        <span style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: align === 'center' ? 'center' : 'flex-start' }}>
-          <span style={{ display: 'block' }}>{line1}</span>
+      <h1
+        style={{
+          ...titleStyle,
+          textAlign,
+          maxWidth: titleMaxWidth,
+          margin: 0,
+        }}
+      >
+        <span
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: evenTitleLines ? '0.55em' : '0.25rem',
+            alignItems: align === 'center' ? 'center' : 'flex-start',
+          }}
+        >
+          <span style={{ display: 'block', textWrap: 'balance' }}>{line1}</span>
           {line2 ? (
             <span
               style={{
                 display: 'block',
-                fontSize: line2Long ? 'clamp(0.875rem, 2.3vw, 2.85rem)' : undefined,
+                textWrap: 'balance',
+                fontSize: shrinkLine2 ? 'clamp(0.95rem, 2.4vw, 1.85rem)' : 'inherit',
+                fontWeight: shrinkLine2 ? 600 : undefined,
+                lineHeight: 1.25,
+                letterSpacing: shrinkLine2 ? '0.01em' : undefined,
               }}
             >
               {line2}
