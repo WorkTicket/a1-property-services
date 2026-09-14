@@ -23,7 +23,7 @@ const quoteSchema = z.object({
 
 type QuoteFormData = z.infer<typeof quoteSchema>
 
-type QuoteFormProps = {
+export type QuoteFormProps = {
   variant?: 'light' | 'dark'
   /** Where this form is embedded — used for GA4 form_location. */
   formLocation?: string
@@ -122,8 +122,8 @@ export default function QuoteForm({
   }
 
   const inputClass = isDark
-    ? 'w-full rounded-md border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/40 transition-all duration-200 focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/30'
-    : 'w-full rounded-md border border-black/10 bg-neutral-50 px-4 py-3 text-sm text-brand-dark placeholder-brand-subtle/80 transition-all duration-200 focus:border-brand-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-gold/20'
+    ? 'form-input border-white/20 bg-white/10 text-white placeholder-white/40 hover:border-white/30 focus:bg-white/10'
+    : 'form-input'
 
   const labelClass = isDark ? 'text-white/80' : 'text-brand-dark'
   const mutedClass = isDark ? 'text-white/50' : 'text-brand-subtle'
@@ -255,7 +255,7 @@ export default function QuoteForm({
                 Service Needed
               </p>
               <p
-                className={`rounded-md border px-4 py-3 text-sm ${
+                className={`rounded-lg border px-4 py-3.5 text-sm ${
                   isDark
                     ? 'border-white/20 bg-white/10 text-white'
                     : 'border-black/10 bg-neutral-50 text-brand-dark'
@@ -396,7 +396,7 @@ export default function QuoteForm({
         </p>
       ) : null}
 
-      <Button type="submit" fullWidth className="justify-center py-4 text-sm" disabled={isSubmitting}>
+      <Button type="submit" fullWidth className="justify-center" disabled={isSubmitting}>
         {isSubmitting ? 'Sending...' : CTA_COPY.quote}
       </Button>
 

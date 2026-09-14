@@ -10,6 +10,7 @@ const SITEMAP_EXCLUDED_PAGES = new Set([
   '/thank-you',
   '/services/retaining-walls',
   '/services/paver-patio',
+  '/services/paver-driveway',
   '/services/ponds-water-features',
 ])
 
@@ -103,49 +104,31 @@ async function main() {
 
   const allPagePaths = new Set(Array.from(allPages).map((p) => p.replace(/\/$/, '') || '/'))
   let brokenCount = 0
+  /** @type {Record<string, string>} */
+  let redirectMap = {}
+  let redirectChains = []
+  try {
+    const {
+      migrationRedirects,
+      detectRedirectChains,
+      buildRedirectMap,
+    } = await import('../lib/migration-redirects.mjs')
+    redirectMap = buildRedirectMap(migrationRedirects)
+    redirectChains = detectRedirectChains(migrationRedirects)
+  } catch {
+    redirectMap = {}
+    redirectChains = []
+  }
 
   for (const [source, links] of Object.entries(allInternalLinks)) {
     for (const link of links) {
       let normalized = link.split('#')[0].replace(/\/$/, '')
       if (normalized === '') normalized = '/'
-      if (normalized.startsWith('/') && !allPagePaths.has(normalized)) {
+      if (!normalized.startsWith('/')) continue
+      const resolved = redirectMap[normalized] ?? normalized
+      if (!allPagePaths.has(resolved)) {
         error(`Broken link on ${source}: ${link}`)
         brokenCount++
-      }
-    }
-  }
-
-  // Also check for redirect chains in migration map / _redirects
-  let redirectChains = []
-  try {
-    const { migrationRedirects, detectRedirectChains } = await import('../lib/migration-redirects.mjs')
-    redirectChains = detectRedirectChains(migrationRedirects)
-  } catch {
-    const redirectsFile = path.resolve('public/_redirects')
-    if (existsSync(redirectsFile)) {
-      const redirectContent = readFileSync(redirectsFile, 'utf-8')
-      const redirects = redirectContent.split('\n').filter(l => l.trim() && !l.startsWith('#')).map(l => {
-        const parts = l.trim().split(/\s+/)
-        return { from: parts[0], to: parts[1], status: parseInt(parts[2]) || 301 }
-      })
-
-      const redirectMap = {}
-      for (const r of redirects) {
-        redirectMap[r.from.replace(/\/$/, '') || '/'] = r.to.replace(/\/$/, '') || '/'
-      }
-      for (const r of redirects) {
-        let target = r.to.replace(/\/$/, '') || '/'
-        const chain = [r.from]
-        let hops = 0
-        while (redirectMap[target] && hops < 5) {
-          chain.push(target)
-          target = redirectMap[target]
-          hops++
-        }
-        if (chain.length > 1) {
-          chain.push(target)
-          redirectChains.push(chain)
-        }
       }
     }
   }

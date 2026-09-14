@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { FileText, ChevronRight, ExternalLink } from 'lucide-react'
+import { ChevronRight, ExternalLink } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
+import { getGuideCardImage } from '@/lib/content-images'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import CtaBanner from '@/components/sections/CtaBanner'
+import ResponsiveImage from '@/components/ui/ResponsiveImage'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping Resources',
@@ -54,7 +57,7 @@ const resources = [
   },
   {
     title: 'How Much Does a Retaining Wall Cost in Cedar Falls?',
-    description: 'Real local ranges for block, stone, and timber walls, and what actually drives the number.',
+    description: 'Real local ranges for block and natural stone walls, and what actually drives the number.',
     href: '/blog/retaining-wall-cost-cedar-falls',
     category: 'Costs',
   },
@@ -148,7 +151,7 @@ const resources = [
   // Hardscaping
   {
     title: 'Retaining Wall Material Comparison',
-    description: 'Compare concrete block, natural stone, and timber retaining walls for Iowa conditions.',
+    description: 'Compare concrete block and natural stone retaining walls for Iowa conditions.',
     href: '/blog/best-retaining-wall-materials-iowa',
     category: 'Hardscaping',
   },
@@ -333,18 +336,31 @@ export default function ResourcesPage() {
             <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {resources
                 .filter((r) => r.category === category)
-                .map((resource) => (
+                .map((resource) => {
+                  const photo = getGuideCardImage(resource.href, resource.title, resource.description)
+                  return (
                   <StaggerItem key={resource.href}>
-                    <Link href={resource.href} className="card block h-full p-6 transition-all hover:-translate-y-1">
-                      <FileText size={20} className="text-brand-green-700" />
-                      <h3 className="mt-3 font-bold text-brand-dark">{resource.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-brand-body">{resource.description}</p>
-                      <span className="link-cta-md group mt-4 inline-flex items-center gap-1">
-                        Read More <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
-                      </span>
+                    <Link href={resource.href} className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1">
+                      <div className="card-image relative aspect-[16/9]">
+                        <ResponsiveImage
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          sizes={IMAGE_SIZES.thirdCol}
+                          className="card-image-zoom object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-1 flex-col p-6">
+                        <h3 className="font-bold text-brand-dark">{resource.title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-brand-body">{resource.description}</p>
+                        <span className="link-cta-md group mt-4 inline-flex items-center gap-1">
+                          Read More <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </div>
                     </Link>
                   </StaggerItem>
-                ))}
+                  )
+                })}
             </StaggerContainer>
           </div>
         </section>

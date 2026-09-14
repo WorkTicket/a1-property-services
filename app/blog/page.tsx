@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { generatePageMetadata, breadcrumbJsonLd, webPageJsonLd, siteConfig, itemListJsonLd, jsonLdGraph } from '@/lib/metadata'
-import { blogPosts, formatBlogDate, getSortedPosts } from '@/lib/blog'
+import { formatBlogDate, getBlogIndexPosts, getSortedPosts } from '@/lib/blog'
 import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import BlogList from '@/components/ui/BlogList'
@@ -16,7 +16,8 @@ export const metadata: Metadata = generatePageMetadata({
 })
 
 export default function BlogPage() {
-  const sortedPosts = getSortedPosts(blogPosts)
+  const indexPosts = getBlogIndexPosts()
+  const sortedPosts = getSortedPosts()
 
   const pageSchema = webPageJsonLd({
     name: 'Landscaping Blog | A1 Property Services',
@@ -68,13 +69,13 @@ export default function BlogPage() {
 
     <section className="section bg-white">
       <div className="section-inner max-w-5xl">
-        <BlogList posts={sortedPosts} />
+        <BlogList posts={indexPosts} />
       </div>
     </section>
 
     {/* Server-rendered full index so every post has a dofollow HTML inbound link
         independent of the client "Load More" UI. */}
-    <section className="section border-t border-black/5 bg-[#F7F5F3]">
+    <section className="section border-t border-black/5 bg-brand-stone">
       <div className="section-inner max-w-5xl">
         <div className="max-w-2xl">
           <p className="section-eyebrow">Archive</p>

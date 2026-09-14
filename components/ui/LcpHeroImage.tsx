@@ -49,7 +49,6 @@ export default function LcpHeroImage({
     >
       <source srcSet={avifSrcset} sizes={sizes} type="image/avif" />
       <source srcSet={webpSrcset} sizes={sizes} type="image/webp" />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={getVariantUrl(src, 'webp', 480)}
         srcSet={webpSrcset}
@@ -58,7 +57,7 @@ export default function LcpHeroImage({
         width={dimensions?.width ?? 1920}
         height={dimensions?.height ?? 1440}
         loading="eager"
-        decoding="async"
+        decoding="sync"
         fetchPriority="high"
         data-hero-lcp=""
         className="absolute inset-0 h-full w-full object-cover"

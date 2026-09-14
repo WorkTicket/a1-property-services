@@ -6,7 +6,7 @@ import { cities, getCityBySlug } from '@/lib/cities'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages, getCityHeroImage, getCityIntroImage, getCityWhyImage } from '@/lib/images'
-import { services, hardscapeFeatures, hardscapeServices, getHardscapeFeatureHref, allServices } from '@/lib/services'
+import { services, hardscapeFeatures, hardscapeServices, getCityServicePageHref, getHardscapeFeatureHref, allServices } from '@/lib/services'
 import { getAllRelatedGroups } from '@/lib/internal-linking'
 import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
@@ -20,16 +20,17 @@ import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import FaqAccordion from '@/components/ui/FaqAccordion'
-import GoogleReviews from '@/components/ui/GoogleReviews'
+import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
 
-type Props = { params: { city: string } }
+type Props = { params: Promise<{ city: string }> }
 
 export async function generateStaticParams() {
   return cities.map((c) => ({ city: c.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const city = getCityBySlug(params.city)
+  const { city: citySlug } = await params
+  const city = getCityBySlug(citySlug)
   if (!city) return {}
 
   return generatePageMetadata({
@@ -45,12 +46,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const hardscapeDetailServices = [
   ...hardscapeServices,
+  services.find((s) => s.slug === 'paver-driveway')!,
   services.find((s) => s.slug === 'ponds-water-features')!,
 ]
 
 const hardscapeImages: Record<string, string> = {
   'retaining-walls': siteImages.hardscapeRetainingWalls,
   'paver-patio': siteImages.hardscapePaverPatio,
+  'paver-driveway': siteImages.hardscapePaverDriveway,
   'ponds-water-features': siteImages.hardscapePondsWaterFeatures,
 }
 
@@ -72,8 +75,9 @@ const trustPoints = [
   },
 ]
 
-export default function CityPage({ params }: Props) {
-  const city = getCityBySlug(params.city)
+export default async function CityPage({ params }: Props) {
+  const { city: citySlug } = await params
+  const city = getCityBySlug(citySlug)
   if (!city) notFound()
 
   const introImage = getCityIntroImage(city.slug)
@@ -216,7 +220,7 @@ export default function CityPage({ params }: Props) {
               Hardscaping in {city.name}
             </h2>
           </FadeIn>
-          <StaggerContainer className="grid gap-4 md:grid-cols-4">
+          <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {hardscapeFeatures.map((f) => (
               <StaggerItem key={f.slug}>
                 <Link
@@ -241,10 +245,10 @@ export default function CityPage({ params }: Props) {
           <FadeIn className="text-center">
             <h2 className="section-heading">Specialty Hardscaping</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Retaining walls, paver patios, and water features built for Iowa winters.
+              Retaining walls, paver patios, paver driveways, and water features built for Iowa winters.
             </p>
           </FadeIn>
-          <StaggerContainer className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {hardscapeDetailServices.map((service) => (
               <StaggerItem key={service.slug}>
                 <div className="card overflow-hidden">
@@ -263,7 +267,7 @@ export default function CityPage({ params }: Props) {
                     </p>
                     <div className="mt-6 grid gap-2 sm:flex sm:gap-3">
                       <Button
-                        href={`/${city.slug}/${service.slug}`}
+                        href={getCityServicePageHref(city.slug, service.slug)}
                         variant="outline"
                         size="xs"
                         fullWidth
@@ -297,8 +301,8 @@ export default function CityPage({ params }: Props) {
             {allServices.map((service) => (
               <li key={service.slug}>
                 <Link
-                  href={`/${city.slug}/${service.slug}`}
-                  className="flex items-center justify-between rounded-lg border border-brand-stone bg-brand-stone/30 px-4 py-3 text-sm font-medium text-brand-dark transition-colors hover:border-brand-green-800/30 hover:bg-brand-green-100/50"
+                  href={getCityServicePageHref(city.slug, service.slug)}
+                  className="flex items-center justify-between rounded-xl border border-black/[0.06] bg-white px-4 py-3.5 text-sm font-medium text-brand-dark transition-all hover:border-brand-gold/30 hover:shadow-sm"
                 >
                   <span>{service.name}</span>
                   <ChevronRight className="h-4 w-4 shrink-0 text-brand-muted" aria-hidden />
@@ -361,7 +365,7 @@ export default function CityPage({ params }: Props) {
       </section>
 
       {/* Google Reviews */}
-      <GoogleReviews />
+      <LazyGoogleReviews />
 
       {/* Gallery CTA */}
       <section className="section bg-white">
@@ -397,7 +401,7 @@ export default function CityPage({ params }: Props) {
         </div>
       </section>
 
-      <RelatedContent groups={getAllRelatedGroups('city', params.city)} />
+      <RelatedContent groups={getAllRelatedGroups('city', city.slug)} />
 
       <EstimateSection
         formLocation={`City ${city.name}`}
@@ -416,7 +420,6 @@ export default function CityPage({ params }: Props) {
         title={`Ready to Start Your ${city.name} Project?`}
         description="Call us today or request a free quote online. We will get back to you within 24 hours."
         animated
-        titleClassName="section-heading text-white"
         quoteHref="#estimate"
       />
     </>

@@ -22,6 +22,8 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
     optimizeCss: true,
+    // Windows EPERM/corrupt packfile workaround (replaces webpack memory cache).
+    turbopackFileSystemCacheForDev: false,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -30,19 +32,6 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: true,
   productionBrowserSourceMaps: false,
-  swcMinify: true,
-  onDemandEntries: {
-    maxInactiveAge: 60 * 60 * 1000,
-    pagesBufferLength: 5,
-  },
-  webpack: (config, { dev }) => {
-    // Avoid corrupted filesystem cache on Windows (EPERM/hasStartTime errors) when
-    // multiple dev servers share .next/cache or Node 23+ hits webpack pack bugs.
-    if (dev) {
-      config.cache = { type: 'memory' }
-    }
-    return config
-  },
 }
 
 module.exports = withBundleAnalyzer(nextConfig)

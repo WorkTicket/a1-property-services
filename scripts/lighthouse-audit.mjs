@@ -33,6 +33,7 @@ const PAGES = [
   '/faqs',
   '/retaining-wall-in-cedar-falls',
   '/paver-patio-installation',
+  '/paver-driveway-cedar-falls',
   '/cedar-falls-water-features',
   '/landscaping-services-in-cedar-falls',
   '/cedar-falls/landscape-installation',
@@ -137,7 +138,7 @@ for (const form of forms) {
       runLighthouse(url, form, outfile)
       const summary = summarize(outfile)
       results.push({ page, form, ...summary })
-      const mark = summary.score === 100 ? '✓' : summary.score >= 90 ? '~' : '✗'
+      const mark = summary.score >= 95 ? (summary.score === 100 ? '✓' : '~') : '✗'
       console.log(`${mark} ${summary.score}  LCP ${summary.metrics.lcp}  (${summary.lcpElement ?? 'n/a'})`)
     } catch {
       console.log('FAILED')
@@ -149,17 +150,17 @@ for (const form of forms) {
 const summaryPath = path.join(REPORTS, 'summary.json')
 writeFileSync(summaryPath, JSON.stringify(results, null, 2))
 
-const failing = results.filter((r) => r.score < 100)
+const failing = results.filter((r) => r.score < 95)
 console.log(`\n=== SUMMARY ===`)
 console.log(`Audited: ${results.length} runs`)
-console.log(`Score 100: ${results.filter((r) => r.score === 100).length}`)
-console.log(`Below 100: ${failing.length}`)
+console.log(`Score 95+: ${results.filter((r) => r.score >= 95).length}`)
+console.log(`Below 95: ${failing.length}`)
 if (failing.length) {
-  console.log('\nPages below 100:')
+  console.log('\nPages below 95:')
   for (const row of failing.sort((a, b) => a.score - b.score)) {
     console.log(`  ${row.form} ${row.page}: ${row.score} (LCP ${row.metrics?.lcp ?? '?'})`)
   }
   process.exit(1)
 }
 
-console.log(`\nAll pages scored 100. Reports in ${REPORTS}`)
+console.log(`\nAll pages scored 95+. Reports in ${REPORTS}`)

@@ -6,6 +6,7 @@ import {
   buildRedirectMap,
   detectRedirectChains,
   normalizeRedirectPath,
+  resolveRedirectDestination,
 } from '../lib/migration-redirects.mjs'
 
 const OUT_DIR = path.resolve('out')
@@ -87,6 +88,9 @@ if (!existsSync(redirectsFile)) {
       fail(`Generated _redirects is stale: missing rule: ${rule}`)
     }
   }
+  if (!content.includes('/*/amp /:splat 301') || !content.includes('/*/amp/ /:splat 301')) {
+    fail('Generated _redirects is stale: missing AMP splat rules')
+  }
   if (errors === 0) {
     ok('public/_redirects matches migration map')
   }
@@ -113,6 +117,26 @@ if (existsSync(OUT_DIR)) {
   }
 } else {
   console.log('  ℹ Skipping build output check (run npm run build first for full validation)')
+}
+
+const hopCases = [
+  ['/cedar-falls-water-features/amp/', '/cedar-falls-water-features'],
+  ['/contact-landscaping-property-maintenance-cedar-falls/amp', '/contact'],
+  ['/landscape-installation/', '/services/landscape-installation'],
+  ['/evansdale/ponds-water-features', '/cedar-falls-water-features'],
+  ['/blog/excavation-prep-landscaping', '/services/excavation'],
+  ['/amp', '/'],
+  ['/gallery/amp', '/gallery'],
+  ['/services/ponds-water-features', '/cedar-falls-water-features'],
+]
+for (const [from, expected] of hopCases) {
+  const dest = resolveRedirectDestination(from)
+  if (dest !== expected) {
+    fail(`resolveRedirectDestination(${from}) => ${dest}, expected ${expected}`)
+  }
+}
+if (errors === 0) {
+  ok('AMP + legacy slugs resolve in one hop')
 }
 
 console.log(`\n  Redirect rules: ${migrationRedirects.length}`)

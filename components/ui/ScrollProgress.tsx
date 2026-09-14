@@ -1,13 +1,16 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 
 export default function ScrollProgress() {
   const [scroll, setScroll] = useState(0)
-  const [mounted, setMounted] = useState(false)
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  )
 
   useEffect(() => {
-    setMounted(true)
     const onScroll = () => {
       const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
       setScroll(Math.min(pct, 1))

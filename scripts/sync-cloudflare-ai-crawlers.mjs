@@ -69,10 +69,12 @@ async function main() {
 
   const body = {
     ai_bots_protection: 'disabled',
+    content_bots_protection: 'disabled',
     is_robots_txt_managed: false,
     crawler_protection: 'disabled',
     bot_preference_sync_enabled: false,
     cf_robots_variant: 'off',
+    fight_mode: false,
   }
 
   try {

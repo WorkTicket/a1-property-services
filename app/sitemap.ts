@@ -1,19 +1,17 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog'
-import { learnArticles } from '@/lib/learn'
 import { siteConfig } from '@/lib/metadata'
 import { getSitemapUrls } from '@/lib/site-urls'
+import { RANKING_LANDING_PATHS } from '@/lib/services'
+
+export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const allUrls = getSitemapUrls()
 
   return allUrls.map((url) => {
     const path = url.replace(siteConfig.url, '') || '/'
-    const isLegacyLanding =
-      path === '/retaining-wall-in-cedar-falls' ||
-      path === '/paver-patio-installation' ||
-      path === '/cedar-falls-water-features' ||
-      path === '/landscaping-services-in-cedar-falls'
+    const isLegacyLanding = (RANKING_LANDING_PATHS as readonly string[]).includes(path)
     const isBlog = path.startsWith('/blog/') && path !== '/blog'
     const isLearn = path.startsWith('/learn/') && path !== '/learn'
     const isProject = path.startsWith('/gallery/') && path !== '/gallery'

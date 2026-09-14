@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ChevronRight, BookOpen, FileText, ShoppingCart, Scale } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, jsonLdGraph, webPageJsonLd, siteConfig, itemListJsonLd } from '@/lib/metadata'
 import { learnArticles, getLearnReadingTime } from '@/lib/learn'
+import { getLearnArticleImage } from '@/lib/content-images'
 import { siteImages } from '@/lib/images'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
+import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import CtaBanner from '@/components/sections/CtaBanner'
 
 export const metadata: Metadata = generatePageMetadata({
@@ -15,12 +18,6 @@ export const metadata: Metadata = generatePageMetadata({
     'Educational guides, buying tips, and comparison resources for Cedar Falls and Waterloo homeowners planning landscape work.',
   path: '/learn',
 })
-
-const categoryIcons: Record<string, typeof BookOpen> = {
-  educational: BookOpen,
-  'buying-guide': ShoppingCart,
-  comparison: Scale,
-}
 
 const categoryColors: Record<string, string> = {
   educational: 'bg-blue-100 text-blue-800',
@@ -81,29 +78,33 @@ export default function LearnPage() {
         <div className="section-inner">
           <StaggerContainer className="grid gap-8 lg:grid-cols-2">
             {learnArticles.map((article) => {
-              const Icon = categoryIcons[article.category] || FileText
+              const photo = getLearnArticleImage(article)
               return (
                 <StaggerItem key={article.slug}>
-                  <Link href={`/learn/${article.slug}`} className="card group block p-8 transition-shadow hover:shadow-lg">
-                    <div className="flex items-start gap-4">
-                      <div className="rounded-lg bg-brand-green-100 p-3">
-                        <Icon size={24} className="text-brand-green-800" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[article.category]}`}>
-                            {article.categoryLabel}
-                          </span>
-                          <span className="text-xs text-brand-body/60">{getLearnReadingTime(article)} read</span>
-                        </div>
-                        <h2 className="mt-3 text-xl font-bold text-brand-dark group-hover:text-brand-green-800 transition-colors">
-                          {article.title}
-                        </h2>
-                        <p className="mt-2 leading-relaxed text-brand-body">{article.excerpt}</p>
-                        <span className="link-cta-md group mt-4 inline-flex items-center gap-1">
-                          Read Guide <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
+                  <Link href={`/learn/${article.slug}`} className="card group flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg">
+                    <div className="card-image relative aspect-[16/9]">
+                      <ResponsiveImage
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes={IMAGE_SIZES.halfCol}
+                        className="card-image-zoom object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-6 md:p-8">
+                      <div className="flex items-center gap-2">
+                        <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${categoryColors[article.category]}`}>
+                          {article.categoryLabel}
                         </span>
+                        <span className="text-xs text-brand-body/60">{getLearnReadingTime(article)} read</span>
                       </div>
+                      <h2 className="mt-3 text-xl font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
+                        {article.title}
+                      </h2>
+                      <p className="mt-2 leading-relaxed text-brand-body">{article.excerpt}</p>
+                      <span className="link-cta-md group mt-4 inline-flex items-center gap-1">
+                        Read Guide <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
+                      </span>
                     </div>
                   </Link>
                 </StaggerItem>

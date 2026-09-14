@@ -266,6 +266,13 @@ export const hardscapeFeatures = [
     oldHref: '/paver-patio-installation',
   },
   {
+    slug: 'paver-driveway',
+    name: 'Paver Driveways',
+    shortDesc: 'Heavy-duty paver driveways built for vehicles and Iowa freeze-thaw.',
+    href: '/services/paver-driveway',
+    oldHref: '/paver-driveway-cedar-falls',
+  },
+  {
     slug: 'water-features',
     name: 'Water Features',
     shortDesc: 'Ponds and waterfalls that add movement and character to your yard.',
@@ -285,33 +292,45 @@ export const hardscapeFeatures = [
 export const legacyLandingPageHrefs: Partial<Record<string, string>> = {
   'retaining-walls': '/retaining-wall-in-cedar-falls',
   'paver-patio': '/paver-patio-installation',
+  'paver-driveway': '/paver-driveway-cedar-falls',
   'ponds-water-features': '/cedar-falls-water-features',
 }
 
-/** @deprecated Use legacyLandingPageHrefs */
-export const legacyServiceHrefs = legacyLandingPageHrefs
+/** Ranking landing URLs linked from nav, footer, sitemap, and homepage hardscape cards. */
+export const RANKING_LANDING_PATHS = [
+  '/landscaping-services-in-cedar-falls',
+  '/retaining-wall-in-cedar-falls',
+  '/paver-patio-installation',
+  '/paver-driveway-cedar-falls',
+  '/cedar-falls-water-features',
+] as const
 
 export function getServicePageHref(slug: string): string {
-  return `/services/${slug}`
+  return getLegacyLandingPageHref(slug) ?? `/services/${slug}`
 }
 
 export function getLegacyLandingPageHref(slug: string): string | undefined {
   return legacyLandingPageHrefs[slug]
 }
 
+/** City×service URL, or the ranking landing when that service already has one. */
+export function getCityServicePageHref(citySlug: string, serviceSlug: string): string {
+  return getLegacyLandingPageHref(serviceSlug) ?? `/${citySlug}/${serviceSlug}`
+}
+
 const hardscapeCitySlugMap: Record<string, string> = {
   'retaining-walls': 'retaining-walls',
   'paver-patio': 'paver-patio',
+  'paver-driveway': 'paver-driveway',
   'water-features': 'ponds-water-features',
   'outdoor-living': 'outdoor-living',
 }
 
-/** City hub cards: Cedar Falls hardscape uses legacy ranking URLs; other cities use /{city}/{service}. */
+/** City hub cards: ranking landings win so we do not emit thin city×service duplicates. */
 export function getHardscapeFeatureHref(citySlug: string, featureSlug: string, legacyHref?: string): string {
-  if (citySlug === 'cedar-falls' && legacyHref) {
-    return legacyHref
-  }
   const serviceSlug = hardscapeCitySlugMap[featureSlug] ?? featureSlug
+  const ranking = getLegacyLandingPageHref(serviceSlug) ?? legacyHref
+  if (ranking) return ranking
   return `/${citySlug}/${serviceSlug}`
 }
 
@@ -660,7 +679,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Planning & Material Ordering',
       description:
-        'We handle permits, material ordering, scheduling, and utility locating so installation goes smoothly without delays.',
+        'We flag permit needs during planning, then handle material ordering, scheduling, and utility locating so installation stays on track.',
     },
     {
       title: 'Site Preparation & Grading',
@@ -1049,7 +1068,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     heading: 'Why Local Homeowners Choose Our Retaining Walls',
     paragraphs: [
       'Retaining walls are one of the most practical upgrades for sloped Cedar Falls and Waterloo properties. A properly installed wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
-      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install includes gravel backfill, drain pipe, and proper base compaction, whether block, stone, or concrete, for walls that stand for decades.',
+      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install includes gravel backfill, drain pipe, and proper base compaction — segmental block as the standard, natural stone as a premium option — so walls stand for decades.',
     ],
     relatedBlogSlug: 'retaining-wall-benefits-cedar-falls',
   },
@@ -1512,6 +1531,16 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
         'A pondless waterfall recirculates water over stone into a hidden underground reservoir — you get the sound and look of a waterfall without an open pond. It is a popular low-maintenance option for smaller yards.',
     },
     {
+      question: 'Do I need a permit for a pond or waterfall?',
+      answer:
+        'Typical backyard pondless waterfalls and small ponds rarely need a building permit. Electrical work for pumps and lighting should be done to code, and we call utility locates before excavating. Setbacks on small lots are worth checking. We review those details during the estimate rather than publishing a one-size county rule.',
+    },
+    {
+      question: 'How long does a water feature last, and what maintenance does it need?',
+      answer:
+        'A well-built feature with a quality liner and an accessible pump is meant to last many seasons. Maintenance is seasonal: net leaves, keep filters clear, and winterize equipment before freeze-up. We offer opening and closing so you are not guessing about algae, pumps, or ice. Liners and pumps are wear items — we will tell you what to watch on your specific install.',
+    },
+    {
       question: 'How long does water feature installation take?',
       answer:
         'Most residential water features take several days to about two weeks depending on excavation, stonework, plumbing, and planting. We give a clear timeline during your free estimate.',
@@ -1569,12 +1598,17 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'Do I need a permit for a retaining wall?',
       answer:
-        'Taller walls and walls near property lines may require permits. We help you understand local requirements and build to code so your retaining wall installation is done right the first time.',
+        'Taller walls and walls near property lines may require a building permit and engineered plans. A common threshold in Cedar Falls is 4 feet, measured from the bottom of the footing to the top of the wall — but city rules can change, and neighboring towns are not identical. We review current local requirements during the on-site estimate and flag what the city will ask for. Confirm the height trigger with your city before construction.',
     },
     {
       question: 'What materials do you use for retaining walls?',
       answer:
-        'We install segmental concrete block and natural stone retaining walls, selected for durability, drainage performance, and appearance on Cedar Falls and Waterloo properties.',
+        'We install segmental concrete block retaining walls as our standard. Natural stone is a premium option when you want a more organic face. We do not build timber, boulder, or poured-concrete walls.',
+    },
+    {
+      question: 'How long does a retaining wall last, and what maintenance does it need?',
+      answer:
+        'A segmental block or natural stone wall with a compacted base, gravel backfill, and drain pipe is built to last decades. Maintenance is light: keep drain outlets clear, keep plants from growing through joints, and call us if a course ever shifts after a hard freeze. We can inspect a wall as part of a free on-site visit.',
     },
     {
       question: 'How long does retaining wall installation take?',
@@ -1589,7 +1623,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'What is the maximum height for a retaining wall?',
       answer:
-        'Residential retaining walls typically range from 2 to 6 feet. Walls over 4 feet require engineered plans and permits. We design walls to the appropriate height and reinforcement for your needs.',
+        'Residential retaining walls typically range from 2 to 6 feet. A common Cedar Falls threshold is 4 feet for engineered plans and a permit, but confirm with your city — rules can change and neighboring towns are not identical. We design walls to the appropriate height and reinforcement for your site.',
     },
     {
       question: 'Do retaining walls add property value?',
@@ -1632,6 +1666,16 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       question: 'How much does a paver patio cost?',
       answer:
         'Paver patio cost depends on size, paver style, site prep, and add-ons like steps or seat walls. Many residential patios are quoted per square foot after a free on-site visit so pricing matches your yard and design.',
+    },
+    {
+      question: 'How long does a paver patio last, and how do you maintain it?',
+      answer:
+        'A paver patio on a compacted base with edge restraint is built to last decades. Individual units can be reset or replaced if anything settles. Maintenance is light: keep polymeric joint sand topped up every few years, sweep debris, and avoid harsh de-icers. Sealing is optional for color and stain resistance.',
+    },
+    {
+      question: 'Do I need a permit for a paver patio in Cedar Falls?',
+      answer:
+        'Most backyard paver patios do not require a building permit. Work that changes drainage toward a neighbor, ties into the right-of-way, or includes tall seat walls may. We flag anything that needs city review during the on-site estimate rather than guessing from photos. Confirm current rules with your city if your project is on a property line or includes a structure.',
     },
     {
       question: 'How long does paver patio installation take?',
@@ -1683,6 +1727,16 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
       question: 'How much does a paver driveway cost?',
       answer:
         'Paver driveway cost depends on square footage, paver style, excavation depth, and site access. Most residential driveways are quoted per square foot after a free on-site visit so pricing matches your property and design.',
+    },
+    {
+      question: 'Do I need a permit for a paver driveway in Cedar Falls?',
+      answer:
+        'Replacing a residential driveway in kind often does not need a building permit, but widening the drive, changing the street approach, or working in the right-of-way can. Cedar Falls and Waterloo both care how a driveway meets the sidewalk and curb. We flag that during the on-site estimate so you know what the city will ask for before construction starts.',
+    },
+    {
+      question: 'How long does a paver driveway last, and what maintenance does it need?',
+      answer:
+        'With a vehicle-depth base, edge restraint, and interlocking pavers, a driveway is built to last decades. Maintenance is light: keep joint sand topped up, avoid aggressive de-icers and plow blades scraping the surface, and reset an individual paver if one ever settles. Sealing is optional for color and oil-stain resistance.',
     },
     {
       question: 'How long does paver driveway installation take?',
@@ -2088,7 +2142,7 @@ export const serviceMaterials: Record<string, Material[]> = {
       durability: '50+ years with proper base and drainage. Individual blocks can be replaced if damaged.',
     },
     {
-      name: 'Natural Stone',
+      name: 'Natural Stone (Premium)',
       pros: [
         'Unique, timeless appearance no two walls look alike',
         'Blends naturally with Iowa landscape',
@@ -2103,23 +2157,6 @@ export const serviceMaterials: Record<string, Material[]> = {
       ],
       maintenance: 'Minimal. Inspect annually for loose stones. Re-point mortar joints if used. Keep vegetation from growing between stones.',
       durability: '100+ years. Natural stone is the most durable retaining wall material available.',
-    },
-    {
-      name: 'Poured Concrete',
-      pros: [
-        'Monolithic strength for tall walls over 8 feet',
-        'Reinforced with steel rebar for maximum stability',
-        'Can be stamped or stained for decorative finish',
-        'Ideal for commercial and heavy-load applications',
-      ],
-      cons: [
-        'Prone to cracking during Iowa freeze-thaw cycles',
-        'Forms, pouring, and curing extend installation timeline',
-        'Cracks are difficult to repair invisibly',
-        'Plain finish looks utilitarian without added treatments',
-      ],
-      maintenance: 'Monitor for cracks each spring. Seal control joints. Repair cracks promptly to prevent water infiltration and freeze damage.',
-      durability: '30-50 years depending on reinforcement, drainage, and climate exposure. Cracking is the primary long-term concern.',
     },
   ],
   'paver-patio': [
@@ -3549,6 +3586,70 @@ export const serviceMaterials: Record<string, Material[]> = {
 }
 
 export const allServices: Service[] = [...services, ...hardscapeServices]
+
+/** Shared groupings for the nav mega menu and /services directory. */
+export const serviceNavGroups = [
+  {
+    key: 'landscaping',
+    label: 'Landscaping',
+    desc: 'Design, install & upkeep',
+    slugs: [
+      'landscape-design',
+      'landscape-installation',
+      'residential-landscaping',
+      'landscape-maintenance',
+      'preservation-restoration',
+      'mulching',
+    ],
+  },
+  {
+    key: 'lawn-trees',
+    label: 'Lawn & Trees',
+    desc: 'Turf, trees & plantings',
+    slugs: [
+      'lawn-care',
+      'sod-installation',
+      'hydroseeding',
+      'tree-service',
+      'tree-planting',
+      'shrub-installation',
+    ],
+  },
+  {
+    key: 'hardscaping',
+    label: 'Hardscaping',
+    desc: 'Patios, walls & features',
+    slugs: [
+      'paver-patio',
+      'paver-driveway',
+      'retaining-walls',
+      'outdoor-living',
+      'ponds-water-features',
+      'rock-landscaping',
+    ],
+  },
+  {
+    key: 'site-work',
+    label: 'Site Work',
+    desc: 'Drainage, commercial & snow',
+    slugs: [
+      'drainage',
+      'grading',
+      'excavation',
+      'commercial-landscaping',
+      'snow-removal',
+    ],
+  },
+] as const
+
+export type ServiceNavGroupKey = (typeof serviceNavGroups)[number]['key']
+
+export function getServicesForNavGroup(group: (typeof serviceNavGroups)[number]): Service[] {
+  return group.slugs.flatMap((slug) => {
+    const match = allServices.find((service) => service.slug === slug)
+    return match ? [match] : []
+  })
+}
 
 /** FAQ page order: design and install first, site prep and lawn care next, hardscape and seasonal last. */
 export const faqPageServiceOrder: string[] = [

@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useState } from 'react'
-import ProjectCard from '@/components/gallery/ProjectCard'
+import LazyProjectCard from '@/components/gallery/LazyProjectCard'
 import ProjectModal from '@/components/gallery/ProjectModal'
 import type { GalleryProject } from '@/lib/images'
 import { cn } from '@/lib/utils'
@@ -27,7 +27,7 @@ export default function ProjectPreviewGrid({ projects, columns = 2 }: ProjectPre
         )}
       >
         {projects.map((project) => (
-          <ProjectCard
+          <LazyProjectCard
             key={project.id}
             project={project}
             onSelect={handleSelect}

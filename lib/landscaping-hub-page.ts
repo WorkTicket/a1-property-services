@@ -35,6 +35,7 @@ export const landscapingHubPage = {
     'cedar falls landscaper',
     'retaining wall cedar falls',
     'paver patio cedar falls',
+    'paver driveway cedar falls',
     'water features cedar falls',
   ],
   ogImage: '/images/content-landscaping-cedar-falls.webp',
@@ -55,11 +56,12 @@ export const landscapingHubPage = {
   ],
   coreServicesHeading: 'Hardscape & Landscape Services',
   coreServicesIntro:
-    'Hardscaping in Cedar Falls usually means a wall, a patio, or both. From retaining walls built for freeze-thaw to custom paver patios and water features, our crew focuses on work that lasts — drainage that works, quality materials, and clear written estimates.',
+    'Hardscaping in Cedar Falls usually means a wall, a patio, a driveway, or a combination. From retaining walls built for freeze-thaw to custom paver patios, paver driveways, and water features, our crew focuses on work that lasts — drainage that works, quality materials, and clear written estimates.',
   featuredServices: [
     { label: 'Retaining Wall', href: '/retaining-wall-in-cedar-falls' },
-    { label: 'Water Features', href: '/cedar-falls-water-features' },
     { label: 'Paver Patio', href: '/paver-patio-installation' },
+    { label: 'Paver Driveway', href: '/paver-driveway-cedar-falls' },
+    { label: 'Water Features', href: '/cedar-falls-water-features' },
   ],
   recentProjects: [
     {
@@ -139,6 +141,14 @@ export const landscapingHubPage = {
       ],
     },
     {
+      heading: 'Paver Driveways',
+      serviceHref: '/paver-driveway-cedar-falls',
+      serviceLinkLabel: 'paver driveway',
+      paragraphs: [
+        'Heavy-duty paver driveways on a vehicle-depth base — herringbone patterns, decorative borders, and replacement of cracked concrete or worn asphalt built for Iowa freeze-thaw.',
+      ],
+    },
+    {
       heading: 'Ponds & Water Features',
       serviceHref: '/cedar-falls-water-features',
       serviceLinkLabel: 'ponds and water features',
@@ -182,12 +192,12 @@ export const landscapingHubPage = {
     {
       question: 'Do you do hardscaping in Cedar Falls?',
       answer:
-        'Yes. Hardscaping in Cedar Falls is a core part of the work — retaining walls, custom paver patios, and outdoor living built for Iowa freeze-thaw, not as a sideline to mowing.',
+        'Yes. Hardscaping in Cedar Falls is a core part of the work — retaining walls, custom paver patios, paver driveways, and outdoor living built for Iowa freeze-thaw, not as a sideline to mowing.',
     },
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
       answer:
-        'A1 Property Services offers full-service landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.',
+        'A1 Property Services offers full-service landscaping: lawn care and mowing, landscape installation, retaining walls, paver patios, paver driveways, ponds and water features, tree service, drainage, snow removal, and seasonal maintenance for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'How much does landscaping cost in Cedar Falls?',

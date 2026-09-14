@@ -109,7 +109,7 @@ export const commercialLearnArticles = [
       {
         heading: 'What a proper wall includes here',
         paragraphs: [
-          'Every wall we build for Black Hawk County gets a compacted aggregate base, free-draining gravel behind the units, and a perforated drain pipe to an outlet. Skip those and the wall leans after the first wet winter. Segmental concrete block is the usual choice because it handles freeze-thaw. Timber is cheaper and shorter-lived. Natural stone is premium and slower to install.',
+          'Every wall we build for Black Hawk County gets a compacted aggregate base, free-draining gravel behind the units, and a perforated drain pipe to an outlet. Skip those and the wall leans after the first wet winter. Segmental concrete block is our standard because it handles freeze-thaw. Natural stone is a premium option and slower to install. We do not build timber, boulder, or poured-concrete walls.',
           'If you are still deciding, read our retaining wall planning guide and the Cedar Falls cost breakdown. Then walk the slope with us. We will tell you honestly whether you need a wall, a drain, or both.',
         ],
       },
@@ -131,7 +131,7 @@ export const commercialLearnArticles = [
       {
         question: 'Do I need a permit for a retaining wall in Cedar Falls?',
         answer:
-          'Walls over four feet typically need a building permit and engineered plans in Cedar Falls. Lower garden walls often do not. We check the height and handle the paperwork when a permit is required.',
+          'Walls over four feet typically need a building permit and engineered plans in Cedar Falls. Lower garden walls often do not. We check the height during the estimate and flag what the city will ask for — confirm the current trigger with your city before construction.',
       },
     ],
   },

@@ -37,10 +37,12 @@ for (const { from, to, reason } of migrationRedirects) {
   lines.push('')
 }
 
-// WordPress AMP URLs — canonical non-AMP pages are the index targets
+// WordPress AMP URLs — splat so /blog/slug/amp and /page/amp both match.
+// Worker resolveRedirectDestination() is the source of truth (single hop to the
+// final canonical, including AMP + legacy slug combinations).
 lines.push('# WordPress AMP suffix on any path')
-lines.push('/:path/amp /:path 301')
-lines.push('/:path/amp/ /:path 301')
+lines.push('/*/amp /:splat 301')
+lines.push('/*/amp/ /:splat 301')
 lines.push('')
 
 writeFileSync(OUTPUT, lines.join('\n').trimEnd() + '\n', 'utf-8')

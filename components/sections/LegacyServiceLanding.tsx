@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Check, ChevronRight, Phone, Star } from 'lucide-react'
 import {
   breadcrumbJsonLd,
@@ -12,7 +11,7 @@ import {
 } from '@/lib/metadata'
 import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
 import { primaryAreaServedSchema } from '@/lib/service-area'
-import { getServiceBySlug, getServicePageHref, serviceFaqs } from '@/lib/services'
+import { getServiceBySlug, getServicePageHref, getLegacyLandingPageHref, serviceFaqs } from '@/lib/services'
 import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
 import { getLandingProofProjects } from '@/lib/images'
 import { CTA_COPY } from '@/lib/cta'
@@ -31,8 +30,7 @@ import { IMAGE_SIZES } from '@/lib/image-sizes'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
-
-const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
+import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
 
 type LegacyServiceLandingProps = {
   page: LegacyLandingPage
@@ -111,20 +109,18 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         <HeroOverlay imageSrc={page.heroImage} variant="center" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-4 pb-8 text-center sm:px-6">
-          <div>
-            <p className="hero-eyebrow">{page.eyebrow}</p>
-            <h1 className="hero-title mt-4">{page.h1}</h1>
-            <p className="hero-subtitle mx-auto mt-4 max-w-2xl md:mt-6">{page.heroHeading}</p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href="#estimate" size="lg">
-                {CTA_COPY.quote}
-                <ChevronRight className="h-4 w-4" aria-hidden />
-              </Button>
-              <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg">
-                <Phone className="h-4 w-4" aria-hidden />
-                {siteConfig.phoneDisplay}
-              </Button>
-            </div>
+          <p className="hero-eyebrow">{page.eyebrow}</p>
+          <h1 className="hero-title mt-4">{page.h1}</h1>
+          <p className="hero-subtitle mx-auto mt-4 max-w-2xl md:mt-6">{page.heroHeading}</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="#estimate" size="lg">
+              {CTA_COPY.quote}
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+            <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg">
+              <Phone className="h-4 w-4" aria-hidden />
+              {siteConfig.phoneDisplay}
+            </Button>
           </div>
         </div>
 
@@ -203,7 +199,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                   ) : null}
                 </FadeIn>
                 <FadeIn direction="right" delay={0.1}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl">
+                  <div className="media-frame relative aspect-[4/3]">
                     <ResponsiveImage
                       src={page.contentImage}
                       alt={page.contentImageAlt}
@@ -298,7 +294,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         </section>
       ) : null}
 
-      <section id="estimate" className="section bg-neutral-50">
+      <section id="estimate" className="section bg-brand-stone">
         <div className="section-inner relative">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
@@ -343,7 +339,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
 
             <FadeIn delay={0.1}>
               <div className="form-card">
-                <QuoteForm
+                <LazyQuoteForm
                   variant="light"
                   formLocation={formLocation}
                   defaultService={page.serviceSlug}
@@ -386,7 +382,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
             <StaggerContainer className="grid gap-6 sm:grid-cols-3">
               {complementaryServices.map((s) => (
                 <StaggerItem key={s.slug}>
-                  <Link href={getServicePageHref(s.slug)} className="card block h-full p-6">
+                  <Link href={getLegacyLandingPageHref(s.slug) ?? getServicePageHref(s.slug)} className="card block h-full p-6">
                     <ServiceIcon name={s.icon} size={22} />
                     <h3 className="mt-3 font-bold text-brand-dark">{s.name}</h3>
                     <p className="mt-1 text-sm text-brand-body">{s.shortDesc}</p>

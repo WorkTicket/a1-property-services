@@ -1,6 +1,6 @@
 'use client'
 
-import { Phone, ChevronRight } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import FadeIn from '@/components/motion/FadeIn'
 import { CTA_COPY } from '@/lib/cta'
@@ -25,29 +25,34 @@ function CtaBannerContent({
   quoteHref = '/contact',
 }: Omit<CtaBannerProps, 'animated'>) {
   return (
-    <>
-      {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/80">{eyebrow}</p> : null}
-      <h2
-        className={cn(
-          'font-display text-3xl font-bold text-white md:text-4xl',
-          eyebrow && 'mt-3',
-          titleClassName,
-        )}
-      >
-        {title}
-      </h2>
-      <p className="mt-4 text-white/60">{description}</p>
-      <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <Button href={quoteHref} size="lg" trackLabel="Banner Quote">
+    <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+      <div className="max-w-xl">
+        {eyebrow ? (
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-white/55">
+            {eyebrow}
+          </p>
+        ) : null}
+        <h2
+          className={cn(
+            'font-display text-[1.75rem] font-bold tracking-[-0.02em] text-white md:text-[2.15rem] md:leading-tight',
+            eyebrow && 'mt-3',
+            titleClassName,
+          )}
+        >
+          {title}
+        </h2>
+        <p className="mt-3 max-w-lg text-base leading-relaxed text-white">{description}</p>
+      </div>
+      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
+        <Button href={quoteHref} variant="white" size="lg" trackLabel="Banner Quote">
           {CTA_COPY.quote}
-          <ChevronRight className="h-4 w-4" aria-hidden />
         </Button>
         <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg" trackLabel="Banner Phone">
-          <Phone size={18} />
+          <Phone size={16} aria-hidden />
           {siteConfig.phoneDisplay}
         </Button>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -60,8 +65,16 @@ export default function CtaBanner({
   quoteHref = '/contact',
 }: CtaBannerProps) {
   return (
-    <section className="section bg-brand-green-800">
-      <div className="section-inner-narrow text-center">
+    <section className="relative overflow-hidden bg-brand-green-800">
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden
+        style={{
+          background:
+            'linear-gradient(135deg, rgba(13,13,13,0.18) 0%, transparent 46%), linear-gradient(to right, rgba(13,13,13,0.12) 0%, transparent 40%)',
+        }}
+      />
+      <div className="section-inner relative py-14 md:py-16">
         {animated ? (
           <FadeIn>
             <CtaBannerContent

@@ -14,5 +14,7 @@ export const IMAGE_SIZES = {
   galleryModal: '(max-width: 1024px) 100vw, 720px',
   /** Case-study slider matches the article column (max-w-3xl, 2x → 1536). */
   galleryFeatured: '(max-width: 768px) 100vw, 768px',
+  /** Blog/learn list thumbnails (~11rem on desktop). */
+  articleThumb: '(max-width: 768px) 100vw, 280px',
   fullWidth: '100vw',
 } as const

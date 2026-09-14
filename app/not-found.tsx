@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Button from '@/components/ui/Button'
+import PageHero from '@/components/motion/PageHero'
 
-import { generatePageMetadata, webPageJsonLd, siteConfig, jsonLdGraph } from '@/lib/metadata'
+import { generatePageMetadata, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Page Not Found',
@@ -26,16 +26,15 @@ export default function NotFound() {
           __html: JSON.stringify(jsonLdGraph(pageSchema)),
         }}
       />
-    <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 pt-24 text-center">
-      <p className="section-eyebrow">404</p>
-      <h1 className="section-heading mt-3">Page Not Found</h1>
-      <p className="mt-4 text-neutral-600">
-        Sorry, we couldn&apos;t find that page. It may have moved or no longer exists.
-      </p>
-      <Button href="/" className="mt-8">
-        Back to Home
-      </Button>
-    </div>
+      <PageHero
+        size="compact"
+        eyebrow="404"
+        title="Page|Not Found"
+        subtitle="Sorry, we couldn't find that page. It may have moved or no longer exists."
+      />
+      <div className="flex flex-col items-center justify-center px-4 py-16 text-center">
+        <Button href="/">Back to Home</Button>
+      </div>
     </>
   )
 }

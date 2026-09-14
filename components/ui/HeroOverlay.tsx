@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { getHeroOverlayStyle, type HeroOverlayVariant } from '@/lib/hero-overlay'
+import { isLeftHeroOverlay, type HeroOverlayVariant } from '@/lib/hero-overlay'
 
 type HeroOverlayProps = {
   imageSrc?: string
@@ -8,14 +8,16 @@ type HeroOverlayProps = {
 }
 
 export default function HeroOverlay({
-  imageSrc,
   variant = 'center',
   className,
 }: HeroOverlayProps) {
   return (
     <div
-      className={cn('hero-image-overlay pointer-events-none', className)}
-      style={getHeroOverlayStyle(imageSrc, variant)}
+      className={cn(
+        'hero-image-overlay pointer-events-none',
+        isLeftHeroOverlay(variant) && 'hero-image-overlay-left',
+        className,
+      )}
       aria-hidden="true"
     />
   )

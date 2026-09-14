@@ -1,4 +1,5 @@
 import HeroCopyStatic from '@/components/ui/HeroCopyStatic'
+import type { ReactNode } from 'react'
 
 type HeroCopyDeferredProps = {
   eyebrow: string
@@ -8,6 +9,8 @@ type HeroCopyDeferredProps = {
   titleMaxWidth?: string
   subtitleMaxWidth?: string
   evenTitleLines?: boolean
+  textWash?: boolean
+  children?: ReactNode
 }
 
 /** System-font hero copy; visible on first paint (see HeroCopyStatic). */

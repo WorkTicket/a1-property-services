@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, webPageJsonLd } from '@/lib/metadata'
-import { getFaqPageServices, serviceFaqs, servicesHubFaqs } from '@/lib/services'
+import { getFaqPageServices, serviceFaqs, servicesHubFaqs, getServicePageHref } from '@/lib/services'
 import { getServiceLinksForFaq } from '@/lib/internal-linking'
 import { siteImages } from '@/lib/images'
 import RelatedContent from '@/components/sections/RelatedContent'
@@ -109,7 +109,7 @@ export default function FaqsPage() {
               />
             </div>
             <FaqSectionCta
-              learnMoreHref={`/services/${service.slug}`}
+              learnMoreHref={getServicePageHref(service.slug)}
               learnMoreLabel={`Learn More About ${service.name}`}
             />
           </FadeIn>

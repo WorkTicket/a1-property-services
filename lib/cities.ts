@@ -44,6 +44,7 @@ export const cities: City[] = [
       'cedar falls landscaping services',
       'retaining wall cedar falls',
       'paver patio cedar falls',
+      'paver driveway cedar falls',
       'lawn care cedar falls iowa',
       'hardscaping cedar falls',
       'tree service cedar falls',
@@ -226,29 +227,34 @@ export const cities: City[] = [
     ],
     introHeading: 'Evansdale Landscaping That Fits',
     introBody: [
-      'Evansdale sits right in the middle of everything, and we serve it like we serve our closest neighbors. Mowing, trimming, tree work, hardscaping. Whatever your property needs, we bring the same equipment and crew standards that work across Black Hawk County.',
+      'Evansdale sits on the east side of the Waterloo metro along US-20, with Gilbertville next door. From our Cedar Falls shop it is a short run on regular Waterloo-area routes, so weekly mowing and hardscape quotes stay on a local schedule — not a special trip from out of county.',
     ],
     introBody2: [
-      'Busy schedule and just need someone to keep the lawn in shape through the summer? We handle weekly mowing for a lot of Evansdale homeowners. Need a full yard redesign? We do that too.',
+      'Lots here are practical: established trees, modest slopes, and mixed residential and commercial frontage along the highway. Black Hawk County clay still holds water after storms. We handle that with grading, French drains, or a wall when the slope needs it.',
+      'Commercial mowing, snow, and small hardscape jobs in Evansdale use the same equipment we run in Waterloo. If you need a patio or paver driveway, we spec a patio or vehicle base to match the use, not a one-size slab.',
     ],
     servicesIntro:
       'Full landscaping and hardscaping services for Evansdale properties.',
     uniqueContent: {
-      heading: 'No-Nonsense Service in Evansdale',
-      body: 'We have been working in Evansdale long enough to know the area well. The lots here are practical\u2014established trees, moderate slopes, and homeowners who want results without the sales pitch. Straightforward work, fair pricing, done right.',
+      heading: 'East Waterloo Metro, Local Route',
+      body: 'Evansdale is close enough that a last-minute look at a wet yard is not a production. Highway-adjacent lots and quieter residential streets get the same written estimate and drainage-first approach. Straightforward work, fair pricing, done right.',
     },
     faqs: [
+      {
+        q: 'How far is Evansdale from your Cedar Falls shop?',
+        a: 'Evansdale is on the east side of the Waterloo metro along US-20, next to Gilbertville. We fold it into regular Waterloo-area routes for mowing, snow, and hardscape estimates.',
+      },
       {
         q: 'Do you offer weekly lawn mowing in Evansdale?',
         a: 'Yes. Weekly and biweekly mowing schedules are available. We handle trimming, blowing, and weed control as part of our maintenance plans.',
       },
       {
         q: 'Can you handle commercial properties in Evansdale?',
-        a: 'We maintain several commercial accounts in Evansdale. Mowing, pruning, snow removal, and general property upkeep. Call us for a commercial proposal.',
+        a: 'We maintain commercial accounts in Evansdale. Mowing, pruning, snow removal, and general property upkeep. Call us for a commercial proposal.',
       },
       {
-        q: 'How do I get a quote for hardscaping in Evansdale?',
-        a: 'Call (319) 464-1889 or fill out our online form. We will come out, look at the space, and give you a written estimate within 24 hours.',
+        q: 'My Evansdale lot holds water after rain. Can you fix that?',
+        a: 'Yes. Clay and grade are the usual causes on this side of the metro. We look at downspouts, slope, and low spots, then quote regrading, a French drain, or a wall if the slope needs it.',
       },
     ],
   },
@@ -327,16 +333,17 @@ export const cities: City[] = [
     ],
     introHeading: 'Denver Landscaping. No Detours.',
     introBody: [
-      'Denver is the kind of town where people know each other, and your yard is part of your reputation. We take that seriously. Need a retaining wall replaced, a patio put in, or just someone reliable to keep the grass cut? We can help.',
+      'Denver is in Bremer County on US-63, between Cedar Falls and Waverly, so we already pass through on north-route days during the growing season.',
     ],
     introBody2: [
-      'We run through Denver regularly during the season. A quick call gets you on the schedule without a hassle.',
+      'Town lots and nearby acreages both show up on our Denver schedule: weekly mowing, tree work, and hardscape. Need a retaining wall replaced, a patio put in, or someone reliable to keep the grass cut? We can help.',
+      'Bremer County freeze-thaw is the same Iowa problem we build for in Black Hawk County. Walls still get gravel backfill and drain pipe. Pavers still sit on a compacted base. If a wall in Denver is bowing, we tear out the failed courses and rebuild the base rather than stacking new block on a failed footer.',
     ],
     servicesIntro:
       'Professional landscaping and hardscaping services for Denver homeowners.',
     uniqueContent: {
-      heading: 'Bringing Black Hawk County Quality to Denver',
-      body: 'Denver may be small, but the work we do there is held to the same standard as our biggest Cedar Falls projects. Good materials, proper installation, crews that care about the finished look. Word travels fast in a small town, and we want the word to be good.',
+      heading: 'US-63 Between Cedar Falls and Waverly',
+      body: 'Denver is the kind of town where people know each other, and your yard is part of your reputation. We hold the work to the same standard as our biggest Cedar Falls projects because word travels fast. Good materials, proper installation, crews that care about the finished look. A quote visit is never a production.',
     },
     faqs: [
       {
@@ -345,7 +352,7 @@ export const cities: City[] = [
       },
       {
         q: 'My retaining wall in Denver is bowing. Can you replace it?',
-        a: 'We can. We tear out failing walls, prep the base properly, and install a new system that will handle freeze-thaw cycles without shifting.',
+        a: 'We can. We tear out failing walls, prep the base properly, and install a new segmental block wall that will handle freeze-thaw cycles without shifting. Natural stone is a premium option if you want that face.',
       },
       {
         q: 'How do I get on the schedule in Denver?',
@@ -378,16 +385,17 @@ export const cities: City[] = [
     ],
     introHeading: 'Jesup Landscaping, Buchanan County',
     introBody: [
-      'Jesup sits right on the Black Hawk-Buchanan county line, and we serve it the same way we serve nearby Black Hawk County communities. Retaining walls, paver patios, lawn care, and tree service. Jesup homeowners get the same quality, same pricing, and same crew.',
+      'Jesup sits on the Black Hawk–Buchanan county line along US-20, east of Cedar Falls. Homeowners here get the same crew, pricing approach, and freeze-thaw specs we use in Black Hawk County — not a watered-down out-of-area visit.',
     ],
     introBody2: [
-      'We have done everything in Jesup from full yard installations to simple weekly mowing. If your property needs work, we can handle it.',
+      'Larger lots and farmstead edges are common. That can mean more lawn, longer drainage runs, and equipment access that is actually easier than a tight Waterloo side yard. We still check clay, tile, and where water goes after a storm before we recommend a wall or patio.',
+      'We have done everything in Jesup from full yard installations to simple weekly mowing. Drainage after heavy rain is a frequent call — French drains, downspout extensions, and regrading are regular fixes on this side of the county line.',
     ],
     servicesIntro:
       'Complete landscaping and hardscaping services for Jesup homes and businesses.',
     uniqueContent: {
-      heading: 'Why Jesup?',
-      body: 'Jesup sits at a crossroads, and we have been covering it for years. Homeowners there want reliable work and fair pricing. That is our specialty. We lay out what needs to happen, quote it honestly, and deliver on schedule.',
+      heading: 'US-20 East, Buchanan County Line',
+      body: 'Jesup is a crossroads town, and we have covered it for years on referral. We lay out what needs to happen, quote it honestly, and deliver on schedule. If you are comparing a Cedar Falls contractor to someone further east, we will walk the property and tell you what the clay and the access actually do to the number.',
     },
     faqs: [
       {
@@ -478,16 +486,17 @@ export const cities: City[] = [
     ],
     introHeading: 'La Porte City Landscaping You Can Count On',
     introBody: [
-      'La Porte City has a strong local identity, and we respect that. When we work there, we treat each property like it is in our own neighborhood. Retaining walls, paver patios, lawn care, and tree service. Same equipment, same crew, same standard.',
+      'La Porte City sits in southern Black Hawk County on the Cedar River, south of Waterloo. River-adjacent lots and older downtown streets along Main Street have their own drainage and access quirks — we plan around them instead of copying a Cedar Falls layout.',
     ],
     introBody2: [
-      'We run regular routes through La Porte City during the season. New projects or ongoing maintenance, we can fit you in.',
+      'Sloped yards toward the river, clay that stays wet after spring rain, and established trees on older lots are common here. Retaining walls, regrading, and paver work all start with how water leaves the property.',
+      'We run seasonal routes through La Porte City for mowing and maintenance. New walls, patios, and tree work get scheduled as dedicated crew days so you are not waiting on leftover time from Waterloo.',
     ],
     servicesIntro:
       'Full landscaping and hardscaping services for La Porte City homeowners.',
     uniqueContent: {
-      heading: 'Bringing Professional Landscaping to La Porte City',
-      body: 'La Porte City homeowners want clear communication and solid execution. We give them both. We walk the property with you, explain what we recommend and why, then deliver it on time and on budget.',
+      heading: 'Cedar River Town, Black Hawk County Crew',
+      body: 'La Porte City homeowners want a contractor who will actually show up from Cedar Falls. We do. The river and the clay change how we grade and where we outlet a drain. We walk the property with you, explain what we recommend and why, then deliver it on time and on budget.',
     },
     faqs: [
       {
@@ -542,7 +551,7 @@ export const cities: City[] = [
     faqs: [
       {
         q: 'Do you travel to Dike from Cedar Falls?',
-        a: 'Yes. We cover Grundy County as part of our regular service area. Dike is about 20 minutes from our shop, and we run routes there weekly.',
+        a: 'Yes. We cover Grundy County as part of our regular service area from Cedar Falls. Dike sits west of town toward US-20, and we run routes there weekly.',
       },
       {
         q: 'What is the most common project you do in Dike?',
@@ -578,25 +587,30 @@ export const cities: City[] = [
     ],
     introHeading: 'Elk Run Heights Landscaping, Local Crew',
     introBody: [
-      'Elk Run Heights is a small community right off the highway, and we pass through it every day. That makes it easy to keep properties looking their best without long waits or scheduling headaches. Mowing, trimming, hardscaping, tree service. Whatever you need.',
+      'Elk Run Heights sits on the US-20 corridor just east of Waterloo, next to Evansdale. Estimates and crew days fold into regular Waterloo-area routes. Lots mix quiet residential streets with highway-adjacent commercial frontage, and both get the same drainage-first approach we use on Black Hawk County clay.',
     ],
     introBody2: [
-      'We can get a crew to Elk Run Heights fast for estimates, service calls, or ongoing maintenance. If your property needs attention, let us know.',
+      'Because the city is small and right off the highway, we fold Elk Run Heights into regular Waterloo-area routes for mowing, snow, and hardscape. If your lot sheds water toward a neighbor or the highway ditch, we will look at grade and downspouts before we talk plantings or pavers.',
+      'Common requests here are weekly mowing, tree work around overhead lines near the highway, and retaining walls or patios on compact lots. We quote from the property, not from a template copied off another city page.',
     ],
     servicesIntro:
       'Professional landscaping and hardscaping services for Elk Run Heights properties.',
     uniqueContent: {
-      heading: 'Quality Landscaping in Elk Run Heights',
-      body: 'Elk Run Heights homeowners want dependable service and solid results. That is what we deliver. Clear estimates, honest communication, and finished work that looks good and holds up.',
+      heading: 'Close to Waterloo, Served from Cedar Falls',
+      body: 'Elk Run Heights is easy to miss on a map and easy to reach from 503 Bergstrom Blvd. We treat it as part of the Waterloo metro service area, not a special trip. Clay soil and freeze-thaw are the same problem as the rest of Black Hawk County; the difference is access and lot size. We plan material staging so a small street still gets a proper base on walls and pavers.',
     },
     faqs: [
       {
-        q: 'Do you serve Elk Run Heights, IA?',
-        a: 'Yes. A1 Property Services provides landscaping, hardscaping, and lawn care services to Elk Run Heights and the surrounding Black Hawk County area.',
+        q: 'How far is Elk Run Heights from your Cedar Falls shop?',
+        a: 'Elk Run Heights is east of Waterloo on the US-20 corridor, next to Evansdale. We include it on regular metro routes from our Cedar Falls shop.',
       },
       {
         q: 'What services do you offer in Elk Run Heights?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, and snow removal.',
+        a: 'Retaining walls, paver patios, paver driveways, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, and snow removal for Elk Run Heights homes and highway-adjacent commercial lots.',
+      },
+      {
+        q: 'Can you fix drainage on a compact Elk Run Heights lot?',
+        a: 'Yes. Small lots next to the highway often send water toward a neighbor or the ditch. We look at grade, downspouts, and clay before quoting a French drain, regrade, or wall.',
       },
       {
         q: 'How do I schedule service in Elk Run Heights?',
@@ -628,25 +642,30 @@ export const cities: City[] = [
     ],
     introHeading: 'Dunkerton Landscaping, No Runaround',
     introBody: [
-      'Dunkerton is a quiet Black Hawk County town where people take pride in their properties. We help keep them that way. Mowing, trimming, retaining walls, paver patios, tree work. Same quality, same fair pricing, whether it is a weekly mow or a full yard redo.',
+      'Dunkerton sits in northeast Black Hawk County along Iowa Highway 281. Properties here are often larger than in-town Waterloo lots, with more open wind, farmstead edges, and clay that holds water in low corners after a heavy rain.',
     ],
     introBody2: [
-      'We cover Dunkerton as part of our regular service area. Ongoing maintenance plans or one-off projects, we are happy to quote your work.',
+      'We cover Dunkerton on regular Black Hawk County routes — mowing through the growing season, snow in winter, and hardscape installs when you are ready for a wall or patio. Rural access is usually easier for equipment than a tight College Hill driveway, which can keep install days cleaner.',
+      'If your Dunkerton yard ponds after storms or a wall is leaning, we will walk the grade and quote a segmental block replacement built for freeze-thaw, not a decorative stack. Same quality and fair pricing whether it is a weekly mow or a full yard redo.',
     ],
     servicesIntro:
       'Complete landscaping and hardscaping services for Dunkerton homes.',
     uniqueContent: {
-      heading: 'Professional Landscaping in Dunkerton',
-      body: 'Dunkerton is a close community, and we treat every job there with care. Clear communication, fair pricing, and work that holds up through Iowa seasons. That is how we have built our reputation across Black Hawk County.',
+      heading: 'Northeast Black Hawk County, Same Crew Standard',
+      body: 'Dunkerton is a small town with larger lots. That means more lawn to keep, more room for a patio, and sometimes longer drainage runs to a ditch or tile. We are based in Cedar Falls and treat Dunkerton as in-area work. Fair pricing, written estimates, and walls and pavers with a real base — the same spec we use in town.',
     },
     faqs: [
       {
-        q: 'Does A1 Property Services serve Dunkerton, IA?',
-        a: 'Yes. We provide full landscaping, hardscaping, and lawn care services to Dunkerton and all of Black Hawk County.',
+        q: 'How far is Dunkerton from Cedar Falls?',
+        a: 'Dunkerton is northeast of Waterloo on Iowa Highway 281. We cover it as part of our regular Black Hawk County service area from Cedar Falls.',
       },
       {
         q: 'What landscaping services do you offer in Dunkerton?',
-        a: 'We offer retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, and snow removal.',
+        a: 'Retaining walls, paver patios, lawn care and mowing, tree service, landscape installation and maintenance, hydroseeding, and snow removal. Larger lots are a good fit for hydroseeding and full installs.',
+      },
+      {
+        q: 'Can you handle drainage on a larger Dunkerton lot?',
+        a: 'Yes. Open lots often need a longer run to a ditch or tile instead of a tight urban catch basin. We walk the grade after a storm pattern and quote French drains, downspout extensions, or regrading as needed.',
       },
       {
         q: 'How do I get a free estimate in Dunkerton?',
@@ -692,7 +711,7 @@ export function getCityServicePageCopy(
   return cityServicePageCopy[`${citySlug}/${serviceSlug}`]
 }
 
-export function getCityServiceFaqs(citySlug: string, serviceSlug: string): { q: string; a: string }[] {
+export function getCityServiceFaqs(citySlug: string): { q: string; a: string }[] {
   const city = getCityBySlug(citySlug)
   if (!city) return []
   return city.faqs

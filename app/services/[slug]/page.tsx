@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Phone, Check } from 'lucide-react'
+import { getProcessStepIcon } from '@/lib/process-step-icon'
 import {
   allServices,
   getServiceBySlug,
   getServicePageHref,
+  getLegacyLandingPageHref,
   serviceBenefits,
   serviceExtendedContent,
   serviceFaqs,
@@ -16,7 +18,6 @@ import {
   serviceEquipment,
   serviceProblemSolutions,
 } from '@/lib/services'
-import { getPostBySlug } from '@/lib/blog'
 import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt, getServiceContentImage, getServiceContentImageAlt } from '@/lib/images'
 import { getComplementaryServices, getServiceRelatedContentGroups, getContentSegments } from '@/lib/internal-linking'
@@ -30,20 +31,22 @@ import CtaBanner from '@/components/sections/CtaBanner'
 import EstimateSection from '@/components/sections/EstimateSection'
 import GalleryGrid from '@/components/sections/GalleryGrid'
 import PageHero from '@/components/motion/PageHero'
+import PageBreadcrumbs from '@/components/ui/PageBreadcrumbs'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import FaqAccordion from '@/components/ui/FaqAccordion'
 import { cn } from '@/lib/utils'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 
-type Props = { params: { slug: string } }
+type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
-  return allServices.map((s) => ({ slug: s.slug }))
+  return allServices.filter((s) => !getLegacyLandingPageHref(s.slug)).map((s) => ({ slug: s.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const service = getServiceBySlug(params.slug)
+  const { slug } = await params
+  const service = getServiceBySlug(slug)
   if (!service) return {}
 
   const seo = serviceSeoOverrides[service.slug]
@@ -89,8 +92,9 @@ const defaultProcessSteps = [
   },
 ]
 
-export default function ServicePage({ params }: Props) {
-  const service = getServiceBySlug(params.slug)
+export default async function ServicePage({ params }: Props) {
+  const { slug } = await params
+  const service = getServiceBySlug(slug)
   if (!service) notFound()
 
   const seo = serviceSeoOverrides[service.slug]
@@ -112,13 +116,12 @@ export default function ServicePage({ params }: Props) {
   const heroImageAlt = getServiceHeroImageAlt(service.slug)
   const contentImage = getServiceContentImage(service.slug)
   const contentImageAlt = getServiceContentImageAlt(service.slug)
-  const relatedBlog = extended?.relatedBlogSlug ? getPostBySlug(extended.relatedBlogSlug) : undefined
 
   const serviceName = seo ? seo.h1 : `${service.name} in Cedar Falls`
   const pageUrl = `${siteConfig.url}/services/${service.slug}`
 
   function contentLinks(text: string, max = 3) {
-    return getContentSegments(text, max, [params.slug]).map((seg, i) =>
+    return getContentSegments(text, max, [slug]).map((seg, i) =>
       seg.type === 'link'
         ? <Link key={i} href={seg.url} className="text-brand-green-800 underline underline-offset-2 hover:text-brand-gold transition-colors">{seg.content}</Link>
         : seg.content
@@ -159,7 +162,7 @@ export default function ServicePage({ params }: Props) {
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Services', path: '/services' },
-                { name: serviceName, path: `/services/${params.slug}` },
+                { name: serviceName, path: `/services/${slug}` },
               ]),
               ...(faqJsonLd ? [faqJsonLd] : []),
               ...(processSteps.length > 0
@@ -181,6 +184,14 @@ export default function ServicePage({ params }: Props) {
         eyebrow="Cedar Falls & Waterloo, Iowa"
         title={serviceName}
         subtitle={service.shortDesc}
+      />
+
+      <PageBreadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'All Services', href: '/services' },
+          { label: serviceName },
+        ]}
       />
 
       <ServiceIntroSection
@@ -228,21 +239,24 @@ export default function ServicePage({ params }: Props) {
           <FadeIn className="section-inner-narrow">
             <h2 className="section-heading">Our {service.name} Process</h2>
             <p className="mt-4 text-brand-body">We follow a proven process to deliver consistent results on every project.</p>
-            <ol className="mt-10 space-y-8">
-              {processSteps.map((step, i) => (
-                <li key={step.title} className="flex gap-4">
-                  <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-green-700 text-sm font-bold text-white"
-                    aria-hidden="true"
-                  >
-                    {i + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-bold text-brand-dark">{step.title}</h3>
-                    <p className="mt-1 leading-relaxed text-brand-body">{step.description}</p>
-                  </div>
-                </li>
-              ))}
+            <ol className="relative mt-10 space-y-8 before:absolute before:bottom-2 before:left-5 before:top-2 before:w-px before:bg-brand-gold/20">
+              {processSteps.map((step) => {
+                const StepIcon = getProcessStepIcon(step.title)
+                return (
+                  <li key={step.title} className="relative flex gap-5">
+                    <span
+                      className="relative z-[1] flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-gold text-white shadow-[0_8px_18px_-8px_rgba(158,27,36,0.8)]"
+                      aria-hidden="true"
+                    >
+                      <StepIcon size={18} strokeWidth={2} />
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold text-brand-dark">{step.title}</h3>
+                      <p className="mt-1 leading-relaxed text-brand-body">{step.description}</p>
+                    </div>
+                  </li>
+                )
+              })}
             </ol>
           </FadeIn>
         </section>

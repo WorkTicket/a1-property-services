@@ -168,7 +168,7 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
                     onClick={onClose}
                     className="text-sm text-brand-green-800 transition-colors hover:text-brand-gold"
                   >
-                    View more
+                    Project overview
                   </Link>
                 </p>
               ) : null}

@@ -20,7 +20,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'wall-1',
     title: 'Hillside Retaining Wall Project | Cedar Falls, IA',
     description:
-      'Case study: a steep Cedar Falls hillside rebuilt with a segmental retaining wall, drain tile, and a patio-ready grade. See the problem, the build, and the result.',
+      'Project overview: a steep Cedar Falls hillside rebuilt with a segmental retaining wall, drain tile, and a patio-ready grade. See the problem, the build, and the result.',
     h1: 'Hillside Retaining Wall Project in Cedar Falls, IA',
     keywords: [
       'hillside retaining wall cedar falls',
@@ -52,7 +52,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'wall-2',
     title: 'Timber Wall Replacement Project | Cedar Falls, IA',
     description:
-      'Case study: a failing timber retaining wall in Cedar Falls replaced with block, drainage, and a clean finish grade.',
+      'Project overview: a failing timber retaining wall in Cedar Falls replaced with block, drainage, and a clean finish grade.',
     h1: 'Timber Retaining Wall Replacement in Cedar Falls, IA',
     keywords: [
       'timber retaining wall replacement',
@@ -83,7 +83,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'wall-4',
     title: 'Front Yard Retaining Wall Project | Cedar Falls, IA',
     description:
-      'Case study: an L-shaped retaining wall that turned a sloped Cedar Falls front yard into a level lawn and walk.',
+      'Project overview: an L-shaped retaining wall that turned a sloped Cedar Falls front yard into a level lawn and walk.',
     h1: 'Front Yard Retaining Wall Project in Cedar Falls, IA',
     keywords: [
       'front yard retaining wall cedar falls',
@@ -113,7 +113,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'patio-1',
     title: 'Raised Paver Patio Project | Cedar Falls, IA',
     description:
-      'Case study: a sloped Cedar Falls backyard turned into a raised paver patio with a retaining wall and stone steps.',
+      'Project overview: a sloped Cedar Falls backyard turned into a raised paver patio with a retaining wall and stone steps.',
     h1: 'Raised Paver Patio Project in Cedar Falls, IA',
     keywords: [
       'raised paver patio cedar falls',
@@ -143,7 +143,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'patio-2',
     title: 'Paver Patio Replacement Project | Cedar Falls, IA',
     description:
-      'Case study: a damaged patio in Cedar Falls torn out and rebuilt with a compacted base, new pavers, and clean edging.',
+      'Project overview: a damaged patio in Cedar Falls torn out and rebuilt with a compacted base, new pavers, and clean edging.',
     h1: 'Paver Patio Replacement in Cedar Falls, IA',
     keywords: [
       'paver patio replacement cedar falls',
@@ -173,7 +173,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'landscape-ba-1',
     title: 'Foundation Landscape Bed Project | Cedar Falls, IA',
     description:
-      'Case study: a bare Cedar Falls foundation strip planted with shrubs, perennials, edging, and mulch.',
+      'Project overview: a bare Cedar Falls foundation strip planted with shrubs, perennials, edging, and mulch.',
     h1: 'Foundation Landscape Beds in Cedar Falls, IA',
     keywords: [
       'foundation planting cedar falls',
@@ -203,7 +203,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'wall-3',
     title: 'Failing Block Retaining Wall Rebuild | Cedar Falls, IA',
     description:
-      'Case study: a leaning block retaining wall in Cedar Falls rebuilt with a new base, drainage, pea gravel finish, and a clean cap line.',
+      'Project overview: a leaning block retaining wall in Cedar Falls rebuilt with a new base, drainage, pea gravel finish, and a clean cap line.',
     h1: 'Failing Block Retaining Wall Rebuild in Cedar Falls, IA',
     keywords: [
       'failing block retaining wall cedar falls',
@@ -235,7 +235,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'wall-5',
     title: 'Garage-Side Retaining Wall Rebuild | Cedar Falls, IA',
     description:
-      'Case study: a damaged garage-side retaining wall in Cedar Falls rebuilt with drainage and a decorative gravel cap.',
+      'Project overview: a damaged garage-side retaining wall in Cedar Falls rebuilt with drainage and a decorative gravel cap.',
     h1: 'Garage-Side Retaining Wall Rebuild in Cedar Falls, IA',
     keywords: [
       'garage retaining wall cedar falls',
@@ -266,7 +266,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'water-1',
     title: 'Backyard Waterfall Project | Cedar Falls, IA',
     description:
-      'Case study: a Cedar Falls hillside rebuilt as a multi-tiered stone waterfall with a retaining wall and garden steps.',
+      'Project overview: a Cedar Falls hillside rebuilt as a multi-tiered stone waterfall with a retaining wall and garden steps.',
     h1: 'Backyard Waterfall Project in Cedar Falls, IA',
     keywords: [
       'backyard waterfall cedar falls',
@@ -297,7 +297,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'water-2',
     title: 'Koi Pond and Waterfall Project | Cedar Falls, IA',
     description:
-      'Case study: a Cedar Falls backyard lawn turned into a koi pond with a stone waterfall beside the house.',
+      'Project overview: a Cedar Falls backyard lawn turned into a koi pond with a stone waterfall beside the house.',
     h1: 'Koi Pond and Waterfall Project in Cedar Falls, IA',
     keywords: [
       'koi pond cedar falls',
@@ -328,7 +328,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'water-3',
     title: 'Pond, Stream, and Stone Bridge Project | Cedar Falls, IA',
     description:
-      'Case study: a Cedar Falls backyard built out with a pond, flowing stream, stone bridge, and surrounding gardens.',
+      'Project overview: a Cedar Falls backyard built out with a pond, flowing stream, stone bridge, and surrounding gardens.',
     h1: 'Pond, Stream, and Stone Bridge Project in Cedar Falls, IA',
     keywords: [
       'backyard pond and stream cedar falls',
@@ -359,7 +359,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'patio-ba-3',
     title: 'Paver Patio with Fire Pit Project | Cedar Falls, IA',
     description:
-      'Case study: worn Cedar Falls lawn replaced with a paver patio, fire pit, and seating area for evenings outside.',
+      'Project overview: worn Cedar Falls lawn replaced with a paver patio, fire pit, and seating area for evenings outside.',
     h1: 'Paver Patio with Fire Pit in Cedar Falls, IA',
     keywords: [
       'paver patio with fire pit cedar falls',
@@ -390,7 +390,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'patio-ba-4',
     title: 'Paver Patio and Stone Fire Pit Project | Cedar Falls, IA',
     description:
-      'Case study: a bare Cedar Falls backyard built as a paver patio with a stone fire pit and space for Adirondack chairs.',
+      'Project overview: a bare Cedar Falls backyard built as a paver patio with a stone fire pit and space for Adirondack chairs.',
     h1: 'Paver Patio and Stone Fire Pit in Cedar Falls, IA',
     keywords: [
       'stone fire pit patio cedar falls',
@@ -420,7 +420,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'patio-ba-5',
     title: 'Paver Patio and Pergola Project | Cedar Falls, IA',
     description:
-      'Case study: a Cedar Falls lawn turned into a paver patio with a pergola and lounge seating for shade and outdoor living.',
+      'Project overview: a Cedar Falls lawn turned into a paver patio with a pergola and lounge seating for shade and outdoor living.',
     h1: 'Paver Patio and Pergola Project in Cedar Falls, IA',
     keywords: [
       'paver patio with pergola cedar falls',
@@ -451,7 +451,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'driveway-ba-1',
     title: 'Paver Driveway Replacement Project | Cedar Falls, IA',
     description:
-      'Case study: cracked concrete in Cedar Falls replaced with a paver driveway and contrasting border built for Iowa winters.',
+      'Project overview: cracked concrete in Cedar Falls replaced with a paver driveway and contrasting border built for Iowa winters.',
     h1: 'Paver Driveway Replacement in Cedar Falls, IA',
     keywords: [
       'paver driveway replacement cedar falls',
@@ -481,7 +481,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'driveway-ba-2',
     title: 'Herringbone Brick Paver Driveway | Cedar Falls, IA',
     description:
-      'Case study: old asphalt in Cedar Falls replaced with a brick paver driveway in a herringbone pattern.',
+      'Project overview: old asphalt in Cedar Falls replaced with a brick paver driveway in a herringbone pattern.',
     h1: 'Herringbone Brick Paver Driveway in Cedar Falls, IA',
     keywords: [
       'brick paver driveway cedar falls',
@@ -511,7 +511,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'driveway-ba-3',
     title: 'Modern Farmhouse Paver Driveway | Cedar Falls, IA',
     description:
-      'Case study: a plain concrete drive in Cedar Falls replaced with gray pavers sized to a modern farmhouse.',
+      'Project overview: a plain concrete drive in Cedar Falls replaced with gray pavers sized to a modern farmhouse.',
     h1: 'Modern Farmhouse Paver Driveway in Cedar Falls, IA',
     keywords: [
       'modern paver driveway cedar falls',
@@ -541,7 +541,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'driveway-ba-4',
     title: 'Decorative Border Paver Driveway | Cedar Falls, IA',
     description:
-      'Case study: worn concrete in Cedar Falls upgraded to a paver driveway with a decorative soldier-course border.',
+      'Project overview: worn concrete in Cedar Falls upgraded to a paver driveway with a decorative soldier-course border.',
     h1: 'Decorative Border Paver Driveway in Cedar Falls, IA',
     keywords: [
       'paver driveway decorative border cedar falls',
@@ -571,7 +571,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'driveway-ba-5',
     title: 'Attached Garage Paver Driveway | Cedar Falls, IA',
     description:
-      'Case study: cracked asphalt to an attached garage in Cedar Falls replaced with a new paver driveway.',
+      'Project overview: cracked asphalt to an attached garage in Cedar Falls replaced with a new paver driveway.',
     h1: 'Attached Garage Paver Driveway in Cedar Falls, IA',
     keywords: [
       'paver driveway to garage cedar falls',
@@ -597,32 +597,32 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     relatedLearn: ['why-yard-floods-when-it-rains', 'landscaping-material-comparison'],
   },
   {
-    slug: 'backyard-lawn-mowing-cedar-falls',
+    slug: 'overgrown-front-yard-mowing-cedar-falls',
     projectId: 'mowing-ba-1',
-    title: 'Backyard Lawn Mowing Service | Cedar Falls, IA',
+    title: 'Overgrown Front Yard Mowing | Cedar Falls, IA',
     description:
-      'Case study: an overgrown Cedar Falls backyard cut, edged, and striped so the lawn looks tended again.',
-    h1: 'Backyard Lawn Mowing in Cedar Falls, IA',
+      'Project overview: an overgrown Cedar Falls front lawn at the garage and driveway cut, edged, and striped so curb appeal is back.',
+    h1: 'Overgrown Front Yard Mowing in Cedar Falls, IA',
     keywords: [
-      'backyard lawn mowing cedar falls',
-      'professional lawn mowing cedar falls',
-      'overgrown lawn mowing iowa',
+      'overgrown front yard mowing cedar falls',
+      'driveway lawn mowing cedar falls',
+      'first cut overgrown lawn iowa',
     ],
     serviceSlug: 'lawn-care',
     problem: [
-      'The backyard had gotten away from the owner. Tall grass, uneven height, and no edging. A one-time hack-down with a dull mower would scalp it. They needed a proper cut, trim, and cleanup.',
+      'The front lawn at the garage and driveway had gotten away from the owner. Tall grass, weeds, and no edge along the concrete. A one-time hack-down with a dull mower would scalp it. They needed a proper first cut, trim, and cleanup.',
     ],
     property: [
-      'Cedar Falls backyard lawn that had grown past a normal weekly height, with hard surfaces that needed blowing off after the cut.',
+      'Cedar Falls front yard with an attached garage, concrete driveway, porch approach, and turf that had grown past a normal weekly height.',
     ],
     workPerformed: [
-      'We mowed at a height that would not scalp the overgrown turf, trimmed, edged, and blew off walks and the patio. Clippings were managed so the yard was ready to use the same day.',
+      'We mowed at a height that would not scalp the overgrown turf, trimmed at the porch and garage, edged the driveway and walk, and blew off hard surfaces. Clippings were managed so the approach looked finished the same day.',
     ],
     challenges: [
-      'Overgrown lawns hide debris and wet spots. The first cut has to be high enough to avoid yellowing the crown. We treat the cleanup as part of the job so the backyard does not look like a dump of clippings.',
+      'Overgrown front lawns hide debris along the driveway and wet spots near the walk. The first cut has to be high enough to avoid yellowing the crown. Cleanup is part of the job so the garage apron and walk do not look like a dump of clippings.',
     ],
     result: [
-      'The backyard is cut, edged, and striped. It looks maintained instead of abandoned. This is the weekly mowing standard we keep on Cedar Falls and Waterloo lawns once the yard is back on a schedule.',
+      'The front yard is cut, edged, and striped along the driveway. Curb appeal is back at the garage and porch. This is the first-cut standard we use on Cedar Falls and Waterloo front lawns before the yard goes back on a weekly schedule.',
     ],
     relatedLearn: ['best-grass-seed-for-iowa', 'why-wont-grass-grow-in-my-yard'],
   },
@@ -631,7 +631,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'mowing-ba-3',
     title: 'Acreage Lawn Mowing Service | Cedar Falls, IA',
     description:
-      'Case study: overgrown acreage around mature trees in Cedar Falls mowed with clean stripes and even height.',
+      'Project overview: overgrown acreage around mature trees in Cedar Falls mowed with clean stripes and even height.',
     h1: 'Acreage Lawn Mowing in Cedar Falls, IA',
     keywords: [
       'acreage lawn mowing cedar falls',
@@ -661,28 +661,28 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'mowing-ba-5',
     title: 'Front Yard Lawn Mowing Service | Cedar Falls, IA',
     description:
-      'Case study: a weedy, overgrown Cedar Falls front yard mowed and striped for a clean curb-side finish.',
+      'Project overview: a weedy Cedar Falls corner-lot front yard mowed and striped, with clean edges along both sidewalks.',
     h1: 'Front Yard Lawn Mowing in Cedar Falls, IA',
     keywords: [
       'front yard lawn mowing cedar falls',
-      'curb appeal lawn mowing iowa',
+      'corner lot lawn mowing iowa',
       'professional front lawn mowing cedar falls',
     ],
     serviceSlug: 'lawn-care',
     problem: [
-      'The front yard was weedy and overgrown. Curb appeal was gone. The owner needed a sharp cut along the walks and house, not just a pass down the middle of the lawn.',
+      'The corner-lot front yard was weedy. Curb appeal was gone from both sidewalks. The owner needed a sharp cut along the walks and house, not just a pass down the middle of the lawn.',
     ],
     property: [
-      'Cedar Falls front yard with walks, a street edge, and turf that had been left long enough to look neglected from the curb.',
+      'Cedar Falls corner lot with sidewalks on two sides, a street-facing lawn, and turf that had been left long enough to look neglected from the curb.',
     ],
     workPerformed: [
-      'We mowed the front yard, trimmed along the walks and house, edged, and blew off hard surfaces so the approach looked finished.',
+      'We mowed the front yard, trimmed along both walks and the house, edged, and blew off the sidewalks so the corner looked finished.',
     ],
     challenges: [
-      'Front yards are judged from the street. Edges, walkways, and the line along the house matter as much as the field. The first cut on a weedy lawn is still a mow — thicker turf and weed control come from a real lawn-care schedule after that.',
+      'Corner lots are judged from two street views. Both sidewalks, the line along the house, and the field all have to read as tended. The first cut on a weedy lawn is still a mow — thicker turf and weed control come from a real lawn-care schedule after that.',
     ],
     result: [
-      'The front yard is striped and clean at the walks. Curb appeal is back. This is the front-yard mowing we do across Cedar Falls when a lawn needs to look tended before anyone talks about seed or fertilizer.',
+      'The corner front yard is striped and clean at both walks. Curb appeal is back from the street. This is the front-yard mowing we do across Cedar Falls when a lawn needs to look tended before anyone talks about seed or fertilizer.',
     ],
     relatedLearn: ['why-wont-grass-grow-in-my-yard', 'best-grass-seed-for-iowa'],
   },
@@ -691,7 +691,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'landscape-ba-2',
     title: 'Island Landscape Bed Project | Cedar Falls, IA',
     description:
-      'Case study: a plain Cedar Falls front lawn given an island bed with a tree, perennials, edging, and mulch.',
+      'Project overview: a plain Cedar Falls front lawn given an island bed with a tree, perennials, edging, and mulch.',
     h1: 'Island Landscape Bed in Cedar Falls, IA',
     keywords: [
       'island landscape bed cedar falls',
@@ -721,7 +721,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'landscape-ba-3',
     title: 'Corner Landscape Bed Project | Cedar Falls, IA',
     description:
-      'Case study: bare grass at a Cedar Falls house corner planted with arborvitae, boulders, and river rock.',
+      'Project overview: bare grass at a Cedar Falls house corner planted with arborvitae, boulders, and river rock.',
     h1: 'Corner Landscape Bed in Cedar Falls, IA',
     keywords: [
       'corner landscape bed cedar falls',
@@ -751,7 +751,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'landscape-ba-4',
     title: 'Walkway Landscape Beds Project | Cedar Falls, IA',
     description:
-      'Case study: plain lawn along a Cedar Falls front walk planted with hostas, flowers, edging, and mulch.',
+      'Project overview: plain lawn along a Cedar Falls front walk planted with hostas, flowers, edging, and mulch.',
     h1: 'Walkway Landscape Beds in Cedar Falls, IA',
     keywords: [
       'walkway landscape beds cedar falls',
@@ -781,7 +781,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     projectId: 'landscape-ba-5',
     title: 'Fence-Line Landscape Bed Project | Cedar Falls, IA',
     description:
-      'Case study: grass along a Cedar Falls privacy fence turned into a border bed with hydrangeas and perennials.',
+      'Project overview: grass along a Cedar Falls privacy fence turned into a border bed with hydrangeas and perennials.',
     h1: 'Fence-Line Landscape Bed in Cedar Falls, IA',
     keywords: [
       'fence line landscape bed cedar falls',
@@ -828,11 +828,17 @@ export function getCaseStudyHref(projectId: string): string | undefined {
 export function getRelatedCaseStudies(slug: string, limit = 3): ProjectCaseStudy[] {
   const current = caseStudyBySlug.get(slug)
   if (!current) return projectCaseStudies.filter((study) => study.slug !== slug).slice(0, limit)
+
   const sameService = projectCaseStudies.filter(
-    (study) => study.slug !== slug && study.serviceSlug === current.serviceSlug,
+    (study) => study.serviceSlug === current.serviceSlug,
   )
+  const currentIndex = sameService.findIndex((study) => study.slug === slug)
+  const restSame =
+    currentIndex === -1
+      ? sameService
+      : [...sameService.slice(currentIndex + 1), ...sameService.slice(0, currentIndex)]
   const others = projectCaseStudies.filter(
     (study) => study.slug !== slug && study.serviceSlug !== current.serviceSlug,
   )
-  return [...sameService, ...others].slice(0, limit)
+  return [...restSame, ...others].slice(0, limit)
 }

@@ -23,6 +23,11 @@ export const siteConfig = {
   },
   googlePlaceId: 'ChIJx1yIuk9V5YcRMqQd-z4_YIE',
   googleReviewUrl: 'https://g.page/r/CTKkHfs-P2CBEBM/review',
+  /** Matches Google Business Profile hours. Keep schema and on-page copy in sync. */
+  hours: [
+    { days: 'Monday–Saturday', opens: '07:00', closes: '19:00', label: '7 AM–7 PM' },
+    { days: 'Sunday', opens: '08:30', closes: '16:00', label: '8:30 AM–4 PM' },
+  ],
 }
 
 export function getGoogleMapsEmbedUrl(): string {
@@ -40,6 +45,7 @@ export const localSeoKeywords = [
   'black hawk county landscaping',
   'retaining wall cedar falls',
   'paver patio cedar falls',
+  'paver driveway cedar falls',
   'lawn care cedar falls',
   'hardscaping cedar falls',
 ]
@@ -61,6 +67,7 @@ export const servicesHubKeywords = [
   'hardscaping cedar falls',
   'retaining wall cedar falls',
   'paver patio cedar falls',
+  'paver driveway cedar falls',
   'lawn care cedar falls',
 ]
 
@@ -482,10 +489,16 @@ export function generatePageMetadata({
   }
 }
 
-/** Typed LocalBusiness node used as JSON-LD @id references (Ahrefs flags @id-only objects as missing @type). */
+const ORGANIZATION_TYPES = ['Organization', 'LocalBusiness', 'LandscapingBusiness'] as const
+
+/**
+ * Shared @id for WebSite.publisher / Service.provider.
+ * Include Organization first so schema.org validators that do not walk
+ * LandscapingBusiness → Organization still accept publisher/provider.
+ */
 export function organizationRef() {
   return {
-    '@type': 'LandscapingBusiness' as const,
+    '@type': [...ORGANIZATION_TYPES],
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
   }
@@ -604,9 +617,8 @@ export function jsonLdGraph(...schemas: object[]) {
     '@context': 'https://schema.org',
     '@graph': schemas
       .map((schema) => {
-        const { '@context': _, ...rest } = schema as Record<string, unknown> & {
-          '@context'?: string
-        }
+        const rest = { ...(schema as Record<string, unknown>) }
+        delete rest['@context']
         return rest
       })
       .filter((schema) => Boolean(schema['@type'])),
@@ -695,25 +707,10 @@ export function speakableJsonLd(cssSelector: string[]) {
  */
 export function buildLocalBusinessJsonLd() {
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${siteConfig.googlePlaceId}`
-  // Service entities live on their own pages (Service JSON-LD). Do not nest
-  // Service inside OfferCatalog — schema.org defines OfferCatalog as Offer /
-  // OfferCatalog only, and bare Offers without price also fail Ahrefs.
-  const knownServices = [
-    'Landscaping',
-    'Retaining wall installation',
-    'Paver patio installation',
-    'Water features',
-    'Lawn care',
-    'Snow removal',
-    'Drainage solutions',
-    'Landscape design',
-    'Outdoor living spaces',
-    'Commercial landscaping',
-  ]
 
   return {
     '@context': 'https://schema.org',
-    '@type': 'LandscapingBusiness',
+    '@type': [...ORGANIZATION_TYPES],
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     alternateName: [
@@ -728,7 +725,7 @@ export function buildLocalBusinessJsonLd() {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     foundingDate: String(FOUNDING_YEAR),
-    sameAs: [siteConfig.social.facebook, googleMapsPlaceUrl],
+    sameAs: [siteConfig.social.facebook, siteConfig.social.googleBusiness, googleMapsPlaceUrl],
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
@@ -743,15 +740,6 @@ export function buildLocalBusinessJsonLd() {
       longitude: -92.4455,
     },
     areaServed: [
-      {
-        '@type': 'GeoCircle',
-        geoMidpoint: {
-          '@type': 'GeoCoordinates',
-          latitude: 42.5106,
-          longitude: -92.394,
-        },
-        geoRadius: 28000,
-      },
       {
         '@type': 'City',
         name: 'Cedar Falls',
@@ -781,28 +769,31 @@ export function buildLocalBusinessJsonLd() {
       { '@type': 'City', name: 'Parkersburg', containedInPlace: { '@type': 'State', name: 'Iowa' } },
       { '@type': 'City', name: 'Dike', containedInPlace: { '@type': 'State', name: 'Iowa' } },
     ],
-    knowsAbout: knownServices,
     priceRange: '$$',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '07:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '08:00',
-        closes: '13:00',
-      },
-    ],
+    openingHoursSpecification: siteConfig.hours.map((block) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek:
+        block.days === 'Sunday'
+          ? 'Sunday'
+          : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: block.opens,
+      closes: block.closes,
+    })),
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: siteConfig.phone,
       contactType: 'customer service',
       email: siteConfig.email,
-      areaServed: ['Cedar Falls', 'Waterloo', 'Black Hawk County', 'Iowa'],
+      areaServed: [
+        { '@type': 'City', name: 'Cedar Falls', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+        { '@type': 'City', name: 'Waterloo', containedInPlace: { '@type': 'State', name: 'Iowa' } },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Black Hawk County',
+          containedInPlace: { '@type': 'State', name: 'Iowa' },
+        },
+        { '@type': 'State', name: 'Iowa' },
+      ],
       availableLanguage: 'English',
     },
   }
@@ -855,7 +846,6 @@ export function blogPostingJsonLd(post: {
   slug: string
   image?: string
   wordCount?: number
-  timeRequired?: string
 }) {
   const url = `${siteConfig.url}/blog/${post.slug}`
   const imageUrl = post.image
@@ -880,7 +870,6 @@ export function blogPostingJsonLd(post: {
     mainEntityOfPage: { '@type': 'WebPage', '@id': url, url },
     image: schemaImageObject(imageUrl),
     ...(typeof post.wordCount === 'number' ? { wordCount: post.wordCount } : {}),
-    ...(post.timeRequired ? { timeRequired: post.timeRequired } : {}),
   }
 }
 

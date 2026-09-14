@@ -29,14 +29,15 @@ import FadeIn from '@/components/motion/FadeIn'
 import RelatedContent from '@/components/sections/RelatedContent'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 
-type Props = { params: { slug: string } }
+type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return projectCaseStudies.map((study) => ({ slug: study.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const study = getCaseStudyBySlug(params.slug)
+  const { slug } = await params
+  const study = getCaseStudyBySlug(slug)
   const project = study ? getGalleryProjectById(study.projectId) : undefined
   if (!study || !project) return {}
 
@@ -52,8 +53,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 }
 
-export default function ProjectCaseStudyPage({ params }: Props) {
-  const study = getCaseStudyBySlug(params.slug)
+export default async function ProjectCaseStudyPage({ params }: Props) {
+  const { slug } = await params
+  const study = getCaseStudyBySlug(slug)
   const project = study ? getGalleryProjectById(study.projectId) : undefined
   if (!study || !project) notFound()
 
@@ -82,7 +84,7 @@ export default function ProjectCaseStudyPage({ params }: Props) {
     publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
     mainEntityOfPage: `${siteConfig.url}/gallery/${study.slug}`,
     about: service
-      ? { '@type': 'Service', name: service.name, url: `${siteConfig.url}${serviceHref}` }
+      ? { '@type': 'Thing', name: service.name, url: `${siteConfig.url}${serviceHref}` }
       : undefined,
     contentLocation: {
       '@type': 'City',
@@ -145,7 +147,7 @@ export default function ProjectCaseStudyPage({ params }: Props) {
 
         <section className="section bg-brand-stone pt-0">
           <FadeIn className="section-inner-narrow">
-            <div className="overflow-hidden rounded-xl bg-neutral-950">
+            <div className="overflow-hidden rounded-2xl bg-neutral-950 shadow-premium-lg ring-1 ring-black/10">
               {hasSlider && project.before ? (
                 <BeforeAfterSlider
                   featured

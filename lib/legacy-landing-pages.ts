@@ -67,7 +67,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Retaining Wall Installation Built for Iowa',
         paragraphs: [
           'Sloped yards need retaining walls that handle runoff and freeze-thaw — not decorative stacks that bulge after the first hard winter. Local contractors who design the wall for your grade, then build segmental block or natural stone with compacted bases, gravel backfill, and drain pipe, are the ones whose walls still stand.',
-          'Whether you are stabilizing a hillside, terracing a garden, or reclaiming flat space for a patio, every wall is sized to your slope, soil, and height requirements. We pull permits when local code requires them and leave a finished look that matches your home.',
+          'Whether you are stabilizing a hillside, terracing a garden, or reclaiming flat space for a patio, every wall is sized to your slope, soil, and height requirements. We flag permit and engineering needs during the on-site estimate — city rules can change, so confirm the height trigger with Cedar Falls or Waterloo before construction.',
         ],
         showCta: true,
       },
@@ -79,10 +79,36 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         ],
       },
       {
-        heading: 'Professional Design and Installation',
+        heading: 'Types of Retaining Walls We Build',
         paragraphs: [
-          'Every project starts with a site evaluation: wall height, soil conditions, drainage paths, and how the finished grades will tie into your lawn or hardscape. We plan geogrid reinforcement when taller walls need it and set courses level so the face stays clean.',
-          'Complementary planting beds, steps, and hardscape can be added so the wall reads as part of the landscape — not a standalone barrier. Residential and commercial properties in Cedar Falls, Waterloo, and Black Hawk County are welcome.',
+          'We install segmental concrete block retaining walls that actually hold soil in Iowa clay — not decorative stacks. Every wall gets a compacted base, gravel backfill, and drain pipe so freeze-thaw does not bulge the face. Natural stone is available as a premium option when you want a more organic face.',
+        ],
+        bulletsIntro: 'What we install in Cedar Falls and Waterloo:',
+        bullets: [
+          'Segmental block walls — interlocking concrete units engineered for soil retention, including systems such as Keystone and Versa-Lok when the site calls for them',
+          'Natural stone as a premium option for a more organic face',
+          'Geogrid reinforcement when height and load require it',
+        ],
+        paragraphsAfter: [
+          'Taller walls and walls near property lines may need engineered plans. We do not install timber, boulder, or poured-concrete retaining walls. If a timber wall on your property is failing, we can replace it with segmental block — or natural stone as a premium face.',
+        ],
+      },
+      {
+        heading: 'What to Expect on a Retaining Wall Project',
+        paragraphs: [
+          'Every project starts with a site evaluation: wall height, soil conditions, drainage paths, and how the finished grades will tie into your lawn, patio, or driveway. We plan geogrid when taller walls need it and set courses level so the face stays clean.',
+        ],
+        bulletsIntro: 'A typical wall sequence:',
+        bullets: [
+          'On-site walkthrough and written estimate',
+          'Permits and engineered plans when local code requires them for taller walls',
+          'Excavation and compacted aggregate base',
+          'Segmental block courses — or natural stone as a premium face — with gravel backfill and drain pipe',
+          'Caps, backfill, and finish grading',
+          'Walkthrough before we leave the site',
+        ],
+        paragraphsAfter: [
+          'Complementary planting beds, steps, and hardscape — including paver patios and paver driveways — can be added so the wall reads as part of the landscape, not a standalone barrier.',
         ],
       },
     ],
@@ -135,6 +161,22 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         ],
       },
       {
+        heading: 'Types of Paver Patios We Build',
+        paragraphs: [
+          'A Cedar Falls patio should match how you use the yard and the look of the house — not a one-pattern slab. We install concrete pavers as the workhorse, with clay brick and natural stone when the site and budget call for them.',
+        ],
+        bulletsIntro: 'Common patio builds in Cedar Falls and Waterloo:',
+        bullets: [
+          'Concrete pavers in running bond, herringbone, or basket weave',
+          'Clay brick pavers for a classic look next to brick homes',
+          'Natural stone (flagstone or bluestone) for an irregular, high-end surface',
+          'Patios with steps, seat walls, fire pits, or outdoor kitchen pads planned into the base',
+        ],
+        paragraphsAfter: [
+          'Herringbone locks better under load. Running bond is clean on smaller rectangles. Curves need more cuts. We help you pick the pattern before the first paver goes down so the patio is sized for furniture, not a number that sounded good on the phone.',
+        ],
+      },
+      {
         heading: 'Our Process',
         paragraphs: [
           'We start with a site assessment and simple design plan: grade, soil, drainage, and how the patio ties into your lawn or hardscape. Planning first keeps surprises off the jobsite.',
@@ -156,7 +198,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Built for Iowa Weather',
         paragraphs: [
           'Local patios need more than pretty pavers. Proper excavation, compacted base, and drainage design prevent sinking, heaving, and joint failure through freeze-thaw cycles.',
-          'We serve homes in Cedar Falls, Waterloo, and Black Hawk County with outdoor living spaces that add usable square footage and lasting curb appeal.',
+          'We serve homes in Cedar Falls, Waterloo, and Black Hawk County with outdoor living spaces that add usable square footage and lasting curb appeal. Pair a patio with a retaining wall, a matching paver driveway, or full landscaping when you are ready to do more than one surface.',
         ],
       },
     ],
@@ -199,17 +241,19 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         showCta: true,
       },
       {
-        heading: 'Ponds, Waterfalls & Pondless Options',
+        heading: 'Types of Water Features We Build',
         paragraphs: [
-          'Not every yard needs a full pond. Pondless waterfalls give you the sight and sound of moving water with less maintenance — ideal for smaller lots. Koi ponds and water gardens suit homeowners who want plants, fish, and a living ecosystem.',
-          'We size pumps, filtration, and stonework to your space and budget, then integrate plantings and lighting so the feature feels like part of the yard — not a bolted-on add-on.',
+          'Not every yard needs a full pond. We design the feature around your slope, sight lines, kids and pets, and how much seasonal care you actually want — then size pumps, filtration, and stonework to match.',
         ],
-        bulletsIntro: 'Popular installs in Cedar Falls and Waterloo:',
+        bulletsIntro: 'What we install in Cedar Falls and Waterloo:',
         bullets: [
-          'Pondless waterfalls and streams',
-          'Koi ponds and water gardens',
-          'Bubbling boulders and fountain features',
+          'Pondless waterfalls and streams — moving water with a hidden reservoir, less open water to maintain',
+          'Koi ponds and water gardens — depth, filtration, and a winter plan for fish and plants',
+          'Bubbling boulders and fountain features for smaller lots',
           'Multi-tiered natural stone waterfalls',
+        ],
+        paragraphsAfter: [
+          'We work around existing plants and hardscape, and we can tie a feature into a paver patio or planting bed so it reads as part of the yard. If you inherited a leaking pond with the house, we can quote a rebuild or seasonal cleanup instead of a brand-new install.',
         ],
       },
       {
@@ -234,7 +278,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Built for Iowa Winters',
         paragraphs: [
           'Iowa freeze-thaw is hard on liners, pumps, and edges that were never planned for winter. We use quality liners and equipment rated for cold climates, design with winterization in mind, and offer seasonal opening and closing so your feature starts clean each spring.',
-          'Ask about ongoing maintenance when you request your free estimate — we can include seasonal service so you are not left guessing about algae, pumps, or freeze prep.',
+          'Ask about ongoing maintenance when you request your free estimate — we can include seasonal service so you are not left guessing about algae, pumps, or freeze prep. Typical backyard features rarely need a building permit; electrical work should be done to code, and we call locates before we dig. Confirm setbacks on small lots during the walkthrough.',
         ],
       },
       {
@@ -249,6 +293,86 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
     closingCopy:
       'Ready for a pond or waterfall that fits your yard? Request a free estimate and we will walk the site with you.',
     ctaEyebrow: 'Cedar Falls Water Features',
+  },
+  'paver-driveway-cedar-falls': {
+    path: '/paver-driveway-cedar-falls',
+    serviceSlug: 'paver-driveway',
+    title: 'Paver Driveway Cedar Falls, IA | Installation & Free Quote',
+    description:
+      'Paver driveway Cedar Falls, IA — interlocking pavers on a vehicle-depth base built for Iowa freeze-thaw. Replace cracked concrete or asphalt. Free quote: (319) 464-1889.',
+    keywords: [
+      'paver driveway cedar falls',
+      'paver driveway cedar falls ia',
+      'paver driveways cedar falls',
+      'paver driveway installation cedar falls',
+      'brick paver driveway cedar falls',
+      'replace concrete driveway cedar falls',
+      'paver driveway waterloo ia',
+    ],
+    ogImage: '/images/driveway-after-2.webp',
+    ogImageAlt: 'Paver driveway installation',
+    heroImage: '/images/driveway-after-2.webp',
+    heroImageAlt: 'Custom paver driveway installation in Cedar Falls, Iowa',
+    contentImage: '/images/driveway-after-1.webp',
+    contentImageAlt: 'Custom paver driveway with interlocking pattern',
+    eyebrow: 'Cedar Falls, Iowa',
+    h1: 'Paver Driveway in Cedar Falls, IA',
+    heroHeading:
+      'Paver driveway Cedar Falls homeowners hire us for — a deeper compacted base, interlocking pavers built for vehicles, and a surface that flexes through Iowa freeze-thaw instead of cracking like another poured slab.',
+    sections: [
+      {
+        heading: 'Replace Cracked Concrete or Worn Asphalt',
+        paragraphs: [
+          'A Cedar Falls driveway that is heaved, stained, or dumping water toward the garage is not a cosmetic problem. Concrete slabs crack in freeze-thaw. Asphalt softens in summer heat and needs sealing. Patching buys time, then the same joints open again. A paver driveway is the replacement: excavate deeper for vehicle loads, compact crushed aggregate in lifts, set rigid edge restraint, and lay interlocking units so the surface stays level under daily cars and trucks.',
+          'We build paver driveways for homes in Cedar Falls, Waterloo, and Black Hawk County — including College Hill, North Cedar, and South Cedar Falls lots where access is tight and the existing apron is failing. You get a free on-site quote, a written scope that includes base depth, and a driveway that can be repaired one paver at a time if utilities ever need to come up.',
+        ],
+        showCta: true,
+      },
+      {
+        heading: 'Why Pavers vs. Asphalt or Concrete',
+        paragraphs: [
+          'Asphalt is cheaper up front and softer in summer. Concrete looks clean until freeze-thaw opens control joints into real cracks, and patches never match. Pavers cost more to install because the base is deeper than a patio — typically 12 to 18 inches of compacted aggregate, not a few inches of gravel under a pretty top.',
+          'The payoff is a system of small units. Individual pieces can be replaced. Utilities can be accessed without a saw-cut scar. Herringbone spreads tire load. Edge restraint keeps the field from unraveling when you turn into the garage. Over many Iowa winters, that is a different product than another overlay on a failed base.',
+        ],
+      },
+      {
+        heading: 'Types of Paver Driveways We Build',
+        paragraphs: [
+          'Driveway pavers are a different product than patio pavers even when they look similar. We specify vehicular-rated units, a pattern that locks under load, and borders that hold the field.',
+        ],
+        bulletsIntro: 'Common driveway builds in Cedar Falls and Waterloo:',
+        bullets: [
+          'Concrete interlocking pavers in herringbone — our usual recommendation under cars and trucks',
+          'Clay brick pavers when you want a classic brick approach that holds color in Iowa sun',
+          'Decorative borders and soldier courses that finish the edge and keep the field tight',
+          'Full replacement of cracked concrete or worn asphalt, including garage aprons',
+        ],
+        paragraphsAfter: [
+          'Running bond can work for light-use areas. Herringbone is stronger for daily vehicle traffic. We can match driveway pavers to a patio or walk so the hardscape reads as one system. If you want to phase driveway this year and patio next year, we lock the paver and pattern now so the color still matches.',
+        ],
+      },
+      {
+        heading: 'What to Expect on a Paver Driveway Project',
+        paragraphs: [
+          'Every driveway starts with a site visit — slope to the garage, soil, tree roots, and how you will park during construction. We do not quote a square-foot number from a photo. Tight older Cedar Falls lots mean more hand work. Wider Waterloo lots with truck access go faster. Either way, the base is built for vehicles, not copied from a patio spec.',
+        ],
+        bulletsIntro: 'A typical install sequence:',
+        bullets: [
+          'On-site evaluation, layout, and written estimate',
+          'Flag work that may need a city permit — widening, changing the street approach, or working in the right-of-way',
+          'Removal of existing concrete or asphalt and haul-off',
+          'Excavation 12 to 18 inches and compacted aggregate in lifts',
+          'Heavy-duty edge restraint, sand bed, and paver placement',
+          'Polymeric joint sand, compaction, and optional sealer',
+        ],
+        paragraphsAfter: [
+          'Most residential paver driveway projects take one to three weeks depending on size, pattern, and demolition. We give you a clear timeline during the free estimate. Planning a retaining wall, matching patio, or full landscaping at the same time? We will sequence the work so grades and drainage tie together.',
+        ],
+      },
+    ],
+    closingCopy:
+      'Ready for a paver driveway built for Iowa winters and daily vehicles? Request a free on-site quote and we will measure the drive, check the pitch at the garage, and put the base spec in writing.',
+    ctaEyebrow: 'Cedar Falls Paver Driveways',
   },
 }
 

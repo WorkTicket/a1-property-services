@@ -1,7 +1,9 @@
 import type { MetadataRoute } from 'next'
 import { siteConfig } from '@/lib/metadata'
 
-const DISALLOW = ['/api/', '/thank-you']
+export const dynamic = 'force-static'
+
+const DISALLOW = ['/api/', '/thank-you', '/?s=']
 
 /**
  * Explicit allow-list for AI search + training crawlers.

@@ -1,21 +1,19 @@
-'use client'
-
-import { useEffect, useRef, useState } from 'react'
-import { cn, ANIMATION_DURATION, ANIMATION_EASING } from '@/lib/utils'
+import type { CSSProperties, ElementType, ReactNode } from 'react'
+import { cn } from '@/lib/utils'
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none' | 'scale'
 
-const hiddenOffset: Record<Direction, string> = {
-  up: 'translate-y-7',
-  down: '-translate-y-5',
-  left: '-translate-x-8',
-  right: 'translate-x-8',
-  none: '',
-  scale: 'scale-[0.92]',
+const directionClass: Record<Direction, string> = {
+  up: 'motion-fade-up',
+  down: 'motion-fade-down',
+  left: 'motion-fade-left',
+  right: 'motion-fade-right',
+  none: 'motion-fade',
+  scale: 'motion-fade-scale',
 }
 
 type FadeInProps = {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   delay?: number
   direction?: Direction
@@ -29,33 +27,13 @@ export default function FadeIn({
   direction = 'up',
   as = 'div',
 }: FadeInProps) {
-  const ref = useRef<HTMLElement>(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setVisible(true)
-      return
-    }
-
-    const frame = requestAnimationFrame(() => setVisible(true))
-    return () => cancelAnimationFrame(frame)
-  }, [])
-
-  const Tag = as
+  const Tag = as as ElementType
+  const style: CSSProperties | undefined = delay
+    ? { animationDelay: `${delay}s` }
+    : undefined
 
   return (
-    <Tag
-      ref={ref as never}
-      className={cn(
-        `transition-all duration-[${ANIMATION_DURATION}ms] ease-[${ANIMATION_EASING}] will-change-[opacity,transform]`,
-        visible
-          ? 'translate-x-0 translate-y-0 scale-100 opacity-100'
-          : cn('opacity-0', hiddenOffset[direction]),
-        className,
-      )}
-      style={{ transitionDelay: `${delay}s` }}
-    >
+    <Tag className={cn(directionClass[direction], className)} style={style}>
       {children}
     </Tag>
   )

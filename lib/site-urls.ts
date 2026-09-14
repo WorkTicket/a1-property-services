@@ -1,7 +1,7 @@
 import { blogPosts } from '@/lib/blog'
 import { learnArticles } from '@/lib/learn'
 import { siteConfig } from '@/lib/metadata'
-import { allServices } from '@/lib/services'
+import { allServices, getLegacyLandingPageHref } from '@/lib/services'
 import { cities } from '@/lib/cities'
 import { projectCaseStudies } from '@/lib/project-case-studies'
 
@@ -28,11 +28,14 @@ export function getAllSiteUrls(): string[] {
     '/site-map',
     '/retaining-wall-in-cedar-falls',
     '/paver-patio-installation',
+    '/paver-driveway-cedar-falls',
     '/cedar-falls-water-features',
     '/landscaping-services-in-cedar-falls',
   ]
   const staticUrls = staticPaths.map((path) => `${base}${path}`)
-  const serviceUrls = allServices.map((s) => `${base}/services/${s.slug}`)
+  const serviceUrls = allServices
+    .filter((s) => !getLegacyLandingPageHref(s.slug))
+    .map((s) => `${base}/services/${s.slug}`)
   const blogUrls = blogPosts.map((p) => `${base}/blog/${p.slug}`)
   const learnUrls = learnArticles.map((a) => `${base}/learn/${a.slug}`)
   const projectUrls = projectCaseStudies.map((study) => `${base}/gallery/${study.slug}`)
@@ -40,6 +43,7 @@ export function getAllSiteUrls(): string[] {
   const programmaticUrls: string[] = []
   for (const city of cities) {
     for (const service of allServices) {
+      if (getLegacyLandingPageHref(service.slug)) continue
       programmaticUrls.push(`${base}/${city.slug}/${service.slug}`)
     }
   }
@@ -77,6 +81,7 @@ export function getHtmlSitemapGroups(): SiteMapGroup[] {
       { name: 'Landscaping in Cedar Falls', href: '/landscaping-services-in-cedar-falls' },
       { name: 'Retaining Walls', href: '/retaining-wall-in-cedar-falls' },
       { name: 'Paver Patio Installation', href: '/paver-patio-installation' },
+      { name: 'Paver Driveway Cedar Falls', href: '/paver-driveway-cedar-falls' },
       { name: 'Water Features', href: '/cedar-falls-water-features' },
     ],
   }
@@ -85,7 +90,7 @@ export function getHtmlSitemapGroups(): SiteMapGroup[] {
     heading: 'All Services',
     links: allServices.map((service) => ({
       name: service.name,
-      href: `/services/${service.slug}`,
+      href: getLegacyLandingPageHref(service.slug) ?? `/services/${service.slug}`,
     })),
   }
 
@@ -123,10 +128,12 @@ export function getHtmlSitemapGroups(): SiteMapGroup[] {
 
   const cityServices: SiteMapGroup[] = cities.map((city) => ({
     heading: `Services in ${city.name}`,
-    links: allServices.map((service) => ({
-      name: `${service.name} in ${city.name}`,
-      href: `/${city.slug}/${service.slug}`,
-    })),
+    links: allServices
+      .filter((service) => !getLegacyLandingPageHref(service.slug))
+      .map((service) => ({
+        name: `${service.name} in ${city.name}`,
+        href: `/${city.slug}/${service.slug}`,
+      })),
   }))
 
   return [core, featured, services, cityHubs, learn, projects, blog, ...cityServices]

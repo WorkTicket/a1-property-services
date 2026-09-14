@@ -30,17 +30,17 @@ module.exports = {
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        hero: ['clamp(2.5rem, 6vw, 4rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+        hero: ['clamp(2.6rem, 6.2vw, 4.35rem)', { lineHeight: '1.08', letterSpacing: '-0.025em' }],
       },
       backgroundImage: {
         'hero-overlay': 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.65) 100%)',
         'hero-gradient': 'linear-gradient(135deg, #0D0D0D 0%, #1a0808 35%, #5c1219 70%, #9E1B24 100%)',
       },
       boxShadow: {
-        'card': '0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04)',
-        'card-hover': '0 8px 24px rgba(0,0,0,0.12)',
-        'premium': '0 4px 24px rgba(0,0,0,0.08)',
-        'premium-lg': '0 12px 48px -8px rgba(0,0,0,0.12)',
+        'card': '0 1px 2px rgba(13,13,13,0.04), 0 14px 36px -18px rgba(13,13,13,0.18)',
+        'card-hover': '0 18px 44px -18px rgba(13,13,13,0.22)',
+        'premium': '0 8px 28px -12px rgba(13,13,13,0.14)',
+        'premium-lg': '0 24px 56px -20px rgba(13,13,13,0.2)',
       },
       keyframes: {
         'ken-burns': {

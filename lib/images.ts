@@ -104,6 +104,7 @@ const siteImages = {
   // Content section images: unique per section
   aboutPrimary: img('about-primary.webp'),
   aboutSecondary: img('about-secondary.webp'),
+  aboutCrew: img('about-crew.webp'),
   cityIntro: img('city-intro.webp'),
   cityWhy: img('city-why.webp'),
   contentLandscapingCedarFalls: img('content-landscaping-cedar-falls.webp'),
@@ -553,11 +554,11 @@ const galleryProjectRecords: GalleryProjectRecord[] = [
     category: 'lawn-mowing',
     before: {
       src: img('mowing-before-1.webp'),
-      alt: 'Overgrown backyard lawn before professional mowing',
+      alt: 'Overgrown front yard lawn before professional mowing along the driveway',
     },
     after: {
       src: img('mowing-after-1.webp'),
-      alt: 'Freshly mowed backyard lawn with clean mowing stripes',
+      alt: 'Freshly mowed front yard with clean stripes along the driveway and garage',
     },
   },
   {
@@ -579,11 +580,11 @@ const galleryProjectRecords: GalleryProjectRecord[] = [
     category: 'lawn-mowing',
     before: {
       src: img('mowing-before-5.webp'),
-      alt: 'Weedy front yard before professional lawn mowing',
+      alt: 'Weedy corner-lot front yard before professional lawn mowing',
     },
     after: {
       src: img('mowing-after-5.webp'),
-      alt: 'Freshly mowed front yard with striped finish',
+      alt: 'Freshly mowed corner front yard with striped finish along both sidewalks',
     },
   },
   {
@@ -740,7 +741,7 @@ export { siteImages, galleryProjects }
 
 export const homepageGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.filter(
   (p): p is GalleryBeforeAfterProject =>
-    !p.showcase && Boolean(p.before) && ['patio-2', 'wall-4'].includes(p.id),
+    !p.showcase && Boolean(p.before) && ['wall-2', 'wall-3', 'patio-ba-4', 'driveway-ba-2'].includes(p.id),
 )
 
 export const hubGalleryPreview: GalleryBeforeAfterProject[] = galleryProjects.filter(

@@ -1,10 +1,12 @@
 import { readFileSync, existsSync } from 'fs'
 import path from 'path'
+import { resolveRedirectDestination } from '../lib/migration-redirects.mjs'
 
 const OUT = path.resolve('out')
 const pages = [
   'retaining-wall-in-cedar-falls',
   'paver-patio-installation',
+  'paver-driveway-cedar-falls',
   'cedar-falls-water-features',
   'landscaping-services-in-cedar-falls',
 ]
@@ -64,18 +66,18 @@ console.log('\n=== ROBOTS.TXT ===')
 console.log(robots.trim())
 console.log(`\n  ${robots.includes('Sitemap: https://a1pslandscape.com/sitemap.xml') ? 'PASS' : 'FAIL'} sitemap reference`)
 
-const serviceCanonicals = [
-  ['services/retaining-walls', 'https://a1pslandscape.com/retaining-wall-in-cedar-falls'],
-  ['services/paver-patio', 'https://a1pslandscape.com/paver-patio-installation'],
-  ['services/ponds-water-features', 'https://a1pslandscape.com/cedar-falls-water-features'],
+const serviceRedirects = [
+  ['/services/retaining-walls', '/retaining-wall-in-cedar-falls'],
+  ['/services/paver-patio', '/paver-patio-installation'],
+  ['/services/ponds-water-features', '/cedar-falls-water-features'],
+  ['/evansdale/ponds-water-features', '/cedar-falls-water-features'],
+  ['/blog/excavation-prep-landscaping', '/services/excavation'],
 ]
-console.log('\n=== SERVICE PAGE CANONICALS (legacy ranking URLs) ===')
-for (const [slug, expected] of serviceCanonicals) {
-  const file = path.join(OUT, `${slug}.html`)
-  const html = readFileSync(file, 'utf8')
-  const canonical = extract(html, /rel="canonical" href="([^"]+)"/i)
-  const ok = canonical === expected
-  console.log(`  ${ok ? 'PASS' : 'FAIL'} /${slug} -> ${canonical}`)
+console.log('\n=== SERVICE / CITY DUPLICATE REDIRECTS ===')
+for (const [from, expected] of serviceRedirects) {
+  const dest = resolveRedirectDestination(from)
+  const ok = dest === expected
+  console.log(`  ${ok ? 'PASS' : 'FAIL'} ${from} -> ${dest}`)
   ok ? pass++ : fail++
 }
 

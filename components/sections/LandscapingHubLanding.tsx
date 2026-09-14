@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Check, ChevronRight, Phone, Star } from 'lucide-react'
 import {
   breadcrumbJsonLd,
@@ -26,10 +25,8 @@ import { IMAGE_SIZES } from '@/lib/image-sizes'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
-
-const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
-
-const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
+import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
+import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
 
 export function landscapingHubMetadata() {
   const page = landscapingHubPage
@@ -95,20 +92,18 @@ export default function LandscapingHubLanding() {
         <HeroOverlay imageSrc={page.heroImage} variant="center" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-4 pb-8 text-center sm:px-6">
-          <div>
-            <p className="hero-eyebrow">{page.eyebrow}</p>
-            <h1 className="hero-title mt-4">{page.h1}</h1>
-            <p className="hero-subtitle mx-auto mt-4 max-w-3xl md:mt-6">{page.heroHeading}</p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href="#estimate" size="lg">
-                {CTA_COPY.quote}
-                <ChevronRight className="h-4 w-4" aria-hidden />
-              </Button>
-              <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg">
-                <Phone className="h-4 w-4" aria-hidden />
-                {siteConfig.phoneDisplay}
-              </Button>
-            </div>
+          <p className="hero-eyebrow">{page.eyebrow}</p>
+          <h1 className="hero-title mt-4">{page.h1}</h1>
+          <p className="hero-subtitle mx-auto mt-4 max-w-3xl md:mt-6">{page.heroHeading}</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button href="#estimate" size="lg">
+              {CTA_COPY.quote}
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </Button>
+            <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg">
+              <Phone className="h-4 w-4" aria-hidden />
+              {siteConfig.phoneDisplay}
+            </Button>
           </div>
         </div>
 
@@ -156,7 +151,7 @@ export default function LandscapingHubLanding() {
         </FadeIn>
       </section>
 
-      <GoogleReviews />
+      <LazyGoogleReviews />
 
       <section className="section bg-white">
         <div className="section-inner">
@@ -194,7 +189,7 @@ export default function LandscapingHubLanding() {
         </FadeIn>
       </section>
 
-      <section id="estimate" className="section bg-neutral-50">
+      <section id="estimate" className="section bg-brand-stone">
         <div className="section-inner relative">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
@@ -226,7 +221,7 @@ export default function LandscapingHubLanding() {
 
             <FadeIn delay={0.1}>
               <div className="form-card">
-                <QuoteForm
+                <LazyQuoteForm
                   variant="light"
                   formLocation="Landscaping Hub"
                   defaultCity="Cedar Falls"
@@ -250,7 +245,7 @@ export default function LandscapingHubLanding() {
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl">
+              <div className="media-frame relative aspect-[4/3]">
                 <ResponsiveImage
                   src={page.contentImage}
                   alt={page.contentImageAlt}

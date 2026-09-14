@@ -6,6 +6,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import FadeIn from '@/components/motion/FadeIn'
 import Button from '@/components/ui/Button'
 import { siteConfig } from '@/lib/metadata'
+import { redactOwnerName } from '@/lib/google-reviews'
 import type { GoogleReviewData } from '@/lib/types'
 
 const FALLBACK_REVIEWS: GoogleReviewData = {
@@ -22,16 +23,26 @@ const FALLBACK_REVIEWS: GoogleReviewData = {
     {
       author: 'Peggy G.',
       rating: 5,
-      text: 'Mac has been a valuable resource over the years. Everything from demolition of a basement, planting trees, roofing and lawn care.',
+      text: 'A valuable resource over the years. Everything from demolition of a basement, planting trees, roofing and lawn care.',
       relativeTime: '2 years ago',
     },
     {
       author: 'John D.',
       rating: 5,
-      text: 'Mac and his team did an outstanding job on my retaining wall. I was very pleased with his fast and reliable services.',
+      text: 'The crew did an outstanding job on my retaining wall. I was very pleased with the fast and reliable services.',
       relativeTime: '3 years ago',
     },
   ],
+}
+
+function reviewsWithoutOwnerName(data: GoogleReviewData): GoogleReviewData {
+  return {
+    ...data,
+    reviews: data.reviews.map((review) => ({
+      ...review,
+      text: redactOwnerName(review.text),
+    })),
+  }
 }
 
 export default function GoogleReviews() {
@@ -42,7 +53,7 @@ export default function GoogleReviews() {
     fetch('/api/reviews', { signal: controller.signal })
       .then((r) => r.json())
       .then((payload: GoogleReviewData) => {
-        if (payload?.reviews?.length) setData(payload)
+        if (payload?.reviews?.length) setData(reviewsWithoutOwnerName(payload))
       })
       .catch(() => {
         /* keep fallback */
@@ -57,40 +68,62 @@ export default function GoogleReviews() {
       <div className="section-inner">
         <FadeIn className="text-center">
           <p className="section-eyebrow">From Cedar Falls &amp; Waterloo Homeowners</p>
-          <h2 className="section-heading mt-3">What Our Customers Say</h2>
-          <p className="mx-auto mt-2 text-sm text-brand-subtle">
-            Based on {data.totalCount} Google Review{data.totalCount !== 1 ? 's' : ''}
+          <h2 className="section-heading mt-4">What Our Customers Say</h2>
+          <p className="mx-auto mt-3 flex items-center justify-center gap-2 text-sm text-brand-subtle">
+            <span className="flex text-brand-gold">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={14} className="fill-brand-gold" />
+              ))}
+            </span>
+            <span>
+              {data.rating.toFixed(1)} from {data.totalCount} Google Review{data.totalCount !== 1 ? 's' : ''}
+            </span>
           </p>
         </FadeIn>
 
-        <StaggerContainer className="mt-10 grid gap-6 md:grid-cols-3">
+        <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3">
           {reviews.map((review) => (
             <StaggerItem key={review.author + review.text}>
-              <div className="card flex h-full flex-col p-6">
-                <div className="flex gap-1 text-brand-gold">
+              <div className="card flex h-full flex-col p-7">
+                <p
+                  className="font-display text-5xl leading-none text-brand-gold/25"
+                  aria-hidden
+                >
+                  &ldquo;
+                </p>
+                <div className="-mt-3 flex gap-0.5 text-brand-gold">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      size={18}
+                      size={15}
                       className={i < review.rating ? 'fill-brand-gold' : 'fill-none stroke-brand-gold/30'}
                     />
                   ))}
                 </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-brand-body">
-                  &ldquo;{review.text}&rdquo;
+                <p className="mt-4 flex-1 text-[0.9375rem] leading-relaxed text-brand-body">
+                  {review.text}
                 </p>
-                <p className="mt-4 text-sm font-medium text-brand-dark">
-                  {review.author}
+                <div className="mt-6 border-t border-black/[0.06] pt-4">
+                  <p className="text-sm font-semibold text-brand-dark">{review.author}</p>
                   {review.relativeTime ? (
-                    <span className="text-brand-subtle font-normal"> · {review.relativeTime}</span>
+                    <p className="mt-0.5 text-xs text-brand-subtle">{review.relativeTime}</p>
                   ) : null}
-                </p>
+                </div>
               </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
-        <FadeIn className="mt-8 text-center">
+        <FadeIn className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button
+            href={siteConfig.social.googleBusiness}
+            variant="outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read Google Reviews
+            <ExternalLink size={14} />
+          </Button>
           <Button
             href={siteConfig.googleReviewUrl}
             variant="outline"

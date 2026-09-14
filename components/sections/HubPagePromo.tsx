@@ -19,7 +19,7 @@ export default function HubPagePromo({ className = 'section bg-brand-stone py-10
           >
             full-service {landscapingHubAnchor}
           </Link>
-          {' '}— retaining walls, patios, lawn care, and complete landscape installs.
+          {' '}— retaining walls, patios, driveways, lawn care, and complete landscape installs.
         </p>
         <Link
           href={landscapingHubPath}

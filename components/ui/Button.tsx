@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
 
 type ButtonVariant = 'primary' | 'ghost' | 'ghost-dark' | 'outline' | 'outline-on-dark' | 'white'
 type ButtonSize = 'default' | 'sm' | 'lg' | 'xs'
@@ -56,24 +55,21 @@ export default function Button(props: ButtonAsButton | ButtonAsLink) {
 
   if ('href' in rest && rest.href) {
     const { href, onClick, ...linkRest } = rest
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      if (href.startsWith('tel:')) {
-        trackPhoneCall(trackLabel ?? 'Button Phone')
-      } else if (trackLabel) {
-        trackCtaClick(trackLabel)
-      }
-      onClick?.(e)
-    }
+    const trackAttrs = href.startsWith('tel:')
+      ? { 'data-track-phone': trackLabel ?? 'Button Phone' }
+      : trackLabel
+        ? { 'data-track-cta': trackLabel }
+        : {}
 
     if (isExternalHref(href)) {
       return (
-        <a href={href} className={classes} onClick={handleClick} {...linkRest}>
+        <a href={href} className={classes} onClick={onClick} {...trackAttrs} {...linkRest}>
           {children}
         </a>
       )
     }
     return (
-      <Link href={href} className={classes} onClick={handleClick} {...linkRest}>
+      <Link href={href} prefetch={false} className={classes} onClick={onClick} {...trackAttrs} {...linkRest}>
         {children}
       </Link>
     )

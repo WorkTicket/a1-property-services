@@ -1,10 +1,9 @@
-import { allServices, getFaqPageServices, type Service, serviceFaqs, getServicePageHref } from '@/lib/services'
+import { allServices, getFaqPageServices, type Service, serviceFaqs, getServicePageHref, getCityServicePageHref, getLegacyLandingPageHref } from '@/lib/services'
 import { blogPosts, getSortedPosts, type BlogPost } from '@/lib/blog'
 import { cities } from '@/lib/cities'
-import { learnArticles, type LearnArticle } from '@/lib/learn'
+import { learnArticles } from '@/lib/learn'
 import { galleryProjects, type GalleryProject } from '@/lib/images'
 import { getCaseStudyHref, projectCaseStudies } from '@/lib/project-case-studies'
-import { siteConfig } from '@/lib/metadata'
 
 export const landscapingHubPath = '/landscaping-services-in-cedar-falls'
 export const landscapingHubAnchor = 'landscaping services'
@@ -55,7 +54,7 @@ const complementaryServiceSlugs: Record<string, string[]> = {
 function serviceUrl(slug: string) { return getServicePageHref(slug) }
 function blogUrl(slug: string) { return `/blog/${slug}` }
 function cityUrl(slug: string) { return `/${slug}` }
-function cityServiceUrl(city: string, service: string) { return `/${city}/${service}` }
+function cityServiceUrl(city: string, service: string) { return getCityServicePageHref(city, service) }
 function learnUrl(slug: string) { return `/learn/${slug}` }
 function faqUrl() { return `/faqs` }
 function projectUrl() { return `/gallery` }
@@ -173,33 +172,37 @@ export function getBlogsForService(serviceSlug: string, limit = 3): LinkedConten
 export function getCitiesForService(serviceSlug: string): LinkedContent[] {
   const service = allServices.find(s => s.slug === serviceSlug)
   const serviceLabel = service?.name ?? serviceSlug.replace(/-/g, ' ')
+  const ranking = getLegacyLandingPageHref(serviceSlug)
 
   return cities.map(c => toLinked({
     type: 'city',
     slug: c.slug,
-    title: `${serviceLabel} in ${c.name}`,
-    excerpt: `${serviceLabel} for homes and businesses in ${c.name}, Iowa`,
-    url: cityServiceUrl(c.slug, serviceSlug),
+    title: ranking ? `${c.name}, IA` : `${serviceLabel} in ${c.name}`,
+    excerpt: ranking
+      ? `${serviceLabel} and other landscaping in ${c.name}, Iowa`
+      : `${serviceLabel} for homes and businesses in ${c.name}, Iowa`,
+    url: ranking ? cityUrl(c.slug) : cityServiceUrl(c.slug, serviceSlug),
     relevance: 5,
   }))
 }
 
-export function getProjectsForService(serviceSlug: string, limit = 4): LinkedContent[] {
+export function getProjectsForService(serviceSlug: string, limit = 8): LinkedContent[] {
   const category = galleryCategoryByService[serviceSlug]
   if (!category) return []
 
-  const matching = galleryProjects.filter((p) => p.category === category).slice(0, limit)
-
-  return matching.map((p) =>
-    toLinked({
-      type: 'project',
-      slug: p.id,
-      title: p.title,
-      excerpt: p.description,
-      url: getCaseStudyHref(p.id) ?? projectUrl(),
-      relevance: 8,
-    }),
-  )
+  return galleryProjects
+    .filter((p) => p.category === category)
+    .slice(0, limit)
+    .map((p) =>
+      toLinked({
+        type: 'project',
+        slug: p.id,
+        title: p.title,
+        excerpt: p.description,
+        url: getCaseStudyHref(p.id) ?? projectUrl(),
+        relevance: 8,
+      }),
+    )
 }
 
 export function getLearnForService(serviceSlug: string, limit = 3): LinkedContent[] {
@@ -564,7 +567,7 @@ export function getAllRelatedGroups(contentType: ContentType, slug: string): Rel
           relevance: 8,
         }),
       )
-      if (caseStudies.length > 0) groups.push({ heading: 'Project Case Studies', items: caseStudies })
+      if (caseStudies.length > 0) groups.push({ heading: 'Project Overview', items: caseStudies })
 
       const galleryServices = ['retaining-walls', 'paver-patio', 'paver-driveway', 'ponds-water-features', 'lawn-care', 'landscape-installation']
       const services = allServices

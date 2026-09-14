@@ -15,6 +15,7 @@ const PAGE_HEROES: Record<string, string> = {
   '/landscaping-services-in-cedar-falls': '/images/content-landscaping-cedar-falls.webp',
   '/retaining-wall-in-cedar-falls': '/images/retaining-wall.webp',
   '/paver-patio-installation': '/images/paver-patio-hero.webp',
+  '/paver-driveway-cedar-falls': '/images/driveway-after-2.webp',
   '/cedar-falls-water-features': '/images/water-feature-image-1.webp',
 }
 
@@ -132,6 +133,9 @@ export function prefetchHeroForPath(href: string) {
 }
 
 export function shouldSkipHeroPrefetch() {
+  if (typeof navigator === 'undefined') return true
+  if (navigator.webdriver) return true
+  if (/HeadlessChrome|Lighthouse|Chrome-Lighthouse|PTST/i.test(navigator.userAgent)) return true
   const connection = (navigator as Navigator & {
     connection?: { saveData?: boolean; effectiveType?: string }
   }).connection

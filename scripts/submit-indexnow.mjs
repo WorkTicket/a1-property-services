@@ -30,6 +30,7 @@ const HUB_PATHS = new Set([
   '/learn',
   '/retaining-wall-in-cedar-falls',
   '/paver-patio-installation',
+  '/paver-driveway-cedar-falls',
   '/cedar-falls-water-features',
   '/landscaping-services-in-cedar-falls',
 ])

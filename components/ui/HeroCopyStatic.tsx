@@ -1,4 +1,5 @@
 import { splitHeroTitle } from '@/lib/hero'
+import type { ReactNode } from 'react'
 
 /** System-font hero copy: avoids web-font reflow stealing LCP from the hero image. */
 const SYSTEM_SANS = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
@@ -17,19 +18,20 @@ const eyebrowStyle = {
 const titleStyle = {
   fontFamily: SYSTEM_SERIF,
   fontWeight: 700,
-  lineHeight: 1.1,
+  lineHeight: 1.08,
   color: '#fff',
   marginTop: '1rem',
-  fontSize: 'clamp(2rem, 5vw, 4.5rem)',
+  fontSize: 'clamp(2.15rem, 5.4vw, 4.6rem)',
+  letterSpacing: '-0.025em',
 }
 
 const subtitleStyle = {
   fontFamily: SYSTEM_SANS,
-  fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
-  lineHeight: 1.625,
-  color: '#fff',
-  marginTop: '1.25rem',
-  textShadow: '0 1px 4px rgba(0,0,0,0.35)',
+  fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
+  lineHeight: 1.65,
+  color: 'rgba(255,255,255,0.92)',
+  marginTop: '1.35rem',
+  textShadow: '0 1px 10px rgba(0,0,0,0.4)',
 }
 
 type HeroCopyStaticProps = {
@@ -40,6 +42,9 @@ type HeroCopyStaticProps = {
   titleMaxWidth?: string
   subtitleMaxWidth?: string
   evenTitleLines?: boolean
+  /** Extra local wash behind copy. Photo heroes use the shared overlay instead. */
+  textWash?: boolean
+  children?: ReactNode
 }
 
 export default function HeroCopyStatic({
@@ -50,20 +55,23 @@ export default function HeroCopyStatic({
   titleMaxWidth = '56rem',
   subtitleMaxWidth = '640px',
   evenTitleLines = false,
+  textWash = false,
+  children,
 }: HeroCopyStaticProps) {
   const [line1, line2] = splitHeroTitle(title)
   const shrinkLine2 = evenTitleLines || (line2?.length ?? 0) > 20
   const textAlign = align === 'center' ? 'center' : 'left'
 
   return (
-    <>
-      <div style={{ ...eyebrowStyle, textAlign, display: 'block' }}>{eyebrow}</div>
+    <div>
+      <p style={{ ...eyebrowStyle, textAlign }}>{eyebrow}</p>
       <h1
         style={{
           ...titleStyle,
           textAlign,
           maxWidth: titleMaxWidth,
-          margin: 0,
+          margin: '1.25rem 0 0',
+          textShadow: textWash ? '0 2px 28px rgba(0,0,0,0.32)' : '0 1px 14px rgba(0,0,0,0.22)',
         }}
       >
         <span
@@ -99,11 +107,13 @@ export default function HeroCopyStatic({
             maxWidth: subtitleMaxWidth,
             marginLeft: align === 'center' ? 'auto' : undefined,
             marginRight: align === 'center' ? 'auto' : undefined,
+            textShadow: textWash ? subtitleStyle.textShadow : '0 1px 8px rgba(0,0,0,0.28)',
           }}
         >
           {subtitle}
         </p>
       ) : null}
-    </>
+      {children}
+    </div>
   )
 }

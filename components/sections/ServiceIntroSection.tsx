@@ -72,7 +72,7 @@ export default function ServiceIntroSection({
           </FadeIn>
 
           <FadeIn direction="right" delay={0.1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl">
+            <div className="media-frame relative aspect-[4/3]">
               <ResponsiveImage
                 src={imageSrc}
                 alt={imageAlt}

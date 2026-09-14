@@ -19,7 +19,7 @@ export default function LogoMark({ size = 'md', className }: LogoMarkProps) {
   return (
     <div
       className={cn(
-        'flex shrink-0 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-black/5',
+        'flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-black/[0.08]',
         box,
         className,
       )}
@@ -29,6 +29,7 @@ export default function LogoMark({ size = 'md', className }: LogoMarkProps) {
         alt="A1 Property Services logo"
         width={img}
         height={img}
+        fetchPriority="low"
         className="rounded-full object-cover"
       />
     </div>

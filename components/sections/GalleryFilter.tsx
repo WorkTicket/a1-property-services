@@ -27,29 +27,29 @@ export default function GalleryFilter() {
   return (
     <section className="section bg-brand-stone">
       <div className="section-inner">
-        <div className="flex flex-wrap justify-center gap-1">
+        <div className="flex flex-wrap justify-center gap-2">
           {galleryFilterCategories.map((cat) => (
             <button
               key={cat.key}
               onClick={() => { setActiveCategory(cat.key); trackGalleryFilter(cat.label) }}
-              className={`px-5 py-2.5 text-sm font-medium uppercase tracking-wider transition-all duration-200 ${
+              className={
                 activeCategory === cat.key
-                  ? 'text-brand-green-800 border-b-2 border-brand-gold'
-                  : 'text-brand-body/60 hover:text-brand-green-800'
-              }`}
+                  ? 'filter-chip filter-chip-active'
+                  : 'filter-chip'
+              }
             >
               {cat.label}
             </button>
           ))}
         </div>
 
-        <FadeIn className="mt-10 text-center">
+        <FadeIn className="mt-12 text-center">
           <h2 className="section-heading">
             {categoryMeta?.heading ?? 'Before & After'}
           </h2>
-          <p className="mt-2 text-brand-muted max-w-xl mx-auto">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-brand-body">
             {categoryMeta?.description ??
-              'Drag the slider to compare, then click a project to preview it. View more opens the full case study.'}
+              'Drag the slider to compare, then click a project to preview it. Open the project overview for full details.'}
           </p>
         </FadeIn>
 

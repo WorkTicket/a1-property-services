@@ -53,8 +53,8 @@ type ServiceIconProps = {
 }
 
 const variantStyles = {
-  default: 'rounded-lg bg-brand-green-100 p-2.5 text-brand-green-800',
-  compact: 'h-8 w-8 rounded-lg bg-brand-green-100 p-0 text-brand-green-800',
+  default: 'self-start rounded-2xl bg-brand-green-100 p-3 text-brand-green-800 ring-1 ring-brand-gold/10',
+  compact: 'h-8 w-8 rounded-lg bg-transparent p-0 text-brand-green-800',
 } as const
 
 export default function ServiceIcon({

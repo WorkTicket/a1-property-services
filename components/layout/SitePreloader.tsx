@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useSyncExternalStore } from 'react'
 import { cn } from '@/lib/utils'
 import LogoMark from '@/components/ui/LogoMark'
 
@@ -8,14 +8,16 @@ const MIN_DURATION_MS = 250
 const FADE_DURATION_MS = 500
 
 export default function SitePreloader() {
+  const alreadySeen = useSyncExternalStore(
+    () => () => {},
+    () => window.sessionStorage.getItem('a1ps-preloader-seen') === '1',
+    () => false,
+  )
   const [phase, setPhase] = useState<'visible' | 'fading' | 'hidden'>('visible')
+  const displayPhase = alreadySeen ? 'hidden' : phase
 
   useEffect(() => {
-    const seenPreloader = window.sessionStorage.getItem('a1ps-preloader-seen') === '1'
-    if (seenPreloader) {
-      setPhase('hidden')
-      return
-    }
+    if (alreadySeen) return
 
     const start = Date.now()
     document.body.style.overflow = 'hidden'
@@ -44,14 +46,14 @@ export default function SitePreloader() {
       if (hideTimer) window.clearTimeout(hideTimer)
       document.body.style.overflow = ''
     }
-  }, [])
+  }, [alreadySeen])
 
   return (
     <div
       className={cn(
         'fixed inset-0 z-[100] flex items-center justify-center bg-brand-green-900 transition-opacity duration-500 ease-premium',
-        phase === 'fading' && 'opacity-0 pointer-events-none',
-        phase === 'hidden' && 'hidden',
+        displayPhase === 'fading' && 'opacity-0 pointer-events-none',
+        displayPhase === 'hidden' && 'hidden',
       )}
       role="status"
       aria-live="polite"

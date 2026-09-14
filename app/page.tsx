@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Check, ChevronRight, MapPin, Phone, Star } from 'lucide-react'
-import { hardscapeFeatures, getServicePageHref, services } from '@/lib/services'
+import { hardscapeFeatures, services } from '@/lib/services'
 import { CTA_COPY } from '@/lib/cta'
-import { generatePageMetadata, getGoogleMapsEmbedUrl, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
+import { generatePageMetadata, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
 import { blogPosts, getSortedPosts } from '@/lib/blog'
 import RelatedContent from '@/components/sections/RelatedContent'
-import ServiceIcon from '@/components/ui/ServiceIcon'
+import ServiceCard from '@/components/ui/ServiceCard'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
@@ -17,16 +16,16 @@ import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
 import HeroOverlay from '@/components/ui/HeroOverlay'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
+import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
+import LazyGoogleMap from '@/components/ui/LazyGoogleMap'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { getYearsInBusiness, establishedEyebrow, sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
 import { projectsCompletedValue } from '@/lib/projects-completed'
 import { cities } from '@/lib/cities'
 import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
+import FaqAccordion from '@/components/ui/FaqAccordion'
 import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
-
-const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
-
-const QuoteForm = dynamic(() => import('@/components/ui/QuoteForm'))
 
 export const metadata: Metadata = generatePageMetadata({
   title: siteConfig.homeTitle,
@@ -41,6 +40,7 @@ export const metadata: Metadata = generatePageMetadata({
     'black hawk county landscaping',
     'retaining wall cedar falls',
     'paver patio cedar falls',
+    'paver driveway cedar falls',
     'lawn care cedar falls iowa',
     'a1 landscaping',
     'a1 landscaping cedar falls',
@@ -117,7 +117,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroImagePreload src={siteImages.homeHero} />
+      <HeroImagePreload src={siteImages.homeHero} maxWidth={1920} />
 
       <script
         type="application/ld+json"
@@ -133,6 +133,7 @@ export default function HomePage() {
         <LcpHeroImage
           src={siteImages.homeHero}
           alt="Aerial view of Cedar Falls, Iowa"
+          maxWidth={1920}
         />
         <HeroOverlay imageSrc={siteImages.homeHero} variant="left" />
 
@@ -144,30 +145,31 @@ export default function HomePage() {
               subtitle="We design, build, and maintain outdoor spaces in Cedar Falls, Waterloo, and nearby towns. Paver patios, retaining walls, full installs."
               evenTitleLines
               titleMaxWidth="64rem"
-            />
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="#estimate" trackLabel="Home Hero Quote">
-                {CTA_COPY.quote}
-                <ChevronRight className="h-4 w-4" aria-hidden />
-              </Button>
-              <Button href={`tel:${siteConfig.phone}`} variant="ghost" trackLabel="Home Hero Phone">
-                <Phone className="h-4 w-4" aria-hidden />
-                {CTA_COPY.callNow}
-              </Button>
-            </div>
+            >
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Button href="#estimate" trackLabel="Home Hero Quote">
+                  {CTA_COPY.quote}
+                  <ChevronRight className="h-4 w-4" aria-hidden />
+                </Button>
+                <Button href={`tel:${siteConfig.phone}`} variant="ghost" trackLabel="Home Hero Phone">
+                  <Phone className="h-4 w-4" aria-hidden />
+                  {CTA_COPY.callNow}
+                </Button>
+              </div>
+            </HeroCopyDeferred>
           </div>
         </div>
 
-        <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/50 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-4 text-sm text-white/90 sm:gap-10">
+        <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/55">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white/85 sm:gap-10">
             <span className="flex items-center gap-1.5">
-              <Star size={14} className="fill-brand-gold text-brand-gold" /> 5-Star Rated
+              <Star size={12} className="fill-brand-gold text-brand-gold" /> 5-Star Rated
             </span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="hidden h-3 w-px bg-white/20 sm:block" />
             <span>Licensed &amp; Insured</span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="hidden h-3 w-px bg-white/20 sm:block" />
             <span>Free Estimates</span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="hidden h-3 w-px bg-white/20 sm:block" />
             <span>Cedar Falls &amp; Waterloo</span>
           </div>
         </div>
@@ -192,42 +194,27 @@ export default function HomePage() {
         <div className="section-inner">
           <FadeIn className="text-center">
             <p className="section-eyebrow">What We Do</p>
-            <h2 className="section-heading mt-3">Our Services</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-brand-body">
+            <h2 className="section-heading mt-4">Our Services</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-brand-body">
               Weekly mowing, retaining walls, a new patio, a full yard redo. We handle it for Cedar Falls, Waterloo, and Black Hawk County homeowners.
             </p>
           </FadeIn>
 
-          <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerContainer className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.slice(0, 8).map((service) => (
               <StaggerItem key={service.slug}>
-                <Link
-                  href={getServicePageHref(service.slug)}
-                  className="card group flex h-full flex-col gap-4 p-6"
-                >
-                  <ServiceIcon name={service.icon} />
-                  <div>
-                    <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
-                      {service.name}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-brand-muted">{service.shortDesc}</p>
-                  </div>
-                  <span className="link-cta-sm mt-auto">
-                    {CTA_COPY.learnMore}{' '}
-                    <ChevronRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </Link>
+                <ServiceCard service={service} />
               </StaggerItem>
             ))}
           </StaggerContainer>
 
-          <FadeIn className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row" delay={0.15}>
-            <Button href="/landscaping-services-in-cedar-falls">
-              Full Landscaping Services &rarr;
-            </Button>
-            <Button href="/services" variant="outline">
+          <FadeIn className="mt-10 text-center" delay={0.15}>
+            <Button href="/services">
               View All Services &rarr;
             </Button>
+            <p className="mt-3 text-sm text-brand-muted">
+              Lawn care, hardscaping, drainage, and more — organized in one list.
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -237,38 +224,62 @@ export default function HomePage() {
         <div className="section-inner">
           <FadeIn className="text-center">
             <p className="section-eyebrow">Hardscaping</p>
-            <h2 className="section-heading mt-3">Retaining Walls, Patios &amp; Water Features</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Dedicated pages for our most-requested hardscape services — retaining walls, paver patios, and water features.
+            <h2 className="section-heading mt-4">Retaining Walls, Patios, Driveways &amp; Water Features</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-brand-body">
+              Dedicated pages for our most-requested hardscape services — retaining walls, paver patios, paver driveways, and water features.
             </p>
           </FadeIn>
-          <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3">
-            {hardscapeFeatures.slice(0, 3).map((feature) => (
-              <StaggerItem key={feature.slug}>
-                <Link href={feature.oldHref || feature.href} className="card group flex h-full flex-col gap-4 p-6">
-                  <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
-                    {feature.name}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-brand-muted">{feature.shortDesc}</p>
-                  <span className="link-cta-sm mt-auto">
-                    View {feature.name}{' '}
-                    <ChevronRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              </StaggerItem>
-            ))}
+          <StaggerContainer className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {hardscapeFeatures
+              .filter((feature) => Boolean(feature.oldHref))
+              .map((feature) => {
+              const imageSrc =
+                feature.slug === 'retaining-walls'
+                  ? siteImages.hardscapeRetainingWalls
+                  : feature.slug === 'paver-patio'
+                    ? siteImages.hardscapePaverPatio
+                    : feature.slug === 'paver-driveway'
+                      ? siteImages.hardscapePaverDriveway
+                      : siteImages.hardscapePondsWaterFeatures
+
+              return (
+                <StaggerItem key={feature.slug}>
+                  <Link href={feature.oldHref || feature.href} className="card group flex h-full flex-col overflow-hidden">
+                    <div className="card-image relative aspect-[4/3]">
+                      <ResponsiveImage
+                        src={imageSrc}
+                        alt={feature.name}
+                        fill
+                        sizes={IMAGE_SIZES.thirdCol}
+                        className="card-image-zoom object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-3 p-6">
+                      <h3 className="text-lg font-bold text-brand-dark transition-colors group-hover:text-brand-green-800">
+                        {feature.name}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-brand-muted">{feature.shortDesc}</p>
+                      <span className="link-cta-sm mt-auto">
+                        View {feature.name}{' '}
+                        <ChevronRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              )
+            })}
           </StaggerContainer>
         </div>
       </section>
 
       {/* BEFORE & AFTER GALLERY */}
-      <section className="section bg-white">
+      <section className="section bg-brand-stone">
         <div className="section-inner">
           <FadeIn className="flex items-end justify-between">
             <div>
               <p className="section-eyebrow">Our Work</p>
-              <h2 className="section-heading mt-3">Before &amp; After</h2>
-              <p className="mt-2 text-brand-muted max-w-xl">
+              <h2 className="section-heading mt-4">Before &amp; After</h2>
+              <p className="mt-3 max-w-xl text-lg leading-relaxed text-brand-body">
                 Drag the slider to compare, then open a project to see materials and how we built it.
               </p>
             </div>
@@ -288,23 +299,23 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT / TRUST BLOCK */}
-      <section className="section bg-brand-stone">
+      <section className="section bg-white">
         <div className="section-inner">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <FadeIn direction="left">
               <p className="section-eyebrow">Who We Are</p>
-              <h2 className="section-heading mt-3">
+              <h2 className="section-heading mt-4">
                 A Local Landscaping Crew in Cedar Falls &amp; Waterloo
               </h2>
-              <p className="mt-6 leading-relaxed text-brand-body">
+              <p className="mt-6 text-lg leading-relaxed text-brand-body">
                 A1 Property Services {startedInYearPhrase()} with one goal: do good work and keep showing up. Retaining walls, paver patios, full yard installs, seasonal maintenance. Big jobs and small ones.
               </p>
-              <p className="mt-4 leading-relaxed text-brand-body">
+              <p className="mt-4 text-lg leading-relaxed text-brand-body">
                 We&rsquo;ve served Cedar Falls, Waterloo, and Black Hawk County {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="/landscaping-services-in-cedar-falls">
-                  Landscaping Services
+                <Button href="#estimate">
+                  {CTA_COPY.quote}
                 </Button>
                 <Button href="/about" variant="outline">
                   Our Story
@@ -312,11 +323,12 @@ export default function HomePage() {
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <div className="media-frame relative aspect-[4/3]">
                 <ResponsiveImage
-                  src={siteImages.aboutSecondary}
-                  alt="A1 Property Services landscape project"
+                  src={siteImages.aboutCrew}
+                  alt="A1 Property Services crew on a retaining wall jobsite in Cedar Falls, Iowa"
                   fill
+                  objectPosition="center 30%"
                   sizes={IMAGE_SIZES.halfCol}
                 />
               </div>
@@ -331,13 +343,13 @@ export default function HomePage() {
           <StaggerContainer className="grid gap-8 md:grid-cols-3">
             {trustPoints.map((point) => (
               <StaggerItem key={point.title}>
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 rounded-full bg-brand-green-800/10 p-3 text-brand-green-800">
+                <div className="flex items-start gap-5">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-brand-green-800 shadow-[0_8px_24px_-12px_rgba(158,27,36,0.45)] ring-1 ring-brand-gold/10">
                     {point.icon}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-brand-dark">{point.title}</h3>
-                    <p className="mt-1 text-sm text-brand-muted">{point.desc}</p>
+                    <h3 className="font-display text-xl font-bold text-brand-dark">{point.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-brand-muted">{point.desc}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -347,35 +359,25 @@ export default function HomePage() {
       </section>
 
       {/* GOOGLE REVIEWS */}
-      <GoogleReviews />
+      <LazyGoogleReviews />
 
       {/* FAQ */}
       <section className="section bg-brand-stone">
         <div className="section-inner-narrow">
           <FadeIn className="text-center">
             <p className="section-eyebrow">Questions?</p>
-            <h2 className="section-heading mt-3">Frequently Asked Questions</h2>
+            <h2 className="section-heading mt-4">Frequently Asked Questions</h2>
           </FadeIn>
-          <div className="mt-12 space-y-4">
-            {faqItems.map((faq, i) => (
-              <FadeIn key={faq.q} delay={i * 0.05}>
-                <details className="card group overflow-hidden">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 p-6 text-left font-semibold text-brand-dark">
-                    {faq.q}
-                    <ChevronRight size={16} className="shrink-0 text-brand-gold transition-transform duration-300 group-open:rotate-90" />
-                  </summary>
-                  <div className="px-6 pb-6">
-                    <p className="text-sm leading-relaxed text-brand-muted">{faq.a}</p>
-                  </div>
-                </details>
-              </FadeIn>
-            ))}
-          </div>
+          <FaqAccordion items={faqItems} />
         </div>
       </section>
 
       {/* Related Content */}
-      <RelatedContent groups={[
+      <RelatedContent
+        className="bg-white"
+        eyebrow="From the Blog"
+        heading="Yard Tips & Project Ideas"
+        groups={[
         ...(blogPosts.length > 0 ? [{
           heading: 'Latest Articles',
           items: getSortedPosts().slice(0, 3).map(p => ({
@@ -390,15 +392,15 @@ export default function HomePage() {
       ]} />
 
       {/* CTA / QUOTE FORM */}
-      <section id="estimate" className="section bg-neutral-50">
+      <section id="estimate" className="section bg-brand-stone">
         <div className="section-inner relative">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
               <p className="section-eyebrow">Get Started</p>
-              <h2 className="section-heading mt-3">
+              <h2 className="section-heading mt-4">
                 Want a Quote on Your Project?
               </h2>
-              <p className="mt-4 leading-relaxed text-brand-body">
+              <p className="mt-5 text-lg leading-relaxed text-brand-body">
                 Tell us about your project and we&rsquo;ll get back to you within 24 hours with honest, upfront pricing.
               </p>
               <ul className="mt-8 space-y-4">
@@ -431,7 +433,7 @@ export default function HomePage() {
                   Name and phone are enough — we&rsquo;ll take it from there.
                 </p>
                 <div className="mt-6">
-                  <QuoteForm variant="light" formLocation="Homepage" compact />
+                  <LazyQuoteForm variant="light" formLocation="Homepage" compact />
                 </div>
               </div>
             </FadeIn>
@@ -445,8 +447,8 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2">
             <FadeIn direction="left">
               <p className="section-eyebrow">Find Us</p>
-              <h2 className="section-heading mt-3">Serving Cedar Falls, Waterloo &amp; Black Hawk County</h2>
-              <p className="mt-4 text-brand-body">
+              <h2 className="section-heading mt-4">Serving Cedar Falls, Waterloo &amp; Black Hawk County</h2>
+              <p className="mt-5 text-lg leading-relaxed text-brand-body">
                 A1 Property Services is a locally owned and operated{' '}
                 <Link
                   href="/landscaping-services-in-cedar-falls"
@@ -473,15 +475,8 @@ export default function HomePage() {
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
-              <div className="overflow-hidden rounded-xl shadow-premium-lg">
-                <iframe
-                  title="A1 Property Services location"
-                  src={getGoogleMapsEmbedUrl()}
-                  className="h-[320px] w-full border-0 md:h-[420px]"
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
+              <div className="overflow-hidden rounded-2xl shadow-premium-lg ring-1 ring-black/5">
+                <LazyGoogleMap />
               </div>
             </FadeIn>
           </div>

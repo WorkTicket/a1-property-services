@@ -183,8 +183,8 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Choose the right material',
         paragraphs: [
-          'Retaining wall materials each have their strengths. Segmental concrete block is the most popular choice for residential walls because it is engineered for structural performance, handles freeze-thaw well, and offers design flexibility. Natural stone provides a premium, timeless look but requires more labor and typically costs more. Timber is the most budget-friendly option but has a shorter lifespan in Iowa climate conditions.',
-          'Your choice should factor in the wall height, aesthetic goals, budget, and how much maintenance you are willing to do over the long term. A contractor can walk you through the trade-offs for your specific project and help you match the material to the function.',
+          'We install segmental concrete block as the standard residential wall. It is engineered for soil retention, handles freeze-thaw well, and offers design flexibility. Natural stone is a premium option when you want a more organic face. We do not install timber, boulder, or poured-concrete retaining walls. If a timber wall on your property is failing, we replace it with block — or natural stone as a premium face.',
+          'Your choice should factor in the wall height, aesthetic goals, budget, and how much maintenance you are willing to do over the long term. We will walk you through the trade-offs for your specific project.',
         ],
       },
       {
@@ -412,7 +412,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Retaining wall materials compared',
         paragraphs: [
           'Segmental concrete block is the standard for residential retaining walls. These blocks are engineered for structural performance, interlock for stability, and handle freeze-thaw well. Installation is efficient, and the blocks come in a range of colors and textures. This is the best balance of performance, appearance, and cost for most projects.',
-          'Natural stone retaining walls offer a premium aesthetic but require more skill and time to install. They work well for lower walls and garden features. Timber is the most affordable option but has the shortest lifespan, typically 10 to 15 years in Iowa conditions. Timber is best suited for low walls under 3 feet where budget is the primary concern.',
+          'Natural stone retaining walls offer a premium aesthetic but require more skill and time to install. They work well for lower walls and garden features. Timber is a common older-yard wall in Iowa, but it has the shortest lifespan — typically 10 to 15 years here — and we do not install it. When a timber wall is rotting or leaning, we replace it with segmental block.',
         ],
       },
       {

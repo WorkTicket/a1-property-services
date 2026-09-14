@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Phone, MapPin } from 'lucide-react'
 import { cities, getCityBySlug, getCityServicePageCopy } from '@/lib/cities'
-import { allServices, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
+import { allServices, getCityServicePageHref, getLegacyLandingPageHref, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
 import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { sinceYearPhrase } from '@/lib/years-in-business'
@@ -18,12 +18,13 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FaqAccordion from '@/components/ui/FaqAccordion'
 
-type Props = { params: { city: string; service: string } }
+type Props = { params: Promise<{ city: string; service: string }> }
 
 export async function generateStaticParams() {
   const params: { city: string; service: string }[] = []
   for (const city of cities) {
     for (const service of allServices) {
+      if (getLegacyLandingPageHref(service.slug)) continue
       params.push({ city: city.slug, service: service.slug })
     }
   }
@@ -31,8 +32,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const city = getCityBySlug(params.city)
-  const service = getServiceBySlug(params.service)
+  const { city: citySlug, service: serviceSlug } = await params
+  const city = getCityBySlug(citySlug)
+  const service = getServiceBySlug(serviceSlug)
   if (!city || !service) return {}
 
   // Keep city×service titles distinct from /services/[slug] and legacy landings (avoid SERP cannibalization).
@@ -54,9 +56,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 }
 
-export default function CityServicePage({ params }: Props) {
-  const city = getCityBySlug(params.city)
-  const service = getServiceBySlug(params.service)
+export default async function CityServicePage({ params }: Props) {
+  const { city: citySlug, service: serviceSlug } = await params
+  const city = getCityBySlug(citySlug)
+  const service = getServiceBySlug(serviceSlug)
   if (!city || !service) notFound()
 
   const benefits = serviceBenefits[service.slug] ?? []
@@ -252,7 +255,7 @@ export default function CityServicePage({ params }: Props) {
             {nearbyCities.map((nearby) => (
               <StaggerItem key={nearby.slug}>
                 <Link
-                  href={`/${nearby.slug}/${service.slug}`}
+                  href={getCityServicePageHref(nearby.slug, service.slug)}
                   className="card block h-full p-5 text-center transition-all hover:-translate-y-1"
                 >
                   <p className="font-bold text-brand-dark">{service.name}</p>
@@ -265,7 +268,7 @@ export default function CityServicePage({ params }: Props) {
             {allOtherCities.map((nearby) => (
               <li key={`all-${nearby.slug}`}>
                 <Link
-                  href={`/${nearby.slug}/${service.slug}`}
+                  href={getCityServicePageHref(nearby.slug, service.slug)}
                   className="text-brand-green-800 underline-offset-2 transition-colors hover:underline"
                 >
                   {nearby.name}
@@ -296,7 +299,7 @@ export default function CityServicePage({ params }: Props) {
             {complementaryServices.map((s) => (
               <StaggerItem key={s.slug}>
                 <Link
-                  href={`/${city.slug}/${s.slug}`}
+                  href={getCityServicePageHref(city.slug, s.slug)}
                   className="card block h-full p-5"
                 >
                   <ServiceIcon name={s.icon} size={22} />

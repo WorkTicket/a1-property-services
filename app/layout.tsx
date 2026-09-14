@@ -1,21 +1,15 @@
 import type { Metadata, Viewport } from 'next'
-import dynamic from 'next/dynamic'
 import { Playfair_Display, Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import HeroNavPrefetch from '@/components/ui/HeroNavPrefetch'
+import DeferredAppClient from '@/components/layout/DeferredAppClient'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
 import {
   buildGoogleTagsBootstrap,
   isValidAdsId,
   isValidGaId,
 } from '@/lib/google-tags'
-
-const ScrollTracker = dynamic(() => import('@/components/analytics/ScrollTracker'), { ssr: false })
-const StickyCtaBar = dynamic(() => import('@/components/layout/StickyCtaBar'), { ssr: false })
-const CookieConsentBanner = dynamic(() => import('@/components/layout/CookieConsentBanner'), { ssr: false })
-const ConsentAwareAnalytics = dynamic(() => import('@/components/analytics/ConsentAwareAnalytics'), { ssr: false })
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
@@ -31,18 +25,18 @@ const googleTagsBootstrap = buildGoogleTagsBootstrap(gaId, adsId)
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-display',
-  display: 'optional',
-  weight: ['400', '700'],
-  preload: true,
+  display: 'swap',
+  weight: ['700'],
+  preload: false,
   adjustFontFallback: true,
 })
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
-  display: 'optional',
-  weight: ['400', '600'],
-  preload: true,
+  display: 'swap',
+  weight: ['400', '500', '600'],
+  preload: false,
   adjustFontFallback: true,
 })
 
@@ -54,13 +48,6 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: localSeoKeywords,
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': siteConfig.url,
-      'x-default': siteConfig.url,
-    },
-  },
   category: 'Landscaping',
   formatDetection: {
     telephone: true,
@@ -96,7 +83,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#2D5016',
+  themeColor: '#9E1B24',
 }
 
 export default function RootLayout({
@@ -107,15 +94,11 @@ export default function RootLayout({
   const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`} data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/images/icon.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/images/icon.webp" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google.com" />
-        <link rel="dns-prefetch" href="https://maps.google.com" />
-        <link rel="dns-prefetch" href="https://maps.gstatic.com" />
         <link rel="alternate" type="application/rss+xml" title="A1 Property Services Blog" href="/feed.xml" />
         <meta name="geo.region" content="US-IA" />
         <meta name="geo.placename" content="Cedar Falls" />
@@ -124,8 +107,8 @@ export default function RootLayout({
         <meta name="language" content="English" />
         {googleTagId && googleTagsBootstrap ? (
           <>
-            {/* Google tag (gtag.js) — GA4 + Google Ads; AW- in src for Ads tag verification */}
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
+            {/* Google tag URL is injected after load so it does not compete with LCP.
+                AW-/G- IDs remain in page source via the inline bootstrap below. */}
             <script
               id="google-tags-bootstrap"
               dangerouslySetInnerHTML={{ __html: googleTagsBootstrap }}
@@ -141,9 +124,6 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLdGraph(websiteJsonLd(), localBusinessJsonLd)),
           }}
         />
-        <ConsentAwareAnalytics />
-        <ScrollTracker />
-        <HeroNavPrefetch />
         <Navbar />
         <main
           id="main-content"
@@ -153,8 +133,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <StickyCtaBar />
-        <CookieConsentBanner />
+        <DeferredAppClient />
       </body>
     </html>
   )

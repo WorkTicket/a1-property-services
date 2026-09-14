@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Phone, Mail, MapPin, Check, Star, Shield } from 'lucide-react'
-import { generatePageMetadata, breadcrumbJsonLd, getGoogleMapsEmbedUrl, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
+import { Phone, Mail, MapPin, Check, Star, Shield, Clock } from 'lucide-react'
+import { generatePageMetadata, breadcrumbJsonLd, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
 import QuoteForm from '@/components/ui/QuoteForm'
 import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 import FadeIn from '@/components/motion/FadeIn'
 import PageHero from '@/components/motion/PageHero'
 import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
+import LazyGoogleMap from '@/components/ui/LazyGoogleMap'
 
 export const metadata: Metadata = generatePageMetadata({
     title: 'Request a Free Landscaping Quote',
@@ -31,6 +32,29 @@ export default function ContactPage() {
           __html: JSON.stringify(
             jsonLdGraph(
               pageSchema,
+              {
+                '@type': 'ContactPage',
+                '@id': `${siteConfig.url}/contact#contactpage`,
+                url: `${siteConfig.url}/contact`,
+                name: 'Request a Free Landscaping Quote | A1 Property Services',
+                description:
+                  'Request a free landscaping quote from A1 Property Services in Cedar Falls and Waterloo, Iowa. We usually respond within 24 hours.',
+                mainEntity: {
+                  '@type': ['Organization', 'LocalBusiness', 'LandscapingBusiness'],
+                  '@id': `${siteConfig.url}/#organization`,
+                  name: siteConfig.name,
+                  telephone: siteConfig.phone,
+                  email: siteConfig.email,
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: siteConfig.address.street,
+                    addressLocality: siteConfig.address.city,
+                    addressRegion: siteConfig.address.state,
+                    postalCode: siteConfig.address.zip,
+                    addressCountry: 'US',
+                  },
+                },
+              },
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: 'Contact', path: '/contact' },
@@ -79,7 +103,7 @@ export default function ContactPage() {
 
             {/* Contact info + map */}
             <FadeIn direction="right" delay={0.1}>
-              <div className="rounded-xl bg-brand-stone p-8">
+              <div className="rounded-2xl bg-brand-stone p-8 ring-1 ring-black/[0.04]">
                 <h2 className="font-display text-2xl font-bold text-brand-dark">Contact Details</h2>
                 <div className="mt-6 space-y-4 text-sm text-brand-body">
                   <p className="flex items-start gap-3">
@@ -107,7 +131,19 @@ export default function ContactPage() {
                     <MapPin size={18} className="mt-0.5 shrink-0 text-brand-gold" />
                     <span>
                       <strong>Address</strong><br />
-                      503 Bergstrom Blvd<br />Cedar Falls, IA 50613
+                      {siteConfig.address.street}<br />
+                      {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
+                    </span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <Clock size={18} className="mt-0.5 shrink-0 text-brand-gold" />
+                    <span>
+                      <strong>Hours</strong><br />
+                      {siteConfig.hours.map((block) => (
+                        <span key={block.days} className="block">
+                          {block.days}: {block.label}
+                        </span>
+                      ))}
                     </span>
                   </p>
                 </div>
@@ -116,15 +152,8 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="mt-6 overflow-hidden rounded-xl shadow-premium-lg">
-                <iframe
-                  title="A1 Property Services map"
-                  src={getGoogleMapsEmbedUrl()}
-                  className="h-64 w-full border-0"
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
+              <div className="mt-6 overflow-hidden rounded-2xl shadow-premium-lg ring-1 ring-black/5">
+                <LazyGoogleMap title="A1 Property Services map" className="h-64 w-full" />
               </div>
             </FadeIn>
           </div>

@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import { Award, Heart, Phone, Check, MapPin } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { siteImages } from '@/lib/images'
 import Button from '@/components/ui/Button'
-import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import DeferredImage from '@/components/ui/DeferredImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
 import EstimateSection from '@/components/sections/EstimateSection'
@@ -22,8 +21,7 @@ import {
 } from '@/lib/years-in-business'
 import { projectsCompletedValue } from '@/lib/projects-completed'
 import { cities } from '@/lib/cities'
-
-const GoogleReviews = dynamic(() => import('@/components/ui/GoogleReviews'))
+import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
 
 export async function generateMetadata(): Promise<Metadata> {
   const years = getYearsInBusiness()
@@ -61,7 +59,6 @@ export default function AboutPage() {
   const stats = [
     { value: projectsCompletedValue(), label: 'Projects Completed' },
     { value: String(cities.length), label: 'Cities Served' },
-    { value: 'Licensed', label: 'Iowa Contractor' },
     { value: `Est. ${FOUNDING_YEAR}`, label: 'Cedar Falls, Iowa' },
   ]
 
@@ -100,11 +97,12 @@ export default function AboutPage() {
         <div className="section-inner">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <FadeIn direction="left">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl">
-                <ResponsiveImage
-                  src={siteImages.aboutPrimary}
-                  alt="A1 Property Services landscape installation project in Cedar Falls"
+              <div className="media-frame relative aspect-[4/3]">
+                <DeferredImage
+                  src={siteImages.aboutCrew}
+                  alt="A1 Property Services crew on a retaining wall jobsite in Cedar Falls, Iowa"
                   fill
+                  objectPosition="center 30%"
                   className="transition-transform duration-700 hover:scale-105"
                   sizes={IMAGE_SIZES.halfCol}
                 />
@@ -112,8 +110,8 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
               <p className="section-eyebrow">Who We Are</p>
-              <h2 className="section-heading mt-3">Your Local Landscaping Partner</h2>
-              <p className="mt-6 leading-relaxed text-brand-body">
+              <h2 className="section-heading mt-4">Your Local Landscaping Partner</h2>
+              <p className="mt-6 text-lg leading-relaxed text-brand-body">
                 A1 Property Services {startedInYearPhrase()} because Cedar Falls and Waterloo homeowners needed a crew they could count on. We&apos;re still here, still doing the work.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
@@ -140,13 +138,13 @@ export default function AboutPage() {
         <div className="section-inner">
           <FadeIn className="text-center">
             <p className="section-eyebrow">What Drives Us</p>
-            <h2 className="section-heading mt-3">Our Values</h2>
+            <h2 className="section-heading mt-4">Our Values</h2>
           </FadeIn>
           <StaggerContainer className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
               <StaggerItem key={v.title}>
-                <div className="card h-full p-6 text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-green-800/10 text-brand-green-800 transition-transform duration-300 hover:scale-110">
+                <div className="card h-full p-7 text-center">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-green-100 text-brand-green-800 ring-1 ring-brand-gold/10">
                     {v.icon}
                   </div>
                   <h3 className="mt-4 font-bold text-brand-dark">{v.title}</h3>
@@ -160,7 +158,7 @@ export default function AboutPage() {
 
       <section className="stats-bar">
         <div className="section-inner">
-          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-4 md:divide-y-0">
+          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-3 md:divide-y-0">
             {stats.map((stat) => (
               <div key={stat.label} className="px-4 py-8 text-center sm:px-6 md:py-6">
                 <p className="stats-value">{stat.value}</p>
@@ -171,7 +169,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <GoogleReviews />
+      <LazyGoogleReviews />
 
       <EstimateSection
         formLocation="About"

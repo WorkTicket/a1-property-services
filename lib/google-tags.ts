@@ -33,9 +33,29 @@ export function buildGoogleTagsBootstrap(gaId?: string, adsId?: string): string 
     ad_user_data:s,
     ad_personalization:s,
     analytics_storage:s,
-    wait_for_update:500
+    wait_for_update:0
   });
   gtag('js',new Date());
   ${configs.join('')}
+  function loadGtag(){
+    var s=document.createElement('script');
+    s.src='https://www.googletagmanager.com/gtag/js?id=${isValidAdsId(adsId) ? adsId : gaId}';
+    s.async=true;
+    document.head.appendChild(s);
+  }
+  function startGtag(){
+    var loaded=false;
+    function load(){
+      if(loaded) return;
+      loaded=true;
+      loadGtag();
+    }
+    setTimeout(load, 6000);
+    ['pointerdown','keydown','touchstart'].forEach(function(ev){
+      window.addEventListener(ev, load, {once:true, passive:true});
+    });
+  }
+  if(document.readyState==='complete') startGtag();
+  else window.addEventListener('load',startGtag);
 })();`
 }

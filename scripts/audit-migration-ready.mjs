@@ -181,6 +181,7 @@ console.log('\n── Preserved ranking pages ──')
 const rankingPaths = [
   '/retaining-wall-in-cedar-falls',
   '/paver-patio-installation',
+  '/paver-driveway-cedar-falls',
   '/cedar-falls-water-features',
   '/landscaping-services-in-cedar-falls',
 ]

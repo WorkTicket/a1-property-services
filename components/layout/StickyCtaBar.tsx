@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { MessageSquare, Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
-import { trackPhoneCall, trackCtaClick } from '@/lib/analytics'
+import { cn } from '@/lib/utils'
 
 const INLINE_ESTIMATE_PATHS = new Set([
   '/',
@@ -16,6 +16,7 @@ const INLINE_ESTIMATE_PATHS = new Set([
   '/landscaping-services-in-cedar-falls',
   '/retaining-wall-in-cedar-falls',
   '/paver-patio-installation',
+  '/paver-driveway-cedar-falls',
   '/cedar-falls-water-features',
   '/services',
 ])
@@ -36,6 +37,7 @@ const NON_CITY_ROOTS = new Set([
   'landscaping-services-in-cedar-falls',
   'retaining-wall-in-cedar-falls',
   'paver-patio-installation',
+  'paver-driveway-cedar-falls',
   'cedar-falls-water-features',
 ])
 
@@ -47,24 +49,32 @@ function hasInlineEstimate(pathname: string): boolean {
   return false
 }
 
-export default function StickyCtaBar() {
+type StickyCtaBarProps = {
+  embedded?: boolean
+  onNavigate?: () => void
+}
+
+export default function StickyCtaBar({ embedded = false, onNavigate }: StickyCtaBarProps) {
   const pathname = usePathname()
   const quoteHref = hasInlineEstimate(pathname) ? '#estimate' : '/contact'
 
   return (
-    <div className="sticky-cta-bar">
+    <div className={cn('sticky-cta-bar', embedded ? 'sticky-cta-bar--embedded' : 'sticky-cta-bar--fixed')}>
       <a
         href={`tel:${siteConfig.phone}`}
-        onClick={() => trackPhoneCall('Sticky CTA')}
+        data-track-phone={embedded ? 'Navbar Mobile Menu' : 'Sticky CTA'}
         className="sticky-cta-bar__call"
+        onClick={onNavigate}
       >
         <Phone className="h-4 w-4 shrink-0" aria-hidden />
         <span>{CTA_COPY.callNow}</span>
       </a>
       <Link
         href={quoteHref}
-        onClick={() => trackCtaClick('Sticky Quote')}
+        prefetch={false}
+        data-track-cta={embedded ? 'Navbar Mobile Quote' : 'Sticky Quote'}
         className="sticky-cta-bar__quote"
+        onClick={onNavigate}
       >
         <MessageSquare className="h-4 w-4 shrink-0" aria-hidden />
         <span>{CTA_COPY.quote}</span>

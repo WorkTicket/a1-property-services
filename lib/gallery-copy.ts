@@ -163,11 +163,11 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Driveway-grade pavers', 'Compacted aggregate', 'Edge restraint', 'Polymeric sand'],
   },
   'mowing-ba-1': {
-    title: 'Backyard Lawn Mowing',
+    title: 'Overgrown Front Yard Mowing',
     description:
-      'An overgrown backyard was cut, edged, and striped so the lawn looks tended again.',
+      'An overgrown front lawn at the garage and driveway was cut, edged, and striped for curb appeal.',
     scopeOfWork:
-      'Mow, trim, edge, and blow off hard surfaces. Clippings managed so the yard is ready to use.',
+      'First cut on tall turf, trim at the porch and garage, edge the driveway and walk, and blow off hard surfaces.',
     materials: ['Professional mowing', 'String trimming', 'Edging', 'Debris cleanup'],
   },
   'mowing-ba-3': {
@@ -181,9 +181,9 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
   'mowing-ba-5': {
     title: 'Front Yard Lawn Mowing',
     description:
-      'A weedy, overgrown front yard was mowed and striped for a clean curb-side finish.',
+      'A weedy corner-lot front yard was mowed and striped, with clean edges along both sidewalks.',
     scopeOfWork:
-      'Front-yard mow, trim along walks and the house, and blow-off so the approach looks sharp.',
+      'Corner-lot mow, trim along both walks and the house, edge, and blow-off so the curb looks finished.',
     materials: ['Mowing', 'Edging', 'String trimming', 'Blow-off'],
   },
   'landscape-ba-1': {

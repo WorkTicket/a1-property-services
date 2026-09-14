@@ -81,7 +81,7 @@ export default function PageHero({
               subtitleMaxWidth="36rem"
             />
           ) : (
-            <>
+            <div>
               <p className="hero-eyebrow">{eyebrow}</p>
               <h1 className="hero-title mt-4">
                 <HeroTitle>{title}</HeroTitle>
@@ -91,7 +91,7 @@ export default function PageHero({
                   {subtitle}
                 </p>
               )}
-            </>
+            </div>
           )}
         </div>
       </section>
