@@ -154,14 +154,14 @@ export default async function CityPage({ params }: Props) {
               ))}
               {city.slug === 'cedar-falls' ? (
                 <p className="mt-4 leading-relaxed text-brand-body">
-                  Explore our complete{' '}
+                  See the full list of{' '}
                   <Link
                     href={landscapingHubPath}
                     className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
                   >
                     {landscapingHubAnchor}
                   </Link>
-                  {' '}services — retaining walls, patios, lawn care, and full landscape installation.
+                  : retaining walls, patios, lawn care, and full landscape installation.
                 </p>
               ) : null}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -294,7 +294,7 @@ export default async function CityPage({ params }: Props) {
             <p className="section-eyebrow">Full Service List</p>
             <h2 className="section-heading">All Landscaping Services in {city.name}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-brand-body">
-              Browse every service we offer in {city.name}, from lawn care and tree work to hardscaping and seasonal maintenance.
+              Lawn care, tree work, hardscaping, and seasonal maintenance in {city.name}. Pick a service to see how we handle it locally.
             </p>
           </FadeIn>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -417,8 +417,8 @@ export default async function CityPage({ params }: Props) {
 
       <CtaBanner
         eyebrow="Get Started"
-        title={`Ready to Start Your ${city.name} Project?`}
-        description="Call us today or request a free quote online. We will get back to you within 24 hours."
+        title={`Got a ${city.name} project in mind?`}
+        description="Call or send a few details. We usually get back within 24 hours."
         animated
         quoteHref="#estimate"
       />

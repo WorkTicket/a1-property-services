@@ -3,7 +3,7 @@ import { FOUNDING_YEAR } from '@/lib/years-in-business'
 
 export const siteConfig = {
   name: 'A1 Property Services',
-  /** Homepage `<title>` / og:title — brand people type (“A1 landscaping”) plus official name. */
+  /** Homepage `<title>` / og:title: brand people type (“A1 landscaping”) plus official name. */
   homeTitle: 'A1 Landscaping Cedar Falls, IA | A1 Property Services',
   url: 'https://a1pslandscape.com',
   description:
@@ -75,7 +75,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'retaining-walls': {
     title: 'Retaining Wall Installation Cedar Falls, IA',
     description:
-      'Block & stone retaining walls in Cedar Falls & Waterloo, IA — drainage built for Iowa freeze-thaw. Free quote: (319) 464-1889.',
+      'Block & stone retaining walls in Cedar Falls & Waterloo, IA: drainage built for Iowa freeze-thaw. Free quote: (319) 464-1889.',
     h1: 'Retaining Wall Installation in Cedar Falls',
     keywords: [
       'retaining wall installation cedar falls',
@@ -91,7 +91,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'paver-patio': {
     title: 'Paver Patio Installation Cedar Falls, IA',
     description:
-      'Custom paver patio installation in Cedar Falls & Waterloo, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
+      'Custom paver patio installation in Cedar Falls & Waterloo, IA. Compacted base built for Iowa freeze-thaw. Free on-site quote. Call (319) 464-1889.',
     h1: 'Paver Patio Installation in Cedar Falls',
     keywords: [
       'paver patio installation cedar falls',
@@ -105,7 +105,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'paver-driveway': {
     title: 'Paver Driveway Installation Cedar Falls | Free Quote',
     description:
-      'Custom paver driveway installation in Cedar Falls, IA. Deep base built for vehicles and Iowa freeze-thaw. Free on-site quote — call (319) 464-1889.',
+      'Custom paver driveway installation in Cedar Falls, IA. Deep base built for vehicles and Iowa freeze-thaw. Free on-site quote. Call (319) 464-1889.',
     h1: 'Paver Driveway Installation in Cedar Falls',
     keywords: [
       'paver driveway installation cedar falls',
@@ -131,7 +131,7 @@ export const serviceSeoOverrides: Record<string, ServiceSeo> = {
   'lawn-care': {
     title: 'Lawn Care Cedar Falls, Iowa | Weekly Mowing',
     description:
-      'Lawn care in Cedar Falls, Iowa — weekly mowing, aeration, fertilization, and weed control. Serving Black Hawk County. Free estimate: (319) 464-1889.',
+      'Lawn care in Cedar Falls, Iowa: weekly mowing, aeration, fertilization, and weed control. Serving Black Hawk County. Free estimate: (319) 464-1889.',
     h1: 'Lawn Care in Cedar Falls, Iowa',
     keywords: [
       'lawn care cedar falls iowa',
@@ -799,7 +799,7 @@ export function buildLocalBusinessJsonLd() {
   }
 }
 
-/** @deprecated Prefer buildLocalBusinessJsonLd() — same payload, no review markup. */
+/** @deprecated Prefer buildLocalBusinessJsonLd(): same payload, no review markup. */
 export const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
 export function webPageJsonLd(options: {

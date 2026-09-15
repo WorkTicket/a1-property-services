@@ -12,14 +12,14 @@ export default function HubPagePromo({ className = 'section bg-brand-stone py-10
     <section className={className}>
       <FadeIn className="section-inner-narrow text-center">
         <p className="text-brand-body leading-relaxed">
-          Need more than one service? Explore our{' '}
+          Need more than one service? See our{' '}
           <Link
             href={landscapingHubPath}
             className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
           >
-            full-service {landscapingHubAnchor}
+            {landscapingHubAnchor}
           </Link>
-          {' '}— retaining walls, patios, driveways, lawn care, and complete landscape installs.
+          {' '}for retaining walls, patios, driveways, lawn care, and full installs.
         </p>
         <Link
           href={landscapingHubPath}

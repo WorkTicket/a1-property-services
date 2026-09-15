@@ -64,7 +64,7 @@ export default function GalleryFilter() {
         </div>
 
         <FadeIn className="mt-16 text-center">
-          <p className="text-brand-body">Ready to start your own project?</p>
+          <p className="text-brand-body">Got a similar job in mind?</p>
           <Button href="/contact" className="mt-4" onClick={() => trackCtaClick('Gallery Bottom')}>
             {CTA_COPY.quote}
           </Button>

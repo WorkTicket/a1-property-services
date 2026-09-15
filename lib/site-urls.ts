@@ -67,7 +67,7 @@ export function getHtmlSitemapGroups(): SiteMapGroup[] {
       { name: 'Gallery', href: '/gallery' },
       { name: 'Contact', href: '/contact' },
       { name: 'Blog', href: '/blog' },
-      { name: 'Knowledge Center', href: '/learn' },
+      { name: 'Guides', href: '/learn' },
       { name: 'Resources', href: '/resources' },
       { name: 'FAQs', href: '/faqs' },
       { name: 'Privacy Policy', href: '/privacy' },

@@ -61,7 +61,7 @@ export default function EstimateSection({
             <div className="form-card">
               <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
               <p className="mt-1 text-sm text-brand-muted">
-                Name and phone are enough — we&rsquo;ll take it from there.
+                Name and phone are enough. We&rsquo;ll take it from there.
               </p>
               <div className="mt-6">
                 <LazyQuoteForm

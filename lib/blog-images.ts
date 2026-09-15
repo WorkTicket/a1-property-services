@@ -201,5 +201,5 @@ export const blogPostImageAlts: Record<string, string> = {
 }
 
 export function getBlogPostImageAlt(slug: string, title: string): string {
-  return blogPostImageAlts[slug] ?? `${title} — landscaping in Cedar Falls, Iowa`
+  return blogPostImageAlts[slug] ?? `${title}: landscaping in Cedar Falls, Iowa`
 }

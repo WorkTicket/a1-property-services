@@ -50,15 +50,15 @@ export default function FaqsPage() {
       <PageHero
         imageSrc={siteImages.faqsHero}
         imageAlt="Manicured Cedar Falls backyard with stone patio and garden beds"
-        eyebrow="Questions & Answers"
+        eyebrow="Questions"
         title="Landscaping|FAQs"
-        subtitle="Common questions about our services, processes, and what to expect when you work with A1 Property Services."
+        subtitle="Timelines, pricing, and what actually happens on a Cedar Falls or Waterloo job."
       />
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <p className="text-lg leading-relaxed text-brand-body">
-            Browse frequently asked questions about our landscaping and hardscaping services in Cedar Falls, Waterloo, and Black Hawk County. Click a service below to jump to specific answers, or scroll through our general FAQs.
+            Jump to a service for the nitty-gritty, or start with the general questions people ask before they hire us in Cedar Falls, Waterloo, and Black Hawk County.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {faqPageServices.map((s) => (
@@ -98,7 +98,7 @@ export default function FaqsPage() {
           <FadeIn className="section-inner-narrow">
             <h2 className="section-heading">{service.name} FAQs</h2>
             <p className="mt-3 text-brand-body">
-              Common questions about {service.name.toLowerCase()} in Cedar Falls, Waterloo, and Black Hawk County.
+              What people ask about {service.name.toLowerCase()} around Cedar Falls, Waterloo, and Black Hawk County.
             </p>
             <div className="mt-8">
               <FaqAccordion

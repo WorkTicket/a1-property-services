@@ -61,15 +61,15 @@ export default function LearnPage() {
       <PageHero
         imageSrc={siteImages.learnHero}
         imageAlt="Professionally designed Cedar Falls garden with stone path and perennials"
-        eyebrow="Educational Resources"
-        title="Landscaping|Knowledge Center"
-        subtitle="Guides, comparisons, and buying tips for Cedar Falls and Waterloo homeowners planning a landscape project."
+        eyebrow="Guides"
+        title="Landscaping|Guides"
+        subtitle="Hiring tips, material comparisons, and Iowa yard problems, written for Cedar Falls and Waterloo homeowners."
       />
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <p className="text-lg leading-relaxed text-brand-body">
-            Whether you are planning your first landscaping project or looking to maintain a mature landscape, our educational resources give you the information you need to make confident decisions. Every guide is written with Iowa homeowners in mind and focuses on what matters most for Cedar Falls and Waterloo properties.
+            These are the questions people ask us on estimates. What a retaining wall actually costs. Why the lawn keeps dying in the same spot. How to read two bids that look nothing alike. We wrote them for Cedar Falls and Waterloo yards, not a generic climate chart.
           </p>
         </FadeIn>
       </section>
@@ -115,8 +115,8 @@ export default function LearnPage() {
       </section>
 
       <CtaBanner
-        title="Ready to start your project?"
-        description="Contact us for a free consultation. We will help you bring your landscape vision to life."
+        title="Want us to look at the yard?"
+        description="Call or send a few details. We'll walk the property and tell you what the job actually takes."
       />
     </>
   )

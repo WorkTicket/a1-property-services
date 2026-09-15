@@ -105,6 +105,7 @@ const siteImages = {
   aboutPrimary: img('about-primary.webp'),
   aboutSecondary: img('about-secondary.webp'),
   aboutCrew: img('about-crew.webp'),
+  aboutTeam: img('about-team.webp'),
   cityIntro: img('city-intro.webp'),
   cityWhy: img('city-why.webp'),
   contentLandscapingCedarFalls: img('content-landscaping-cedar-falls.webp'),

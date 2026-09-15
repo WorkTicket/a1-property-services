@@ -40,12 +40,12 @@ export default function ThankYouPage() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-md text-brand-body">
-          Thank you for reaching out to A1 Property Services. Someone from our team will call you within <strong>24 hours</strong> to discuss your project and schedule a free on-site estimate.
+          Thanks for the note. Someone from the crew will call within <strong>24 hours</strong> to talk through the job and set up a free on-site estimate.
         </p>
 
         <div className="mt-8 rounded-2xl bg-brand-stone p-6 ring-1 ring-black/[0.04]">
           <p className="text-sm font-medium text-brand-dark">
-            In the meantime, feel free to call us directly:
+            Need us sooner? Call:
           </p>
           <a
             href={`tel:${siteConfig.phone}`}
@@ -82,7 +82,7 @@ export default function ThankYouPage() {
 
         <div className="mt-10 border-t border-black/[0.06] pt-10">
           <p className="text-sm text-brand-subtle">
-            Happy with our service? Leave us a review!
+            Happy with the work? A Google review helps more than you&rsquo;d think.
           </p>
           <Button
             href={siteConfig.googleReviewUrl}

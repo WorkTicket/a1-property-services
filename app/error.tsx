@@ -20,8 +20,7 @@ export default function Error({
         Something went wrong
       </h1>
       <p className="mt-4 max-w-md text-brand-body">
-        We encountered an unexpected error. Please try again or contact us if the
-        problem persists.
+        We hit a snag on our end. Try again, or call if it keeps happening.
       </p>
       <Button onClick={reset} className="mt-8">
         Try Again

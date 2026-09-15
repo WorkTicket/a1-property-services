@@ -7,7 +7,7 @@ import FadeIn from '@/components/motion/FadeIn'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Site Map',
   description:
-    'Browse every A1 Property Services page — landscaping services, Cedar Falls and Waterloo city pages, guides, and blog articles.',
+    'Browse every A1 Property Services page: landscaping services, Cedar Falls and Waterloo city pages, guides, and blog articles.',
   path: '/site-map',
 })
 
@@ -16,7 +16,7 @@ export default function SiteMapPage() {
   const pageSchema = webPageJsonLd({
     name: 'Site Map | A1 Property Services',
     description:
-      'Browse every A1 Property Services page — landscaping services, Cedar Falls and Waterloo city pages, guides, and blog articles.',
+      'Browse every A1 Property Services page: landscaping services, Cedar Falls and Waterloo city pages, guides, and blog articles.',
     path: '/site-map',
     about: 'Site map',
   })

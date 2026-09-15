@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import DeferredAppClient from '@/components/layout/DeferredAppClient'
+import SitePreloader, { SitePreloaderHead } from '@/components/layout/SitePreloader'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
 import {
   buildGoogleTagsBootstrap,
@@ -94,8 +95,9 @@ export default function RootLayout({
   const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`} data-scroll-behavior="smooth">
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <SitePreloaderHead />
         <link rel="icon" href="/images/icon.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/images/icon.webp" />
         <link rel="manifest" href="/manifest.json" />
@@ -118,6 +120,7 @@ export default function RootLayout({
       </head>
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
+        <SitePreloader />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

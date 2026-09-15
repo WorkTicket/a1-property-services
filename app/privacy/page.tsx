@@ -152,15 +152,15 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-brand-body">
             <li>
-              <strong>Cloudflare</strong> — website hosting, content delivery, security, and delivery of
+              <strong>Cloudflare</strong>: website hosting, content delivery, security, and delivery of
               quote-form emails
             </li>
             <li>
-              <strong>Google</strong> — Google Analytics (with consent), Google Maps embeds on our contact
+              <strong>Google</strong>: Google Analytics (with consent), Google Maps embeds on our contact
               page, and Google Business Profile links
             </li>
             <li>
-              <strong>Email providers</strong> — to receive and respond to quote and contact messages
+              <strong>Email providers</strong>: to receive and respond to quote and contact messages
             </li>
           </ul>
           <p className="mt-4 leading-relaxed text-brand-body">

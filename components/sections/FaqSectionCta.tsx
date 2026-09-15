@@ -18,7 +18,7 @@ export default function FaqSectionCta({
   return (
     <div className="mt-10 text-center">
       <p className="text-lg font-medium text-brand-green-900">
-        Still have questions? We are here to help.
+        Still have a question? Call or send it with the quote form.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Button href={quoteHref} trackLabel="FAQ Section Quote">

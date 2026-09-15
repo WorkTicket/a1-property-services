@@ -68,7 +68,7 @@ export const services: Service[] = [
     name: 'Tree Service',
     shortDesc: 'Pruning, removal, stump grinding, and disease management.',
     longDesc:
-      'From routine trimming to full removal and stump grinding, our tree crew handles it safely. We also spot and treat common Iowa tree diseases and pests before they spread.',
+      'Routine trimming, full removal, stump grinding: the tree crew handles it safely. We also catch common Iowa tree diseases and pests before they spread.',
     anchorId: 'treeservice',
     category: 'landscaping',
   },
@@ -149,7 +149,7 @@ export const services: Service[] = [
     slug: 'sod-installation',
     icon: 'land-plot',
     name: 'Sod Installation',
-    shortDesc: 'Instant green lawns with professional sod installation.',
+    shortDesc: 'New sod installed so you have a lawn now, not in two months.',
     longDesc:
       'Sod gives you an instant green lawn without months of waiting. We prep the soil, grade for drainage, install with tight seams, and walk you through watering and care for the first few weeks.',
     anchorId: 'sod',
@@ -179,9 +179,9 @@ export const services: Service[] = [
     slug: 'tree-planting',
     icon: 'tree-deciduous',
     name: 'Tree Planting',
-    shortDesc: 'Strategic tree planting for shade, privacy, and property value.',
+    shortDesc: 'Iowa-hardy trees planted for shade, privacy, and the long haul.',
     longDesc:
-      'Trees are a long-term investment in shade, privacy, and property value. We select Iowa-hardy species for your site, plant at the correct depth with amended soil, and set you up for healthy growth from day one.',
+      'A tree in the right spot is shade and privacy for decades. We pick Iowa-hardy species for your site, plant at the correct depth with amended soil, and set you up for healthy growth from day one.',
     anchorId: 'treeplanting',
     category: 'landscaping',
   },
@@ -211,7 +211,7 @@ export const services: Service[] = [
     name: 'Residential Landscaping',
     shortDesc: 'Full-service landscaping for Cedar Falls and Waterloo homes.',
     longDesc:
-      'Your yard should be a place you actually use. From full yard overhauls to weekly mowing and seasonal cleanups, we handle design, installation, and maintenance that fits your budget and how your family lives.',
+      'A yard you actually use, not just mow. Full overhauls, weekly mowing, seasonal cleanups: we handle design, install, and maintenance around your budget and how your family lives outside.',
     anchorId: 'residential',
     category: 'landscaping',
   },
@@ -408,7 +408,7 @@ export const serviceProblemSolutions: Record<string, ProblemSolution[]> = {
   ],
   'hydroseeding': [
     { problem: 'You have a large bare area that needs grass but sod is too expensive', solution: 'Hydroseeding covers large areas at a fraction of sod cost. The seed, mulch, and fertilizer mix germinates evenly across the entire area.' },
-    { problem: 'Broadcasting seed by hand leaves thin patches and washouts', solution: 'Hydrosedding applies seed uniformly with a tackifier that holds it in place. The mulch layer retains moisture for better germination rates.' },
+    { problem: 'Broadcasting seed by hand leaves thin patches and washouts', solution: 'Hydroseeding applies seed uniformly with a tackifier that holds it in place. The mulch layer retains moisture for better germination rates.' },
     { problem: 'Erosion is washing away topsoil on your new construction site', solution: 'The hydroseed slurry bonds to the soil surface, holding it in place while grass establishes. It is the most effective erosion control for bare slopes.' },
   ],
   'snow-removal': [
@@ -492,6 +492,29 @@ export type ServiceProcessStep = {
   title: string
   description: string
 }
+
+export const defaultProcessSteps: ServiceProcessStep[] = [
+  {
+    title: 'Consultation',
+    description: 'We meet you on site, walk the lot, and talk through what you want to spend.',
+  },
+  {
+    title: 'Planning',
+    description: 'We coordinate scheduling, permits, and site prep so the work goes smoothly without delays.',
+  },
+  {
+    title: 'Execution',
+    description: 'Our crew does the work the right way: safe setup, solid workmanship, and a finished job that holds up.',
+  },
+  {
+    title: 'Cleanup',
+    description: 'Every job site is thoroughly cleaned. We remove debris and restore disturbed areas before we leave.',
+  },
+  {
+    title: 'Final Walkthrough',
+    description: 'We review the completed work with you, answer questions, and make sure everything meets your expectations.',
+  },
+]
 
 export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
   'retaining-walls': [
@@ -674,7 +697,7 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Consultation & Design',
       description:
-        'We meet with you on-site to discuss your goals and create a detailed landscape plan with plant selections, hardscape placement, and phased implementation.',
+        'We meet you on site, talk through what you want, and draw a plan with plants, hardscape, and a build order that can happen in phases.',
     },
     {
       title: 'Planning & Material Ordering',
@@ -701,12 +724,12 @@ export const serviceProcessSteps: Record<string, ServiceProcessStep[]> = {
     {
       title: 'Consultation & Design',
       description:
-        'We walk your property, discuss your goals and budget, and create a landscape plan that fits your home and how you use the space.',
+        'We walk the property, talk budget, and sketch a plan that fits the house and how you actually use the yard.',
     },
     {
       title: 'Planning & Preparation',
       description:
-        'We coordinate materials, scheduling, and site prep so the project runs smoothly from start to finish.',
+        'We line up materials, dates, and site prep so the job does not stall halfway through.',
     },
     {
       title: 'Installation',
@@ -1032,15 +1055,15 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
   'landscape-installation': {
     heading: 'Complete Landscape Installation for Cedar Falls and Waterloo Homes',
     paragraphs: [
-      'A full landscape installation transforms your yard from the ground up. We handle grading, soil preparation, bed layout, hardscape integration, and planting in the right order so every layer performs the way it should.',
-      'Our installation process starts with a site assessment and plant selection for Iowa growing conditions. We prep soil, install drainage where needed, lay mulch and edging, and plant at the right depth and spacing. The result is a landscape that looks finished from day one and gets better as plants mature.',
+      'A full install starts at the dirt. Grading, soil, beds, hardscape, then planting, in that order, so each layer does its job.',
+      'We start with the site and plants that survive Iowa. Soil prep, drainage if the lot needs it, mulch and edging, then planting at the right depth and spacing. It should look finished when we leave, and better after a couple of seasons.',
     ],
   },
   'lawn-care': {
     heading: 'Lawn Care in Cedar Falls, Iowa',
     paragraphs: [
       'Lawn care in Cedar Falls, Iowa takes more than a weekly pass with a mower. Black Hawk County clay, hot summers, and freeze-thaw need a program: the right mowing height, seasonal aeration, timed fertilization, and weed control before crabgrass takes the lawn.',
-      'We set the schedule for your turf type, soil, and sun — College Hill lots, North Cedar yards, and Waterloo properties included. Fall aeration, fertilizer at key growth stages, and pre-emergent in spring. You get a thick Iowa lawn without managing the calendar yourself.',
+      'We set the schedule for your turf type, soil, and sun: College Hill lots, North Cedar yards, and Waterloo properties included. Fall aeration, fertilizer at key growth stages, and pre-emergent in spring. You get a thick Iowa lawn without managing the calendar yourself.',
     ],
   },
   'preservation-restoration': {
@@ -1051,7 +1074,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'tree-service': {
-    heading: 'Safe, Professional Tree Service in the Cedar Falls, Waterloo, and Black Hawk County',
+    heading: 'Safe, Professional Tree Service in Cedar Falls, Waterloo, and Black Hawk County',
     paragraphs: [
       'Mature trees add shade, privacy, and property value, but they also need skilled care. We provide pruning, hazard removal, stump grinding, and disease management with equipment sized for residential properties and crews trained for safe work around structures.',
       'Our tree service includes crown thinning and deadwood removal to reduce storm risk, stump grinding after removals, and diagnosis of common Iowa tree pests and diseases. We recommend the right treatment or removal before small problems become expensive emergencies.',
@@ -1068,7 +1091,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     heading: 'Why Local Homeowners Choose Our Retaining Walls',
     paragraphs: [
       'Retaining walls are one of the most practical upgrades for sloped Cedar Falls and Waterloo properties. A properly installed wall stops soil erosion, protects foundations and driveways, and turns steep ground into flat, usable yard space for patios, gardens, or play areas.',
-      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install includes gravel backfill, drain pipe, and proper base compaction — segmental block as the standard, natural stone as a premium option — so walls stand for decades.',
+      'Iowa freeze-thaw cycles punish walls built without drainage. Every retaining wall we install includes gravel backfill, drain pipe, and proper base compaction (segmental block as the standard, natural stone as a premium option) so walls stand for decades.',
     ],
     relatedBlogSlug: 'retaining-wall-benefits-cedar-falls',
   },
@@ -1106,7 +1129,7 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     heading: 'Reliable Snow Removal for Cedar Falls and Waterloo Properties',
     paragraphs: [
       'Iowa storms do not wait for a convenient time. Our contracted snow removal covers driveways, walkways, steps, and parking areas with plowing, shoveling, and ice treatment so you are not stuck after every snowfall.',
-      'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm. Seasonal contracts lock in pricing before winter starts — call (319) 464-1889 to reserve your route.',
+      'We monitor weather forecasts and dispatch crews based on your contract priority. Residential driveways and commercial lots get consistent clearing, de-icing where needed, and clear communication so property owners know what to expect after each storm. Seasonal contracts lock in pricing before winter starts. Call (319) 464-1889 to reserve your route.',
     ],
   },
   'landscape-design': {
@@ -1131,21 +1154,21 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'excavation': {
-    heading: 'Professional Excavation for Local Projects',
+    heading: 'Excavation for Local Landscape Jobs',
     paragraphs: [
       'Excavation is the first step in most big landscape jobs. We handle site clearing, rough and finish grading, trenching for drainage and utilities, and dig-outs for patios, retaining walls, and water features. Our equipment fleet includes skid steers and mini excavators sized for residential access.',
       'Proper excavation prevents future problems. Correct base preparation prevents hardscape settling. Proper grading prevents water damage. We take the time to get the foundation right on every job.',
     ],
   },
   'sod-installation': {
-    heading: 'Instant Lawns with Professional Sod Installation',
+    heading: 'Sod Installation for Iowa Yards',
     paragraphs: [
-      'Sod gives you an established lawn immediately. We prepare the soil with proper grading, amendment, and surface preparation before laying fresh sod. Tight seams, staggered rows, and immediate watering help the turf root quickly.',
-      'Our sod installation process includes soil testing to determine if amendments are needed, final grading to eliminate low spots, and rolling to ensure good soil-to-root contact. We provide detailed care instructions for the critical first two weeks.',
+      'Sod is a lawn you can walk on without waiting six weeks for seed. We grade, amend if needed, lay tight seams, and walk you through watering for the first two weeks.',
+      'We check the soil, knock down low spots, and roll the sod so the roots sit on dirt, not air. You get a watering schedule for those first two weeks, which is when the lawn either takes or it does not.',
     ],
   },
   'mulching': {
-    heading: 'Professional Mulch Installation for Iowa Beds',
+    heading: 'Mulch Installation for Iowa Beds',
     paragraphs: [
       'Fresh mulch gives beds a clean, finished look while protecting plant roots from temperature swings and moisture loss. We weed and edge first, then apply mulch at a consistent 2–3 inch depth without piling against trunks or stems.',
       'We offer shredded hardwood, dyed, and cedar mulch options depending on your beds and aesthetic goals. Annual mulch refresh keeps weeds down, retains soil moisture through Iowa summers, and restores color when last year\'s mulch has faded and thinned.',
@@ -1159,31 +1182,31 @@ export const serviceExtendedContent: Record<string, ServiceExtendedContent> = {
     ],
   },
   'tree-planting': {
-    heading: 'Strategic Tree Planting for Cedar Falls and Waterloo Properties',
+    heading: 'Tree Planting for Cedar Falls and Waterloo Properties',
     paragraphs: [
-      'The right tree in the right spot provides decades of shade, privacy, and curb appeal. We select Iowa-hardy species matched to your soil, sun exposure, and space, then plant at the correct depth with amended backfill.',
-      'Our tree planting service includes site evaluation, species recommendations for your goals, proper planting technique, mulch rings, and initial watering guidance. Trees planted correctly establish faster and avoid common problems like girdling roots and depth issues.',
+      'The right tree in the right spot is shade and privacy for a long time. We pick Iowa-hardy species for your soil, sun, and space, then plant at the correct depth with amended backfill.',
+      'We look at the site first, recommend species that fit, plant them right, mulch the ring, and tell you how to water. Trees planted too deep or in the wrong hole are the ones that fail in year two.',
     ],
   },
   'shrub-installation': {
     heading: 'Foundation Plantings and Shrubs That Perform in Iowa',
     paragraphs: [
       'Shrubs anchor most residential landscapes: foundation plantings, privacy hedges, and ornamental accents that provide structure year-round. We install shrubs at proper spacing with varieties suited to Iowa winters and your property\'s sun and drainage.',
-      'Our shrub installation includes bed preparation, soil amendment where needed, correct planting depth, and initial mulching. Whether you need a privacy hedge, refreshed foundation beds, or mixed ornamental plantings, we lay out shrubs for mature size and long-term health.',
+      'Bed prep, soil amendment where it is needed, correct planting depth, and a first layer of mulch. Privacy hedge, foundation beds, or mixed plantings: we space shrubs for the size they will be, not the size they are in the pot.',
     ],
   },
   'commercial-landscaping': {
-    heading: 'Commercial Landscape Services Across the Cedar Falls, Waterloo, and Black Hawk County',
+    heading: 'Commercial Landscape Services Across Cedar Falls, Waterloo, and Black Hawk County',
     paragraphs: [
-      'Commercial properties require consistent, professional landscaping that maintains curb appeal year-round. We provide scheduled maintenance, seasonal enhancements, and hardscape construction for office parks, retail centers, HOAs, and industrial properties.',
-      'Our commercial clients value reliable scheduling, clear communication, and single-invoice simplicity. We handle everything from weekly mowing and pruning to snow removal and full hardscape installations, so property managers have one less thing to worry about.',
+      'Office parks, retail, HOAs, and industrial lots need to look tended every week, not just for a photo. We run mowing, seasonal work, and hardscape on a schedule.',
+      'One schedule, one invoice, one call. Mowing and pruning through the season, snow in winter, hardscape when you need it. Property managers are not chasing three vendors.',
     ],
   },
   'residential-landscaping': {
-    heading: 'Full-Service Residential Landscaping in the Cedar Falls, Waterloo, and Black Hawk County',
+    heading: 'Full-Service Residential Landscaping in Cedar Falls, Waterloo, and Black Hawk County',
     paragraphs: [
-      'Residential landscaping should match how you actually live in your yard. We handle design, installation, and ongoing maintenance, from complete yard overhauls to weekly mowing and seasonal cleanups, scoped to your budget and priorities.',
-      'Whether you need a new patio and plantings, drainage fixes, or a maintenance plan that keeps things handled, we coordinate the full job under one contractor. Cedar Falls and Waterloo homeowners get one team for design through install and seasonal care.',
+      'Design, install, and upkeep for the way you actually use the yard. Full overhauls, weekly mowing, seasonal cleanups, scoped to budget.',
+      'Need a new patio and plantings, a drainage fix, or a maintenance plan? One contractor handles the whole job. Cedar Falls and Waterloo homeowners get one crew from design through install and seasonal care.',
     ],
   },
   'grading': {
@@ -1204,7 +1227,7 @@ export const servicesHubFaqs: ServiceFAQ[] = [
   {
     question: 'Do you serve areas outside Cedar Falls?',
     answer:
-      'Yes. We serve Waterloo and Black Hawk County, Iowa — including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City. We are based in Cedar Falls at 503 Bergstrom Blvd.',
+      'Yes. We serve Waterloo and Black Hawk County, Iowa, including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City. We are based in Cedar Falls at 503 Bergstrom Blvd.',
   },
   {
     question: 'Do you offer free estimates?',
@@ -1228,7 +1251,7 @@ export const serviceBenefits: Record<string, string[]> = {
   'lawn-care': [
     'Mowing at the right height for Iowa grass',
     'Core aeration to loosen compacted soil',
-    'Fertilizer timed for the Cedar Falls, Waterloo, and Black Hawk County growing season',
+    'Fertilizer timed for Cedar Falls, Waterloo, and Black Hawk County growing season',
     'Weed control for the weeds actually in your lawn',
   ],
   'preservation-restoration': [
@@ -1241,7 +1264,7 @@ export const serviceBenefits: Record<string, string[]> = {
     'Pruning and thinning for tree health and storm safety',
     'Tree removal with stump grinding when you need a clean slate',
     'Diagnosis and treatment for common Iowa tree problems',
-    'Storm damage cleanup across the Cedar Falls, Waterloo, and Black Hawk County',
+    'Storm damage cleanup across Cedar Falls, Waterloo, and Black Hawk County',
   ],
   'landscape-maintenance': [
     'Pruning, edging, and bed work through the year',
@@ -1410,11 +1433,11 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'Do you offer lawn care in Cedar Falls, Iowa?',
       answer:
-        'Yes. Lawn care in Cedar Falls, Iowa is a core service — weekly mowing, aeration, fertilization, and weed control for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.',
+        'Yes. Lawn care in Cedar Falls, Iowa is a core service: weekly mowing, aeration, fertilization, and weed control for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'How often do you mow lawns?',
-      answer: 'We typically mow weekly during the growing season, adjusting frequency based on growth rate, rainfall, and seasonal conditions across the Cedar Falls, Waterloo, and Black Hawk County.',
+      answer: 'We typically mow weekly during the growing season, adjusting frequency based on growth rate, rainfall, and seasonal conditions across Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'Do you offer lawn fertilization programs?',
@@ -1496,7 +1519,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'Do you offer commercial landscape maintenance?',
-      answer: 'Yes. We provide maintenance services for commercial properties including HOA common areas, office parks, and retail centers across the Cedar Falls, Waterloo, and Black Hawk County.',
+      answer: 'Yes. We provide maintenance services for commercial properties including HOA common areas, office parks, and retail centers across Cedar Falls, Waterloo, and Black Hawk County.',
     },
   ],
   'ponds-water-features': [
@@ -1528,7 +1551,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'What is a pondless waterfall?',
       answer:
-        'A pondless waterfall recirculates water over stone into a hidden underground reservoir — you get the sound and look of a waterfall without an open pond. It is a popular low-maintenance option for smaller yards.',
+        'A pondless waterfall recirculates water over stone into a hidden underground reservoir. You get the sound and look of a waterfall without an open pond. It is a popular low-maintenance option for smaller yards.',
     },
     {
       question: 'Do I need a permit for a pond or waterfall?',
@@ -1538,7 +1561,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'How long does a water feature last, and what maintenance does it need?',
       answer:
-        'A well-built feature with a quality liner and an accessible pump is meant to last many seasons. Maintenance is seasonal: net leaves, keep filters clear, and winterize equipment before freeze-up. We offer opening and closing so you are not guessing about algae, pumps, or ice. Liners and pumps are wear items — we will tell you what to watch on your specific install.',
+        'A well-built feature with a quality liner and an accessible pump is meant to last many seasons. Maintenance is seasonal: net leaves, keep filters clear, and winterize equipment before freeze-up. We offer opening and closing so you are not guessing about algae, pumps, or ice. Liners and pumps are wear items. We will tell you what to watch on your specific install.',
     },
     {
       question: 'How long does water feature installation take?',
@@ -1564,7 +1587,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'Do you offer snow removal?',
       answer:
-        'Yes. A1 Property Services provides snow removal for driveways, walkways, steps, and commercial lots — including plowing, shoveling, and ice treatment under seasonal contracts.',
+        'Yes. A1 Property Services provides snow removal for driveways, walkways, steps, and commercial lots, including plowing, shoveling, and ice treatment under seasonal contracts.',
     },
     {
       question: 'How much does snow removal cost?',
@@ -1593,12 +1616,12 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'How much does retaining wall installation cost?',
       answer:
-        'Most residential retaining walls are quoted by height, length, materials, and site access — smaller garden walls cost less than tall engineered walls. We provide free on-site estimates so you get an accurate price before work begins.',
+        'Most residential retaining walls are quoted by height, length, materials, and site access: smaller garden walls cost less than tall engineered walls. We provide free on-site estimates so you get an accurate price before work begins.',
     },
     {
       question: 'Do I need a permit for a retaining wall?',
       answer:
-        'Taller walls and walls near property lines may require a building permit and engineered plans. A common threshold in Cedar Falls is 4 feet, measured from the bottom of the footing to the top of the wall — but city rules can change, and neighboring towns are not identical. We review current local requirements during the on-site estimate and flag what the city will ask for. Confirm the height trigger with your city before construction.',
+        'Taller walls and walls near property lines may require a building permit and engineered plans. A common threshold in Cedar Falls is 4 feet, measured from the bottom of the footing to the top of the wall, but city rules can change, and neighboring towns are not identical. We review current local requirements during the on-site estimate and flag what the city will ask for. Confirm the height trigger with your city before construction.',
     },
     {
       question: 'What materials do you use for retaining walls?',
@@ -1623,12 +1646,12 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     {
       question: 'What is the maximum height for a retaining wall?',
       answer:
-        'Residential retaining walls typically range from 2 to 6 feet. A common Cedar Falls threshold is 4 feet for engineered plans and a permit, but confirm with your city — rules can change and neighboring towns are not identical. We design walls to the appropriate height and reinforcement for your site.',
+        'Residential retaining walls typically range from 2 to 6 feet. A common Cedar Falls threshold is 4 feet for engineered plans and a permit, but confirm with your city: rules can change and neighboring towns are not identical. We design walls to the appropriate height and reinforcement for your site.',
     },
     {
       question: 'Do retaining walls add property value?',
       answer:
-        'Yes. A well-built retaining wall adds usable yard space, prevents erosion, and improves curb appeal. Real estate agents in the Cedar Falls, Waterloo, and Black Hawk County consider retaining walls a valuable feature.',
+        'Yes. A well-built retaining wall adds usable yard space, prevents erosion, and improves curb appeal. Real estate agents in Cedar Falls, Waterloo, and Black Hawk County consider retaining walls a valuable feature.',
     },
     {
       question: 'Can a retaining wall fix my drainage problem?',
@@ -1947,7 +1970,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'What size commercial properties do you serve?',
-      answer: 'We serve properties of all sizes, from small retail centers and office parks to large HOA communities and industrial facilities across the Cedar Falls, Waterloo, and Black Hawk County.',
+      answer: 'We serve properties of all sizes, from small retail centers and office parks to large HOA communities and industrial facilities across Cedar Falls, Waterloo, and Black Hawk County.',
     },
   ],
   'residential-landscaping': [
@@ -1961,7 +1984,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'How do I get started with residential landscaping?',
-      answer: 'Contact us for a free on-site estimate. We will walk your property, discuss your goals, and provide a written quote with timeline and pricing.',
+      answer: 'Call or request a free on-site estimate. We walk the property, talk through the job, and send a written quote with timeline and pricing.',
     },
   ],
   'grading': [
@@ -2005,7 +2028,7 @@ export const serviceFaqs: Record<string, ServiceFAQ[]> = {
     },
     {
       question: 'Can I use my outdoor kitchen in the spring and fall?',
-      answer: 'Yes. Fire pits, patio heaters, and overhead infrared heaters extend your outdoor living season from early spring through late fall in the Cedar Falls, Waterloo, and Black Hawk County.',
+      answer: 'Yes. Fire pits, patio heaters, and overhead infrared heaters extend your outdoor living season from early spring through late fall in Cedar Falls, Waterloo, and Black Hawk County.',
     },
     {
       question: 'What appliances work best in outdoor kitchens?',
@@ -2077,6 +2100,10 @@ export const serviceComparisonMeta: Record<string, ComparisonSectionMeta> = {
   'shrub-installation': {
     heading: 'Plant Types We Use',
     intro: 'We select shrubs based on your goals and Iowa growing conditions. Here is how common options compare.',
+  },
+  'excavation': {
+    heading: 'Materials We Use',
+    intro: 'We use quality fill, aggregate, and haul-off methods suited to Iowa soil and freeze-thaw. Here is how they compare.',
   },
 }
 
@@ -2379,7 +2406,7 @@ export const serviceMaterials: Record<string, Material[]> = {
         'Rich color and natural appearance',
         'Adds organic matter to soil as it decomposes',
         'Holds moisture and suppresses weeds effectively',
-        'Affordable and widely available in the Cedar Falls, Waterloo, and Black Hawk County',
+        'Affordable and widely available in Cedar Falls, Waterloo, and Black Hawk County',
       ],
       cons: [
         'Needs annual refresh as it breaks down',
@@ -3583,6 +3610,101 @@ export const serviceMaterials: Record<string, Material[]> = {
       durability: 'Seasonal service. Snow blowing complements plowing and shoveling for complete property coverage.',
     },
   ],
+  'excavation': [
+    {
+      name: 'Cut and Fill / Compacted Native Soil',
+      recommended: true,
+      pros: [
+        'Uses on-site soil when the grade already has enough material',
+        'Cost-effective for most residential cut-and-fill jobs',
+        'Creates usable pads for patios, lawns, and retaining walls',
+        'Proper compaction prevents settling through Iowa freeze-thaw',
+      ],
+      cons: [
+        'Iowa clay can be hard to work when wet',
+        'Poor compaction leads to settling and drainage issues later',
+        'Not plantable as a finish surface without topsoil',
+        'Heavy equipment access is required for efficient work',
+      ],
+      maintenance: 'Monitor for settling after the first few heavy rains. Add fill to any low spots before seeding or sod. Keep disturbed areas covered with grass, mulch, or stone so soil does not erode.',
+      durability: 'Permanent when compacted in lifts. Properly placed fill stays stable for the life of the landscape or hardscape above it.',
+    },
+    {
+      name: 'Class 5 Compactable Aggregate',
+      pros: [
+        'Creates a load-bearing base for patios, driveways, and walkways',
+        'Compacts to a dense, stable layer that drains well',
+        'Resists frost heave better than uncompacted dirt',
+        'Standard base material for Iowa hardscape excavation',
+      ],
+      cons: [
+        'Not a finished walking or driving surface on its own',
+        'Requires plate compaction in lifts for best results',
+        'Dusty during dry installation days',
+        'Must be capped with pavers, concrete, or asphalt',
+      ],
+      maintenance: 'Keep the base graded and compacted until the finished surface is installed. Add material to any settled spots before pavers or concrete go down.',
+      durability: 'Permanent base layer. Properly compacted Class 5 supports hardscape for decades.',
+    },
+    {
+      name: 'Screened Topsoil',
+      pros: [
+        'Finish layer for lawns, beds, and restored excavation areas',
+        'Better plant growth than raw Iowa clay subgrade',
+        'Covers rough cut-and-fill so the site is ready for seed or sod',
+        'Can be blended with compost for new planting beds',
+      ],
+      cons: [
+        'Adds material and delivery cost to excavation projects',
+        'Settles 10-20% in the first season',
+        'Quality varies by supplier if not screened',
+        'Can introduce weeds if the source is not clean',
+      ],
+      maintenance: 'Allow the first season of settling, then top-dress low spots. Seed or sod promptly so rain does not wash the soil away. Test pH before planting if the area will be a garden bed.',
+      durability: 'Permanent soil layer. Annual compost top-dressing keeps planted areas productive.',
+    },
+    {
+      name: 'Clean Drainage Rock',
+      pros: [
+        'Used in trenches, French drains, and wall backfill after excavation',
+        'Keeps water moving instead of pooling in cut areas',
+        'Does not break down like soil backfill',
+        'Pairs with perforated pipe for long-term drainage',
+      ],
+      cons: [
+        'Higher material cost than reusing native soil',
+        'Needs filter fabric so fines do not clog the stone',
+        'Not a planting surface',
+        'Must be hauled in and placed to spec',
+      ],
+      maintenance: 'Keep drain outlets clear of debris. Inspect after major storms. Do not cover drainage rock with soil that can wash into the voids.',
+      durability: 'Permanent. Clean rock does not decompose and keeps excavated drainage systems working for decades.',
+    },
+  ],
+}
+
+export type ServiceDetailContent = {
+  problems: ProblemSolution[]
+  processSteps: ServiceProcessStep[]
+  benefits: string[]
+  equipment: Equipment[]
+  materials: Material[]
+  comparisonMeta: ComparisonSectionMeta
+}
+
+export function getServiceDetailContent(slug: string): ServiceDetailContent {
+  const materials = [...(serviceMaterials[slug] ?? [])].sort(
+    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
+  )
+
+  return {
+    problems: serviceProblemSolutions[slug] ?? [],
+    processSteps: serviceProcessSteps[slug] ?? defaultProcessSteps,
+    benefits: serviceBenefits[slug] ?? [],
+    equipment: serviceEquipment[slug] ?? [],
+    materials,
+    comparisonMeta: serviceComparisonMeta[slug] ?? defaultComparisonMeta,
+  }
 }
 
 export const allServices: Service[] = [...services, ...hardscapeServices]

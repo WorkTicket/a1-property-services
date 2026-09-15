@@ -39,7 +39,7 @@ const resources = [
   },
   {
     title: 'Do I Need a Retaining Wall?',
-    description: 'Signs a sloped Iowa yard needs a structural wall — and when grading or drainage is the better first move.',
+    description: 'Signs a sloped Iowa yard needs a structural wall, and when grading or drainage is the better first move.',
     href: '/learn/do-i-need-a-retaining-wall',
     category: 'Problems',
   },
@@ -69,7 +69,7 @@ const resources = [
   },
   {
     title: 'Mulch vs Rock Landscaping',
-    description: 'Cost, weeds, heat, and maintenance — when hardwood mulch wins and when decorative rock is the better bed.',
+    description: 'Cost, weeds, heat, and maintenance: when hardwood mulch wins and when decorative rock is the better bed.',
     href: '/learn/mulch-vs-rock-landscaping',
     category: 'Comparisons',
   },
@@ -100,7 +100,7 @@ const resources = [
   },
   {
     title: 'Winter Landscaping Tips for Iowa',
-    description: 'Protect your landscape investment through Iowa winters with these practical tips.',
+    description: 'What to do before freeze-up so plants, beds, and hardscape make it through an Iowa winter.',
     href: '/blog/winter-landscaping-tips-iowa',
     category: 'Seasonal',
   },
@@ -246,7 +246,7 @@ const cedarValleyLinks = [
   {
     title: 'Web Soil Survey',
     description:
-      'Look up your property’s soil type — helpful for drainage planning, planting, and grading decisions.',
+      'Look up your property’s soil type. Useful before drainage, planting, or grading work.',
     href: 'https://websoilsurvey.nrcs.usda.gov/',
     source: 'USDA NRCS',
   },
@@ -282,7 +282,7 @@ export default function ResourcesPage() {
         imageAlt="Landscaped Cedar Falls front yard with paver walkway and garden beds"
         eyebrow="Helpful Guides"
         title="Landscaping|Resources"
-        subtitle="Expert guides, checklists, and articles for Cedar Falls and Waterloo homeowners working on landscape projects."
+        subtitle="Checklists, comparisons, and local how-tos for Cedar Falls and Waterloo yards."
       />
 
       <section className="section bg-white">
@@ -299,7 +299,7 @@ export default function ResourcesPage() {
             <p className="section-eyebrow">Before You Dig</p>
             <h2 className="section-heading">For Cedar Falls &amp; Waterloo Homeowners</h2>
             <p className="mt-3 max-w-2xl text-brand-body">
-              Useful official links to review before a landscaping project — permits, utility locates, soil, and plant hardiness for Cedar Falls, Waterloo, and nearby towns.
+              Official links worth checking before you dig: permits, utility locates, soil maps, and plant hardiness for Cedar Falls, Waterloo, and nearby towns.
             </p>
           </FadeIn>
           <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -367,8 +367,8 @@ export default function ResourcesPage() {
       ))}
 
       <CtaBanner
-        title="Need personalized advice?"
-        description="Contact us for a free on-site consultation. We will help you figure out the best approach for your property."
+        title="Want us to look at your yard?"
+        description="We'll walk the lot and tell you what we'd do. Free estimate, no pitch."
       />
     </>
   )

@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const years = getYearsInBusiness()
   return generatePageMetadata({
     title: 'About Us',
-    description: `Meet A1 Property Services — Cedar Falls and Waterloo landscaping and hardscaping experts with ${years} years serving Black Hawk County, Iowa.`,
+    description: `Meet A1 Property Services, Cedar Falls and Waterloo landscaping and hardscaping experts with ${years} years serving Black Hawk County, Iowa.`,
     path: '/about',
   })
 }
@@ -40,7 +40,7 @@ const values = [
   },
   {
     icon: <Heart className="h-6 w-6" />,
-    title: 'Customer First',
+    title: 'Straight With You',
     desc: 'Straight answers, clear pricing, and realistic timelines. Your trust is what keeps us in business.',
   },
   {
@@ -64,7 +64,7 @@ export default function AboutPage() {
 
   const pageSchema = webPageJsonLd({
     name: 'About Us | A1 Property Services',
-    description: `Meet A1 Property Services — Cedar Falls and Waterloo landscaping and hardscaping experts with ${yearsInBusinessPhrase()} serving Black Hawk County, Iowa.`,
+    description: `Meet A1 Property Services, Cedar Falls and Waterloo landscaping and hardscaping experts with ${yearsInBusinessPhrase()} serving Black Hawk County, Iowa.`,
     path: '/about',
     about: 'Landscaping Company',
   })
@@ -99,10 +99,10 @@ export default function AboutPage() {
             <FadeIn direction="left">
               <div className="media-frame relative aspect-[4/3]">
                 <DeferredImage
-                  src={siteImages.aboutCrew}
-                  alt="A1 Property Services crew on a retaining wall jobsite in Cedar Falls, Iowa"
+                  src={siteImages.aboutTeam}
+                  alt="A1 Property Services crew meeting on a retaining wall jobsite in Cedar Falls, Iowa"
                   fill
-                  objectPosition="center 30%"
+                  objectPosition="center"
                   className="transition-transform duration-700 hover:scale-105"
                   sizes={IMAGE_SIZES.halfCol}
                 />
@@ -110,7 +110,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
               <p className="section-eyebrow">Who We Are</p>
-              <h2 className="section-heading mt-4">Your Local Landscaping Partner</h2>
+              <h2 className="section-heading mt-4">Same Crew. Same Town.</h2>
               <p className="mt-6 text-lg leading-relaxed text-brand-body">
                 A1 Property Services {startedInYearPhrase()} because Cedar Falls and Waterloo homeowners needed a crew they could count on. We&apos;re still here, still doing the work.
               </p>
@@ -174,7 +174,7 @@ export default function AboutPage() {
       <EstimateSection
         formLocation="About"
         heading="Ready to Talk About Your Yard?"
-        description="Tell us what you're working on and we'll take it from there — free estimate, no pressure."
+        description="Tell us what you're working on and we'll take it from there. Free estimate, no pressure."
         defaultCity="Cedar Falls"
       />
 

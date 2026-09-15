@@ -319,7 +319,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
         defaultService={study.serviceSlug}
         defaultCity="Cedar Falls"
         heading="Request a quote for a similar project"
-        description="Tell us what is failing on your lot — slope, patio, drainage, or bare beds — and we will follow up with a free estimate."
+        description="Tell us what is failing on your lot (slope, patio, drainage, or bare beds) and we will follow up with a free estimate."
       />
     </>
   )

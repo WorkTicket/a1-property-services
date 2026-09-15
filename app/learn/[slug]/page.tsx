@@ -118,7 +118,7 @@ export default async function LearnArticlePage({ params }: Props) {
       <article className="section bg-white">
         <FadeIn className="section-inner-narrow">
           <Link href="/learn" className="text-sm font-semibold text-brand-green-800 transition-colors hover:text-brand-gold">
-            &larr; Back to Knowledge Center
+            &larr; Back to Guides
           </Link>
           <div className="mt-6 flex items-center gap-3">
             <div className="rounded-lg bg-brand-green-100 p-2">
@@ -181,8 +181,8 @@ export default async function LearnArticlePage({ params }: Props) {
       <section className="section bg-white">
         <div className="section-inner">
           <FadeIn className="mb-10 text-center">
-            <p className="section-eyebrow">Knowledge Center</p>
-            <h2 className="section-heading mt-3">Explore More Resources</h2>
+            <p className="section-eyebrow">Guides</p>
+            <h2 className="section-heading mt-3">More to Read</h2>
           </FadeIn>
           <StaggerContainer className="grid gap-8 lg:grid-cols-2">
             {relatedLearn.map((a) => {
@@ -263,8 +263,8 @@ export default async function LearnArticlePage({ params }: Props) {
       />
 
       <CtaBanner
-        title="Ready to start your project?"
-        description="Contact us for a free consultation. We will walk your Cedar Falls or Waterloo property and give you a clear next step."
+        title="Want a straight answer on your yard?"
+        description="We'll walk your Cedar Falls or Waterloo property and tell you the next step. No pitch, just a plan."
         quoteHref="/contact"
       />
     </div>

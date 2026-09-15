@@ -19,7 +19,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 export const metadata: Metadata = generatePageMetadata({
   title: 'Landscaping & Hardscaping Services',
   description:
-    'Browse every landscaping and hardscaping service we offer in Cedar Falls, Waterloo, and Black Hawk County — walls, patios, lawn care, and more.',
+    'Browse every landscaping and hardscaping service we offer in Cedar Falls, Waterloo, and Black Hawk County: walls, patios, lawn care, and more.',
   path: '/services',
   keywords: servicesHubKeywords,
   ogImage: '/images/services-hero.webp',
@@ -105,7 +105,7 @@ export default function ServicesPage() {
         imageAlt="Landscaping and hardscaping services by A1 Property Services"
         eyebrow="What We Offer"
         title="All Services|Cedar Falls & Waterloo"
-        subtitle="Pick a service to see details and request a quote. Lawn care, hardscaping, drainage, and full installs — same list as the homepage, just complete."
+        subtitle="Pick a service for details and a quote. Lawn care, hardscaping, drainage, and full installs. Same list as the homepage, just complete."
       />
 
       <PageBreadcrumbs
@@ -122,38 +122,6 @@ export default function ServicesPage() {
             <p className="mt-5 text-lg leading-relaxed text-brand-body">
               Every card below opens that service page. Not sure which one you need? Jump to a category or request a free estimate and we&rsquo;ll help you decide.
             </p>
-            <nav aria-label="Popular Cedar Falls pages" className="mt-4 flex flex-wrap items-center justify-center gap-2">
-              <Link
-                href="/landscaping-services-in-cedar-falls"
-                className="rounded-full border border-brand-gold/30 bg-white px-4 py-2 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
-              >
-                Landscaping Cedar Falls
-              </Link>
-              <Link
-                href="/retaining-wall-in-cedar-falls"
-                className="rounded-full border border-brand-gold/30 bg-white px-4 py-2 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
-              >
-                Retaining Walls
-              </Link>
-              <Link
-                href="/paver-patio-installation"
-                className="rounded-full border border-brand-gold/30 bg-white px-4 py-2 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
-              >
-                Paver Patios
-              </Link>
-              <Link
-                href="/paver-driveway-cedar-falls"
-                className="rounded-full border border-brand-gold/30 bg-white px-4 py-2 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
-              >
-                Paver Driveways
-              </Link>
-              <Link
-                href="/cedar-falls-water-features"
-                className="rounded-full border border-brand-gold/30 bg-white px-4 py-2 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-gold/40 hover:text-brand-gold"
-              >
-                Water Features
-              </Link>
-            </nav>
             <nav aria-label="Service categories" className="mt-8 flex flex-wrap items-center justify-center gap-2">
               {serviceNavGroups.map((group) => (
                 <a
@@ -240,7 +208,7 @@ export default function ServicesPage() {
       <EstimateSection
         formLocation="Services Hub"
         heading="Not Sure What You Need?"
-        description="Tell us about your property and we'll recommend the right services — free estimate, no pressure."
+        description="Tell us about your property and we'll recommend the right services. Free estimate, no pressure."
         defaultCity="Cedar Falls"
       />
 

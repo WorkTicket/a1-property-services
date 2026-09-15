@@ -84,7 +84,7 @@ const faqItems = [
   },
   {
     q: 'How much does landscaping cost in Cedar Falls?',
-    a: 'Landscaping cost in Cedar Falls depends on scope — plantings and lawn care cost less than retaining walls or paver patios. We visit your property and give a free written estimate with clear pricing and no surprises.',
+    a: 'Landscaping cost in Cedar Falls depends on scope. Plantings and lawn care cost less than retaining walls or paver patios. We visit your property and give a free written estimate with clear pricing and no surprises.',
   },
   {
     q: 'Are you licensed and insured?',
@@ -92,7 +92,7 @@ const faqItems = [
   },
   {
     q: 'How quickly can you start my project?',
-    a: 'Spring and fall fill up fast. Call (319) 464-1889 or request a quote online — we typically respond within 24 hours and get you on the schedule.',
+    a: 'Spring and fall fill up fast. Call (319) 464-1889 or request a quote online. We typically respond within 24 hours and get you on the schedule.',
   },
   {
     q: 'Do you serve Waterloo and Black Hawk County?',
@@ -134,41 +134,59 @@ export default function HomePage() {
           src={siteImages.homeHero}
           alt="Aerial view of Cedar Falls, Iowa"
           maxWidth={1920}
+          objectPosition="58% 42%"
         />
-        <HeroOverlay imageSrc={siteImages.homeHero} variant="left" />
+        <HeroOverlay imageSrc={siteImages.homeHero} variant="home" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-24 pt-28 sm:px-6 md:min-h-0 md:pb-8 lg:px-8">
-          <div>
-            <HeroCopyDeferred
-              eyebrow={establishedEyebrow()}
-              title={'A1 Property Services, Landscaping in Cedar Falls, IA|Yards Black Hawk County Homeowners Are Proud Of'}
-              subtitle="We design, build, and maintain outdoor spaces in Cedar Falls, Waterloo, and nearby towns. Paver patios, retaining walls, full installs."
-              evenTitleLines
-              titleMaxWidth="64rem"
-            >
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button href="#estimate" trackLabel="Home Hero Quote">
-                  {CTA_COPY.quote}
-                  <ChevronRight className="h-4 w-4" aria-hidden />
-                </Button>
-                <Button href={`tel:${siteConfig.phone}`} variant="ghost" trackLabel="Home Hero Phone">
-                  <Phone className="h-4 w-4" aria-hidden />
-                  {CTA_COPY.callNow}
-                </Button>
-              </div>
-            </HeroCopyDeferred>
+        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-20 pt-28 sm:px-6 md:min-h-0 md:pb-24 lg:px-8">
+          <div className="relative max-w-xl lg:max-w-2xl">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-x-8 -inset-y-10 hidden md:block"
+              style={{
+                background:
+                  'radial-gradient(ellipse at left center, rgba(13,13,13,0.42) 0%, rgba(13,13,13,0.16) 46%, transparent 74%)',
+              }}
+            />
+            <div className="relative">
+              <HeroCopyDeferred
+                eyebrow={establishedEyebrow()}
+                title="Cedar Falls Landscaping|Yards you're proud to come home to"
+                subtitle="A1 Property Services designs, builds, and maintains outdoor spaces in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, and full installs."
+                evenTitleLines
+                titleMaxWidth="36rem"
+                subtitleMaxWidth="34rem"
+              >
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Button href="#estimate" size="lg" trackLabel="Home Hero Quote">
+                    {CTA_COPY.quote}
+                    <ChevronRight className="h-4 w-4" aria-hidden />
+                  </Button>
+                  <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg" trackLabel="Home Hero Phone">
+                    <Phone className="h-4 w-4" aria-hidden />
+                    {CTA_COPY.callNow}
+                  </Button>
+                </div>
+                <p
+                  className="mt-8 hidden text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-white/75 sm:block"
+                  style={{ textShadow: '0 1px 10px rgba(0,0,0,0.45)' }}
+                >
+                  Paver Patios · Retaining Walls · Lawn Care · Full Installs
+                </p>
+              </HeroCopyDeferred>
+            </div>
           </div>
         </div>
 
-        <div className="relative z-10 shrink-0 border-t border-white/10 bg-black/55">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white/85 sm:gap-10">
+        <div className="hero-trust-bar md:absolute md:bottom-5 md:left-1/2 md:w-[min(70rem,calc(100%-2.5rem))] md:-translate-x-1/2 md:rounded-full md:border md:border-white/15 md:bg-black/45 md:shadow-[0_16px_40px_-20px_rgba(0,0,0,0.65)]">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] sm:gap-10 md:px-8">
             <span className="flex items-center gap-1.5">
               <Star size={12} className="fill-brand-gold text-brand-gold" /> 5-Star Rated
             </span>
             <span className="hidden h-3 w-px bg-white/20 sm:block" />
             <span>Licensed &amp; Insured</span>
             <span className="hidden h-3 w-px bg-white/20 sm:block" />
-            <span>Free Estimates</span>
+            <span>Free On-Site Estimates</span>
             <span className="hidden h-3 w-px bg-white/20 sm:block" />
             <span>Cedar Falls &amp; Waterloo</span>
           </div>
@@ -213,20 +231,20 @@ export default function HomePage() {
               View All Services &rarr;
             </Button>
             <p className="mt-3 text-sm text-brand-muted">
-              Lawn care, hardscaping, drainage, and more — organized in one list.
+              Lawn care, hardscaping, drainage, and the rest, all in one list.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* HARDSCAPE RANKING PAGES — same targets as live site footer/CTAs */}
+      {/* HARDSCAPE RANKING PAGES: same targets as live site footer/CTAs */}
       <section className="section bg-white">
         <div className="section-inner">
           <FadeIn className="text-center">
             <p className="section-eyebrow">Hardscaping</p>
             <h2 className="section-heading mt-4">Retaining Walls, Patios, Driveways &amp; Water Features</h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-brand-body">
-              Dedicated pages for our most-requested hardscape services — retaining walls, paver patios, paver driveways, and water features.
+              Walls, patios, driveways, and water features each have their own page if you want the details on how we build them here.
             </p>
           </FadeIn>
           <StaggerContainer className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -328,7 +346,7 @@ export default function HomePage() {
                   src={siteImages.aboutCrew}
                   alt="A1 Property Services crew on a retaining wall jobsite in Cedar Falls, Iowa"
                   fill
-                  objectPosition="center 30%"
+                  objectPosition="center"
                   sizes={IMAGE_SIZES.halfCol}
                 />
               </div>
@@ -430,7 +448,7 @@ export default function HomePage() {
               <div className="form-card">
                 <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
                 <p className="mt-1 text-sm text-brand-muted">
-                  Name and phone are enough — we&rsquo;ll take it from there.
+                  Name and phone are enough. We&rsquo;ll take it from there.
                 </p>
                 <div className="mt-6">
                   <LazyQuoteForm variant="light" formLocation="Homepage" compact />
@@ -456,7 +474,7 @@ export default function HomePage() {
                 >
                   landscaping company
                 </Link>{' '}
-                based in Cedar Falls, Iowa (50613). We serve Waterloo and Black Hawk County homeowners — Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City included.
+                based in Cedar Falls, Iowa (50613). We serve Waterloo and Black Hawk County homeowners, including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City.
               </p>
               <div className="mt-8 space-y-3 text-sm text-brand-body">
                 <p className="flex items-center gap-2">

@@ -8,10 +8,11 @@ import {
   organizationRef,
   siteConfig,
   webPageJsonLd,
+  howToJsonLd,
 } from '@/lib/metadata'
 import type { LegacyLandingPage } from '@/lib/legacy-landing-pages'
 import { primaryAreaServedSchema } from '@/lib/service-area'
-import { getServiceBySlug, getServicePageHref, getLegacyLandingPageHref, serviceFaqs } from '@/lib/services'
+import { getServiceBySlug, getServicePageHref, getLegacyLandingPageHref, getServiceDetailContent, serviceFaqs } from '@/lib/services'
 import { getComplementaryServices, getServiceRelatedContentGroups } from '@/lib/internal-linking'
 import { getLandingProofProjects } from '@/lib/images'
 import { CTA_COPY } from '@/lib/cta'
@@ -20,6 +21,7 @@ import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
 import HubPagePromo from '@/components/sections/HubPagePromo'
 import RelatedContent from '@/components/sections/RelatedContent'
+import ServiceDetailSections from '@/components/sections/ServiceDetailSections'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
 import HeroImagePreload from '@/components/ui/HeroImagePreload'
 import HeroOverlay from '@/components/ui/HeroOverlay'
@@ -50,11 +52,11 @@ export function legacyLandingMetadata(page: LegacyLandingPage) {
 
 export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps) {
   const service = getServiceBySlug(page.serviceSlug)
-  const serviceHref = getServicePageHref(page.serviceSlug)
   const serviceName = service?.name ?? page.h1
   const complementaryServices = getComplementaryServices(page.serviceSlug, 3)
   const relatedContentGroups = getServiceRelatedContentGroups(page.serviceSlug)
   const faqs = serviceFaqs[page.serviceSlug] ?? []
+  const { problems, processSteps, benefits, equipment, materials, comparisonMeta } = getServiceDetailContent(page.serviceSlug)
   const proofProjects = getLandingProofProjects(page.serviceSlug)
   const formLocation = `Legacy ${serviceName}`
 
@@ -96,6 +98,14 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                 { name: page.h1, path: page.path },
               ]),
               ...(faqSchema ? [faqSchema] : []),
+              ...(processSteps.length > 0
+                ? [
+                    howToJsonLd(processSteps, {
+                      name: `How We Deliver ${serviceName}`,
+                      description: `Our step-by-step process for ${serviceName.toLowerCase()} projects in Cedar Falls, Waterloo, and Black Hawk County.`,
+                    }),
+                  ]
+                : []),
             ),
           ),
         }}
@@ -148,7 +158,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                 <p className="section-eyebrow">Recent Work</p>
                 <h2 className="section-heading mt-3">Before &amp; After</h2>
                 <p className="mt-2 max-w-xl text-brand-body">
-                  Real {serviceName.toLowerCase()} projects in Cedar Falls and Waterloo — drag to compare, then open the project.
+                  Real {serviceName.toLowerCase()} projects in Cedar Falls and Waterloo. Drag to compare, then open the project.
                 </p>
               </div>
               <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
@@ -190,10 +200,10 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                         <ChevronRight className="h-4 w-4" aria-hidden />
                       </Button>
                       <Link
-                        href={serviceHref}
+                        href="#process"
                         className="text-sm font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
                       >
-                        Process, materials &amp; gallery
+                        See our process &amp; materials
                       </Link>
                     </div>
                   ) : null}
@@ -269,6 +279,16 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         </section>
       ))}
 
+      <ServiceDetailSections
+        serviceName={serviceName}
+        problems={problems}
+        processSteps={processSteps}
+        benefits={benefits}
+        equipment={equipment}
+        materials={materials}
+        comparisonMeta={comparisonMeta}
+      />
+
       {faqs.length > 0 ? (
         <section className="section bg-white">
           <FadeIn className="section-inner-narrow">
@@ -302,7 +322,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               <h2 className="section-heading mt-3">Request Your Free Estimate</h2>
               <p className="mt-4 leading-relaxed text-brand-body">
                 Tell us about your {serviceName.toLowerCase()} project. We follow up with a clear on-site
-                quote for homes in Cedar Falls, Waterloo, and Black Hawk County — no pressure.
+                quote for homes in Cedar Falls, Waterloo, and Black Hawk County. No pressure.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-brand-body">
@@ -328,10 +348,10 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               <p className="mt-6 text-sm text-brand-body">
                 Prefer more detail first?{' '}
                 <Link
-                  href={serviceHref}
+                  href="#process"
                   className="font-semibold text-brand-green-800 underline-offset-2 hover:text-brand-gold hover:underline"
                 >
-                  Browse the full {serviceName.toLowerCase()} page
+                  See our {serviceName.toLowerCase()} process and materials
                 </Link>
                 .
               </p>

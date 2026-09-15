@@ -109,7 +109,7 @@ export default function TermsPage() {
 
           <h2 className="section-heading mt-12">5. Intellectual Property</h2>
           <p className="mt-4 leading-relaxed text-brand-body">
-            All content on this website—including text, logos, photos, graphics, layout, and branding—is
+            All content on this website, including text, logos, photos, graphics, layout, and branding, is
             owned by {name} or used with permission. You may view and print pages for personal,
             non-commercial use related to evaluating or hiring our services. You may not reproduce,
             distribute, modify, or create derivative works from our content without prior written consent,

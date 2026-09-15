@@ -1,5 +1,9 @@
 import { cn } from '@/lib/utils'
-import { isLeftHeroOverlay, type HeroOverlayVariant } from '@/lib/hero-overlay'
+import {
+  isHomeHeroOverlay,
+  isLeftHeroOverlay,
+  type HeroOverlayVariant,
+} from '@/lib/hero-overlay'
 
 type HeroOverlayProps = {
   imageSrc?: string
@@ -16,6 +20,7 @@ export default function HeroOverlay({
       className={cn(
         'hero-image-overlay pointer-events-none',
         isLeftHeroOverlay(variant) && 'hero-image-overlay-left',
+        isHomeHeroOverlay(variant) && 'hero-image-overlay-home',
         className,
       )}
       aria-hidden="true"

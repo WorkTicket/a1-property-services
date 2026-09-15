@@ -226,7 +226,7 @@ export function getServiceRelatedContentGroups(serviceSlug: string): RelatedCont
   if (blogs.length > 0) groups.push({ heading: 'Related Articles', items: blogs })
 
   const learn = getLearnForService(serviceSlug)
-  if (learn.length > 0) groups.push({ heading: 'Knowledge Center', items: learn })
+  if (learn.length > 0) groups.push({ heading: 'Guides', items: learn })
 
   const projects = getProjectsForService(serviceSlug)
   if (projects.length > 0) groups.push({ heading: 'Project Examples', items: projects })

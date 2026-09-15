@@ -32,7 +32,7 @@ function NavLink(props: ComponentProps<typeof Link>) {
 }
 
 const serviceResourceLinks = [
-  { label: 'Knowledge Center', href: '/learn' },
+  { label: 'Guides', href: '/learn' },
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
 ]

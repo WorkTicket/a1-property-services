@@ -8,7 +8,7 @@ const DISALLOW = ['/api/', '/thank-you', '/?s=']
 /**
  * Explicit allow-list for AI search + training crawlers.
  * Cloudflare managed robots.txt was blocking a subset of these (GPTBot,
- * Google-Extended, ClaudeBot, etc.) while User-agent * still allowed others —
+ * Google-Extended, ClaudeBot, etc.) while User-agent * still allowed others.
  * Ahrefs flags that as an inconsistent training policy and as indexable pages
  * blocked from AI search bots. Keep every named AI bot on the same Allow rules.
  */

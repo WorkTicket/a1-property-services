@@ -21,7 +21,7 @@ const INLINE_ESTIMATE_PATHS = new Set([
   '/services',
 ])
 
-/** Non-city first path segments — everything else with 1–2 segments is a city or city×service page. */
+/** Non-city first path segments. Everything else with 1–2 segments is a city or city×service page. */
 const NON_CITY_ROOTS = new Set([
   'about',
   'gallery',

@@ -1,4 +1,4 @@
-/** Primary SEO service area — Cedar Falls, Waterloo, Black Hawk County only. */
+/** Primary SEO service area: Cedar Falls, Waterloo, Black Hawk County only. */
 export const SERVICE_AREA_LABEL = 'Cedar Falls, Waterloo, and Black Hawk County, Iowa'
 export const SERVICE_AREA_SHORT = 'Cedar Falls & Waterloo'
 export const SERVICE_AREA_TAGLINE = 'Cedar Falls, Waterloo & Black Hawk County'

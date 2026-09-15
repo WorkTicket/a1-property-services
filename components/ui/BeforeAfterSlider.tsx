@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useCallback, useEffect, useState } from 'react'
-import { ChevronsLeftRight } from 'lucide-react'
+import { ChevronsLeftRight, Maximize2 } from 'lucide-react'
 import { buildSrcset, getBlurPlaceholder, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { cn } from '@/lib/utils'
@@ -81,6 +81,7 @@ function SliderPicture({
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority="auto"
+        draggable={false}
         className={cn('absolute inset-0 h-full w-full object-cover [transform:translateZ(0)]', className)}
         style={style}
       />
@@ -170,11 +171,12 @@ export default function BeforeAfterSlider({
   }, [])
 
   const handlePointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return
+
     hasMoved.current = false
     suppressActivate.current = false
     pointerStart.current = { x: e.clientX, y: e.clientY, id: e.pointerId }
     dragIntent.current = 'none'
-    containerRef.current?.setPointerCapture(e.pointerId)
   }
 
   const handlePointerMove = (e: React.PointerEvent) => {
@@ -213,8 +215,12 @@ export default function BeforeAfterSlider({
   }
 
   const endDrag = (e: React.PointerEvent) => {
-    const shouldActivate =
-      Boolean(onActivate) && !suppressActivate.current && !hasMoved.current && Boolean(pointerStart.current)
+    const wasTap =
+      e.type !== 'pointercancel' &&
+      !suppressActivate.current &&
+      !hasMoved.current &&
+      !isDragging.current &&
+      Boolean(pointerStart.current)
 
     resetPointerState()
 
@@ -227,7 +233,10 @@ export default function BeforeAfterSlider({
       containerRef.current.releasePointerCapture(e.pointerId)
     }
 
-    if (shouldActivate) onActivate?.()
+    if (wasTap) {
+      setHintVisible(false)
+      updatePosition(e.clientX)
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -250,89 +259,116 @@ export default function BeforeAfterSlider({
       {title && (
         <h3 className="mb-3 font-display text-xl font-semibold text-brand-dark">{title}</h3>
       )}
-      <div
-        ref={containerRef}
-        role="slider"
-        aria-label="Compare before and after"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={50}
-        tabIndex={0}
-        className={cn(
-          'ba-slider relative cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-xl [contain:layout_paint]',
-          aspectClassName,
-        )}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={endDrag}
-        onPointerCancel={endDrag}
-        onKeyDown={handleKeyDown}
-      >
-        <SliderPicture
-          src={after.src}
-          alt={after.alt}
-          objectPosition={after.objectPosition}
-          priority={after.priority}
-          sizes={resolvedSizes}
-          fallbackWidth={resolvedFallback}
-        />
-
+      <div className={cn('relative overflow-hidden rounded-xl [contain:layout_paint]', aspectClassName)}>
         <div
-          ref={beforeLayerRef}
-          className="ba-slider-before absolute inset-0 [transform:translateZ(0)]"
-          style={{ clipPath: 'inset(0 50% 0 0)' }}
+          ref={containerRef}
+          role="slider"
+          aria-label="Compare before and after"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={50}
+          tabIndex={0}
+          className="ba-slider absolute inset-0 cursor-ew-resize touch-pan-y select-none"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          onKeyDown={handleKeyDown}
         >
           <SliderPicture
-            src={before.src}
-            alt={before.alt}
-            className="saturate-[0.75]"
-            objectPosition={before.objectPosition}
-            priority={before.priority}
+            src={after.src}
+            alt={after.alt}
+            objectPosition={after.objectPosition}
+            priority={after.priority}
             sizes={resolvedSizes}
             fallbackWidth={resolvedFallback}
           />
-        </div>
 
-        <div
-          ref={handleRef}
-          className="ba-slider-handle absolute inset-y-0 z-10 w-12 [transform:translate3d(-50%,0,0)]"
-          style={{ left: '50%' }}
-        >
-          <div className="absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-white shadow-[0_0_10px_rgba(0,0,0,0.45)]" />
           <div
-            className={cn(
-              'absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-brand-gold shadow-lg',
-              featured ? 'h-14 w-14' : 'h-12 w-12 sm:h-10 sm:w-10',
-            )}
+            ref={beforeLayerRef}
+            className="ba-slider-before absolute inset-0 [transform:translateZ(0)]"
+            style={{ clipPath: 'inset(0 50% 0 0)' }}
           >
-            <ChevronsLeftRight
-              className={cn('text-white', featured ? 'h-6 w-6' : 'h-5 w-5 sm:h-4 sm:w-4')}
-              aria-hidden
+            <SliderPicture
+              src={before.src}
+              alt={before.alt}
+              className="saturate-[0.75]"
+              objectPosition={before.objectPosition}
+              priority={before.priority}
+              sizes={resolvedSizes}
+              fallbackWidth={resolvedFallback}
             />
           </div>
+
+          <div
+            ref={handleRef}
+            className={cn(
+              'ba-slider-handle absolute inset-y-0 z-10 [transform:translate3d(-50%,0,0)]',
+              featured ? 'w-24 sm:w-16' : 'w-24 sm:w-14',
+            )}
+            style={{ left: '50%' }}
+          >
+            <div className="absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-white shadow-[0_0_10px_rgba(0,0,0,0.45)]" />
+            <div
+              className={cn(
+                'absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-brand-gold shadow-lg',
+                featured ? 'h-16 w-16 sm:h-14 sm:w-14' : 'h-14 w-14 sm:h-10 sm:w-10',
+              )}
+            >
+              <ChevronsLeftRight
+                className={cn('text-white', featured ? 'h-7 w-7 sm:h-6 sm:w-6' : 'h-6 w-6 sm:h-4 sm:w-4')}
+                aria-hidden
+              />
+            </div>
+          </div>
+
+          <span
+            className={cn(
+              'pointer-events-none absolute bottom-3 left-3 z-20 rounded-md bg-black/60 font-semibold uppercase tracking-wide text-white backdrop-blur-[2px]',
+              featured ? 'px-3 py-1.5 text-[11px]' : 'px-2.5 py-1 text-[10px]',
+            )}
+          >
+            Before
+          </span>
+          <span
+            className={cn(
+              'pointer-events-none absolute bottom-3 right-3 z-20 rounded-md bg-black/60 font-semibold uppercase tracking-wide text-white backdrop-blur-[2px]',
+              featured ? 'px-3 py-1.5 text-[11px]' : 'px-2.5 py-1 text-[10px]',
+            )}
+          >
+            After
+          </span>
+
+          {hint && hintVisible ? (
+            <span
+              className={cn(
+                'pointer-events-none absolute left-1/2 z-20 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm',
+                onActivate ? 'top-16 sm:top-14' : 'top-16 sm:top-3',
+              )}
+            >
+              {hint}
+            </span>
+          ) : null}
         </div>
 
-        <span
-          className={cn(
-            'pointer-events-none absolute bottom-3 left-3 z-20 rounded-md bg-black/60 font-semibold uppercase tracking-wide text-white backdrop-blur-[2px]',
-            featured ? 'px-3 py-1.5 text-[11px]' : 'px-2.5 py-1 text-[10px]',
-          )}
-        >
-          Before
-        </span>
-        <span
-          className={cn(
-            'pointer-events-none absolute bottom-3 right-3 z-20 rounded-md bg-black/60 font-semibold uppercase tracking-wide text-white backdrop-blur-[2px]',
-            featured ? 'px-3 py-1.5 text-[11px]' : 'px-2.5 py-1 text-[10px]',
-          )}
-        >
-          After
-        </span>
-
-        {hint && hintVisible ? (
-          <span className="pointer-events-none absolute left-1/2 top-16 z-20 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm sm:top-3">
-            {hint}
-          </span>
+        {onActivate ? (
+          <button
+            type="button"
+            onPointerDown={(event) => event.stopPropagation()}
+            onClick={(event) => {
+              event.stopPropagation()
+              onActivate()
+            }}
+            className="absolute z-30 inline-flex min-h-11 min-w-11 items-center gap-1.5 rounded-full bg-black/65 px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-colors hover:bg-black/80"
+            style={{
+              top: 'max(0.75rem, env(safe-area-inset-top, 0px))',
+              right: 'max(0.75rem, env(safe-area-inset-right, 0px))',
+            }}
+            aria-label="Preview project"
+          >
+            <Maximize2 className="h-4 w-4" aria-hidden />
+            Preview
+          </button>
         ) : null}
       </div>
     </div>

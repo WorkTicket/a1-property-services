@@ -6016,7 +6016,7 @@
     "height": 682,
     "aspectRatio": 1.501466275659824,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwAwCdASoUAA0APzmGulQvKSWjMAgB4CcJZEwM0HYjQACTwC9yAAD9sfkBznx7Fz1q4blxrjD5MzLB/0t/qUw9vgVJ9k7FU+HAFH/KdWm6OZf/aAslqD/8Yl5adAb75D8XHqlIODytpXtfbAXHp4VMTNDmitAYcTbeCDPzZQNaudeiwO4q69tgAAA=",
+    "blurPlaceholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwAwCdASoUAA0APzmEuVOvKKWisAgB4CcJZEwM6GrpqO8gAL9IAAD7PxkJXmrm7f/9Ll8suDqARZxWRTsDq/NVfXrkPFS4vonU7kxlZlsj9V5//DtZ+STf/GB/Eks0EG4B6/AMnmhpS+QtQ5MdowoQr5Lh12k2D7OfMQ//HHP2LSgpQd6IAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/about-crew-480.avif",
@@ -9747,6 +9747,35 @@
         "768": "/images/generated/article-learn-why-yard-floods-when-it-rains-768.jpeg",
         "1024": "/images/generated/article-learn-why-yard-floods-when-it-rains-1024.jpeg",
         "1280": "/images/generated/article-learn-why-yard-floods-when-it-rains-1280.jpeg"
+      }
+    }
+  },
+  "/images/about-team.webp": {
+    "originalPath": "/images/about-team.webp",
+    "altBase": "about-team",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "isHero": false,
+    "blurPlaceholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBACdASoUAA8APzmGuVOvKSWisAgB4CcJbDuGvt9AF+AdT+MIK0ATOlAA/pMRfmtWLHL0Y+Ae50BMP+pjnlRg49/6A3ypInVN0U8okRuGOfWi90y4hzecaLsvbFv/+fj/8KF5+cz/++hc789g80f9jkn4Mg/shftY3/Cn3D8Gjtc+flr9c+flr9c+fmN0M/77Si/XQkKuXGGAbEbZk7OyisFP6HDYTUd9q8P1G8tAAA==",
+    "variants": {
+      "avif": {
+        "480": "/images/generated/about-team-480.avif",
+        "640": "/images/generated/about-team-640.avif",
+        "768": "/images/generated/about-team-768.avif",
+        "1024": "/images/generated/about-team-1024.avif"
+      },
+      "webp": {
+        "480": "/images/generated/about-team-480.webp",
+        "640": "/images/generated/about-team-640.webp",
+        "768": "/images/generated/about-team-768.webp",
+        "1024": "/images/generated/about-team-1024.webp"
+      },
+      "jpeg": {
+        "480": "/images/generated/about-team-480.jpeg",
+        "640": "/images/generated/about-team-640.jpeg",
+        "768": "/images/generated/about-team-768.jpeg",
+        "1024": "/images/generated/about-team-1024.jpeg"
       }
     }
   }

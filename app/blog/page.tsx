@@ -61,7 +61,7 @@ export default function BlogPage() {
     <section className="border-b border-black/5 bg-white py-10 md:py-12">
       <FadeIn className="section-inner">
         <p className="mx-auto max-w-3xl text-center text-lg leading-relaxed text-brand-body">
-          Practical guides written for Cedar Falls and Waterloo homeowners — from patio planning
+          Practical guides written for Cedar Falls and Waterloo homeowners, from patio planning
           and retaining walls to spring cleanup and lawn care that holds up in Iowa weather.
         </p>
       </FadeIn>

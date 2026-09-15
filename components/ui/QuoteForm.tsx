@@ -25,7 +25,7 @@ type QuoteFormData = z.infer<typeof quoteSchema>
 
 export type QuoteFormProps = {
   variant?: 'light' | 'dark'
-  /** Where this form is embedded — used for GA4 form_location. */
+  /** Where this form is embedded. Used for GA4 form_location. */
   formLocation?: string
   /** Prefill Service Needed (service slug). */
   defaultService?: string

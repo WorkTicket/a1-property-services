@@ -30,7 +30,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     serviceSlug: 'retaining-walls',
     problem: [
       'The backyard sat on a cut hillside that kept washing after spring thaws. Mulch, soil, and anything planted on the slope ended up at the bottom of the lot. There was no flat ground for a patio, and mowing the bank was unsafe.',
-      'Water from the hill also had no controlled path. It sheeted toward the house side of the yard instead of into a drained outlet. The homeowner needed usable space and a wall that would hold Iowa clay through freeze-thaw — not a decorative stack.',
+      'Water from the hill also had no controlled path. It sheeted toward the house side of the yard instead of into a drained outlet. The homeowner needed usable space and a wall that would hold Iowa clay through freeze-thaw, not a decorative stack.',
     ],
     property: [
       'Residential lot in Cedar Falls with a steep excavated bank, limited side-yard access for equipment, and typical Black Hawk County clay. The grade change was too large for planting or a timber border to hold.',
@@ -101,7 +101,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'We laid out an L-shaped segmental wall, excavated, compacted the base, and built the corner so both legs stayed level. Backfill and drain tile went in, then we graded a flat lawn above the wall so the front yard became usable ground instead of a bank.',
     ],
     challenges: [
-      'Front-yard walls have to look finished from the street. Courses, corners, and caps have to stay clean. We also had to keep water from the new upper lawn from spilling over the face — that is what the drain and grade are for.',
+      'Front-yard walls have to look finished from the street. Courses, corners, and caps have to stay clean. We also had to keep water from the new upper lawn from spilling over the face. That is what the drain and grade are for.',
     ],
     result: [
       'The front lawn sits on a level pad. The walk and yard are easier to use, and the wall reads as part of the house approach instead of a leftover slope. Same build details we use on backyard walls: base, gravel, pipe, then the pretty face.',
@@ -161,7 +161,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'We demolished the old surface, rebuilt a compacted aggregate base in lifts, set pavers, installed edge restraint, and finished joints with polymeric sand. The pitch was corrected so rain leaves the patio instead of sitting in the field.',
     ],
     challenges: [
-      'Replacement jobs hide surprises under the old slab or pavers — wet clay, no real base, sometimes buried debris. We budget time to fix the ground, not just swap the top.',
+      'Replacement jobs hide surprises under the old slab or pavers: wet clay, no real base, sometimes buried debris. We budget time to fix the ground, not just swap the top.',
     ],
     result: [
       'The new patio is level, edged, and built for freeze-thaw. Individual pavers can be replaced later if needed. That is the advantage over another poured slab on the same failed subgrade.',
@@ -213,7 +213,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     serviceSlug: 'retaining-walls',
     problem: [
       'The existing block wall had started to lean. Once a segmental wall rotates, more courses and extra gravel in front of it will not save it. Water was loading the face, the base had settled, and the cap line was no longer true.',
-      'The homeowner needed the failed wall out and a drained rebuild — not a cosmetic restack on the same bad footing.',
+      'The homeowner needed the failed wall out and a drained rebuild, not a cosmetic restack on the same bad footing.',
     ],
     property: [
       'Cedar Falls backyard terrace with a failed block wall, clay behind the units, and a toe that needed a finished look once the new wall was plumb. Access for demo and new base work along the existing grade.',
@@ -226,7 +226,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'Rebuilds are slower than new walls because the old units, wet clay, and collapsed base all have to come out first. We had to hold the grade above the trench while the new base went in so the lawn did not slough into the work.',
     ],
     result: [
-      'The wall is plumb, drained, and finished with pea gravel at the toe. If a block wall in Cedar Falls or Waterloo is leaning, this is the repair: new base, drainage, then the face — not another course stacked on a failing wall.',
+      'The wall is plumb, drained, and finished with pea gravel at the toe. If a block wall in Cedar Falls or Waterloo is leaning, this is the repair: new base, drainage, then the face, not another course stacked on a failing wall.',
     ],
     relatedLearn: ['do-i-need-a-retaining-wall', 'planning-retaining-wall-project'],
   },
@@ -275,7 +275,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     ],
     serviceSlug: 'ponds-water-features',
     problem: [
-      'The hillside yard had no centerpiece and the slope was hard to use. The owner wanted moving water built into the grade — not a kit dropped on flat lawn.',
+      'The hillside yard had no centerpiece and the slope was hard to use. The owner wanted moving water built into the grade, not a kit dropped on flat lawn.',
       'A waterfall on a hill only works if the stonework, liner, and retaining edge are planned as one build. Otherwise the feature leaks, the bank washes, and the steps do not line up.',
     ],
     property: [
@@ -316,7 +316,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'We excavated the pond, installed liner and underlayment, built a natural-stone edge and waterfall, set the pump and plumbing, and added planting pockets so the feature tucks into the yard instead of looking like a hole in the lawn.',
     ],
     challenges: [
-      'Working next to the house means protecting the foundation, keeping the waterfall splash in the pond, and leaving the pump accessible for Iowa winters. Fish-ready ponds also need edge treatment that hides the liner without creating a drowning shelf for kids or pets — we design that on site.',
+      'Working next to the house means protecting the foundation, keeping the waterfall splash in the pond, and leaving the pump accessible for Iowa winters. Fish-ready ponds also need edge treatment that hides the liner without creating a drowning shelf for kids or pets. We design that on site.',
     ],
     result: [
       'The lawn is now a koi pond with a stone waterfall. The house has a water feature to look at and listen to, built for Black Hawk County freeze-thaw. Same pond-and-falls sequence we use across Cedar Falls and Waterloo.',
@@ -350,7 +350,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'Long stream runs hide leaks. Every transition has to be sealed and the flow has to stay in the channel in a heavy Iowa rain. The bridge needs a solid bearing that does not settle into the liner. We staged stone and plantings so the yard was usable while the water feature came together.',
     ],
     result: [
-      'The backyard is a pond, stream, and stone bridge with gardens around the water. It is a full landscape, not a kit pond. If you want this scale of water feature in Cedar Falls, the build is excavation, liner, stone, then planting — in that order.',
+      'The backyard is a pond, stream, and stone bridge with gardens around the water. It is a full landscape, not a kit pond. If you want this scale of water feature in Cedar Falls, the build is excavation, liner, stone, then planting: in that order.',
     ],
     relatedLearn: ['why-yard-floods-when-it-rains', 'mulch-vs-rock-landscaping'],
   },
@@ -469,7 +469,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'We demolished the concrete, excavated for a driveway-depth compacted aggregate base, installed driveway-grade pavers with a contrasting border course, edge restraint, and polymeric joint sand.',
     ],
     challenges: [
-      'Driveways fail at the base, not the paver. We compact in lifts and set edge restraint so the field cannot creep. The border is structural as well as visual — it locks the pattern at the garage and the street.',
+      'Driveways fail at the base, not the paver. We compact in lifts and set edge restraint so the field cannot creep. The border is structural as well as visual. It locks the pattern at the garage and the street.',
     ],
     result: [
       'Cracked concrete is gone. The new paver driveway has a contrasting border and a base built for Iowa winters. Individual units can be reset later if anything settles. That is the point of a paver drive versus another poured slab.',
@@ -490,7 +490,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     ],
     serviceSlug: 'paver-driveway',
     problem: [
-      'The asphalt drive was worn out. Alligator cracks, a tired surface, and a look that no longer matched the house. The owner wanted brick pavers in herringbone — a pattern that locks under vehicle traffic.',
+      'The asphalt drive was worn out. Alligator cracks, a tired surface, and a look that no longer matched the house. The owner wanted brick pavers in herringbone: a pattern that locks under vehicle traffic.',
     ],
     property: [
       'Cedar Falls home with an old asphalt driveway, garage apron, and street connection. Asphalt removal plus a new structural base before any brick went down.',
@@ -499,7 +499,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'We removed the asphalt, built a compacted base rated for vehicles, laid a herringbone brick paver field, and finished the edges at the garage and street so the pattern stays locked.',
     ],
     challenges: [
-      'Herringbone has to start square or the pattern walks. Asphalt demo also leaves a contaminated subgrade that has to come out. We cut a clean section, rebuild the base, then lay brick — not pavers over old asphalt.',
+      'Herringbone has to start square or the pattern walks. Asphalt demo also leaves a contaminated subgrade that has to come out. We cut a clean section, rebuild the base, then lay brick, not pavers over old asphalt.',
     ],
     result: [
       'The asphalt is gone. The drive is brick pavers in herringbone with a finished edge. It handles cars and Iowa freeze-thaw, and it reads as an upgrade from the street. This is the brick driveway work we do in Cedar Falls when asphalt is done.',
@@ -550,7 +550,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     ],
     serviceSlug: 'paver-driveway',
     problem: [
-      'The concrete was worn and the edges had started to break. The owner wanted pavers with a decorative border — a defined edge that also keeps the field from creeping.',
+      'The concrete was worn and the edges had started to break. The owner wanted pavers with a decorative border: a defined edge that also keeps the field from creeping.',
     ],
     property: [
       'Cedar Falls driveway with failing concrete edges, a garage connection, and enough width that a soldier-course border would read from the street.',
@@ -592,7 +592,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'The garage slab is the control. The driveway has to pitch away from the door without a lip that catches a snow blade or a low spot that ices. We set the apron grade first, then ran the field to the street.',
     ],
     result: [
-      'The asphalt is gone. A paver driveway now runs to the attached garage with joints finished and water pitched the right way. If your Cedar Falls garage apron is cracked asphalt, this is the replacement: base, pavers, then the door — not another overlay.',
+      'The asphalt is gone. A paver driveway now runs to the attached garage with joints finished and water pitched the right way. If your Cedar Falls garage apron is cracked asphalt, this is the replacement: base, pavers, then the door, not another overlay.',
     ],
     relatedLearn: ['why-yard-floods-when-it-rains', 'landscaping-material-comparison'],
   },
@@ -679,7 +679,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       'We mowed the front yard, trimmed along both walks and the house, edged, and blew off the sidewalks so the corner looked finished.',
     ],
     challenges: [
-      'Corner lots are judged from two street views. Both sidewalks, the line along the house, and the field all have to read as tended. The first cut on a weedy lawn is still a mow — thicker turf and weed control come from a real lawn-care schedule after that.',
+      'Corner lots are judged from two street views. Both sidewalks, the line along the house, and the field all have to read as tended. The first cut on a weedy lawn is still a mow: thicker turf and weed control come from a real lawn-care schedule after that.',
     ],
     result: [
       'The corner front yard is striped and clean at both walks. Curb appeal is back from the street. This is the front-yard mowing we do across Cedar Falls when a lawn needs to look tended before anyone talks about seed or fertilizer.',

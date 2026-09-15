@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Phone, MapPin } from 'lucide-react'
 import { cities, getCityBySlug, getCityServicePageCopy } from '@/lib/cities'
-import { allServices, getCityServicePageHref, getLegacyLandingPageHref, getServiceBySlug, serviceBenefits, serviceFaqs } from '@/lib/services'
-import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd, organizationRef } from '@/lib/metadata'
+import { allServices, getCityServicePageHref, getLegacyLandingPageHref, getServiceBySlug, getServiceDetailContent, serviceFaqs } from '@/lib/services'
+import { generatePageMetadata, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, siteConfig, serviceSeoOverrides, webPageJsonLd, organizationRef, howToJsonLd } from '@/lib/metadata'
 import { CTA_COPY } from '@/lib/cta'
 import { sinceYearPhrase } from '@/lib/years-in-business'
 import { getComplementaryServices, getServiceRelatedContentGroups, getNearbyCitiesForPage } from '@/lib/internal-linking'
@@ -12,6 +12,7 @@ import RelatedContent from '@/components/sections/RelatedContent'
 import Button from '@/components/ui/Button'
 import CtaBanner from '@/components/sections/CtaBanner'
 import EstimateSection from '@/components/sections/EstimateSection'
+import ServiceDetailSections from '@/components/sections/ServiceDetailSections'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -62,7 +63,7 @@ export default async function CityServicePage({ params }: Props) {
   const service = getServiceBySlug(serviceSlug)
   if (!city || !service) notFound()
 
-  const benefits = serviceBenefits[service.slug] ?? []
+  const { problems, processSteps, benefits, equipment, materials, comparisonMeta } = getServiceDetailContent(service.slug)
   const faqs = serviceFaqs[service.slug] ?? []
   const cityFaqs = city.faqs ?? []
   const complementaryServices = getComplementaryServices(service.slug, 4)
@@ -116,10 +117,18 @@ export default async function CityServicePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            jsonLdGraph(
+              jsonLdGraph(
               pageSchema,
               cityServiceJsonLd,
               ...(faqJsonLd ? [faqJsonLd] : []),
+              ...(processSteps.length > 0
+                ? [
+                    howToJsonLd(processSteps, {
+                      name: `How We Deliver ${service.name} in ${city.name}`,
+                      description: `Our step-by-step process for ${service.name.toLowerCase()} projects in ${city.name} and ${city.county} County.`,
+                    }),
+                  ]
+                : []),
               breadcrumbJsonLd([
                 { name: 'Home', path: '/' },
                 { name: city.name, path: `/${city.slug}` },
@@ -163,16 +172,10 @@ export default async function CityServicePage({ params }: Props) {
             <>
               <p className="mt-6 text-lg leading-relaxed text-brand-body">{service.longDesc}</p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                {city.name} is located in {city.county} County with a population of {city.population}. 
-                A1 Property Services provides professional {service.name.toLowerCase()} services to
-                {city.name} homeowners and businesses, including neighborhoods throughout the city and
-                surrounding {city.county} County areas.
+                {city.name} sits in {city.county} County ({city.population} people). We do {service.name.toLowerCase()} for homes and businesses in town and the surrounding county.
               </p>
               <p className="mt-4 leading-relaxed text-brand-body">
-                We are a locally owned landscaping company based in Cedar Falls, just minutes from 
-                {city.name}. Our crews are experienced with the soil conditions, drainage patterns,
-                and plant varieties that perform best in {city.county} County. Every {service.name.toLowerCase()} 
-                project includes proper materials and installation methods rated for Iowa freeze-thaw cycles.
+                We&apos;re based in Cedar Falls, a short drive from {city.name}. The clay, the drainage, and what actually grows in {city.county} County are what we build around. Every {service.name.toLowerCase()} job is specced for Iowa freeze-thaw, not a catalog picture.
               </p>
             </>
           )}
@@ -199,28 +202,25 @@ export default async function CityServicePage({ params }: Props) {
           <h2 className="section-heading">Why {city.name} Homeowners Choose A1 {service.name}</h2>
           <div className="mt-6 space-y-4 leading-relaxed text-brand-body">
             <p>
-              We have been serving {city.name}, Iowa {sinceYearPhrase()}. Our {service.name.toLowerCase()} 
-              services are built on proper techniques and quality materials that hold up through Iowa winters.
-              We provide free on-site estimates, clear timelines, and honest communication from start to finish.
+              We have been doing {service.name.toLowerCase()} in {city.name}, Iowa {sinceYearPhrase()}. Materials and methods that hold up through Iowa winters, a free on-site estimate, and a timeline we can actually keep.
             </p>
             <p>
-              Whether you need a small repair or a full installation, our crew treats your {city.name} property 
-              with the same care we would our own. We are licensed, insured, and committed to doing the job 
-              right the first time.
+              Small repair or a full install, we treat your {city.name} lot like it&apos;s next door. Licensed, insured, and we stay until the job is done right.
             </p>
           </div>
-          {benefits.length > 0 && (
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <li key={benefit} className="flex gap-3 text-brand-body">
-                  <span className="mt-0.5 shrink-0 text-brand-gold">✓</span>
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          )}
         </FadeIn>
       </section>
+
+      <ServiceDetailSections
+        serviceName={service.name}
+        problems={problems}
+        processSteps={processSteps}
+        benefits={benefits}
+        equipment={equipment}
+        materials={materials}
+        comparisonMeta={comparisonMeta}
+        locationPhrase={city.name}
+      />
 
       <section className="section bg-white">
         <FadeIn className="section-inner-narrow">
@@ -229,8 +229,7 @@ export default async function CityServicePage({ params }: Props) {
             <MapPin className="mt-0.5 h-6 w-6 shrink-0 text-brand-gold" />
             <div>
               <p className="leading-relaxed text-brand-body">
-                A1 Property Services provides {service.name.toLowerCase()} throughout {city.name}, {city.county} County, Iowa.
-                We serve all residential neighborhoods and commercial properties in and around {city.name}.
+                We do {service.name.toLowerCase()} throughout {city.name}, {city.county} County, Iowa: homes, businesses, and the neighborhoods in between.
               </p>
               <p className="mt-3 leading-relaxed text-brand-body">
                 Contact us to check availability for your specific location. We typically respond within 24 hours.
@@ -333,8 +332,8 @@ export default async function CityServicePage({ params }: Props) {
       />
 
       <CtaBanner
-        title={`Ready for ${service.name} in ${city.name}?`}
-        description="Call us or request a free quote online. We will get back to you within 24 hours."
+        title={`Need ${service.name.toLowerCase()} in ${city.name}?`}
+        description="Call or request a quote. We usually get back within 24 hours."
         quoteHref="#estimate"
       />
     </>

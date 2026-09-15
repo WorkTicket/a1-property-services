@@ -31,7 +31,7 @@
   }
 
   .skip-link {
-    @apply fixed left-4 top-4 z-[100] -translate-y-full rounded-lg bg-brand-green-800 px-4 py-3 text-sm font-semibold text-white opacity-0 shadow-lg transition-all duration-200 focus-visible:translate-y-0 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white;
+    @apply fixed left-4 top-4 z-[10000] -translate-y-full rounded-lg bg-brand-green-800 px-4 py-3 text-sm font-semibold text-white opacity-0 shadow-lg transition-all duration-200 focus-visible:translate-y-0 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white;
   }
 
   *:focus-visible {
@@ -286,6 +286,28 @@
       );
   }
 
+  .hero-image-overlay-home {
+    background:
+      linear-gradient(
+        105deg,
+        rgba(13, 13, 13, 0.62) 0%,
+        rgba(13, 13, 13, 0.4) 26%,
+        rgba(13, 13, 13, 0.14) 48%,
+        transparent 68%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0.28) 0%,
+        transparent 24%,
+        transparent 58%,
+        rgba(13, 13, 13, 0.5) 100%
+      );
+  }
+
+  .hero-trust-bar {
+    @apply relative z-10 shrink-0 border-t border-white/10 bg-black/40 text-white/80 backdrop-blur-md;
+  }
+
   @media (max-width: 767px) {
     .hero-image-overlay-left {
       background:
@@ -300,6 +322,22 @@
           rgba(13, 13, 13, 0.42) 0%,
           rgba(13, 13, 13, 0.16) 52%,
           transparent 86%
+        );
+    }
+
+    .hero-image-overlay-home {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(13, 13, 13, 0.5) 0%,
+          rgba(13, 13, 13, 0.34) 38%,
+          rgba(13, 13, 13, 0.42) 100%
+        ),
+        linear-gradient(
+          90deg,
+          rgba(13, 13, 13, 0.32) 0%,
+          rgba(13, 13, 13, 0.1) 54%,
+          transparent 82%
         );
     }
   }

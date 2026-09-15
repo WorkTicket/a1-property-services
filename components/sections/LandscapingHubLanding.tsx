@@ -266,7 +266,7 @@ export default function LandscapingHubLanding() {
               <p className="section-eyebrow">Recent Projects</p>
               <h2 className="section-heading mt-3">Work in Cedar Falls, Waterloo &amp; Black Hawk County</h2>
               <p className="mt-2 max-w-xl text-brand-body">
-                Real work from homes we serve — retaining walls, patios, water features, and full installs.
+                Real work from homes we serve: retaining walls, patios, water features, and full installs.
               </p>
             </div>
             <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">

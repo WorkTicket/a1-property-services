@@ -19,7 +19,7 @@ export const landscapingHubPage = {
   path: '/landscaping-services-in-cedar-falls',
   title: 'Landscaping Cedar Falls, IA | Local Crew · Free Estimate',
   description:
-    'Cedar Falls landscaping & hardscaping — retaining walls, custom patios, lawn care. Local crew in Cedar Falls & Waterloo, IA. Free estimate: (319) 464-1889.',
+    'Cedar Falls landscaping & hardscaping: retaining walls, custom patios, lawn care. Local crew in Cedar Falls & Waterloo, IA. Free estimate: (319) 464-1889.',
   keywords: [
     'landscaping cedar falls',
     'cedar falls landscaping',
@@ -52,11 +52,11 @@ export const landscapingHubPage = {
   introHeading: 'A Local Crew That Knows Cedar Falls & Waterloo Yards',
   introParagraphs: [
     'A1 Property Services is the Cedar Falls landscaping company homeowners hire for lawn care, retaining walls, custom patios, and full installs. We are locally owned in Cedar Falls, Iowa (50613) and work across Waterloo and Black Hawk County.',
-    'We plan every project around Iowa clay, freeze-thaw, and how water moves across Black Hawk County lots — from College Hill and North Cedar in Cedar Falls to downtown Waterloo and the Crossroads area. Licensed, insured, and rated 5 stars by local customers.',
+    'We plan every project around Iowa clay, freeze-thaw, and how water moves across Black Hawk County lots, from College Hill and North Cedar in Cedar Falls to downtown Waterloo and the Crossroads area. Licensed, insured, and rated 5 stars by local customers.',
   ],
   coreServicesHeading: 'Hardscape & Landscape Services',
   coreServicesIntro:
-    'Hardscaping in Cedar Falls usually means a wall, a patio, a driveway, or a combination. From retaining walls built for freeze-thaw to custom paver patios, paver driveways, and water features, our crew focuses on work that lasts — drainage that works, quality materials, and clear written estimates.',
+    'Hardscaping in Cedar Falls usually means a wall, a patio, a driveway, or a combination. From retaining walls built for freeze-thaw to custom paver patios, paver driveways, and water features, our crew focuses on work that lasts: drainage that works, quality materials, and clear written estimates.',
   featuredServices: [
     { label: 'Retaining Wall', href: '/retaining-wall-in-cedar-falls' },
     { label: 'Paver Patio', href: '/paver-patio-installation' },
@@ -65,7 +65,7 @@ export const landscapingHubPage = {
   ],
   recentProjects: [
     {
-      title: 'Retaining Wall — Hillside',
+      title: 'Retaining Wall: Hillside',
       description:
         'Block retaining wall with gravel backfill and drain tile on a sloped lot that was washing out after spring thaws.',
       href: '/retaining-wall-in-cedar-falls',
@@ -73,22 +73,22 @@ export const landscapingHubPage = {
       imageAlt: 'Retaining wall installation on a hillside',
     },
     {
-      title: 'Paver Patio — Backyard',
+      title: 'Paver Patio: Backyard',
       description:
-        'Custom paver patio with steps and outdoor living space — compacted base and edge restraint built for Iowa freeze-thaw.',
+        'Custom paver patio with steps and outdoor living space: compacted base and edge restraint built for Iowa freeze-thaw.',
       href: '/paver-patio-installation',
       image: '/images/patio-after-2.webp',
       imageAlt: 'Paver patio installation in a backyard',
     },
     {
-      title: 'Water Feature — Garden',
+      title: 'Water Feature: Garden',
       description: 'Backyard pond with aquatic plants and natural stone edging.',
       href: '/cedar-falls-water-features',
       image: '/images/water-feature-image-3.webp',
       imageAlt: 'Water feature installation with natural stone',
     },
     {
-      title: 'Full Landscape Install — Cedar Falls & Waterloo',
+      title: 'Full Landscape Install: Cedar Falls & Waterloo',
       description:
         'Complete yard transformation with regrading for clay drainage, planting, and hardscape that ties the whole property together.',
       href: '/gallery',
@@ -98,14 +98,14 @@ export const landscapingHubPage = {
   ] satisfies HubRecentProject[],
   allServicesHeading: 'Full-Service Landscape Work in Cedar Falls & Waterloo',
   allServicesIntro:
-    'Installation, maintenance, restoration, and seasonal work for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County — built for Iowa climate and lasting curb appeal.',
+    'Installation, maintenance, restoration, and seasonal work for homes and businesses in Cedar Falls, Waterloo, and Black Hawk County: built for Iowa climate and lasting curb appeal.',
   serviceSections: [
     {
       heading: 'Landscape Installation',
       serviceHref: '/services/landscape-installation',
       serviceLinkLabel: 'landscape installation',
       paragraphs: [
-        'Full landscape installs for local homes and businesses — grading for drainage, healthy plantings, and hardscape that ties the yard together. We plan around how you use the space and Iowa freeze-thaw so the work holds up.',
+        'Full landscape installs for local homes and businesses: grading for drainage, healthy plantings, and hardscape that ties the yard together. We plan around how you use the space and Iowa freeze-thaw so the work holds up.',
       ],
     },
     {
@@ -145,7 +145,7 @@ export const landscapingHubPage = {
       serviceHref: '/paver-driveway-cedar-falls',
       serviceLinkLabel: 'paver driveway',
       paragraphs: [
-        'Heavy-duty paver driveways on a vehicle-depth base — herringbone patterns, decorative borders, and replacement of cracked concrete or worn asphalt built for Iowa freeze-thaw.',
+        'Heavy-duty paver driveways on a vehicle-depth base: herringbone patterns, decorative borders, and replacement of cracked concrete or worn asphalt built for Iowa freeze-thaw.',
       ],
     },
     {
@@ -153,7 +153,7 @@ export const landscapingHubPage = {
       serviceHref: '/cedar-falls-water-features',
       serviceLinkLabel: 'ponds and water features',
       paragraphs: [
-        'Custom ponds, pondless waterfalls, and water gardens sized for your yard — with pumps, filtration, and winterization planned for Iowa seasons.',
+        'Custom ponds, pondless waterfalls, and water gardens sized for your yard, with pumps, filtration, and winterization planned for Iowa seasons.',
       ],
     },
     {
@@ -192,7 +192,7 @@ export const landscapingHubPage = {
     {
       question: 'Do you do hardscaping in Cedar Falls?',
       answer:
-        'Yes. Hardscaping in Cedar Falls is a core part of the work — retaining walls, custom paver patios, paver driveways, and outdoor living built for Iowa freeze-thaw, not as a sideline to mowing.',
+        'Yes. Hardscaping in Cedar Falls is a core part of the work: retaining walls, custom paver patios, paver driveways, and outdoor living built for Iowa freeze-thaw, not as a sideline to mowing.',
     },
     {
       question: 'What landscaping services do you offer in Cedar Falls?',
@@ -202,7 +202,7 @@ export const landscapingHubPage = {
     {
       question: 'How much does landscaping cost in Cedar Falls?',
       answer:
-        'Cost depends on project size, materials, and scope — small plantings start lower, while walls, patios, and full installs are quoted after a site visit. We give free on-site estimates with clear written pricing and no surprises.',
+        'Cost depends on project size, materials, and scope: small plantings start lower, while walls, patios, and full installs are quoted after a site visit. We give free on-site estimates with clear written pricing and no surprises.',
     },
     {
       question: 'Who is the best landscaper near me in Cedar Falls?',
@@ -212,7 +212,7 @@ export const landscapingHubPage = {
     {
       question: 'Do you serve Cedar Falls, Waterloo, and Black Hawk County?',
       answer:
-        'Yes. We are based at 503 Bergstrom Blvd in Cedar Falls, Iowa and serve Waterloo and Black Hawk County — including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City.',
+        'Yes. We are based at 503 Bergstrom Blvd in Cedar Falls, Iowa and serve Waterloo and Black Hawk County, including Hudson, Evansdale, Elk Run Heights, Dunkerton, and La Porte City.',
     },
     {
       question: 'What types of properties do you service?',
@@ -227,13 +227,13 @@ export const landscapingHubPage = {
     {
       question: 'How do I get a quote for my project or maintenance plan?',
       answer:
-        'Call (319) 464-1889 or request a quote online. We assess your property and provide a detailed, transparent estimate — usually within 24 hours.',
+        'Call (319) 464-1889 or request a quote online. We assess your property and provide a detailed, transparent estimate, usually within 24 hours.',
     },
   ],
   faqHeading: 'Frequently Asked Questions',
   contactHeading: 'Contact Your Local Landscaper',
   contactIntro:
-    'Ready to start your project? Fill out the form or call our office. We respond quickly and provide free estimates.',
+    'Call or fill out the form. We get back quickly with a free estimate.',
   closingCopy:
-    'Ready to transform your outdoor space? Our Cedar Falls and Waterloo team is here for lawn care, hardscape installs, and full landscape projects.',
+    'Want a quote? The Cedar Falls and Waterloo crew handles lawn care, hardscape installs, and full landscape projects.',
 }

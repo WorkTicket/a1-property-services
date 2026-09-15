@@ -1,22 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Phone, Check } from 'lucide-react'
-import { getProcessStepIcon } from '@/lib/process-step-icon'
+import { Phone } from 'lucide-react'
 import {
   allServices,
   getServiceBySlug,
   getServicePageHref,
   getLegacyLandingPageHref,
-  serviceBenefits,
+  getServiceDetailContent,
   serviceExtendedContent,
   serviceFaqs,
-  serviceProcessSteps,
-  serviceMaterials,
-  serviceComparisonMeta,
-  defaultComparisonMeta,
-  serviceEquipment,
-  serviceProblemSolutions,
 } from '@/lib/services'
 import { generatePageMetadata, serviceSeoOverrides, siteConfig, breadcrumbJsonLd, faqPageJsonLd, jsonLdGraph, howToJsonLd, webPageJsonLd, organizationRef } from '@/lib/metadata'
 import { getGalleryProjectsForService, getServiceHeroImage, getServiceHeroImageAlt, getServiceContentImage, getServiceContentImageAlt } from '@/lib/images'
@@ -27,6 +20,7 @@ import HubPagePromo from '@/components/sections/HubPagePromo'
 import { CTA_COPY } from '@/lib/cta'
 import Button from '@/components/ui/Button'
 import ServiceIntroSection from '@/components/sections/ServiceIntroSection'
+import ServiceDetailSections from '@/components/sections/ServiceDetailSections'
 import CtaBanner from '@/components/sections/CtaBanner'
 import EstimateSection from '@/components/sections/EstimateSection'
 import GalleryGrid from '@/components/sections/GalleryGrid'
@@ -35,7 +29,6 @@ import PageBreadcrumbs from '@/components/ui/PageBreadcrumbs'
 import ServiceIcon from '@/components/ui/ServiceIcon'
 import FadeIn from '@/components/motion/FadeIn'
 import FaqAccordion from '@/components/ui/FaqAccordion'
-import { cn } from '@/lib/utils'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -69,29 +62,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 }
 
-const defaultProcessSteps = [
-  {
-    title: 'Consultation',
-    description: 'We meet with you on-site to discuss your goals, assess your property, and understand your budget.',
-  },
-  {
-    title: 'Planning',
-    description: 'We coordinate scheduling, permits, and site prep so the work goes smoothly without delays.',
-  },
-  {
-    title: 'Execution',
-    description: 'Our crew does the work the right way: safe setup, solid workmanship, and a finished job that holds up.',
-  },
-  {
-    title: 'Cleanup',
-    description: 'Every job site is thoroughly cleaned. We remove debris and restore disturbed areas before we leave.',
-  },
-  {
-    title: 'Final Walkthrough',
-    description: 'We review the completed work with you, answer questions, and make sure everything meets your expectations.',
-  },
-]
-
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params
   const service = getServiceBySlug(slug)
@@ -101,15 +71,8 @@ export default async function ServicePage({ params }: Props) {
   const complementaryServices = getComplementaryServices(service.slug, 3)
   const relatedContentGroups = getServiceRelatedContentGroups(service.slug)
 
-  const benefits = serviceBenefits[service.slug] ?? []
-  const problems = serviceProblemSolutions[service.slug] ?? []
   const faqs = serviceFaqs[service.slug] ?? []
-  const processSteps = serviceProcessSteps[service.slug] ?? defaultProcessSteps
-  const materialsArray = [...(serviceMaterials[service.slug] ?? [])].sort(
-    (a, b) => Number(Boolean(b.recommended)) - Number(Boolean(a.recommended)),
-  )
-  const comparisonMeta = serviceComparisonMeta[service.slug] ?? defaultComparisonMeta
-  const equipmentArray = serviceEquipment[service.slug] ?? []
+  const { problems, processSteps, benefits, equipment, materials, comparisonMeta } = getServiceDetailContent(service.slug)
   const extended = serviceExtendedContent[service.slug]
   const galleryProjects = getGalleryProjectsForService(service.slug)
   const heroImage = getServiceHeroImage(service.slug)
@@ -202,178 +165,15 @@ export default async function ServicePage({ params }: Props) {
         imageAlt={contentImageAlt ?? heroImageAlt}
       />
 
-      {problems.length > 0 && (
-        <section className="section bg-brand-stone">
-          <FadeIn className="section-inner">
-            <h2 className="section-heading text-center">Common Problems We Solve</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              Every property is different, but these are the most common challenges we help Cedar Falls and Waterloo homeowners overcome.
-            </p>
-            <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {problems.map((item) => (
-                <StaggerItem key={item.problem}>
-                  <div className="card h-full p-6">
-                    <div className="flex items-start gap-3">
-                      <div className="rounded-full bg-brand-green-100 p-2">
-                        <Check size={16} className="text-brand-green-700" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-brand-dark/60">The Problem</p>
-                        <p className="mt-1 font-bold text-brand-dark">{item.problem}</p>
-                        <p className="mt-3 text-sm leading-relaxed text-brand-body">
-                          <span className="font-semibold text-brand-green-700">Solution: </span>
-                          {item.solution}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </FadeIn>
-        </section>
-      )}
-
-      {processSteps.length > 0 && (
-        <section className="section bg-white">
-          <FadeIn className="section-inner-narrow">
-            <h2 className="section-heading">Our {service.name} Process</h2>
-            <p className="mt-4 text-brand-body">We follow a proven process to deliver consistent results on every project.</p>
-            <ol className="relative mt-10 space-y-8 before:absolute before:bottom-2 before:left-5 before:top-2 before:w-px before:bg-brand-gold/20">
-              {processSteps.map((step) => {
-                const StepIcon = getProcessStepIcon(step.title)
-                return (
-                  <li key={step.title} className="relative flex gap-5">
-                    <span
-                      className="relative z-[1] flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-gold text-white shadow-[0_8px_18px_-8px_rgba(158,27,36,0.8)]"
-                      aria-hidden="true"
-                    >
-                      <StepIcon size={18} strokeWidth={2} />
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-bold text-brand-dark">{step.title}</h3>
-                      <p className="mt-1 leading-relaxed text-brand-body">{step.description}</p>
-                    </div>
-                  </li>
-                )
-              })}
-            </ol>
-          </FadeIn>
-        </section>
-      )}
-
-      {benefits.length > 0 && (
-        <section className="section bg-brand-stone">
-          <FadeIn className="section-inner-narrow">
-            <h2 className="section-heading">What You Get with {service.name}</h2>
-            <StaggerContainer className="mt-8 grid gap-4 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <StaggerItem key={benefit}>
-                  <div className="flex items-start gap-3 rounded-lg bg-white p-4 shadow-sm">
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green-700 text-xs font-bold text-white" aria-hidden="true">
-                      <Check size={14} />
-                    </span>
-                    <span className="text-brand-body">{benefit}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </FadeIn>
-        </section>
-      )}
-
-      {equipmentArray.length > 0 && (
-        <section className="section bg-white">
-          <FadeIn className="section-inner">
-            <h2 className="section-heading text-center">Equipment We Use</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              We use quality equipment to get every job done right.
-            </p>
-            <div className="mt-10 space-y-10">
-              {equipmentArray.map((equipment) => (
-                <div key={equipment.name} className="rounded-xl border border-black/5 bg-brand-stone p-6 md:p-8">
-                  <h3 className="text-xl font-bold text-brand-dark">{equipment.name}</h3>
-                  <ul className="mt-4 space-y-3">
-                    {equipment.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-sm text-brand-body">
-                        <Check size={14} className="mt-0.5 shrink-0 text-brand-green-700" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </section>
-      )}
-
-      {materialsArray.length > 0 && (
-        <section className="section bg-white">
-          <FadeIn className="section-inner">
-            <h2 className="section-heading text-center">{comparisonMeta.heading}</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              {comparisonMeta.intro}
-            </p>
-            <div className="mt-10 space-y-10">
-              {materialsArray.map((material) => (
-                <div
-                  key={material.name}
-                  className={cn(
-                    'rounded-xl border p-6 md:p-8',
-                    material.recommended
-                      ? 'border-brand-gold/50 bg-white ring-2 ring-brand-gold/25 shadow-[0_4px_24px_rgba(158,27,36,0.08)]'
-                      : 'border-black/5 bg-brand-stone',
-                  )}
-                >
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="text-xl font-bold text-brand-dark">{material.name}</h3>
-                    {material.recommended ? (
-                      <span className="inline-flex items-center rounded-full bg-brand-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold">
-                        Recommended
-                      </span>
-                    ) : null}
-                  </div>
-                  <div className="mt-6 grid gap-6 md:grid-cols-2">
-                    <div>
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-green-700">Pros</p>
-                      <ul className="space-y-2">
-                        {material.pros.map((pro) => (
-                          <li key={pro} className="flex gap-2 text-sm text-brand-body">
-                            <Check size={14} className="mt-0.5 shrink-0 text-brand-green-700" />
-                            <span>{pro}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-body/60">Cons</p>
-                      <ul className="space-y-2">
-                        {material.cons.map((con) => (
-                          <li key={con} className="flex gap-2 text-sm text-brand-body">
-                            <span className="mt-0.5 shrink-0 text-brand-gold">&#x2715;</span>
-                            <span>{con}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="mt-6 grid gap-4 border-t border-black/10 pt-6 sm:grid-cols-2">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-brand-green-700">Maintenance</p>
-                      <p className="mt-1 text-sm leading-relaxed text-brand-body">{material.maintenance}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-brand-green-700">Durability</p>
-                      <p className="mt-1 text-sm leading-relaxed text-brand-body">{material.durability}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </section>
-      )}
+      <ServiceDetailSections
+        serviceName={service.name}
+        problems={problems}
+        processSteps={processSteps}
+        benefits={benefits}
+        equipment={equipment}
+        materials={materials}
+        comparisonMeta={comparisonMeta}
+      />
 
       {galleryProjects.length > 0 && (
         <section className="section bg-brand-stone">
@@ -444,14 +244,14 @@ export default async function ServicePage({ params }: Props) {
       <EstimateSection
         formLocation={`Service ${service.name}`}
         heading={`Get a Free ${service.name} Quote`}
-        description={`Tell us about your ${service.name.toLowerCase()} project. We'll follow up with a clear on-site estimate — no pressure.`}
+        description={`Tell us about your ${service.name.toLowerCase()} project. We'll follow up with a clear on-site estimate. No pressure.`}
         defaultService={service.slug}
         defaultCity="Cedar Falls"
       />
 
       <CtaBanner
-        title="Ready to get started?"
-        description="Call us today or request a free quote online."
+        title="Want a number on this job?"
+        description="Call or request a quote. We'll come look at the property."
         quoteHref="#estimate"
       />
 

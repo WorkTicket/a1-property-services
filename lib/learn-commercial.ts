@@ -4,7 +4,7 @@ export const commercialLearnArticles = [
     slug: 'why-yard-floods-when-it-rains',
     title: 'Why Does My Yard Flood When It Rains?',
     excerpt:
-      'The real reasons Cedar Falls and Waterloo yards pond after a storm — clay soil, grade, downspouts, and compacted lawn — and how to tell which fix you actually need.',
+      'The real reasons Cedar Falls and Waterloo yards pond after a storm (clay soil, grade, downspouts, and compacted lawn) and how to tell which fix you actually need.',
     category: 'educational',
     categoryLabel: 'Drainage Problems',
     keywords: [
@@ -18,14 +18,14 @@ export const commercialLearnArticles = [
         heading: 'Flooding after rain is a drainage path problem',
         paragraphs: [
           'If your Cedar Falls or Waterloo yard turns into a pond every time it rains, the water is not mysterious. It is following gravity through clay that does not soak in fast enough, over a grade that points the wrong way, or out of downspouts that dump next to the house. Black Hawk County soil holds water. A 1-inch storm that would disappear in sandy ground can sit here for days. That standing water kills grass, breeds mosquitoes, and works toward the foundation.',
-          'The search that brings people here is usually some version of “why does my yard flood when it rains.” The useful answer is a diagnosis, not a product. French drains, catch basins, and regrading all work — on the right problem. Using the wrong one is how you spend money and still own a swamp.',
+          'The search that brings people here is usually some version of “why does my yard flood when it rains.” The useful answer is a diagnosis, not a product. French drains, catch basins, and regrading all work, but only on the right problem. Using the wrong one is how you spend money and still own a swamp.',
         ],
       },
       {
         heading: 'Four causes we see on local lots',
         paragraphs: [
           'Clay and compaction come first. After years of mowing, kids, and construction traffic, the top few inches of lawn get tight. Rain hits, sits, and runs to the nearest low spot. Core aeration helps a lawn drink. It will not fix a bowl in the middle of the yard or a slope that aims at the basement wall.',
-          'Grade is the second cause. The ground around a house should fall away about six inches in the first ten feet. A lot of Cedar Falls and Waterloo homes settled the other way after the builder left, or a patio and garden bed changed how water moves. Downspouts are the third. If they empty at the foundation, that roof water has nowhere to go except into the yard and, eventually, the basement. The fourth is a missing outlet — a low corner with no pipe, swale, or catch basin, so every storm fills the same hole.',
+          'Grade is the second cause. The ground around a house should fall away about six inches in the first ten feet. A lot of Cedar Falls and Waterloo homes settled the other way after the builder left, or a patio and garden bed changed how water moves. Downspouts are the third. If they empty at the foundation, that roof water has nowhere to go except into the yard and, eventually, the basement. The fourth is a missing outlet: a low corner with no pipe, swale, or catch basin, so every storm fills the same hole.',
         ],
       },
       {
@@ -75,7 +75,7 @@ export const commercialLearnArticles = [
     slug: 'do-i-need-a-retaining-wall',
     title: 'Do I Need a Retaining Wall?',
     excerpt:
-      'Clear signs your Cedar Falls or Waterloo slope needs a retaining wall — and when grading, planting, or drainage is the better first move.',
+      'Clear signs your Cedar Falls or Waterloo slope needs a retaining wall, and when grading, planting, or drainage is the better first move.',
     category: 'educational',
     categoryLabel: 'Retaining Walls',
     keywords: [
@@ -131,7 +131,7 @@ export const commercialLearnArticles = [
       {
         question: 'Do I need a permit for a retaining wall in Cedar Falls?',
         answer:
-          'Walls over four feet typically need a building permit and engineered plans in Cedar Falls. Lower garden walls often do not. We check the height during the estimate and flag what the city will ask for — confirm the current trigger with your city before construction.',
+          'Walls over four feet typically need a building permit and engineered plans in Cedar Falls. Lower garden walls often do not. We check the height during the estimate and flag what the city will ask for. Confirm the current trigger with your city before construction.',
       },
     ],
   },
@@ -139,7 +139,7 @@ export const commercialLearnArticles = [
     slug: 'why-wont-grass-grow-in-my-yard',
     title: 'Why Won’t Grass Grow in My Yard?',
     excerpt:
-      'Why cool-season lawns fail in Cedar Falls and Waterloo clay — shade, compaction, water, and soil — and which fix actually grows grass.',
+      'Why cool-season lawns fail in Cedar Falls and Waterloo clay (shade, compaction, water, and soil) and which fix actually grows grass.',
     category: 'educational',
     categoryLabel: 'Lawn Problems',
     keywords: [
@@ -152,7 +152,7 @@ export const commercialLearnArticles = [
       {
         heading: 'Patchy grass is a diagnosis, not a seed brand',
         paragraphs: [
-          '“Why won’t grass grow in my yard” is one of the most common lawn questions we get in Cedar Falls and Waterloo. People buy another bag of seed, water for a week, and watch the same bare spots come back. Cool-season grass — Kentucky bluegrass, rye, tall fescue — will grow here. It will not grow on compacted clay, in deep shade, in a puddle, or on soil that is still builder fill.',
+          '“Why won’t grass grow in my yard” is one of the most common lawn questions we get in Cedar Falls and Waterloo. People buy another bag of seed, water for a week, and watch the same bare spots come back. Cool-season grass (Kentucky bluegrass, rye, tall fescue) will grow here. It will not grow on compacted clay, in deep shade, in a puddle, or on soil that is still builder fill.',
           'Fix the reason it died. Then seed or sod. Doing it in reverse is how you pay twice.',
         ],
       },
@@ -185,7 +185,7 @@ export const commercialLearnArticles = [
       {
         question: 'Why does grass die in the same spots every year?',
         answer:
-          'Those spots are usually wet, compacted, shady, or poor soil — not a bad seed brand. Until you fix the condition, new grass fails the same way.',
+          'Those spots are usually wet, compacted, shady, or poor soil, not a bad seed brand. Until you fix the condition, new grass fails the same way.',
       },
       {
         question: 'Is fall or spring better for fixing a patchy Iowa lawn?',
@@ -223,7 +223,7 @@ export const commercialLearnArticles = [
       {
         heading: 'Realistic Cedar Falls numbers',
         paragraphs: [
-          'A small repair — say 1,000 to 2,000 square feet after a drainage or patio project — might be a few hundred dollars for the hydroseed if we are already on site, more if it is a standalone visit. A new-home lawn of 5,000 to 10,000 square feet often lands in the low thousands once you include finish grading and topsoil. Steep slopes, extra tackifier, and custom seed mixes (shade, steep bank, or a higher bluegrass percentage) push the price up.',
+          'A small repair (say 1,000 to 2,000 square feet after a drainage or patio project) might be a few hundred dollars for the hydroseed if we are already on site, more if it is a standalone visit. A new-home lawn of 5,000 to 10,000 square feet often lands in the low thousands once you include finish grading and topsoil. Steep slopes, extra tackifier, and custom seed mixes (shade, steep bank, or a higher bluegrass percentage) push the price up.',
           'Sod in this market commonly runs several times the hydroseed application cost because you are buying mature turf and more labor. Hydroseeding wins on large areas and on slopes where sod is hard to peg. Sod wins when you need a usable lawn in days, not weeks, or when the lot will wash before seed can root.',
         ],
       },
@@ -267,7 +267,7 @@ export const commercialLearnArticles = [
     slug: 'mulch-vs-rock-landscaping',
     title: 'Mulch vs Rock Landscaping',
     excerpt:
-      'A practical comparison of hardwood mulch and decorative rock for Iowa beds — cost, weeds, drainage, and when each one actually wins.',
+      'A practical comparison of hardwood mulch and decorative rock for Iowa beds: cost, weeds, drainage, and when each one actually wins.',
     category: 'comparison',
     categoryLabel: 'Material Comparison',
     keywords: [
@@ -287,7 +287,7 @@ export const commercialLearnArticles = [
       {
         heading: 'Cost over five years, not day one',
         paragraphs: [
-          'Mulch is cheaper to install. A typical bed refresh is a modest material and labor bill every year or two. Rock costs more up front — fabric, edging, and hauling stone — then you stop buying bags. Over five to ten years, rock can win on cash if the bed stays planted as-is. If you change plants, digging through rock and fabric is miserable. That labor is the hidden cost.',
+          'Mulch is cheaper to install. A typical bed refresh is a modest material and labor bill every year or two. Rock costs more up front (fabric, edging, and hauling stone) then you stop buying bags. Over five to ten years, rock can win on cash if the bed stays planted as-is. If you change plants, digging through rock and fabric is miserable. That labor is the hidden cost.',
           'Iowa freeze-thaw heaves poorly edged rock into the lawn. Mulch blows or washes on a steep slope unless the grade and edging are right. Neither material fixes a bed that dumps water toward the house. Drainage still comes first.',
         ],
       },
@@ -295,14 +295,14 @@ export const commercialLearnArticles = [
         heading: 'Weeds, heat, and plants',
         paragraphs: [
           'Mulch suppresses weeds when it is 2 to 3 inches deep and not piled on stems. It cools soil and helps new shrubs through July. Rock does not improve soil. In full sun it holds heat, which some plants hate. We use rock around foundations where mulch against siding is a pest and moisture problem, in dry creek beds, and in beds designed for heat-tolerant plants.',
-          'If the goal is a planted Iowa garden — perennials, hydrangeas, hydrangeas that need organic matter — mulch. If the goal is a clean, low-care strip with boulders and a few tough shrubs, rock. Our rock landscaping and mulching services are built around that split, not around selling one product for every bed.',
+          'If the goal is a planted Iowa garden (perennials, hydrangeas, hydrangeas that need organic matter) mulch. If the goal is a clean, low-care strip with boulders and a few tough shrubs, rock. Our rock landscaping and mulching services are built around that split, not around selling one product for every bed.',
         ],
       },
       {
         heading: 'A simple way to choose',
         paragraphs: [
           'Walk the bed and ask how often you will change it, whether it stays wet, and whether you want to improve the soil. Mixed yards are normal: mulch in the planted front beds, rock in the drainage swale and along the garage drip line. We will quote both and tell you where mixing them looks intentional instead of leftover.',
-          'If you are comparing materials for a larger hardscape project, the Iowa hardscape comparison and retaining wall material guides cover pavers and block. Mulch versus rock is the bed decision. Get it right and the plants — or the lack of plants — will look like you meant it.',
+          'If you are comparing materials for a larger hardscape project, the Iowa hardscape comparison and retaining wall material guides cover pavers and block. Mulch versus rock is the bed decision. Get it right and the plants (or the lack of plants) will look like you meant it.',
         ],
       },
     ],
@@ -331,7 +331,7 @@ export const commercialLearnArticles = [
     slug: 'best-grass-seed-for-iowa',
     title: 'Best Grass Seed for Iowa',
     excerpt:
-      'Which cool-season grasses actually work in Cedar Falls and Waterloo — sun, shade, clay, and the mixes we use when we hydroseed.',
+      'Which cool-season grasses actually work in Cedar Falls and Waterloo: sun, shade, clay, and the mixes we use when we hydroseed.',
     category: 'educational',
     categoryLabel: 'Iowa Lawn Guide',
     keywords: [
@@ -351,7 +351,7 @@ export const commercialLearnArticles = [
       {
         heading: 'Sunny lawns versus shade',
         paragraphs: [
-          'Full sun lawns that get mowed and fertilized do well with a Kentucky bluegrass blend or a bluegrass/rye mix. Bluegrass spreads, fills in, and looks like the lawn people picture. It wants sun, water while it establishes, and fall feeding. Perennial rye germinates fast, which is why it is in hydroseed mixes — it nurses the slower bluegrass.',
+          'Full sun lawns that get mowed and fertilized do well with a Kentucky bluegrass blend or a bluegrass/rye mix. Bluegrass spreads, fills in, and looks like the lawn people picture. It wants sun, water while it establishes, and fall feeding. Perennial rye germinates fast, which is why it is in hydroseed mixes. It nurses the slower bluegrass.',
           'Shade under maples is a different plant. Fine fescues (creeping red, chewings, hard fescue) handle lower light and poorer soil better than bluegrass. Tall fescue has deeper roots and takes heat and clay well, with a coarser blade. A deep-shade yard may still be a bed, not a lawn. Seed will not invent sunlight.',
         ],
       },

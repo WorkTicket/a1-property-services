@@ -60,9 +60,10 @@ export default function LazyProjectCard({ project, onSelect }: LazyProjectCardPr
         <div className="overflow-hidden rounded-xl bg-white shadow-card">
           <div className="aspect-[4/3] bg-neutral-200" />
           <div className="space-y-2 p-5">
-            <div className="h-3 w-24 rounded bg-neutral-200" />
-            <div className="h-6 w-40 rounded bg-neutral-200" />
-            <div className="h-4 w-full rounded bg-neutral-200" />
+            <div className="h-4 w-28 rounded bg-neutral-200" />
+            <div className="h-6 w-56 rounded bg-neutral-200" />
+            <div className="h-3 w-36 rounded bg-neutral-200" />
+            <div className="h-[2.625rem] w-full rounded bg-neutral-200" />
           </div>
         </div>
       )}

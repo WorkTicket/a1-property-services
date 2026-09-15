@@ -3,7 +3,7 @@
 import { useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
-import { MapPin, Phone, X } from 'lucide-react'
+import { ArrowUpRight, MapPin, Phone, X } from 'lucide-react'
 import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 import Button from '@/components/ui/Button'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
@@ -166,9 +166,10 @@ export default function ProjectModal({ projectId, onClose }: ProjectModalProps) 
                   <Link
                     href={caseStudyHref}
                     onClick={onClose}
-                    className="text-sm text-brand-green-800 transition-colors hover:text-brand-gold"
+                    className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-brand-green-800/10 px-3.5 py-2.5 text-sm font-semibold text-brand-green-800 transition-colors hover:bg-brand-green-800/15 hover:text-brand-gold"
                   >
                     Project overview
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
                   </Link>
                 </p>
               ) : null}

@@ -47,15 +47,15 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'comparing-landscaping-estimates',
     title: 'How to Compare Landscaping Estimates',
-    excerpt: 'Learn what to look for when reviewing landscaping bids so you can compare them fairly and choose the best value for your project.',
+    excerpt: 'What to check on landscaping bids so you can compare them fairly instead of just picking the lowest number.',
     category: 'educational',
     categoryLabel: 'Hiring Advice',
     sections: [
       {
         heading: 'Why estimates can look so different',
         paragraphs: [
-          'Getting multiple estimates is a smart move when planning any landscaping project. But comparing them is harder than it looks. One bid comes in at $8,000, another at $12,000, and a third at $15,000. The natural instinct is to go with the lowest number. But without understanding what each estimate includes, you are comparing apples to oranges. The cheapest bid may leave out critical steps like base preparation, drainage, or proper excavation. The most expensive one may include premium materials and a longer warranty.',
-          'The goal is not to find the lowest price. It is to find the best value for the specific scope of work your property needs. That starts with reading every estimate carefully and understanding what is included in each line item before you make a decision.',
+          'Getting a few estimates is smart. Comparing them is the hard part. One bid comes in at $8,000, another at $12,000, a third at $15,000. The cheap one is tempting. If you do not know what is in each bid, you are not comparing the same job. The low number may skip base prep, drainage, or real excavation. The high one may include better materials and a longer warranty.',
+          'You are not shopping for the smallest number. You are shopping for the right scope at a price that holds up. Read the line items before you pick.',
         ],
       },
       {
@@ -94,21 +94,21 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'questions-before-hiring-landscaper',
     title: 'Questions to Ask Before Hiring a Landscaper',
-    excerpt: 'Seven essential questions to ask any landscaping contractor before you sign a contract or hand over a deposit.',
+    excerpt: 'Seven questions worth asking a landscaping contractor before you sign anything or put down a deposit.',
     category: 'educational',
     categoryLabel: 'Hiring Advice',
     sections: [
       {
         heading: 'Are you licensed and insured?',
         paragraphs: [
-          'This is the most important question you can ask. A licensed contractor has met the basic requirements to operate in your area. Insurance protects you if someone gets hurt on your property or if equipment damages your home. General liability insurance covers property damage, and workers compensation covers injuries to crew members. If a contractor cannot provide proof of both, do not hire them. You could be held financially responsible for an accident on your property.',
+          'Start here. A licensed contractor has met the basic requirements to work in your area. Insurance covers you if someone gets hurt on your property or if equipment hits the house. General liability covers property damage. Workers compensation covers the crew. If they cannot show proof of both, do not hire them. You could be on the hook for an accident in your yard.',
           'In Iowa, licensing requirements vary by city and county. Contractors who carry proper insurance and licensing tend to run tighter jobs. Ask for certificates and verify them if you want to be sure.',
         ],
       },
       {
-        heading: 'How long have you been serving the Cedar Falls, Waterloo, and Black Hawk County?',
+        heading: 'How long have you been serving Cedar Falls, Waterloo, and Black Hawk County?',
         paragraphs: [
-          'Experience in a specific region matters. A contractor who has worked in the Cedar Falls, Waterloo, and Black Hawk County for years understands the local soil conditions, climate patterns, and common challenges that come with Iowa landscapes. They know how clay soil behaves, what freeze-thaw cycles do to hardscape, and which plants thrive in Black Hawk County. That local knowledge translates to better recommendations and longer-lasting results.',
+          'Experience in a specific region matters. A contractor who has worked in Cedar Falls, Waterloo, and Black Hawk County for years understands the local soil conditions, climate patterns, and common challenges that come with Iowa landscapes. They know how clay soil behaves, what freeze-thaw cycles do to hardscape, and which plants thrive in Black Hawk County. That local knowledge translates to better recommendations and longer-lasting results.',
           'A newer company may still do excellent work, but you want to confirm they have experience with projects similar to yours. Ask for examples of work they have completed in the area, not just photos from other regions.',
         ],
       },
@@ -155,7 +155,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'planning-retaining-wall-project',
     title: 'Planning a Retaining Wall Project',
-    excerpt: 'A step-by-step guide to planning a retaining wall, from assessing your slope to choosing materials and navigating permits.',
+    excerpt: 'How to plan a retaining wall: slope, materials, drainage, and when Cedar Falls actually wants a permit.',
     category: 'educational',
     categoryLabel: 'Project Planning',
     sections: [
@@ -169,7 +169,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Assess your site conditions',
         paragraphs: [
-          'The success of a retaining wall depends on what is happening below ground. Soil type, drainage patterns, frost depth, and the height of the wall all determine the engineering requirements. In the Cedar Falls, Waterloo, and Black Hawk County, heavy clay soil is common, and it expands significantly when wet and frozen. A wall built on clay without proper base preparation and drainage will fail over time.',
+          'The success of a retaining wall depends on what is happening below ground. Soil type, drainage patterns, frost depth, and the height of the wall all determine the engineering requirements. In Cedar Falls, Waterloo, and Black Hawk County, heavy clay soil is common, and it expands significantly when wet and frozen. A wall built on clay without proper base preparation and drainage will fail over time.',
           'A professional site assessment includes evaluating the slope, testing the soil, checking for underground utilities, and determining the frost line depth. For walls over four feet tall, engineered plans are typically required, and those plans start with a thorough understanding of the site conditions.',
         ],
       },
@@ -183,7 +183,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Choose the right material',
         paragraphs: [
-          'We install segmental concrete block as the standard residential wall. It is engineered for soil retention, handles freeze-thaw well, and offers design flexibility. Natural stone is a premium option when you want a more organic face. We do not install timber, boulder, or poured-concrete retaining walls. If a timber wall on your property is failing, we replace it with block — or natural stone as a premium face.',
+          'We install segmental concrete block as the standard residential wall. It is engineered for soil retention, handles freeze-thaw well, and offers design flexibility. Natural stone is a premium option when you want a more organic face. We do not install timber, boulder, or poured-concrete retaining walls. If a timber wall on your property is failing, we replace it with block, or natural stone as a premium face.',
           'Your choice should factor in the wall height, aesthetic goals, budget, and how much maintenance you are willing to do over the long term. We will walk you through the trade-offs for your specific project.',
         ],
       },
@@ -223,7 +223,7 @@ export const learnArticles: LearnArticle[] = [
       {
         heading: 'Paver patios: the most popular choice',
         paragraphs: [
-          'Concrete pavers are the most common patio material in the Cedar Falls, Waterloo, and Black Hawk County, and for good reason. They offer excellent durability in freeze-thaw conditions because individual pavers can shift slightly without cracking. If a paver does get damaged, you can replace it without affecting the rest of the patio. Pavers come in a wide range of colors, shapes, and patterns, giving you plenty of design flexibility.',
+          'Concrete pavers are the most common patio material in Cedar Falls, Waterloo, and Black Hawk County, and for good reason. They offer excellent durability in freeze-thaw conditions because individual pavers can shift slightly without cracking. If a paver does get damaged, you can replace it without affecting the rest of the patio. Pavers come in a wide range of colors, shapes, and patterns, giving you plenty of design flexibility.',
           'The installation process for pavers is labor-intensive but critical to performance. A proper base of compacted aggregate, a leveling sand layer, edge restraints, and polymeric joint sand all work together to create a stable surface that drains well and stays level. The quality of the base preparation matters more than the pavers themselves.',
         ],
       },
@@ -256,7 +256,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'preparing-landscaping-consultation',
     title: 'Preparing for a Landscaping Consultation',
-    excerpt: 'How to get the most out of your landscaping consultation with practical tips on what to prepare and what to ask.',
+    excerpt: 'What to have ready before a landscaper walks the lot, so the visit is useful instead of a sales chat.',
     category: 'educational',
     categoryLabel: 'Getting Started',
     sections: [
@@ -303,7 +303,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'seasonal-landscape-maintenance',
     title: 'Seasonal Landscape Maintenance: A Year-Round Guide',
-    excerpt: 'A practical month-by-month guide to keeping your Iowa landscape healthy and attractive through every season.',
+    excerpt: 'What to do in spring, summer, fall, and winter so an Iowa yard does not get ahead of you.',
     category: 'educational',
     categoryLabel: 'Maintenance',
     sections: [
@@ -311,7 +311,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Spring: cleanup and preparation',
         paragraphs: [
           'Spring in Iowa is unpredictable, but the work that needs doing is consistent every year. Start with a thorough cleanup of landscape beds. Rake out leaves, pull early weeds, and remove debris that accumulated over winter. Edge your beds to create clean lines between lawn and planting areas. Once the beds are clean, assess what survived winter and what needs replacing.',
-          'Prune summer-blooming shrubs before new growth starts. Leave spring-blooming shrubs like lilacs until after they flower. Apply pre-emergent weed control to the lawn before soil temperatures reach 55 degrees. Wait until the soil has warmed up before applying fresh mulch, typically late April or early May in the Cedar Falls, Waterloo, and Black Hawk County.',
+          'Prune summer-blooming shrubs before new growth starts. Leave spring-blooming shrubs like lilacs until after they flower. Apply pre-emergent weed control to the lawn before soil temperatures reach 55 degrees. Wait until the soil has warmed up before applying fresh mulch, typically late April or early May in Cedar Falls, Waterloo, and Black Hawk County.',
         ],
       },
       {
@@ -343,7 +343,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'landscaping-budget-planning',
     title: 'Landscaping Budget Planning: What to Expect and How to Plan',
-    excerpt: 'Practical guidance on budgeting for landscaping projects, from a small refresh to a full yard redo.',
+    excerpt: 'What landscaping actually costs, where to spend, and how to phase a yard without blowing the budget.',
     category: 'buying-guide',
     categoryLabel: 'Budget Guide',
     sections: [
@@ -390,7 +390,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'landscaping-material-comparison',
     title: 'Landscaping Material Comparison Guide',
-    excerpt: 'An objective comparison of common hardscape and landscape materials to help you choose the right options for your project.',
+    excerpt: 'Pavers, stone, mulch, and wall block compared for Iowa freeze-thaw, cost, and how much upkeep they actually need.',
     category: 'comparison',
     categoryLabel: 'Material Comparison',
     sections: [
@@ -412,7 +412,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Retaining wall materials compared',
         paragraphs: [
           'Segmental concrete block is the standard for residential retaining walls. These blocks are engineered for structural performance, interlock for stability, and handle freeze-thaw well. Installation is efficient, and the blocks come in a range of colors and textures. This is the best balance of performance, appearance, and cost for most projects.',
-          'Natural stone retaining walls offer a premium aesthetic but require more skill and time to install. They work well for lower walls and garden features. Timber is a common older-yard wall in Iowa, but it has the shortest lifespan — typically 10 to 15 years here — and we do not install it. When a timber wall is rotting or leaning, we replace it with segmental block.',
+          'Natural stone retaining walls offer a premium aesthetic but require more skill and time to install. They work well for lower walls and garden features. Timber is a common older-yard wall in Iowa, but it has the shortest lifespan (typically 10 to 15 years here) and we do not install it. When a timber wall is rotting or leaning, we replace it with segmental block.',
         ],
       },
       {
@@ -437,7 +437,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'landscaping-project-timelines',
     title: 'Landscaping Project Timelines: What to Expect',
-    excerpt: 'How long does a landscaping project take? A realistic guide to timelines for common residential projects.',
+    excerpt: 'How long a patio, wall, or full yard job really takes in Iowa, including weather delays.',
     category: 'buying-guide',
     categoryLabel: 'Project Planning',
     sections: [
@@ -484,7 +484,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'landscape-maintenance-expectations',
     title: 'Landscape Maintenance Expectations: What to Plan For',
-    excerpt: 'A realistic overview of what it takes to maintain a healthy, attractive landscape in the Cedar Falls, Waterloo, and Black Hawk County throughout the year.',
+    excerpt: 'What weekly, seasonal, and hardscape upkeep actually looks like on a Cedar Falls or Waterloo lot.',
     category: 'buying-guide',
     categoryLabel: 'Maintenance Guide',
     sections: [
@@ -531,7 +531,7 @@ export const learnArticles: LearnArticle[] = [
   {
     slug: 'common-landscaping-mistakes',
     title: 'Common Landscaping Mistakes and How to Avoid Them',
-    excerpt: 'Learn from the most frequent landscaping mistakes homeowners make and how to avoid them in your own yard.',
+    excerpt: 'The landscaping mistakes we see most on Cedar Falls and Waterloo lots, and how to skip them on yours.',
     category: 'buying-guide',
     categoryLabel: 'Tips & Advice',
     sections: [
@@ -546,7 +546,7 @@ export const learnArticles: LearnArticle[] = [
         heading: 'Choosing materials based on looks alone',
         paragraphs: [
           'It is natural to choose materials based on appearance. But looks are only part of the equation. Every material has performance characteristics that affect how it holds up in Iowa climate. A material that looks beautiful in a showroom may crack, fade, or shift after a few freeze-thaw cycles if it is not suited to local conditions.',
-          'Ask about how materials perform in Iowa specifically. Check with contractors who have experience with local conditions. Look at how materials age by visiting completed projects in your area. The best choice combines good looks with proven performance in the Cedar Falls, Waterloo, and Black Hawk County climate.',
+          'Ask about how materials perform in Iowa specifically. Check with contractors who have experience with local conditions. Look at how materials age by visiting completed projects in your area. The best choice combines good looks with proven performance in Cedar Falls, Waterloo, and Black Hawk County climate.',
         ],
       },
       {

@@ -34,10 +34,10 @@ export const cities: City[] = [
     heroEyebrow: 'Cedar Falls, Iowa · 50613',
     heroTitle: 'Services in Cedar Falls|Walls, Patios & Lawns',
     heroSubtitle:
-      'Browse the landscaping and hardscaping services we offer Cedar Falls, IA homeowners — then see our full company page for the complete picture.',
+      'Browse the landscaping and hardscaping services we offer Cedar Falls, IA homeowners, then see our full company page for the complete picture.',
     metaTitle: 'Cedar Falls, IA Landscaping | Walls & Patios',
     metaDescription:
-      'Cedar Falls, Iowa landscaping — retaining walls, paver patios, lawn care & hardscaping in Black Hawk County. Call (319) 464-1889.',
+      'Cedar Falls, Iowa landscaping: retaining walls, paver patios, lawn care & hardscaping in Black Hawk County. Call (319) 464-1889.',
     metaKeywords: [
       'cedar falls landscaping',
       'cedar falls iowa landscaping',
@@ -52,10 +52,10 @@ export const cities: City[] = [
     ],
     introHeading: 'What We Offer Cedar Falls Homeowners',
     introBody: [
-      'From this page you can jump into the specific services Cedar Falls, Iowa homeowners hire us for most — retaining walls on sloped lots, paver patios for the backyard, weekly lawn care, and more. Each service page covers how we build for Iowa winters and Black Hawk County soil.',
+      'From this page you can jump into the specific services Cedar Falls, Iowa homeowners hire us for most: retaining walls on sloped lots, paver patios for the backyard, weekly lawn care, and more. Each service page covers how we build for Iowa winters and Black Hawk County soil.',
     ],
     introBody2: [
-      'We\u2019re based here in Cedar Falls, so we know the clay, the drainage, and what grows in College Hill, North Cedar, and South Cedar Falls. For the full overview of our landscaping company — process, projects, and FAQs — visit our dedicated landscaping hub.',
+      'We\u2019re based here in Cedar Falls, so we know the clay, the drainage, and what grows in College Hill, North Cedar, and South Cedar Falls. For the full overview of our landscaping company (process, projects, and FAQs), visit our landscaping hub.',
     ],
     servicesIntro:
       'Pick a service below to learn how we handle it in Cedar Falls, or open our full landscaping hub for the complete company overview.',
@@ -100,7 +100,7 @@ export const cities: City[] = [
       'Full-service landscaping, hardscaping, and lawn care for Waterloo, Iowa homes and businesses.',
     metaTitle: 'Landscaping Company in Waterloo, IA | A1 Property Services',
     metaDescription:
-      'Waterloo, IA landscaping — retaining walls, paver patios & lawn care in Black Hawk County. Free estimates: (319) 464-1889.',
+      'Waterloo, IA landscaping: retaining walls, paver patios & lawn care in Black Hawk County. Free estimates: (319) 464-1889.',
     metaKeywords: [
       'landscaping waterloo ia',
       'waterloo landscaping',
@@ -114,7 +114,7 @@ export const cities: City[] = [
     ],
     introHeading: 'Waterloo Landscaping for Your Property',
     introBody: [
-      'Waterloo, Iowa yards come in all shapes. Older neighborhoods have big mature trees that need careful pruning. Newer developments need fresh plantings and layout. We handle both the same way we always have: show up, do the work, do it right — across downtown Waterloo, the Crossroads area, and residential streets throughout Black Hawk County.',
+      'Waterloo, Iowa yards come in all shapes. Older neighborhoods have big mature trees that need careful pruning. Newer developments need fresh plantings and layout. We handle both the same way we always have: show up, do the work, do it right: across downtown Waterloo, the Crossroads area, and residential streets throughout Black Hawk County.',
     ],
     introBody2: [
       'Residential lawns, commercial properties, retaining walls, paver patios, full yard installs, and seasonal lawn care in Waterloo, IA. Our crews are based a few minutes away in Cedar Falls, so we can get eyes on your Waterloo property fast.',
@@ -132,7 +132,7 @@ export const cities: City[] = [
       },
       {
         q: 'Do you offer lawn care in Waterloo, Iowa?',
-        a: 'Yes. Weekly and seasonal lawn care for Waterloo, IA homes and businesses — mowing, trimming, aeration, and weed control. Call (319) 464-1889 for a free estimate.',
+        a: 'Yes. Weekly and seasonal lawn care for Waterloo, IA homes and businesses: mowing, trimming, aeration, and weed control. Call (319) 464-1889 for a free estimate.',
       },
       {
         q: 'Do you install retaining walls in Waterloo?',
@@ -227,7 +227,7 @@ export const cities: City[] = [
     ],
     introHeading: 'Evansdale Landscaping That Fits',
     introBody: [
-      'Evansdale sits on the east side of the Waterloo metro along US-20, with Gilbertville next door. From our Cedar Falls shop it is a short run on regular Waterloo-area routes, so weekly mowing and hardscape quotes stay on a local schedule — not a special trip from out of county.',
+      'Evansdale sits on the east side of the Waterloo metro along US-20, with Gilbertville next door. From our Cedar Falls shop it is a short run on regular Waterloo-area routes, so weekly mowing and hardscape quotes stay on a local schedule, not a special trip from out of county.',
     ],
     introBody2: [
       'Lots here are practical: established trees, modest slopes, and mixed residential and commercial frontage along the highway. Black Hawk County clay still holds water after storms. We handle that with grading, French drains, or a wall when the slope needs it.',
@@ -385,11 +385,11 @@ export const cities: City[] = [
     ],
     introHeading: 'Jesup Landscaping, Buchanan County',
     introBody: [
-      'Jesup sits on the Black Hawk–Buchanan county line along US-20, east of Cedar Falls. Homeowners here get the same crew, pricing approach, and freeze-thaw specs we use in Black Hawk County — not a watered-down out-of-area visit.',
+      'Jesup sits on the Black Hawk–Buchanan county line along US-20, east of Cedar Falls. Homeowners here get the same crew, pricing approach, and freeze-thaw specs we use in Black Hawk County, not a watered-down out-of-area visit.',
     ],
     introBody2: [
       'Larger lots and farmstead edges are common. That can mean more lawn, longer drainage runs, and equipment access that is actually easier than a tight Waterloo side yard. We still check clay, tile, and where water goes after a storm before we recommend a wall or patio.',
-      'We have done everything in Jesup from full yard installations to simple weekly mowing. Drainage after heavy rain is a frequent call — French drains, downspout extensions, and regrading are regular fixes on this side of the county line.',
+      'We have done everything in Jesup from full yard installations to simple weekly mowing. Drainage after heavy rain is a frequent call: French drains, downspout extensions, and regrading are regular fixes on this side of the county line.',
     ],
     servicesIntro:
       'Complete landscaping and hardscaping services for Jesup homes and businesses.',
@@ -486,7 +486,7 @@ export const cities: City[] = [
     ],
     introHeading: 'La Porte City Landscaping You Can Count On',
     introBody: [
-      'La Porte City sits in southern Black Hawk County on the Cedar River, south of Waterloo. River-adjacent lots and older downtown streets along Main Street have their own drainage and access quirks — we plan around them instead of copying a Cedar Falls layout.',
+      'La Porte City sits in southern Black Hawk County on the Cedar River, south of Waterloo. River-adjacent lots and older downtown streets along Main Street have their own drainage and access quirks. We plan around them instead of copying a Cedar Falls layout.',
     ],
     introBody2: [
       'Sloped yards toward the river, clay that stays wet after spring rain, and established trees on older lots are common here. Retaining walls, regrading, and paver work all start with how water leaves the property.',
@@ -645,14 +645,14 @@ export const cities: City[] = [
       'Dunkerton sits in northeast Black Hawk County along Iowa Highway 281. Properties here are often larger than in-town Waterloo lots, with more open wind, farmstead edges, and clay that holds water in low corners after a heavy rain.',
     ],
     introBody2: [
-      'We cover Dunkerton on regular Black Hawk County routes — mowing through the growing season, snow in winter, and hardscape installs when you are ready for a wall or patio. Rural access is usually easier for equipment than a tight College Hill driveway, which can keep install days cleaner.',
+      'We cover Dunkerton on regular Black Hawk County routes: mowing through the growing season, snow in winter, and hardscape installs when you are ready for a wall or patio. Rural access is usually easier for equipment than a tight College Hill driveway, which can keep install days cleaner.',
       'If your Dunkerton yard ponds after storms or a wall is leaning, we will walk the grade and quote a segmental block replacement built for freeze-thaw, not a decorative stack. Same quality and fair pricing whether it is a weekly mow or a full yard redo.',
     ],
     servicesIntro:
       'Complete landscaping and hardscaping services for Dunkerton homes.',
     uniqueContent: {
       heading: 'Northeast Black Hawk County, Same Crew Standard',
-      body: 'Dunkerton is a small town with larger lots. That means more lawn to keep, more room for a patio, and sometimes longer drainage runs to a ditch or tile. We are based in Cedar Falls and treat Dunkerton as in-area work. Fair pricing, written estimates, and walls and pavers with a real base — the same spec we use in town.',
+      body: 'Dunkerton is a small town with larger lots. That means more lawn to keep, more room for a patio, and sometimes longer drainage runs to a ditch or tile. We are based in Cedar Falls and treat Dunkerton as in-area work. Fair pricing, written estimates, and walls and pavers with a real base: the same spec we use in town.',
     },
     faqs: [
       {
@@ -692,13 +692,13 @@ const cityServicePageCopy: Record<string, CityServicePageCopy> = {
   'cedar-falls/lawn-care': {
     title: 'Cedar Falls Lawn Care | College Hill to North Cedar',
     description:
-      'Weekly lawn care for Cedar Falls neighborhoods — College Hill, North Cedar, and South Cedar Falls. Mowing, aeration, and weed control. Call (319) 464-1889.',
+      'Weekly lawn care for Cedar Falls neighborhoods: College Hill, North Cedar, and South Cedar Falls. Mowing, aeration, and weed control. Call (319) 464-1889.',
     heading: 'Lawn Care for Cedar Falls Neighborhoods',
     relatedHref: '/services/lawn-care',
     relatedLabel: 'full lawn care program',
     paragraphs: [
       'Lawn care in Cedar Falls is neighborhood work. College Hill lots sit under mature trees. North Cedar yards take more sun. South Cedar Falls clay holds water after a storm. We mow at Iowa height, aerate in fall, and time weed control so crabgrass does not own the lawn by July.',
-      'This page is for Cedar Falls homes that want a local crew on a weekly route — not a one-size program copied from another city. Here we cover how we actually run mowing routes in 50613.',
+      'This page is for Cedar Falls homes that want a local crew on a weekly route, not a one-size program copied from another city. Here we cover how we actually run mowing routes in 50613.',
       'Call (319) 464-1889 or request a quote. We will look at the grass you have, not a brochure mix, and tell you whether you need mowing only or a full-season program.',
     ],
   },

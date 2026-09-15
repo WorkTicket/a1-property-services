@@ -35,7 +35,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Segmental retaining wall block', 'Compacted base', 'Drainage gravel', 'Topsoil for finish grade'],
   },
   'wall-3': {
-    title: 'Failing Block Wall Rebuild',
+    title: 'Block Wall Replacement',
     description:
       'A leaning block wall was rebuilt with a new face, pea gravel finish, and a clean cap line.',
     scopeOfWork:
@@ -43,7 +43,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Segmental wall block', 'Pea gravel', 'Drain pipe', 'Compacted aggregate'],
   },
   'wall-4': {
-    title: 'Front Yard Retaining Wall',
+    title: 'Front Yard Wall Rebuild',
     description:
       'A sloped front yard was leveled with an L-shaped retaining wall so the lawn and walk sit on usable ground.',
     scopeOfWork:
@@ -51,7 +51,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Segmental retaining wall block', 'Compacted base', 'Gravel backfill', 'Cap units'],
   },
   'wall-5': {
-    title: 'Garage-Side Retaining Wall',
+    title: 'Garage Wall Replacement',
     description:
       'A damaged wall along the garage was rebuilt and capped with decorative gravel for drainage and a finished look.',
     scopeOfWork:
@@ -59,7 +59,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Retaining wall block', 'Decorative gravel', 'Drain pipe', 'Compacted base'],
   },
   'patio-1': {
-    title: 'Raised Paver Patio',
+    title: 'Raised Patio With Steps',
     description:
       'A backyard slope became a raised paver patio with stone steps and a retaining wall so the space is actually usable.',
     scopeOfWork:
@@ -75,7 +75,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Concrete pavers', 'Compacted aggregate base', 'Polymeric sand', 'Edge restraint'],
   },
   'patio-ba-3': {
-    title: 'Patio with Fire Pit',
+    title: 'Fire Pit Patio Install',
     description:
       'Worn lawn became a paver patio with a fire pit and seating area for evenings outside.',
     scopeOfWork:
@@ -83,7 +83,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Concrete pavers', 'Fire pit kit / stone', 'Polymeric sand', 'Compacted base'],
   },
   'patio-ba-4': {
-    title: 'Patio & Fire Pit',
+    title: 'Backyard Fire Pit Patio',
     description:
       'A bare backyard got a new paver patio, stone fire pit, and space for Adirondack chairs.',
     scopeOfWork:
@@ -91,7 +91,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Concrete pavers', 'Stone fire pit', 'Polymeric sand', 'Edge restraint'],
   },
   'patio-ba-5': {
-    title: 'Patio & Pergola',
+    title: 'Patio And Pergola Build',
     description:
       'Open lawn became a paver patio with a pergola and lounge seating for shade and outdoor living.',
     scopeOfWork:
@@ -99,7 +99,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Concrete pavers', 'Pergola', 'Polymeric sand', 'Compacted aggregate base'],
   },
   'water-1': {
-    title: 'Backyard Waterfall',
+    title: 'Backyard Stone Waterfall',
     description:
       'A hillside yard became a multi-tiered stone waterfall with a retaining wall and garden steps.',
     scopeOfWork:
@@ -107,7 +107,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Natural stone', 'Pond liner', 'Waterfall pump', 'Retaining wall block', 'Decorative gravel'],
   },
   'water-2': {
-    title: 'Pond & Waterfall',
+    title: 'Pond Waterfall Feature',
     description:
       'Backyard lawn next to the house became a koi pond with a stone waterfall.',
     scopeOfWork:
@@ -115,7 +115,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['EPDM pond liner', 'Natural stone', 'Pump and plumbing', 'Gravel', 'Aquatic planting pockets'],
   },
   'water-3': {
-    title: 'Pond & Stream',
+    title: 'Pond Stream Installation',
     description:
       'A backyard was built out with a pond, flowing stream, stone bridge, and surrounding gardens.',
     scopeOfWork:
@@ -123,7 +123,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Pond liner', 'Natural stone', 'Stone bridge', 'Pump', 'Landscape plantings'],
   },
   'driveway-ba-1': {
-    title: 'Paver Driveway',
+    title: 'Paver Driveway Install',
     description:
       'Cracked concrete was replaced with a paver driveway and a contrasting border.',
     scopeOfWork:
@@ -131,7 +131,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Driveway-grade pavers', 'Border pavers', 'Compacted aggregate base', 'Polymeric sand', 'Edge restraint'],
   },
   'driveway-ba-2': {
-    title: 'Brick Paver Driveway',
+    title: 'Herringbone Paver Drive',
     description:
       'Old asphalt came out for a brick paver driveway in a herringbone pattern.',
     scopeOfWork:
@@ -139,7 +139,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Brick pavers', 'Herringbone layout', 'Compacted base', 'Edge restraint', 'Polymeric sand'],
   },
   'driveway-ba-3': {
-    title: 'Modern Paver Driveway',
+    title: 'Modern Driveway Pavers',
     description:
       'A plain concrete drive was replaced with gray pavers sized to a modern farmhouse.',
     scopeOfWork:
@@ -155,7 +155,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Driveway pavers', 'Decorative border', 'Compacted base', 'Polymeric sand'],
   },
   'driveway-ba-5': {
-    title: 'Garage Paver Driveway',
+    title: 'Garage Driveway Pavers',
     description:
       'Cracked asphalt leading to an attached garage was replaced with a new paver driveway.',
     scopeOfWork:
@@ -163,7 +163,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Driveway-grade pavers', 'Compacted aggregate', 'Edge restraint', 'Polymeric sand'],
   },
   'mowing-ba-1': {
-    title: 'Overgrown Front Yard Mowing',
+    title: 'Overgrown Front Lawn Cut',
     description:
       'An overgrown front lawn at the garage and driveway was cut, edged, and striped for curb appeal.',
     scopeOfWork:
@@ -171,7 +171,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Professional mowing', 'String trimming', 'Edging', 'Debris cleanup'],
   },
   'mowing-ba-3': {
-    title: 'Acreage Lawn Mowing',
+    title: 'Acreage Lawn Mowing Job',
     description:
       'Overgrown acreage around mature trees was mowed with clean stripes and even height.',
     scopeOfWork:
@@ -187,7 +187,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Mowing', 'Edging', 'String trimming', 'Blow-off'],
   },
   'landscape-ba-1': {
-    title: 'Foundation Beds',
+    title: 'Foundation Bed Planting',
     description:
       'A bare strip along the foundation became a planted bed with shrubs, flowers, and mulch.',
     scopeOfWork:
@@ -195,7 +195,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Shrubs and perennials', 'Hardwood mulch', 'Landscape edging', 'Amended soil'],
   },
   'landscape-ba-2': {
-    title: 'Island Bed',
+    title: 'Island Bed Installation',
     description:
       'A plain front lawn gained an island bed with a tree, perennials, and mulch.',
     scopeOfWork:
@@ -203,7 +203,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Ornamental tree', 'Perennials', 'Mulch', 'Bed edging'],
   },
   'landscape-ba-3': {
-    title: 'Corner Bed',
+    title: 'Corner Bed Installation',
     description:
       'Bare grass at the house corner became a bed with arborvitae, boulders, and river rock.',
     scopeOfWork:
@@ -211,7 +211,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Arborvitae', 'Boulders', 'River rock', 'Landscape fabric'],
   },
   'landscape-ba-4': {
-    title: 'Walkway Beds',
+    title: 'Walkway Bed Installation',
     description:
       'Plain lawn along the front walk was planted with hostas, flowers, and defined beds.',
     scopeOfWork:
@@ -219,7 +219,7 @@ export const galleryProjectCopy: Record<string, GalleryProjectCopy> = {
     materials: ['Hostas and perennials', 'Hardwood mulch', 'Edging', 'Soil prep'],
   },
   'landscape-ba-5': {
-    title: 'Border Bed',
+    title: 'Border Bed Installation',
     description:
       'Grass along a privacy fence became a border bed with hydrangeas and perennials.',
     scopeOfWork:
