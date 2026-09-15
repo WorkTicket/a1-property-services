@@ -139,46 +139,40 @@ export default function HomePage() {
         <HeroOverlay imageSrc={siteImages.homeHero} variant="home" />
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-20 pt-28 sm:px-6 md:min-h-0 md:pb-24 lg:px-8">
-          <div className="relative max-w-xl lg:max-w-2xl">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -inset-x-8 -inset-y-10 hidden md:block"
-              style={{
-                background:
-                  'radial-gradient(ellipse at left center, rgba(13,13,13,0.42) 0%, rgba(13,13,13,0.16) 46%, transparent 74%)',
-              }}
-            />
-            <div className="relative">
-              <HeroCopyDeferred
-                eyebrow={establishedEyebrow()}
-                title="Cedar Falls Landscaping|Yards you're proud to come home to"
-                subtitle="A1 Property Services designs, builds, and maintains outdoor spaces in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, and full installs."
-                evenTitleLines
-                titleMaxWidth="36rem"
-                subtitleMaxWidth="34rem"
-              >
-                <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <Button href="#estimate" size="lg" trackLabel="Home Hero Quote">
-                    {CTA_COPY.quote}
-                    <ChevronRight className="h-4 w-4" aria-hidden />
-                  </Button>
-                  <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg" trackLabel="Home Hero Phone">
-                    <Phone className="h-4 w-4" aria-hidden />
-                    {CTA_COPY.callNow}
-                  </Button>
-                </div>
-                <p
-                  className="mt-8 hidden text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-white/75 sm:block"
-                  style={{ textShadow: '0 1px 10px rgba(0,0,0,0.45)' }}
+          <div className="max-w-xl lg:max-w-2xl">
+            <HeroCopyDeferred
+              eyebrow={establishedEyebrow()}
+              title="Cedar Falls Landscaping|A yard you're proud to come home to"
+              subtitle="A1 Property Services designs, builds, and maintains outdoor spaces in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, and full installs."
+              evenTitleLines
+              textWash
+              titleMaxWidth="34rem"
+              subtitleMaxWidth="30rem"
+            >
+              <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center">
+                <Button href="#estimate" size="lg" trackLabel="Home Hero Quote">
+                  {CTA_COPY.quote}
+                  <ChevronRight className="h-4 w-4" aria-hidden />
+                </Button>
+                <Button
+                  href={`tel:${siteConfig.phone}`}
+                  variant="ghost"
+                  size="lg"
+                  trackLabel="Home Hero Phone"
+                  className="border-white/25 bg-white/10 backdrop-blur-sm"
                 >
-                  Paver Patios · Retaining Walls · Lawn Care · Full Installs
-                </p>
-              </HeroCopyDeferred>
-            </div>
+                  <Phone className="h-4 w-4" aria-hidden />
+                  {CTA_COPY.callNow}
+                </Button>
+              </div>
+              <p className="mt-8 text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-white/70">
+                Paver Patios · Retaining Walls · Lawn Care · Full Installs
+              </p>
+            </HeroCopyDeferred>
           </div>
         </div>
 
-        <div className="hero-trust-bar md:absolute md:bottom-5 md:left-1/2 md:w-[min(70rem,calc(100%-2.5rem))] md:-translate-x-1/2 md:rounded-full md:border md:border-white/15 md:bg-black/45 md:shadow-[0_16px_40px_-20px_rgba(0,0,0,0.65)]">
+        <div className="hero-trust-bar md:absolute md:bottom-5 md:left-1/2 md:w-[min(70rem,calc(100%-2.5rem))] md:-translate-x-1/2 md:rounded-full md:border md:border-white/15 md:bg-white/[0.08] md:shadow-none md:backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] sm:gap-10 md:px-8">
             <span className="flex items-center gap-1.5">
               <Star size={12} className="fill-brand-gold text-brand-gold" /> 5-Star Rated

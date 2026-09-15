@@ -290,22 +290,27 @@
     background:
       linear-gradient(
         105deg,
-        rgba(13, 13, 13, 0.62) 0%,
-        rgba(13, 13, 13, 0.4) 26%,
-        rgba(13, 13, 13, 0.14) 48%,
-        transparent 68%
+        rgba(13, 13, 13, 0.94) 0%,
+        rgba(13, 13, 13, 0.82) 22%,
+        rgba(13, 13, 13, 0.58) 42%,
+        rgba(13, 13, 13, 0.32) 62%,
+        rgba(13, 13, 13, 0.22) 100%
       ),
       linear-gradient(
         180deg,
-        rgba(13, 13, 13, 0.28) 0%,
-        transparent 24%,
-        transparent 58%,
-        rgba(13, 13, 13, 0.5) 100%
+        rgba(13, 13, 13, 0.5) 0%,
+        rgba(13, 13, 13, 0.22) 28%,
+        rgba(13, 13, 13, 0.55) 100%
+      ),
+      radial-gradient(
+        ellipse 42% 58% at 8% 46%,
+        rgba(158, 27, 36, 0.16),
+        transparent 62%
       );
   }
 
   .hero-trust-bar {
-    @apply relative z-10 shrink-0 border-t border-white/10 bg-black/40 text-white/80 backdrop-blur-md;
+    @apply relative z-10 shrink-0 border-t border-white/10 bg-black/40 text-white/90 backdrop-blur-md;
   }
 
   @media (max-width: 767px) {
@@ -329,15 +334,15 @@
       background:
         linear-gradient(
           180deg,
-          rgba(13, 13, 13, 0.5) 0%,
-          rgba(13, 13, 13, 0.34) 38%,
-          rgba(13, 13, 13, 0.42) 100%
+          rgba(13, 13, 13, 0.55) 0%,
+          rgba(13, 13, 13, 0.58) 42%,
+          rgba(13, 13, 13, 0.68) 100%
         ),
         linear-gradient(
           90deg,
           rgba(13, 13, 13, 0.32) 0%,
-          rgba(13, 13, 13, 0.1) 54%,
-          transparent 82%
+          rgba(13, 13, 13, 0.12) 55%,
+          transparent 85%
         );
     }
   }
