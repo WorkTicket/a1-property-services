@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
-import { FORMATS, buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
+import { DISPLAY_FORMATS, buildSrcset, getImageDimensions, getVariantUrl } from '@/lib/responsive-image'
 
 type ResponsiveImageProps = {
   src: string
@@ -9,6 +9,7 @@ type ResponsiveImageProps = {
   height?: number
   priority?: boolean
   sizes?: string
+  maxWidth?: number
   className?: string
   fill?: boolean
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
@@ -23,6 +24,7 @@ export default function ResponsiveImage({
   height,
   priority = false,
   sizes = IMAGE_SIZES.halfCol,
+  maxWidth,
   className = '',
   fill = false,
   objectFit = 'cover',
@@ -45,10 +47,9 @@ export default function ResponsiveImage({
 
   return (
     <picture className={fill ? 'absolute inset-0 block h-full w-full' : undefined}>
-      {FORMATS.map((format) => {
-        const srcset = buildSrcset(src, format)
-        const type = format === 'jpeg' ? 'image/jpeg' : `image/${format}`
-        return <source key={format} srcSet={srcset} sizes={sizes} type={type} />
+      {DISPLAY_FORMATS.map((format) => {
+        const srcset = buildSrcset(src, format, maxWidth)
+        return <source key={format} srcSet={srcset} sizes={sizes} type={`image/${format}`} />
       })}
       <img
         src={getVariantUrl(src, 'webp', priority ? 1536 : 768)}

@@ -11,21 +11,17 @@ import RelatedContent from '@/components/sections/RelatedContent'
 import ServiceCard from '@/components/ui/ServiceCard'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
-import LcpHeroImage from '@/components/ui/LcpHeroImage'
-import HeroImagePreload from '@/components/ui/HeroImagePreload'
-import HeroCopyDeferred from '@/components/ui/HeroCopyDeferred'
-import HeroOverlay from '@/components/ui/HeroOverlay'
+import HomeHero from '@/components/sections/HomeHero'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
 import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
 import LazyGoogleMap from '@/components/ui/LazyGoogleMap'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
-import { getYearsInBusiness, establishedEyebrow, sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
-import { projectsCompletedValue } from '@/lib/projects-completed'
-import { cities } from '@/lib/cities'
+import { sinceYearPhrase, startedInYearPhrase } from '@/lib/years-in-business'
+import StatsBar from '@/components/sections/StatsBar'
 import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
 import FaqAccordion from '@/components/ui/FaqAccordion'
-import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
+import ProjectPreviewGrid from '@/components/gallery/LazyProjectPreviewGrid'
 
 export const metadata: Metadata = generatePageMetadata({
   title: siteConfig.homeTitle,
@@ -68,15 +64,6 @@ const trustPoints = [
   },
 ]
 
-function getStats() {
-  return [
-    { value: projectsCompletedValue(), label: 'Projects Completed' },
-    { value: String(getYearsInBusiness()), label: 'Years in Cedar Falls' },
-    { value: String(cities.length), label: 'Cities Served' },
-    { value: '24-Hr', label: 'Typical Response' },
-  ]
-}
-
 const faqItems = [
   {
     q: 'Is A1 Landscaping the same as A1 Property Services?',
@@ -105,8 +92,6 @@ const faqJsonLd = faqPageJsonLd(
 )
 
 export default function HomePage() {
-  const stats = getStats()
-
   const pageSchema = webPageJsonLd({
     name: siteConfig.homeTitle,
     description: siteConfig.description,
@@ -117,89 +102,9 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroImagePreload src={siteImages.homeHero} maxWidth={1920} />
+      <HomeHero />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-
-      {/* HERO: full first screen on mobile; trust bar is below the fold until scroll */}
-      <section className="relative flex flex-col overflow-hidden md:h-[100dvh]">
-        <LcpHeroImage
-          src={siteImages.homeHero}
-          alt="Aerial view of Cedar Falls, Iowa"
-          maxWidth={1920}
-          objectPosition="58% 42%"
-        />
-        <HeroOverlay imageSrc={siteImages.homeHero} variant="home" />
-
-        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-1 flex-col justify-center px-4 pb-20 pt-28 sm:px-6 md:min-h-0 md:pb-24 lg:px-8">
-          <div className="max-w-xl lg:max-w-2xl">
-            <HeroCopyDeferred
-              eyebrow={establishedEyebrow()}
-              title="Cedar Falls Landscaping|A yard you're proud to come home to"
-              subtitle="A1 Property Services designs, builds, and maintains outdoor spaces in Cedar Falls, Waterloo, and Black Hawk County. Paver patios, retaining walls, and full installs."
-              evenTitleLines
-              textWash
-              titleMaxWidth="34rem"
-              subtitleMaxWidth="30rem"
-            >
-              <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center">
-                <Button href="#estimate" size="lg" trackLabel="Home Hero Quote">
-                  {CTA_COPY.quote}
-                  <ChevronRight className="h-4 w-4" aria-hidden />
-                </Button>
-                <Button
-                  href={`tel:${siteConfig.phone}`}
-                  variant="ghost"
-                  size="lg"
-                  trackLabel="Home Hero Phone"
-                  className="border-white/25 bg-white/10 backdrop-blur-sm"
-                >
-                  <Phone className="h-4 w-4" aria-hidden />
-                  {CTA_COPY.callNow}
-                </Button>
-              </div>
-              <p className="mt-8 text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-white/70">
-                Paver Patios · Retaining Walls · Lawn Care · Full Installs
-              </p>
-            </HeroCopyDeferred>
-          </div>
-        </div>
-
-        <div className="hero-trust-bar md:absolute md:bottom-5 md:left-1/2 md:w-[min(70rem,calc(100%-2.5rem))] md:-translate-x-1/2 md:rounded-full md:border md:border-white/15 md:bg-white/[0.08] md:shadow-none md:backdrop-blur-md">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] sm:gap-10 md:px-8">
-            <span className="flex items-center gap-1.5">
-              <Star size={12} className="fill-brand-gold text-brand-gold" /> 5-Star Rated
-            </span>
-            <span className="hidden h-3 w-px bg-white/20 sm:block" />
-            <span>Licensed &amp; Insured</span>
-            <span className="hidden h-3 w-px bg-white/20 sm:block" />
-            <span>Free On-Site Estimates</span>
-            <span className="hidden h-3 w-px bg-white/20 sm:block" />
-            <span>Cedar Falls &amp; Waterloo</span>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS BAR */}
-      <section className="stats-bar">
-        <div className="section-inner">
-          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-4 md:divide-y-0">
-            {stats.map((stat) => (
-              <div key={stat.label} className="px-4 py-8 text-center sm:px-6 md:py-6">
-                <p className="stats-value">{stat.value}</p>
-                <p className="stats-label">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBar />
 
       {/* SERVICES TEASER */}
       <section id="services" className="section bg-brand-stone">
@@ -263,6 +168,7 @@ export default function HomePage() {
                         alt={feature.name}
                         fill
                         sizes={IMAGE_SIZES.thirdCol}
+                        maxWidth={768}
                         className="card-image-zoom object-cover"
                       />
                     </div>
@@ -342,6 +248,7 @@ export default function HomePage() {
                   fill
                   objectPosition="center"
                   sizes={IMAGE_SIZES.halfCol}
+                  maxWidth={1024}
                 />
               </div>
             </FadeIn>
@@ -392,7 +299,7 @@ export default function HomePage() {
         groups={[
         ...(blogPosts.length > 0 ? [{
           heading: 'Latest Articles',
-          items: getSortedPosts().slice(0, 3).map(p => ({
+          items: getSortedPosts().slice(0, 4).map(p => ({
             type: 'blog' as const,
             slug: p.slug,
             title: p.title,
@@ -494,6 +401,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
     </>
   )
 }

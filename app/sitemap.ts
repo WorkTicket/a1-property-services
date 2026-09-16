@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const isCity = !path.startsWith('/') ? false : path.split('/').filter(Boolean).length === 1 && !['about', 'services', 'gallery', 'contact', 'blog', 'faqs', 'resources', 'learn', 'privacy', 'terms', 'site-map'].includes(path.split('/').filter(Boolean)[0])
     const isProgrammatic = path.split('/').filter(Boolean).length >= 2 && !path.startsWith('/services/') && !path.startsWith('/blog/') && !path.startsWith('/learn/') && !path.startsWith('/gallery/') && !path.startsWith('/api/')
 
-    let lastModified: Date = new Date()
+    let lastModified: Date | undefined
     let changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' = 'monthly'
     let priority = 0.8
 
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency = 'monthly'
     } else if (isBlog) {
       const blogPost = blogPosts.find((p) => `/blog/${p.slug}` === path)
-      if (blogPost) lastModified = new Date(blogPost.date)
+      if (blogPost) lastModified = new Date(`${blogPost.date}T12:00:00Z`)
       changeFrequency = 'yearly'
       priority = 0.5
     } else if (isLearn) {
@@ -56,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return {
       url,
-      lastModified,
+      ...(lastModified ? { lastModified } : {}),
       changeFrequency,
       priority,
     }

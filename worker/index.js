@@ -6,6 +6,15 @@ import { resolveRedirectDestination } from '../lib/migration-redirects.mjs'
 const CACHE_IMMUTABLE = 'public, max-age=31536000, immutable'
 const CACHE_HTML = 'public, max-age=600, stale-while-revalidate=86400, stale-if-error=86400'
 
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+  'Cross-Origin-Opener-Policy': 'same-origin',
+}
+
 const APEX_HOST = 'a1pslandscape.com'
 const WWW_HOST = 'www.a1pslandscape.com'
 const CANONICAL_ORIGIN = `https://${APEX_HOST}`
@@ -66,16 +75,35 @@ function mimeTypeForPath(pathname) {
   return null
 }
 
+function applyEdgeHeaders(headers, pathname) {
+  headers.set('Cache-Control', cacheControlForPath(pathname))
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+    headers.set(name, value)
+  }
+  const mime = mimeTypeForPath(pathname)
+  if (mime) headers.set('Content-Type', mime)
+}
+
 function cacheControlForPath(pathname) {
   if (
     pathname.startsWith('/_next/static/') ||
     pathname.startsWith('/images/') ||
-    /\.(?:avif|webp|jpe?g|png|gif|svg|ico|woff2?|ttf|eot|mp4|webm)$/i.test(pathname)
+    /\.(?:avif|webp|jpe?g|png|gif|svg|ico|woff2?|ttf|eot|mp4|webm|txt)$/i.test(pathname)
   ) {
     return CACHE_IMMUTABLE
   }
 
   return CACHE_HTML
+}
+
+/** Windows export stores `__next.privacy.__PAGE__.txt` as `__next.privacy/__PAGE__.txt`. */
+function rscAliasPath(pathname) {
+  const slash = pathname.lastIndexOf('/')
+  if (slash < 0) return null
+  const file = pathname.slice(slash + 1)
+  const match = file.match(/^(__next\.[^/]+)\.(__.+)\.txt$/)
+  if (!match) return null
+  return `${pathname.slice(0, slash)}/${match[1]}/${match[2]}.txt`
 }
 
 function serveAsset(request, env, pathname) {
@@ -86,9 +114,7 @@ function serveAsset(request, env, pathname) {
   return env.ASSETS.fetch(new Request(assetUrl.toString(), request)).then((response) => {
     if (!response.ok) return response
     const headers = new Headers(response.headers)
-    headers.set('Cache-Control', cacheControlForPath(pathname))
-    const mime = mimeTypeForPath(pathname)
-    if (mime) headers.set('Content-Type', mime)
+    applyEdgeHeaders(headers, pathname)
     return new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
@@ -127,8 +153,9 @@ function isHttpRequest(request, url) {
 }
 
 /**
- * Single-hop Location for AMP suffixes, trailing slashes, WP `?s=` search,
+ * Single-hop Location for AMP suffixes, WP `?s=` search,
  * the literal `/*` 404 Google crawled, and the migration redirect map.
+ * Trailing slashes of canonical paths are served as 200 aliases, not 301s.
  * Returns null when the request is already on its canonical URL.
  */
 function canonicalRedirectLocation(url, path, normalizedPath) {
@@ -185,20 +212,28 @@ export default {
       return serveAsset(request, env, htmlAlias)
     }
 
-    // One-hop 301: AMP suffixes, trailing slashes, WP search, legacy slugs, ranking dupes.
+    const destPath = normalizedPath === '/*' ? '/' : resolveRedirectDestination(normalizedPath)
+    const isTrailingSlashAlias =
+      path !== normalizedPath &&
+      destPath === normalizedPath &&
+      !url.searchParams.has('s') &&
+      !url.searchParams.has('amp')
+    if (isTrailingSlashAlias) {
+      return serveAsset(request, env, destPath)
+    }
+
+    // One-hop 301: AMP suffixes, WP search, legacy slugs, ranking dupes.
     const canonicalRedirect = canonicalRedirectLocation(url, path, normalizedPath)
     if (canonicalRedirect) {
       return Response.redirect(canonicalRedirect, 301)
     }
 
     if (path === '/robots.txt') {
-      return new Response(ROBOTS_TXT, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/plain; charset=utf-8',
-          'Cache-Control': CACHE_HTML,
-        },
+      const headers = new Headers({
+        'Content-Type': 'text/plain; charset=utf-8',
       })
+      applyEdgeHeaders(headers, path)
+      return new Response(ROBOTS_TXT, { status: 200, headers })
     }
 
     if (path === '/api/reindex') {
@@ -214,21 +249,21 @@ export default {
     }
 
     const response = await env.ASSETS.fetch(request)
-    const cacheControl = cacheControlForPath(path)
-
-    if (!cacheControl || !response.ok) {
-      return response
+    if (response.ok) {
+      const headers = new Headers(response.headers)
+      applyEdgeHeaders(headers, path)
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      })
     }
 
-    const headers = new Headers(response.headers)
-    headers.set('Cache-Control', cacheControl)
-    const mime = mimeTypeForPath(path)
-    if (mime) headers.set('Content-Type', mime)
+    const rscPath = rscAliasPath(path)
+    if (rscPath) {
+      return serveAsset(request, env, rscPath)
+    }
 
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers,
-    })
+    return response
   },
 }

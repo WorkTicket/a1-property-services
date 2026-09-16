@@ -14,10 +14,15 @@ import {
   trackPhoneCall,
   trackScrollDepth,
 } from '@/lib/analytics'
-import { prefetchHeroForPath, shouldSkipHeroPrefetch } from '@/lib/prefetch-hero'
-import { isAutomatedBrowser } from '@/lib/is-automated-browser'
+import { useRouter } from 'next/navigation'
+import {
+  internalPathFromHref,
+  prefetchHeroForPath,
+  shouldSkipHeroPrefetch,
+} from '@/lib/prefetch-hero'
 
 export default function ClientRuntime() {
+  const router = useRouter()
   useEffect(() => {
     const existing = getCookieConsent()
     if (existing) applyGtagConsent(existing)
@@ -87,13 +92,20 @@ export default function ClientRuntime() {
   }, [])
 
   useEffect(() => {
-    if (isAutomatedBrowser() || shouldSkipHeroPrefetch()) return
+    if (shouldSkipHeroPrefetch()) return
+
+    const prefetchHref = (href: string | null) => {
+      if (!href) return
+      prefetchHeroForPath(href)
+      const path = internalPathFromHref(href)
+      const current = window.location.pathname.replace(/\/$/, '') || '/'
+      if (path && path !== current) router.prefetch(path)
+    }
 
     const prefetchFromEvent = (event: Event) => {
       const target = event.target
       if (!(target instanceof Element)) return
-      const href = target.closest('a')?.getAttribute('href')
-      if (href) prefetchHeroForPath(href)
+      prefetchHref(target.closest('a')?.getAttribute('href') ?? null)
     }
 
     document.addEventListener('pointerover', prefetchFromEvent, { passive: true })
@@ -105,7 +117,7 @@ export default function ClientRuntime() {
       document.removeEventListener('pointerdown', prefetchFromEvent)
       document.removeEventListener('focusin', prefetchFromEvent)
     }
-  }, [])
+  }, [router])
 
   return null
 }

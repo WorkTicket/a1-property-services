@@ -489,17 +489,24 @@ export function generatePageMetadata({
   }
 }
 
-const ORGANIZATION_TYPES = ['Organization', 'LocalBusiness', 'LandscapingBusiness'] as const
-
 /**
- * Shared @id for WebSite.publisher / Service.provider.
- * Include Organization first so schema.org validators that do not walk
- * LandscapingBusiness → Organization still accept publisher/provider.
+ * WebSite.publisher / Service.provider must be Organization or Person.
+ * Ahrefs schema.org validation does not treat LandscapingBusiness as in-range
+ * (it does not walk the subtype tree) and flags @type arrays as invalid.
  */
 export function organizationRef() {
   return {
-    '@type': [...ORGANIZATION_TYPES],
+    '@type': 'Organization' as const,
     '@id': `${siteConfig.url}/#organization`,
+    name: siteConfig.name,
+  }
+}
+
+/** Local pack entity. Separate @id so it is not merged with Organization-only refs. */
+export function localBusinessRef() {
+  return {
+    '@type': 'LandscapingBusiness' as const,
+    '@id': `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
   }
 }
@@ -562,14 +569,9 @@ export function articleJsonLd(post: {
     description: post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
-    author: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    author: { ...organizationRef(), url: siteConfig.url },
     publisher: {
-      '@type': 'Organization',
-      name: siteConfig.name,
+      ...organizationRef(),
       logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     },
     mainEntityOfPage: {
@@ -710,9 +712,10 @@ export function buildLocalBusinessJsonLd() {
 
   return {
     '@context': 'https://schema.org',
-    '@type': [...ORGANIZATION_TYPES],
-    '@id': `${siteConfig.url}/#organization`,
+    '@type': 'LandscapingBusiness',
+    '@id': `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
+    parentOrganization: organizationRef(),
     alternateName: [
       'A1 Landscaping',
       'A1 Landscaping Cedar Falls',
@@ -861,10 +864,9 @@ export function blogPostingJsonLd(post: {
     description: post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
-    author: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+    author: { ...organizationRef(), url: siteConfig.url },
     publisher: {
-      '@type': 'Organization',
-      name: siteConfig.name,
+      ...organizationRef(),
       logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url, url },
@@ -878,9 +880,11 @@ export function organizationJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${siteConfig.url}/#brand`,
+    '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
     logo: schemaImageObject(`${siteConfig.url}/images/icon.webp`),
     description: siteConfig.description,
     address: {

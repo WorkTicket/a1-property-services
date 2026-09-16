@@ -9754,10 +9754,10 @@
     "originalPath": "/images/about-team.webp",
     "altBase": "about-team",
     "width": 1024,
-    "height": 768,
-    "aspectRatio": 1.3333333333333333,
+    "height": 769,
+    "aspectRatio": 1.3315994798439532,
     "isHero": false,
-    "blurPlaceholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBACdASoUAA8APzmGuVOvKSWisAgB4CcJbDuGvt9AF+AdT+MIK0ATOlAA/pMRfmtWLHL0Y+Ae50BMP+pjnlRg49/6A3ypInVN0U8okRuGOfWi90y4hzecaLsvbFv/+fj/8KF5+cz/++hc789g80f9jkn4Mg/shftY3/Cn3D8Gjtc+flr9c+flr9c+fmN0M/77Si/XQkKuXGGAbEbZk7OyisFP6HDYTUd9q8P1G8tAAA==",
+    "blurPlaceholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAADwAwCdASoUAA8APzmGulQvKSWjMAgB4CcJbDuGvlwh0AE5ACtAEzpQAP5nrfzWslEW2Olw/HsRee5WZT7us0PWKBoFUW27imOT4ZVUREakvTtacV8p8HbFv/+fj/8o77/GXff9MsCdc2Rm5d5sgVgIV3NF36t/Aq4owhebDWfmw1n5sODwuV+8sB6E8+nA1EX8hPyGxZHVNegcaqmxAARcPcmgAA==",
     "variants": {
       "avif": {
         "480": "/images/generated/about-team-480.avif",

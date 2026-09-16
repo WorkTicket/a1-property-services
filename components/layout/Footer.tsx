@@ -7,6 +7,7 @@ import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
 import { cities } from '@/lib/cities'
 import { servingSinceLabel } from '@/lib/years-in-business'
+import { getSortedPosts } from '@/lib/blog'
 
 const companyLinks = [
   { label: 'Home', href: '/' },
@@ -23,6 +24,11 @@ const resourceLinks = [
   { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faqs' },
 ]
+
+const latestBlogLinks = getSortedPosts().slice(0, 4).map((post) => ({
+  label: post.title.length > 42 ? `${post.title.slice(0, 41).trimEnd()}…` : post.title,
+  href: `/blog/${post.slug}`,
+}))
 
 const rankingServiceLinks = [
   { label: 'Full Landscaping Services', href: '/landscaping-services-in-cedar-falls' },
@@ -132,7 +138,7 @@ export default function Footer() {
           <FooterNav title="Company" links={companyLinks} />
           <FooterNav title="Popular Services" links={rankingServiceLinks} />
           <FooterNav title="Guides" links={guideLinks} />
-          <FooterNav title="Resources" links={resourceLinks} />
+          <FooterNav title="Resources" links={[...resourceLinks, ...latestBlogLinks]} />
 
           <div className="col-span-2 sm:col-span-1">
             <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-white/90">
@@ -219,18 +225,18 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/[0.08] pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-[11px] leading-4 text-neutral-500 sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-[11px] leading-4 text-neutral-400 sm:justify-between sm:px-6 lg:px-8">
           <p className="text-center sm:text-left">
             &copy; {new Date().getFullYear()} A1 Property Services. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <Link href="/privacy" prefetch={false} className="transition-colors hover:text-neutral-300">
+            <Link href="/privacy" prefetch={false} className="transition-colors hover:text-neutral-200">
               Privacy Policy
             </Link>
             <span className="text-white/15" aria-hidden>
               ·
             </span>
-            <Link href="/terms" prefetch={false} className="transition-colors hover:text-neutral-300">
+            <Link href="/terms" prefetch={false} className="transition-colors hover:text-neutral-200">
               Terms
             </Link>
             <span className="text-white/15" aria-hidden>

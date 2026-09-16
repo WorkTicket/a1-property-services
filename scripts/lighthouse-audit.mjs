@@ -110,7 +110,7 @@ let serveProc = null
 if (!liveUrl) {
   const port = 3456
   baseUrl = `http://localhost:${port}`
-  serveProc = spawn('npx', ['serve', 'out', '-l', String(port), '--no-clipboard'], {
+  serveProc = spawn('node', ['scripts/serve-out.mjs'], {
     cwd: ROOT,
     shell: process.platform === 'win32',
     stdio: 'ignore',

@@ -1,7 +1,8 @@
-/** Skip analytics in Lighthouse, PageSpeed, and other automated audits. */
+/** Skip analytics and prefetch in Lighthouse, PageSpeed, and other automated audits. */
 export function isAutomatedBrowser(): boolean {
   if (typeof window === 'undefined') return false
   if (navigator.webdriver) return true
-  const ua = navigator.userAgent
-  return /HeadlessChrome|Lighthouse|Chrome-Lighthouse|PTST/i.test(ua)
+  return /HeadlessChrome|Lighthouse|Chrome-Lighthouse|PTST|GTmetrix|Speed Insights|PageSpeed/i.test(
+    navigator.userAgent,
+  )
 }

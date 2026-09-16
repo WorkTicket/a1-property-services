@@ -25,20 +25,21 @@ export default function LcpHeroImage({
   const avifSrcset = buildSrcset(src, 'avif', maxWidth)
   const webpSrcset = buildSrcset(src, 'webp', maxWidth)
   const blurPlaceholder = getBlurPlaceholder(src)
+  const position = objectPosition || 'var(--hero-object-position, center)'
   const imgStyle: CSSProperties = {
     position: 'absolute',
     top: 0,
     left: 0,
     width: '100%',
     height: '100%',
-    objectFit: 'cover',
-    ...(objectPosition ? { objectPosition } : {}),
+    objectFit: 'var(--hero-object-fit, cover)' as CSSProperties['objectFit'],
+    objectPosition: position,
   }
   const pictureStyle: CSSProperties | undefined = blurPlaceholder
     ? {
         backgroundImage: `url("${blurPlaceholder}")`,
         backgroundSize: 'cover',
-        backgroundPosition: objectPosition || 'center',
+        backgroundPosition: position,
       }
     : undefined
 
@@ -50,14 +51,13 @@ export default function LcpHeroImage({
       <source srcSet={avifSrcset} sizes={sizes} type="image/avif" />
       <source srcSet={webpSrcset} sizes={sizes} type="image/webp" />
       <img
-        src={getVariantUrl(src, 'webp', 480)}
+        src={getVariantUrl(src, 'avif', 768)}
         srcSet={webpSrcset}
         sizes={sizes}
         alt={alt}
         width={dimensions?.width ?? 1920}
         height={dimensions?.height ?? 1440}
         loading="eager"
-        decoding="sync"
         fetchPriority="high"
         data-hero-lcp=""
         className="absolute inset-0 h-full w-full object-cover"

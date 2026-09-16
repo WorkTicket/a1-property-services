@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { siteImages } from '@/lib/images'
 
@@ -24,11 +23,12 @@ export default function LogoMark({ size = 'md', className }: LogoMarkProps) {
         className,
       )}
     >
-      <Image
+      <img
         src={siteImages.icon}
-        alt="A1 Property Services logo"
+        alt=""
         width={img}
         height={img}
+        decoding="async"
         fetchPriority="low"
         className="rounded-full object-cover"
       />

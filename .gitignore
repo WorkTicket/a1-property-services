@@ -33,6 +33,7 @@ public/images/.*
 public/images/generated/.*
 reports/
 tmp-verify/
+tmp-screens/
 *.tmp
 .image-backups/
 .tmp-*/

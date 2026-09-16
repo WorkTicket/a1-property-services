@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Phone, Mail, MapPin, Check, Star, Shield, Clock } from 'lucide-react'
-import { generatePageMetadata, breadcrumbJsonLd, siteConfig, webPageJsonLd, jsonLdGraph } from '@/lib/metadata'
+import { generatePageMetadata, breadcrumbJsonLd, siteConfig, webPageJsonLd, jsonLdGraph, localBusinessRef } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
-import QuoteForm from '@/components/ui/QuoteForm'
+import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
 import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 import FadeIn from '@/components/motion/FadeIn'
 import PageHero from '@/components/motion/PageHero'
@@ -40,9 +40,7 @@ export default function ContactPage() {
                 description:
                   'Request a free landscaping quote from A1 Property Services in Cedar Falls and Waterloo, Iowa. We usually respond within 24 hours.',
                 mainEntity: {
-                  '@type': ['Organization', 'LocalBusiness', 'LandscapingBusiness'],
-                  '@id': `${siteConfig.url}/#organization`,
-                  name: siteConfig.name,
+                  ...localBusinessRef(),
                   telephone: siteConfig.phone,
                   email: siteConfig.email,
                   address: {
@@ -96,7 +94,7 @@ export default function ContactPage() {
 
               <div className="mt-8">
                 <div id="estimate">
-                  <QuoteForm variant="light" formLocation="Contact Page" compact />
+                  <LazyQuoteForm variant="light" formLocation="Contact Page" compact />
                 </div>
               </div>
             </FadeIn>

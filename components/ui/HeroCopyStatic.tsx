@@ -77,8 +77,10 @@ export default function HeroCopyStatic({
           display: 'flex',
           alignItems: 'center',
           justifyContent: eyebrowAlign,
-          gap: '0.75rem',
+          gap: editorial ? '0.85rem' : '0.75rem',
           color: '#fff',
+          letterSpacing: editorial ? '0.22em' : eyebrowStyle.letterSpacing,
+          fontSize: editorial ? '11px' : eyebrowStyle.fontSize,
           textShadow: editorial ? '0 1px 10px rgba(0,0,0,0.55)' : undefined,
         }}
       >
@@ -87,8 +89,8 @@ export default function HeroCopyStatic({
             aria-hidden="true"
             style={{
               display: 'inline-block',
-              width: '2.5rem',
-              height: '2px',
+              width: '2.75rem',
+              height: '1.5px',
               background: BRAND_ACCENT,
               flexShrink: 0,
             }}
@@ -99,10 +101,11 @@ export default function HeroCopyStatic({
       <h1
         style={{
           ...titleStyle,
-          fontSize: editorial ? 'clamp(2.35rem, 5.6vw, 4.35rem)' : titleStyle.fontSize,
+          fontSize: editorial ? 'clamp(2.2rem, 5.8vw, 4.65rem)' : titleStyle.fontSize,
           textAlign,
           maxWidth: titleMaxWidth,
-          margin: editorial ? '1.1rem 0 0' : '1.25rem 0 0',
+          margin: editorial ? '1.2rem 0 0' : '1.25rem 0 0',
+          letterSpacing: editorial ? '-0.034em' : titleStyle.letterSpacing,
           textShadow: editorial || textWash ? EDITORIAL_TITLE_SHADOW : TITLE_SHADOW,
         }}
       >
@@ -110,14 +113,13 @@ export default function HeroCopyStatic({
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: editorial ? '0.55rem' : '0.25rem',
+            gap: editorial ? '0.7rem' : '0.25rem',
             alignItems: align === 'center' ? 'center' : 'flex-start',
           }}
         >
           <span
             style={{
               display: 'block',
-              textWrap: 'balance',
               maxWidth: editorial ? '8.6em' : undefined,
             }}
           >
@@ -127,17 +129,16 @@ export default function HeroCopyStatic({
             <span
               style={{
                 display: 'block',
-                textWrap: 'balance',
                 fontFamily: editorial ? SYSTEM_SERIF : undefined,
                 fontSize: editorial
-                  ? 'clamp(1.15rem, 2.3vw, 1.7rem)'
+                  ? 'clamp(1.22rem, 2.4vw, 1.9rem)'
                   : shrinkLine2
                     ? 'clamp(0.95rem, 2.4vw, 1.85rem)'
                     : 'inherit',
                 fontWeight: editorial ? 400 : shrinkLine2 ? 600 : undefined,
                 fontStyle: editorial ? 'italic' : undefined,
-                lineHeight: editorial ? 1.3 : 1.25,
-                letterSpacing: editorial ? '-0.015em' : shrinkLine2 ? '0.01em' : undefined,
+                lineHeight: editorial ? 1.28 : 1.25,
+                letterSpacing: editorial ? '-0.018em' : shrinkLine2 ? '0.01em' : undefined,
                 color: editorial ? '#fff' : undefined,
                 textShadow: editorial ? EDITORIAL_TITLE_SHADOW : undefined,
               }}
@@ -153,10 +154,12 @@ export default function HeroCopyStatic({
             ...subtitleStyle,
             textAlign,
             maxWidth: subtitleMaxWidth,
-            marginTop: editorial ? '1.35rem' : subtitleStyle.marginTop,
+            marginTop: editorial ? '1.25rem' : subtitleStyle.marginTop,
             marginLeft: align === 'center' ? 'auto' : undefined,
             marginRight: align === 'center' ? 'auto' : undefined,
-            color: editorial ? 'rgba(255,255,255,0.96)' : subtitleStyle.color,
+            color: editorial ? 'rgba(255,255,255,0.86)' : subtitleStyle.color,
+            fontSize: editorial ? 'clamp(0.98rem, 1.7vw, 1.125rem)' : subtitleStyle.fontSize,
+            lineHeight: editorial ? 1.7 : subtitleStyle.lineHeight,
             textShadow: editorial || textWash ? SUBTITLE_SHADOW : TITLE_SHADOW,
           }}
         >

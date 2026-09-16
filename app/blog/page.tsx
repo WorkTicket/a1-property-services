@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { generatePageMetadata, breadcrumbJsonLd, webPageJsonLd, siteConfig, itemListJsonLd, jsonLdGraph } from '@/lib/metadata'
-import { formatBlogDate, getBlogIndexPosts, getSortedPosts } from '@/lib/blog'
+import { getBlogIndexPosts, getSortedPosts } from '@/lib/blog'
 import { siteImages } from '@/lib/images'
 import PageHero from '@/components/motion/PageHero'
 import BlogList from '@/components/ui/BlogList'
@@ -70,43 +69,6 @@ export default function BlogPage() {
     <section className="section bg-white">
       <div className="section-inner max-w-5xl">
         <BlogList posts={indexPosts} />
-      </div>
-    </section>
-
-    {/* Server-rendered full index so every post has a dofollow HTML inbound link
-        independent of the client "Load More" UI. */}
-    <section className="section border-t border-black/5 bg-brand-stone">
-      <div className="section-inner max-w-5xl">
-        <div className="max-w-2xl">
-          <p className="section-eyebrow">Archive</p>
-          <h2 className="section-heading mt-3">All Articles</h2>
-          <p className="mt-3 text-brand-body">
-            Browse every landscaping guide we have published for Cedar Falls, Waterloo, and Black Hawk County.
-          </p>
-        </div>
-        <ul className="mt-10 divide-y divide-black/10 border-y border-black/10">
-          {sortedPosts.map((post) => (
-            <li key={post.slug}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="group flex flex-col gap-1 py-4 transition-colors sm:flex-row sm:items-baseline sm:gap-6"
-              >
-                <time
-                  dateTime={post.date}
-                  className="shrink-0 text-sm font-medium text-brand-muted sm:w-28"
-                >
-                  {formatBlogDate(post.date, 'short')}
-                </time>
-                <span className="min-w-0 flex-1 font-medium text-brand-dark group-hover:text-brand-green-800">
-                  {post.title}
-                </span>
-                <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.1em] text-brand-green-800/80">
-                  {post.category}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
 

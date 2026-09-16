@@ -322,7 +322,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
               <h2 className="section-heading mt-3">Request Your Free Estimate</h2>
               <p className="mt-4 leading-relaxed text-brand-body">
                 Tell us about your {serviceName.toLowerCase()} project. We follow up with a clear on-site
-                quote for homes in Cedar Falls, Waterloo, and Black Hawk County. No pressure.
+                quote for Cedar Falls, Waterloo, and Black Hawk County homeowners. No pressure.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-brand-body">

@@ -9,10 +9,37 @@ import {
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import BlogCategoryFilter from '@/components/ui/BlogCategoryFilter'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
+import { getVariantUrl } from '@/lib/responsive-image'
+
+/** Image cards beyond this are compact text rows so /blog stays under Ahrefs "slow page" size. */
+const IMAGE_CARD_LIMIT = 8
+
+function CompactRow({ post }: { post: BlogIndexPost }) {
+  return (
+    <article className="blog-article group py-4" data-category={post.category}>
+      <Link
+        href={`/blog/${post.slug}`}
+        prefetch={false}
+        className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6"
+      >
+        <time dateTime={post.date} className="shrink-0 text-sm font-medium text-brand-muted sm:w-28">
+          {formatBlogDate(post.date, 'short')}
+        </time>
+        <span className="min-w-0 flex-1 font-medium text-brand-dark transition-colors group-hover:text-brand-green-800">
+          {post.title}
+        </span>
+        <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.1em] text-brand-green-800/80">
+          {post.category}
+        </span>
+      </Link>
+    </article>
+  )
+}
 
 export default function BlogList({ posts }: { posts: BlogIndexPost[] }) {
   const featured = posts[0]
-  const rest = posts.slice(1)
+  const imageCards = posts.slice(1, IMAGE_CARD_LIMIT)
+  const compactPosts = posts.slice(IMAGE_CARD_LIMIT)
   const filters = ['All', ...blogCategories]
 
   return (
@@ -72,9 +99,9 @@ export default function BlogList({ posts }: { posts: BlogIndexPost[] }) {
             </article>
           ) : null}
 
-          {rest.length > 0 ? (
+          {imageCards.length > 0 ? (
             <div className="mt-4 divide-y divide-black/10">
-              {rest.map((post) => (
+              {imageCards.map((post) => (
                 <article
                   key={post.slug}
                   className="blog-article motion-fade-up group py-8 first:pt-6"
@@ -83,12 +110,14 @@ export default function BlogList({ posts }: { posts: BlogIndexPost[] }) {
                   <div className="grid gap-5 sm:grid-cols-[11rem_1fr] sm:items-start md:grid-cols-[13rem_1fr] md:gap-8">
                     <Link href={`/blog/${post.slug}`} prefetch={false} className="block">
                       <div className="card-image relative aspect-[16/9] overflow-hidden rounded-xl">
-                        <ResponsiveImage
-                          src={post.imageSrc}
+                        <img
+                          src={getVariantUrl(post.imageSrc, 'webp', 480)}
                           alt={post.imageAlt}
-                          fill
-                          sizes={IMAGE_SIZES.articleThumb}
-                          className="card-image-zoom object-cover"
+                          width={480}
+                          height={270}
+                          loading="lazy"
+                          decoding="async"
+                          className="card-image-zoom h-full w-full object-cover"
                         />
                       </div>
                     </Link>
@@ -129,6 +158,18 @@ export default function BlogList({ posts }: { posts: BlogIndexPost[] }) {
                   </div>
                 </article>
               ))}
+            </div>
+          ) : null}
+
+          {compactPosts.length > 0 ? (
+            <div className="mt-10 border-t border-black/10 pt-8">
+              <p className="section-eyebrow">Archive</p>
+              <h2 className="section-heading mt-3">More Articles</h2>
+              <div className="mt-6 divide-y divide-black/10 border-y border-black/10">
+                {compactPosts.map((post) => (
+                  <CompactRow key={post.slug} post={post} />
+                ))}
+              </div>
             </div>
           ) : null}
         </div>

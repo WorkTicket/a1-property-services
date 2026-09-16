@@ -182,7 +182,7 @@ export default async function ServicePage({ params }: Props) {
               {service.name} Projects in Cedar Falls &amp; Waterloo
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-brand-body">
-              See real {service.name.toLowerCase()} work completed for homes in Cedar Falls, Waterloo, and Black Hawk County.
+              See real {service.name.toLowerCase()} work completed for Cedar Falls, Waterloo, and Black Hawk County homeowners.
             </p>
             <div className="mt-10">
               <GalleryGrid projects={galleryProjects} />

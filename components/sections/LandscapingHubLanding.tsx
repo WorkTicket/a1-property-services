@@ -352,7 +352,7 @@ export default function LandscapingHubLanding() {
 
       <CtaBanner
         title="Get Your Free Landscaping Estimate"
-        description="Tell us about your landscaping project. We serve homes in Cedar Falls, Waterloo, and Black Hawk County, Iowa."
+        description="Tell us about your landscaping project. We serve Cedar Falls, Waterloo, and Black Hawk County homeowners."
         eyebrow="Free Estimate"
         quoteHref="#estimate"
       />

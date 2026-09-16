@@ -34,7 +34,6 @@ export default function LazyGoogleMap({
       type="button"
       onClick={() => setSrc(getGoogleMapsEmbedUrl())}
       className={`${className} flex flex-col items-center justify-center gap-2 bg-brand-stone text-center text-sm text-brand-body transition-colors hover:bg-brand-green-100`}
-      aria-label={`Load map of ${address.street}, ${address.city}, ${address.state}`}
     >
       <span className="font-semibold text-brand-dark">View map</span>
       <span>

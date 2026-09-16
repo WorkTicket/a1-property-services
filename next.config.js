@@ -22,6 +22,8 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
     optimizeCss: true,
+    // Inline Tailwind into HTML so first paint is not blocked on CSS round-trips.
+    inlineCss: true,
     // Windows EPERM/corrupt packfile workaround (replaces webpack memory cache).
     turbopackFileSystemCacheForDev: false,
   },

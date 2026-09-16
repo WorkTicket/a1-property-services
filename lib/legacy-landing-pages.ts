@@ -198,7 +198,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Built for Iowa Weather',
         paragraphs: [
           'Local patios need more than pretty pavers. Proper excavation, compacted base, and drainage design prevent sinking, heaving, and joint failure through freeze-thaw cycles.',
-          'We serve homes in Cedar Falls, Waterloo, and Black Hawk County with outdoor living spaces that add usable square footage and lasting curb appeal. Pair a patio with a retaining wall, a matching paver driveway, or full landscaping when you are ready to do more than one surface.',
+          'We serve Cedar Falls, Waterloo, and Black Hawk County homeowners with outdoor living spaces that add usable square footage and lasting curb appeal. Pair a patio with a retaining wall, a matching paver driveway, or full landscaping when you are ready to do more than one surface.',
         ],
       },
     ],
@@ -324,7 +324,7 @@ export const legacyLandingPages: Record<string, LegacyLandingPage> = {
         heading: 'Replace Cracked Concrete or Worn Asphalt',
         paragraphs: [
           'A Cedar Falls driveway that is heaved, stained, or dumping water toward the garage is not a cosmetic problem. Concrete slabs crack in freeze-thaw. Asphalt softens in summer heat and needs sealing. Patching buys time, then the same joints open again. A paver driveway is the replacement: excavate deeper for vehicle loads, compact crushed aggregate in lifts, set rigid edge restraint, and lay interlocking units so the surface stays level under daily cars and trucks.',
-          'We build paver driveways for homes in Cedar Falls, Waterloo, and Black Hawk County, including College Hill, North Cedar, and South Cedar Falls lots where access is tight and the existing apron is failing. You get a free on-site quote, a written scope that includes base depth, and a driveway that can be repaired one paver at a time if utilities ever need to come up.',
+          'We build paver driveways for Cedar Falls, Waterloo, and Black Hawk County homeowners, including College Hill, North Cedar, and South Cedar Falls lots where access is tight and the existing apron is failing. You get a free on-site quote, a written scope that includes base depth, and a driveway that can be repaired one paver at a time if utilities ever need to come up.',
         ],
         showCta: true,
       },

@@ -1,6 +1,8 @@
 import imageManifest from '@/public/images/image-manifest.json'
 
 const FORMATS = ['avif', 'webp', 'jpeg'] as const
+/** Picture sources for modern browsers; JPEG stays in the manifest for OG/fallback. */
+const DISPLAY_FORMATS = ['avif', 'webp'] as const
 
 export type ImageFormat = (typeof FORMATS)[number]
 
@@ -71,4 +73,4 @@ export function getHeroBackgroundStyle(src: string, preferredWidth = 640) {
   }
 }
 
-export { FORMATS }
+export { FORMATS, DISPLAY_FORMATS }

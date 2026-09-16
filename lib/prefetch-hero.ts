@@ -1,5 +1,7 @@
 'use client'
 
+import { isAutomatedBrowser } from '@/lib/is-automated-browser'
+
 const HERO_WIDTHS = [640, 768, 1024, 1280, 1536, 1920, 2560] as const
 
 const PAGE_HEROES: Record<string, string> = {
@@ -124,6 +126,10 @@ export function prefetchHeroSrc(src: string) {
   document.head.appendChild(link)
 }
 
+export function internalPathFromHref(href: string): string | null {
+  return normalizePath(href)
+}
+
 export function prefetchHeroForPath(href: string) {
   const path = normalizePath(href)
   const current = window.location.pathname.replace(/\/$/, '') || '/'
@@ -134,8 +140,7 @@ export function prefetchHeroForPath(href: string) {
 
 export function shouldSkipHeroPrefetch() {
   if (typeof navigator === 'undefined') return true
-  if (navigator.webdriver) return true
-  if (/HeadlessChrome|Lighthouse|Chrome-Lighthouse|PTST/i.test(navigator.userAgent)) return true
+  if (isAutomatedBrowser()) return true
   const connection = (navigator as Navigator & {
     connection?: { saveData?: boolean; effectiveType?: string }
   }).connection

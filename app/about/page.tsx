@@ -8,6 +8,7 @@ import DeferredImage from '@/components/ui/DeferredImage'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 import CtaBanner from '@/components/sections/CtaBanner'
 import EstimateSection from '@/components/sections/EstimateSection'
+import StatsBar from '@/components/sections/StatsBar'
 import PageHero from '@/components/motion/PageHero'
 import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
@@ -17,10 +18,7 @@ import {
   yearsInBusinessPhrase,
   sinceYearPhrase,
   startedInYearPhrase,
-  FOUNDING_YEAR,
 } from '@/lib/years-in-business'
-import { projectsCompletedValue } from '@/lib/projects-completed'
-import { cities } from '@/lib/cities'
 import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -56,12 +54,6 @@ const values = [
 ]
 
 export default function AboutPage() {
-  const stats = [
-    { value: projectsCompletedValue(), label: 'Projects Completed' },
-    { value: String(cities.length), label: 'Cities Served' },
-    { value: `Est. ${FOUNDING_YEAR}`, label: 'Cedar Falls, Iowa' },
-  ]
-
   const pageSchema = webPageJsonLd({
     name: 'About Us | A1 Property Services',
     description: `Meet A1 Property Services, Cedar Falls and Waterloo landscaping and hardscaping experts with ${yearsInBusinessPhrase()} serving Black Hawk County, Iowa.`,
@@ -156,18 +148,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="stats-bar">
-        <div className="section-inner">
-          <div className="grid grid-cols-2 divide-x divide-y divide-black/[0.08] md:grid-cols-3 md:divide-y-0">
-            {stats.map((stat) => (
-              <div key={stat.label} className="px-4 py-8 text-center sm:px-6 md:py-6">
-                <p className="stats-value">{stat.value}</p>
-                <p className="stats-label">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBar />
 
       <LazyGoogleReviews />
 

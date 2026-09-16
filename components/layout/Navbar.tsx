@@ -16,7 +16,7 @@ import {
   TreeDeciduous,
   BookOpen,
   ClipboardList,
-  Newspaper,
+  Library,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/lib/metadata'
@@ -31,11 +31,8 @@ function NavLink(props: ComponentProps<typeof Link>) {
   return <Link prefetch={false} {...props} />
 }
 
-const serviceResourceLinks = [
-  { label: 'Guides', href: '/learn' },
-  { label: 'Resources', href: '/resources' },
-  { label: 'FAQs', href: '/faqs' },
-]
+const MEGA_MENU_ROWS = 6
+const MEGA_CLOSE_DELAY_MS = 90
 
 const megaMenuIcons = {
   landscaping: Trees,
@@ -43,6 +40,69 @@ const megaMenuIcons = {
   hardscaping: Layers,
   'site-work': Droplets,
 } as const
+
+const serviceMegaCopy = {
+  landscaping: { label: 'Yards & Gardens', desc: 'New yards, planting, and upkeep' },
+  'lawn-trees': { label: 'Lawn & Trees', desc: 'Grass, sod, trees, and hedges' },
+  hardscaping: { label: 'Patios & Walls', desc: 'Patios, driveways, outdoor living' },
+  'site-work': { label: 'Water & Snow', desc: 'Flooding, grading, and winter snow' },
+} as const
+
+const serviceNavLabels: Record<string, string> = {
+  'landscape-design': 'Yard Design',
+  'landscape-installation': 'Planting & Install',
+  'lawn-care': 'Lawn Mowing & Care',
+  'residential-landscaping': 'Home Landscaping',
+  'landscape-maintenance': 'Yard Upkeep',
+  'preservation-restoration': 'Overgrown Yard',
+  'shrub-installation': 'Bushes & Hedges',
+  'rock-landscaping': 'Rock Beds',
+  drainage: 'Stop Yard Flooding',
+  grading: 'Level the Yard',
+  excavation: 'Digging & Site Prep',
+  'commercial-landscaping': 'Business Properties',
+  hydroseeding: 'New Grass From Seed',
+  'sod-installation': 'New Sod Lawn',
+  'tree-service': 'Tree Trimming',
+  'tree-planting': 'Plant New Trees',
+  'paver-patio': 'Paver Patio',
+  'paver-driveway': 'Paver Driveway',
+  'retaining-walls': 'Retaining Wall',
+  'outdoor-living': 'Fire Pit & Kitchen',
+  'ponds-water-features': 'Pond or Waterfall',
+  'snow-removal': 'Snow Removal',
+  mulching: 'Mulch for Flower Beds',
+}
+
+const serviceNavHints: Record<string, string> = {
+  'landscape-design': 'A plan before we start',
+  'landscape-installation': 'We plant and build it',
+  'residential-landscaping': 'Whole yard, start to finish',
+  'landscape-maintenance': 'Keep the yard looking nice',
+  'preservation-restoration': 'Clean up a neglected yard',
+  mulching: 'Tidier beds, fewer weeds',
+  'lawn-care': 'Mowing, feeding, and weeds',
+  'sod-installation': 'A green lawn right away',
+  hydroseeding: 'Grow grass on bare spots',
+  'tree-service': 'Trim, remove, or grind stumps',
+  'tree-planting': 'Shade and privacy',
+  'shrub-installation': 'Hedges and foundation plants',
+  'paver-patio': 'A patio for everyday use',
+  'paver-driveway': 'A driveway that holds up',
+  'retaining-walls': 'Hold a slope in place',
+  'outdoor-living': 'A backyard you can sit in',
+  'ponds-water-features': 'Water in the yard',
+  'rock-landscaping': 'Low-upkeep stone beds',
+  drainage: 'Get rid of standing water',
+  grading: 'Slope water away from home',
+  excavation: 'Clear and prep the ground',
+  'commercial-landscaping': 'Offices, shops, and HOAs',
+  'snow-removal': 'Drives, walks, and lots',
+}
+
+function serviceNavName(service: Service) {
+  return serviceNavLabels[service.slug] ?? service.name
+}
 
 function servicesForSlugs(slugs: readonly string[]): Service[] {
   return slugs.flatMap((slug) => {
@@ -53,6 +113,8 @@ function servicesForSlugs(slugs: readonly string[]): Service[] {
 
 const megaMenuColumns = serviceNavGroups.map((column) => ({
   ...column,
+  label: serviceMegaCopy[column.key].label,
+  desc: serviceMegaCopy[column.key].desc,
   icon: megaMenuIcons[column.key],
   services: servicesForSlugs(column.slugs),
 }))
@@ -61,65 +123,252 @@ const learnMegaColumns = [
   {
     key: 'problems',
     label: 'Yard Problems',
-    desc: 'Flooding, walls & turf',
+    desc: 'Flooding, thin grass, and slopes',
     icon: Droplets,
     links: [
-      { label: 'Why Yards Flood', href: '/learn/why-yard-floods-when-it-rains' },
-      { label: 'Do I Need a Retaining Wall?', href: '/learn/do-i-need-a-retaining-wall' },
-      { label: "Why Grass Won't Grow", href: '/learn/why-wont-grass-grow-in-my-yard' },
-      { label: 'Best Grass Seed for Iowa', href: '/learn/best-grass-seed-for-iowa' },
-      { label: 'Mulch vs Rock', href: '/learn/mulch-vs-rock-landscaping' },
+      { label: 'Why yards flood', hint: 'Standing water after rain', href: '/learn/why-yard-floods-when-it-rains' },
+      { label: 'Do I need a wall?', hint: 'When a slope needs support', href: '/learn/do-i-need-a-retaining-wall' },
+      { label: "Why grass won't grow", hint: 'Bare spots and thin lawns', href: '/learn/why-wont-grass-grow-in-my-yard' },
+      { label: 'Best grass for Iowa', hint: 'Iowa-tough grass seed', href: '/learn/best-grass-seed-for-iowa' },
+      { label: 'Mulch or rock?', hint: 'Which is easier to keep up', href: '/learn/mulch-vs-rock-landscaping' },
+      { label: 'New lawn cost', hint: 'What hydroseeding may cost', href: '/learn/hydroseeding-cost' },
     ],
   },
   {
     key: 'hiring',
-    label: 'Hiring Advice',
-    desc: 'Estimates, questions & budget',
+    label: 'Before You Hire',
+    desc: 'Estimates, questions, and budget',
     icon: ClipboardList,
     links: [
-      { label: 'Compare Estimates', href: '/learn/comparing-landscaping-estimates' },
-      { label: 'Questions Before Hiring', href: '/learn/questions-before-hiring-landscaper' },
-      { label: 'Prepare for a Consultation', href: '/learn/preparing-landscaping-consultation' },
-      { label: 'Budget Planning', href: '/learn/landscaping-budget-planning' },
-      { label: 'Common Mistakes', href: '/learn/common-landscaping-mistakes' },
+      { label: 'Compare estimates', hint: 'How to compare two bids', href: '/learn/comparing-landscaping-estimates' },
+      { label: 'Questions to ask', hint: 'What to ask before you hire', href: '/learn/questions-before-hiring-landscaper' },
+      { label: 'Prepare for a visit', hint: 'Get ready for an estimate', href: '/learn/preparing-landscaping-consultation' },
+      { label: 'Plan your budget', hint: 'What the work usually costs', href: '/learn/landscaping-budget-planning' },
+      { label: 'Common mistakes', hint: 'What to avoid on a project', href: '/learn/common-landscaping-mistakes' },
+      { label: 'After the work is done', hint: 'What upkeep usually means', href: '/learn/landscape-maintenance-expectations' },
     ],
   },
   {
     key: 'projects',
     label: 'Project Guides',
-    desc: 'Materials, timelines & upkeep',
+    desc: 'Materials, time, and upkeep',
     icon: BookOpen,
     links: [
-      { label: 'Planning a Retaining Wall', href: '/learn/planning-retaining-wall-project' },
-      { label: 'Choosing Patio Materials', href: '/learn/choosing-patio-materials' },
-      { label: 'Material Comparison', href: '/learn/landscaping-material-comparison' },
-      { label: 'Project Timelines', href: '/learn/landscaping-project-timelines' },
-      { label: 'Seasonal Maintenance', href: '/learn/seasonal-landscape-maintenance' },
+      { label: 'Plan a retaining wall', hint: 'Steps before you build', href: '/learn/planning-retaining-wall-project' },
+      { label: 'Choose patio materials', hint: 'Pavers, stone, and more', href: '/learn/choosing-patio-materials' },
+      { label: 'Compare materials', hint: 'What lasts in Iowa weather', href: '/learn/landscaping-material-comparison' },
+      { label: 'How long jobs take', hint: 'Typical project timelines', href: '/learn/landscaping-project-timelines' },
+      { label: 'Seasonal upkeep', hint: 'Spring through winter care', href: '/learn/seasonal-landscape-maintenance' },
     ],
   },
   {
     key: 'library',
-    label: 'Browse',
-    desc: 'Guides, FAQs & articles',
-    icon: Newspaper,
+    label: 'More Help',
+    desc: 'Guides, answers, and photos',
+    icon: Library,
     links: [
-      { label: 'Resources', href: '/resources' },
-      { label: 'FAQs', href: '/faqs' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Hydroseeding Cost', href: '/learn/hydroseeding-cost' },
-      { label: 'Maintenance Expectations', href: '/learn/landscape-maintenance-expectations' },
+      { label: 'All guides', hint: 'Every article in one place', href: '/learn' },
+      { label: 'Common questions', hint: 'Short answers, no jargon', href: '/faqs' },
+      { label: 'Blog', hint: 'News and yard tips', href: '/blog' },
+      { label: 'Resource library', hint: 'Checklists and extras', href: '/resources' },
+      { label: 'See our work', hint: 'Photos of finished work', href: '/gallery' },
+      { label: 'Ask a question', hint: "We'll help you decide", href: '/contact' },
     ],
   },
 ] as const
 
-const learnFooterLinks = [
-  { label: 'View all guides', href: '/learn' },
-  { label: 'Resources', href: '/resources' },
-  { label: 'FAQs', href: '/faqs' },
-  { label: 'Blog', href: '/blog' },
-] as const
+type MegaMenuLinkItem = {
+  label: string
+  hint?: string
+  href: string
+  active?: boolean
+  onSelect: () => void
+}
 
-const MEGA_CLOSE_DELAY_MS = 160
+type MegaMenuColumnItem = {
+  key: string
+  label: string
+  desc: string
+  icon: typeof Trees
+  headingId: string
+  links: MegaMenuLinkItem[]
+}
+
+function megaLinkClass(active: boolean) {
+  return cn(
+    'group flex min-h-12 items-center gap-2 rounded-lg px-2 py-1.5 text-left transition-colors focus-visible:bg-white/15',
+    active ? 'bg-white/15' : 'hover:bg-white/10',
+  )
+}
+
+function MegaMenuLink({ link }: { link: MegaMenuLinkItem }) {
+  return (
+    <NavLink
+      href={link.href}
+      className={megaLinkClass(Boolean(link.active))}
+      aria-current={link.active ? 'page' : undefined}
+      onClick={link.onSelect}
+    >
+      <span className="min-w-0 flex-1">
+        <span
+          className={cn(
+            'block truncate text-[0.9375rem] font-semibold leading-snug',
+            link.active ? 'text-brand-gold-light' : 'text-white',
+          )}
+        >
+          {link.label}
+        </span>
+        {link.hint ? (
+          <span className="mt-0.5 block truncate text-[0.8125rem] leading-snug text-white/75">
+            {link.hint}
+          </span>
+        ) : null}
+      </span>
+      <ArrowRight
+        size={16}
+        className={cn(
+          'shrink-0',
+          link.active ? 'text-brand-gold-light' : 'text-white/55 group-hover:text-white',
+        )}
+        aria-hidden
+      />
+    </NavLink>
+  )
+}
+
+function MegaMenuPanel({
+  menuRef,
+  id,
+  ariaLabel,
+  open,
+  intro,
+  columns,
+  footerLinks,
+  onQuoteClick,
+  onMouseEnter,
+  onMouseLeave,
+  onKeyDown,
+}: {
+  menuRef: { current: HTMLDivElement | null }
+  id: string
+  ariaLabel: string
+  open: boolean
+  intro: string
+  columns: MegaMenuColumnItem[]
+  footerLinks: MegaMenuLinkItem[]
+  onQuoteClick: () => void
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+  onKeyDown: (event: ReactKeyboardEvent<HTMLDivElement>) => void
+}) {
+  return (
+    <div
+      ref={menuRef}
+      id={id}
+      role="region"
+      aria-label={ariaLabel}
+      className={cn(
+        'absolute inset-x-0 top-full z-40 hidden lg:block',
+        'before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[\'\']',
+        open ? 'pointer-events-auto z-50' : 'pointer-events-none z-40',
+      )}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onKeyDown={onKeyDown}
+      aria-hidden={open ? undefined : true}
+    >
+      <div
+        className={cn(
+          'border-b border-white/10 bg-brand-dark shadow-[0_24px_48px_-12px_rgba(0,0,0,0.55)]',
+          open ? 'visible opacity-100' : 'invisible opacity-0',
+        )}
+      >
+        <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-medium leading-snug text-white/85">
+            {intro}
+          </p>
+          <div className="mt-3 grid min-h-[24.5rem] grid-cols-4 items-stretch">
+            {columns.map((column, index) => {
+              const ColumnIcon = column.icon
+              const slots = Array.from({ length: MEGA_MENU_ROWS }, (_, slot) => column.links[slot] ?? null)
+
+              return (
+                <div
+                  key={column.key}
+                  data-mega-column
+                  className={cn('flex min-w-0 flex-col px-3 lg:px-5', index > 0 && 'border-l border-white/15')}
+                >
+                  <div className="mb-2 flex shrink-0 items-start gap-3 border-b border-white/15 pb-3">
+                    <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-gold-light">
+                      <ColumnIcon size={20} strokeWidth={2} aria-hidden />
+                    </span>
+                    <div className="min-w-0">
+                      <h2
+                        id={column.headingId}
+                        className="font-display text-lg font-bold leading-tight text-white"
+                      >
+                        {column.label}
+                      </h2>
+                      <p className="mt-1 truncate text-sm leading-snug text-white/75">
+                        {column.desc}
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="flex flex-1 flex-col" aria-labelledby={column.headingId}>
+                    {slots.map((link, slot) => (
+                      <li key={link?.href ?? `${column.key}-empty-${slot}`}>
+                        {link ? <MegaMenuLink link={link} /> : <div className="min-h-12" />}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="border-t border-white/15 bg-black/40">
+          <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-3 lg:px-8">
+            <div data-mega-column className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-2 text-[0.9375rem]">
+              {footerLinks.map((link, index) => (
+                <span key={link.href} className="flex items-center gap-4">
+                  {index > 0 ? (
+                    <span className="text-white/35" aria-hidden>
+                      ·
+                    </span>
+                  ) : null}
+                  <NavLink
+                    href={link.href}
+                    className={cn(
+                      'rounded-md py-1 font-semibold transition-colors hover:text-brand-gold-light',
+                      index === 0
+                        ? link.active
+                          ? 'text-brand-gold-light'
+                          : 'text-white'
+                        : 'font-medium text-white/80',
+                    )}
+                    aria-current={link.active ? 'page' : undefined}
+                    onClick={link.onSelect}
+                  >
+                    {link.label}
+                  </NavLink>
+                </span>
+              ))}
+            </div>
+            <NavLink
+              href="/contact"
+              className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-md bg-brand-gold px-4 text-[0.9375rem] font-semibold text-white hover:bg-brand-gold-hover"
+              onClick={onQuoteClick}
+            >
+              {CTA_COPY.quote}
+              <ArrowRight size={16} aria-hidden />
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function getMegaColumns(menu: HTMLElement | null) {
   if (!menu) return []
@@ -198,6 +447,7 @@ export default function Navbar() {
     () => false,
   )
   const [headerHeight, setHeaderHeight] = useState(84)
+  const [desktopMenusReady, setDesktopMenusReady] = useState(false)
 
   if (menuPath !== pathname) {
     setMenuPath(pathname)
@@ -220,6 +470,7 @@ export default function Navbar() {
   const openServicesMenu = () => {
     if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
     if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
+    setDesktopMenusReady(true)
     setLearnOpen(false)
     setServicesOpen(true)
   }
@@ -232,6 +483,7 @@ export default function Navbar() {
   const openLearnMenu = () => {
     if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
     if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
+    setDesktopMenusReady(true)
     setServicesOpen(false)
     setLearnOpen(true)
   }
@@ -290,7 +542,7 @@ export default function Navbar() {
   const handleServicesBlur = (event: ReactFocusEvent<HTMLElement>) => {
     if (!isFocusLeaving(event)) return
     window.requestAnimationFrame(() => {
-      if (!servicesRef.current?.contains(document.activeElement)) {
+      if (!servicesRef.current?.contains(document.activeElement) && !servicesMenuRef.current?.contains(document.activeElement)) {
         setServicesOpen(false)
       }
     })
@@ -299,7 +551,7 @@ export default function Navbar() {
   const handleLearnBlur = (event: ReactFocusEvent<HTMLElement>) => {
     if (!isFocusLeaving(event)) return
     window.requestAnimationFrame(() => {
-      if (!learnRef.current?.contains(document.activeElement)) {
+      if (!learnRef.current?.contains(document.activeElement) && !learnMenuRef.current?.contains(document.activeElement)) {
         setLearnOpen(false)
       }
     })
@@ -341,11 +593,42 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
+    let idleId = 0
+    let timeoutId = 0
+    let mq: MediaQueryList | undefined
+    const enable = () => {
+      if (mq && !mq.matches) return
+      setDesktopMenusReady(true)
+    }
+    const schedule = () => {
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(enable, { timeout: 2200 })
+      } else {
+        timeoutId = globalThis.setTimeout(enable, 400) as unknown as number
+      }
+    }
+    try {
+      mq = window.matchMedia('(min-width: 1024px)')
+      if (mq.matches) schedule()
+      mq.addEventListener('change', schedule)
+    } catch {
+      schedule()
+    }
+    return () => {
+      mq?.removeEventListener('change', schedule)
+      if (idleId && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleId)
+      if (timeoutId) globalThis.clearTimeout(timeoutId)
+    }
+  }, [])
+
+  useEffect(() => {
     const header = headerRef.current
     if (!header) return
 
     const updateHeight = () => {
-      setHeaderHeight(header.getBoundingClientRect().height)
+      const height = Math.ceil(header.getBoundingClientRect().height)
+      setHeaderHeight(height)
+      document.documentElement.style.setProperty('--header-offset', `${height}px`)
     }
 
     updateHeight()
@@ -529,20 +812,12 @@ export default function Navbar() {
 
   const linkClass = (active: boolean) =>
     cn(
-      'relative whitespace-nowrap text-sm font-semibold tracking-[-0.01em] transition-colors duration-200',
-      active ? 'text-white' : 'text-white/85 hover:text-white',
+      'relative inline-flex items-center whitespace-nowrap text-sm font-semibold tracking-[-0.01em] transition-colors duration-150',
+      active ? 'text-white' : 'text-white/90 hover:text-white',
     )
 
   const linkUnderline = (active: boolean) =>
-    active ? 'after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:bg-brand-gold' : ''
-
-  const megaLinkClass = (active: boolean) =>
-    cn(
-      'group flex items-center justify-between gap-2 rounded-md px-2 py-2 text-[0.8125rem] font-medium leading-snug transition-colors focus-visible:bg-white/10',
-      active
-        ? 'bg-white/10 font-semibold text-brand-gold'
-        : 'text-white/75 hover:bg-white/[0.08] hover:text-white',
-    )
+    active ? 'after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-brand-gold' : ''
 
   const mobileLinkClass = (active: boolean) =>
     cn(
@@ -552,8 +827,8 @@ export default function Navbar() {
 
   const mobileSubLinkClass = (active: boolean) =>
     cn(
-      'block py-2 text-[0.9375rem] transition-colors',
-      active ? 'font-semibold text-brand-gold' : 'text-white/70 hover:text-white',
+      'block py-2.5 text-base leading-snug transition-colors',
+      active ? 'font-semibold text-brand-gold-light' : 'text-white/90 hover:text-white',
     )
 
   const mobileMenu = (
@@ -586,8 +861,8 @@ export default function Navbar() {
           >
             Services
             <ChevronDown
-              size={18}
-              className={cn('text-white/45 transition-transform', mobileServicesOpen && 'rotate-180')}
+              size={22}
+              className={cn('text-white/70 transition-transform', mobileServicesOpen && 'rotate-180')}
               aria-hidden
             />
           </button>
@@ -608,10 +883,11 @@ export default function Navbar() {
                 View all services
               </NavLink>
               {megaMenuColumns.map((column) => (
-                <div key={column.key} className="pt-3">
-                  <p className="pb-1 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white/40">
+                <div key={column.key} className="pt-4">
+                  <p className="text-base font-semibold text-white">
                     {column.label}
                   </p>
+                  <p className="pb-2 text-sm text-white/75">{column.desc}</p>
                   {column.services.map((service) => (
                     <NavLink
                       key={service.slug}
@@ -622,7 +898,12 @@ export default function Navbar() {
                       )}
                       onClick={() => { setMobileOpen(false); trackNavigation(`Mobile ${service.name}`) }}
                     >
-                      {service.name}
+                      <span className="block truncate">{serviceNavName(service)}</span>
+                      {serviceNavHints[service.slug] ? (
+                        <span className="mt-0.5 block truncate text-sm font-normal text-white/70">
+                          {serviceNavHints[service.slug]}
+                        </span>
+                      ) : null}
                     </NavLink>
                   ))}
                 </div>
@@ -651,8 +932,8 @@ export default function Navbar() {
           >
             Learn
             <ChevronDown
-              size={18}
-              className={cn('text-white/45 transition-transform', mobileLearnOpen && 'rotate-180')}
+              size={22}
+              className={cn('text-white/70 transition-transform', mobileLearnOpen && 'rotate-180')}
               aria-hidden
             />
           </button>
@@ -672,23 +953,36 @@ export default function Navbar() {
               >
                 All Guides
               </NavLink>
-              {learnMegaColumns.map((column) => (
-                <div key={column.key} className="pt-3">
-                  <p className="pb-1 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-                    {column.label}
-                  </p>
-                  {column.links.map((link) => (
-                    <NavLink
-                      key={link.href}
-                      href={link.href}
-                      className={mobileSubLinkClass(pathname === link.href)}
-                      onClick={() => { setMobileOpen(false); trackNavigation(`Mobile ${link.label}`) }}
-                    >
-                      {link.label}
-                    </NavLink>
-                  ))}
-                </div>
-              ))}
+              {learnMegaColumns.map((column) => {
+                const mobileLinks = column.links.filter((link) => {
+                  if (column.key !== 'library') return true
+                  return link.href !== '/learn' && link.href !== '/gallery' && link.href !== '/contact'
+                })
+
+                return (
+                  <div key={column.key} className="pt-4">
+                    <p className="text-base font-semibold text-white">
+                      {column.label}
+                    </p>
+                    <p className="pb-2 text-sm text-white/75">{column.desc}</p>
+                    {mobileLinks.map((link) => (
+                      <NavLink
+                        key={link.href}
+                        href={link.href}
+                        className={mobileSubLinkClass(pathname === link.href)}
+                        onClick={() => { setMobileOpen(false); trackNavigation(`Mobile ${link.label}`) }}
+                      >
+                        <span className="block truncate">{link.label}</span>
+                        {link.hint ? (
+                          <span className="mt-0.5 block truncate text-sm font-normal text-white/70">
+                            {link.hint}
+                          </span>
+                        ) : null}
+                      </NavLink>
+                    ))}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </li>
@@ -719,269 +1013,123 @@ export default function Navbar() {
     </div>
   )
 
+  const serviceMegaColumns: MegaMenuColumnItem[] = megaMenuColumns.map((column) => ({
+    key: column.key,
+    label: column.label,
+    desc: column.desc,
+    icon: column.icon,
+    headingId: `services-menu-${column.key}`,
+    links: column.services.map((service) => {
+      const href = getLegacyLandingPageHref(service.slug) ?? getServicePageHref(service.slug)
+      const active =
+        pathname === `/services/${service.slug}` ||
+        pathname === getLegacyLandingPageHref(service.slug)
+
+      return {
+        label: serviceNavName(service),
+        hint: serviceNavHints[service.slug],
+        href,
+        active,
+        onSelect: () => setServicesOpen(false),
+      }
+    }),
+  }))
+
+  const learnMenuColumns: MegaMenuColumnItem[] = learnMegaColumns.map((column) => ({
+    key: column.key,
+    label: column.label,
+    desc: column.desc,
+    icon: column.icon,
+    headingId: `learn-menu-${column.key}`,
+    links: column.links.map((link) => ({
+      label: link.label,
+      hint: link.hint,
+      href: link.href,
+      active: pathname === link.href,
+      onSelect: () => {
+        setLearnOpen(false)
+        trackNavigation(link.label)
+      },
+    })),
+  }))
+
   const desktopServicesMenu = (
-    <div
-      ref={servicesMenuRef}
+    <MegaMenuPanel
+      menuRef={servicesMenuRef}
       id="desktop-services-menu"
-      role="region"
-      aria-label="Services"
-      className={cn(
-        'absolute inset-x-0 top-[calc(100%-1px)] z-40 hidden lg:block',
-        servicesOpen ? 'pointer-events-auto' : 'pointer-events-none',
-      )}
+      ariaLabel="Services"
+      open={servicesOpen}
+      intro="Need help choosing? Pick a group, then a service. Or get a free quote."
+      columns={serviceMegaColumns}
+      footerLinks={[
+        {
+          label: 'View all services',
+          href: '/services',
+          active: pathname === '/services',
+          onSelect: () => {
+            setServicesOpen(false)
+            trackNavigation('Nav All Services')
+          },
+        },
+        {
+          label: 'See our work',
+          href: '/gallery',
+          active: pathname === '/gallery',
+          onSelect: () => setServicesOpen(false),
+        },
+      ]}
+      onQuoteClick={() => setServicesOpen(false)}
       onMouseEnter={openServicesMenu}
       onMouseLeave={closeServicesMenu}
       onKeyDown={handleServicesMenuKeyDown}
-      aria-hidden={servicesOpen ? undefined : true}
-    >
-      <div
-        className={cn(
-          'border-b border-white/10 bg-brand-dark shadow-[0_24px_48px_-12px_rgba(0,0,0,0.55)]',
-          servicesOpen ? 'visible opacity-100' : 'invisible opacity-0',
-        )}
-      >
-        <div className="mx-auto grid max-w-7xl grid-cols-4 px-4 py-6 sm:px-6 lg:px-8">
-          {megaMenuColumns.map((column, index) => {
-            const ColumnIcon = column.icon
-            return (
-              <div
-                key={column.key}
-                data-mega-column
-                className={cn(
-                  'min-w-0 px-3 lg:px-5',
-                  index > 0 && 'border-l border-white/10',
-                )}
-              >
-                <div className="mb-3 flex items-center gap-2.5 border-b border-white/10 pb-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-gold">
-                    <ColumnIcon size={15} strokeWidth={2} aria-hidden />
-                  </span>
-                  <div className="min-w-0">
-                    <h2
-                      id={`services-menu-${column.key}`}
-                      className="font-display text-sm font-bold leading-tight text-white"
-                    >
-                      {column.label}
-                    </h2>
-                    <p className="mt-0.5 text-[0.6875rem] leading-snug text-white/45">
-                      {column.desc}
-                    </p>
-                  </div>
-                </div>
-                <ul aria-labelledby={`services-menu-${column.key}`}>
-                  {column.services.map((service) => {
-                    const isServiceActive =
-                      pathname === `/services/${service.slug}` ||
-                      pathname === getLegacyLandingPageHref(service.slug)
-
-                    return (
-                      <li key={service.slug}>
-                        <NavLink
-                          href={getLegacyLandingPageHref(service.slug) ?? getServicePageHref(service.slug)}
-                          className={megaLinkClass(isServiceActive)}
-                          aria-current={isServiceActive ? 'page' : undefined}
-                          onClick={() => setServicesOpen(false)}
-                        >
-                          <span>{service.name}</span>
-                          <ArrowRight
-                            size={12}
-                            className={cn(
-                              'shrink-0 opacity-0 transition-all',
-                              isServiceActive
-                                ? 'opacity-100'
-                                : 'group-hover:translate-x-0.5 group-hover:opacity-60',
-                            )}
-                            aria-hidden
-                          />
-                        </NavLink>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            )
-          })}
-        </div>
-
-        <div className="border-t border-white/10 bg-black/40">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-3 lg:px-8">
-            <div data-mega-column className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
-              <NavLink
-                href="/services"
-                className={cn(
-                  'font-semibold transition-colors hover:text-brand-gold',
-                  pathname === '/services'
-                    ? 'text-brand-gold'
-                    : 'text-white',
-                )}
-                aria-current={pathname === '/services' ? 'page' : undefined}
-                onClick={() => { setServicesOpen(false); trackNavigation('Nav All Services') }}
-              >
-                View all services
-              </NavLink>
-              {serviceResourceLinks.map((link) => (
-                <span key={link.href} className="flex items-center gap-3">
-                  <span className="text-white/25" aria-hidden>
-                    ·
-                  </span>
-                  <NavLink
-                    href={link.href}
-                    className="font-medium text-white/65 transition-colors hover:text-brand-gold"
-                    onClick={() => setServicesOpen(false)}
-                  >
-                    {link.label}
-                  </NavLink>
-                </span>
-              ))}
-            </div>
-            <NavLink
-              href="/contact"
-              className="group inline-flex items-center gap-1.5 text-xs font-semibold text-brand-gold"
-              onClick={() => setServicesOpen(false)}
-            >
-              {CTA_COPY.quote}
-              <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
-            </NavLink>
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   )
 
   const desktopLearnMenu = (
-    <div
-      ref={learnMenuRef}
+    <MegaMenuPanel
+      menuRef={learnMenuRef}
       id="desktop-learn-menu"
-      role="region"
-      aria-label="Guides"
-      className={cn(
-        'absolute inset-x-0 top-[calc(100%-1px)] z-40 hidden lg:block',
-        learnOpen ? 'pointer-events-auto' : 'pointer-events-none',
-      )}
+      ariaLabel="Guides"
+      open={learnOpen}
+      intro="Start with the question you have. Each guide is written in plain English."
+      columns={learnMenuColumns}
+      footerLinks={[
+        {
+          label: 'View all guides',
+          href: '/learn',
+          active: pathname === '/learn',
+          onSelect: () => {
+            setLearnOpen(false)
+            trackNavigation('Nav View all guides')
+          },
+        },
+        {
+          label: 'Common questions',
+          href: '/faqs',
+          active: pathname === '/faqs',
+          onSelect: () => {
+            setLearnOpen(false)
+            trackNavigation('Nav FAQs')
+          },
+        },
+      ]}
+      onQuoteClick={() => setLearnOpen(false)}
       onMouseEnter={openLearnMenu}
       onMouseLeave={closeLearnMenu}
       onKeyDown={handleLearnMenuKeyDown}
-      aria-hidden={learnOpen ? undefined : true}
-    >
-      <div
-        className={cn(
-          'border-b border-white/10 bg-brand-dark shadow-[0_24px_48px_-12px_rgba(0,0,0,0.55)]',
-          learnOpen ? 'visible opacity-100' : 'invisible opacity-0',
-        )}
-      >
-        <div className="mx-auto grid max-w-7xl grid-cols-4 px-4 py-6 sm:px-6 lg:px-8">
-          {learnMegaColumns.map((column, index) => {
-            const ColumnIcon = column.icon
-            return (
-              <div
-                key={column.key}
-                data-mega-column
-                className={cn(
-                  'min-w-0 px-3 lg:px-5',
-                  index > 0 && 'border-l border-white/10',
-                )}
-              >
-                <div className="mb-3 flex items-center gap-2.5 border-b border-white/10 pb-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-brand-gold">
-                    <ColumnIcon size={15} strokeWidth={2} aria-hidden />
-                  </span>
-                  <div className="min-w-0">
-                    <h2
-                      id={`learn-menu-${column.key}`}
-                      className="font-display text-sm font-bold leading-tight text-white"
-                    >
-                      {column.label}
-                    </h2>
-                    <p className="mt-0.5 text-[0.6875rem] leading-snug text-white/45">
-                      {column.desc}
-                    </p>
-                  </div>
-                </div>
-                <ul aria-labelledby={`learn-menu-${column.key}`}>
-                  {column.links.map((link) => {
-                    const isLinkActive = pathname === link.href
-
-                    return (
-                      <li key={link.href}>
-                        <NavLink
-                          href={link.href}
-                          className={megaLinkClass(isLinkActive)}
-                          aria-current={isLinkActive ? 'page' : undefined}
-                          onClick={() => { setLearnOpen(false); trackNavigation(link.label) }}
-                        >
-                          <span>{link.label}</span>
-                          <ArrowRight
-                            size={12}
-                            className={cn(
-                              'shrink-0 opacity-0 transition-all',
-                              isLinkActive
-                                ? 'opacity-100'
-                                : 'group-hover:translate-x-0.5 group-hover:opacity-60',
-                            )}
-                            aria-hidden
-                          />
-                        </NavLink>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            )
-          })}
-        </div>
-
-        <div className="border-t border-white/10 bg-black/40">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-3 lg:px-8">
-            <div data-mega-column className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
-              {learnFooterLinks.map((link, index) => (
-                <span key={link.href} className="flex items-center gap-3">
-                  {index > 0 ? (
-                    <span className="text-white/25" aria-hidden>
-                      ·
-                    </span>
-                  ) : null}
-                  <NavLink
-                    href={link.href}
-                    className={cn(
-                      'font-semibold transition-colors hover:text-brand-gold',
-                      index === 0
-                        ? pathname === link.href
-                          ? 'text-brand-gold'
-                          : 'text-white'
-                        : 'font-medium text-white/65',
-                    )}
-                    aria-current={pathname === link.href ? 'page' : undefined}
-                    onClick={() => { setLearnOpen(false); trackNavigation(`Nav ${link.label}`) }}
-                  >
-                    {link.label}
-                  </NavLink>
-                </span>
-              ))}
-            </div>
-            <NavLink
-              href="/contact"
-              className="group inline-flex items-center gap-1.5 text-xs font-semibold text-brand-gold"
-              onClick={() => setLearnOpen(false)}
-            >
-              {CTA_COPY.quote}
-              <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
-            </NavLink>
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   )
 
   return (
     <>
     <header
       ref={headerRef}
-      className="fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/10 bg-brand-dark shadow-[0_8px_30px_-18px_rgba(13,13,13,0.45)]"
+      className="fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/10 bg-brand-dark shadow-[0_8px_30px_-18px_rgba(13,13,13,0.45)] [transform:translateZ(0)]"
     >
       <nav
-        className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:items-stretch lg:gap-8 lg:px-8 lg:py-3.5"
+        className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:items-stretch lg:gap-6 lg:px-8 lg:py-0"
       >
-        <NavLink prefetch={false} href="/" className="flex min-w-0 items-center gap-2.5 lg:col-start-1 lg:row-start-1" aria-label="A1 Property Services home">
+        <NavLink prefetch={false} href="/" className="flex min-w-0 items-center gap-2.5 lg:col-start-1 lg:row-start-1 lg:py-3" aria-label="A1 Property Services home">
           <LogoMark size="md" />
           <span
             className="truncate text-[0.9375rem] font-bold leading-tight tracking-[-0.02em] text-white sm:text-base lg:text-lg"
@@ -991,18 +1139,28 @@ export default function Navbar() {
           </span>
         </NavLink>
 
-        <ul className="hidden self-stretch items-center justify-center gap-x-6 xl:gap-x-8 lg:flex">
+        <ul className="hidden self-stretch items-stretch justify-end lg:flex">
+          <li className="flex items-center px-3">
+            <NavLink
+              href="/"
+              className={cn(linkClass(pathname === '/'), linkUnderline(pathname === '/'))}
+              onClick={() => trackNavigation('Home')}
+            >
+              Home
+            </NavLink>
+          </li>
+
           <li
             ref={servicesRef}
-            className="flex self-stretch items-center"
+            className="flex items-center px-3"
             onMouseEnter={openServicesMenu}
             onMouseLeave={closeServicesMenu}
             onBlur={handleServicesBlur}
           >
-            <div className="relative inline-flex items-center">
+            <div className="inline-flex items-center">
               <NavLink
                 href="/services"
-                className={cn(linkClass(isServicesActive || servicesOpen), 'inline-flex items-center', linkUnderline(isServicesActive))}
+                className={cn(linkClass(isServicesActive || servicesOpen), linkUnderline(isServicesActive))}
                 onKeyDown={handleServicesTriggerKeyDown}
                 onClick={() => {
                   if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
@@ -1018,7 +1176,7 @@ export default function Navbar() {
                 type="button"
                 className={cn(
                   linkClass(isServicesActive || servicesOpen),
-                  'ml-0.5 inline-flex min-h-9 min-w-9 items-center justify-center rounded-md',
+                  '-mr-1 inline-flex h-8 w-7 items-center justify-center rounded-md',
                 )}
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
@@ -1027,6 +1185,7 @@ export default function Navbar() {
                 onKeyDown={handleServicesTriggerKeyDown}
                 onClick={(event) => {
                   if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current)
+                  setDesktopMenusReady(true)
                   setLearnOpen(false)
                   if (event.detail === 0) {
                     setServicesOpen((open) => !open)
@@ -1036,16 +1195,15 @@ export default function Navbar() {
                 }}
               >
                 <ChevronDown
-                  size={14}
-                  className={cn('transition-transform duration-200', servicesOpen && 'rotate-180')}
+                  size={15}
+                  className={cn('transition-transform duration-150', servicesOpen && 'rotate-180')}
                   aria-hidden
                 />
               </button>
             </div>
-            {desktopServicesMenu}
           </li>
 
-          <li>
+          <li className="flex items-center px-3">
             <NavLink
               href="/gallery"
               className={cn(linkClass(pathname === '/gallery'), linkUnderline(pathname === '/gallery'))}
@@ -1057,15 +1215,15 @@ export default function Navbar() {
 
           <li
             ref={learnRef}
-            className="flex self-stretch items-center"
+            className="flex items-center px-3"
             onMouseEnter={openLearnMenu}
             onMouseLeave={closeLearnMenu}
             onBlur={handleLearnBlur}
           >
-            <div className="relative inline-flex items-center">
+            <div className="inline-flex items-center">
               <NavLink
                 href="/learn"
-                className={cn(linkClass(isLearnActive || learnOpen), 'inline-flex items-center', linkUnderline(isLearnActive))}
+                className={cn(linkClass(isLearnActive || learnOpen), linkUnderline(isLearnActive))}
                 onKeyDown={handleLearnTriggerKeyDown}
                 onClick={() => {
                   if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
@@ -1081,7 +1239,7 @@ export default function Navbar() {
                 type="button"
                 className={cn(
                   linkClass(isLearnActive || learnOpen),
-                  'ml-0.5 inline-flex min-h-9 min-w-9 items-center justify-center rounded-md',
+                  '-mr-1 inline-flex h-8 w-7 items-center justify-center rounded-md',
                 )}
                 aria-expanded={learnOpen}
                 aria-haspopup="true"
@@ -1090,6 +1248,7 @@ export default function Navbar() {
                 onKeyDown={handleLearnTriggerKeyDown}
                 onClick={(event) => {
                   if (learnCloseTimer.current) clearTimeout(learnCloseTimer.current)
+                  setDesktopMenusReady(true)
                   setServicesOpen(false)
                   if (event.detail === 0) {
                     setLearnOpen((open) => !open)
@@ -1099,16 +1258,15 @@ export default function Navbar() {
                 }}
               >
                 <ChevronDown
-                  size={14}
-                  className={cn('transition-transform duration-200', learnOpen && 'rotate-180')}
+                  size={15}
+                  className={cn('transition-transform duration-150', learnOpen && 'rotate-180')}
                   aria-hidden
                 />
               </button>
             </div>
-            {desktopLearnMenu}
           </li>
 
-          <li>
+          <li className="flex items-center px-3">
             <NavLink
               href="/about"
               className={cn(linkClass(pathname === '/about'), linkUnderline(pathname === '/about'))}
@@ -1118,7 +1276,7 @@ export default function Navbar() {
             </NavLink>
           </li>
 
-          <li>
+          <li className="flex items-center px-3">
             <NavLink
               href="/contact"
               className={cn(linkClass(pathname === '/contact'), linkUnderline(pathname === '/contact'))}
@@ -1129,12 +1287,12 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className="hidden shrink-0 items-center gap-4 lg:flex lg:self-stretch xl:gap-5">
+        <div className="hidden shrink-0 items-center gap-4 lg:flex lg:self-stretch lg:py-3 xl:gap-5">
           <span className="hidden h-4 w-px bg-white/20 lg:block" aria-hidden />
           <a
             href={`tel:${siteConfig.phone}`}
             data-track-phone="Navbar Desktop"
-            className="flex items-center gap-2 whitespace-nowrap text-[0.8125rem] font-semibold text-brand-gold transition-colors hover:text-brand-gold-light"
+            className="flex min-h-11 items-center gap-2 whitespace-nowrap text-[0.9375rem] font-semibold text-brand-gold-light transition-colors hover:text-white"
           >
             <Phone size={15} className="shrink-0 text-brand-gold" aria-hidden />
             <span className="hidden xl:inline">{siteConfig.phoneDisplay}</span>
@@ -1181,6 +1339,8 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+      {desktopMenusReady ? desktopServicesMenu : null}
+      {desktopMenusReady ? desktopLearnMenu : null}
     </header>
     {mounted && mobileOpen
       ? createPortal(mobileMenu, document.body)

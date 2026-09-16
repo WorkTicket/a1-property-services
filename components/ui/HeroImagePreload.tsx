@@ -1,3 +1,4 @@
+import { preload } from 'react-dom'
 import { getLcpPreloadHref, getLcpPreloadSrcset } from '@/lib/responsive-image'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
 
@@ -7,22 +8,19 @@ type HeroImagePreloadProps = {
   maxWidth?: number
 }
 
+/** One AVIF preload hint. A second raw <link> duplicates the request. */
 export default function HeroImagePreload({
   src,
   sizes = IMAGE_SIZES.hero,
   maxWidth,
 }: HeroImagePreloadProps) {
   const hrefWidth = Math.min(768, maxWidth ?? 768)
-
-  return (
-    <link
-      rel="preload"
-      as="image"
-      href={getLcpPreloadHref(src, hrefWidth)}
-      imageSrcSet={getLcpPreloadSrcset(src, maxWidth)}
-      imageSizes={sizes}
-      type="image/avif"
-      fetchPriority="high"
-    />
-  )
+  preload(getLcpPreloadHref(src, hrefWidth), {
+    as: 'image',
+    type: 'image/avif',
+    imageSrcSet: getLcpPreloadSrcset(src, maxWidth),
+    imageSizes: sizes,
+    fetchPriority: 'high',
+  })
+  return null
 }

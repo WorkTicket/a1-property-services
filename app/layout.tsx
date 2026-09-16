@@ -4,8 +4,9 @@ import '../styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import DeferredAppClient from '@/components/layout/DeferredAppClient'
+import StickyCtaBar from '@/components/layout/StickyCtaBar'
 import SitePreloader, { SitePreloaderHead } from '@/components/layout/SitePreloader'
-import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
+import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, organizationJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
 import {
   buildGoogleTagsBootstrap,
   isValidAdsId,
@@ -95,12 +96,11 @@ export default function RootLayout({
   const localBusinessJsonLd = buildLocalBusinessJsonLd()
 
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <SitePreloaderHead />
+        <SitePreloaderHead fontClassNames={[playfair.variable, inter.variable]} />
         <link rel="icon" href="/images/icon.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/images/icon.webp" />
-        <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="A1 Property Services Blog" href="/feed.xml" />
         <meta name="geo.region" content="US-IA" />
         <meta name="geo.placename" content="Cedar Falls" />
@@ -121,21 +121,22 @@ export default function RootLayout({
       <body>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <SitePreloader />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLdGraph(websiteJsonLd(), localBusinessJsonLd)),
-          }}
-        />
         <Navbar />
         <main
           id="main-content"
           role="main"
-          className="min-w-0 overflow-x-clip pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:pb-0"
+          className="min-w-0 pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] md:pb-0"
         >
           {children}
         </main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdGraph(websiteJsonLd(), organizationJsonLd(), localBusinessJsonLd)),
+          }}
+        />
+        <StickyCtaBar />
         <DeferredAppClient />
       </body>
     </html>
