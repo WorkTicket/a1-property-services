@@ -22,8 +22,6 @@ export default function StatsMarqueeRuntime() {
     let shown = false
     let idleId = 0
     let timeoutId = 0
-    let scrollTimer = 0
-    let scrollBound = false
 
     const play = () => {
       if (document.hidden || !shown) return
@@ -33,26 +31,6 @@ export default function StatsMarqueeRuntime() {
     const onVisibility = () => {
       if (document.hidden) pause()
       else play()
-    }
-    const onScroll = () => {
-      root.classList.add('is-scrolling')
-      if (scrollTimer) globalThis.clearTimeout(scrollTimer)
-      scrollTimer = globalThis.setTimeout(() => {
-        root.classList.remove('is-scrolling')
-      }, 140) as unknown as number
-    }
-    const bindScroll = () => {
-      if (scrollBound) return
-      scrollBound = true
-      window.addEventListener('scroll', onScroll, { passive: true })
-    }
-    const unbindScroll = () => {
-      if (scrollBound) {
-        window.removeEventListener('scroll', onScroll)
-        scrollBound = false
-      }
-      if (scrollTimer) globalThis.clearTimeout(scrollTimer)
-      root.classList.remove('is-scrolling')
     }
     const schedulePlay = () => {
       if ('requestIdleCallback' in window) {
@@ -67,19 +45,13 @@ export default function StatsMarqueeRuntime() {
     let io: IntersectionObserver | undefined
     if (!('IntersectionObserver' in window)) {
       shown = true
-      bindScroll()
       schedulePlay()
     } else {
       io = new IntersectionObserver(
         ([entry]) => {
           shown = entry.isIntersecting
-          if (shown) {
-            bindScroll()
-            schedulePlay()
-          } else {
-            unbindScroll()
-            pause()
-          }
+          if (shown) schedulePlay()
+          else pause()
         },
         { rootMargin: '0px', threshold: 0.2 },
       )
@@ -89,7 +61,6 @@ export default function StatsMarqueeRuntime() {
     return () => {
       document.removeEventListener('visibilitychange', onVisibility)
       io?.disconnect()
-      unbindScroll()
       if (idleId && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleId)
       if (timeoutId) globalThis.clearTimeout(timeoutId)
       pause()

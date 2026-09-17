@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ChevronRight, Phone } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import { CTA_COPY } from '@/lib/cta'
+import { CTA_COPY, ESTIMATE_HASH } from '@/lib/cta'
 import { siteConfig } from '@/lib/metadata'
 
 type FaqSectionCtaProps = {
@@ -13,7 +13,7 @@ type FaqSectionCtaProps = {
 export default function FaqSectionCta({
   learnMoreHref,
   learnMoreLabel,
-  quoteHref = '#estimate',
+  quoteHref = ESTIMATE_HASH,
 }: FaqSectionCtaProps) {
   return (
     <div className="mt-10 text-center">

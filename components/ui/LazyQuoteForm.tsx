@@ -2,6 +2,12 @@
 
 import { useEffect, useRef, useState, type ComponentType } from 'react'
 import type { QuoteFormProps } from '@/components/ui/QuoteForm'
+import { ESTIMATE_HASH, QUOTE_INTENT_EVENT } from '@/lib/cta'
+
+type LazyQuoteFormProps = QuoteFormProps & {
+  /** Load immediately. Use on the dedicated contact page. */
+  eager?: boolean
+}
 
 function QuoteFormSkeleton({ compact = false }: { compact?: boolean }) {
   return (
@@ -19,7 +25,7 @@ function QuoteFormSkeleton({ compact = false }: { compact?: boolean }) {
   )
 }
 
-export default function LazyQuoteForm(props: QuoteFormProps) {
+export default function LazyQuoteForm({ eager = false, ...props }: LazyQuoteFormProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [Form, setForm] = useState<ComponentType<QuoteFormProps> | null>(null)
 
@@ -28,11 +34,19 @@ export default function LazyQuoteForm(props: QuoteFormProps) {
     if (!el) return
 
     let cancelled = false
+    let loaded = false
     const load = () => {
+      if (loaded) return
+      loaded = true
       void import('@/components/ui/QuoteForm').then((mod) => {
         if (!cancelled) setForm(() => mod.default)
       })
     }
+
+    if (eager || window.location.hash === ESTIMATE_HASH) load()
+
+    const onIntent = () => load()
+    window.addEventListener(QUOTE_INTENT_EVENT, onIntent)
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,9 +61,10 @@ export default function LazyQuoteForm(props: QuoteFormProps) {
     observer.observe(el)
     return () => {
       cancelled = true
+      window.removeEventListener(QUOTE_INTENT_EVENT, onIntent)
       observer.disconnect()
     }
-  }, [])
+  }, [eager])
 
   return (
     <div ref={ref}>

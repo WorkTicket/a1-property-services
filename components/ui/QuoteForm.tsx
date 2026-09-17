@@ -7,7 +7,7 @@ import { z } from 'zod'
 import { markLeadSubmitted, trackFormSubmit, trackQuoteFormView, trackPhoneCall } from '@/lib/analytics'
 import { contactFormEndpoint, thankYouPath } from '@/lib/contact'
 import { siteConfig } from '@/lib/metadata'
-import { CTA_COPY } from '@/lib/cta'
+import { CTA_COPY, QUOTE_NAME_ID } from '@/lib/cta'
 import { allServices } from '@/lib/services'
 import Button from '@/components/ui/Button'
 
@@ -55,7 +55,7 @@ export default function QuoteForm({
   const isDark = variant === 'dark'
   const [serverError, setServerError] = useState('')
   const [showMore, setShowMore] = useState(!compact)
-  const hideCity = compact && Boolean(defaultCity)
+  const hideCity = compact && Boolean(defaultCity) && lockService
   const lockedServiceLabel =
     serviceOptions.find((s) => s.slug === defaultService)?.name ??
     (defaultService === 'other' ? 'Other' : null)
@@ -69,7 +69,7 @@ export default function QuoteForm({
     defaultValues: {
       name: '',
       phone: '',
-      city: defaultCity || (compact ? 'Cedar Falls' : ''),
+      city: defaultCity,
       email: '',
       service: defaultService,
       details: '',
@@ -152,11 +152,11 @@ export default function QuoteForm({
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+          <label htmlFor={QUOTE_NAME_ID} className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
             Full Name <span className="text-brand-gold">*</span>
           </label>
           <input
-            id="name"
+            id={QUOTE_NAME_ID}
             type="text"
             placeholder="Your name"
             autoComplete="name"
@@ -168,11 +168,11 @@ export default function QuoteForm({
         </div>
 
         <div>
-          <label htmlFor="phone" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+          <label htmlFor="quote-phone" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
             Phone <span className="text-brand-gold">*</span>
           </label>
           <input
-            id="phone"
+            id="quote-phone"
             type="tel"
             placeholder="(319) 555-1234"
             autoComplete="tel"
@@ -187,16 +187,34 @@ export default function QuoteForm({
       {hideCity ? <input type="hidden" {...register('city')} /> : null}
       {lockService && defaultService ? <input type="hidden" {...register('service')} /> : null}
 
+      {compact && !hideCity ? (
+        <div>
+          <label htmlFor="quote-city" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+            City <span className="text-brand-gold">*</span>
+          </label>
+          <input
+            id="quote-city"
+            type="text"
+            placeholder="Cedar Falls"
+            autoComplete="address-level2"
+            className={inputClass}
+            disabled={isSubmitting}
+            {...register('city')}
+          />
+          {errors.city && <p className={errorClass}>{errors.city.message}</p>}
+        </div>
+      ) : null}
+
       {compact && !lockService ? (
         <div>
           <label
-            htmlFor="service"
+            htmlFor="quote-service"
             className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
           >
             Service Needed <span className="text-brand-gold">*</span>
           </label>
           <select
-            id="service"
+            id="quote-service"
             className={inputClass}
             disabled={isSubmitting}
             {...register('service')}
@@ -217,11 +235,11 @@ export default function QuoteForm({
         <>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="city" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+              <label htmlFor="quote-city" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
                 City <span className="text-brand-gold">*</span>
               </label>
               <input
-                id="city"
+                id="quote-city"
                 type="text"
                 placeholder="Cedar Falls"
                 autoComplete="address-level2"
@@ -233,11 +251,11 @@ export default function QuoteForm({
             </div>
 
             <div>
-              <label htmlFor="email" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
+              <label htmlFor="quote-email" className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}>
                 Email Address
               </label>
               <input
-                id="email"
+                id="quote-email"
                 type="email"
                 placeholder="your@email.com"
                 autoComplete="email"
@@ -267,13 +285,13 @@ export default function QuoteForm({
           ) : (
             <div>
               <label
-                htmlFor="service-full"
+                htmlFor="quote-service"
                 className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
               >
                 Service Needed <span className="text-brand-gold">*</span>
               </label>
               <select
-                id="service-full"
+                id="quote-service"
                 className={inputClass}
                 disabled={isSubmitting}
                 {...register('service')}
@@ -292,13 +310,13 @@ export default function QuoteForm({
 
           <div>
             <label
-              htmlFor="details"
+              htmlFor="quote-details"
               className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
             >
               Project Details <span className={mutedClass}>(optional)</span>
             </label>
             <textarea
-              id="details"
+              id="quote-details"
               rows={3}
               placeholder="Briefly describe your project..."
               className={`${inputClass} min-h-[96px]`}
@@ -321,36 +339,15 @@ export default function QuoteForm({
             </button>
           ) : (
             <div className="space-y-4">
-              {!hideCity ? (
-                <div>
-                  <label
-                    htmlFor="city"
-                    className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
-                  >
-                    City <span className="text-brand-gold">*</span>
-                  </label>
-                  <input
-                    id="city"
-                    type="text"
-                    placeholder="Cedar Falls"
-                    autoComplete="address-level2"
-                    className={inputClass}
-                    disabled={isSubmitting}
-                    {...register('city')}
-                  />
-                  {errors.city && <p className={errorClass}>{errors.city.message}</p>}
-                </div>
-              ) : null}
-
               <div>
                 <label
-                  htmlFor="email"
+                  htmlFor="quote-email"
                   className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
                 >
                   Email Address <span className={mutedClass}>(optional)</span>
                 </label>
                 <input
-                  id="email"
+                  id="quote-email"
                   type="email"
                   placeholder="your@email.com"
                   autoComplete="email"
@@ -363,13 +360,13 @@ export default function QuoteForm({
 
               <div>
                 <label
-                  htmlFor="details"
+                  htmlFor="quote-details"
                   className={`mb-1.5 block text-xs font-semibold uppercase tracking-wide ${labelClass}`}
                 >
                   Project Details <span className={mutedClass}>(optional)</span>
                 </label>
                 <textarea
-                  id="details"
+                  id="quote-details"
                   rows={3}
                   placeholder="Briefly describe your project..."
                   className={`${inputClass} min-h-[96px]`}

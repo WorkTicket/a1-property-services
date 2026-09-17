@@ -1,7 +1,7 @@
 import { Phone } from 'lucide-react'
 import Button from '@/components/ui/Button'
+import QuoteButton from '@/components/cta/QuoteButton'
 import FadeIn from '@/components/motion/FadeIn'
-import { CTA_COPY } from '@/lib/cta'
 import { siteConfig } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
 
@@ -11,7 +11,6 @@ type CtaBannerProps = {
   eyebrow?: string
   animated?: boolean
   titleClassName?: string
-  /** Prefer #estimate when the page has an inline QuoteForm. */
   quoteHref?: string
 }
 
@@ -20,7 +19,7 @@ function CtaBannerContent({
   description,
   eyebrow,
   titleClassName,
-  quoteHref = '/contact',
+  quoteHref,
 }: Omit<CtaBannerProps, 'animated'>) {
   return (
     <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
@@ -42,9 +41,7 @@ function CtaBannerContent({
         <p className="mt-3 max-w-lg text-base leading-relaxed text-white">{description}</p>
       </div>
       <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
-        <Button href={quoteHref} variant="white" size="lg" trackLabel="Banner Quote">
-          {CTA_COPY.quote}
-        </Button>
+        <QuoteButton href={quoteHref} variant="white" size="lg" trackLabel="Banner Quote" />
         <Button href={`tel:${siteConfig.phone}`} variant="ghost" size="lg" trackLabel="Banner Phone">
           <Phone size={16} aria-hidden />
           {siteConfig.phoneDisplay}
@@ -60,7 +57,7 @@ export default function CtaBanner({
   eyebrow,
   animated = false,
   titleClassName,
-  quoteHref = '/contact',
+  quoteHref,
 }: CtaBannerProps) {
   return (
     <section className="relative overflow-hidden bg-brand-green-800">

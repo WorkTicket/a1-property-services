@@ -27,6 +27,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
 import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
 import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
+import QuoteFormCard from '@/components/cta/QuoteFormCard'
 
 export function landscapingHubMetadata() {
   const page = landscapingHubPage
@@ -189,7 +190,7 @@ export default function LandscapingHubLanding() {
         </FadeIn>
       </section>
 
-      <section id="estimate" className="section bg-brand-stone">
+      <section className="section bg-brand-stone">
         <div className="section-inner relative">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
@@ -220,14 +221,14 @@ export default function LandscapingHubLanding() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <div className="form-card">
+              <QuoteFormCard>
                 <LazyQuoteForm
                   variant="light"
                   formLocation="Landscaping Hub"
                   defaultCity="Cedar Falls"
                   compact
                 />
-              </div>
+              </QuoteFormCard>
             </FadeIn>
           </div>
         </div>

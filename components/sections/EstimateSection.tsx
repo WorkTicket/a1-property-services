@@ -3,6 +3,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import { siteConfig } from '@/lib/metadata'
 import TrackPhoneLink from '@/components/analytics/TrackPhoneLink'
 import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
+import QuoteFormCard from '@/components/cta/QuoteFormCard'
 
 type EstimateSectionProps = {
   /** GA4 form_location label */
@@ -33,7 +34,7 @@ export default function EstimateSection({
   compact = true,
 }: EstimateSectionProps) {
   return (
-    <section id="estimate" className="section bg-brand-stone">
+    <section className="section bg-brand-stone">
       <div className="section-inner relative">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <FadeIn>
@@ -58,7 +59,7 @@ export default function EstimateSection({
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="form-card">
+            <QuoteFormCard>
               <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
               <p className="mt-1 text-sm text-brand-muted">
                 Name and phone are enough. We&rsquo;ll take it from there.
@@ -72,7 +73,7 @@ export default function EstimateSection({
                   compact={compact}
                 />
               </div>
-            </div>
+            </QuoteFormCard>
           </FadeIn>
         </div>
       </div>

@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import DeferredAppClient from '@/components/layout/DeferredAppClient'
 import StickyCtaBar from '@/components/layout/StickyCtaBar'
+import QuoteScrollRuntime from '@/components/cta/QuoteScrollRuntime'
 import SitePreloader, { SitePreloaderHead } from '@/components/layout/SitePreloader'
 import { localSeoKeywords, siteConfig, defaultOpenGraph, defaultTwitter, websiteJsonLd, organizationJsonLd, buildLocalBusinessJsonLd, jsonLdGraph } from '@/lib/metadata'
 import {
@@ -137,6 +138,7 @@ export default function RootLayout({
           }}
         />
         <StickyCtaBar />
+        <QuoteScrollRuntime />
         <DeferredAppClient />
       </body>
     </html>

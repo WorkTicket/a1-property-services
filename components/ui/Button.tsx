@@ -35,8 +35,8 @@ const sizes: Record<ButtonSize, string> = {
   xs: 'btn-xs',
 }
 
-function isExternalHref(href: string) {
-  return /^(https?:\/\/|tel:|mailto:)/.test(href)
+function isNativeHref(href: string) {
+  return /^(https?:\/\/|tel:|mailto:|#)/.test(href)
 }
 
 export default function Button(props: ButtonAsButton | ButtonAsLink) {
@@ -59,7 +59,7 @@ export default function Button(props: ButtonAsButton | ButtonAsLink) {
         ? { 'data-track-cta': trackLabel }
         : {}
 
-    if (isExternalHref(href)) {
+    if (isNativeHref(href)) {
       return (
         <a href={href} className={classes} onClick={onClick} {...trackAttrs} {...linkRest}>
           {children}

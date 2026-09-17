@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check, ChevronRight, MapPin, Phone, Star } from 'lucide-react'
 import { hardscapeFeatures, services } from '@/lib/services'
-import { CTA_COPY } from '@/lib/cta'
+import { CTA_COPY, QUOTE_HREF } from '@/lib/cta'
 import { generatePageMetadata, siteConfig, faqPageJsonLd, webPageJsonLd } from '@/lib/metadata'
 import Button from '@/components/ui/Button'
 import { siteImages, homepageGalleryPreview } from '@/lib/images'
@@ -14,6 +14,7 @@ import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import HomeHero from '@/components/sections/HomeHero'
 import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
+import QuoteFormCard from '@/components/cta/QuoteFormCard'
 import LazyGoogleReviews from '@/components/ui/LazyGoogleReviews'
 import LazyGoogleMap from '@/components/ui/LazyGoogleMap'
 import { IMAGE_SIZES } from '@/lib/image-sizes'
@@ -232,7 +233,7 @@ export default function HomePage() {
                 We&rsquo;ve served Cedar Falls, Waterloo, and Black Hawk County {sinceYearPhrase()}. When you hire us, you&rsquo;re hiring neighbors who care how your yard looks when we drive past it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button href="#estimate">
+                <Button href={QUOTE_HREF}>
                   {CTA_COPY.quote}
                 </Button>
                 <Button href="/about" variant="outline">
@@ -311,7 +312,7 @@ export default function HomePage() {
       ]} />
 
       {/* CTA / QUOTE FORM */}
-      <section id="estimate" className="section bg-brand-stone">
+      <section className="section bg-brand-stone">
         <div className="section-inner relative">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
@@ -346,15 +347,15 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <div className="form-card">
-                <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
-                <p className="mt-1 text-sm text-brand-muted">
-                  Name and phone are enough. We&rsquo;ll take it from there.
-                </p>
-                <div className="mt-6">
-                  <LazyQuoteForm variant="light" formLocation="Homepage" compact />
-                </div>
+            <QuoteFormCard>
+              <h3 className="font-display text-xl font-bold text-brand-dark">Request a Free Quote</h3>
+              <p className="mt-1 text-sm text-brand-muted">
+                Name and phone are enough. We&rsquo;ll take it from there.
+              </p>
+              <div className="mt-6">
+                <LazyQuoteForm variant="light" formLocation="Homepage" compact />
               </div>
+            </QuoteFormCard>
             </FadeIn>
           </div>
         </div>

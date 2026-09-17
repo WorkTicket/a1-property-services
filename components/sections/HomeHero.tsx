@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import { ChevronRight, ClipboardCheck, MapPin, Phone, ShieldCheck, Star } from 'lucide-react'
-import { CTA_COPY } from '@/lib/cta'
+import { CTA_COPY, QUOTE_HREF } from '@/lib/cta'
 import { siteConfig } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
 import { establishedEyebrow } from '@/lib/years-in-business'
@@ -25,7 +25,7 @@ export default function HomeHero() {
               maxWidth={1920}
             />
           </div>
-          <HeroOverlay imageSrc={siteImages.homeHero} variant="home" />
+          <HeroOverlay imageSrc={siteImages.homeHero} />
         </div>
 
         <div className="home-hero-content">
@@ -40,7 +40,7 @@ export default function HomeHero() {
               subtitleMaxWidth="30rem"
             >
               <div className="home-hero-ctas">
-                <Button href="#estimate" size="lg" trackLabel="Home Hero Quote" className="home-hero-cta-primary">
+                <Button href={QUOTE_HREF} size="lg" trackLabel="Home Hero Quote" className="home-hero-cta-primary">
                   {CTA_COPY.quote}
                   <ChevronRight className="h-4 w-4" aria-hidden />
                 </Button>

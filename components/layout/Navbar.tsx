@@ -20,7 +20,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/lib/metadata'
-import { CTA_COPY } from '@/lib/cta'
+import { CTA_COPY, quoteHrefForPath } from '@/lib/cta'
 import LogoMark from '@/components/ui/LogoMark'
 import Button from '@/components/ui/Button'
 import StickyCtaBar from '@/components/layout/StickyCtaBar'
@@ -244,6 +244,7 @@ function MegaMenuPanel({
   intro,
   columns,
   footerLinks,
+  quoteHref,
   onQuoteClick,
   onMouseEnter,
   onMouseLeave,
@@ -256,6 +257,7 @@ function MegaMenuPanel({
   intro: string
   columns: MegaMenuColumnItem[]
   footerLinks: MegaMenuLinkItem[]
+  quoteHref: string
   onQuoteClick: () => void
   onMouseEnter: () => void
   onMouseLeave: () => void
@@ -355,14 +357,15 @@ function MegaMenuPanel({
                 </span>
               ))}
             </div>
-            <NavLink
-              href="/contact"
-              className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-md bg-brand-gold px-4 text-[0.9375rem] font-semibold text-white hover:bg-brand-gold-hover"
+            <Button
+              href={quoteHref}
+              size="sm"
               onClick={onQuoteClick}
+              trackLabel="Navbar Mega Quote"
             >
               {CTA_COPY.quote}
               <ArrowRight size={16} aria-hidden />
-            </NavLink>
+            </Button>
           </div>
         </div>
       </div>
@@ -421,6 +424,7 @@ function isFocusLeaving(event: ReactFocusEvent<HTMLElement>) {
 
 export default function Navbar() {
   const pathname = usePathname()
+  const quoteHref = quoteHrefForPath(pathname)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [learnOpen, setLearnOpen] = useState(false)
@@ -1078,6 +1082,7 @@ export default function Navbar() {
           onSelect: () => setServicesOpen(false),
         },
       ]}
+      quoteHref={quoteHref}
       onQuoteClick={() => setServicesOpen(false)}
       onMouseEnter={openServicesMenu}
       onMouseLeave={closeServicesMenu}
@@ -1113,6 +1118,7 @@ export default function Navbar() {
           },
         },
       ]}
+      quoteHref={quoteHref}
       onQuoteClick={() => setLearnOpen(false)}
       onMouseEnter={openLearnMenu}
       onMouseLeave={closeLearnMenu}
@@ -1297,7 +1303,7 @@ export default function Navbar() {
             <Phone size={15} className="shrink-0 text-brand-gold" aria-hidden />
             <span className="hidden xl:inline">{siteConfig.phoneDisplay}</span>
           </a>
-          <Button href="/contact" size="sm" className="whitespace-nowrap">
+          <Button href={quoteHref} size="sm" className="whitespace-nowrap" trackLabel="Navbar Quote">
             {CTA_COPY.quote}
           </Button>
         </div>

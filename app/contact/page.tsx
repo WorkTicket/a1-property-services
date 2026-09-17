@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { Phone, Mail, MapPin, Check, Star, Shield, Clock } from 'lucide-react'
 import { generatePageMetadata, breadcrumbJsonLd, siteConfig, webPageJsonLd, jsonLdGraph, localBusinessRef } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
-import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
+import { ESTIMATE_ID } from '@/lib/cta'
+import ContactQuoteForm from '@/components/cta/ContactQuoteForm'
 import TrackPageEvent from '@/components/analytics/TrackPageEvent'
 import FadeIn from '@/components/motion/FadeIn'
 import PageHero from '@/components/motion/PageHero'
@@ -92,10 +94,15 @@ export default function ContactPage() {
                 </span>
               </div>
 
-              <div className="mt-8">
-                <div id="estimate">
-                  <LazyQuoteForm variant="light" formLocation="Contact Page" compact />
-                </div>
+              <div className="mt-8" id={ESTIMATE_ID} tabIndex={-1}>
+                <Suspense fallback={<div className="space-y-3" aria-hidden>
+                  <div className="h-12 rounded-lg bg-black/[0.04]" />
+                  <div className="h-12 rounded-lg bg-black/[0.04]" />
+                  <div className="h-12 rounded-lg bg-black/[0.04]" />
+                  <div className="h-12 rounded-lg bg-brand-gold/20" />
+                </div>}>
+                  <ContactQuoteForm />
+                </Suspense>
               </div>
             </FadeIn>
 

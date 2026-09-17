@@ -33,6 +33,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import { StaggerContainer, StaggerItem } from '@/components/motion/Stagger'
 import ProjectPreviewGrid from '@/components/gallery/ProjectPreviewGrid'
 import LazyQuoteForm from '@/components/ui/LazyQuoteForm'
+import QuoteFormCard from '@/components/cta/QuoteFormCard'
 
 type LegacyServiceLandingProps = {
   page: LegacyLandingPage
@@ -314,7 +315,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
         </section>
       ) : null}
 
-      <section id="estimate" className="section bg-brand-stone">
+      <section className="section bg-brand-stone">
         <div className="section-inner relative">
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
@@ -358,7 +359,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <div className="form-card">
+              <QuoteFormCard>
                 <LazyQuoteForm
                   variant="light"
                   formLocation={formLocation}
@@ -366,7 +367,7 @@ export default function LegacyServiceLanding({ page }: LegacyServiceLandingProps
                   defaultCity="Cedar Falls"
                   compact
                 />
-              </div>
+              </QuoteFormCard>
             </FadeIn>
           </div>
         </div>
