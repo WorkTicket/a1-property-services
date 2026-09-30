@@ -491,8 +491,9 @@ export function generatePageMetadata({
 
 /**
  * WebSite.publisher / Service.provider must be Organization or Person.
- * Ahrefs schema.org validation does not treat LandscapingBusiness as in-range
+ * Ahrefs schema.org validation rejects LandscapingBusiness as INVALID_ITEMTYPE
  * (it does not walk the subtype tree) and flags @type arrays as invalid.
+ * LocalBusiness + additionalType keeps Google and Ahrefs both happy.
  */
 export function organizationRef() {
   return {
@@ -505,7 +506,7 @@ export function organizationRef() {
 /** Local pack entity. Separate @id so it is not merged with Organization-only refs. */
 export function localBusinessRef() {
   return {
-    '@type': 'LandscapingBusiness' as const,
+    '@type': 'LocalBusiness' as const,
     '@id': `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
   }
@@ -652,7 +653,7 @@ export function reviewJsonLd(reviews: { author: string; reviewBody: string; rati
   return {
     '@context': 'https://schema.org',
     '@type': 'AggregateRating',
-    itemReviewed: { '@type': 'LandscapingBusiness', name: siteConfig.name },
+    itemReviewed: { '@type': 'LocalBusiness', name: siteConfig.name },
     ratingValue: '5.0',
     bestRating: '5',
     reviewCount: reviews.length.toString(),
@@ -712,7 +713,8 @@ export function buildLocalBusinessJsonLd() {
 
   return {
     '@context': 'https://schema.org',
-    '@type': 'LandscapingBusiness',
+    '@type': 'LocalBusiness',
+    additionalType: 'https://schema.org/LandscapingBusiness',
     '@id': `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
     parentOrganization: organizationRef(),

@@ -155,7 +155,7 @@ function isHttpRequest(request, url) {
 /**
  * Single-hop Location for AMP suffixes, WP `?s=` search,
  * the literal `/*` 404 Google crawled, and the migration redirect map.
- * Trailing slashes of canonical paths are served as 200 aliases, not 301s.
+ * Trailing slashes of canonical paths 301 to the slashless URL.
  * Returns null when the request is already on its canonical URL.
  */
 function canonicalRedirectLocation(url, path, normalizedPath) {
@@ -199,17 +199,18 @@ export default {
 
     const normalizedPath = path.length > 1 ? path.replace(/\/+$/, '') : path
 
-    // Serve WordPress/Cloudflare aliases as 200 copies of the canonical file.
-    // Ahrefs flags leftover 3XX URLs it keeps recrawling (/feed, /index.html, sitemap_index.xml).
+    // WordPress sitemap aliases must 301, not 200-clone /sitemap.xml.
+    // Serving identical urlsets at four URLs flagged every page as "in multiple sitemaps".
+    if (SITEMAP_ALIAS_PATHS.has(normalizedPath)) {
+      return Response.redirect(`${CANONICAL_ORIGIN}/sitemap.xml`, 301)
+    }
+    // RSS aliases stay 200 so leftover feed URLs are not a 3XX loop.
     if (FEED_PATHS.has(normalizedPath)) {
       return serveAsset(request, env, '/feed.xml')
     }
-    if (SITEMAP_ALIAS_PATHS.has(normalizedPath)) {
-      return serveAsset(request, env, '/sitemap.xml')
-    }
     const htmlAlias = htmlAliasDestination(normalizedPath)
     if (htmlAlias) {
-      return serveAsset(request, env, htmlAlias)
+      return Response.redirect(`${CANONICAL_ORIGIN}${htmlAlias}${url.search}${url.hash}`, 301)
     }
 
     const destPath = normalizedPath === '/*' ? '/' : resolveRedirectDestination(normalizedPath)
@@ -219,7 +220,16 @@ export default {
       !url.searchParams.has('s') &&
       !url.searchParams.has('amp')
     if (isTrailingSlashAlias) {
-      return serveAsset(request, env, destPath)
+      return Response.redirect(`${CANONICAL_ORIGIN}${normalizedPath}${url.search}${url.hash}`, 301)
+    }
+
+    // Static export materializes /404 as a 200 document. Return a real 404 status.
+    if (normalizedPath === '/404' || normalizedPath === '/404.html') {
+      const notFound = await serveAsset(request, env, '/404')
+      const headers = new Headers(notFound.headers)
+      headers.set('X-Robots-Tag', 'noindex, nofollow')
+      headers.set('Cache-Control', 'private, no-store')
+      return new Response(notFound.body, { status: 404, headers })
     }
 
     // One-hop 301: AMP suffixes, WP search, legacy slugs, ranking dupes.

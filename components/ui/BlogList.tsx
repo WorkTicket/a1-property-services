@@ -12,7 +12,7 @@ import ResponsiveImage from '@/components/ui/ResponsiveImage'
 import { getVariantUrl } from '@/lib/responsive-image'
 
 /** Image cards beyond this are compact text rows so /blog stays under Ahrefs "slow page" size. */
-const IMAGE_CARD_LIMIT = 8
+const IMAGE_CARD_LIMIT = 6
 
 function CompactRow({ post }: { post: BlogIndexPost }) {
   return (

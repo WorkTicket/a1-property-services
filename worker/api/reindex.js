@@ -21,36 +21,21 @@ async function getSitemapUrls(env) {
 }
 
 async function submitToIndexNow(host, key, urlList) {
-  const BATCH_SIZE = 100
-  const BATCH_DELAY_MS = 1500
+  // One request. Splitting into batches multiplies 429s on shared Worker IPs.
   const keyLocation = `https://${host}/${key}.txt`
-  const batches = []
-  for (let i = 0; i < urlList.length; i += BATCH_SIZE) {
-    batches.push(urlList.slice(i, i + BATCH_SIZE))
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ host, key, keyLocation, urlList }),
+  })
+  const text = await res.text()
+  return {
+    ok: res.ok || res.status === 202,
+    status: res.status,
+    rateLimited: res.status === 429,
+    results: [{ status: res.status, ok: res.ok, count: urlList.length, message: text }],
+    batchCount: 1,
   }
-
-  const results = []
-  for (let i = 0; i < batches.length; i++) {
-    if (i > 0) {
-      await new Promise((resolve) => setTimeout(resolve, BATCH_DELAY_MS))
-    }
-    const batch = batches[i]
-    const res = await fetch('https://api.indexnow.org/indexnow', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({ host, key, keyLocation, urlList: batch }),
-    })
-    const text = await res.text()
-    results.push({ batch: i + 1, status: res.status, ok: res.ok, count: batch.length, message: text })
-    if (!res.ok && res.status === 429) {
-      return { ok: false, status: res.status, results, rateLimited: true }
-    }
-    if (!res.ok) {
-      return { ok: false, status: res.status, results }
-    }
-  }
-
-  return { ok: true, status: 200, results, batchCount: batches.length }
 }
 
 export async function handleReindex(request, env) {

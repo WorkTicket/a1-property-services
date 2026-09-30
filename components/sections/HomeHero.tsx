@@ -32,7 +32,7 @@ export default function HomeHero() {
           <div className="home-hero-copy">
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title="Cedar Falls Landscaping|A yard you're proud to come home to"
+              title="A1 Landscaping Cedar Falls|A yard you're proud to come home to"
               subtitle="Paver patios, retaining walls, and full outdoor installs for Cedar Falls, Waterloo, and Black Hawk County homeowners."
               evenTitleLines
               textWash
