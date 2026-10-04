@@ -4,6 +4,7 @@ import { ChevronRight, ClipboardCheck, MapPin, Phone, ShieldCheck, Star } from '
 import { CTA_COPY, QUOTE_HREF } from '@/lib/cta'
 import { siteConfig } from '@/lib/metadata'
 import { siteImages } from '@/lib/images'
+import { IMAGE_SIZES } from '@/lib/image-sizes'
 import { establishedEyebrow } from '@/lib/years-in-business'
 import Button from '@/components/ui/Button'
 import LcpHeroImage from '@/components/ui/LcpHeroImage'
@@ -14,7 +15,7 @@ import HeroOverlay from '@/components/ui/HeroOverlay'
 export default function HomeHero() {
   return (
     <>
-      <HeroImagePreload src={siteImages.homeHero} maxWidth={1920} />
+      <HeroImagePreload src={siteImages.homeHero} sizes={IMAGE_SIZES.homeHero} maxWidth={2560} />
 
       <section className="home-hero">
         <div className="home-hero-media">
@@ -22,7 +23,8 @@ export default function HomeHero() {
             <LcpHeroImage
               src={siteImages.homeHero}
               alt="Aerial view of Cedar Falls, Iowa"
-              maxWidth={1920}
+              sizes={IMAGE_SIZES.homeHero}
+              maxWidth={2560}
             />
           </div>
           <HeroOverlay imageSrc={siteImages.homeHero} />
@@ -32,11 +34,11 @@ export default function HomeHero() {
           <div className="home-hero-copy">
             <HeroCopyDeferred
               eyebrow={establishedEyebrow()}
-              title="A1 Landscaping Cedar Falls|A yard you're proud to come home to"
+              title={"A1 Landscaping\nCedar Falls|A yard you're proud to come home to"}
               subtitle="Paver patios, retaining walls, and full outdoor installs for Cedar Falls, Waterloo, and Black Hawk County homeowners."
               evenTitleLines
               textWash
-              titleMaxWidth="34rem"
+              titleMaxWidth="44rem"
               subtitleMaxWidth="30rem"
             >
               <div className="home-hero-ctas">

@@ -102,10 +102,20 @@ export function heroSrcForPath(pathname: string): string | undefined {
   return undefined
 }
 
-function pickHeroWidth() {
-  const needed = Math.round(window.innerWidth * Math.min(window.devicePixelRatio || 1, 2))
-  const capped = Math.min(needed, 1920)
-  return HERO_WIDTHS.find((width) => width >= capped) ?? 1920
+function pickHeroWidth(src: string) {
+  const home = src.includes('hero-background-image')
+  if (!home) {
+    const needed = Math.round(window.innerWidth * Math.min(window.devicePixelRatio || 1, 2))
+    const capped = Math.min(needed, 1920)
+    return HERO_WIDTHS.find((width) => width >= capped) ?? 1920
+  }
+
+  const dpr = Math.min(window.devicePixelRatio || 1, 3)
+  const narrowCover = window.innerWidth < 768 && window.innerWidth / window.innerHeight < 1.5
+  const cssWidth = narrowCover ? Math.min(window.innerHeight * 0.68, 640) : window.innerWidth
+  const cap = narrowCover ? 1920 : 2560
+  const capped = Math.min(Math.round(cssWidth * dpr), cap)
+  return HERO_WIDTHS.find((width) => width >= capped) ?? cap
 }
 
 function generatedHeroUrl(src: string, width: number) {
@@ -117,7 +127,7 @@ export function prefetchHeroSrc(src: string) {
   if (!src || prefetched.has(src) || typeof document === 'undefined') return
   prefetched.add(src)
 
-  const url = generatedHeroUrl(src, pickHeroWidth())
+  const url = generatedHeroUrl(src, pickHeroWidth(src))
   const link = document.createElement('link')
   link.rel = 'preload'
   link.as = 'image'
