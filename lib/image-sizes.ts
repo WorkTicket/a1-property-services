@@ -3,11 +3,12 @@ export const IMAGE_SIZES = {
   /** Full-viewport heroes that are width-constrained. */
   hero: '100vw',
   /**
-   * Home hero is object-fit cover. Portrait screens are height-constrained, so the
-   * bitmap has to be wider than the viewport or the browser upscales it.
-   * The 640px cap keeps a 3x phone on the 1920 variant instead of the 2560 file.
+   * Home hero is a 3:2 photo with object-fit: cover. On any screen narrower than
+   * that (phones, and most tablets), the bitmap is scaled to the viewport height,
+   * so the displayed width is about 1.5× the viewport height. `sizes` has to
+   * describe that width or the browser downloads a small file and upscales it.
    */
-  homeHero: '(max-width: 767px) and (max-aspect-ratio: 3/2) min(68vh, 640px), 100vw',
+  homeHero: '(max-aspect-ratio: 3/2) max(100vw, 150vh), 100vw',
   /** Inner-page heroes are ~50vh; 1280 CSS px keeps 2x displays on the 1920 variant. */
   pageHero: '(max-width: 768px) 100vw, 1280px',
   /** Two-column grids inside section-inner (~640px max display width). */
